@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sunny was born</title>
+  <icon>https://owq-1777.github.io/icon.png</icon>
+  <subtitle>心中有丘壑，眉目作山河</subtitle>
+  <link href="https://owq-1777.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://owq-1777.github.io/"/>
+  <updated>2021-08-03T11:01:26.830Z</updated>
+  <id>https://owq-1777.github.io/</id>
+  
+  <author>
+    <name>OWQ</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Test</title>
+    <link href="https://owq-1777.github.io/posts/3825/"/>
+    <id>https://owq-1777.github.io/posts/3825/</id>
+    <published>2021-08-03T16:10:34.000Z</published>
+    <updated>2021-08-03T11:01:26.830Z</updated>
+    
+    
+    <summary type="html">渲染例子</summary>
+    
+    
+    
+    
+    <category term="Other" scheme="https://owq-1777.github.io/tags/Other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zsh + oh-my-zsh 的简易配置</title>
+    <link href="https://owq-1777.github.io/posts/4bfebac1/"/>
+    <id>https://owq-1777.github.io/posts/4bfebac1/</id>
+    <published>2021-04-02T17:50:36.000Z</published>
+    <updated>2021-08-06T02:15:52.060Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;环境: WSL2 KaileLinux&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装zsh&quot;&gt;&lt;a href=&quot;#安装zsh&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="终端" scheme="https://owq-1777.github.io/tags/%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
+  
+</feed>

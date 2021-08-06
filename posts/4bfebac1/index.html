@@ -25,30 +25,36 @@
     var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownInw","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="茫茫大海上的一座小岛">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny was born">
-<meta property="og:url" content="https://owq-1777.github.io/index.html">
+  <meta name="description" content="环境: WSL2 KaileLinux  安装zsh使用系统对应的包管理器安装 1apt install zsh    安装oh-my-zsh   Method Command    curl sh -c “$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zsh + oh-my-zsh 的简易配置">
+<meta property="og:url" content="https://owq-1777.github.io/posts/4bfebac1/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="茫茫大海上的一座小岛">
+<meta property="og:description" content="环境: WSL2 KaileLinux  安装zsh使用系统对应的包管理器安装 1apt install zsh    安装oh-my-zsh   Method Command    curl sh -c “$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/08/06/51yhlPEQH7WOCnF.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/06/K2MYl3UE5T1yDaI.png">
+<meta property="article:published_time" content="2021-04-02T17:50:36.000Z">
+<meta property="article:modified_time" content="2021-08-06T02:15:52.060Z">
 <meta property="article:author" content="OWQ">
+<meta property="article:tag" content="终端">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/08/06/51yhlPEQH7WOCnF.png">
 
-<link rel="canonical" href="https://owq-1777.github.io/">
+<link rel="canonical" href="https://owq-1777.github.io/posts/4bfebac1/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Sunny was born</title>
+  <title>zsh + oh-my-zsh 的简易配置 | Sunny was born</title>
   
 
 
@@ -192,87 +198,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://owq-1777.github.io/posts/3825/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
-      <meta itemprop="name" content="OWQ">
-      <meta itemprop="description" content="茫茫大海上的一座小岛">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sunny was born">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3825/" class="post-title-link" itemprop="url">Test</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-08-03 16:10:34 / 修改时间：11:01:26" itemprop="dateCreated datePublished" datetime="2021-08-03T16:10:34Z">2021-08-03</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>377</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 min</span>
-            </span>
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>渲染例子</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/3825/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -288,10 +217,9 @@
       <meta itemprop="name" content="Sunny was born">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4bfebac1/" class="post-title-link" itemprop="url">zsh + oh-my-zsh 的简易配置</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          zsh + oh-my-zsh 的简易配置
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -311,6 +239,13 @@
               </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -333,7 +268,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
+        <blockquote>
 <p>环境: WSL2 KaileLinux</p>
 </blockquote>
 <h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
@@ -465,21 +400,51 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins=(git zsh-autosuggestions)</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://owq-1777.github.io/posts/4bfebac1/" title="zsh + oh-my-zsh 的简易配置">https://owq-1777.github.io/posts/4bfebac1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%BB%88%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 终端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/3825/" rel="prev" title="Test">
+      <i class="fa fa-chevron-left"></i> Test
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -532,6 +497,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85zsh"><span class="nav-number">1.</span> <span class="nav-text">安装zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85oh-my-zsh"><span class="nav-number">2.</span> <span class="nav-text">安装oh-my-zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E8%A2%AB%E5%A2%99%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">连接被墙问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91"><span class="nav-number">3.1.</span> <span class="nav-text">方法一：科学上网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%BF%AE%E6%94%B9hosts"><span class="nav-number">3.2.</span> <span class="nav-text">方法二：修改hosts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">自定义配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8%E7%9A%84"><span class="nav-number">5.1.</span> <span class="nav-text">简单实用的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%82%AB%E9%85%B7%E7%9A%84"><span class="nav-number">5.2.</span> <span class="nav-text">复杂炫酷的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85powerline%E4%B8%BB%E9%A2%98"><span class="nav-number">5.2.1.</span> <span class="nav-text">安装powerline主题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E5%8F%AF%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">配置其他用户可用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">安装插件</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
