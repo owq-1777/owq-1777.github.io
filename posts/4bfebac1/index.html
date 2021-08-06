@@ -22,22 +22,23 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownInw","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownInw","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="环境: WSL2 KaileLinux  安装zsh使用系统对应的包管理器安装 1apt install zsh    安装oh-my-zsh   Method Command    curl sh -c “$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;">
+  <meta name="description" content="环境: WSL2 KaileLinux  安装zsh使用系统对应的包管理器安装 1apt install zsh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zsh + oh-my-zsh 的简易配置">
 <meta property="og:url" content="https://owq-1777.github.io/posts/4bfebac1/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="环境: WSL2 KaileLinux  安装zsh使用系统对应的包管理器安装 1apt install zsh    安装oh-my-zsh   Method Command    curl sh -c “$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;">
+<meta property="og:description" content="环境: WSL2 KaileLinux  安装zsh使用系统对应的包管理器安装 1apt install zsh">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/08/06/51yhlPEQH7WOCnF.png">
 <meta property="og:image" content="https://i.loli.net/2021/08/06/K2MYl3UE5T1yDaI.png">
-<meta property="article:published_time" content="2021-04-02T17:50:36.000Z">
-<meta property="article:modified_time" content="2021-08-06T02:45:44.770Z">
+<meta property="article:published_time" content="2021-07-08T17:50:36.000Z">
+<meta property="article:modified_time" content="2021-08-06T07:03:03.230Z">
 <meta property="article:author" content="OWQ">
-<meta property="article:tag" content="终端">
+<meta property="article:tag" content="wsl">
+<meta property="article:tag" content="Terminal">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/08/06/51yhlPEQH7WOCnF.png">
 
@@ -139,11 +140,6 @@
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
@@ -228,14 +224,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-04-02 17:50:36" itemprop="dateCreated datePublished" datetime="2021-04-02T17:50:36Z">2021-04-02</time>
+              <time title="创建时间：2021-07-08 17:50:36" itemprop="dateCreated datePublished" datetime="2021-07-08T17:50:36Z">2021-07-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-06 02:45:44" itemprop="dateModified" datetime="2021-08-06T02:45:44Z">2021-08-06</time>
+                <time title="修改时间：2021-08-06 07:03:03" itemprop="dateModified" datetime="2021-08-06T07:03:03Z">2021-08-06</time>
               </span>
 
           
@@ -250,7 +246,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>889</span>
+              <span>888</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -274,6 +270,7 @@
 <h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install zsh</span><br></pre></td></tr></table></figure>
 
+<span id="more"></span>
 
 
 <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><table>
@@ -285,22 +282,22 @@
 </thead>
 <tbody><tr>
 <td><strong>curl</strong></td>
-<td>sh -c “$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;<i class="fa fa-external-link-alt"></i></span></td>
+<td>sh -c “$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 <tr>
 <td><strong>wget</strong></td>
-<td>sh -c “$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;<i class="fa fa-external-link-alt"></i></span></td>
+<td>sh -c “$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 <tr>
 <td><strong>fetch</strong></td>
-<td>sh -c “$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;<i class="fa fa-external-link-alt"></i></span></td>
+<td>sh -c “$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 </tbody></table>
 <h2 id="连接被墙问题"><a href="#连接被墙问题" class="headerlink" title="连接被墙问题"></a>连接被墙问题</h2><h3 id="方法一：科学上网"><a href="#方法一：科学上网" class="headerlink" title="方法一：科学上网"></a>方法一：<del>科学上网</del></h3><blockquote>
 <p>只可意会不可言传🐕</p>
 </blockquote>
 <h3 id="方法二：修改hosts"><a href="#方法二：修改hosts" class="headerlink" title="方法二：修改hosts"></a>方法二：修改hosts</h3><blockquote>
-<p>该方法只能解燃眉之急(笑)</p>
+<p>该方法只能解燃眉之急😂</p>
 </blockquote>
 <p>运行ping获取返回ip</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping raw.githubusercontent.com </span><br></pre></td></tr></table></figure>
@@ -308,7 +305,7 @@
 <p>修改hosts文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
 
-<p>添加对应i[映射即可</p>
+<p>添加对应ip映射即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">185.199.108.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
 
 
@@ -338,7 +335,7 @@
 <h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="https://i.loli.net/2021/08/06/K2MYl3UE5T1yDaI.png" style="zoom: 80%;" />
 
 <h4 id="安装powerline主题"><a href="#安装powerline主题" class="headerlink" title="安装powerline主题"></a><strong>安装powerline主题</strong></h4><blockquote>
-<p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪<i class="fa fa-external-link-alt"></i></span></p>
+<p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
 </blockquote>
 <p>克隆主题文件到本地</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git powerline</span><br></pre></td></tr></table></figure>
@@ -351,7 +348,7 @@
 
 <blockquote>
 <p>若终端符号显示不全或错位需要设置为 <code>TureType字体</code></p>
-<p>如: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvbnNreS9GaXJhQ29kZQ==">FiraCode<i class="fa fa-external-link-alt"></i></span>、powerline</p>
+<p>如: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvbnNreS9GaXJhQ29kZQ==">FiraCode</span>、powerline</p>
 </blockquote>
 <p><strong>安装powerline字体</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install fonts-powerline</span><br></pre></td></tr></table></figure>
@@ -376,19 +373,19 @@
 
 
 
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d0aW5nL2F1dG9qdW1w">autojump<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d0aW5nL2F1dG9qdW1w">autojump</span></p>
 <blockquote>
 <p>快速跳转</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/wting/autojump.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 跳转目录安装</span></span><br><span class="line"><span class="built_in">cd</span> autojump</span><br><span class="line">./install.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./uninstall.py</span><br></pre></td></tr></table></figure>
 
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions</span></p>
 <blockquote>
 <p>历史命令灰色提示 </p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
 
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhdWxpcmlzaC9naXQtb3Blbg==">git-open<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhdWxpcmlzaC9naXQtb3Blbg==">git-open</span></p>
 <blockquote>
 <p>快速打开git</p>
 </blockquote>
@@ -426,7 +423,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E7%BB%88%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 终端</a>
+              <a href="/tags/wsl/" rel="tag"><i class="fa fa-tag"></i> wsl</a>
+              <a href="/tags/Terminal/" rel="tag"><i class="fa fa-tag"></i> Terminal</a>
           </div>
 
         
@@ -435,8 +433,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/3825/" rel="prev" title="Test">
-      <i class="fa fa-chevron-left"></i> Test
+    <a href="/posts/1fe3c459/" rel="prev" title="WSL2 安装配置">
+      <i class="fa fa-chevron-left"></i> WSL2 安装配置
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -513,14 +511,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -576,7 +574,7 @@
   &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-heartbeat"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">OWQ</span>
 
@@ -614,8 +612,6 @@
 
 </div>
   <script src="/js/ribbonDynamic.js"></script>
-  <!-- Mouseclick -->
-  <script src="js/mouseclick.js" content="Practice makes perfect...,All experience comes from mistakes...,Don't be one of the le eches...,Either outstanding or out..." color="#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033"></script>
         
 
 
@@ -746,3 +742,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
     </div>
 </body>
 </html>
+
+<!--标题搞怪欺骗-->
+<script type="text/javascript" src="/js/src/funny_title.js"></script>

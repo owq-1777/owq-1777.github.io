@@ -436,7 +436,7 @@ td {
 .highlight-container {
   background: #21252b;
   border-radius: 5px;
-  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 8px 15px 0 rgba(0,0,0,0.4);
   padding-top: 30px;
 }
 .highlight-container::before {
@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffe8ab;
+  background: #0b269a;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1693,10 +1693,7 @@ pre .javascript .function {
   position: fixed;
   transition-property: bottom;
   z-index: 1300;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
+  width: initial;
 }
 .back-to-top:hover {
   color: #87daff;
@@ -1764,6 +1761,57 @@ pre .javascript .function {
 }
 .use-motion .collection-header {
   opacity: 0;
+}
+h1 {
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.375em;
+  margin-top: 30px;
+}
+h3 {
+  font-size: 1.1em;
+}
+a {
+  font-weight: bold;
+  color: #64a0e6;
+}
+a:hover {
+  border-bottom-color: #87daff;
+  color: #e95f59;
+}
+blockquote {
+  border-left: 4px solid #e95f59;
+  background: rgba(253,239,238,0.6);
+}
+code {
+  background: none;
+  color: #d63252;
+}
+.highlight-container {
+  margin-bottom: 35px;
+}
+img {
+  box-shadow: 0 8px 15px 0 rgba(0,0,0,0.4);
+}
+.site-author-image {
+  box-shadow: none;
+  border: none;
+}
+.table-container td,
+.table-container th {
+  font-size: 0.85em;
+  font-family: Verdana;
+  color: #b16a68;
+}
+.table-container tr:nth-child(even) {
+  background: rgba(253,239,238,0.6);
+}
+.table-container tr:nth-child(odd) {
+  background: rgba(255,255,255,0.3);
+}
+nav {
+  color: #222;
 }
 .posts-collapse {
   margin-left: 35px;
@@ -1982,7 +2030,7 @@ pre .javascript .function {
 }
 .posts-expand .post-title {
   font-size: 1.5em;
-  font-weight: normal;
+  font-weight: bold;
   margin: initial;
   text-align: center;
   overflow-wrap: break-word;
@@ -2605,8 +2653,34 @@ embed {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
   width: 0;
   scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  height: 6px;
+  background-color: #e8f0fb;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #21252b;
+}
+.post-copyright {
+  background: rgba(253,239,238,0.6);
+}
+::selection {
+  background: #64a0e6;
+  color: #fff;
+}
+::-moz-selection {
+  background: #64a0e6;
+  color: #fff;
+}
+::-webkit-selection {
+  background: #64a0e6;
+  color: #fff;
 }

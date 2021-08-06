@@ -10,7 +10,7 @@
 <p>加斜: <em>温馨提示</em></p>
 <p>代码块: <code>ddcp</code></p>
 <p>删除: 18🈲</p>
-<p>超链接: <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ2h4aS5jb20v">果壳<i class="fa fa-external-link-alt"></i></span></p>
+<p>超链接: <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ2h4aS5jb20v">果壳</span></p>
 <p>🧓👼🙄😶😴</p>
 <hr>
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img data-src="https://i.loli.net/2021/08/03/ZtwnsAa7BrNI2gX.png" alt="image-20210803120933734"></p>
@@ -53,6 +53,57 @@
       </tags>
   </entry>
   <entry>
+    <title>WSL2 安装配置</title>
+    <url>/posts/1fe3c459/</url>
+    <content><![CDATA[<h2 id="升级到WSL2"><a href="#升级到WSL2" class="headerlink" title="升级到WSL2"></a>升级到WSL2</h2><blockquote>
+<p>WSL1 升级 WSL2 官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
+</blockquote>
+<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 根据个人喜好选择.</p>
+<span id="more"></span>
+
+<ul>
+<li><p>微软商店搜索安装</p>
+<ul>
+<li><code>Win + S</code> 搜索 Store 打开 <code>Microsoft Store</code> 搜索 linux 找到对应版本安装即可.</li>
+</ul>
+</li>
+<li><p>手动下载安装包安装</p>
+<ul>
+<li>官方下载地址<br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vemgtY24vd2luZG93cy93c2wvaW5zdGFsbC1tYW51YWwjZG93bmxvYWRpbmctZGlzdHJpYnV0aW9ucw==">https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#downloading-distributions</span></li>
+<li>其它Linux地址<ul>
+<li>ArchWSL:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1azcvQXJjaFdTTA==">https://github.com/yuk7/ArchWSL</span> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>命令行安装<br>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="WSL位置移动-可选"><a href="#WSL位置移动-可选" class="headerlink" title="WSL位置移动(可选)"></a>WSL位置移动(可选)</h2><blockquote>
+<p>这里使用LxRunOffline工具移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
+</blockquote>
+<p>简单使用, 解压压缩包然后在解压的软件目录处打开命令行, 就可以直接使用.<br>将解压目录添加到环境变量可全局使用.</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">LxRunOffline <span class="built_in">move</span> <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="WSL2-优化配置"><a href="#WSL2-优化配置" class="headerlink" title="WSL2 优化配置"></a>WSL2 优化配置</h2><blockquote>
+<p>配置文档官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvd3NsLWNvbmZpZyNjb25maWd1cmUtZ2xvYmFsLW9wdGlvbnMtd2l0aC13c2xjb25maWc=">🚪</span></p>
+</blockquote>
+<h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改 Windows 的<code>$home/.wslconfig</code>文件，没有则自己创建一个.</p>
+<p><strong>配置文件示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line"># 自定义 Linux 内核的绝对路径 (默认为默认的WSL)</span><br><span class="line">kernel=&lt;path&gt;</span><br><span class="line"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span><br><span class="line">memory=&lt;size&gt;</span><br><span class="line"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span><br><span class="line">swap=&lt;size&gt;</span><br><span class="line"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span><br><span class="line">swapFile=&lt;path&gt;</span><br><span class="line"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span><br><span class="line">localhostForwarding=&lt;bool&gt;</span><br><span class="line"></span><br><span class="line"># `&lt;path&gt;` 必须是带反斜杠的绝对路径，例如 `C:\\Users\\kernel`</span><br><span class="line"># `&lt;size&gt;` 必须在后面加上单位，例如 8 GB 或 512 MB</span><br></pre></td></tr></table></figure>
+
+<p>配置文件好后关闭WSL重新进入即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2>]]></content>
+      <tags>
+        <tag>wsl</tag>
+        <tag>wsl2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>zsh + oh-my-zsh 的简易配置</title>
     <url>/posts/4bfebac1/</url>
     <content><![CDATA[<blockquote>
@@ -61,6 +112,7 @@
 <h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install zsh</span><br></pre></td></tr></table></figure>
 
+<span id="more"></span>
 
 
 <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><table>
@@ -72,22 +124,22 @@
 </thead>
 <tbody><tr>
 <td><strong>curl</strong></td>
-<td>sh -c “$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;<i class="fa fa-external-link-alt"></i></span></td>
+<td>sh -c “$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 <tr>
 <td><strong>wget</strong></td>
-<td>sh -c “$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;<i class="fa fa-external-link-alt"></i></span></td>
+<td>sh -c “$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 <tr>
 <td><strong>fetch</strong></td>
-<td>sh -c “$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;<i class="fa fa-external-link-alt"></i></span></td>
+<td>sh -c “$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 </tbody></table>
 <h2 id="连接被墙问题"><a href="#连接被墙问题" class="headerlink" title="连接被墙问题"></a>连接被墙问题</h2><h3 id="方法一：科学上网"><a href="#方法一：科学上网" class="headerlink" title="方法一：科学上网"></a>方法一：<del>科学上网</del></h3><blockquote>
 <p>只可意会不可言传🐕</p>
 </blockquote>
 <h3 id="方法二：修改hosts"><a href="#方法二：修改hosts" class="headerlink" title="方法二：修改hosts"></a>方法二：修改hosts</h3><blockquote>
-<p>该方法只能解燃眉之急(笑)</p>
+<p>该方法只能解燃眉之急😂</p>
 </blockquote>
 <p>运行ping获取返回ip</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ping raw.githubusercontent.com </span><br></pre></td></tr></table></figure>
@@ -95,7 +147,7 @@
 <p>修改hosts文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
 
-<p>添加对应i[映射即可</p>
+<p>添加对应ip映射即可</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">185.199.108.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
 
 
@@ -125,7 +177,7 @@
 <h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="https://i.loli.net/2021/08/06/K2MYl3UE5T1yDaI.png" style="zoom: 80%;" />
 
 <h4 id="安装powerline主题"><a href="#安装powerline主题" class="headerlink" title="安装powerline主题"></a><strong>安装powerline主题</strong></h4><blockquote>
-<p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪<i class="fa fa-external-link-alt"></i></span></p>
+<p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
 </blockquote>
 <p>克隆主题文件到本地</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git powerline</span><br></pre></td></tr></table></figure>
@@ -138,7 +190,7 @@
 
 <blockquote>
 <p>若终端符号显示不全或错位需要设置为 <code>TureType字体</code></p>
-<p>如: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvbnNreS9GaXJhQ29kZQ==">FiraCode<i class="fa fa-external-link-alt"></i></span>、powerline</p>
+<p>如: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvbnNreS9GaXJhQ29kZQ==">FiraCode</span>、powerline</p>
 </blockquote>
 <p><strong>安装powerline字体</strong></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install fonts-powerline</span><br></pre></td></tr></table></figure>
@@ -163,19 +215,19 @@
 
 
 
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d0aW5nL2F1dG9qdW1w">autojump<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d0aW5nL2F1dG9qdW1w">autojump</span></p>
 <blockquote>
 <p>快速跳转</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/wting/autojump.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 跳转目录安装</span></span><br><span class="line"><span class="built_in">cd</span> autojump</span><br><span class="line">./install.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./uninstall.py</span><br></pre></td></tr></table></figure>
 
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions</span></p>
 <blockquote>
 <p>历史命令灰色提示 </p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
 
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhdWxpcmlzaC9naXQtb3Blbg==">git-open<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhdWxpcmlzaC9naXQtb3Blbg==">git-open</span></p>
 <blockquote>
 <p>快速打开git</p>
 </blockquote>
@@ -188,7 +240,8 @@
 
 ]]></content>
       <tags>
-        <tag>终端</tag>
+        <tag>wsl</tag>
+        <tag>Terminal</tag>
       </tags>
   </entry>
 </search>
