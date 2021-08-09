@@ -9,21 +9,27 @@
 <p>加粗: <strong>重点</strong></p>
 <p>加斜: <em>温馨提示</em></p>
 <p>代码块: <code>ddcp</code></p>
-<p>删除: 18🈲</p>
+<p>删除: <del>18🈲</del></p>
 <p>超链接: <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ2h4aS5jb20v">果壳</span></p>
 <p>🧓👼🙄😶😴</p>
 <hr>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img data-src="https://i.loli.net/2021/08/03/ZtwnsAa7BrNI2gX.png" alt="image-20210803120933734"></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img data-src="https://i.loli.net/2021/08/03/ZtwnsAa7BrNI2gX.png"></p>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
 <li>1</li>
 <li>2</li>
 <li>3</li>
 </ul>
+<hr>
+<ol>
+<li>一</li>
+<li>二</li>
+<li>三</li>
+</ol>
 <h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Hello hexo&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> No such file or directory: <span class="string">&#x27;curl-config&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装通用包</span></span><br><span class="line">sudo apt-get install libssl-dev libcurl4-openssl-dev python3-dev</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> invalid <span class="built_in">command</span> <span class="string">&#x27;bdist_wheel&#x27;</span></span></span><br><span class="line">pip3 install wheel</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> unable to execute <span class="string">&#x27;x86_64-linux-gnu-gcc&#x27;</span>: No such file or directory</span></span><br><span class="line">sudo apt-get install gcc</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> No such file or directory: <span class="string">&#x27;curl-config&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装通用包</span></span><br><span class="line">sudo apt-get install libssl-dev libcurl4-openssl-dev python3-dev</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> invalid <span class="built_in">command</span> <span class="string">&#x27;bdist_wheel&#x27;</span></span></span><br><span class="line">pip3 install wheel</span><br></pre></td></tr></table></figure>
 
 
 
@@ -59,8 +65,6 @@
 <p>WSL1 升级 WSL2 官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
 </blockquote>
 <h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 根据个人喜好选择.</p>
-<span id="more"></span>
-
 <ul>
 <li><p>微软商店搜索安装</p>
 <ul>

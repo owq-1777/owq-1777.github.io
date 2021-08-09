@@ -6,7 +6,7 @@
   <link href="https://owq-1777.github.io/atom.xml" rel="self"/>
   
   <link href="https://owq-1777.github.io/"/>
-  <updated>2021-08-03T11:01:26.830Z</updated>
+  <updated>2021-08-09T03:17:03.208Z</updated>
   <id>https://owq-1777.github.io/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://owq-1777.github.io/posts/3825/"/>
     <id>https://owq-1777.github.io/posts/3825/</id>
     <published>2021-08-03T16:10:34.000Z</published>
-    <updated>2021-08-03T11:01:26.830Z</updated>
+    <updated>2021-08-09T03:17:03.208Z</updated>
     
     
-    <summary type="html">渲染例子</summary>
+    <summary type="html">md常用格式的渲染页面</summary>
     
     
     
@@ -38,13 +38,17 @@
     <link href="https://owq-1777.github.io/posts/1fe3c459/"/>
     <id>https://owq-1777.github.io/posts/1fe3c459/</id>
     <published>2021-07-15T14:13:58.000Z</published>
-    <updated>2021-08-06T07:01:14.630Z</updated>
+    <updated>2021-08-07T14:23:16.120Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;h2 id=&quot;升级到WSL2&quot;&gt;&lt;a href=&quot;#升级到WSL2&quot; class=&quot;headerlink&quot; title=&quot;升级到WSL2&quot;&gt;&lt;/a&gt;升级到WSL2&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;WSL1 升级 WSL2 官方传送门 -&amp;gt; &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==&quot;&gt;🚪&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;安装-WSL&quot;&gt;&lt;a href=&quot;#安装-WSL&quot; class=&quot;headerlink&quot; title=&quot;安装 WSL&quot;&gt;&lt;/a&gt;安装 WSL&lt;/h2&gt;&lt;p&gt;安装子系统方式有三, 根据个人喜好选择.&lt;/p&gt;</summary>
+&lt;p&gt;WSL1 升级 WSL2 官方传送门 -&amp;gt; &lt;span</summary>
+        
+      
     
     
     
@@ -60,14 +64,10 @@
     <link href="https://owq-1777.github.io/posts/4bfebac1/"/>
     <id>https://owq-1777.github.io/posts/4bfebac1/</id>
     <published>2021-07-08T17:50:36.000Z</published>
-    <updated>2021-08-06T07:03:03.230Z</updated>
+    <updated>2021-08-06T09:38:43.240Z</updated>
     
     
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;环境: WSL2 KaileLinux&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;安装zsh&quot;&gt;&lt;a href=&quot;#安装zsh&quot; class=&quot;headerlink&quot; title=&quot;安装zsh&quot;&gt;&lt;/a&gt;安装zsh&lt;/h2&gt;&lt;p&gt;使用系统对应的包管理器安装&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt install zsh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    <summary type="html">zsh安装oh-my-zsh快速配置</summary>
     
     
     
