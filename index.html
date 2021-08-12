@@ -22,7 +22,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownInw","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="爱编程, 懂设计, 喜折腾">
@@ -83,7 +83,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container">
+  <div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -110,14 +110,12 @@
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
-
 </div>
 
-<div
 
 
 
-
+<span style="flex-grow: 2;"></span>
 <nav class="site-nav">
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
@@ -135,6 +133,11 @@
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
@@ -146,8 +149,6 @@
       </li>
   </ul>
 </nav>
-
-
 
 
 
@@ -176,6 +177,45 @@
   </div>
 
 </div>
+      
+
+
+<div class='bg-container' style="z-index: -1;">
+  <span class="header-bg"></span>
+  <script data-pjax>
+    var header=document.querySelector('.header-bg');
+    header.setAttribute("style", "background-image: url('/img/header_img/newhome_bg.jpg')");
+    
+  </script>
+</div>
+
+<div id="signature">
+  <div class="container">
+        <header class="site-heading">
+          <h1>Sunny was born</h1>
+          <span class="subheading">心中有丘壑，眉目作山河</span>
+        </header>
+
+  </div>
+</div>
+
+
+
+<!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
     </header>
 
     
@@ -197,7 +237,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://owq-1777.github.io/posts/3825/">
+    <link itemprop="mainEntityOfPage" href="https://owq-1777.github.io/posts/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
@@ -211,7 +251,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3825/" class="post-title-link" itemprop="url">Test</a>
+            <a href="/posts/test/" class="post-title-link" itemprop="url">Test</a>
         </h2>
 
         <div class="post-meta">
@@ -228,20 +268,22 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-09 03:17:03" itemprop="dateModified" datetime="2021-08-09T03:17:03Z">2021-08-09</time>
+                <time title="修改时间：2021-08-12 09:49:28" itemprop="dateModified" datetime="2021-08-12T09:49:28Z">2021-08-12</time>
               </span>
 
           
-            <span class="post-meta-item" title="本文字数">
+            <span class="post-meta-item" title="字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
+                <span class="post-meta-item-text">字数：</span>
               <span>75</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 min</span>
             </span>
 
@@ -254,17 +296,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <img src="https://i.loli.net/2021/08/09/qbQUnHDXa7NFl1P.jpg" itemprop="contentUrl">
-            <img src="https://i.loli.net/2021/08/09/qbQUnHDXa7NFl1P.jpg" itemprop="contentUrl">
-        </div>
-          <p>md常用格式的渲染页面</p>
+          <p class="post-copyright">MD常用格式的渲染页面</p>
           <!--noindex-->
           <!--/noindex-->
         
       
-
     </div>
+
+    
 
     
     
@@ -276,7 +315,6 @@
   
   
   
-
       
   
   
@@ -312,20 +350,22 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-07 14:23:16" itemprop="dateModified" datetime="2021-08-07T14:23:16Z">2021-08-07</time>
+                <time title="修改时间：2021-08-12 11:26:27" itemprop="dateModified" datetime="2021-08-12T11:26:27Z">2021-08-12</time>
               </span>
 
           
-            <span class="post-meta-item" title="本文字数">
+            <span class="post-meta-item" title="字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>496</span>
+                <span class="post-meta-item-text">字数：</span>
+              <span>662</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 min</span>
             </span>
 
@@ -338,50 +378,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="升级到WSL2"><a href="#升级到WSL2" class="headerlink" title="升级到WSL2"></a>升级到WSL2</h2><blockquote>
-<p>WSL1 升级 WSL2 官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
-</blockquote>
-<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 根据个人喜好选择.</p>
-<ul>
-<li><p>微软商店搜索安装</p>
-<ul>
-<li><code>Win + S</code> 搜索 Store 打开 <code>Microsoft Store</code> 搜索 linux 找到对应版本安装即可.</li>
-</ul>
-</li>
-<li><p>手动下载安装包安装</p>
-<ul>
-<li>官方下载地址<br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vemgtY24vd2luZG93cy93c2wvaW5zdGFsbC1tYW51YWwjZG93bmxvYWRpbmctZGlzdHJpYnV0aW9ucw==">https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#downloading-distributions</span></li>
-<li>其它Linux地址<ul>
-<li>ArchWSL:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1azcvQXJjaFdTTA==">https://github.com/yuk7/ArchWSL</span> </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>命令行安装<br>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="WSL位置移动-可选"><a href="#WSL位置移动-可选" class="headerlink" title="WSL位置移动(可选)"></a>WSL位置移动(可选)</h2><blockquote>
-<p>这里使用LxRunOffline工具移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
-</blockquote>
-<p>简单使用, 解压压缩包然后在解压的软件目录处打开命令行, 就可以直接使用.<br>将解压目录添加到环境变量可全局使用.</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">LxRunOffline <span class="built_in">move</span> <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="WSL2-优化配置"><a href="#WSL2-优化配置" class="headerlink" title="WSL2 优化配置"></a>WSL2 优化配置</h2><blockquote>
-<p>配置文档官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvd3NsLWNvbmZpZyNjb25maWd1cmUtZ2xvYmFsLW9wdGlvbnMtd2l0aC13c2xjb25maWc=">🚪</span></p>
-</blockquote>
-<h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改 Windows 的<code>$home/.wslconfig</code>文件，没有则自己创建一个.</p>
-<p><strong>配置文件示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line"># 自定义 Linux 内核的绝对路径 (默认为默认的WSL)</span><br><span class="line">kernel=&lt;path&gt;</span><br><span class="line"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span><br><span class="line">memory=&lt;size&gt;</span><br><span class="line"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span><br><span class="line">swap=&lt;size&gt;</span><br><span class="line"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span><br><span class="line">swapFile=&lt;path&gt;</span><br><span class="line"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span><br><span class="line">localhostForwarding=&lt;bool&gt;</span><br><span class="line"></span><br><span class="line"># `&lt;path&gt;` 必须是带反斜杠的绝对路径，例如 `C:\\Users\\kernel`</span><br><span class="line"># `&lt;size&gt;` 必须在后面加上单位，例如 8 GB 或 512 MB</span><br></pre></td></tr></table></figure>
-
-<p>配置文件好后关闭WSL重新进入即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
-
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2>
+          <p class="post-copyright">WSL迭代到现在已经和Windows融为一体了, 让我们在Windows上启用Linux子系统, 开始愉快的无缝开发工作吧b(￣▽￣)d</p>
+          <!--noindex-->
+          <!--/noindex-->
+        
       
-
     </div>
+
+    
 
     
     
@@ -393,7 +397,6 @@
   
   
   
-
       
   
   
@@ -412,7 +415,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/4bfebac1/" class="post-title-link" itemprop="url">zsh + oh-my-zsh 的简易配置</a>
+            <a href="/posts/4bfebac1/" class="post-title-link" itemprop="url">zsh + oh-my-zsh 简易配置</a>
         </h2>
 
         <div class="post-meta">
@@ -429,20 +432,22 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-06 09:38:43" itemprop="dateModified" datetime="2021-08-06T09:38:43Z">2021-08-06</time>
+                <time title="修改时间：2021-08-12 12:40:02" itemprop="dateModified" datetime="2021-08-12T12:40:02Z">2021-08-12</time>
               </span>
 
           
-            <span class="post-meta-item" title="本文字数">
+            <span class="post-meta-item" title="字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>888</span>
+                <span class="post-meta-item-text">字数：</span>
+              <span>882</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 min</span>
             </span>
 
@@ -455,13 +460,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>zsh安装oh-my-zsh快速配置</p>
+          <p class="post-copyright">做完终端是Linux下的zsh快捷配置命令记录</p>
           <!--noindex-->
           <!--/noindex-->
         
       
-
     </div>
+
+    
 
     
     
@@ -473,7 +479,6 @@
   
   
   
-
 
   
 
@@ -518,10 +523,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          文章目录
+          目录
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          概览
         </li>
       </ul>
 
@@ -546,6 +551,12 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
@@ -559,10 +570,10 @@
         <span class="exturl" data-url="bWFpbHRvOnF3cWlvd29Ab3V0bG9vay5jb20=" title="E-Mail → mailto:qwqiowo@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
       </span>
       <span class="links-of-author-item">
-        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github fa-fw"></i>GitHub</span>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github-alt" fa-fw"></i>GitHub</span>
       </span>
   </div>
 
@@ -570,8 +581,9 @@
 
       </div>
 
-    <hr class="hr-solid">
+      <hr class="hr-solid">
     </div>
+
 
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -635,18 +647,17 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">2k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2 min</span>
+    <span title="站点阅读时长">3 min</span>
 </div>
 
 </div>
   <script src="/js/ribbonDynamic.js"></script>
         
-
 
 
 
@@ -659,12 +670,16 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
 <script src="/js/schemes/pisces.js"></script>
@@ -676,6 +691,8 @@
 var pjax = new Pjax({
   selectors: [
     'head title',
+    '.bg-container',
+    '#signature .container',
     '#page-configurations',
     '.content-wrap',
     '.post-toc-wrap',
@@ -773,7 +790,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
     </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
 </html>
 
 <script type="text/javascript" src="/js/src/funny_title.js"></script>

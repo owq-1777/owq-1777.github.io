@@ -51,7 +51,7 @@ var Affix = {
     let offsetTop = offset.top;
     let offsetBottom = offset.bottom;
     let { scrollHeight } = document.body;
-    let affix = this.getState(scrollHeight, height, offsetTop, offsetBottom);
+    let affix = this.getState(scrollHeight, height, 635, offsetBottom);
     if (this.affixed !== affix) {
       if (this.unpin != null) this.element.style.top = '';
       let affixType = 'affix' + (affix ? '-' + affix : '');
@@ -61,7 +61,7 @@ var Affix = {
       this.element.classList.add(affixType);
     }
     if (affix === 'bottom') {
-      this.element.style.top = scrollHeight - height - offsetBottom + 'px';
+      this.element.style.top = scrollHeight + 200 - height - offsetBottom + 'px';
     }
   }
 };

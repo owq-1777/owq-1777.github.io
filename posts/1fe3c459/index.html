@@ -22,22 +22,25 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownInw","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="升级到WSL2 WSL1 升级 WSL2 官方传送门 -&gt; 🚪  安装 WSL安装子系统方式有三, 根据个人喜好选择.  微软商店搜索安装  Win + S 搜索 Store 打开 Microsoft Store 搜索 linux 找到对应版本安装即可.   手动下载安装包安装  官方下载地址https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;windows&#x2F;wsl&#x2F;inst">
+  <meta name="description" content="WSL迭代到现在已经和Windows融为一体了, 让我们在Windows上启用Linux子系统, 开始愉快的无缝开发工作吧b(￣▽￣)d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WSL2 安装配置">
 <meta property="og:url" content="https://owq-1777.github.io/posts/1fe3c459/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="升级到WSL2 WSL1 升级 WSL2 官方传送门 -&gt; 🚪  安装 WSL安装子系统方式有三, 根据个人喜好选择.  微软商店搜索安装  Win + S 搜索 Store 打开 Microsoft Store 搜索 linux 找到对应版本安装即可.   手动下载安装包安装  官方下载地址https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;windows&#x2F;wsl&#x2F;inst">
+<meta property="og:description" content="WSL迭代到现在已经和Windows融为一体了, 让我们在Windows上启用Linux子系统, 开始愉快的无缝开发工作吧b(￣▽￣)d">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/08/12/C8BjhOs3pi4RwQY.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/12/Q6MjR8sqKba3BOZ.png">
 <meta property="article:published_time" content="2021-07-15T14:13:58.000Z">
-<meta property="article:modified_time" content="2021-08-07T14:23:16.120Z">
+<meta property="article:modified_time" content="2021-08-12T11:26:27.513Z">
 <meta property="article:author" content="OWQ">
-<meta property="article:tag" content="wsl">
-<meta property="article:tag" content="wsl2">
+<meta property="article:tag" content="WSL">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/08/12/C8BjhOs3pi4RwQY.png">
 
 <link rel="canonical" href="https://owq-1777.github.io/posts/1fe3c459/">
 
@@ -87,7 +90,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container">
+  <div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -114,14 +117,12 @@
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
-
 </div>
 
-<div
 
 
 
-
+<span style="flex-grow: 2;"></span>
 <nav class="site-nav">
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
@@ -139,6 +140,11 @@
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
@@ -150,8 +156,6 @@
       </li>
   </ul>
 </nav>
-
-
 
 
 
@@ -180,6 +184,90 @@
   </div>
 
 </div>
+      
+
+
+<div class='bg-container' style="z-index: -1;">
+  <span class="header-bg"></span>
+  <script data-pjax>
+    var header=document.querySelector('.header-bg');
+    var img_arr = ["/img/header_img/i_bg.jpg","/img/header_img/newhome_bg2.jpg"]
+    var index = Math.floor((Math.random()*img_arr.length));
+    header.setAttribute("style", "background-image: url('"+img_arr[index]+"')");
+  </script>
+</div>
+
+<div id="signature">
+  <div class="container">
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>WSL2 安装配置</h1>
+          <h2 class="subheading">WSL迭代到现在已经和Windows融为一体了, 让我们在Windows上启用Linux子系统, 开始愉快的无缝开发工作吧b(￣▽￣)d</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+            
+
+            <time title="创建时间：2021-07-15 14:13:58" itemprop="dateCreated datePublished" datetime="2021-07-15T14:13:58Z">2021-07-15</time>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar-check"></i>
+            </span>
+            <span class="post-meta-item-text">Updated</span>
+            <time title="修改时间：2021-08-12 13:02:28" itemprop="dateModified" datetime="2021-08-12T21:02:28+08:00">2021-08-12</time>
+            
+          </span>
+
+
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>662</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>1 min</span>
+          </span>
+
+
+        </header>
+
+      
+
+  </div>
+</div>
+
+
+
+<!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
     </header>
 
     
@@ -213,51 +301,6 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Sunny was born">
     </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          WSL2 安装配置
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-15 14:13:58" itemprop="dateCreated datePublished" datetime="2021-07-15T14:13:58Z">2021-07-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-07 14:23:16" itemprop="dateModified" datetime="2021-08-07T14:23:16Z">2021-08-07</time>
-              </span>
-
-          
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>496</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 min</span>
-            </span>
-
-        </div>
-      </header>
 
     
     
@@ -265,49 +308,78 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="升级到WSL2"><a href="#升级到WSL2" class="headerlink" title="升级到WSL2"></a>升级到WSL2</h2><blockquote>
-<p>WSL1 升级 WSL2 官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
+        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
+<p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
 </blockquote>
-<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 根据个人喜好选择.</p>
+<p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.</p>
+<p>ps:接下来的命令都是在这个终端上执行.</p>
+<img data-src="https://i.loli.net/2021/08/12/C8BjhOs3pi4RwQY.png" />
+
+<ol>
+<li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+
+<p>ps:到了这一步要重启计算机下</p>
+</li>
+<li><h3 id="下载-Linux-内核更新包"><a href="#下载-Linux-内核更新包" class="headerlink" title="下载 Linux 内核更新包"></a>下载 Linux 内核更新包</h3><p>选择自己计算机内核架构对应的包, 一般为架构是64位也就是x64.</p>
 <ul>
-<li><p>微软商店搜索安装</p>
-<ul>
-<li><code>Win + S</code> 搜索 Store 打开 <code>Microsoft Store</code> 搜索 linux 找到对应版本安装即可.</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp">x64更新包</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV9hcm02NC5tc2k=">ARM64更新包</span></li>
 </ul>
 </li>
-<li><p>手动下载安装包安装</p>
+<li><h3 id="将-WSL-2-设置为默认版本"><a href="#将-WSL-2-设置为默认版本" class="headerlink" title="将 WSL 2 设置为默认版本"></a>将 WSL 2 设置为默认版本</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 可根据个人喜好选择.</p>
 <ul>
-<li>官方下载地址<br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vemgtY24vd2luZG93cy93c2wvaW5zdGFsbC1tYW51YWwjZG93bmxvYWRpbmctZGlzdHJpYnV0aW9ucw==">https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#downloading-distributions</span></li>
+<li><h3 id="微软商店搜索安装-推荐"><a href="#微软商店搜索安装-推荐" class="headerlink" title="微软商店搜索安装(推荐)"></a>微软商店搜索安装(推荐)</h3><ul>
+<li><code>Win + S</code> 搜索打开 <code>Microsoft Store</code> 搜索 Linux 找到对应版本安装即可.</li>
+</ul>
+</li>
+<li><h3 id="手动下载安装包安装"><a href="#手动下载安装包安装" class="headerlink" title="手动下载安装包安装"></a>手动下载安装包安装</h3><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vemgtY24vd2luZG93cy93c2wvaW5zdGFsbC1tYW51YWwjZG93bmxvYWRpbmctZGlzdHJpYnV0aW9ucw==">官方下载地址</span></li>
 <li>其它Linux地址<ul>
-<li>ArchWSL:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1azcvQXJjaFdTTA==">https://github.com/yuk7/ArchWSL</span> </li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1azcvQXJjaFdTTA==">ArchWSL</span></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>命令行安装<br>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
+<li><h3 id="命令行安装"><a href="#命令行安装" class="headerlink" title="命令行安装"></a>命令行安装</h3><p>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="WSL位置移动-可选"><a href="#WSL位置移动-可选" class="headerlink" title="WSL位置移动(可选)"></a>WSL位置移动(可选)</h2><blockquote>
-<p>这里使用LxRunOffline工具移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="WSL-位置移动-可选"><a href="#WSL-位置移动-可选" class="headerlink" title="WSL 位置移动(可选)"></a>WSL 位置移动(可选)</h2><blockquote>
+<p>这里使用LxRunOffline工具进行移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
 </blockquote>
-<p>简单使用, 解压压缩包然后在解压的软件目录处打开命令行, 就可以直接使用.<br>将解压目录添加到环境变量可全局使用.</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">LxRunOffline <span class="built_in">move</span> <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
+<p>如果担心C盘空间不够可以把WSL的安装位置移动到其它盘.</p>
+<p>下载解压压缩包后, 在解压目录处打开命令行, 就可以运行以下命令了.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="WSL2-优化配置"><a href="#WSL2-优化配置" class="headerlink" title="WSL2 优化配置"></a>WSL2 优化配置</h2><blockquote>
+<h2 id="WSL-2-优化配置-可选"><a href="#WSL-2-优化配置-可选" class="headerlink" title="WSL 2 优化配置(可选)"></a>WSL 2 优化配置(可选)</h2><blockquote>
 <p>配置文档官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvd3NsLWNvbmZpZyNjb25maWd1cmUtZ2xvYmFsLW9wdGlvbnMtd2l0aC13c2xjb25maWc=">🚪</span></p>
 </blockquote>
-<h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改 Windows 的<code>$home/.wslconfig</code>文件，没有则自己创建一个.</p>
-<p><strong>配置文件示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line"># 自定义 Linux 内核的绝对路径 (默认为默认的WSL)</span><br><span class="line">kernel=&lt;path&gt;</span><br><span class="line"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span><br><span class="line">memory=&lt;size&gt;</span><br><span class="line"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span><br><span class="line">swap=&lt;size&gt;</span><br><span class="line"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span><br><span class="line">swapFile=&lt;path&gt;</span><br><span class="line"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span><br><span class="line">localhostForwarding=&lt;bool&gt;</span><br><span class="line"></span><br><span class="line"># `&lt;path&gt;` 必须是带反斜杠的绝对路径，例如 `C:\\Users\\kernel`</span><br><span class="line"># `&lt;size&gt;` 必须在后面加上单位，例如 8 GB 或 512 MB</span><br></pre></td></tr></table></figure>
+<h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改Windows位于用户目录<code>%home%</code>下的<code>.wslconfig</code>文件，若没有则自己创建一个.</p>
+<p>ps:直接在资源管理器输入<code>%home%</code>按回车就可跳转, 若出错则是电脑环境变量没有配置好</p>
+<p><img data-src="https://i.loli.net/2021/08/12/Q6MjR8sqKba3BOZ.png"></p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>主要配置内存和交换内存, 其它可以不用管, 看自己电脑配置设置.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span><br><span class="line">memory=8GB</span><br><span class="line"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span><br><span class="line">swap=0</span><br><span class="line"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span><br><span class="line">swapFile=&lt;path&gt;</span><br><span class="line"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span><br><span class="line">localhostForwarding=true</span><br></pre></td></tr></table></figure>
 
-<p>配置文件好后关闭WSL重新进入即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
+<p>配置好文件后需要关闭WSL重新进入才会生效.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl -<span class="literal">-shutdown</span></span><br></pre></td></tr></table></figure>
 
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2>
+
 
     </div>
+
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px; margin: 15px 0;">------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</div>
+    
+</div>
+      </div>
+    
 
     
     
@@ -333,8 +405,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/wsl/" rel="tag"><i class="fa fa-tag"></i> wsl</a>
-              <a href="/tags/wsl2/" rel="tag"><i class="fa fa-tag"></i> wsl2</a>
+              <a href="/tags/WSL/" rel="tag"><i class="fa fa-tag"></i> WSL</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           </div>
 
         
@@ -343,12 +415,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/3825/" rel="prev" title="Test">
+    <a href="/posts/test/" rel="prev" title="Test">
       <i class="fa fa-chevron-left"></i> Test
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/4bfebac1/" rel="next" title="zsh + oh-my-zsh 的简易配置">
-      zsh + oh-my-zsh 的简易配置 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/4bfebac1/" rel="next" title="zsh + oh-my-zsh 简易配置">
+      zsh + oh-my-zsh 简易配置 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -357,7 +429,6 @@
   
   
   
-
 
 
           </div>
@@ -399,16 +470,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          文章目录
+          目录
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          概览
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B0WSL2"><span class="nav-text">升级到WSL2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-WSL"><span class="nav-text">安装 WSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL%E4%BD%8D%E7%BD%AE%E7%A7%BB%E5%8A%A8-%E5%8F%AF%E9%80%89"><span class="nav-text">WSL位置移动(可选)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL2-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-text">WSL2 优化配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E9%85%8D%E7%BD%AE"><span class="nav-text">内存配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-text"></span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-WSL-%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="nav-text">启用 WSL 子系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8A%9F%E8%83%BD"><span class="nav-text">启用虚拟机功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-Linux-%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0%E5%8C%85"><span class="nav-text">下载 Linux 内核更新包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86-WSL-2-%E8%AE%BE%E7%BD%AE%E4%B8%BA%E9%BB%98%E8%AE%A4%E7%89%88%E6%9C%AC"><span class="nav-text">将 WSL 2 设置为默认版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-WSL"><span class="nav-text">安装 WSL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E8%BD%AF%E5%95%86%E5%BA%97%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85-%E6%8E%A8%E8%8D%90"><span class="nav-text">微软商店搜索安装(推荐)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%8C%85%E5%AE%89%E8%A3%85"><span class="nav-text">手动下载安装包安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85"><span class="nav-text">命令行安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL-%E4%BD%8D%E7%BD%AE%E7%A7%BB%E5%8A%A8-%E5%8F%AF%E9%80%89"><span class="nav-text">WSL 位置移动(可选)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL-2-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE-%E5%8F%AF%E9%80%89"><span class="nav-text">WSL 2 优化配置(可选)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E9%85%8D%E7%BD%AE"><span class="nav-text">内存配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">配置文件</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -428,6 +499,12 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
@@ -441,10 +518,10 @@
         <span class="exturl" data-url="bWFpbHRvOnF3cWlvd29Ab3V0bG9vay5jb20=" title="E-Mail → mailto:qwqiowo@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
       </span>
       <span class="links-of-author-item">
-        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github fa-fw"></i>GitHub</span>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github-alt" fa-fw"></i>GitHub</span>
       </span>
   </div>
 
@@ -452,8 +529,9 @@
 
       </div>
 
-    <hr class="hr-solid">
+      <hr class="hr-solid">
     </div>
+
 
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -517,18 +595,17 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">2k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2 min</span>
+    <span title="站点阅读时长">3 min</span>
 </div>
 
 </div>
   <script src="/js/ribbonDynamic.js"></script>
         
-
 
 
 
@@ -541,12 +618,16 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
 <script src="/js/schemes/pisces.js"></script>
@@ -558,6 +639,8 @@
 var pjax = new Pjax({
   selectors: [
     'head title',
+    '.bg-container',
+    '#signature .container',
     '#page-configurations',
     '.content-wrap',
     '.post-toc-wrap',
@@ -655,7 +738,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
     </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
 </html>
 
 <script type="text/javascript" src="/js/src/funny_title.js"></script>

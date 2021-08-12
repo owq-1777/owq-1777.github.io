@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Test</title>
-    <url>/posts/3825/</url>
+    <url>/posts/test/</url>
     <content><![CDATA[<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><blockquote>
 <p>引用</p>
 </blockquote>
@@ -54,6 +54,9 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
       <tags>
         <tag>Other</tag>
       </tags>
@@ -61,62 +64,80 @@
   <entry>
     <title>WSL2 安装配置</title>
     <url>/posts/1fe3c459/</url>
-    <content><![CDATA[<h2 id="升级到WSL2"><a href="#升级到WSL2" class="headerlink" title="升级到WSL2"></a>升级到WSL2</h2><blockquote>
-<p>WSL1 升级 WSL2 官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
+    <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
+<p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
 </blockquote>
-<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 根据个人喜好选择.</p>
+<p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.</p>
+<p>ps:接下来的命令都是在这个终端上执行.</p>
+<img data-src="https://i.loli.net/2021/08/12/C8BjhOs3pi4RwQY.png" />
+
+<ol>
+<li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+
+<p>ps:到了这一步要重启计算机下</p>
+</li>
+<li><h3 id="下载-Linux-内核更新包"><a href="#下载-Linux-内核更新包" class="headerlink" title="下载 Linux 内核更新包"></a>下载 Linux 内核更新包</h3><p>选择自己计算机内核架构对应的包, 一般为架构是64位也就是x64.</p>
 <ul>
-<li><p>微软商店搜索安装</p>
-<ul>
-<li><code>Win + S</code> 搜索 Store 打开 <code>Microsoft Store</code> 搜索 linux 找到对应版本安装即可.</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp">x64更新包</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV9hcm02NC5tc2k=">ARM64更新包</span></li>
 </ul>
 </li>
-<li><p>手动下载安装包安装</p>
+<li><h3 id="将-WSL-2-设置为默认版本"><a href="#将-WSL-2-设置为默认版本" class="headerlink" title="将 WSL 2 设置为默认版本"></a>将 WSL 2 设置为默认版本</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 可根据个人喜好选择.</p>
 <ul>
-<li>官方下载地址<br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vemgtY24vd2luZG93cy93c2wvaW5zdGFsbC1tYW51YWwjZG93bmxvYWRpbmctZGlzdHJpYnV0aW9ucw==">https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#downloading-distributions</span></li>
+<li><h3 id="微软商店搜索安装-推荐"><a href="#微软商店搜索安装-推荐" class="headerlink" title="微软商店搜索安装(推荐)"></a>微软商店搜索安装(推荐)</h3><ul>
+<li><code>Win + S</code> 搜索打开 <code>Microsoft Store</code> 搜索 Linux 找到对应版本安装即可.</li>
+</ul>
+</li>
+<li><h3 id="手动下载安装包安装"><a href="#手动下载安装包安装" class="headerlink" title="手动下载安装包安装"></a>手动下载安装包安装</h3><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vemgtY24vd2luZG93cy93c2wvaW5zdGFsbC1tYW51YWwjZG93bmxvYWRpbmctZGlzdHJpYnV0aW9ucw==">官方下载地址</span></li>
 <li>其它Linux地址<ul>
-<li>ArchWSL:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1azcvQXJjaFdTTA==">https://github.com/yuk7/ArchWSL</span> </li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1azcvQXJjaFdTTA==">ArchWSL</span></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>命令行安装<br>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
+<li><h3 id="命令行安装"><a href="#命令行安装" class="headerlink" title="命令行安装"></a>命令行安装</h3><p>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="WSL位置移动-可选"><a href="#WSL位置移动-可选" class="headerlink" title="WSL位置移动(可选)"></a>WSL位置移动(可选)</h2><blockquote>
-<p>这里使用LxRunOffline工具移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="WSL-位置移动-可选"><a href="#WSL-位置移动-可选" class="headerlink" title="WSL 位置移动(可选)"></a>WSL 位置移动(可选)</h2><blockquote>
+<p>这里使用LxRunOffline工具进行移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
 </blockquote>
-<p>简单使用, 解压压缩包然后在解压的软件目录处打开命令行, 就可以直接使用.<br>将解压目录添加到环境变量可全局使用.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">LxRunOffline <span class="built_in">move</span> <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
+<p>如果担心C盘空间不够可以把WSL的安装位置移动到其它盘.</p>
+<p>下载解压压缩包后, 在解压目录处打开命令行, 就可以运行以下命令了.</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="WSL2-优化配置"><a href="#WSL2-优化配置" class="headerlink" title="WSL2 优化配置"></a>WSL2 优化配置</h2><blockquote>
+<h2 id="WSL-2-优化配置-可选"><a href="#WSL-2-优化配置-可选" class="headerlink" title="WSL 2 优化配置(可选)"></a>WSL 2 优化配置(可选)</h2><blockquote>
 <p>配置文档官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvd3NsLWNvbmZpZyNjb25maWd1cmUtZ2xvYmFsLW9wdGlvbnMtd2l0aC13c2xjb25maWc=">🚪</span></p>
 </blockquote>
-<h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改 Windows 的<code>$home/.wslconfig</code>文件，没有则自己创建一个.</p>
-<p><strong>配置文件示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line"># 自定义 Linux 内核的绝对路径 (默认为默认的WSL)</span><br><span class="line">kernel=&lt;path&gt;</span><br><span class="line"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span><br><span class="line">memory=&lt;size&gt;</span><br><span class="line"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span><br><span class="line">swap=&lt;size&gt;</span><br><span class="line"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span><br><span class="line">swapFile=&lt;path&gt;</span><br><span class="line"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span><br><span class="line">localhostForwarding=&lt;bool&gt;</span><br><span class="line"></span><br><span class="line"># `&lt;path&gt;` 必须是带反斜杠的绝对路径，例如 `C:\\Users\\kernel`</span><br><span class="line"># `&lt;size&gt;` 必须在后面加上单位，例如 8 GB 或 512 MB</span><br></pre></td></tr></table></figure>
+<h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改Windows位于用户目录<code>%home%</code>下的<code>.wslconfig</code>文件，若没有则自己创建一个.</p>
+<p>ps:直接在资源管理器输入<code>%home%</code>按回车就可跳转, 若出错则是电脑环境变量没有配置好</p>
+<p><img data-src="https://i.loli.net/2021/08/12/Q6MjR8sqKba3BOZ.png"></p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>主要配置内存和交换内存, 其它可以不用管, 看自己电脑配置设置.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span><br><span class="line">memory=8GB</span><br><span class="line"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span><br><span class="line">swap=0</span><br><span class="line"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span><br><span class="line">swapFile=&lt;path&gt;</span><br><span class="line"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span><br><span class="line">localhostForwarding=true</span><br></pre></td></tr></table></figure>
 
-<p>配置文件好后关闭WSL重新进入即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
+<p>配置好文件后需要关闭WSL重新进入才会生效.</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-shutdown</span></span><br></pre></td></tr></table></figure>
 
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2>]]></content>
+
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
       <tags>
-        <tag>wsl</tag>
-        <tag>wsl2</tag>
+        <tag>WSL</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
-    <title>zsh + oh-my-zsh 的简易配置</title>
+    <title>zsh + oh-my-zsh 简易配置</title>
     <url>/posts/4bfebac1/</url>
-    <content><![CDATA[<blockquote>
-<p>环境: WSL2 KaileLinux</p>
-</blockquote>
-<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
+    <content><![CDATA[<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install zsh</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
 
 
 <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><table>
@@ -146,7 +167,7 @@
 <p>该方法只能解燃眉之急😂</p>
 </blockquote>
 <p>运行ping获取返回ip</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ping raw.githubusercontent.com </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ping raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
 
 <p>修改hosts文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
@@ -221,30 +242,33 @@
 
 <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d0aW5nL2F1dG9qdW1w">autojump</span></p>
 <blockquote>
-<p>快速跳转</p>
+<p>快速跳转目录</p>
 </blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/wting/autojump.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 跳转目录安装</span></span><br><span class="line"><span class="built_in">cd</span> autojump</span><br><span class="line">./install.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./uninstall.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/wting/autojump.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 跳转目录安装</span></span><br><span class="line"><span class="built_in">cd</span> autojump</span><br><span class="line">./install.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./uninstall.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">j &lt;部分目录名&gt;</span><br></pre></td></tr></table></figure>
 
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions</span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions</span><br><strong>极力推荐</strong></p>
 <blockquote>
-<p>历史命令灰色提示 </p>
+<p>历史命令灰色提示</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
 
 <p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhdWxpcmlzaC9naXQtb3Blbg==">git-open</span></p>
 <blockquote>
-<p>快速打开git</p>
+<p>浏览器快速打开git项目</p>
 </blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/paulirish/git-open.git <span class="variable">$ZSH_CUSTOM</span>/plugins/git-open</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/paulirish/git-open.git <span class="variable">$ZSH_CUSTOM</span>/plugins/git-open</span><br><span class="line"></span><br><span class="line"><span class="comment"># git仓库下运行打开</span></span><br><span class="line">git open</span><br></pre></td></tr></table></figure>
 
 
 
-<p><strong>配置插件</strong><br>注意：插件中间是以空格分开</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plugins=(git zsh-autosuggestions)</span><br></pre></td></tr></table></figure>
-
+<p><strong>配置插件</strong></p>
+<p><em>注意：插件中间是以空格分开</em></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plugins=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Config</category>
+      </categories>
       <tags>
-        <tag>wsl</tag>
+        <tag>Linux</tag>
         <tag>Terminal</tag>
       </tags>
   </entry>

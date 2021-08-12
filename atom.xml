@@ -6,7 +6,7 @@
   <link href="https://owq-1777.github.io/atom.xml" rel="self"/>
   
   <link href="https://owq-1777.github.io/"/>
-  <updated>2021-08-09T03:17:03.208Z</updated>
+  <updated>2021-08-12T09:49:28.703Z</updated>
   <id>https://owq-1777.github.io/</id>
   
   <author>
@@ -18,15 +18,17 @@
   
   <entry>
     <title>Test</title>
-    <link href="https://owq-1777.github.io/posts/3825/"/>
-    <id>https://owq-1777.github.io/posts/3825/</id>
+    <link href="https://owq-1777.github.io/posts/test/"/>
+    <id>https://owq-1777.github.io/posts/test/</id>
     <published>2021-08-03T16:10:34.000Z</published>
-    <updated>2021-08-09T03:17:03.208Z</updated>
+    <updated>2021-08-12T09:49:28.703Z</updated>
     
     
-    <summary type="html">md常用格式的渲染页面</summary>
+    <summary type="html">MD常用格式的渲染页面</summary>
     
     
+    
+    <category term="测试" scheme="https://owq-1777.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
     
     
     <category term="Other" scheme="https://owq-1777.github.io/tags/Other/"/>
@@ -38,41 +40,38 @@
     <link href="https://owq-1777.github.io/posts/1fe3c459/"/>
     <id>https://owq-1777.github.io/posts/1fe3c459/</id>
     <published>2021-07-15T14:13:58.000Z</published>
-    <updated>2021-08-07T14:23:16.120Z</updated>
+    <updated>2021-08-12T11:26:27.513Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;升级到WSL2&quot;&gt;&lt;a href=&quot;#升级到WSL2&quot; class=&quot;headerlink&quot; title=&quot;升级到WSL2&quot;&gt;&lt;/a&gt;升级到WSL2&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;WSL1 升级 WSL2 官方传送门 -&amp;gt; &lt;span</summary>
-        
-      
+    <summary type="html">WSL迭代到现在已经和Windows融为一体了, 让我们在Windows上启用Linux子系统, 开始愉快的无缝开发工作吧b(￣▽￣)d</summary>
     
     
     
+    <category term="教程" scheme="https://owq-1777.github.io/categories/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="wsl" scheme="https://owq-1777.github.io/tags/wsl/"/>
     
-    <category term="wsl2" scheme="https://owq-1777.github.io/tags/wsl2/"/>
+    <category term="WSL" scheme="https://owq-1777.github.io/tags/WSL/"/>
+    
+    <category term="Linux" scheme="https://owq-1777.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
-    <title>zsh + oh-my-zsh 的简易配置</title>
+    <title>zsh + oh-my-zsh 简易配置</title>
     <link href="https://owq-1777.github.io/posts/4bfebac1/"/>
     <id>https://owq-1777.github.io/posts/4bfebac1/</id>
     <published>2021-07-08T17:50:36.000Z</published>
-    <updated>2021-08-06T09:38:43.240Z</updated>
+    <updated>2021-08-12T12:40:02.413Z</updated>
     
     
-    <summary type="html">zsh安装oh-my-zsh快速配置</summary>
+    <summary type="html">做完终端是Linux下的zsh快捷配置命令记录</summary>
     
     
     
+    <category term="Config" scheme="https://owq-1777.github.io/categories/Config/"/>
     
-    <category term="wsl" scheme="https://owq-1777.github.io/tags/wsl/"/>
+    
+    <category term="Linux" scheme="https://owq-1777.github.io/tags/Linux/"/>
     
     <category term="Terminal" scheme="https://owq-1777.github.io/tags/Terminal/"/>
     
