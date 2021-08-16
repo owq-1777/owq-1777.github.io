@@ -4,7 +4,7 @@
     <title>优雅的使用WSL2-Kali桌面环境</title>
     <url>/posts/202281bd/</url>
     <content><![CDATA[<blockquote>
-<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
+<p>Win-KeX官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
 </blockquote>
 <h2 id="安装win-kex"><a href="#安装win-kex" class="headerlink" title="安装win-kex"></a>安装win-kex</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install kali-win-kex</span><br></pre></td></tr></table></figure>
 
@@ -34,7 +34,7 @@
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;576cd4fd-d6e2-4b99-9305-2e03a898af04&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Win-KeX&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;wsl -d kali-linux kex --esm --wtstart -s&quot;</span>,</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>设置别名</li>
+<li>设置命令别名</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> winkex=<span class="string">&#x27;kex --esm --ip -s&#x27;</span></span><br></pre></td></tr></table></figure>
 
