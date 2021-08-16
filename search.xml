@@ -248,8 +248,7 @@
 
 <p><strong>配置插件</strong></p>
 <p><em>注意：插件中间是以空格分开</em></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plugins=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>
-]]></content>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plugins=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Config</category>
       </categories>
