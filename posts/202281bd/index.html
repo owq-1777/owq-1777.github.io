@@ -25,17 +25,24 @@
     var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="爱编程, 懂设计, 喜折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny was born">
-<meta property="og:url" content="https://owq-1777.github.io/tags/Terminal/index.html">
+  <meta name="description" content="让我们在高分屏下用最舒服的姿势来使用WSL桌面环境吧^(*￣(oo)￣)^">
+<meta property="og:type" content="article">
+<meta property="og:title" content="优雅的使用WSL2-Kali桌面环境">
+<meta property="og:url" content="https://owq-1777.github.io/posts/202281bd/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="爱编程, 懂设计, 喜折腾">
+<meta property="og:description" content="让我们在高分屏下用最舒服的姿势来使用WSL桌面环境吧^(*￣(oo)￣)^">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/08/16/brmLSYtEOFvBypk.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/16/sM3KuCyPQkjitpD.png">
+<meta property="article:published_time" content="2021-08-16T16:25:28.000Z">
+<meta property="article:modified_time" content="2021-08-16T09:53:43.940Z">
 <meta property="article:author" content="OWQ">
+<meta property="article:tag" content="WSL2">
+<meta property="article:tag" content="Kali Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/08/16/brmLSYtEOFvBypk.png">
 
-<link rel="canonical" href="https://owq-1777.github.io/tags/Terminal/">
+<link rel="canonical" href="https://owq-1777.github.io/posts/202281bd/">
 
 
 <script id="page-configurations">
@@ -43,12 +50,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: Terminal | Sunny was born</title>
+  <title>优雅的使用WSL2-Kali桌面环境 | Sunny was born</title>
   
 
 
@@ -192,10 +199,54 @@
 
 <div id="signature">
   <div class="container">
-        <header class="site-heading">
-          <h1>Sunny was born</h1>
-          <span class="subheading">心中有丘壑，眉目作山河</span>
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>优雅的使用WSL2-Kali桌面环境</h1>
+          <h2 class="subheading">让我们在高分屏下用最舒服的姿势来使用WSL桌面环境吧^(*￣(oo)￣)^</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+            
+
+            <time title="创建时间：2021-08-16 16:25:28 / 修改时间：09:57:27" itemprop="dateCreated datePublished" datetime="2021-08-16T16:25:28Z">2021-08-16</time>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar-check"></i>
+            </span>
+            <span class="post-meta-item-text">Updated</span>
+            <time title="修改时间：2021-08-16 09:57:27" itemprop="dateModified" datetime="2021-08-16T17:57:27+08:00">2021-08-16</time>
+            
+          </span>
+
+
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>254</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>1 min</span>
+          </span>
+
+
         </header>
+
+      
 
   </div>
 </div>
@@ -232,53 +283,124 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Terminal
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owq-1777.github.io/posts/202281bd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
+</blockquote>
+<h2 id="安装win-kex"><a href="#安装win-kex" class="headerlink" title="安装win-kex"></a>安装win-kex</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install kali-win-kex</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动Win-Kex"><a href="#启动Win-Kex" class="headerlink" title="启动Win-Kex"></a>启动Win-Kex</h2><blockquote>
+<p>Win-KeX 有三种启动模式</p>
+</blockquote>
+<ul>
+<li><p>窗口模式<br>在专用窗口中启动 Kali Linux 桌面.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kex --win -s	</span><br></pre></td></tr></table></figure></li>
+<li><p>远程连接（推荐）<br>微软自带的远程桌面工具，用过的都说好~</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kex --esm --ip -s</span><br></pre></td></tr></table></figure></li>
+<li><p>无缝模式<br>在 Windows 和 Kali 应用程序和菜单之间共享 Windows 桌面.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kex --sl -s</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><em>注: 后面参数<code>-s</code>是启动声音支持.</em></p>
+<h2 id="高分屏下的使用"><a href="#高分屏下的使用" class="headerlink" title="高分屏下的使用"></a>高分屏下的使用</h2><blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy9nZW5lcmFsLXVzZS9oaWRwaS8=">🚪</span></p>
+</blockquote>
+<p>菜单搜索<code>hidpi</code>, 打开它</p>
+<p><img data-src="https://i.loli.net/2021/08/16/brmLSYtEOFvBypk.png"></p>
+<p>默认缩放2X, 点击<code>是</code>确认, 然后开始愉快的Linux之旅吧~</p>
+<p><img data-src="https://i.loli.net/2021/08/16/sM3KuCyPQkjitpD.png"></p>
+<p><em>注:如果要自定义缩放因子请参考官方文档</em></p>
+<h2 id="快捷启动"><a href="#快捷启动" class="headerlink" title="快捷启动"></a>快捷启动</h2><ul>
+<li>添加到<code>Windows Termial</code>启动</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;576cd4fd-d6e2-4b99-9305-2e03a898af04&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Win-KeX&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;wsl -d kali-linux kex --esm --wtstart -s&quot;</span>,</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置别名</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> winkex=<span class="string">&#x27;kex --esm --ip -s&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-08T17:50:36Z"
-              content="2021-07-08">
-          07-08
-        </time>
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px; margin: 15px 0;">------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</div>
+    
+</div>
       </div>
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/4bfebac1/" itemprop="url">
-            <span itemprop="name">zsh + oh-my-zsh 简易配置</span>
-          </a>
-      </div>
+    
+    
+    
+        
 
-    </header>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://owq-1777.github.io/posts/202281bd/" title="优雅的使用WSL2-Kali桌面环境">https://owq-1777.github.io/posts/202281bd/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/WSL2/" rel="tag"><i class="fa fa-tag"></i> WSL2</a>
+              <a href="/tags/Kali-Linux/" rel="tag"><i class="fa fa-tag"></i> Kali Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/posts/1fe3c459/" rel="next" title="WSL2 安装配置">
+      WSL2 安装配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
   
-
-  
-
 
 
           </div>
@@ -329,6 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85win-kex"><span class="nav-text">安装win-kex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8Win-Kex"><span class="nav-text">启动Win-Kex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E5%88%86%E5%B1%8F%E4%B8%8B%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">高分屏下的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E5%90%AF%E5%8A%A8"><span class="nav-text">快捷启动</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

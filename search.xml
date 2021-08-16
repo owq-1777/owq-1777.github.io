@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>优雅的使用WSL2-Kali桌面环境</title>
+    <url>/posts/202281bd/</url>
+    <content><![CDATA[<blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
+</blockquote>
+<h2 id="安装win-kex"><a href="#安装win-kex" class="headerlink" title="安装win-kex"></a>安装win-kex</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install kali-win-kex</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动Win-Kex"><a href="#启动Win-Kex" class="headerlink" title="启动Win-Kex"></a>启动Win-Kex</h2><blockquote>
+<p>Win-KeX 有三种启动模式</p>
+</blockquote>
+<ul>
+<li><p>窗口模式<br>在专用窗口中启动 Kali Linux 桌面.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --win -s	</span><br></pre></td></tr></table></figure></li>
+<li><p>远程连接（推荐）<br>微软自带的远程桌面工具，用过的都说好~</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --esm --ip -s</span><br></pre></td></tr></table></figure></li>
+<li><p>无缝模式<br>在 Windows 和 Kali 应用程序和菜单之间共享 Windows 桌面.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kex --sl -s</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><em>注: 后面参数<code>-s</code>是启动声音支持.</em></p>
+<h2 id="高分屏下的使用"><a href="#高分屏下的使用" class="headerlink" title="高分屏下的使用"></a>高分屏下的使用</h2><blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy9nZW5lcmFsLXVzZS9oaWRwaS8=">🚪</span></p>
+</blockquote>
+<p>菜单搜索<code>hidpi</code>, 打开它</p>
+<p><img data-src="https://i.loli.net/2021/08/16/brmLSYtEOFvBypk.png"></p>
+<p>默认缩放2X, 点击<code>是</code>确认, 然后开始愉快的Linux之旅吧~</p>
+<p><img data-src="https://i.loli.net/2021/08/16/sM3KuCyPQkjitpD.png"></p>
+<p><em>注:如果要自定义缩放因子请参考官方文档</em></p>
+<h2 id="快捷启动"><a href="#快捷启动" class="headerlink" title="快捷启动"></a>快捷启动</h2><ul>
+<li>添加到<code>Windows Termial</code>启动</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;576cd4fd-d6e2-4b99-9305-2e03a898af04&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Win-KeX&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;wsl -d kali-linux kex --esm --wtstart -s&quot;</span>,</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置别名</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> winkex=<span class="string">&#x27;kex --esm --ip -s&#x27;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>配置</category>
+      </categories>
+      <tags>
+        <tag>WSL2</tag>
+        <tag>Kali Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WSL2 安装配置</title>
     <url>/posts/1fe3c459/</url>
     <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
