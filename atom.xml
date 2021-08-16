@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Sunny was born</title>
-  <icon>https://118.31.228.61/icon.png</icon>
+  <icon>http://118.31.228.61/icon.png</icon>
   <subtitle>心中有丘壑，眉目作山河</subtitle>
-  <link href="https://118.31.228.61/atom.xml" rel="self"/>
+  <link href="http://118.31.228.61/atom.xml" rel="self"/>
   
-  <link href="https://118.31.228.61/"/>
+  <link href="http://118.31.228.61/"/>
   <updated>2021-08-16T10:05:09.240Z</updated>
-  <id>https://118.31.228.61/</id>
+  <id>http://118.31.228.61/</id>
   
   <author>
     <name>OWQ</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>优雅的使用WSL2-Kali桌面环境</title>
-    <link href="https://118.31.228.61/posts/202281bd/"/>
-    <id>https://118.31.228.61/posts/202281bd/</id>
+    <link href="http://118.31.228.61/posts/202281bd/"/>
+    <id>http://118.31.228.61/posts/202281bd/</id>
     <published>2021-08-16T16:25:28.000Z</published>
     <updated>2021-08-16T10:05:09.240Z</updated>
     
@@ -28,19 +28,19 @@
     
     
     
-    <category term="配置" scheme="https://118.31.228.61/categories/%E9%85%8D%E7%BD%AE/"/>
+    <category term="配置" scheme="http://118.31.228.61/categories/%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="WSL2" scheme="https://118.31.228.61/tags/WSL2/"/>
+    <category term="WSL2" scheme="http://118.31.228.61/tags/WSL2/"/>
     
-    <category term="Kali Linux" scheme="https://118.31.228.61/tags/Kali-Linux/"/>
+    <category term="Kali Linux" scheme="http://118.31.228.61/tags/Kali-Linux/"/>
     
   </entry>
   
   <entry>
     <title>WSL2 安装配置</title>
-    <link href="https://118.31.228.61/posts/1fe3c459/"/>
-    <id>https://118.31.228.61/posts/1fe3c459/</id>
+    <link href="http://118.31.228.61/posts/1fe3c459/"/>
+    <id>http://118.31.228.61/posts/1fe3c459/</id>
     <published>2021-07-15T14:13:58.000Z</published>
     <updated>2021-08-12T11:26:27.513Z</updated>
     
@@ -49,19 +49,19 @@
     
     
     
-    <category term="教程" scheme="https://118.31.228.61/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://118.31.228.61/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="WSL" scheme="https://118.31.228.61/tags/WSL/"/>
+    <category term="WSL" scheme="http://118.31.228.61/tags/WSL/"/>
     
-    <category term="Linux" scheme="https://118.31.228.61/tags/Linux/"/>
+    <category term="Linux" scheme="http://118.31.228.61/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>zsh + oh-my-zsh 简易配置</title>
-    <link href="https://118.31.228.61/posts/4bfebac1/"/>
-    <id>https://118.31.228.61/posts/4bfebac1/</id>
+    <link href="http://118.31.228.61/posts/4bfebac1/"/>
+    <id>http://118.31.228.61/posts/4bfebac1/</id>
     <published>2021-07-08T17:50:36.000Z</published>
     <updated>2021-08-16T13:10:16.820Z</updated>
     
@@ -70,12 +70,12 @@
     
     
     
-    <category term="Config" scheme="https://118.31.228.61/categories/Config/"/>
+    <category term="Config" scheme="http://118.31.228.61/categories/Config/"/>
     
     
-    <category term="Linux" scheme="https://118.31.228.61/tags/Linux/"/>
+    <category term="Linux" scheme="http://118.31.228.61/tags/Linux/"/>
     
-    <category term="Terminal" scheme="https://118.31.228.61/tags/Terminal/"/>
+    <category term="Terminal" scheme="http://118.31.228.61/tags/Terminal/"/>
     
   </entry>
   
