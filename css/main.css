@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a4501c;
+  background: #2bffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1708,9 +1708,9 @@ pre .javascript .function {
   }
 }
 .reading-progress-bar {
-  background: ;
+  background: #37c6c0;
   display: block;
-  height: 2px;
+  height: 3px;
   left: 0;
   position: fixed;
   width: 0;
@@ -2818,9 +2818,6 @@ code {
   background: none;
   color: #d63252;
 }
-.reading-progress-bar {
-  background: #64a0e6;
-}
 .highlight-container {
   margin-bottom: 35px;
 }
@@ -2927,7 +2924,7 @@ body {
   width: 100%;
   height: 2px;
   position: fixed;
-  background: #777;
+  background: #555;
   z-index: 9;
 }
 .header {
@@ -3077,7 +3074,6 @@ body {
   width: 100%;
   height: 100%;
   background: center center/cover no-repeat scroll #808080;
-  animation: show 0.5s forwards;
 }
 .site-nav-toggle .toggle .toggle-line,
 .site-nav-right .toggle .toggle-line {
@@ -3113,10 +3109,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: dot-flash 1s reverse 1 ease-in-out;
+  animation: dot-flash 0.8s reverse 1 ease-in-out;
 }
 .header-bg {
-  animation: dot-flash 0.1s reverse 1 ease-in-out;
+  animation: dot-flash 0.6s reverse 1 ease-in-out;
 }
 .post-heading,
 .site-heading {

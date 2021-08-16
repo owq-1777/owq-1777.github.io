@@ -1,67 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Test</title>
-    <url>/posts/test/</url>
-    <content><![CDATA[<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><blockquote>
-<p>引用</p>
-</blockquote>
-<p>加粗: <strong>重点</strong></p>
-<p>加斜: <em>温馨提示</em></p>
-<p>代码块: <code>ddcp</code></p>
-<p>删除: <del>18🈲</del></p>
-<p>超链接: <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ2h4aS5jb20v">果壳</span></p>
-<p>🧓👼🙄😶😴</p>
-<hr>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img data-src="https://i.loli.net/2021/08/03/ZtwnsAa7BrNI2gX.png"></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-</ul>
-<hr>
-<ol>
-<li>一</li>
-<li>二</li>
-<li>三</li>
-</ol>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Hello hexo&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> No such file or directory: <span class="string">&#x27;curl-config&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装通用包</span></span><br><span class="line">sudo apt-get install libssl-dev libcurl4-openssl-dev python3-dev</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> invalid <span class="built_in">command</span> <span class="string">&#x27;bdist_wheel&#x27;</span></span></span><br><span class="line">pip3 install wheel</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">昵称</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1</td>
-<td align="left">老三</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">老四</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">老五</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>Other</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WSL2 安装配置</title>
     <url>/posts/1fe3c459/</url>
     <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
