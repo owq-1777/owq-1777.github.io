@@ -135,45 +135,44 @@
 </thead>
 <tbody><tr>
 <td><strong>curl</strong></td>
-<td>sh -c “$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
+<td>sh -c &quot;$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 <tr>
 <td><strong>wget</strong></td>
-<td>sh -c “$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
+<td>sh -c &quot;$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 <tr>
 <td><strong>fetch</strong></td>
-<td>sh -c “$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
+<td>sh -c &quot;$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
 </tr>
 </tbody></table>
-<h2 id="连接被墙问题"><a href="#连接被墙问题" class="headerlink" title="连接被墙问题"></a>连接被墙问题</h2><h3 id="方法一：科学上网"><a href="#方法一：科学上网" class="headerlink" title="方法一：科学上网"></a>方法一：<del>科学上网</del></h3><blockquote>
+<h2 id="连接被墙问题"><a href="#连接被墙问题" class="headerlink" title="连接被墙问题"></a>连接被墙问题</h2><h3 id="方法一-科学上网"><a href="#方法一-科学上网" class="headerlink" title="方法一: 科学上网"></a>方法一: <del>科学上网</del></h3><blockquote>
 <p>只可意会不可言传🐕</p>
 </blockquote>
-<h3 id="方法二：修改hosts"><a href="#方法二：修改hosts" class="headerlink" title="方法二：修改hosts"></a>方法二：修改hosts</h3><blockquote>
-<p>该方法只能解燃眉之急😂</p>
+<h3 id="方法二-加速ssh登录"><a href="#方法二-加速ssh登录" class="headerlink" title="方法二: 加速ssh登录"></a>方法二: 加速ssh登录</h3><blockquote>
+<p>适用于阿里云服务器😶</p>
 </blockquote>
-<p>运行ping获取返回ip</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ping raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
+<p>修改 <code>/etc/ssh/ssh_config</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/ssh_config</span><br></pre></td></tr></table></figure>
 
-<p>修改hosts文件</p>
+<p>取消以下行的注释</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># GSSAPIAuthentication no</span><br></pre></td></tr></table></figure>
+
+<p>没有生效可以重启下sshd服务器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/etc/init.d/sshd restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法三-映射hosts"><a href="#方法三-映射hosts" class="headerlink" title="方法三: 映射hosts"></a>方法三: 映射hosts</h3><blockquote>
+<p>死马当活马医😂</p>
+</blockquote>
+<p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBhZGRyZXNzLmNvbS8=">https://www.ipaddress.com/</span> 获取域名的映射IP</p>
+<p><img data-src="https://i.loli.net/2021/08/16/v75LtJBaPjToRZ6.png"></p>
+<p>修改<code>hosts</code>文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
 
-<p>添加对应ip映射即可</p>
+<p>添加对应的ip映射即可</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">185.199.108.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h2><p>修改<code>~/.zshrc</code>配置文件</p>
-<p><strong>快速添加sudo</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># EscEsc to sudo</span><br><span class="line">bindkey -s &#x27;\e\e&#x27; &#x27;\C-asudo \C-e&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><strong>WSL2下的代理配置</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Proxy config</span><br><span class="line">export hostip=$(cat /etc/resolv.conf | grep -oP &#x27;(?&lt;=nameserver\ ).*&#x27;)</span><br><span class="line">alias proxyon=&#x27;export https_proxy=&quot;http://$&#123;hostip&#125;:7890&quot; &amp;&amp; export http_proxy=&quot;http://$&#123;hostip&#125;:7890&quot; &amp;&amp; export all_proxy=&quot;socks5://$&#123;hostip&#125;:7890&quot;&#x27;</span><br><span class="line">alias unproxy=&#x27;unset http_proxy &amp;&amp; unset https_proxy &amp;&amp; unset all_proxy&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><strong>常用别名设置</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># git log</span><br><span class="line">alias glog=&#x27;git log --graph --pretty=oneline --abbrev-commit&#x27;</span><br><span class="line"></span><br><span class="line"># ls -al</span><br><span class="line">alias ll=ls -al --show-control-chars --color $*</span><br><span class="line"></span><br><span class="line"># Other alias config</span><br><span class="line">alias ipython=&#x27;ipython3&#x27;</span><br><span class="line">alias npm=&#x27;sudo npm&#x27;</span><br><span class="line">alias typora=&#x27;typora.exe&#x27;</span><br></pre></td></tr></table></figure>
-
-
 
 <h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><blockquote>
 <p>主题文件位于 <code>.oh-my-zsh/themes</code> 目录下，可自定义修改</p>
@@ -205,6 +204,16 @@
 </blockquote>
 <p><strong>安装powerline字体</strong></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install fonts-powerline</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h2><p>修改<code>~/.zshrc</code>配置文件</p>
+<p><strong>快速添加sudo</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># EscEsc to sudo</span><br><span class="line">bindkey -s &#x27;\e\e&#x27; &#x27;\C-asudo \C-e&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>WSL2下的代理配置</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Proxy config</span><br><span class="line">export hostip=$(cat /etc/resolv.conf | grep -oP &#x27;(?&lt;=nameserver\ ).*&#x27;)</span><br><span class="line">alias proxyon=&#x27;export https_proxy=&quot;http://$&#123;hostip&#125;:7890&quot; &amp;&amp; export http_proxy=&quot;http://$&#123;hostip&#125;:7890&quot; &amp;&amp; export all_proxy=&quot;socks5://$&#123;hostip&#125;:7890&quot;&#x27;</span><br><span class="line">alias unproxy=&#x27;unset http_proxy &amp;&amp; unset https_proxy &amp;&amp; unset all_proxy&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>常用别名设置</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># git log</span><br><span class="line">alias glog=&#x27;git log --graph --pretty=oneline --abbrev-commit&#x27;</span><br><span class="line"></span><br><span class="line"># ls -al</span><br><span class="line">alias ll=ls -al --show-control-chars --color $*</span><br><span class="line"></span><br><span class="line"># Other alias config</span><br><span class="line">alias ipython=&#x27;ipython3&#x27;</span><br><span class="line">alias npm=&#x27;sudo npm&#x27;</span><br><span class="line">alias typora=&#x27;typora.exe&#x27;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -248,7 +257,9 @@
 
 <p><strong>配置插件</strong></p>
 <p><em>注意：插件中间是以空格分开</em></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plugins=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plugins=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
         <category>Config</category>
       </categories>

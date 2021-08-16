@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2bffff;
+  background: #ffff0e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2900,6 +2900,13 @@ body {
 .sidebar-nav li,
 .post-toc {
   font-weight: bold;
+}
+blockquote {
+  padding: 5px 15px;
+  margin: 0 0 10px 0;
+}
+blockquote p {
+  margin: 0;
 }
 #live2d-widget:after {
   content: '';
