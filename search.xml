@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo 服务器部署超详细踩坑教程</title>
+    <title>Hexo 服务器部署踩坑记录</title>
     <url>/e823826f/</url>
     <content><![CDATA[<blockquote>
 <p>Hexo 部署方式有很多, 这里选择是默认的 Git 一键部署方式.<br>前提条件: 搭建好的 Hexo 本地环境, 具有公网IP的服务器, 具备ssh连接知识.</p>
@@ -41,7 +41,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用git用户需要进行切换</span></span><br><span class="line">su git</span><br><span class="line"></span><br><span class="line">mkdir ~/.ssh &amp;&amp; chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
 
 <p>创建 <code>authorized_keys </code> 文件, 将本机公钥复制到里面.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.ssh/authorized_keys	</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 
 <p>修改权限</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
@@ -90,7 +90,7 @@
 
 
 <h2 id="本地部署配置"><a href="#本地部署配置" class="headerlink" title="本地部署配置"></a>本地部署配置</h2><blockquote>
-<p>部署插件项目 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">🚪</span> </p>
+<p>部署插件项目 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">🚪</span></p>
 </blockquote>
 <p><strong>修改站点目录下<code>_config.yml</code>文件</strong></p>
 <h3 id="单个存储部署配置"><a href="#单个存储部署配置" class="headerlink" title="单个存储部署配置"></a>单个存储部署配置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@8.8.8.8:/var/repo/blog.git</span><br></pre></td></tr></table></figure>
@@ -101,11 +101,6 @@
 
 
 <h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清除缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一键部署</span></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 ]]></content>
       <categories>
         <category>技术记录</category>
