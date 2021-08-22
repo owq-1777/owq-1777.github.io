@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo 服务器部署超详细踩坑教程</title>
-    <url>/posts/e823826f/</url>
+    <url>/e823826f/</url>
     <content><![CDATA[<blockquote>
 <p>Hexo 部署方式有很多, 这里选择是默认的 Git 一键部署方式.<br>前提条件: 搭建好的 Hexo 本地环境, 具有公网IP的服务器, 具备ssh连接知识.</p>
 </blockquote>
@@ -118,7 +118,7 @@
   </entry>
   <entry>
     <title>优雅的使用WSL2-Kali桌面环境</title>
-    <url>/posts/202281bd/</url>
+    <url>/202281bd/</url>
     <content><![CDATA[<blockquote>
 <p>Win-KeX官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
 </blockquote>
@@ -165,7 +165,7 @@
   </entry>
   <entry>
     <title>WSL2 安装配置</title>
-    <url>/posts/1fe3c459/</url>
+    <url>/1fe3c459/</url>
     <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
 <p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
 </blockquote>
@@ -237,7 +237,7 @@
   </entry>
   <entry>
     <title>WSL2 安装配置</title>
-    <url>/posts/1fe3c459/</url>
+    <url>/1fe3c459/</url>
     <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
 <p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
 </blockquote>
@@ -308,7 +308,7 @@
   </entry>
   <entry>
     <title>zsh + oh-my-zsh 简易配置</title>
-    <url>/posts/4bfebac1/</url>
+    <url>/4bfebac1/</url>
     <content><![CDATA[<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install zsh</span><br></pre></td></tr></table></figure>
 
@@ -457,7 +457,7 @@
   </entry>
   <entry>
     <title>MariaDB 安装图文教程</title>
-    <url>/posts/9ec13a7e/</url>
+    <url>/9ec13a7e/</url>
     <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>对于初学者, 只需要知道以下几点就行了</p>
 <ul>
 <li><p>MariaDB 是开源软件</p>
@@ -508,7 +508,7 @@
   </entry>
   <entry>
     <title>Python 开发环境搭建萌新教程</title>
-    <url>/posts/958bc56b/</url>
+    <url>/958bc56b/</url>
     <content><![CDATA[<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMv">官网下载</span>, 刚开始学习的话直接下载最新版本的就行了</p>
 <p><img data-src="https://i.loli.net/2020/12/14/In5w1JRT84x6r9F.png"></p>
 <p>默认下载为64位版本就行了 要下载32位请跳转<span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMvd2luZG93cy8=">详细页面下载</span></p>
@@ -552,7 +552,7 @@
   </entry>
   <entry>
     <title>Java 开发环境搭建萌新教程</title>
-    <url>/posts/46118abd/</url>
+    <url>/46118abd/</url>
     <content><![CDATA[<blockquote>
 <p> 用最实用的方法来解决问题。<br>该教程不是用安装程序安装，而是通过设置环境变量，来实现基础Java环境搭建。</p>
 </blockquote>
@@ -634,7 +634,7 @@
   </entry>
   <entry>
     <title>docker 命令</title>
-    <url>/posts/docker/</url>
+    <url>/docker/</url>
     <content><![CDATA[<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;https://registry.docker-cn.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">&quot;insecure-registries&quot;</span>: [],</span><br><span class="line">  <span class="attr">&quot;debug&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;experimental&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;features&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;buildkit&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker version		<span class="comment"># 版本信息</span></span><br><span class="line">docker info		<span class="comment"># 系统信息</span></span><br><span class="line">docker &lt;order&gt; --<span class="built_in">help</span>	<span class="comment"># 帮助命令</span></span><br></pre></td></tr></table></figure>
@@ -683,7 +683,7 @@
   </entry>
   <entry>
     <title>git 命令</title>
-    <url>/posts/git/</url>
+    <url>/git/</url>
     <content><![CDATA[<h2 id="配置命令"><a href="#配置命令" class="headerlink" title="配置命令"></a>配置命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config user.name &lt;name&gt;</span><br><span class="line">git config user.email &lt;email&gt;</span><br><span class="line">git config --global user.name &lt;name&gt;	<span class="comment"># 配置全局用户名</span></span><br><span class="line">git config --global user.email &lt;email&gt;	<span class="comment"># 配置全局邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 颜色标识（默认开启）</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看配置</span></span><br><span class="line">git config list</span><br></pre></td></tr></table></figure>
 
 
@@ -708,7 +708,7 @@
   </entry>
   <entry>
     <title>pacman 命令</title>
-    <url>/posts/pacman/</url>
+    <url>/pacman/</url>
     <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 升级整个系统，-y 更新数据库, -yy 强制更新, -u是升级软件</span></span><br><span class="line">pacman -Syu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除软件缓存，即/var/cache/pacman/pkg目录下的文件</span></span><br><span class="line">pacman -Sc</span><br></pre></td></tr></table></figure>
 
 
@@ -737,7 +737,7 @@
   </entry>
   <entry>
     <title>pip 命令</title>
-    <url>/posts/pip/</url>
+    <url>/pip/</url>
     <content><![CDATA[<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip list			# 显示已安装的库</span><br><span class="line">pip list -o			# 显示已过时的库</span><br><span class="line">pip show &lt;library&gt;		# 显示库信息</span><br><span class="line">pip install &lt;library&gt;		# 安装库</span><br><span class="line">pip install -U &lt;library&gt;	# 更新库</span><br><span class="line">pip uninstall &lt;library&gt;		# 卸载库</span><br><span class="line">pip check &lt;library&gt;		# 检查依赖</span><br><span class="line">pip [cmd] -h			# 显示帮助</span><br><span class="line"></span><br><span class="line"># 生成已按照包列表文件</span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"></span><br><span class="line"># 安装文件内所有包</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line"># 设置默认使用pip3</span><br><span class="line">pip3 intall --upgrade pip</span><br></pre></td></tr></table></figure>
 
 
@@ -758,7 +758,7 @@
   </entry>
   <entry>
     <title>systemctl 命令</title>
-    <url>/posts/systemctl/</url>
+    <url>/systemctl/</url>
     <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start &lt;servicename&gt;    	<span class="comment"># 启动服务</span></span><br><span class="line">systemctl stop &lt;servicename&gt;     	<span class="comment"># 关闭服务</span></span><br><span class="line">systemctl restart &lt;servicename&gt;		<span class="comment"># 重启服务</span></span><br><span class="line">systemctl reload &lt;servicename&gt;    	<span class="comment"># 重新加载配置文件</span></span><br><span class="line">systemctl status &lt;servicename&gt;    	<span class="comment"># 查看服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的配置文件</span></span><br><span class="line">systemctl cat &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有服务的状态</span></span><br><span class="line">systemctl -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前系统服务状态</span></span><br><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出服务的依赖关系</span></span><br><span class="line">systemctl list-dependencies &lt;servicename&gt;  </span><br></pre></td></tr></table></figure>
 
 

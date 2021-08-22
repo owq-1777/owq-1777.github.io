@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hexo 服务器部署超详细踩坑教程</title>
-    <link href="https://owq.world/posts/e823826f/"/>
-    <id>https://owq.world/posts/e823826f/</id>
+    <link href="https://owq.world/e823826f/"/>
+    <id>https://owq.world/e823826f/</id>
     <published>2021-08-20T11:24:33.000Z</published>
     <updated>2021-08-22T15:26:30.674Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>优雅的使用WSL2-Kali桌面环境</title>
-    <link href="https://owq.world/posts/202281bd/"/>
-    <id>https://owq.world/posts/202281bd/</id>
+    <link href="https://owq.world/202281bd/"/>
+    <id>https://owq.world/202281bd/</id>
     <published>2021-08-16T16:25:28.000Z</published>
     <updated>2021-08-22T15:26:30.674Z</updated>
     
@@ -62,8 +62,8 @@
   
   <entry>
     <title>WSL2 安装配置</title>
-    <link href="https://owq.world/posts/1fe3c459/"/>
-    <id>https://owq.world/posts/1fe3c459/</id>
+    <link href="https://owq.world/1fe3c459/"/>
+    <id>https://owq.world/1fe3c459/</id>
     <published>2021-07-15T14:13:58.000Z</published>
     <updated>2021-08-22T15:26:30.674Z</updated>
     
@@ -83,8 +83,8 @@
   
   <entry>
     <title>WSL2 安装配置</title>
-    <link href="https://owq.world/posts/1fe3c459/"/>
-    <id>https://owq.world/posts/1fe3c459/</id>
+    <link href="https://owq.world/1fe3c459/"/>
+    <id>https://owq.world/1fe3c459/</id>
     <published>2021-07-15T14:13:58.000Z</published>
     <updated>2021-08-22T15:26:30.674Z</updated>
     
@@ -104,8 +104,8 @@
   
   <entry>
     <title>zsh + oh-my-zsh 简易配置</title>
-    <link href="https://owq.world/posts/4bfebac1/"/>
-    <id>https://owq.world/posts/4bfebac1/</id>
+    <link href="https://owq.world/4bfebac1/"/>
+    <id>https://owq.world/4bfebac1/</id>
     <published>2021-07-08T17:50:36.000Z</published>
     <updated>2021-08-22T15:26:30.674Z</updated>
     
@@ -125,8 +125,8 @@
   
   <entry>
     <title>MariaDB 安装图文教程</title>
-    <link href="https://owq.world/posts/9ec13a7e/"/>
-    <id>https://owq.world/posts/9ec13a7e/</id>
+    <link href="https://owq.world/9ec13a7e/"/>
+    <id>https://owq.world/9ec13a7e/</id>
     <published>2021-01-22T10:50:42.000Z</published>
     <updated>2021-08-22T15:26:30.674Z</updated>
     
@@ -146,8 +146,8 @@
   
   <entry>
     <title>Python 开发环境搭建萌新教程</title>
-    <link href="https://owq.world/posts/958bc56b/"/>
-    <id>https://owq.world/posts/958bc56b/</id>
+    <link href="https://owq.world/958bc56b/"/>
+    <id>https://owq.world/958bc56b/</id>
     <published>2021-01-20T10:40:37.000Z</published>
     <updated>2021-08-22T15:26:30.674Z</updated>
     
@@ -167,8 +167,8 @@
   
   <entry>
     <title>Java 开发环境搭建萌新教程</title>
-    <link href="https://owq.world/posts/46118abd/"/>
-    <id>https://owq.world/posts/46118abd/</id>
+    <link href="https://owq.world/46118abd/"/>
+    <id>https://owq.world/46118abd/</id>
     <published>2021-01-19T18:35:31.000Z</published>
     <updated>2021-01-19T00:00:00.000Z</updated>
     
@@ -188,8 +188,8 @@
   
   <entry>
     <title>docker 命令</title>
-    <link href="https://owq.world/posts/docker/"/>
-    <id>https://owq.world/posts/docker/</id>
+    <link href="https://owq.world/docker/"/>
+    <id>https://owq.world/docker/</id>
     <published>2020-06-01T00:00:00.000Z</published>
     <updated>2021-08-22T18:22:58.234Z</updated>
     
@@ -207,8 +207,8 @@
   
   <entry>
     <title>git 命令</title>
-    <link href="https://owq.world/posts/git/"/>
-    <id>https://owq.world/posts/git/</id>
+    <link href="https://owq.world/git/"/>
+    <id>https://owq.world/git/</id>
     <published>2020-06-01T00:00:00.000Z</published>
     <updated>2021-08-22T18:22:55.504Z</updated>
     
@@ -226,8 +226,8 @@
   
   <entry>
     <title>pacman 命令</title>
-    <link href="https://owq.world/posts/pacman/"/>
-    <id>https://owq.world/posts/pacman/</id>
+    <link href="https://owq.world/pacman/"/>
+    <id>https://owq.world/pacman/</id>
     <published>2020-06-01T00:00:00.000Z</published>
     <updated>2021-08-22T18:23:34.934Z</updated>
     
@@ -245,8 +245,8 @@
   
   <entry>
     <title>pip 命令</title>
-    <link href="https://owq.world/posts/pip/"/>
-    <id>https://owq.world/posts/pip/</id>
+    <link href="https://owq.world/pip/"/>
+    <id>https://owq.world/pip/</id>
     <published>2020-06-01T00:00:00.000Z</published>
     <updated>2021-08-22T18:23:07.464Z</updated>
     
@@ -264,8 +264,8 @@
   
   <entry>
     <title>systemctl 命令</title>
-    <link href="https://owq.world/posts/systemctl/"/>
-    <id>https://owq.world/posts/systemctl/</id>
+    <link href="https://owq.world/systemctl/"/>
+    <id>https://owq.world/systemctl/</id>
     <published>2020-06-01T00:00:00.000Z</published>
     <updated>2021-08-22T18:23:57.484Z</updated>
     

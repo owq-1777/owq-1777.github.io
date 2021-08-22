@@ -25,20 +25,20 @@
     var CONFIG = {"hostname":"owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="📖 pip 命令文档">
+  <meta name="description" content="📖 pacman 命令文档，Arch Linux大法好o(*￣▽￣*)ブ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pip 命令">
-<meta property="og:url" content="https://owq.world/posts/pip/index.html">
+<meta property="og:title" content="pacman 命令">
+<meta property="og:url" content="https://owq.world/pacman/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="📖 pip 命令文档">
+<meta property="og:description" content="📖 pacman 命令文档，Arch Linux大法好o(*￣▽￣*)ブ">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-08-22T18:23:07.464Z">
+<meta property="article:modified_time" content="2021-08-22T18:23:34.934Z">
 <meta property="article:author" content="OWQ">
-<meta property="article:tag" content="pip">
+<meta property="article:tag" content="ArchLinux">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://owq.world/posts/pip/">
+<link rel="canonical" href="https://owq.world/pacman/">
 
 
 <script id="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>pip 命令 | Sunny was born</title>
+  <title>pacman 命令 | Sunny was born</title>
   
 
 
@@ -198,8 +198,8 @@
         <header class="post-heading">
           <div class="tags">
           </div>
-          <h1>pip 命令</h1>
-          <h2 class="subheading">📖 pip 命令文档</h2>
+          <h1>pacman 命令</h1>
+          <h2 class="subheading">📖 pacman 命令文档，Arch Linux大法好o(*￣▽￣*)ブ</h2>
 
           <span class="post-meta-item">
             <span class="post-meta-item-icon">
@@ -216,7 +216,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-08-22 18:35:46" itemprop="dateModified" datetime="2021-08-23T02:35:46+08:00">2021-08-22</time>
+            <time title="修改时间：2021-08-22 18:36:50" itemprop="dateModified" datetime="2021-08-23T02:36:50+08:00">2021-08-22</time>
             
           </span>
 
@@ -228,7 +228,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>9</span>
+            <span>12</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -286,7 +286,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://owq.world/posts/pip/">
+    <link itemprop="mainEntityOfPage" href="https://owq.world/pacman/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
@@ -304,15 +304,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">pip list			# 显示已安装的库</span><br><span class="line">pip list -o			# 显示已过时的库</span><br><span class="line">pip show &lt;library&gt;		# 显示库信息</span><br><span class="line">pip install &lt;library&gt;		# 安装库</span><br><span class="line">pip install -U &lt;library&gt;	# 更新库</span><br><span class="line">pip uninstall &lt;library&gt;		# 卸载库</span><br><span class="line">pip check &lt;library&gt;		# 检查依赖</span><br><span class="line">pip [cmd] -h			# 显示帮助</span><br><span class="line"></span><br><span class="line"># 生成已按照包列表文件</span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"></span><br><span class="line"># 安装文件内所有包</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line"># 设置默认使用pip3</span><br><span class="line">pip3 intall --upgrade pip</span><br></pre></td></tr></table></figure>
+        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 升级整个系统，-y 更新数据库, -yy 强制更新, -u是升级软件</span></span><br><span class="line">pacman -Syu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除软件缓存，即/var/cache/pacman/pkg目录下的文件</span></span><br><span class="line">pacman -Sc</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 临时使用 -i</span><br><span class="line">pip install [module] -i https://pypi.org/simple</span><br><span class="line"></span><br><span class="line"># 永久配置</span><br><span class="line"># 清华源</span><br><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"># 阿里源</span><br><span class="line"> pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"># 腾讯源</span><br><span class="line">pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple</span><br><span class="line"># 豆瓣源</span><br><span class="line">pip config set global.index-url http://pypi.douban.com/simple/</span><br><span class="line"># 官方源</span><br><span class="line">pip config set global.index-url https://pypi.org/simple</span><br></pre></td></tr></table></figure>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在包数据库中查询软件</span></span><br><span class="line">pacman -Ss &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示软件的详细信息</span></span><br><span class="line">pacman -Si &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询已安装的软件包</span></span><br><span class="line">pacman -Qs &lt;package&gt;</span><br><span class="line"><span class="comment"># 查询本地安装包的详细信息</span></span><br><span class="line">pacman -Qi &lt;package&gt;</span><br><span class="line"><span class="comment"># 获取已安装软件所包含的文件的列表</span></span><br><span class="line">pacman -Ql &lt;package&gt;	</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">apt install python3-pip</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line">pacman -S &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装不同仓库中的版本</span></span><br><span class="line">pacman -S &lt;extra&gt;/&lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从本地文件安装</span></span><br><span class="line">pacman -U package.tar.zx</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除单个软件</span></span><br><span class="line">pacman -R &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定软件及其没有被其他已安装软件使用的依赖关系</span></span><br><span class="line">pacman -Rs &lt;package&gt; </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示软件的依赖树</span></span><br><span class="line">pactree &lt;package&gt;  </span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -337,7 +345,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://owq.world/posts/pip/" title="pip 命令">https://owq.world/posts/pip/</a>
+    <a href="https://owq.world/pacman/" title="pacman 命令">https://owq.world/pacman/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -349,7 +357,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/pip/" rel="tag"><i class="fa fa-tag"></i> pip</a>
+              <a href="/tags/ArchLinux/" rel="tag"><i class="fa fa-tag"></i> ArchLinux</a>
           </div>
 
         
@@ -358,12 +366,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/pacman/" rel="prev" title="pacman 命令">
-      <i class="fa fa-chevron-left"></i> pacman 命令
+    <a href="/git/" rel="prev" title="git 命令">
+      <i class="fa fa-chevron-left"></i> git 命令
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/systemctl/" rel="next" title="systemctl 命令">
-      systemctl 命令 <i class="fa fa-chevron-right"></i>
+    <a href="/pip/" rel="next" title="pip 命令">
+      pip 命令 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -422,7 +430,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E9%85%8D%E7%BD%AE"><span class="nav-text">源配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD"><span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-text">其它</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
