@@ -759,19 +759,18 @@
   <entry>
     <title>systemctl 命令</title>
     <url>/systemctl/</url>
-    <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start &lt;servicename&gt;    	<span class="comment"># 启动服务</span></span><br><span class="line">systemctl stop &lt;servicename&gt;     	<span class="comment"># 关闭服务</span></span><br><span class="line">systemctl restart &lt;servicename&gt;		<span class="comment"># 重启服务</span></span><br><span class="line">systemctl reload &lt;servicename&gt;    	<span class="comment"># 重新加载配置文件</span></span><br><span class="line">systemctl status &lt;servicename&gt;    	<span class="comment"># 查看服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的配置文件</span></span><br><span class="line">systemctl cat &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有服务的状态</span></span><br><span class="line">systemctl -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前系统服务状态</span></span><br><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出服务的依赖关系</span></span><br><span class="line">systemctl list-dependencies &lt;servicename&gt;  </span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start &lt;servicename&gt;    	<span class="comment"># 启动服务</span></span><br><span class="line">systemctl stop &lt;servicename&gt;     	<span class="comment"># 关闭服务</span></span><br><span class="line">systemctl restart &lt;servicename&gt;		<span class="comment"># 重启服务</span></span><br><span class="line">systemctl reload &lt;servicename&gt;    	<span class="comment"># 重新加载配置文件</span></span><br><span class="line">systemctl status &lt;servicename&gt;    	<span class="comment"># 查看服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的配置文件</span></span><br><span class="line">systemctl cat &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有服务的状态</span></span><br><span class="line">systemctl -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前系统服务状态</span></span><br><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出服务的依赖关系</span></span><br><span class="line">systemctl list-dependencies &lt;servicename&gt;</span><br></pre></td></tr></table></figure>
 
 
 
 <h2 id="电源相关"><a href="#电源相关" class="headerlink" title="电源相关"></a>电源相关</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl reboot		<span class="comment"># 重启机器</span></span><br><span class="line">systemctl poweroff		<span class="comment"># 关机</span></span><br><span class="line">systemctl <span class="built_in">suspend</span>		<span class="comment"># 挂起 - 睡眠 - 保存在內存</span></span><br><span class="line">systemctl hibernate		<span class="comment"># 休眠 - 断电 - 保存在硬盘</span></span><br><span class="line">systemctl hybrid-sleep		<span class="comment"># 混合休眠模式（同时休眠到硬盘并挂起）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统引导时间</span></span><br><span class="line">systemd-analyze time		<span class="comment"># 仅显示时间</span></span><br><span class="line">systemd-analyze blame		<span class="comment"># 显示每个进程消耗时间</span></span><br><span class="line">systemd-analyze plot		<span class="comment"># 生成网页</span></span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>命令文档</category>
       </categories>
       <tags>
+        <tag>Linux</tag>
         <tag>systemctl</tag>
-        <tag>linux</tag>
       </tags>
   </entry>
 </search>
