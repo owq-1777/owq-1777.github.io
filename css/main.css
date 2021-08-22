@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff81ff;
+  background: #21b1c2;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2821,13 +2821,6 @@ li p {
   text-align: center;
   margin: 45px 0 60px 0;
 }
-blockquote {
-  border-left: 4px solid #e95f59;
-  background: rgba(253,239,238,0.6);
-  border-left: 0.25rem solid #6c9ae5;
-  background: rgba(108,154,229,0.2);
-  border-radius: 5px;
-}
 code {
   background: none;
   color: #64a0e6;
@@ -2874,6 +2867,7 @@ body {
 .post-eof {
   width: 100%;
   background: linear-gradient(to right, transparent, #d0d0d5, transparent);
+  margin: 70px auto 50px;
 }
 .links-of-author {
   flex-wrap: nowrap;
@@ -2918,9 +2912,17 @@ body {
 blockquote {
   padding: 5px 15px;
   margin: 0 0 10px 0;
+  border-left: 4px solid #e95f59;
+  background: rgba(253,239,238,0.6);
+  border-left: 0.25rem solid #6c9ae5;
+  background: rgba(108,154,229,0.2);
+  border-radius: 5px;
 }
 blockquote p {
   margin: 0;
+}
+.search-popup input.search-input {
+  line-height: 1;
 }
 #live2d-widget:after {
   content: '';
@@ -3144,7 +3146,7 @@ blockquote p {
 }
 .post-heading {
   justify-content: center;
-  width: 560px;
+  width: 760px;
   padding-bottom: 30px;
 }
 .post-heading .post-meta-item {
@@ -3152,14 +3154,14 @@ blockquote p {
   font-style: oblique;
 }
 .post-heading>h1 {
-  margin: 15px 0;
-  font-size: 3em;
+  margin: 10px 0;
+  font-size: 2.8em;
 }
 .post-heading>h2 {
   margin: 0;
   margin-bottom: 10px;
   font-style: oblique;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .site-heading {
   justify-content: center;
