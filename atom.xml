@@ -72,27 +72,6 @@
     
     
     
-    <category term="教程" scheme="https://owq.world/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Linux" scheme="https://owq.world/tags/Linux/"/>
-    
-    <category term="WSL" scheme="https://owq.world/tags/WSL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WSL2 安装配置</title>
-    <link href="https://owq.world/1fe3c459/"/>
-    <id>https://owq.world/1fe3c459/</id>
-    <published>2021-07-15T14:13:58.000Z</published>
-    <updated>2021-08-22T15:26:30.674Z</updated>
-    
-    
-    <summary type="html">WSL迭代到现在已经和Windows融为一体了, 让我们在Windows上启用Linux子系统, 开始愉快的无缝开发工作吧b(￣▽￣)d</summary>
-    
-    
-    
     <category term="入门教程" scheme="https://owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     
     
