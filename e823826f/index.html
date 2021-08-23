@@ -220,7 +220,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-08-22 21:20:48" itemprop="dateModified" datetime="2021-08-23T05:20:48+08:00">2021-08-22</time>
+            <time title="修改时间：2021-08-23 01:01:26" itemprop="dateModified" datetime="2021-08-23T09:01:26+08:00">2021-08-23</time>
             
           </span>
 
@@ -338,7 +338,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chsh git -s $(<span class="built_in">which</span> git-shell)</span><br></pre></td></tr></table></figure>
 
 <p>测试ssh连接，登录不成功即配置ok</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@&lt;IP地址&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="symbol">git@<span class="keyword">&lt;IP地址&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -367,7 +367,7 @@
 <p>官方参考文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9ib29rL3poL3YyLyVFOCU4NyVBQSVFNSVBRSU5QSVFNCVCOSU4OS1HaXQtR2l0LSVFOSU5MiVBOSVFNSVBRCU5MA==">🚪</span></p>
 </blockquote>
 <p>在仓库下的 <code>hooks</code> 目录创建 <code>post-receive</code> 文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /var/repo/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/var/</span>repo<span class="regexp">/blog.git/</span>hooks/post-receive</span><br></pre></td></tr></table></figure>
 
 <p>添加以下内容, 这个钩子会在你本地更新推送到服务器完成后执行, 更新你的网站内容。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/var/www/hexo --git-dir=/var/repo/blog.git checkout -f</span><br></pre></td></tr></table></figure>
@@ -398,10 +398,10 @@
 <p>部署插件项目 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">🚪</span></p>
 </blockquote>
 <p><strong>修改站点目录下<code>_config.yml</code>文件</strong></p>
-<h3 id="单个存储部署配置"><a href="#单个存储部署配置" class="headerlink" title="单个存储部署配置"></a>单个存储部署配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@8.8.8.8:/var/repo/blog.git</span><br></pre></td></tr></table></figure>
+<h3 id="单个存储部署配置"><a href="#单个存储部署配置" class="headerlink" title="单个存储部署配置"></a>单个存储部署配置</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  <span class="symbol">type:</span> git</span><br><span class="line">  <span class="symbol">repo:</span> git<span class="variable">@8</span>.<span class="number">8.8</span>.<span class="number">8</span><span class="symbol">:/var/repo/blog</span>.git</span><br></pre></td></tr></table></figure>
 
 <h3 id="多个存储库部署配置（可选）"><a href="#多个存储库部署配置（可选）" class="headerlink" title="多个存储库部署配置（可选）"></a>多个存储库部署配置（可选）</h3><p>这里我用来应付一些紧急情况，比如：服务器挂了、封了什么的。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  repo:</span><br><span class="line">    server: git@8.8.8.8:/var/repo/blog.git</span><br><span class="line">    git: git@github.com:xx/xx.github.io.git</span><br><span class="line">    [自定义名称]: git仓库地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  <span class="symbol">repo:</span></span><br><span class="line">    <span class="symbol">server:</span> git<span class="variable">@8</span>.<span class="number">8.8</span>.<span class="number">8</span><span class="symbol">:/var/repo/blog</span>.git</span><br><span class="line">    <span class="symbol">git:</span> git<span class="variable">@github</span>.<span class="symbol">com:</span>xx/xx.github.io.git</span><br><span class="line">    [自定义名称]: git仓库地址</span><br></pre></td></tr></table></figure>
 
 
 
@@ -529,20 +529,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -629,12 +629,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">4k</span>
+    <span title="站点总字数">6k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">7 min</span>
+    <span title="站点阅读时长">10 min</span>
 </div>
 
 </div>
@@ -734,6 +734,31 @@ window.addEventListener('pjax:success', () => {
 
 
   
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
 
 
 

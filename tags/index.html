@@ -262,10 +262,10 @@
       <div class="post-body">
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              目前共计 17 个标签
+              目前共计 20 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/ArchLinux/" style="font-size: 12px; color: #ccc">ArchLinux</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/Java/" style="font-size: 12px; color: #ccc">Java</a> <a href="/tags/Kali-Linux/" style="font-size: 12px; color: #ccc">Kali Linux</a> <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/MariaDB/" style="font-size: 12px; color: #ccc">MariaDB</a> <a href="/tags/Nginx/" style="font-size: 12px; color: #ccc">Nginx</a> <a href="/tags/Python/" style="font-size: 12px; color: #ccc">Python</a> <a href="/tags/SQL/" style="font-size: 12px; color: #ccc">SQL</a> <a href="/tags/Terminal/" style="font-size: 12px; color: #ccc">Terminal</a> <a href="/tags/WSL/" style="font-size: 12px; color: #ccc">WSL</a> <a href="/tags/WSL2/" style="font-size: 12px; color: #ccc">WSL2</a> <a href="/tags/docker/" style="font-size: 12px; color: #ccc">docker</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/pip/" style="font-size: 12px; color: #ccc">pip</a> <a href="/tags/systemctl/" style="font-size: 12px; color: #ccc">systemctl</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" style="font-size: 21px; color: #6f6f6f">环境搭建</a>
+              <a href="/tags/ArchLinux/" style="font-size: 12px; color: #ccc">ArchLinux</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/Java/" style="font-size: 12px; color: #ccc">Java</a> <a href="/tags/Kali-Linux/" style="font-size: 12px; color: #ccc">Kali Linux</a> <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/MariaDB/" style="font-size: 12px; color: #ccc">MariaDB</a> <a href="/tags/Nginx/" style="font-size: 12px; color: #ccc">Nginx</a> <a href="/tags/PowerShell/" style="font-size: 12px; color: #ccc">PowerShell</a> <a href="/tags/Python/" style="font-size: 12px; color: #ccc">Python</a> <a href="/tags/SQL/" style="font-size: 12px; color: #ccc">SQL</a> <a href="/tags/Terminal/" style="font-size: 12px; color: #ccc">Terminal</a> <a href="/tags/WSL/" style="font-size: 12px; color: #ccc">WSL</a> <a href="/tags/WSL2/" style="font-size: 12px; color: #ccc">WSL2</a> <a href="/tags/Windows/" style="font-size: 12px; color: #ccc">Windows</a> <a href="/tags/cmd/" style="font-size: 12px; color: #ccc">cmd</a> <a href="/tags/docker/" style="font-size: 12px; color: #ccc">docker</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/pip/" style="font-size: 12px; color: #ccc">pip</a> <a href="/tags/systemctl/" style="font-size: 12px; color: #ccc">systemctl</a> <a href="/tags/zsh/" style="font-size: 12px; color: #ccc">zsh</a>
             </div>
           </div>
         
@@ -344,20 +344,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -444,12 +444,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">4k</span>
+    <span title="站点总字数">6k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">7 min</span>
+    <span title="站点阅读时长">10 min</span>
 </div>
 
 </div>
@@ -549,6 +549,31 @@ window.addEventListener('pjax:success', () => {
 
 
   
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
 
 
 

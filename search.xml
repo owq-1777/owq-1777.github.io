@@ -33,7 +33,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo chsh git -s $(<span class="built_in">which</span> git-shell)</span><br></pre></td></tr></table></figure>
 
 <p>测试ssh连接，登录不成功即配置ok</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh git@&lt;IP地址&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">ssh <span class="symbol">git@<span class="keyword">&lt;IP地址&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -62,7 +62,7 @@
 <p>官方参考文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9ib29rL3poL3YyLyVFOCU4NyVBQSVFNSVBRSU5QSVFNCVCOSU4OS1HaXQtR2l0LSVFOSU5MiVBOSVFNSVBRCU5MA==">🚪</span></p>
 </blockquote>
 <p>在仓库下的 <code>hooks</code> 目录创建 <code>post-receive</code> 文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /var/repo/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/var/</span>repo<span class="regexp">/blog.git/</span>hooks/post-receive</span><br></pre></td></tr></table></figure>
 
 <p>添加以下内容, 这个钩子会在你本地更新推送到服务器完成后执行, 更新你的网站内容。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/var/www/hexo --git-dir=/var/repo/blog.git checkout -f</span><br></pre></td></tr></table></figure>
@@ -93,10 +93,10 @@
 <p>部署插件项目 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">🚪</span></p>
 </blockquote>
 <p><strong>修改站点目录下<code>_config.yml</code>文件</strong></p>
-<h3 id="单个存储部署配置"><a href="#单个存储部署配置" class="headerlink" title="单个存储部署配置"></a>单个存储部署配置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@8.8.8.8:/var/repo/blog.git</span><br></pre></td></tr></table></figure>
+<h3 id="单个存储部署配置"><a href="#单个存储部署配置" class="headerlink" title="单个存储部署配置"></a>单个存储部署配置</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  <span class="symbol">type:</span> git</span><br><span class="line">  <span class="symbol">repo:</span> git<span class="variable">@8</span>.<span class="number">8.8</span>.<span class="number">8</span><span class="symbol">:/var/repo/blog</span>.git</span><br></pre></td></tr></table></figure>
 
 <h3 id="多个存储库部署配置（可选）"><a href="#多个存储库部署配置（可选）" class="headerlink" title="多个存储库部署配置（可选）"></a>多个存储库部署配置（可选）</h3><p>这里我用来应付一些紧急情况，比如：服务器挂了、封了什么的。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  repo:</span><br><span class="line">    server: git@8.8.8.8:/var/repo/blog.git</span><br><span class="line">    git: git@github.com:xx/xx.github.io.git</span><br><span class="line">    [自定义名称]: git仓库地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  <span class="symbol">repo:</span></span><br><span class="line">    <span class="symbol">server:</span> git<span class="variable">@8</span>.<span class="number">8.8</span>.<span class="number">8</span><span class="symbol">:/var/repo/blog</span>.git</span><br><span class="line">    <span class="symbol">git:</span> git<span class="variable">@github</span>.<span class="symbol">com:</span>xx/xx.github.io.git</span><br><span class="line">    [自定义名称]: git仓库地址</span><br></pre></td></tr></table></figure>
 
 
 
@@ -128,7 +128,7 @@
 <li><p>远程连接（推荐）<br>微软自带的远程桌面工具，用过的都说好~</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --esm --ip -s</span><br></pre></td></tr></table></figure></li>
 <li><p>无缝模式<br>在 Windows 和 Kali 应用程序和菜单之间共享 Windows 桌面.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kex --sl -s</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">kex <span class="comment">--sl -s</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <p><em>注: 后面参数<code>-s</code>是启动声音支持.</em></p>
 <h2 id="高分屏下的使用"><a href="#高分屏下的使用" class="headerlink" title="高分屏下的使用"></a>高分屏下的使用</h2><blockquote>
@@ -215,7 +215,7 @@
 <p>ps:直接在资源管理器输入<code>%home%</code>按回车就可跳转, 若出错则是电脑环境变量没有配置好</p>
 <p><img data-src="https://i.loli.net/2021/08/12/Q6MjR8sqKba3BOZ.png"></p>
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>主要配置内存和交换内存, 其它可以不用管, 看自己电脑配置设置.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span><br><span class="line">memory=8GB</span><br><span class="line"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span><br><span class="line">swap=0</span><br><span class="line"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span><br><span class="line">swapFile=&lt;path&gt;</span><br><span class="line"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span><br><span class="line">localhostForwarding=true</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="comment"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="comment"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">0</span></span><br><span class="line"><span class="comment"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span></span><br><span class="line"><span class="attr">swapFile</span>=&lt;path&gt;</span><br><span class="line"><span class="comment"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span></span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>配置好文件后需要关闭WSL重新进入才会生效.</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-shutdown</span></span><br></pre></td></tr></table></figure>
@@ -233,7 +233,7 @@
     <title>zsh + oh-my-zsh 简易配置</title>
     <url>/4bfebac1/</url>
     <content><![CDATA[<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install zsh</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><table>
@@ -263,13 +263,13 @@
 <p>适用于阿里云服务器😶</p>
 </blockquote>
 <p>修改 <code>/etc/ssh/ssh_config</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/ssh_config</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>ssh/ssh_config</span><br></pre></td></tr></table></figure>
 
 <p>取消以下行的注释</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># GSSAPIAuthentication no</span><br></pre></td></tr></table></figure>
+<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># GSSAPIAuthentication no</span></span><br></pre></td></tr></table></figure>
 
 <p>没有生效可以重启下sshd服务器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/etc/init.d/sshd restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d/sshd restart</span><br></pre></td></tr></table></figure>
 
 
 
@@ -279,10 +279,10 @@
 <p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBhZGRyZXNzLmNvbS8=">https://www.ipaddress.com/</span> 获取域名的映射IP</p>
 <p><img data-src="https://i.loli.net/2021/08/16/v75LtJBaPjToRZ6.png"></p>
 <p>修改<code>hosts</code>文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>hosts</span><br></pre></td></tr></table></figure>
 
 <p>添加对应的ip映射即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">185.199.108.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.133</span> raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
 
 <h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><blockquote>
 <p>主题文件位于 <code>.oh-my-zsh/themes</code> 目录下，可自定义修改</p>
@@ -290,7 +290,7 @@
 <h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="https://i.loli.net/2021/08/06/51yhlPEQH7WOCnF.png" style="zoom:80%;" />
 
 <p>修改 <code>~/.zshrc</code> 文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ZSH_THEME=&quot;ys&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">&quot;ys&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -317,13 +317,13 @@
 
 <h2 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h2><p>修改<code>~/.zshrc</code>配置文件</p>
 <p><strong>快速添加sudo</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># EscEsc to sudo</span><br><span class="line">bindkey -s &#x27;\e\e&#x27; &#x27;\C-asudo \C-e&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># EscEsc to sudo</span></span><br><span class="line"><span class="built_in">bindkey</span> -s <span class="string">&#x27;\e\e&#x27;</span> <span class="string">&#x27;\C-asudo \C-e&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>WSL2下的代理配置</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Proxy config</span><br><span class="line">export hostip=$(cat /etc/resolv.conf | grep -oP &#x27;(?&lt;=nameserver\ ).*&#x27;)</span><br><span class="line">alias proxyon=&#x27;export https_proxy=&quot;http://$&#123;hostip&#125;:7890&quot; &amp;&amp; export http_proxy=&quot;http://$&#123;hostip&#125;:7890&quot; &amp;&amp; export all_proxy=&quot;socks5://$&#123;hostip&#125;:7890&quot;&#x27;</span><br><span class="line">alias unproxy=&#x27;unset http_proxy &amp;&amp; unset https_proxy &amp;&amp; unset all_proxy&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Proxy config</span></span><br><span class="line"><span class="keyword">export</span> hostip=$(cat /etc/resolv.conf | grep -oP &#x27;(?&lt;=nameserver\ ).*&#x27;)</span><br><span class="line">alias proxyon=&#x27;<span class="keyword">export</span> https_proxy=<span class="string">&quot;http://$&#123;hostip&#125;:7890&quot;</span> &amp;&amp; <span class="keyword">export</span> http_proxy=<span class="string">&quot;http://$&#123;hostip&#125;:7890&quot;</span> &amp;&amp; <span class="keyword">export</span> all_proxy=<span class="string">&quot;socks5://$&#123;hostip&#125;:7890&quot;</span>&#x27;</span><br><span class="line">alias unproxy=&#x27;<span class="keyword">unset</span> http_proxy &amp;&amp; <span class="keyword">unset</span> https_proxy &amp;&amp; <span class="keyword">unset</span> all_proxy&#x27;</span><br></pre></td></tr></table></figure>
 
 <p><strong>常用别名设置</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># git log</span><br><span class="line">alias glog=&#x27;git log --graph --pretty=oneline --abbrev-commit&#x27;</span><br><span class="line"></span><br><span class="line"># ls -al</span><br><span class="line">alias ll=ls -al --show-control-chars --color $*</span><br><span class="line"></span><br><span class="line"># Other alias config</span><br><span class="line">alias ipython=&#x27;ipython3&#x27;</span><br><span class="line">alias npm=&#x27;sudo npm&#x27;</span><br><span class="line">alias typora=&#x27;typora.exe&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line"># git <span class="keyword">log</span></span><br><span class="line"><span class="keyword">alias</span> glog=<span class="string">&#x27;git log --graph --pretty=oneline --abbrev-commit&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">ls</span> -al</span><br><span class="line"><span class="keyword">alias</span> ll=<span class="keyword">ls</span> -al --show-<span class="keyword">control</span>-chars --<span class="keyword">color</span> $*</span><br><span class="line"></span><br><span class="line"># Other <span class="keyword">alias</span> config</span><br><span class="line"><span class="keyword">alias</span> ipython=<span class="string">&#x27;ipython3&#x27;</span></span><br><span class="line"><span class="keyword">alias</span> npm=<span class="string">&#x27;sudo npm&#x27;</span></span><br><span class="line"><span class="keyword">alias</span> typora=<span class="string">&#x27;typora.exe&#x27;</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -338,7 +338,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo ln -s <span class="variable">$HOME</span>/.pyenv /root/.pyenv</span><br></pre></td></tr></table></figure>
 
 <p>若提示目录权限警告，则在 .zshrc 文件前面添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ZSH_DISABLE_COMPFIX=true</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_DISABLE_COMPFIX</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>若要单独配置，复制相应目录到对应用户主目录下即可</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo cp -r <span class="variable">$HOME</span>/.oh-my-zsh	/root</span><br><span class="line">sudo cp -r <span class="variable">$HOME</span>/.zshrc	/root</span><br></pre></td></tr></table></figure>
@@ -367,21 +367,24 @@
 
 <p><strong>配置插件</strong></p>
 <p><em>注意：插件中间是以空格分开</em></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plugins=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">plugins</span>=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>Config</category>
+        <category>配置记录</category>
       </categories>
       <tags>
         <tag>Linux</tag>
         <tag>Terminal</tag>
+        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
     <title>MariaDB 安装图文教程</title>
     <url>/9ec13a7e/</url>
-    <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>对于初学者, 只需要知道以下几点就行了</p>
+    <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
+
+<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>对于初学者, 只需要知道以下几点就行了</p>
 <ul>
 <li><p>MariaDB 是开源软件</p>
 </li>
@@ -432,7 +435,9 @@
   <entry>
     <title>Python 开发环境搭建萌新教程</title>
     <url>/958bc56b/</url>
-    <content><![CDATA[<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMv">官网下载</span>, 刚开始学习的话直接下载最新版本的就行了</p>
+    <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
+
+<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMv">官网下载</span>, 刚开始学习的话直接下载最新版本的就行了</p>
 <p><img data-src="https://i.loli.net/2020/12/14/In5w1JRT84x6r9F.png"></p>
 <p>默认下载为64位版本就行了 要下载32位请跳转<span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMvd2luZG93cy8=">详细页面下载</span></p>
 <p><img data-src="https://i.loli.net/2020/12/14/n64fcbu2SiYC3LH.png"></p>
@@ -469,14 +474,15 @@
         <category>入门教程</category>
       </categories>
       <tags>
-        <tag>环境搭建</tag>
         <tag>Python</tag>
       </tags>
   </entry>
   <entry>
     <title>Java 开发环境搭建萌新教程</title>
     <url>/46118abd/</url>
-    <content><![CDATA[<blockquote>
+    <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
+
+<blockquote>
 <p> 用最实用的方法来解决问题。<br>该教程不是用安装程序安装，而是通过设置环境变量，来实现基础Java环境搭建。</p>
 </blockquote>
 <h2 id="下载-Java-JDK"><a href="#下载-Java-JDK" class="headerlink" title="下载 Java JDK"></a>下载 Java JDK</h2><blockquote>
@@ -552,7 +558,113 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>环境搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 命令文档</title>
+    <url>/win/</url>
+    <content><![CDATA[<blockquote>
+<p>从玩Windows至今遇到超过2次的命令或问题记录.</p>
+<p>部分命令cmd和PowerShell环境下均可用, 故不作细分😜</p>
+</blockquote>
+<p><em>PS: 大多数情况使用 <code>help &lt;命令&gt;</code> 或者 <code>&lt;命令&gt; help</code> 可以查看帮助文档自行解决问题.</em></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清屏</span></span><br><span class="line"><span class="built_in">cls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置永久变量, 加上 /m 为系统变量, 路径有空格要用双引号括起来</span></span><br><span class="line">setx env_name env_value /m</span><br><span class="line"><span class="comment"># 追加环境变量</span></span><br><span class="line">setx <span class="string">&quot;path&quot;</span> <span class="string">&quot;%path%D:\test;&quot;</span> /m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启资源管理器</span></span><br><span class="line">taskkill /f /im explorer.exe &amp; <span class="built_in">start</span> explorer.exe</span><br><span class="line"></span><br><span class="line"><span class="comment"># 寻找端口程序</span></span><br><span class="line">netstat <span class="literal">-ano</span> | findstr <span class="number">8080</span></span><br><span class="line"><span class="comment"># 停止程序</span></span><br><span class="line">taskkill <span class="literal">-pid</span> &lt;进程pid&gt; <span class="operator">-f</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看序列号</span></span><br><span class="line">wmic bios get serialnumber</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示正在运行服务</span></span><br><span class="line">net <span class="built_in">start</span></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">net <span class="built_in">start</span> [服务名]</span><br><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line">net stop</span><br></pre></td></tr></table></figure>
+
+<p><strong>PowerShell环境变量操作</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看</span></span><br><span class="line"><span class="variable">$Env:path</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置</span></span><br><span class="line"><span class="variable">$Env:ETCDCTL_API</span>=<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 追加</span></span><br><span class="line"><span class="variable">$Env:path</span>=<span class="variable">$Env:Path</span>+<span class="string">&quot;;C:\Run&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除</span></span><br><span class="line"><span class="built_in">remove-item</span> env:all_proxy</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="快捷运行"><a href="#快捷运行" class="headerlink" title="快捷运行"></a>快捷运行</h2><p>使用<code>Win + R</code>打开<code>运行</code></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 访问子系统</span></span><br><span class="line">\\wsl<span class="variable">$</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统详细信息</span></span><br><span class="line">systeminfo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 驱动程序验证程序管理器 </span></span><br><span class="line">verifier</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询启动加载项</span></span><br><span class="line">bcdedit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注册表编辑器</span></span><br><span class="line">regedit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统属性</span></span><br><span class="line">sysdm.cpl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统版本信息</span></span><br><span class="line">winver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 证书管理</span></span><br><span class="line">certmgr.msc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统详细信息</span></span><br><span class="line">msinfo32</span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务管理</span></span><br><span class="line">services.msc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户组管理</span></span><br><span class="line">lusrmgr.msc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 任务管理器</span></span><br><span class="line">Taskmgr</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Linux子系统"><a href="#Linux子系统" class="headerlink" title="Linux子系统"></a>Linux子系统</h2><figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># 查看子系统列表及分发版本</span></span><br><span class="line">wsl -l -v</span><br><span class="line"></span><br><span class="line"><span class="meta"># 卸载已经安装的发行版</span></span><br><span class="line">wslconfig /unregister &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta"># 升级wsl版本</span></span><br><span class="line">wsl --<span class="keyword">set</span>-version &lt;distribution name&gt; &lt;versionNumber&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta"># 关闭 所有WSL服务</span></span><br><span class="line">wsl --shudown</span><br><span class="line">net stop LxssManager</span><br><span class="line"></span><br><span class="line"><span class="meta"># 移动WSL</span></span><br><span class="line"><span class="meta"># https://github.com/DDoSolitary/LxRunOffline</span></span><br><span class="line">LxRunOffline.exe move -n &lt;wsl-name&gt; -d &lt;dir&gt;</span><br><span class="line"></span><br><span class="line">lxrunoffline m -n docker-desktop -d D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m -n docker-desktop-data -d D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看路径</span></span><br><span class="line">lxrunoffline di -n docker-desktop</span><br><span class="line">lxrunoffline di -n docker-desktop-data</span><br></pre></td></tr></table></figure>
+
+<h3 id="WSL2端口转发"><a href="#WSL2端口转发" class="headerlink" title="WSL2端口转发"></a>WSL2端口转发</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置端口转发</span></span><br><span class="line">netsh interface portproxy add v4tov4 listenport=【宿主机windows平台监听端口】 listenaddress=<span class="number">0.0</span>.<span class="number">0.0</span> connectport=【wsl2平台监听端口】 connectaddress=【wsl2平台ip】protocol=tcp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">netsh interface portproxy add v4tov4 listenport=<span class="number">80</span> listenaddress=<span class="number">0.0</span>.<span class="number">0.0</span> connectport=<span class="number">80</span> connectaddress=<span class="number">172.30</span>.<span class="number">144.91</span> protocol=tcp</span><br><span class="line">或</span><br><span class="line">netsh interface portproxy add v4tov4 listenport=<span class="number">80</span> listenaddress=* connectport=<span class="number">80</span> connectaddress=<span class="number">172.30</span>.<span class="number">144.91</span> protocol=tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看端口转发状态</span></span><br><span class="line">netsh interface portproxy show all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除端口转发</span></span><br><span class="line">netsh interface portproxy delete v4tov4 listenport=【宿主机windows平台监听端口】 listenaddress=<span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"></span><br><span class="line">netsh interface portproxy delete v4tov4 listenport=<span class="number">80</span> listenaddress=*</span><br><span class="line">或</span><br><span class="line">netsh interface portproxy delete v4tov4 listenport=<span class="number">80</span> listenaddress=<span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意: 写的是0.0.0.0删的时候也需要是0.0.0.0进行对应，不然会提示找不到文件。</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="空间优化"><a href="#空间优化" class="headerlink" title="空间优化"></a>空间优化</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 压缩系统空间</span></span><br><span class="line">compact /compactos:always</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="修复命令"><a href="#修复命令" class="headerlink" title="修复命令"></a>修复命令</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># SFC扫描</span></span><br><span class="line">sfc /scannow</span><br><span class="line"></span><br><span class="line"><span class="comment"># DISM扫描</span></span><br><span class="line">DISM /Online /Cleanup<span class="literal">-Image</span> /RestoreHealth</span><br><span class="line"></span><br><span class="line"><span class="comment"># 磁盘修复</span></span><br><span class="line">chkdsk C:/f</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除文件/目录</span></span><br><span class="line"><span class="built_in">rmdir</span> /s/q &lt;<span class="built_in">dir</span>&gt; 删除整个目录</span><br><span class="line">    /s 是代表删除所有子目录跟其中的档案。 </span><br><span class="line">    /q 是不要它在删除档案或目录时，不再问我 Yes or No 的动作。 </span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建目录</span></span><br><span class="line"><span class="built_in">md</span> &lt;catalogue&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件只读、隐藏属性修改</span></span><br><span class="line">attrib S <span class="built_in">H</span></span><br><span class="line"><span class="comment"># 查看帮助</span></span><br><span class="line">help attrib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除所有属性，彻底隐藏在资源管理器中，</span></span><br><span class="line">attrib <span class="literal">-s</span> <span class="literal">-a</span> <span class="literal">-h</span> <span class="literal">-r</span> D:\\ico.ico</span><br><span class="line">attrib <span class="literal">-s</span> <span class="literal">-a</span> <span class="literal">-h</span> <span class="literal">-r</span> D:\\autorun.inf</span><br><span class="line"><span class="comment"># 添加所有属性</span></span><br><span class="line">attrib +s +a +<span class="built_in">h</span> +<span class="built_in">r</span> C:\\ico.ico</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="电源相关"><a href="#电源相关" class="headerlink" title="电源相关"></a>电源相关</h2><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 电源控制</span></span><br><span class="line"><span class="keyword">shutdown</span> <span class="string">/s</span>			关机</span><br><span class="line"><span class="keyword">shutdown</span> <span class="string">/r</span>			重启</span><br><span class="line"><span class="keyword">shutdown</span> <span class="string">/l</span>			注销</span><br><span class="line"><span class="keyword">shutdown</span> <span class="string">/h</span> <span class="string">/f</span>		休眠</span><br><span class="line"><span class="keyword">shutdown</span> <span class="string">/a</span>			取消关机</span><br><span class="line"><span class="keyword">shutdown</span> <span class="string">/s</span> <span class="string">/t</span> 3600	定时关机（单位秒）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h2><figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># 网卡信息</span></span><br><span class="line">ipconfig</span><br><span class="line"></span><br><span class="line"><span class="meta"># 路由跟踪</span></span><br><span class="line">tracert &lt;域名&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta"># 网关(DNS)查询</span></span><br><span class="line">nslookup &lt;域名&gt; [DNS服务器]</span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看路由表</span></span><br><span class="line">route print</span><br><span class="line"></span><br><span class="line"><span class="meta"># 设置承载网络模式</span></span><br><span class="line">netsh wlan <span class="keyword">set</span> hostednetwork mode=allow</span><br><span class="line"><span class="meta"># 设置无线热点名称和密码</span></span><br><span class="line">netsh wlan <span class="keyword">set</span> hostednetwork ssid=CooNb key=<span class="string">&quot;passwprd&quot;</span></span><br><span class="line"><span class="meta"># 启动承载网络</span></span><br><span class="line">netsh wlan start hostednetwork</span><br><span class="line"></span><br><span class="line"><span class="meta"># HTTP 代理设置</span></span><br><span class="line"><span class="keyword">set</span> http_proxy=http:<span class="comment">//127.0.0.1:7890</span></span><br><span class="line"><span class="keyword">set</span> https_proxy=http:<span class="comment">//127.0.0.1:7890</span></span><br><span class="line"><span class="meta"># SOCKS5 代理设置</span></span><br><span class="line"><span class="keyword">set</span> http_proxy=socks5:<span class="comment">//127.0.0.1:7890</span></span><br><span class="line"><span class="keyword">set</span> https_proxy=socks5:<span class="comment">//127.0.0.1:7890</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 取消代理</span></span><br><span class="line">unset http_proxy &amp; unset https_proxy</span><br><span class="line"></span><br><span class="line"><span class="meta"># 代理检测</span></span><br><span class="line">curl -vv http:<span class="comment">//www.google.com</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="编码相关"><a href="#编码相关" class="headerlink" title="编码相关"></a>编码相关</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看当前编码</span></span><br><span class="line">chcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改为UTF-8</span></span><br><span class="line">chcp 65001</span><br><span class="line">    - 65001  UTF-8</span><br><span class="line">    - 20936  GB2312</span><br><span class="line">    - 936    GBK</span><br><span class="line">    - 437    English US</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="实用设置"><a href="#实用设置" class="headerlink" title="实用设置"></a>实用设置</h2><h3 id="添加新建文本快捷键"><a href="#添加新建文本快捷键" class="headerlink" title="添加新建文本快捷键"></a>添加新建文本快捷键</h3><ul>
+<li><code>Win + R</code>运行<code>regedit</code>找到<code>HKEY_CLASSES_ROOT\LocalSettings\ImmutableMuiCache\Strings\AAF68885</code></li>
+<li>之后找到右侧的<code>@C:\Windows\system32\notepad.exe,-469</code>，将值 <code>文本文档</code> 改为 <code>文本文档 (&amp;T)</code></li>
+<li>重动资源管理器就可以看到效果了，<code>右键&gt;w&gt;t</code>就可以快速新建一个TXT文本了</li>
+</ul>
+<h3 id="改变CMD编码为UTF-8-以使用Truetype字体-不推荐"><a href="#改变CMD编码为UTF-8-以使用Truetype字体-不推荐" class="headerlink" title="改变CMD编码为UTF-8 以使用Truetype字体(不推荐)"></a>改变CMD编码为UTF-8 以使用Truetype字体(不推荐)</h3><ul>
+<li><code>Win + R</code>运行<code>regedit</code>找到<code>HKEY_LOCAL_MACHINE\Software\Microsoft\CommandProcessor</code></li>
+<li>修改<code>Autorun</code>的值为<code>@chcp 65001&gt;nul</code>，如果没有则创建一个字符串类型<code>Autorun</code>，把值设为<code>@chcp 65001&gt;nul</code></li>
+<li>用管理员权限打开一个CMD窗口，输入<code>REG ADD &quot;HKLM\Software\Microsoft\Command Processor&quot; /v Autorun /t REG_SZ /d &quot;@chcp 65001&gt;nul&quot;</code></li>
+<li>查看<code>\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\Console\TrueTypeFont</code></li>
+</ul>
+<h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><h3 id="解决文件被占用"><a href="#解决文件被占用" class="headerlink" title="解决文件被占用"></a>解决文件被占用</h3><ol>
+<li><p>定位进程<br><code>Win+R</code>打开【运行】–&gt; 输入<code>eventvwr.msc</code>回车打开【事件查看器】–&gt; 事件查看器 (本地) –&gt; Windows 日志–&gt; 系统 –&gt; 找到最近的【警告 来源 Kernel-PnP】–&gt; 双击打开 –&gt; 找到【进程ID为 xx 的应用程序已停止删除或弹出设备】，记住这个进程 ID。</p>
+</li>
+<li><p>结束进程</p>
+<ul>
+<li>打开【任务管理器】–&gt; 详细信息 –&gt; 点击 PID 排序 –&gt; 找到 ID 对应的进程，尝试结束进程。</li>
+<li>Win+R 打开【运行】–&gt; 输入 taskmgr 回车打开【任务管理器】–&gt; 性能 –&gt; 打开资源监视器 –&gt; CPU –&gt; 关联的句柄 –&gt; 输入你的盘符, 例如你的移动存储设备是 F 盘, 输入 F: -&gt; 把下面搜索出来的进程全部结束。</li>
+</ul>
+</li>
+</ol>
+<h3 id="关机停留在等待程序关闭界面"><a href="#关机停留在等待程序关闭界面" class="headerlink" title="关机停留在等待程序关闭界面"></a>关机停留在等待程序关闭界面</h3><p>打开 <code>regedit</code></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Control Panel\Desktop</span><br></pre></td></tr></table></figure>
+
+<p>添加键：<code>AutoEndTasks</code> 值：1</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">bcdedit /<span class="built_in">set</span> bootstatuspolicy ignoreallfailures</span><br><span class="line">bcdedit /<span class="built_in">set</span> &#123;服务名&#125; recoveryenabled No  修改启动</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="网络正常图标显示无连接"><a href="#网络正常图标显示无连接" class="headerlink" title="网络正常图标显示无连接"></a>网络正常图标显示无连接</h3><p>打开 <code>regedit</code></p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE<span class="symbol">\S</span>YSTEM<span class="symbol">\C</span>urrentControlSet<span class="symbol">\s</span>ervices<span class="symbol">\N</span>laSvc<span class="symbol">\P</span>arameters<span class="symbol">\I</span>nternet</span><br></pre></td></tr></table></figure>
+
+<p>修改 <code>EnableActiveProbing</code> 值为 0<br>打开 <code>services.msc</code> 服务管理<br>重启 <code>Microsoft Account Sign-in Assistant</code> 服务</p>
+<h3 id="重置网络设置后WiFi图标消失"><a href="#重置网络设置后WiFi图标消失" class="headerlink" title="重置网络设置后WiFi图标消失"></a>重置网络设置后WiFi图标消失</h3><p><code>Win+R</code>输入<code>services.msc</code><br>找到<code>WLAN AutoConfig</code>和<code>Wired AutoConfig</code>服务，确保服务为开启状态</p>
+<h3 id="访问不了网络"><a href="#访问不了网络" class="headerlink" title="访问不了网络"></a>访问不了网络</h3><ul>
+<li>运行 inetcpl.cpl</li>
+<li>高级--使用TLS1.2--还原高级设置</li>
+</ul>
+<h3 id="取消微软服务代理转发"><a href="#取消微软服务代理转发" class="headerlink" title="取消微软服务代理转发"></a>取消微软服务代理转发</h3><ul>
+<li>安装<code>Fiddler4</code></li>
+<li>打开左上角<code>winconfig</code></li>
+<li>把微软产品全部打勾保存</li>
+</ul>
+<h3 id="禁用-恢复-Windows-Defender"><a href="#禁用-恢复-Windows-Defender" class="headerlink" title="禁用/恢复 Windows Defender"></a>禁用/恢复 Windows Defender</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 禁用</span></span><br><span class="line">reg add “HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender” /v “DisableAntiSpyware” /d <span class="number">1</span> /t REG_DWORD /f</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复</span></span><br><span class="line">reg add “HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender” /v “DisableAntiSpyware” /d <span class="number">0</span> /t REG_DWORD /f</span><br></pre></td></tr></table></figure>
+
+<h3 id="用户权限问题"><a href="#用户权限问题" class="headerlink" title="用户权限问题"></a>用户权限问题</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建用户账号</span></span><br><span class="line">net user &lt;user&gt; &lt;passwd&gt; /add</span><br><span class="line"><span class="comment"># 赋予该账号管理员权限</span></span><br><span class="line">net localgroup administrators &lt;user&gt; /add</span><br><span class="line"><span class="comment"># 删除用户账号</span></span><br><span class="line">net user &lt;user&gt; /<span class="built_in">del</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>cmd</tag>
+        <tag>PowerShell</tag>
       </tags>
   </entry>
   <entry>
@@ -661,15 +773,15 @@
   <entry>
     <title>pip 命令</title>
     <url>/pip/</url>
-    <content><![CDATA[<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip list			# 显示已安装的库</span><br><span class="line">pip list -o			# 显示已过时的库</span><br><span class="line">pip show &lt;library&gt;		# 显示库信息</span><br><span class="line">pip install &lt;library&gt;		# 安装库</span><br><span class="line">pip install -U &lt;library&gt;	# 更新库</span><br><span class="line">pip uninstall &lt;library&gt;		# 卸载库</span><br><span class="line">pip check &lt;library&gt;		# 检查依赖</span><br><span class="line">pip [cmd] -h			# 显示帮助</span><br><span class="line"></span><br><span class="line"># 生成已按照包列表文件</span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"></span><br><span class="line"># 安装文件内所有包</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line"># 设置默认使用pip3</span><br><span class="line">pip3 intall --upgrade pip</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">pip list			<span class="meta"># 显示已安装的库</span></span><br><span class="line">pip list -o			<span class="meta"># 显示已过时的库</span></span><br><span class="line">pip <span class="keyword">show</span> &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 显示库信息</span></span><br><span class="line">pip install &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 安装库</span></span><br><span class="line">pip install -U &lt;<span class="keyword">library</span>&gt;	<span class="meta"># 更新库</span></span><br><span class="line">pip uninstall &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 卸载库</span></span><br><span class="line">pip check &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 检查依赖</span></span><br><span class="line">pip [cmd] -h			<span class="meta"># 显示帮助</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 生成已按照包列表文件</span></span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="meta"># 安装文件内所有包</span></span><br><span class="line">pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="meta"># 设置默认使用pip3</span></span><br><span class="line">pip3 intall --upgrade pip</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 临时使用 -i</span><br><span class="line">pip install [module] -i https://pypi.org/simple</span><br><span class="line"></span><br><span class="line"># 永久配置</span><br><span class="line"># 清华源</span><br><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"># 阿里源</span><br><span class="line"> pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"># 腾讯源</span><br><span class="line">pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple</span><br><span class="line"># 豆瓣源</span><br><span class="line">pip config set global.index-url http://pypi.douban.com/simple/</span><br><span class="line"># 官方源</span><br><span class="line">pip config set global.index-url https://pypi.org/simple</span><br></pre></td></tr></table></figure>
+<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 临时使用 -i</span></span><br><span class="line">pip install [module] -i https:<span class="regexp">//</span>pypi.org/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 永久配置</span></span><br><span class="line"><span class="comment"># 清华源</span></span><br><span class="line">pip config set global.index-url https:<span class="regexp">//</span>pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line"> pip config set global.index-url https:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/pypi/</span>simple/</span><br><span class="line"><span class="comment"># 腾讯源</span></span><br><span class="line">pip config set global.index-url http:<span class="regexp">//mi</span>rrors.cloud.tencent.com<span class="regexp">/pypi/</span>simple</span><br><span class="line"><span class="comment"># 豆瓣源</span></span><br><span class="line">pip config set global.index-url http:<span class="regexp">//</span>pypi.douban.com<span class="regexp">/simple/</span></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">pip config set global.index-url https:<span class="regexp">//</span>pypi.org/simple</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">apt install python3-pip</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">apt</span> install python<span class="number">3</span>-pip</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>

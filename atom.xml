@@ -86,19 +86,21 @@
     <link href="https://owq.world/4bfebac1/"/>
     <id>https://owq.world/4bfebac1/</id>
     <published>2021-07-08T17:50:36.000Z</published>
-    <updated>2021-08-22T15:26:30.674Z</updated>
+    <updated>2021-08-23T01:00:09.534Z</updated>
     
     
     <summary type="html">作为最常用的终端工具，配置也要快速·迅捷才行(ง •_•)ง</summary>
     
     
     
-    <category term="Config" scheme="https://owq.world/categories/Config/"/>
+    <category term="配置记录" scheme="https://owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
     
     
     <category term="Linux" scheme="https://owq.world/tags/Linux/"/>
     
     <category term="Terminal" scheme="https://owq.world/tags/Terminal/"/>
+    
+    <category term="zsh" scheme="https://owq.world/tags/zsh/"/>
     
   </entry>
   
@@ -107,7 +109,7 @@
     <link href="https://owq.world/9ec13a7e/"/>
     <id>https://owq.world/9ec13a7e/</id>
     <published>2021-01-22T10:50:42.000Z</published>
-    <updated>2021-08-22T15:26:30.674Z</updated>
+    <updated>2021-08-22T22:04:40.984Z</updated>
     
     
     <summary type="html">这是适用于 Windows 系统, 图文并茂的 MariaDB 安装图文教程（￣︶￣）↗</summary>
@@ -128,7 +130,7 @@
     <link href="https://owq.world/958bc56b/"/>
     <id>https://owq.world/958bc56b/</id>
     <published>2021-01-20T10:40:37.000Z</published>
-    <updated>2021-08-22T15:26:30.674Z</updated>
+    <updated>2021-08-22T22:32:20.464Z</updated>
     
     
     <summary type="html">这是适用于 Windows 系统, 图文并茂的 Python 环境萌新教程（￣︶￣）↗</summary>
@@ -137,8 +139,6 @@
     
     <category term="入门教程" scheme="https://owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     
-    
-    <category term="环境搭建" scheme="https://owq.world/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     <category term="Python" scheme="https://owq.world/tags/Python/"/>
     
@@ -161,7 +161,28 @@
     
     <category term="Java" scheme="https://owq.world/tags/Java/"/>
     
-    <category term="环境搭建" scheme="https://owq.world/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+  </entry>
+  
+  <entry>
+    <title>Windows 命令文档</title>
+    <link href="https://owq.world/win/"/>
+    <id>https://owq.world/win/</id>
+    <published>2020-06-01T08:00:00.000Z</published>
+    <updated>2021-08-23T00:55:58.654Z</updated>
+    
+    
+    <summary type="html">📖Windows 命令文档</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="Windows" scheme="https://owq.world/tags/Windows/"/>
+    
+    <category term="cmd" scheme="https://owq.world/tags/cmd/"/>
+    
+    <category term="PowerShell" scheme="https://owq.world/tags/PowerShell/"/>
     
   </entry>
   
