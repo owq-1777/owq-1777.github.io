@@ -40,6 +40,48 @@
   </entry>
   
   <entry>
+    <title>Docker+Redis 安装配置</title>
+    <link href="https://owq.world/8be682ad/"/>
+    <id>https://owq.world/8be682ad/</id>
+    <published>2021-08-23T20:48:02.000Z</published>
+    <updated>2021-08-23T13:06:50.304Z</updated>
+    
+    
+    <summary type="html">Docker下安装Redis的快捷配置~</summary>
+    
+    
+    
+    <category term="配置记录" scheme="https://owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Docker" scheme="https://owq.world/tags/Docker/"/>
+    
+    <category term="Redis" scheme="https://owq.world/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker+MongoDB 安装配置</title>
+    <link href="https://owq.world/d2633d2c/"/>
+    <id>https://owq.world/d2633d2c/</id>
+    <published>2021-08-23T20:39:01.000Z</published>
+    <updated>2021-08-23T13:06:57.374Z</updated>
+    
+    
+    <summary type="html">Docker下安装MongoDB的快捷配置~</summary>
+    
+    
+    
+    <category term="配置记录" scheme="https://owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Docker" scheme="https://owq.world/tags/Docker/"/>
+    
+    <category term="Mongo" scheme="https://owq.world/tags/Mongo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo 服务器部署踩坑记录</title>
     <link href="https://owq.world/e823826f/"/>
     <id>https://owq.world/e823826f/</id>
@@ -214,7 +256,7 @@
     <link href="https://owq.world/docker/"/>
     <id>https://owq.world/docker/</id>
     <published>2020-06-01T00:00:00.000Z</published>
-    <updated>2021-08-22T18:22:58.234Z</updated>
+    <updated>2021-08-23T13:19:52.214Z</updated>
     
     
     <summary type="html">📖 docker 命令文档</summary>

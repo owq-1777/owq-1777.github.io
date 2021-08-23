@@ -25,17 +25,21 @@
     var CONFIG = {"hostname":"owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="爱编程, 懂设计, 喜折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny was born">
-<meta property="og:url" content="https://owq.world/tags/WSL/index.html">
+  <meta name="description" content="Docker下安装MongoDB的快捷配置~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker+MongoDB 安装配置">
+<meta property="og:url" content="https://owq.world/d2633d2c/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="爱编程, 懂设计, 喜折腾">
+<meta property="og:description" content="Docker下安装MongoDB的快捷配置~">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-23T20:39:01.000Z">
+<meta property="article:modified_time" content="2021-08-23T13:06:57.374Z">
 <meta property="article:author" content="OWQ">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Mongo">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://owq.world/tags/WSL/">
+<link rel="canonical" href="https://owq.world/d2633d2c/">
 
 
 <script id="page-configurations">
@@ -43,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: WSL | Sunny was born</title>
+  <title>Docker+MongoDB 安装配置 | Sunny was born</title>
   
 
 
@@ -193,10 +197,54 @@
 
 <div id="signature">
   <div class="container">
-        <header class="site-heading">
-          <h1>Sunny was born</h1>
-          <span class="subheading">心中有丘壑，眉目作山河</span>
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>Docker+MongoDB 安装配置</h1>
+          <h2 class="subheading">Docker下安装MongoDB的快捷配置~</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+            
+
+            <time title="创建时间：2021-08-23 20:39:01 / 修改时间：15:57:36" itemprop="dateCreated datePublished" datetime="2021-08-23T20:39:01Z">2021-08-23</time>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar-check"></i>
+            </span>
+            <span class="post-meta-item-text">Updated</span>
+            <time title="修改时间：2021-08-23 15:57:36" itemprop="dateModified" datetime="2021-08-23T23:57:36+08:00">2021-08-23</time>
+            
+          </span>
+
+
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>25</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>1 min</span>
+          </span>
+
+
         </header>
+
+      
 
   </div>
 </div>
@@ -233,53 +281,101 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">WSL
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owq.world/d2633d2c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p <span class="number">27017</span>:<span class="number">27017</span> -v <span class="regexp">/data/m</span>ongo:<span class="regexp">/data/</span>db --name mongodb -d mongo --auth</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>创建用户密码</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 进入容器</span><br><span class="line">docker exec -it mongo mongo admin</span><br><span class="line"></span><br><span class="line"># 创建用户密码</span><br><span class="line">db.create<span class="constructor">User(&#123; <span class="params">user</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">pwd</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">roles</span>:[ &#123; <span class="params">role</span>:&#x27;<span class="params">userAdminAnyDatabase</span>&#x27;, <span class="params">db</span>: &#x27;<span class="params">admin</span>&#x27;&#125;,<span class="string">&quot;readWriteAnyDatabase&quot;</span>]&#125;)</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:admin<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-15T14:13:58Z"
-              content="2021-07-15">
-          07-15
-        </time>
       </div>
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/1fe3c459/" itemprop="url">
-            <span itemprop="name">WSL2 安装配置</span>
-          </a>
-      </div>
+    
+    
+    
+        
 
-    </header>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://owq.world/d2633d2c/" title="Docker+MongoDB 安装配置">https://owq.world/d2633d2c/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+              <a href="/tags/Mongo/" rel="tag"><i class="fa fa-tag"></i> Mongo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/8be682ad/" rel="prev" title="Docker+Redis 安装配置">
+      <i class="fa fa-chevron-left"></i> Docker+Redis 安装配置
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/e823826f/" rel="next" title="Hexo 服务器部署踩坑记录">
+      Hexo 服务器部署踩坑记录 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
   
-
-  
-
 
 
           </div>
@@ -330,6 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%8C%85"><span class="nav-text">下载包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95"><span class="nav-text">创建挂载目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8"><span class="nav-text">运行容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5"><span class="nav-text">连接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

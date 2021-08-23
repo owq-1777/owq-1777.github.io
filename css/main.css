@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #12ff58;
+  background: #06740d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2803,6 +2803,9 @@ ul {
 li p {
   margin-bottom: 5px;
 }
+.post-body {
+  text-align: initial;
+}
 .post a {
   font-size: 0.95em;
   color: #64a0e6;
@@ -2815,20 +2818,28 @@ li p {
 .post-heading>.subheading {
   font-size: 0.75em;
 }
+.posts-expand .post-meta {
+  margin: 3px 0 20px 0;
+}
+.post-copyright {
+  margin: 0;
+}
 .post_end_tag {
   color: #aaa;
   font-size: 0.85em;
   text-align: center;
   margin: 45px 0 60px 0;
 }
-code {
-  background: none;
-  color: #64a0e6;
+.copy-btn {
+  font-size: 110%;
 }
 .highlight-container {
   margin-bottom: 15px;
   background: #2d2d2d;
   box-shadow: 0 4px 15px 0 rgba(0,0,0,0.4);
+}
+.highlight .gutter pre {
+  background: #2d2d2d;
 }
 img {
   box-shadow: 0 4px 15px 0 rgba(0,0,0,0.4);
@@ -2913,7 +2924,7 @@ body {
 }
 blockquote {
   padding: 5px 15px;
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   border-left: 4px solid #e95f59;
   background: rgba(253,239,238,0.6);
   border-left: 0.25rem solid #6c9ae5;
