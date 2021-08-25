@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #06740d;
+  background: #e934ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2829,6 +2829,10 @@ li p {
   font-size: 0.85em;
   text-align: center;
   margin: 45px 0 60px 0;
+}
+code {
+  background: none;
+  color: #6c9ae5;
 }
 .copy-btn {
   font-size: 110%;
