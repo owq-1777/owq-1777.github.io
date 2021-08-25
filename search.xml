@@ -1,26 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Docker+MongoDB 安装配置</title>
-    <url>/d2633d2c/</url>
-    <content><![CDATA[<h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
+    <title>Selenium 操作文档</title>
+    <url>/2f022c8a/</url>
+    <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><blockquote>
+<p>基于浏览器驱动的自动化操作浏览器工具, 用于运维测试也可用于爬虫。</p>
+</blockquote>
+<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">操作流程</span><br><span class="line"><span class="function"><span class="title">selenium</span> -&gt;</span> 传输指令 —&gt; <span class="function"><span class="title">webdriver</span> -&gt;</span> 转换指令 -&gt; 浏览器执行</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db</span><br></pre></td></tr></table></figure>
 
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker run -p <span class="number">27017</span>:<span class="number">27017</span> -v <span class="regexp">/data/m</span>ongo:<span class="regexp">/data/</span>db --name mongodb -d mongo --auth</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>创建用户密码</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"># 进入容器</span><br><span class="line">docker exec -it mongo mongo admin</span><br><span class="line"></span><br><span class="line"># 创建用户密码</span><br><span class="line">db.create<span class="constructor">User(&#123; <span class="params">user</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">pwd</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">roles</span>:[ &#123; <span class="params">role</span>:&#x27;<span class="params">userAdminAnyDatabase</span>&#x27;, <span class="params">db</span>: &#x27;<span class="params">admin</span>&#x27;&#125;,<span class="string">&quot;readWriteAnyDatabase&quot;</span>]&#125;)</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><ul>
+<li><p>安装Python版本的selenium</p>
+  <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> selenium</span><br></pre></td></tr></table></figure></li>
+<li><p>查看Chrome版本，浏览器输入</p>
+  <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chrome:<span class="regexp">//</span>version/</span><br></pre></td></tr></table></figure></li>
+<li><p>下载对应浏览器版本的chrome driver<br>  <em>PS:选择驱动版本最接近的，不一定要完全一样的。</em></p>
+<ul>
+<li><span class="exturl" data-url="aHR0cDovL25wbS50YW9iYW8ub3JnL21pcnJvcnMvY2hyb21lZHJpdmVyLw==">淘宝镜像下载</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9jaHJvbWVkcml2ZXIuY2hyb21pdW0ub3JnL2Rvd25sb2Fkcw==">官方下载</span> (需要挂代理)</li>
+</ul>
+</li>
+<li><p>解压到特定目录，方便调用</p>
+  <figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">.<span class="string">\drivers\</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:admin<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> setting <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">option = webdriver.ChromeOptions()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 ...</span></span><br><span class="line"></span><br><span class="line">brower = Chrome(executable_path=driver_path, options=options)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">UA = <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&#x27;</span></span><br><span class="line">PROXY = &#123;<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">7890</span>&#125;</span><br><span class="line">CACHE_DIR = <span class="string">r&#x27;cache/user_1&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>驱动路径配置</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> platform</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> platform.system() == <span class="string">&#x27;Windows&#x27;</span>:</span><br><span class="line">    DRIVER_PATH = <span class="string">r&quot;drivers/win/chromedriver.exe&quot;</span></span><br><span class="line"><span class="keyword">elif</span> platform.system() == <span class="string">&#x27;Linux&#x27;</span>:</span><br><span class="line">    <span class="comment"># Linux下赋予驱动执行权限 sudo chmod +x drivers/chromedriver_linux64/chromedriver</span></span><br><span class="line">    DRIVER_PATH = <span class="string">r&quot;drivers/linux/chromedriver&quot;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">raise</span> <span class="built_in">print</span>(<span class="string">f&#x27;!!Error Driver path!!\nUnknown system: <span class="subst">&#123;platform.system()&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h2><ul>
+<li><p>无头模式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Headless</span></span><br><span class="line">options.add_argument(<span class="string">&quot;--headless&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>禁用图片加载</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable image loading</span></span><br><span class="line">prefs = &#123; <span class="string">&#x27;profile.managed_default_content_settings.images&#x27;</span>: <span class="number">2</span> &#125;</span><br><span class="line">options.add_experimental_option(<span class="string">&quot;prefs&quot;</span>, prefs)</span><br></pre></td></tr></table></figure></li>
+<li><p>设置User-Agent</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># UA</span></span><br><span class="line">options.add_argument(UA)</span><br></pre></td></tr></table></figure></li>
+<li><p>设置代理</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Proxy</span></span><br><span class="line">options.add_argument(<span class="string">f&quot;--proxy-server=<span class="subst">&#123;PROXY&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>设置缓存</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Cache data</span></span><br><span class="line">options.add_argument(<span class="string">f&quot;--user-data-dir=<span class="subst">&#123;CACHE_DIR&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>设置隐式等待</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">brower</span>.implicitly_wait(<span class="number">10</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>设置窗口大小</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># resize</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;window-size=1500x1200&#x27;</span>) </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="浏览器特征隐藏"><a href="#浏览器特征隐藏" class="headerlink" title="浏览器特征隐藏"></a>浏览器特征隐藏</h2><p><strong>隐藏驱动标识</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Delete &quot;navigator.webdriver&quot; property</span></span><br><span class="line">options.add_argument(<span class="string">&quot;disable-blink-features=AutomationControlled&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用puppeteer前端框架隐藏模拟浏览器的指纹特征的JS</p>
+<blockquote>
+<p>项目地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JlcnN0ZW5kL3B1cHBldGVlci1leHRyYS90cmVlL21hc3Rlci9wYWNrYWdlcy9leHRyYWN0LXN0ZWFsdGgtZXZhc2lvbnM=">🚪</span></p>
+</blockquote>
+<p><code>stealth.min.js</code>文件生成, 需安装好<code>node.js</code>环境, <del>不挂代理速度会很慢</del></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 执行以下语句,会在当前文件夹生成stealth.min.js文件</span></span><br><span class="line">npx extract-stealth-evasions</span><br></pre></td></tr></table></figure>
+
+<p>加载进浏览器</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 执行隐藏驱动特征JS</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r&#x27;data/stealth.min.js&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    stealth_js = f.read()</span><br><span class="line">brower.execute_cdp_cmd(<span class="string">&quot;Page.addScriptToEvaluateOnNewDocument&quot;</span>, &#123;<span class="string">&#x27;source&#x27;</span>: stealth_js&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>进入 <span class="exturl" data-url="aHR0cHM6Ly9ib3Quc2Fubnlzb2Z0LmNvbS8=">https://bot.sannysoft.com</span> 测试效果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">driver.get(<span class="string">&#x27;https://bot.sannysoft.com/&#x27;</span>)</span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line">driver.save_screenshot(<span class="string">&#x27;walkaround.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="其它配置"><a href="#其它配置" class="headerlink" title="其它配置"></a>其它配置</h2><ul>
+<li><p>禁用JavaScript</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable JS</span></span><br><span class="line">option.add_argument(<span class="string">&quot;--disable-javascript&quot;</span>) </span><br></pre></td></tr></table></figure></li>
+<li><p>禁用浏览器弹窗</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable the browser popover</span></span><br><span class="line">prefs = &#123;  </span><br><span class="line">    <span class="string">&#x27;profile.default_content_setting_values&#x27;</span> :  &#123;  </span><br><span class="line">        <span class="string">&#x27;notifications&#x27;</span> : <span class="number">2</span>  </span><br><span class="line">     &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">options.add_experimental_option(<span class="string">&#x27;prefs&#x27;</span>,prefs)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="体验问题"><a href="#体验问题" class="headerlink" title="体验问题"></a>体验问题</h2><p>关闭日志输出</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Close logs</span></span><br><span class="line">options.add_experimental_option(<span class="string">&#x27;excludeSwitches&#x27;</span>, [<span class="string">&#x27;enable-logging&#x27;</span>])</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>配置记录</category>
+        <category>命令文档</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
-        <tag>Mongo</tag>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+        <tag>Selenium</tag>
       </tags>
   </entry>
   <entry>
@@ -53,6 +124,29 @@
       <tags>
         <tag>Docker</tag>
         <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker+MongoDB 安装配置</title>
+    <url>/d2633d2c/</url>
+    <content><![CDATA[<h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker run -p <span class="number">27017</span>:<span class="number">27017</span> -v <span class="regexp">/data/m</span>ongo:<span class="regexp">/data/</span>db --name mongodb -d mongo --auth</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>创建用户密码</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"># 进入容器</span><br><span class="line">docker exec -it mongo mongo admin</span><br><span class="line"></span><br><span class="line"># 创建用户密码</span><br><span class="line">db.create<span class="constructor">User(&#123; <span class="params">user</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">pwd</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">roles</span>:[ &#123; <span class="params">role</span>:&#x27;<span class="params">userAdminAnyDatabase</span>&#x27;, <span class="params">db</span>: &#x27;<span class="params">admin</span>&#x27;&#125;,<span class="string">&quot;readWriteAnyDatabase&quot;</span>]&#125;)</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:admin<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>配置记录</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Mongo</tag>
       </tags>
   </entry>
   <entry>
@@ -169,86 +263,271 @@
       </tags>
   </entry>
   <entry>
-    <title>Java 开发环境搭建萌新教程</title>
-    <url>/46118abd/</url>
-    <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
-
-<blockquote>
-<p> 用最实用的方法来解决问题。<br>该教程不是用安装程序安装，而是通过设置环境变量，来实现基础Java环境搭建。</p>
+    <title>优雅的使用WSL2-Kali桌面环境</title>
+    <url>/202281bd/</url>
+    <content><![CDATA[<blockquote>
+<p>Win-KeX官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
 </blockquote>
-<h2 id="下载-Java-JDK"><a href="#下载-Java-JDK" class="headerlink" title="下载 Java JDK"></a>下载 Java JDK</h2><blockquote>
-<p> 这里选择 Java8 进行演示，并提供3种下载方法参考~</p>
+<h2 id="安装win-kex"><a href="#安装win-kex" class="headerlink" title="安装win-kex"></a>安装win-kex</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install kali-win-kex</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动Win-Kex"><a href="#启动Win-Kex" class="headerlink" title="启动Win-Kex"></a>启动Win-Kex</h2><blockquote>
+<p>Win-KeX 有三种启动模式</p>
 </blockquote>
 <ul>
-<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cub3JhY2xlLmNvbS9qYXZhL3RlY2hub2xvZ2llcy9qYXZhc2UtZG93bmxvYWRzLmh0bWw=">官网</span></p>
-<p>官网的 Java 8 只提供安装包下载 可以到其它地方下载打包好的JDK,这里使用 Java 11 做为示例</p>
-<p><img data-src="https://i.loli.net/2021/08/19/O4AIUTYJmcksHuw.png"><br><img data-src="https://i.loli.net/2021/08/19/mBgFa8k3zsjTnGv.png"></p>
-</li>
-<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYXp1bC5jb20vZG93bmxvYWRzL3p1bHUtY29tbXVuaXR5Lz9wYWNrYWdlPWpkaw==">Azul Zulu</span><br>网页往下拉，找到下载处，选择Java版本和系统，然后下载压缩包</p>
-<p><img data-src="https://i.loli.net/2021/08/19/xEQOcRSJDZ6tfKC.png"></p>
-</li>
-<li><p><span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTJoRnFBZ1BOQ0h6b09TV21xVG9qdmc=">网盘下载</span><br>提取码: 47w5</p>
-</li>
-<li><p>版本小解</p>
+<li><p>窗口模式<br>在专用窗口中启动 Kali Linux 桌面.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --win -s	</span><br></pre></td></tr></table></figure></li>
+<li><p>远程连接（推荐）<br>微软自带的远程桌面工具，用过的都说好~</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --esm --ip -s</span><br></pre></td></tr></table></figure></li>
+<li><p>无缝模式<br>在 Windows 和 Kali 应用程序和菜单之间共享 Windows 桌面.</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">kex <span class="comment">--sl -s</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><em>注: 后面参数<code>-s</code>是启动声音支持.</em></p>
+<h2 id="高分屏下的使用"><a href="#高分屏下的使用" class="headerlink" title="高分屏下的使用"></a>高分屏下的使用</h2><blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy9nZW5lcmFsLXVzZS9oaWRwaS8=">🚪</span></p>
+</blockquote>
+<p>菜单搜索<code>hidpi</code>, 打开它</p>
+<p><img data-src="https://i.loli.net/2021/08/16/brmLSYtEOFvBypk.png"></p>
+<p>默认缩放2X, 点击<code>是</code>确认, 然后开始愉快的Linux之旅吧~</p>
+<p><img data-src="https://i.loli.net/2021/08/16/sM3KuCyPQkjitpD.png"></p>
+<p><em>注:如果要自定义缩放因子请参考官方文档</em></p>
+<h2 id="快捷启动"><a href="#快捷启动" class="headerlink" title="快捷启动"></a>快捷启动</h2><ul>
+<li>添加到<code>Windows Termial</code>启动</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;576cd4fd-d6e2-4b99-9305-2e03a898af04&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Win-KeX&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;wsl -d kali-linux kex --esm --wtstart -s&quot;</span>,</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>Java 是向后兼容的<ul>
-<li>新版本仍能使用旧版本开发的程序</li>
+<li>设置命令别名</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> winkex=<span class="string">&#x27;kex --esm --ip -s&#x27;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>配置记录</category>
+      </categories>
+      <tags>
+        <tag>WSL2</tag>
+        <tag>Kali Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WSL2 安装配置</title>
+    <url>/1fe3c459/</url>
+    <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
+<p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
+</blockquote>
+<p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.</p>
+<p>ps:接下来的命令都是在这个终端上执行.</p>
+<img data-src="https://i.loli.net/2021/08/12/C8BjhOs3pi4RwQY.png" />
+
+<ol>
+<li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+
+<p>ps:到了这一步要重启计算机下</p>
+</li>
+<li><h3 id="下载-Linux-内核更新包"><a href="#下载-Linux-内核更新包" class="headerlink" title="下载 Linux 内核更新包"></a>下载 Linux 内核更新包</h3><p>选择自己计算机内核架构对应的包, 一般为架构是64位也就是x64.</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp">x64更新包</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV9hcm02NC5tc2k=">ARM64更新包</span></li>
 </ul>
 </li>
-<li>Java 8 是目前市场份额最多版本（2020）<ul>
-<li>很多公司仍在用 Java8 开发</li>
+<li><h3 id="将-WSL-2-设置为默认版本"><a href="#将-WSL-2-设置为默认版本" class="headerlink" title="将 WSL 2 设置为默认版本"></a>将 WSL 2 设置为默认版本</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 可根据个人喜好选择.</p>
+<ul>
+<li><h3 id="微软商店搜索安装-推荐"><a href="#微软商店搜索安装-推荐" class="headerlink" title="微软商店搜索安装(推荐)"></a>微软商店搜索安装(推荐)</h3><ul>
+<li><code>Win + S</code> 搜索打开 <code>Microsoft Store</code> 搜索 Linux 找到对应版本安装即可.</li>
 </ul>
 </li>
-<li>Java 11 是 Java8 后首个长期支持版本(LTS)<ul>
-<li>市场份额在 Java8 之后 正在慢慢提升中</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="解压-Java-JDK"><a href="#解压-Java-JDK" class="headerlink" title="解压 Java JDK"></a>解压 Java JDK</h2><p>记住解压路径 这是 Java JDK 的根目录</p>
-<p><img data-src="https://i.loli.net/2020/12/14/HCFSBm7Gqduiks2.png"></p>
-<h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><p><code>Win + R</code> 运行 输入 <code>sysdm.cpl</code> 回车进入 系统属性配置</p>
-<img data-src="https://i.loli.net/2020/12/14/WKR13OZAp6VlgBk.png" style="zoom:50%;" />
-
-<p>依次点击 高级 &gt;&gt; 环境变量</p>
-<img data-src="https://i.loli.net/2020/12/14/BKbvgq4auc1wLHP.png" style="zoom:50%;" />
-
-<p>新建 变量名: <code>JAVA_HOME</code>  变量值: <code>C:\Java\jdk8.0.275</code>(刚刚解压的Java路径)</p>
-<img data-src="https://i.loli.net/2020/12/14/LfgSD5NU7WbQYMX.png" style="zoom:50%;" />
-
-<p>双击 <strong>Path</strong> 环境变量  进入编辑 (图示操作也是可以的)</p>
-<img data-src="https://i.loli.net/2020/12/14/FIRayoU6ePZHxp1.png" style="zoom:50%;" />
-
-<p>新建变量 <code>%JAVA_HOME%/bin</code></p>
-<img data-src="https://i.loli.net/2020/12/14/gKhefUA69oJkjvM.png" style="zoom:50%;" />
-
-<p>Win7 下添加环境变量要用<strong>分号</strong>隔开</p>
-<img data-src="https://i.loli.net/2020/12/14/lW41HxYgnZjMDwy.png" style="zoom:80%;" />
-
-
-
-<h2 id="检验环境"><a href="#检验环境" class="headerlink" title="检验环境"></a>检验环境</h2><p><code>Win +R</code> 运行 cmd 输入 <code>java -version</code>  输出版本信息</p>
-<p><img data-src="https://i.loli.net/2020/12/14/EDz94pK85yNVYZw.png"></p>
-<h2 id="错误排查"><a href="#错误排查" class="headerlink" title="错误排查"></a>错误排查</h2><ul>
-<li>若是没有正常输出 请检查环境变量的<strong>路径</strong>是否配置正确</li>
-<li>在 cmd 窗口 输入 <code>echo %JAVA_HOME%</code> 查看路径<ul>
-<li>注意大小写正确 </li>
-<li>斜杠是否写反</li>
-<li><strong>分号</strong> 是否为英文符号</li>
-</ul>
-</li>
-<li>在 cmd 窗口 输入 <code>echo %PATH%</code> 查看 是否有 <code>%JAVA_HOME%\bin</code><ul>
-<li>系统会自动把 <code>%JAVA_HOME%</code> 变量转换成路径<br><img data-src="https://i.loli.net/2020/12/14/ZT9oN85rWe2jFqI.png"></li>
+<li><h3 id="手动下载安装包安装"><a href="#手动下载安装包安装" class="headerlink" title="手动下载安装包安装"></a>手动下载安装包安装</h3><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vemgtY24vd2luZG93cy93c2wvaW5zdGFsbC1tYW51YWwjZG93bmxvYWRpbmctZGlzdHJpYnV0aW9ucw==">官方下载地址</span></li>
+<li>其它Linux地址<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1azcvQXJjaFdTTA==">ArchWSL</span></li>
 </ul>
 </li>
 </ul>
+</li>
+<li><h3 id="命令行安装"><a href="#命令行安装" class="headerlink" title="命令行安装"></a>命令行安装</h3><p>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="WSL-位置移动-可选"><a href="#WSL-位置移动-可选" class="headerlink" title="WSL 位置移动(可选)"></a>WSL 位置移动(可选)</h2><blockquote>
+<p>这里使用LxRunOffline工具进行移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
+</blockquote>
+<p>如果担心C盘空间不够可以把WSL的安装位置移动到其它盘.</p>
+<p>下载解压压缩包后, 在解压目录处打开命令行, 就可以运行以下命令了.</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="WSL-2-优化配置-可选"><a href="#WSL-2-优化配置-可选" class="headerlink" title="WSL 2 优化配置(可选)"></a>WSL 2 优化配置(可选)</h2><blockquote>
+<p>配置文档官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvd3NsLWNvbmZpZyNjb25maWd1cmUtZ2xvYmFsLW9wdGlvbnMtd2l0aC13c2xjb25maWc=">🚪</span></p>
+</blockquote>
+<h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改Windows位于用户目录<code>%home%</code>下的<code>.wslconfig</code>文件，若没有则自己创建一个.</p>
+<p>ps:直接在资源管理器输入<code>%home%</code>按回车就可跳转, 若出错则是电脑环境变量没有配置好</p>
+<p><img data-src="https://i.loli.net/2021/08/12/Q6MjR8sqKba3BOZ.png"></p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>主要配置内存和交换内存, 其它可以不用管, 看自己电脑配置设置.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="comment"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="comment"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">0</span></span><br><span class="line"><span class="comment"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span></span><br><span class="line"><span class="attr">swapFile</span>=&lt;path&gt;</span><br><span class="line"><span class="comment"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span></span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>配置好文件后需要关闭WSL重新进入才会生效.</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-shutdown</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>入门教程</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>Linux</tag>
+        <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>zsh + oh-my-zsh 简易配置</title>
+    <url>/4bfebac1/</url>
+    <content><![CDATA[<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>curl</strong></td>
+<td>sh -c &quot;$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
+</tr>
+<tr>
+<td><strong>wget</strong></td>
+<td>sh -c &quot;$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
+</tr>
+<tr>
+<td><strong>fetch</strong></td>
+<td>sh -c &quot;$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
+</tr>
+</tbody></table>
+<h2 id="连接被墙问题"><a href="#连接被墙问题" class="headerlink" title="连接被墙问题"></a>连接被墙问题</h2><h3 id="方法一-科学上网"><a href="#方法一-科学上网" class="headerlink" title="方法一: 科学上网"></a>方法一: <del>科学上网</del></h3><blockquote>
+<p>只可意会不可言传🐕</p>
+</blockquote>
+<h3 id="方法二-加速ssh登录"><a href="#方法二-加速ssh登录" class="headerlink" title="方法二: 加速ssh登录"></a>方法二: 加速ssh登录</h3><blockquote>
+<p>适用于阿里云服务器😶</p>
+</blockquote>
+<p>修改 <code>/etc/ssh/ssh_config</code></p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>ssh/ssh_config</span><br></pre></td></tr></table></figure>
+
+<p>取消以下行的注释</p>
+<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># GSSAPIAuthentication no</span></span><br></pre></td></tr></table></figure>
+
+<p>没有生效可以重启下sshd服务器</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d/sshd restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法三-映射hosts"><a href="#方法三-映射hosts" class="headerlink" title="方法三: 映射hosts"></a>方法三: 映射hosts</h3><blockquote>
+<p>死马当活马医😂</p>
+</blockquote>
+<p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBhZGRyZXNzLmNvbS8=">https://www.ipaddress.com/</span> 获取域名的映射IP</p>
+<p><img data-src="https://i.loli.net/2021/08/16/v75LtJBaPjToRZ6.png"></p>
+<p>修改<code>hosts</code>文件</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>hosts</span><br></pre></td></tr></table></figure>
+
+<p>添加对应的ip映射即可</p>
+<figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.133</span> raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><blockquote>
+<p>主题文件位于 <code>.oh-my-zsh/themes</code> 目录下，可自定义修改</p>
+</blockquote>
+<h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="https://i.loli.net/2021/08/06/51yhlPEQH7WOCnF.png" style="zoom:80%;" />
+
+<p>修改 <code>~/.zshrc</code> 文件</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">&quot;ys&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="https://i.loli.net/2021/08/06/K2MYl3UE5T1yDaI.png" style="zoom: 80%;" />
+
+<h4 id="安装powerline主题"><a href="#安装powerline主题" class="headerlink" title="安装powerline主题"></a><strong>安装powerline主题</strong></h4><blockquote>
+<p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
+</blockquote>
+<p>克隆主题文件到本地</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git powerline</span><br></pre></td></tr></table></figure>
+
+<p>运行安装脚本</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> powerline &amp;&amp; ./install_in_omz.sh</span><br></pre></td></tr></table></figure>
+
+<p>修改 <code>~/.zshrc</code> 配置文件</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改主题</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;powerline&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改终端为256位颜色模式</span></span><br><span class="line"><span class="built_in">export</span> TERM=<span class="string">&quot;xterm-256color&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>若终端符号显示不全或错位需要设置为 <code>TureType字体</code></p>
+<p>如: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvbnNreS9GaXJhQ29kZQ==">FiraCode</span>、powerline</p>
+</blockquote>
+<p><strong>安装powerline字体</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install fonts-powerline</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h2><p>修改<code>~/.zshrc</code>配置文件</p>
+<p><strong>快速添加sudo</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># EscEsc to sudo</span></span><br><span class="line"><span class="built_in">bindkey</span> -s <span class="string">&#x27;\e\e&#x27;</span> <span class="string">&#x27;\C-asudo \C-e&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>WSL2下的代理配置</strong></p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Proxy config</span></span><br><span class="line"><span class="keyword">export</span> hostip=$(cat /etc/resolv.conf | grep -oP &#x27;(?&lt;=nameserver\ ).*&#x27;)</span><br><span class="line">alias proxyon=&#x27;<span class="keyword">export</span> https_proxy=<span class="string">&quot;http://$&#123;hostip&#125;:7890&quot;</span> &amp;&amp; <span class="keyword">export</span> http_proxy=<span class="string">&quot;http://$&#123;hostip&#125;:7890&quot;</span> &amp;&amp; <span class="keyword">export</span> all_proxy=<span class="string">&quot;socks5://$&#123;hostip&#125;:7890&quot;</span>&#x27;</span><br><span class="line">alias unproxy=&#x27;<span class="keyword">unset</span> http_proxy &amp;&amp; <span class="keyword">unset</span> https_proxy &amp;&amp; <span class="keyword">unset</span> all_proxy&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>常用别名设置</strong></p>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line"># git <span class="keyword">log</span></span><br><span class="line"><span class="keyword">alias</span> glog=<span class="string">&#x27;git log --graph --pretty=oneline --abbrev-commit&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">ls</span> -al</span><br><span class="line"><span class="keyword">alias</span> ll=<span class="keyword">ls</span> -al --show-<span class="keyword">control</span>-chars --<span class="keyword">color</span> $*</span><br><span class="line"></span><br><span class="line"># Other <span class="keyword">alias</span> config</span><br><span class="line"><span class="keyword">alias</span> ipython=<span class="string">&#x27;ipython3&#x27;</span></span><br><span class="line"><span class="keyword">alias</span> npm=<span class="string">&#x27;sudo npm&#x27;</span></span><br><span class="line"><span class="keyword">alias</span> typora=<span class="string">&#x27;typora.exe&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置其他用户可用"><a href="#配置其他用户可用" class="headerlink" title="配置其他用户可用"></a>配置其他用户可用</h2><blockquote>
+<p>该方法虽然可以一次配置全局生效, 但会存在权限问题故不建议使用.</p>
+<p>建议其它用户最好重新安装配置.</p>
+</blockquote>
+<p>为root用户建立软连接，即root用户使用当前用户的配置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo ln -s <span class="variable">$HOME</span>/.oh-my-zsh /root/.oh-my-zsh</span><br><span class="line">sudo ln -s <span class="variable">$HOME</span>/.zshrc /root/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>切换root进入zsh，若提示无pyenv命令，则再建立软连接即可</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo ln -s <span class="variable">$HOME</span>/.pyenv /root/.pyenv</span><br></pre></td></tr></table></figure>
+
+<p>若提示目录权限警告，则在 .zshrc 文件前面添加</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_DISABLE_COMPFIX</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>若要单独配置，复制相应目录到对应用户主目录下即可</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo cp -r <span class="variable">$HOME</span>/.oh-my-zsh	/root</span><br><span class="line">sudo cp -r <span class="variable">$HOME</span>/.zshrc	/root</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d0aW5nL2F1dG9qdW1w">autojump</span></p>
+<blockquote>
+<p>快速跳转目录</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/wting/autojump.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 跳转目录安装</span></span><br><span class="line"><span class="built_in">cd</span> autojump</span><br><span class="line">./install.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./uninstall.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">j &lt;部分目录名&gt;</span><br></pre></td></tr></table></figure>
+
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions</span><br><strong>极力推荐</strong></p>
+<blockquote>
+<p>历史命令灰色提示</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhdWxpcmlzaC9naXQtb3Blbg==">git-open</span></p>
+<blockquote>
+<p>浏览器快速打开git项目</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/paulirish/git-open.git <span class="variable">$ZSH_CUSTOM</span>/plugins/git-open</span><br><span class="line"></span><br><span class="line"><span class="comment"># git仓库下运行打开</span></span><br><span class="line">git open</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>配置插件</strong></p>
+<p><em>注意：插件中间是以空格分开</em></p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">plugins</span>=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>配置记录</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Terminal</tag>
+        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
@@ -350,168 +629,86 @@
       </tags>
   </entry>
   <entry>
-    <title>Selenium 操作文档</title>
-    <url>/2f022c8a/</url>
-    <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><blockquote>
-<p>基于浏览器驱动的自动化操作浏览器工具, 用于运维测试也可用于爬虫。</p>
-</blockquote>
-<figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">操作流程</span><br><span class="line"><span class="function"><span class="title">selenium</span> -&gt;</span> 传输指令 —&gt; <span class="function"><span class="title">webdriver</span> -&gt;</span> 转换指令 -&gt; 浏览器执行</span><br></pre></td></tr></table></figure>
+    <title>Java 开发环境搭建萌新教程</title>
+    <url>/46118abd/</url>
+    <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
 
-
-
-<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><ul>
-<li><p>安装Python版本的selenium</p>
-  <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> selenium</span><br></pre></td></tr></table></figure></li>
-<li><p>查看Chrome版本，浏览器输入</p>
-  <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chrome:<span class="regexp">//</span>version/</span><br></pre></td></tr></table></figure></li>
-<li><p>下载对应浏览器版本的chrome driver<br>  <em>PS:选择驱动版本最接近的，不一定要完全一样的。</em></p>
-<ul>
-<li><span class="exturl" data-url="aHR0cDovL25wbS50YW9iYW8ub3JnL21pcnJvcnMvY2hyb21lZHJpdmVyLw==">淘宝镜像下载</span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9jaHJvbWVkcml2ZXIuY2hyb21pdW0ub3JnL2Rvd25sb2Fkcw==">官方下载</span> (需要挂代理)</li>
-</ul>
-</li>
-<li><p>解压到特定目录，方便调用</p>
-  <figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">.<span class="string">\drivers\</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> setting <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">option = webdriver.ChromeOptions()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 ...</span></span><br><span class="line"></span><br><span class="line">brower = Chrome(executable_path=driver_path, options=options)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">UA = <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&#x27;</span></span><br><span class="line">PROXY = &#123;<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">7890</span>&#125;</span><br><span class="line">CACHE_DIR = <span class="string">r&#x27;cache/user_1&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>驱动路径配置</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> platform</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> platform.system() == <span class="string">&#x27;Windows&#x27;</span>:</span><br><span class="line">    DRIVER_PATH = <span class="string">r&quot;drivers/win/chromedriver.exe&quot;</span></span><br><span class="line"><span class="keyword">elif</span> platform.system() == <span class="string">&#x27;Linux&#x27;</span>:</span><br><span class="line">    <span class="comment"># Linux下赋予驱动执行权限 sudo chmod +x drivers/chromedriver_linux64/chromedriver</span></span><br><span class="line">    DRIVER_PATH = <span class="string">r&quot;drivers/linux/chromedriver&quot;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">raise</span> <span class="built_in">print</span>(<span class="string">f&#x27;!!Error Driver path!!\nUnknown system: <span class="subst">&#123;platform.system()&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h2><ul>
-<li><p>无头模式</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Headless</span></span><br><span class="line">options.add_argument(<span class="string">&quot;--headless&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>禁用图片加载</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable image loading</span></span><br><span class="line">prefs = &#123; <span class="string">&#x27;profile.managed_default_content_settings.images&#x27;</span>: <span class="number">2</span> &#125;</span><br><span class="line">options.add_experimental_option(<span class="string">&quot;prefs&quot;</span>, prefs)</span><br></pre></td></tr></table></figure></li>
-<li><p>设置User-Agent</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># UA</span></span><br><span class="line">options.add_argument(UA)</span><br></pre></td></tr></table></figure></li>
-<li><p>设置代理</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Proxy</span></span><br><span class="line">options.add_argument(<span class="string">f&quot;--proxy-server=<span class="subst">&#123;PROXY&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>设置缓存</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Cache data</span></span><br><span class="line">options.add_argument(<span class="string">f&quot;--user-data-dir=<span class="subst">&#123;CACHE_DIR&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>设置隐式等待</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">brower</span>.implicitly_wait(<span class="number">10</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>设置窗口大小</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># resize</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;window-size=1500x1200&#x27;</span>) </span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="浏览器特征隐藏"><a href="#浏览器特征隐藏" class="headerlink" title="浏览器特征隐藏"></a>浏览器特征隐藏</h2><p><strong>隐藏驱动标识</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Delete &quot;navigator.webdriver&quot; property</span></span><br><span class="line">options.add_argument(<span class="string">&quot;disable-blink-features=AutomationControlled&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>使用puppeteer前端框架隐藏模拟浏览器的指纹特征的JS</p>
 <blockquote>
-<p>项目地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JlcnN0ZW5kL3B1cHBldGVlci1leHRyYS90cmVlL21hc3Rlci9wYWNrYWdlcy9leHRyYWN0LXN0ZWFsdGgtZXZhc2lvbnM=">🚪</span></p>
+<p> 用最实用的方法来解决问题。<br>该教程不是用安装程序安装，而是通过设置环境变量，来实现基础Java环境搭建。</p>
 </blockquote>
-<p><code>stealth.min.js</code>文件生成, 需安装好<code>node.js</code>环境, <del>不挂代理速度会很慢</del></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 执行以下语句,会在当前文件夹生成stealth.min.js文件</span></span><br><span class="line">npx extract-stealth-evasions</span><br></pre></td></tr></table></figure>
-
-<p>加载进浏览器</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 执行隐藏驱动特征JS</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r&#x27;data/stealth.min.js&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    stealth_js = f.read()</span><br><span class="line">brower.execute_cdp_cmd(<span class="string">&quot;Page.addScriptToEvaluateOnNewDocument&quot;</span>, &#123;<span class="string">&#x27;source&#x27;</span>: stealth_js&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>进入 <span class="exturl" data-url="aHR0cHM6Ly9ib3Quc2Fubnlzb2Z0LmNvbS8=">https://bot.sannysoft.com</span> 测试效果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">driver.get(<span class="string">&#x27;https://bot.sannysoft.com/&#x27;</span>)</span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line">driver.save_screenshot(<span class="string">&#x27;walkaround.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="其它配置"><a href="#其它配置" class="headerlink" title="其它配置"></a>其它配置</h2><ul>
-<li><p>禁用JavaScript</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable JS</span></span><br><span class="line">option.add_argument(<span class="string">&quot;--disable-javascript&quot;</span>) </span><br></pre></td></tr></table></figure></li>
-<li><p>禁用浏览器弹窗</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable the browser popover</span></span><br><span class="line">prefs = &#123;  </span><br><span class="line">    <span class="string">&#x27;profile.default_content_setting_values&#x27;</span> :  &#123;  </span><br><span class="line">        <span class="string">&#x27;notifications&#x27;</span> : <span class="number">2</span>  </span><br><span class="line">     &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">options.add_experimental_option(<span class="string">&#x27;prefs&#x27;</span>,prefs)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="体验问题"><a href="#体验问题" class="headerlink" title="体验问题"></a>体验问题</h2><p>关闭日志输出</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Close logs</span></span><br><span class="line">options.add_experimental_option(<span class="string">&#x27;excludeSwitches&#x27;</span>, [<span class="string">&#x27;enable-logging&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>命令文档</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-        <tag>Selenium</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WSL2 安装配置</title>
-    <url>/1fe3c459/</url>
-    <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
-<p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
+<h2 id="下载-Java-JDK"><a href="#下载-Java-JDK" class="headerlink" title="下载 Java JDK"></a>下载 Java JDK</h2><blockquote>
+<p> 这里选择 Java8 进行演示，并提供3种下载方法参考~</p>
 </blockquote>
-<p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.</p>
-<p>ps:接下来的命令都是在这个终端上执行.</p>
-<img data-src="https://i.loli.net/2021/08/12/C8BjhOs3pi4RwQY.png" />
-
-<ol>
-<li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
-
-<p>ps:到了这一步要重启计算机下</p>
-</li>
-<li><h3 id="下载-Linux-内核更新包"><a href="#下载-Linux-内核更新包" class="headerlink" title="下载 Linux 内核更新包"></a>下载 Linux 内核更新包</h3><p>选择自己计算机内核架构对应的包, 一般为架构是64位也就是x64.</p>
 <ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp">x64更新包</span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV9hcm02NC5tc2k=">ARM64更新包</span></li>
-</ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cub3JhY2xlLmNvbS9qYXZhL3RlY2hub2xvZ2llcy9qYXZhc2UtZG93bmxvYWRzLmh0bWw=">官网</span></p>
+<p>官网的 Java 8 只提供安装包下载 可以到其它地方下载打包好的JDK,这里使用 Java 11 做为示例</p>
+<p><img data-src="https://i.loli.net/2021/08/19/O4AIUTYJmcksHuw.png"><br><img data-src="https://i.loli.net/2021/08/19/mBgFa8k3zsjTnGv.png"></p>
 </li>
-<li><h3 id="将-WSL-2-设置为默认版本"><a href="#将-WSL-2-设置为默认版本" class="headerlink" title="将 WSL 2 设置为默认版本"></a>将 WSL 2 设置为默认版本</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 可根据个人喜好选择.</p>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYXp1bC5jb20vZG93bmxvYWRzL3p1bHUtY29tbXVuaXR5Lz9wYWNrYWdlPWpkaw==">Azul Zulu</span><br>网页往下拉，找到下载处，选择Java版本和系统，然后下载压缩包</p>
+<p><img data-src="https://i.loli.net/2021/08/19/xEQOcRSJDZ6tfKC.png"></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTJoRnFBZ1BOQ0h6b09TV21xVG9qdmc=">网盘下载</span><br>提取码: 47w5</p>
+</li>
+<li><p>版本小解</p>
 <ul>
-<li><h3 id="微软商店搜索安装-推荐"><a href="#微软商店搜索安装-推荐" class="headerlink" title="微软商店搜索安装(推荐)"></a>微软商店搜索安装(推荐)</h3><ul>
-<li><code>Win + S</code> 搜索打开 <code>Microsoft Store</code> 搜索 Linux 找到对应版本安装即可.</li>
+<li>Java 是向后兼容的<ul>
+<li>新版本仍能使用旧版本开发的程序</li>
 </ul>
 </li>
-<li><h3 id="手动下载安装包安装"><a href="#手动下载安装包安装" class="headerlink" title="手动下载安装包安装"></a>手动下载安装包安装</h3><ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vemgtY24vd2luZG93cy93c2wvaW5zdGFsbC1tYW51YWwjZG93bmxvYWRpbmctZGlzdHJpYnV0aW9ucw==">官方下载地址</span></li>
-<li>其它Linux地址<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1azcvQXJjaFdTTA==">ArchWSL</span></li>
+<li>Java 8 是目前市场份额最多版本（2020）<ul>
+<li>很多公司仍在用 Java8 开发</li>
+</ul>
+</li>
+<li>Java 11 是 Java8 后首个长期支持版本(LTS)<ul>
+<li>市场份额在 Java8 之后 正在慢慢提升中</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><h3 id="命令行安装"><a href="#命令行安装" class="headerlink" title="命令行安装"></a>命令行安装</h3><p>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="WSL-位置移动-可选"><a href="#WSL-位置移动-可选" class="headerlink" title="WSL 位置移动(可选)"></a>WSL 位置移动(可选)</h2><blockquote>
-<p>这里使用LxRunOffline工具进行移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
-</blockquote>
-<p>如果担心C盘空间不够可以把WSL的安装位置移动到其它盘.</p>
-<p>下载解压压缩包后, 在解压目录处打开命令行, 就可以运行以下命令了.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
+<h2 id="解压-Java-JDK"><a href="#解压-Java-JDK" class="headerlink" title="解压 Java JDK"></a>解压 Java JDK</h2><p>记住解压路径 这是 Java JDK 的根目录</p>
+<p><img data-src="https://i.loli.net/2020/12/14/HCFSBm7Gqduiks2.png"></p>
+<h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><p><code>Win + R</code> 运行 输入 <code>sysdm.cpl</code> 回车进入 系统属性配置</p>
+<img data-src="https://i.loli.net/2020/12/14/WKR13OZAp6VlgBk.png" style="zoom:50%;" />
+
+<p>依次点击 高级 &gt;&gt; 环境变量</p>
+<img data-src="https://i.loli.net/2020/12/14/BKbvgq4auc1wLHP.png" style="zoom:50%;" />
+
+<p>新建 变量名: <code>JAVA_HOME</code>  变量值: <code>C:\Java\jdk8.0.275</code>(刚刚解压的Java路径)</p>
+<img data-src="https://i.loli.net/2020/12/14/LfgSD5NU7WbQYMX.png" style="zoom:50%;" />
+
+<p>双击 <strong>Path</strong> 环境变量  进入编辑 (图示操作也是可以的)</p>
+<img data-src="https://i.loli.net/2020/12/14/FIRayoU6ePZHxp1.png" style="zoom:50%;" />
+
+<p>新建变量 <code>%JAVA_HOME%/bin</code></p>
+<img data-src="https://i.loli.net/2020/12/14/gKhefUA69oJkjvM.png" style="zoom:50%;" />
+
+<p>Win7 下添加环境变量要用<strong>分号</strong>隔开</p>
+<img data-src="https://i.loli.net/2020/12/14/lW41HxYgnZjMDwy.png" style="zoom:80%;" />
 
 
 
-<h2 id="WSL-2-优化配置-可选"><a href="#WSL-2-优化配置-可选" class="headerlink" title="WSL 2 优化配置(可选)"></a>WSL 2 优化配置(可选)</h2><blockquote>
-<p>配置文档官方传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvd3NsLWNvbmZpZyNjb25maWd1cmUtZ2xvYmFsLW9wdGlvbnMtd2l0aC13c2xjb25maWc=">🚪</span></p>
-</blockquote>
-<h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改Windows位于用户目录<code>%home%</code>下的<code>.wslconfig</code>文件，若没有则自己创建一个.</p>
-<p>ps:直接在资源管理器输入<code>%home%</code>按回车就可跳转, 若出错则是电脑环境变量没有配置好</p>
-<p><img data-src="https://i.loli.net/2021/08/12/Q6MjR8sqKba3BOZ.png"></p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>主要配置内存和交换内存, 其它可以不用管, 看自己电脑配置设置.</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="comment"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="comment"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">0</span></span><br><span class="line"><span class="comment"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span></span><br><span class="line"><span class="attr">swapFile</span>=&lt;path&gt;</span><br><span class="line"><span class="comment"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span></span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>配置好文件后需要关闭WSL重新进入才会生效.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-shutdown</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="检验环境"><a href="#检验环境" class="headerlink" title="检验环境"></a>检验环境</h2><p><code>Win +R</code> 运行 cmd 输入 <code>java -version</code>  输出版本信息</p>
+<p><img data-src="https://i.loli.net/2020/12/14/EDz94pK85yNVYZw.png"></p>
+<h2 id="错误排查"><a href="#错误排查" class="headerlink" title="错误排查"></a>错误排查</h2><ul>
+<li>若是没有正常输出 请检查环境变量的<strong>路径</strong>是否配置正确</li>
+<li>在 cmd 窗口 输入 <code>echo %JAVA_HOME%</code> 查看路径<ul>
+<li>注意大小写正确 </li>
+<li>斜杠是否写反</li>
+<li><strong>分号</strong> 是否为英文符号</li>
+</ul>
+</li>
+<li>在 cmd 窗口 输入 <code>echo %PATH%</code> 查看 是否有 <code>%JAVA_HOME%\bin</code><ul>
+<li>系统会自动把 <code>%JAVA_HOME%</code> 变量转换成路径<br><img data-src="https://i.loli.net/2020/12/14/ZT9oN85rWe2jFqI.png"></li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>入门教程</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>WSL</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -757,203 +954,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>systemctl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>zsh + oh-my-zsh 简易配置</title>
-    <url>/4bfebac1/</url>
-    <content><![CDATA[<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Command</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>curl</strong></td>
-<td>sh -c &quot;$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
-</tr>
-<tr>
-<td><strong>wget</strong></td>
-<td>sh -c &quot;$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
-</tr>
-<tr>
-<td><strong>fetch</strong></td>
-<td>sh -c &quot;$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
-</tr>
-</tbody></table>
-<h2 id="连接被墙问题"><a href="#连接被墙问题" class="headerlink" title="连接被墙问题"></a>连接被墙问题</h2><h3 id="方法一-科学上网"><a href="#方法一-科学上网" class="headerlink" title="方法一: 科学上网"></a>方法一: <del>科学上网</del></h3><blockquote>
-<p>只可意会不可言传🐕</p>
-</blockquote>
-<h3 id="方法二-加速ssh登录"><a href="#方法二-加速ssh登录" class="headerlink" title="方法二: 加速ssh登录"></a>方法二: 加速ssh登录</h3><blockquote>
-<p>适用于阿里云服务器😶</p>
-</blockquote>
-<p>修改 <code>/etc/ssh/ssh_config</code></p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>ssh/ssh_config</span><br></pre></td></tr></table></figure>
-
-<p>取消以下行的注释</p>
-<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># GSSAPIAuthentication no</span></span><br></pre></td></tr></table></figure>
-
-<p>没有生效可以重启下sshd服务器</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d/sshd restart</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="方法三-映射hosts"><a href="#方法三-映射hosts" class="headerlink" title="方法三: 映射hosts"></a>方法三: 映射hosts</h3><blockquote>
-<p>死马当活马医😂</p>
-</blockquote>
-<p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBhZGRyZXNzLmNvbS8=">https://www.ipaddress.com/</span> 获取域名的映射IP</p>
-<p><img data-src="https://i.loli.net/2021/08/16/v75LtJBaPjToRZ6.png"></p>
-<p>修改<code>hosts</code>文件</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>hosts</span><br></pre></td></tr></table></figure>
-
-<p>添加对应的ip映射即可</p>
-<figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.133</span> raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
-
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><blockquote>
-<p>主题文件位于 <code>.oh-my-zsh/themes</code> 目录下，可自定义修改</p>
-</blockquote>
-<h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="https://i.loli.net/2021/08/06/51yhlPEQH7WOCnF.png" style="zoom:80%;" />
-
-<p>修改 <code>~/.zshrc</code> 文件</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">&quot;ys&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="https://i.loli.net/2021/08/06/K2MYl3UE5T1yDaI.png" style="zoom: 80%;" />
-
-<h4 id="安装powerline主题"><a href="#安装powerline主题" class="headerlink" title="安装powerline主题"></a><strong>安装powerline主题</strong></h4><blockquote>
-<p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
-</blockquote>
-<p>克隆主题文件到本地</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git powerline</span><br></pre></td></tr></table></figure>
-
-<p>运行安装脚本</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> powerline &amp;&amp; ./install_in_omz.sh</span><br></pre></td></tr></table></figure>
-
-<p>修改 <code>~/.zshrc</code> 配置文件</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改主题</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;powerline&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改终端为256位颜色模式</span></span><br><span class="line"><span class="built_in">export</span> TERM=<span class="string">&quot;xterm-256color&quot;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>若终端符号显示不全或错位需要设置为 <code>TureType字体</code></p>
-<p>如: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RvbnNreS9GaXJhQ29kZQ==">FiraCode</span>、powerline</p>
-</blockquote>
-<p><strong>安装powerline字体</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install fonts-powerline</span><br></pre></td></tr></table></figure>
-
-<h2 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h2><p>修改<code>~/.zshrc</code>配置文件</p>
-<p><strong>快速添加sudo</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># EscEsc to sudo</span></span><br><span class="line"><span class="built_in">bindkey</span> -s <span class="string">&#x27;\e\e&#x27;</span> <span class="string">&#x27;\C-asudo \C-e&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>WSL2下的代理配置</strong></p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Proxy config</span></span><br><span class="line"><span class="keyword">export</span> hostip=$(cat /etc/resolv.conf | grep -oP &#x27;(?&lt;=nameserver\ ).*&#x27;)</span><br><span class="line">alias proxyon=&#x27;<span class="keyword">export</span> https_proxy=<span class="string">&quot;http://$&#123;hostip&#125;:7890&quot;</span> &amp;&amp; <span class="keyword">export</span> http_proxy=<span class="string">&quot;http://$&#123;hostip&#125;:7890&quot;</span> &amp;&amp; <span class="keyword">export</span> all_proxy=<span class="string">&quot;socks5://$&#123;hostip&#125;:7890&quot;</span>&#x27;</span><br><span class="line">alias unproxy=&#x27;<span class="keyword">unset</span> http_proxy &amp;&amp; <span class="keyword">unset</span> https_proxy &amp;&amp; <span class="keyword">unset</span> all_proxy&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><strong>常用别名设置</strong></p>
-<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line"># git <span class="keyword">log</span></span><br><span class="line"><span class="keyword">alias</span> glog=<span class="string">&#x27;git log --graph --pretty=oneline --abbrev-commit&#x27;</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">ls</span> -al</span><br><span class="line"><span class="keyword">alias</span> ll=<span class="keyword">ls</span> -al --show-<span class="keyword">control</span>-chars --<span class="keyword">color</span> $*</span><br><span class="line"></span><br><span class="line"># Other <span class="keyword">alias</span> config</span><br><span class="line"><span class="keyword">alias</span> ipython=<span class="string">&#x27;ipython3&#x27;</span></span><br><span class="line"><span class="keyword">alias</span> npm=<span class="string">&#x27;sudo npm&#x27;</span></span><br><span class="line"><span class="keyword">alias</span> typora=<span class="string">&#x27;typora.exe&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="配置其他用户可用"><a href="#配置其他用户可用" class="headerlink" title="配置其他用户可用"></a>配置其他用户可用</h2><blockquote>
-<p>该方法虽然可以一次配置全局生效, 但会存在权限问题故不建议使用.</p>
-<p>建议其它用户最好重新安装配置.</p>
-</blockquote>
-<p>为root用户建立软连接，即root用户使用当前用户的配置</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo ln -s <span class="variable">$HOME</span>/.oh-my-zsh /root/.oh-my-zsh</span><br><span class="line">sudo ln -s <span class="variable">$HOME</span>/.zshrc /root/.zshrc</span><br></pre></td></tr></table></figure>
-
-<p>切换root进入zsh，若提示无pyenv命令，则再建立软连接即可</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo ln -s <span class="variable">$HOME</span>/.pyenv /root/.pyenv</span><br></pre></td></tr></table></figure>
-
-<p>若提示目录权限警告，则在 .zshrc 文件前面添加</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_DISABLE_COMPFIX</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>若要单独配置，复制相应目录到对应用户主目录下即可</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo cp -r <span class="variable">$HOME</span>/.oh-my-zsh	/root</span><br><span class="line">sudo cp -r <span class="variable">$HOME</span>/.zshrc	/root</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d0aW5nL2F1dG9qdW1w">autojump</span></p>
-<blockquote>
-<p>快速跳转目录</p>
-</blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/wting/autojump.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 跳转目录安装</span></span><br><span class="line"><span class="built_in">cd</span> autojump</span><br><span class="line">./install.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./uninstall.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">j &lt;部分目录名&gt;</span><br></pre></td></tr></table></figure>
-
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions</span><br><strong>极力推荐</strong></p>
-<blockquote>
-<p>历史命令灰色提示</p>
-</blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
-
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhdWxpcmlzaC9naXQtb3Blbg==">git-open</span></p>
-<blockquote>
-<p>浏览器快速打开git项目</p>
-</blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一行命令安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/paulirish/git-open.git <span class="variable">$ZSH_CUSTOM</span>/plugins/git-open</span><br><span class="line"></span><br><span class="line"><span class="comment"># git仓库下运行打开</span></span><br><span class="line">git open</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>配置插件</strong></p>
-<p><em>注意：插件中间是以空格分开</em></p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">plugins</span>=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>配置记录</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Terminal</tag>
-        <tag>zsh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>优雅的使用WSL2-Kali桌面环境</title>
-    <url>/202281bd/</url>
-    <content><![CDATA[<blockquote>
-<p>Win-KeX官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
-</blockquote>
-<h2 id="安装win-kex"><a href="#安装win-kex" class="headerlink" title="安装win-kex"></a>安装win-kex</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install kali-win-kex</span><br></pre></td></tr></table></figure>
-
-<h2 id="启动Win-Kex"><a href="#启动Win-Kex" class="headerlink" title="启动Win-Kex"></a>启动Win-Kex</h2><blockquote>
-<p>Win-KeX 有三种启动模式</p>
-</blockquote>
-<ul>
-<li><p>窗口模式<br>在专用窗口中启动 Kali Linux 桌面.</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --win -s	</span><br></pre></td></tr></table></figure></li>
-<li><p>远程连接（推荐）<br>微软自带的远程桌面工具，用过的都说好~</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --esm --ip -s</span><br></pre></td></tr></table></figure></li>
-<li><p>无缝模式<br>在 Windows 和 Kali 应用程序和菜单之间共享 Windows 桌面.</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">kex <span class="comment">--sl -s</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><em>注: 后面参数<code>-s</code>是启动声音支持.</em></p>
-<h2 id="高分屏下的使用"><a href="#高分屏下的使用" class="headerlink" title="高分屏下的使用"></a>高分屏下的使用</h2><blockquote>
-<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy9nZW5lcmFsLXVzZS9oaWRwaS8=">🚪</span></p>
-</blockquote>
-<p>菜单搜索<code>hidpi</code>, 打开它</p>
-<p><img data-src="https://i.loli.net/2021/08/16/brmLSYtEOFvBypk.png"></p>
-<p>默认缩放2X, 点击<code>是</code>确认, 然后开始愉快的Linux之旅吧~</p>
-<p><img data-src="https://i.loli.net/2021/08/16/sM3KuCyPQkjitpD.png"></p>
-<p><em>注:如果要自定义缩放因子请参考官方文档</em></p>
-<h2 id="快捷启动"><a href="#快捷启动" class="headerlink" title="快捷启动"></a>快捷启动</h2><ul>
-<li>添加到<code>Windows Termial</code>启动</li>
-</ul>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;576cd4fd-d6e2-4b99-9305-2e03a898af04&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Win-KeX&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;wsl -d kali-linux kex --esm --wtstart -s&quot;</span>,</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>设置命令别名</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> winkex=<span class="string">&#x27;kex --esm --ip -s&#x27;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>配置记录</category>
-      </categories>
-      <tags>
-        <tag>WSL2</tag>
-        <tag>Kali Linux</tag>
       </tags>
   </entry>
 </search>
