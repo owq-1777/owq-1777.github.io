@@ -6,7 +6,7 @@
   <link href="https://owq-1777.github.io/atom.xml" rel="self"/>
   
   <link href="https://owq-1777.github.io/"/>
-  <updated>2021-08-23T11:36:38.504Z</updated>
+  <updated>2021-08-26T12:57:38.550Z</updated>
   <id>https://owq-1777.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 使用 YAML 配置带有颜色输出的loging</title>
+    <link href="https://owq-1777.github.io/dfbb4c9/"/>
+    <id>https://owq-1777.github.io/dfbb4c9/</id>
+    <published>2021-08-26T16:45:57.000Z</published>
+    <updated>2021-08-26T12:57:38.550Z</updated>
+    
+    
+    <summary type="html">这是一篇从基本使用loging模块到带点颜色输出,再到优雅的使用YAML配置日志的升级记录</summary>
+    
+    
+    
+    <category term="技术记录" scheme="https://owq-1777.github.io/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Python" scheme="https://owq-1777.github.io/tags/Python/"/>
+    
+    <category term="log" scheme="https://owq-1777.github.io/tags/log/"/>
+    
+    <category term="YAML" scheme="https://owq-1777.github.io/tags/YAML/"/>
+    
+  </entry>
   
   <entry>
     <title>Selenium 操作文档</title>

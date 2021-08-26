@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Python 使用 YAML 配置带有颜色输出的loging</title>
+    <url>/dfbb4c9/</url>
+    <content><![CDATA[<blockquote>
+<p>官方教程文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMy9ob3d0by9sb2dnaW5nLmh0bWw=">🚪</span><br>官方配置文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMy9saWJyYXJ5L2xvZ2dpbmcuY29uZmlnLmh0bWw=">🚪</span></p>
+</blockquote>
+<h2 id="⭐常用名词"><a href="#⭐常用名词" class="headerlink" title="⭐常用名词"></a>⭐常用名词</h2><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logger</td>
+<td>日志记录程序</td>
+</tr>
+<tr>
+<td>Handler</td>
+<td>处理程序</td>
+</tr>
+<tr>
+<td>Formatter</td>
+<td>格式化程序</td>
+</tr>
+<tr>
+<td>CRITICAL</td>
+<td>危险</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>错误</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>警告</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>信息</td>
+</tr>
+<tr>
+<td>DEBUG</td>
+<td>调试</td>
+</tr>
+</tbody></table>
+<h2 id="🌠先有个印象"><a href="#🌠先有个印象" class="headerlink" title="🌠先有个印象"></a>🌠先有个印象</h2><p>日志库采用模块化方法，并提供几类组件：记录器、处理器、过滤器和格式器。</p>
+<ul>
+<li>记录器暴露了应用程序代码直接使用的接口。</li>
+<li>处理器将日志记录（由记录器创建）发送到适当的目标。</li>
+<li>过滤器提供了更精细的附加功能，用于确定要输出的日志记录。(本文不涉及)</li>
+<li>格式器指定最终输出中日志记录的样式。</li>
+</ul>
+<h2 id="🧿最小使用案例"><a href="#🧿最小使用案例" class="headerlink" title="🧿最小使用案例"></a>🧿最小使用案例</h2><p><strong>使用根记录器输出日志</strong><br>简单了解日志输出方式的两种方式和日志输出的等级</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认根记录只记录WARNING以上的日志, 所以使用debug和info是不会被输出的</span></span><br><span class="line"><span class="comment"># logging.basicConfig(level=logging.DEBUG) # 配置下日志等级就输出了</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置日志文件路径, 会写到文件里</span></span><br><span class="line"><span class="comment"># logging.basicConfig(filename=&#x27;example.log&#x27;, level=logging.INFO)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 根日志记录器 输出(记录等级从高到低)</span></span><br><span class="line">logging.debug(<span class="string">&#x27;DEBUG&#x27;</span>)</span><br><span class="line">logging.info(<span class="string">&#x27;INFO&#x27;</span>)</span><br><span class="line">logging.warning(<span class="string">&#x27;WARNING&#x27;</span>)</span><br><span class="line">logging.error(<span class="string">&#x27;ERROR&#x27;</span>)</span><br><span class="line">logging.critical(<span class="string">&#x27;CRITICAL&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>格式化日志输出</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="comment"># format 格式化输出形式</span></span><br><span class="line"><span class="comment"># 使用 datefmt 可以自定义时间输出格式</span></span><br><span class="line">logging.basicConfig(<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s %(levelname)s: %(message)s&#x27;</span>, datefmt=<span class="string">&#x27;%m/%d/%Y %I:%M:%S %p&#x27;</span>)</span><br><span class="line"></span><br><span class="line">logging.warning(<span class="string">&#x27;再不签到就迟到了!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="🌈带点颜色输出"><a href="#🌈带点颜色输出" class="headerlink" title="🌈带点颜色输出"></a>🌈带点颜色输出</h2><blockquote>
+<p>基本使用, 了解3大组件记录器、处理器和格式器之间的关系</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> colorlog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 颜色配置</span></span><br><span class="line"><span class="comment"># 可用: black red green yellow blue purple cyan white, 和 bold_**</span></span><br><span class="line">log_colors = &#123;</span><br><span class="line">    <span class="string">&#x27;DEBUG&#x27;</span>: <span class="string">&#x27;cyan&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;INFO&#x27;</span>: <span class="string">&#x27;green&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;WARNING&#x27;</span>: <span class="string">&#x27;yellow&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;ERROR&#x27;</span>: <span class="string">&#x27;red&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;CRITICAL&#x27;</span>: <span class="string">&#x27;bold_red&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建日志记录器</span></span><br><span class="line">logger = logging.getLogger(<span class="string">&#x27;logger_main&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建控制台处理器, 会在控制台输出日志</span></span><br><span class="line">console_handler = logging.StreamHandler()</span><br><span class="line"><span class="comment"># 创建文件处理器, 会记录日志到test.log</span></span><br><span class="line">file_handler = logging.FileHandler(filename=<span class="string">&#x27;test.log&#x27;</span>, mode=<span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置日志级别</span></span><br><span class="line">logger.setLevel(logging.DEBUG)</span><br><span class="line">console_handler.setLevel(logging.DEBUG)</span><br><span class="line">file_handler.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用指定的格式字符串初始化格式化程序</span></span><br><span class="line">file_formatter = logging.Formatter(</span><br><span class="line">    fmt=<span class="string">&#x27;[%(asctime)s %(levelname)s] %(filename)s -&gt; %(funcName)s line:%(lineno)d: %(message)s&#x27;</span>,</span><br><span class="line">    datefmt=<span class="string">&#x27;%Y-%m-%d  %H:%M:%S&#x27;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment"># 使用 colorlog 的格式化程序</span></span><br><span class="line">console_formatter = colorlog.ColoredFormatter(</span><br><span class="line">    fmt=<span class="string">&#x27;%(log_color)s[%(asctime)s %(levelname)s] %(message)s&#x27;</span>,</span><br><span class="line">    datefmt=<span class="string">&#x27;%Y-%m-%d  %H:%M:%S&#x27;</span>,</span><br><span class="line">    log_colors=log_colors</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置格式化程序</span></span><br><span class="line">console_handler.setFormatter(console_formatter)</span><br><span class="line">file_handler.setFormatter(file_formatter)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加处理器到记录器中</span></span><br><span class="line">logger.addHandler(console_handler)</span><br><span class="line">logger.addHandler(file_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭IO流, 非常重要 </span></span><br><span class="line">console_handler.close()</span><br><span class="line">file_handler.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出日志</span></span><br><span class="line">logger.info(<span class="string">&#x27;一切正常~&#x27;</span>)</span><br><span class="line">logger.error(<span class="string">&#x27;报错啦!!&#x27;</span>)</span><br><span class="line">logger.debug(<span class="string">&#x27;找bug中...&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前处理器</span></span><br><span class="line"><span class="built_in">print</span>(logger.handlers)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="✨使用YAML配置日志"><a href="#✨使用YAML配置日志" class="headerlink" title="✨使用YAML配置日志"></a>✨使用YAML配置日志</h2><blockquote>
+<p>缘由-&gt;接触YAML是在搭建Hexo博客时, Hexo采用了如此简洁优雅的文件格式, 随后, 考虑到配置易用性、易读性, 随即便折腾起来了φ(*￣0￣)</p>
+</blockquote>
+<p>创建<code>conf_loging.yml</code>文件, 配置将转为dist传入到<code>dictConfig()</code>里, 这也是进一步了解logging的过程.</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="number">1</span></span><br><span class="line"><span class="comment"># 将信息传播到配置文件的跟日志记录器中</span></span><br><span class="line"><span class="attr">disable_existing_loggers:</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式化器</span></span><br><span class="line"><span class="attr">formatters:</span></span><br><span class="line">  <span class="attr">brief:</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">&quot;[%(asctime)s %(levelname)s] %(filename)s -&gt; %(funcName)s line:%(lineno)d: %(message)s&quot;</span></span><br><span class="line">    <span class="attr">datefmt:</span> <span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span></span><br><span class="line">  <span class="attr">precise:</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">&quot;%(log_color)s[%(asctime)s %(levelname)s] : %(message)s&quot;</span></span><br><span class="line">    <span class="attr">datefmt:</span> <span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span></span><br><span class="line">  <span class="attr">colored:</span></span><br><span class="line">    <span class="string">():</span> <span class="string">&quot;colorlog.ColoredFormatter&quot;</span></span><br><span class="line">    <span class="attr">datefmt:</span> <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">&quot;%(white)s%(asctime)s.%(msecs)03d%(reset)s - %(cyan)s[%(module)s.%(funcName)s]%(reset)s - %(log_color)s[%(levelname)s] :=&gt;%(reset)s %(message)s&quot;</span></span><br><span class="line">    <span class="attr">log_colors:</span></span><br><span class="line">      <span class="attr">DEBUG:</span> <span class="string">purple</span></span><br><span class="line">      <span class="attr">INFO:</span> <span class="string">blue</span></span><br><span class="line">      <span class="attr">WARNING:</span> <span class="string">yellow</span></span><br><span class="line">      <span class="attr">ERROR:</span> <span class="string">red</span></span><br><span class="line">      <span class="attr">CRITICAL:</span> <span class="string">red,bg_white</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">handlers:</span></span><br><span class="line">  <span class="attr">console:</span></span><br><span class="line">    <span class="attr">class:</span> <span class="string">logging.StreamHandler</span></span><br><span class="line">    <span class="attr">level:</span> <span class="string">DEBUG</span></span><br><span class="line">    <span class="attr">formatter:</span> <span class="string">console</span></span><br><span class="line">    <span class="attr">stream:</span> <span class="string">ext://sys.stdout</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">info_file_handler:</span></span><br><span class="line">    <span class="attr">class:</span> <span class="string">logging.handlers.RotatingFileHandler</span></span><br><span class="line">    <span class="attr">level:</span> <span class="string">INFO</span></span><br><span class="line">    <span class="attr">formatter:</span> <span class="string">simple</span></span><br><span class="line">    <span class="attr">filename:</span> <span class="string">./info.log</span></span><br><span class="line">    <span class="attr">maxBytes:</span> <span class="number">10485760</span> <span class="comment"># 10MB</span></span><br><span class="line">    <span class="attr">backupCount:</span> <span class="number">20</span></span><br><span class="line">    <span class="attr">encoding:</span> <span class="string">utf8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 处理程序</span></span><br><span class="line"><span class="attr">handlers:</span></span><br><span class="line">  <span class="attr">console:</span></span><br><span class="line">    <span class="attr">class :</span> <span class="string">logging.StreamHandler</span> <span class="comment"># 这是处理程序类的完整名称</span></span><br><span class="line">    <span class="attr">formatter:</span> <span class="string">brief</span>  <span class="comment"># 处理程序所对应格式化器的ID</span></span><br><span class="line">    <span class="attr">level   :</span> <span class="string">INFO</span>  <span class="comment"># 处理程序的级别</span></span><br><span class="line">    <span class="attr">filters:</span> [<span class="string">allow_foo</span>]  <span class="comment"># 由处理程序所对应过滤器的ID 组成的列表</span></span><br><span class="line">    <span class="attr">stream  :</span> <span class="string">ext://sys.stdout</span></span><br><span class="line">  <span class="attr">file:</span></span><br><span class="line">    <span class="attr">class :</span> <span class="string">logging.handlers.RotatingFileHandler</span></span><br><span class="line">    <span class="attr">formatter:</span> <span class="string">precise</span></span><br><span class="line">    <span class="attr">filename:</span> <span class="string">logconfig.log</span></span><br><span class="line">    <span class="attr">maxBytes:</span> <span class="number">1024</span></span><br><span class="line">    <span class="attr">backupCount:</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># error_file_handler:</span></span><br><span class="line">    <span class="comment"># class: logging.handlers.RotatingFileHandler</span></span><br><span class="line">    <span class="comment"># level: ERROR</span></span><br><span class="line">    <span class="comment"># formatter: simple</span></span><br><span class="line">    <span class="comment"># filename: ./info.log</span></span><br><span class="line">    <span class="comment"># maxBytes: 10485760 # 10MB</span></span><br><span class="line">    <span class="comment"># backupCount: 20</span></span><br><span class="line">    <span class="comment"># encoding: utf8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志记录器</span></span><br><span class="line"><span class="attr">loggers:</span></span><br><span class="line">  <span class="attr">my_module:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="string">ERROR</span></span><br><span class="line">    <span class="attr">handlers:</span> [<span class="string">console</span>]</span><br><span class="line">    <span class="comment"># 打开日志记录器</span></span><br><span class="line">    <span class="attr">propagate:</span> <span class="literal">False</span></span><br><span class="line"><span class="attr">root:</span></span><br><span class="line">  <span class="attr">level:</span> <span class="string">DEBUG</span></span><br><span class="line">  <span class="attr">handlers:</span> [<span class="string">console</span>, <span class="string">info_file_handler</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="记录流程图"><a href="#记录流程图" class="headerlink" title="记录流程图"></a>记录流程图</h2><img data-src="https://docs.python.org/zh-tw/3/_images/logging_flow.png" style="border-radius: 0px;" />
+]]></content>
+      <categories>
+        <category>技术记录</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>log</tag>
+        <tag>YAML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Selenium 操作文档</title>
     <url>/2f022c8a/</url>
     <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><blockquote>
