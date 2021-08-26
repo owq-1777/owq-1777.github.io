@@ -34,7 +34,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
 <meta property="article:published_time" content="2000-05-21T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-08-25T08:30:09.260Z">
+<meta property="article:modified_time" content="2021-08-26T03:44:10.520Z">
 <meta property="article:author" content="OWQ">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
@@ -218,7 +218,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-08-25 08:31:51" itemprop="dateModified" datetime="2021-08-25T16:31:51+08:00">2021-08-25</time>
+            <time title="修改时间：2021-08-26 03:44:21" itemprop="dateModified" datetime="2021-08-26T11:44:21+08:00">2021-08-26</time>
             
           </span>
 
@@ -430,19 +430,23 @@
 
 
 
-<h2 id="Python实用库"><a href="#Python实用库" class="headerlink" title="Python实用库"></a>Python实用库</h2><h5 id="自动生成项目依赖包-仍需要修改"><a href="#自动生成项目依赖包-仍需要修改" class="headerlink" title="自动生成项目依赖包(仍需要修改)"></a>自动生成项目依赖包(仍需要修改)</h5><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> pipreqs</span><br></pre></td></tr></table></figure>
+<h2 id="Python实用库"><a href="#Python实用库" class="headerlink" title="Python实用库"></a>Python实用库</h2><p>自动生成项目依赖包(仍需要修改)</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> pipreqs</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成当前目录下依赖包Requirements.txt</span></span><br><span class="line">pipreqs <span class="string">./</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="设置环境变量相关库"><a href="#设置环境变量相关库" class="headerlink" title="设置环境变量相关库"></a>设置环境变量相关库</h5><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> environs</span><br></pre></td></tr></table></figure>
+<p>设置环境变量相关库</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> environs</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> environs <span class="keyword">import</span> Env</span><br></pre></td></tr></table></figure>
 
-<h5 id="随机UA头"><a href="#随机UA头" class="headerlink" title="随机UA头"></a>随机UA头</h5><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> fake_useragent</span><br></pre></td></tr></table></figure>
+<p>随机UA头</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> fake_useragent</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line">ua = UserAgent()</span><br><span class="line">HEADERS[<span class="string">&#x27;User-Agent&#x27;</span>] = ua.chrome</span><br></pre></td></tr></table></figure>
 
-<h5 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from urllib<span class="selector-class">.parse</span> import urlencode</span><br><span class="line"><span class="function"><span class="title">urlencode</span><span class="params">(data)</span></span></span><br><span class="line"></span><br><span class="line">unicode 编码</span><br><span class="line"><span class="string">&#x27;str&#x27;</span><span class="selector-class">.encode</span>(<span class="string">&#x27;unicode_escape&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>编码</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from urllib<span class="selector-class">.parse</span> import urlencode</span><br><span class="line"><span class="function"><span class="title">urlencode</span><span class="params">(data)</span></span></span><br><span class="line"></span><br><span class="line">unicode 编码</span><br><span class="line"><span class="string">&#x27;str&#x27;</span><span class="selector-class">.encode</span>(<span class="string">&#x27;unicode_escape&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -458,7 +462,11 @@
 <p>解决不能用socks代理问题（需要取消代理安装）</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> pysocks</span><br></pre></td></tr></table></figure>
 
-<!-- flag of hidden posts -->
+
+
+
+
+<h3 id="Redis-动态记录"><a href="#Redis-动态记录" class="headerlink" title="Redis 动态记录"></a>Redis 动态记录</h3><!-- flag of hidden posts -->
     </div>
 
     
@@ -552,7 +560,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">重启资源管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%9C%86%E8%A7%92"><span class="nav-text">取消圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">命名关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96%E5%8C%85-%E4%BB%8D%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9"><span class="nav-text">自动生成项目依赖包(仍需要修改)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9B%B8%E5%85%B3%E5%BA%93"><span class="nav-text">设置环境变量相关库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BAUA%E5%A4%B4"><span class="nav-text">随机UA头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="nav-text">编码</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">重启资源管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%9C%86%E8%A7%92"><span class="nav-text">取消圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">命名关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E5%8A%A8%E6%80%81%E8%AE%B0%E5%BD%95"><span class="nav-text">Redis 动态记录</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
