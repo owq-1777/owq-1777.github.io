@@ -34,7 +34,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
 <meta property="article:published_time" content="2000-05-21T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-08-26T03:45:59.400Z">
+<meta property="article:modified_time" content="2021-08-27T07:31:11.310Z">
 <meta property="article:author" content="OWQ">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
@@ -218,7 +218,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-08-27 02:53:21" itemprop="dateModified" datetime="2021-08-27T10:53:21+08:00">2021-08-27</time>
+            <time title="修改时间：2021-08-27 07:31:19" itemprop="dateModified" datetime="2021-08-27T15:31:19+08:00">2021-08-27</time>
             
           </span>
 
@@ -230,7 +230,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>2.9k</span>
+            <span>3k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -307,6 +307,8 @@
 
       
         <h2 id="引导思考"><a href="#引导思考" class="headerlink" title="引导思考"></a>引导思考</h2><ul>
+<li>Think before you program. (先思考后编程)</li>
+<li>Don&#39;t code when you&#39;re tired. (不要在疲惫的时候写代码)</li>
 <li>Make English as your working language. （让英语成为你的工作语言）</li>
 <li>Practice makes perfect. （熟能生巧）</li>
 <li>All experience comes from mistakes. （所有的经验都源于你犯过的错误）</li>
@@ -415,16 +417,21 @@
 <p><strong>文件夹大小</strong></p>
 <figure class="highlight gml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -lh --<span class="built_in">max</span>-<span class="symbol">depth</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h3><ul>
+<li>&amp;<br>加在一个命令的最后，可以把这个命令放到后台执行，如<br>watch -n 10 sh test.sh &amp; #每10s在后台执行一次test.sh脚本</li>
+<li>ctrl + z<br>可以将一个正在前台执行的命令放到后台，并且处于暂停状态。</li>
+<li>jobs<br>查看当前有多少在后台运行的命令<br>jobs -l选项可显示所有任务的PID，jobs的状态可以是running, stopped, Terminated。但是如果任务被终止了（kill），shell 从当前的shell环境已知的列表中删除任务的进程标识。</li>
+<li>fg<br>将后台中的命令调至前台继续运行。如果后台中有多个命令，可以用fg %jobnumber（是命令编号，不是进程号）将选中的命令调出。</li>
+<li>bg<br>将一个在后台暂停的命令，变成在后台继续执行。如果后台中有多个命令，可以用bg %jobnumber将选中的命令调出。</li>
+<li>kill<br>法子1：通过jobs命令查看job号（假设为num），然后执行kill %num<br>法子2：通过ps命令查看job的进程号（PID，假设为pid），然后执行kill pid<br>前台进程的终止：Ctrl+c</li>
+<li>nohup<br>如果让程序始终在后台执行，即使关闭当前的终端也执行（之前的&amp;做不到），这时候需要nohup。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。关闭中断后，在另一个终端jobs已经无法看到后台跑得程序了，此时利用ps（进程查看命令）</li>
+</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ps</span> -aux</span><br><span class="line"><span class="comment"># a:显示所有程序 u:以用户为主的格式来显示 x:显示所有程序，不以终端机来区分</span></span><br></pre></td></tr></table></figure>
 
 
-<p><strong>一、&amp;</strong><br>加在一个命令的最后，可以把这个命令放到后台执行，如<br>watch -n 10 sh test.sh &amp; #每10s在后台执行一次test.sh脚本</p>
-<p><strong>二、ctrl + z</strong><br>可以将一个正在前台执行的命令放到后台，并且处于暂停状态。</p>
-<p><strong>三、jobs</strong><br>查看当前有多少在后台运行的命令<br>jobs -l选项可显示所有任务的PID，jobs的状态可以是running, stopped, Terminated。但是如果任务被终止了（kill），shell 从当前的shell环境已知的列表中删除任务的进程标识。</p>
-<p><strong>四、fg</strong><br>将后台中的命令调至前台继续运行。如果后台中有多个命令，可以用fg %jobnumber（是命令编号，不是进程号）将选中的命令调出。</p>
-<p><strong>五、bg</strong><br>将一个在后台暂停的命令，变成在后台继续执行。如果后台中有多个命令，可以用bg %jobnumber将选中的命令调出。</p>
-<p><strong>六、kill</strong><br>法子1：通过jobs命令查看job号（假设为num），然后执行kill %num<br>法子2：通过ps命令查看job的进程号（PID，假设为pid），然后执行kill pid<br>前台进程的终止：Ctrl+c</p>
-<p><strong>七、nohup</strong><br>如果让程序始终在后台执行，即使关闭当前的终端也执行（之前的&amp;做不到），这时候需要nohup。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。关闭中断后，在另一个终端jobs已经无法看到后台跑得程序了，此时利用ps（进程查看命令）</p>
-<p>ps -aux | grep “test.sh” #a:显示所有程序 u:以用户为主的格式来显示 x:显示所有程序，不以终端机来区分</p>
+
+
+
 <h2 id="PowerShell"><a href="#PowerShell" class="headerlink" title="PowerShell"></a>PowerShell</h2><p><strong>环境变量</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看</span></span><br><span class="line"><span class="variable">$Env:path</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置</span></span><br><span class="line"><span class="variable">$Env:ETCDCTL_API</span>=<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 追加</span></span><br><span class="line"><span class="variable">$Env:path</span>=<span class="variable">$Env:Path</span>+<span class="string">&quot;;C:\Run&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除</span></span><br><span class="line"><span class="built_in">remove-item</span> env:all_proxy</span><br></pre></td></tr></table></figure>
 
@@ -561,7 +568,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">重启资源管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%9C%86%E8%A7%92"><span class="nav-text">取消圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">命名关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E5%8A%A8%E6%80%81%E8%AE%B0%E5%BD%95"><span class="nav-text">Redis 动态记录</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">重启资源管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%9C%86%E8%A7%92"><span class="nav-text">取消圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">命名关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">后台运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E5%8A%A8%E6%80%81%E8%AE%B0%E5%BD%95"><span class="nav-text">Redis 动态记录</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -677,12 +684,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">12k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10 min</span>
+    <span title="站点阅读时长">11 min</span>
 </div>
 
 </div>
