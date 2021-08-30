@@ -6,7 +6,7 @@
   <link href="https://owq-1777.gith/ub.io/atom.xml" rel="self"/>
   
   <link href="https://owq-1777.gith/ub.io/"/>
-  <updated>2021-08-30T06:29:21.400Z</updated>
+  <updated>2021-08-30T12:04:10.660Z</updated>
   <id>https://owq-1777.gith/ub.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FastAPI 全面入门并落地</title>
+    <link href="https://owq-1777.gith/ub.io/1a0a2507/"/>
+    <id>https://owq-1777.gith/ub.io/1a0a2507/</id>
+    <published>2021-08-30T18:33:04.000Z</published>
+    <updated>2021-08-30T12:04:10.660Z</updated>
+    
+    
+    <summary type="html">本文是基于官方文档精简化提取, 供快速上手使用, 如需完整学习请参阅官方文档&lt;(￣︶￣)</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Python 线程进程相关库的简单应用</title>

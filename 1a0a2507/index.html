@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ub.io/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ub.io/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ub.io/images/favicon.png">
+  <link rel="mask-icon" href="/ub.io/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/ub.io/css/main.css">
+
+
+<link rel="stylesheet" href="/ub.io/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"owq-1777.gith","root":"/ub.io/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本文是基于官方文档精简化提取, 供快速上手使用, 如需完整学习请参阅官方文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FastAPI 全面入门并落地">
+<meta property="og:url" content="https://owq-1777.gith/ub.io/1a0a2507/index.html">
+<meta property="og:site_name" content="Sunny was born">
+<meta property="og:description" content="本文是基于官方文档精简化提取, 供快速上手使用, 如需完整学习请参阅官方文档">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-30T18:33:04.000Z">
+<meta property="article:modified_time" content="2021-08-30T12:04:10.660Z">
+<meta property="article:author" content="OWQ">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://owq-1777.gith/ub.io/1a0a2507/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>FastAPI 全面入门并落地 | Sunny was born</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/ub.io/atom.xml" title="Sunny was born" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/ub.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Sunny was born</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<span style="flex-grow: 2;"></span>
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/ub.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/ub.io/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/ub.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/ub.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/ub.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+      
+
+
+<div class='bg-container' style="z-index: -1;">
+  <span class="header-bg"></span>
+  <script data-pjax>
+    console.info("")
+    var header=document.querySelector('.header-bg');
+    var img_arr = ["/img/header_img/bg1.jpg","/img/header_img/bg2.jpg","/img/header_img/bg3.jpg","/img/header_img/bg4.jpg","/img/header_img/bg5.jpg","/img/header_img/bg6.jpg"]
+    var index = Math.floor((Math.random()*img_arr.length));
+    header.setAttribute("style", "background-image: url('"+img_arr[index]+"')");
+  </script>
+</div>
+
+<div id="signature">
+  <div class="container">
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>FastAPI 全面入门并落地</h1>
+          <h2 class="subheading">本文是基于官方文档精简化提取, 供快速上手使用, 如需完整学习请参阅官方文档<(￣︶￣)</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+            
+
+            <time title="创建时间：2021-08-30 18:33:04 / 修改时间：12:20:53" itemprop="dateCreated datePublished" datetime="2021-08-30T18:33:04Z">2021-08-30</time>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar-check"></i>
+            </span>
+            <span class="post-meta-item-text">Updated</span>
+            <time title="修改时间：2021-08-30 12:20:53" itemprop="dateModified" datetime="2021-08-30T20:20:53+08:00">2021-08-30</time>
+            
+          </span>
+
+
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>3.5k</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>3 min</span>
+          </span>
+
+
+        </header>
+
+      
+
+  </div>
+</div>
+
+
+
+<!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owq-1777.gith/ub.io/1a0a2507/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>FastAPI 是一个现代、快速（高性能）的 Web 框架.</p>
+</blockquote>
+<blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9mYXN0YXBpLnRpYW5nb2xvLmNvbS96aC8=">🚪</span></p>
+<p>项目源码 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RpYW5nb2xvL2Zhc3RhcGk=">🚪</span></p>
+</blockquote>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install fastapi uvicorn[standard]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="最小例子"><a href="#最小例子" class="headerlink" title="最小例子"></a>最小例子</h2><p>创建<code>main.py</code>文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Optional</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_root</span>():</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;Hello&quot;</span>: <span class="string">&quot;World&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/items/&#123;item_id&#125;&quot;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_item</span>(<span class="params">item_id: <span class="built_in">int</span>, q: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;item_id&quot;</span>: item_id, <span class="string">&quot;q&quot;</span>: q&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>关于函数是否使用<code>async</code>?</strong></p>
+<blockquote>
+<p>文档参考 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9mYXN0YXBpLnRpYW5nb2xvLmNvbS9hc3luYy8jaW4tYS1odXJyeQ==">🚪</span></p>
+</blockquote>
+<p>如果不清楚函数内调用是否异步, 那就定义为普通函数, <code>Fastapi</code>会放到<code>thread pool</code>里执行; 如果有使用异步并且是在高并发情景下, 使用<code>async</code>速度会更快.</p>
+<h2 id="运行启动"><a href="#运行启动" class="headerlink" title="运行启动"></a>运行启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uvicorn main:app --reload</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>main</code>: <code>main.py</code> 文件（一个 Python &quot;模块&quot;）。</li>
+<li><code>app</code>: 在 <code>main.py</code> 文件中通过 <code>app = FastAPI()</code> 创建的对象。</li>
+<li><code>--reload</code>: 让服务器在更新代码后重新启动。仅在开发时使用该选项。</li>
+</ul>
+<p>访问 <span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2l0ZW1zLzU/cT1zb21lcXVlcnk=">http://127.0.0.1:8000/items/5?q=somequery</span> 会返回 <code>&#123;&quot;item_id&quot;: 5, &quot;q&quot;: &quot;somequery&quot;&#125;</code></p>
+<h2 id="自带文档"><a href="#自带文档" class="headerlink" title="自带文档"></a>自带文档</h2><ul>
+<li>访问 <span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2RvY3M=">http://127.0.0.1:8000/docs</span> 你会看到由 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3N3YWdnZXItYXBpL3N3YWdnZXItdWk=">Swagger UI</span>自动生成的文档</li>
+<li>访问 <span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL3JlZG9j">http://127.0.0.1:8000/redoc</span> 你会看到由 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1JlYmlsbHkvUmVEb2M=">ReDoc</span> 生成自动生成的文档</li>
+</ul>
+<h2 id="设置枚举类型"><a href="#设置枚举类型" class="headerlink" title="设置枚举类型"></a>设置枚举类型</h2><p>导入<code>Enum</code></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> <span class="keyword">enum</span> <span class="keyword">import</span> Enum</span><br></pre></td></tr></table></figure>
+
+<p>继承并声明枚举类</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">ModelName</span>(<span class="symbol">str, <span class="symbol">Enum</span></span>):</span><br><span class="line">    <span class="symbol">alexnet</span> = &quot;<span class="symbol">alexnet</span>&quot;</span><br><span class="line">    <span class="symbol">resnet</span> = &quot;<span class="symbol">resnet</span>&quot;</span><br><span class="line">    <span class="symbol">lenet</span> = &quot;<span class="symbol">lenet</span>&quot;</span><br></pre></td></tr></table></figure>
+
+<p>将其声明为参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/models/&#123;model_name&#125;&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">get_model</span>(<span class="params">model_name: ModelName</span>):</span></span><br><span class="line">    <span class="keyword">if</span> model_name == ModelName.alexnet:</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&quot;model_name&quot;</span>: model_name, <span class="string">&quot;message&quot;</span>: <span class="string">&quot;Deep Learning FTW!&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> model_name.value == <span class="string">&quot;lenet&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&quot;model_name&quot;</span>: model_name, <span class="string">&quot;message&quot;</span>: <span class="string">&quot;LeCNN all the images&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;model_name&quot;</span>: model_name, <span class="string">&quot;message&quot;</span>: <span class="string">&quot;Have some residuals&quot;</span>&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="设置请求体"><a href="#设置请求体" class="headerlink" title="设置请求体"></a>设置请求体</h2><p>导入<code>BaseModel</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pydantic <span class="keyword">import</span> BaseModel</span><br></pre></td></tr></table></figure>
+
+<p>继承并声明数据模型类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span>(<span class="params">BaseModel</span>):</span></span><br><span class="line">    name: <span class="built_in">str</span></span><br><span class="line">    description: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span><br><span class="line">    price: <span class="built_in">float</span></span><br><span class="line">    tax: <span class="type">Optional</span>[<span class="built_in">float</span>] = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<p>将其声明为参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.post(<span class="params"><span class="string">&quot;/items/&quot;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_item</span>(<span class="params">item: Item</span>):</span></span><br><span class="line">    <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+
+<p>测试一下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;http://127.0.0.1:8000/items/&quot;</span></span><br><span class="line"></span><br><span class="line">payload = json.dumps(&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Foo&quot;</span>,</span><br><span class="line">  <span class="string">&quot;description&quot;</span>: <span class="string">&quot;An optional description&quot;</span>,</span><br><span class="line">  <span class="string">&quot;price&quot;</span>: <span class="number">45.2</span>,</span><br><span class="line">  <span class="string">&quot;tax&quot;</span>: <span class="number">3.5</span></span><br><span class="line">&#125;)</span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response = requests.request(<span class="string">&quot;POST&quot;</span>, url, headers=headers, data=payload)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(response.text)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="为参数添加校验"><a href="#为参数添加校验" class="headerlink" title="为参数添加校验"></a>为参数添加校验</h2><h3 id="查询参数校验"><a href="#查询参数校验" class="headerlink" title="查询参数校验"></a>查询参数校验</h3><p>导入<code>Query</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> Query</span><br></pre></td></tr></table></figure>
+
+<p>将 <code>Query</code> 用作查询参数的默认值，并设置<code>min_length</code>为3,<code>max_length</code>为9</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/items/&quot;</span></span>)</span></span><br><span class="line"><span class="comment"># Query 的第一个参数用于定义默认值</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">read_items</span>(<span class="params">q: <span class="type">Optional</span>[<span class="built_in">str</span>] = Query(<span class="params"><span class="literal">None</span>, min_length=<span class="number">3</span>, max_length=<span class="number">9</span></span>)</span>):</span></span><br><span class="line">    results = &#123;<span class="string">&quot;items&quot;</span>: [&#123;<span class="string">&quot;item_id&quot;</span>: <span class="string">&quot;Foo&quot;</span>&#125;, &#123;<span class="string">&quot;item_id&quot;</span>: <span class="string">&quot;Bar&quot;</span>&#125;]&#125;</span><br><span class="line">    <span class="keyword">if</span> q:</span><br><span class="line">        results.update(&#123;<span class="string">&quot;q&quot;</span>: q&#125;)</span><br><span class="line">    <span class="keyword">return</span> results</span><br></pre></td></tr></table></figure>
+
+<p>其它校验参数(对应类型为int或float)</p>
+<ul>
+<li><code>gt</code>：大于（<code>g</code>reater <code>t</code>han）</li>
+<li><code>ge</code>：大于等于（<code>g</code>reater than or <code>e</code>qual）</li>
+<li><code>lt</code>：小于（<code>l</code>ess <code>t</code>han）</li>
+<li><code>le</code>：小于等于（<code>l</code>ess than or <code>e</code>qual）</li>
+</ul>
+<p>也可以用正则表达式进行判断<code>regex</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Query(<span class="literal">None</span>, regex=<span class="string">r&quot;.&#123;3,9&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>测试一下</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2l0ZW1zLz9xPTEy">http://127.0.0.1:8000/items/?q=12</span></li>
+<li><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2l0ZW1zLz9xPTEyMzQ1Ng==">http://127.0.0.1:8000/items/?q=123456</span></li>
+<li><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2l0ZW1zLz9xPTEyMzQ1Njc4OTA=">http://127.0.0.1:8000/items/?q=1234567890</span></li>
+</ul>
+<h3 id="路径参数校验"><a href="#路径参数校验" class="headerlink" title="路径参数校验"></a>路径参数校验</h3><p>导入<code>Path</code></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> <span class="type">Path</span></span><br></pre></td></tr></table></figure>
+
+<p>使用方法和<code>Query</code>一样, 第一个参数为默认参数, 使用<code>...</code>表示该参数为必需参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/items/&#123;item_id&#125;&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">read_items</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">    *,</span></span></span><br><span class="line"><span class="params"><span class="function">    item_id: <span class="built_in">int</span> = Path(<span class="params">..., title=<span class="string">&quot;The ID of the item to get&quot;</span>, ge=<span class="number">0</span>, le=<span class="number">1000</span></span>),</span></span></span><br><span class="line"><span class="params"><span class="function">    size: <span class="built_in">float</span> = Query(<span class="params">..., gt=<span class="number">0</span>, lt=<span class="number">10.5</span></span>)</span></span></span><br><span class="line"><span class="params"><span class="function"></span>):</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;item_id&quot;</span>: item_id&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试一下</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2l0ZW1zLzEwMDA/c2l6ZT0xLjI=">http://127.0.0.1:8000/items/1000?size=1.2</span></li>
+<li><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2l0ZW1zLzEwMA==">http://127.0.0.1:8000/items/100</span></li>
+</ul>
+<h2 id="声明参数别名"><a href="#声明参数别名" class="headerlink" title="声明参数别名"></a>声明参数别名</h2><p>在Query中使用<code>alias</code>, 设置<code>q</code>别名为<code>item-query</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&#x27;/items/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">read_items</span>(<span class="params">q: <span class="type">Optional</span>[<span class="built_in">str</span>] = Query(<span class="params"><span class="literal">None</span>, alias=<span class="string">&quot;item-query&quot;</span></span>)</span>):</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&#x27;q&#x27;</span>: q&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试一下</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2l0ZW1zP3E9aGVsbG8=">http://127.0.0.1:8000/items?q=hello</span></li>
+<li><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2l0ZW1zP2l0ZW0tcXVlcnk9aGVsbG8=">http://127.0.0.1:8000/items?item-query=hello</span></li>
+</ul>
+
+    </div>
+
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
+
+      </div>
+    
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://owq-1777.gith/ub.io/1a0a2507/" title="FastAPI 全面入门并落地">https://owq-1777.gith/ub.io/1a0a2507/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/ub.io/f89f9ea4/" rel="next" title="Python 线程进程相关库的简单应用">
+      Python 线程进程相关库的简单应用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          目录
+        </li>
+        <li class="sidebar-nav-overview">
+          概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E4%BE%8B%E5%AD%90"><span class="nav-text">最小例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%90%AF%E5%8A%A8"><span class="nav-text">运行启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%B8%A6%E6%96%87%E6%A1%A3"><span class="nav-text">自带文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="nav-text">设置枚举类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-text">设置请求体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E5%8F%82%E6%95%B0%E6%B7%BB%E5%8A%A0%E6%A0%A1%E9%AA%8C"><span class="nav-text">为参数添加校验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C"><span class="nav-text">查询参数校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C"><span class="nav-text">路径参数校验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%82%E6%95%B0%E5%88%AB%E5%90%8D"><span class="nav-text">声明参数别名</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="OWQ"
+      src="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
+  <p class="site-author-name" itemprop="name">OWQ</p>
+  <div class="site-description" itemprop="description">爱编程, 懂设计, 喜折腾</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/ub.io/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/ub.io/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/ub.io/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnF3cWlvd29Ab3V0bG9vay5jb20=" title="E-Mail → mailto:qwqiowo@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/ub.io/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github-alt" fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      <hr class="hr-solid">
+    </div>
+
+
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  <span id="RunTime"></span>
+  <!-- 网站运行时间的设置 -->
+  <script>
+    var BootDate = new Date("2021/08/01 00:00:00");
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " d " + RunHours + " h " + RunMinutes + " m " + RunSeconds + " s ";
+      document.getElementById(id).innerHTML = "This blog has running: " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OWQ</span>
+
+<div class="busuanzi-count">
+
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">37k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">34 min</span>
+</div>
+
+</div>
+  <script src="/js/ribbonDynamic.js"></script>
+        
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/ub.io/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/ub.io/lib/velocity/velocity.min.js"></script>
+  <script src="/ub.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/ub.io/js/utils.js"></script>
+
+<script src="/ub.io/js/motion.js"></script>
+
+
+<script src="/ub.io/js/schemes/pisces.js"></script>
+
+
+<script src="/ub.io/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.bg-container',
+    '#signature .container',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/ub.io/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+<script src="/ub.io/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/ub.io/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
+</html>
+
+<script type="text/javascript" src="/js/src/funny_title.js"></script>
