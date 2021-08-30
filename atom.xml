@@ -6,7 +6,7 @@
   <link href="https://owq-1777.github.io/atom.xml" rel="self"/>
   
   <link href="https://owq-1777.github.io/"/>
-  <updated>2021-08-27T08:06:35.360Z</updated>
+  <updated>2021-08-30T06:29:21.400Z</updated>
   <id>https://owq-1777.github.io/</id>
   
   <author>
@@ -17,20 +17,14 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Python 线程进程和协程的简单应用</title>
+    <title>Python 线程进程相关库的简单应用</title>
     <link href="https://owq-1777.github.io/f89f9ea4/"/>
     <id>https://owq-1777.github.io/f89f9ea4/</id>
     <published>2021-08-27T15:59:51.000Z</published>
-    <updated>2021-08-27T08:06:35.360Z</updated>
+    <updated>2021-08-30T06:29:21.400Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;🎇简单了解&quot;&gt;&lt;a href=&quot;#🎇简单了解&quot; class=&quot;headerlink&quot; title=&quot;🎇简单了解&quot;&gt;&lt;/a&gt;🎇简单了解&lt;/h2&gt;&lt;h3 id=&quot;线程和进程&quot;&gt;&lt;a href=&quot;#线程和进程&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">了解线程和进程、同步和异步、并发和并行和相关库的使用。</summary>
     
     
     
@@ -302,6 +296,25 @@
     <category term="cmd" scheme="https://owq-1777.github.io/tags/cmd/"/>
     
     <category term="PowerShell" scheme="https://owq-1777.github.io/tags/PowerShell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式手册</title>
+    <link href="https://owq-1777.github.io/regex/"/>
+    <id>https://owq-1777.github.io/regex/</id>
+    <published>2020-06-01T08:00:00.000Z</published>
+    <updated>2021-08-30T09:22:31.440Z</updated>
+    
+    
+    <summary type="html">📖 正则表达式手册</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://owq-1777.github.io/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="regex" scheme="https://owq-1777.github.io/tags/regex/"/>
     
   </entry>
   

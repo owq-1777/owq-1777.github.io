@@ -98,7 +98,7 @@ NexT.utils = {
             });
             button.addEventListener('mouseleave', event => {
                 setTimeout(() => {
-                    event.target.querySelector('i').className = 'fa fa-clipboard fa-fw';
+                    event.target.querySelector('i').className = 'fa fa-copy fa-fw';
                 }, 300);
             });
         });
