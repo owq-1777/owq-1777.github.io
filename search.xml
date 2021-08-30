@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Python 线程进程相关库的简单应用</title>
-    <url>/project/f89f9ea4/</url>
+    <url>/f89f9ea4/</url>
     <content><![CDATA[<h2 id="🎇简单了解"><a href="#🎇简单了解" class="headerlink" title="🎇简单了解"></a>🎇简单了解</h2><h3 id="线程和进程"><a href="#线程和进程" class="headerlink" title="线程和进程"></a>线程和进程</h3><ul>
 <li>每个程序至少有一个进程，不同进程之间不共享内存</li>
 <li>一个进程包含一个或多个线程，线程共享着同一个进程的内存</li>
@@ -40,7 +40,7 @@
   </entry>
   <entry>
     <title>Python 使用 YAML 配置带有颜色输出的loging</title>
-    <url>/project/dfbb4c9/</url>
+    <url>/dfbb4c9/</url>
     <content><![CDATA[<blockquote>
 <p>官方教程文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMy9ob3d0by9sb2dnaW5nLmh0bWw=">🚪</span><br>官方配置文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMy9saWJyYXJ5L2xvZ2dpbmcuY29uZmlnLmh0bWw=">🚪</span><br>格式属性表 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvemgtdHcvMy9saWJyYXJ5L2xvZ2dpbmcuaHRtbCNsb2dnaW5nLkxvZ1JlY29yZA==">🔎</span><br>如何写好日志 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xNTU5NTE5">🔎</span></p>
 </blockquote>
@@ -134,7 +134,7 @@
   </entry>
   <entry>
     <title>Selenium 操作文档</title>
-    <url>/project/2f022c8a/</url>
+    <url>/2f022c8a/</url>
     <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><blockquote>
 <p>基于浏览器驱动的自动化操作浏览器工具, 用于运维测试也可用于爬虫。</p>
 </blockquote>
@@ -228,7 +228,7 @@
   </entry>
   <entry>
     <title>Docker+Redis 安装配置</title>
-    <url>/project/8be682ad/</url>
+    <url>/8be682ad/</url>
     <content><![CDATA[<h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker pull redis</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db<span class="regexp">/redis &amp;&amp; mkdir -p /</span>data<span class="regexp">/config/</span>redis</span><br></pre></td></tr></table></figure>
@@ -260,7 +260,7 @@
   </entry>
   <entry>
     <title>Docker+MongoDB 安装配置</title>
-    <url>/project/d2633d2c/</url>
+    <url>/d2633d2c/</url>
     <content><![CDATA[<h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db</span><br></pre></td></tr></table></figure>
@@ -283,7 +283,7 @@
   </entry>
   <entry>
     <title>Hexo 服务器部署踩坑记录</title>
-    <url>/project/e823826f/</url>
+    <url>/e823826f/</url>
     <content><![CDATA[<blockquote>
 <p>Hexo 部署方式有很多, 这里选择是默认的 Git 一键部署方式.<br>前提条件: 搭建好的 Hexo 本地环境, 具有公网IP的服务器, 具备ssh连接知识.</p>
 </blockquote>
@@ -396,7 +396,7 @@
   </entry>
   <entry>
     <title>优雅的使用WSL2-Kali桌面环境</title>
-    <url>/project/202281bd/</url>
+    <url>/202281bd/</url>
     <content><![CDATA[<blockquote>
 <p>Win-KeX官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
 </blockquote>
@@ -443,7 +443,7 @@
   </entry>
   <entry>
     <title>WSL2 安装配置</title>
-    <url>/project/1fe3c459/</url>
+    <url>/1fe3c459/</url>
     <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
 <p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
 </blockquote>
@@ -514,7 +514,7 @@
   </entry>
   <entry>
     <title>zsh + oh-my-zsh 简易配置</title>
-    <url>/project/4bfebac1/</url>
+    <url>/4bfebac1/</url>
     <content><![CDATA[<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
 
@@ -664,7 +664,7 @@
   </entry>
   <entry>
     <title>MariaDB 安装图文教程</title>
-    <url>/project/9ec13a7e/</url>
+    <url>/9ec13a7e/</url>
     <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
 
 <h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>对于初学者, 只需要知道以下几点就行了</p>
@@ -717,7 +717,7 @@
   </entry>
   <entry>
     <title>Python 开发环境搭建萌新教程</title>
-    <url>/project/958bc56b/</url>
+    <url>/958bc56b/</url>
     <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
 
 <h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMv">官网下载</span>, 刚开始学习的话直接下载最新版本的就行了</p>
@@ -762,7 +762,7 @@
   </entry>
   <entry>
     <title>Java 开发环境搭建萌新教程</title>
-    <url>/project/46118abd/</url>
+    <url>/46118abd/</url>
     <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
 
 <blockquote>
@@ -845,7 +845,7 @@
   </entry>
   <entry>
     <title>Windows 命令文档</title>
-    <url>/project/win/</url>
+    <url>/win/</url>
     <content><![CDATA[<blockquote>
 <p>从玩Windows至今遇到超过2次的命令或问题记录.</p>
 <p>部分命令cmd和PowerShell环境下均可用, 故不作细分😜</p>
@@ -952,7 +952,7 @@
   </entry>
   <entry>
     <title>正则表达式手册</title>
-    <url>/project/regex/</url>
+    <url>/regex/</url>
     <content><![CDATA[<h2 id="表达式全集"><a href="#表达式全集" class="headerlink" title="表达式全集"></a>表达式全集</h2><table>
 <thead>
 <tr>
@@ -1179,7 +1179,7 @@
   </entry>
   <entry>
     <title>docker 命令</title>
-    <url>/project/docker/</url>
+    <url>/docker/</url>
     <content><![CDATA[<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;https://registry.docker-cn.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">&quot;insecure-registries&quot;</span>: [],</span><br><span class="line">  <span class="attr">&quot;debug&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;experimental&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;features&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;buildkit&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker version		<span class="comment"># 版本信息</span></span><br><span class="line">docker info		<span class="comment"># 系统信息</span></span><br><span class="line">docker &lt;order&gt; --<span class="built_in">help</span>	<span class="comment"># 帮助命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器最后10条日志</span></span><br><span class="line">docker logs -f -t --tail 10 &lt;container&gt;</span><br></pre></td></tr></table></figure>
@@ -1226,7 +1226,7 @@
   </entry>
   <entry>
     <title>git 命令</title>
-    <url>/project/git/</url>
+    <url>/git/</url>
     <content><![CDATA[<h2 id="配置命令"><a href="#配置命令" class="headerlink" title="配置命令"></a>配置命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config user.name &lt;name&gt;</span><br><span class="line">git config user.email &lt;email&gt;</span><br><span class="line">git config --global user.name &lt;name&gt;	<span class="comment"># 配置全局用户名</span></span><br><span class="line">git config --global user.email &lt;email&gt;	<span class="comment"># 配置全局邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 颜色标识（默认开启）</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看配置</span></span><br><span class="line">git config list</span><br></pre></td></tr></table></figure>
 
 
@@ -1251,7 +1251,7 @@
   </entry>
   <entry>
     <title>pacman 命令</title>
-    <url>/project/pacman/</url>
+    <url>/pacman/</url>
     <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 升级整个系统，-y 更新数据库, -yy 强制更新, -u是升级软件</span></span><br><span class="line">pacman -Syu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除软件缓存，即/var/cache/pacman/pkg目录下的文件</span></span><br><span class="line">pacman -Sc</span><br></pre></td></tr></table></figure>
 
 
@@ -1280,7 +1280,7 @@
   </entry>
   <entry>
     <title>pip 命令</title>
-    <url>/project/pip/</url>
+    <url>/pip/</url>
     <content><![CDATA[<h2 id="Linux-安装"><a href="#Linux-安装" class="headerlink" title="Linux 安装"></a>Linux 安装</h2><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">apt</span> install python<span class="number">3</span>-pip</span><br></pre></td></tr></table></figure>
 
 
@@ -1300,7 +1300,7 @@
   </entry>
   <entry>
     <title>systemctl 命令</title>
-    <url>/project/systemctl/</url>
+    <url>/systemctl/</url>
     <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start &lt;servicename&gt;    	<span class="comment"># 启动服务</span></span><br><span class="line">systemctl stop &lt;servicename&gt;     	<span class="comment"># 关闭服务</span></span><br><span class="line">systemctl restart &lt;servicename&gt;		<span class="comment"># 重启服务</span></span><br><span class="line">systemctl reload &lt;servicename&gt;    	<span class="comment"># 重新加载配置文件</span></span><br><span class="line">systemctl status &lt;servicename&gt;    	<span class="comment"># 查看服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的配置文件</span></span><br><span class="line">systemctl cat &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有服务的状态</span></span><br><span class="line">systemctl -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前系统服务状态</span></span><br><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出服务的依赖关系</span></span><br><span class="line">systemctl list-dependencies &lt;servicename&gt;</span><br></pre></td></tr></table></figure>
 
 
