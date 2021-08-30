@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e934ff;
+  background: #ff6baa;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2858,10 +2858,9 @@ img {
 .table-container th {
   font-size: 0.85em;
   font-family: Verdana;
-  color: #b16a68;
 }
 .table-container tr:nth-child(even) {
-  background: rgba(253,239,238,0.6);
+  background: rgba(108,154,229,0.2);
 }
 .table-container tr:nth-child(odd) {
   background: rgba(255,255,255,0.3);
@@ -3163,7 +3162,7 @@ blockquote p {
 }
 .post-heading {
   justify-content: center;
-  width: 760px;
+  width: 70%;
   padding-bottom: 30px;
 }
 .post-heading .post-meta-item {
@@ -3171,7 +3170,7 @@ blockquote p {
 }
 .post-heading>h1 {
   margin: 10px 0;
-  font-size: 2.8em;
+  font-size: 2.6em;
 }
 .post-heading>h2 {
   margin: 0;
@@ -3209,6 +3208,10 @@ blockquote p {
   }
   .post-heading {
     font-size: 90%;
+    width: 95%;
+  }
+  .post-heading > h1 {
+    font-size: 2.4em;
   }
 }
 @media (max-width: 767px) {
@@ -3231,8 +3234,11 @@ blockquote p {
     font-size: 0.35em;
   }
   .post-heading {
-    width: 70%;
+    width: 100%;
     font-size: 80%;
+  }
+  .post-heading > h1 {
+    font-size: 2.2em;
   }
 }
 @media (max-width: 768px) {
