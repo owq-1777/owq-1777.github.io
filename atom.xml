@@ -80,29 +80,6 @@
   </entry>
   
   <entry>
-    <title>Selenium 操作文档</title>
-    <link href="https://owq-1777.github.io/2f022c8a/"/>
-    <id>https://owq-1777.github.io/2f022c8a/</id>
-    <published>2021-08-24T08:00:00.000Z</published>
-    <updated>2021-08-23T11:36:38.504Z</updated>
-    
-    
-    <summary type="html">📖 Python 下的 Selenium 操作汇总</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://owq-1777.github.io/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="Python" scheme="https://owq-1777.github.io/tags/Python/"/>
-    
-    <category term="爬虫" scheme="https://owq-1777.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
-    <category term="Selenium" scheme="https://owq-1777.github.io/tags/Selenium/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Docker+Redis 安装配置</title>
     <link href="https://owq-1777.github.io/8be682ad/"/>
     <id>https://owq-1777.github.io/8be682ad/</id>
@@ -288,6 +265,29 @@
     
     
     <category term="Java" scheme="https://owq-1777.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Selenium 操作文档</title>
+    <link href="https://owq-1777.github.io/selenium/"/>
+    <id>https://owq-1777.github.io/selenium/</id>
+    <published>2020-06-01T08:00:00.000Z</published>
+    <updated>2021-08-31T11:13:16.880Z</updated>
+    
+    
+    <summary type="html">📖 Python 下的 Selenium 操作汇总</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://owq-1777.github.io/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="Python" scheme="https://owq-1777.github.io/tags/Python/"/>
+    
+    <category term="爬虫" scheme="https://owq-1777.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+    <category term="Selenium" scheme="https://owq-1777.github.io/tags/Selenium/"/>
     
   </entry>
   
