@@ -221,6 +221,13 @@
 <li><span class="exturl" data-url="aHR0cHM6Ly9mYXN0YXBpLnRpYW5nb2xvLmNvbS96aC90dXRvcmlhbC9zcWwtZGF0YWJhc2VzLw==">使用关系数据库</span></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>入门教程</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>FastAPI</tag>
+      </tags>
   </entry>
   <entry>
     <title>Python 线程进程相关库的简单应用</title>
@@ -248,16 +255,15 @@
 
 
 
-<p>yp</p>
+<blockquote>
+<p>未完待续</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>技术记录</category>
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>Thread</tag>
-        <tag>Process</tag>
-        <tag>Coroutine</tag>
       </tags>
   </entry>
   <entry>
@@ -1061,7 +1067,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>爬虫</tag>
         <tag>Selenium</tag>
       </tags>
   </entry>
@@ -1497,7 +1502,7 @@
         <category>命令文档</category>
       </categories>
       <tags>
-        <tag>ArchLinux</tag>
+        <tag>Arch Linux</tag>
       </tags>
   </entry>
   <entry>

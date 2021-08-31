@@ -6,7 +6,7 @@
   <link href="https://owq-1777.github.io/atom.xml" rel="self"/>
   
   <link href="https://owq-1777.github.io/"/>
-  <updated>2021-08-31T11:02:43.470Z</updated>
+  <updated>2021-08-31T11:15:04.840Z</updated>
   <id>https://owq-1777.github.io/</id>
   
   <author>
@@ -21,13 +21,19 @@
     <link href="https://owq-1777.github.io/1a0a2507/"/>
     <id>https://owq-1777.github.io/1a0a2507/</id>
     <published>2021-08-30T18:33:04.000Z</published>
-    <updated>2021-08-31T11:02:43.470Z</updated>
+    <updated>2021-08-31T11:15:04.840Z</updated>
     
     
     <summary type="html">本文是基于官方文档精简化提取, 供快速上手使用, 如需完整学习请参阅官方文档&lt;(￣︶￣)</summary>
     
     
     
+    <category term="入门教程" scheme="https://owq-1777.github.io/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Python" scheme="https://owq-1777.github.io/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://owq-1777.github.io/tags/FastAPI/"/>
     
   </entry>
   
@@ -36,7 +42,7 @@
     <link href="https://owq-1777.github.io/f89f9ea4/"/>
     <id>https://owq-1777.github.io/f89f9ea4/</id>
     <published>2021-08-27T15:59:51.000Z</published>
-    <updated>2021-08-30T06:29:21.400Z</updated>
+    <updated>2021-08-31T11:17:48.170Z</updated>
     
     
     <summary type="html">了解线程和进程、同步和异步、并发和并行和相关库的使用。</summary>
@@ -47,12 +53,6 @@
     
     
     <category term="Python" scheme="https://owq-1777.github.io/tags/Python/"/>
-    
-    <category term="Thread" scheme="https://owq-1777.github.io/tags/Thread/"/>
-    
-    <category term="Process" scheme="https://owq-1777.github.io/tags/Process/"/>
-    
-    <category term="Coroutine" scheme="https://owq-1777.github.io/tags/Coroutine/"/>
     
   </entry>
   
@@ -273,7 +273,7 @@
     <link href="https://owq-1777.github.io/selenium/"/>
     <id>https://owq-1777.github.io/selenium/</id>
     <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-08-31T11:13:16.880Z</updated>
+    <updated>2021-08-31T11:16:10.500Z</updated>
     
     
     <summary type="html">📖 Python 下的 Selenium 操作汇总</summary>
@@ -284,8 +284,6 @@
     
     
     <category term="Python" scheme="https://owq-1777.github.io/tags/Python/"/>
-    
-    <category term="爬虫" scheme="https://owq-1777.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
     <category term="Selenium" scheme="https://owq-1777.github.io/tags/Selenium/"/>
     
@@ -376,7 +374,7 @@
     <link href="https://owq-1777.github.io/pacman/"/>
     <id>https://owq-1777.github.io/pacman/</id>
     <published>2020-06-01T00:00:00.000Z</published>
-    <updated>2021-08-22T18:23:34.934Z</updated>
+    <updated>2021-08-31T11:15:32.690Z</updated>
     
     
     <summary type="html">📖 pacman 命令文档，Arch Linux大法好o(*￣▽￣*)ブ</summary>
@@ -386,7 +384,7 @@
     <category term="命令文档" scheme="https://owq-1777.github.io/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
     
     
-    <category term="ArchLinux" scheme="https://owq-1777.github.io/tags/ArchLinux/"/>
+    <category term="Arch Linux" scheme="https://owq-1777.github.io/tags/Arch-Linux/"/>
     
   </entry>
   
