@@ -34,7 +34,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
 <meta property="article:published_time" content="2000-05-21T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-02T04:30:20.620Z">
+<meta property="article:modified_time" content="2021-09-02T10:32:15.470Z">
 <meta property="article:author" content="OWQ">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
@@ -218,7 +218,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-02 06:13:26" itemprop="dateModified" datetime="2021-09-02T14:13:26+08:00">2021-09-02</time>
+            <time title="修改时间：2021-09-03 04:06:25" itemprop="dateModified" datetime="2021-09-03T12:06:25+08:00">2021-09-03</time>
             
           </span>
 
@@ -230,7 +230,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>3.8k</span>
+            <span>4.1k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -238,7 +238,7 @@
               <i class="far fa-clock"></i>
             </span>
             <span class="post-meta-item-text">Reading time: &asymp;</span>
-            <span>3 min</span>
+            <span>4 min</span>
           </span>
 
 
@@ -318,6 +318,17 @@
 <img data-src="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png" style="zoom:20%;box-shadow: none;" />
 
 <hr>
+<h2 id="零碎知识"><a href="#零碎知识" class="headerlink" title="零碎知识"></a>零碎知识</h2><h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><ul>
+<li><p><code>motor</code> mongo异步库</p>
+</li>
+<li><p>游标默认超时为10分钟, 设置不超时,</p>
+</li>
+<li><p>异步迭代器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__aiter__</span>(<span class="params">self</span>):</span></span><br><span class="line">	<span class="keyword">return</span> self</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">__anext__</span>(<span class="params">self, retry=<span class="number">1</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">await</span> ...</span><br></pre></td></tr></table></figure></li>
+<li><p>异步上下文管理器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">__aenter__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;in aenter&quot;</span>)</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">__aexit__</span>(<span class="params">self, exc_type, exc_val, exc_tb</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;in aexit&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
 <h2 id="随记语录"><a href="#随记语录" class="headerlink" title="随记语录"></a>随记语录</h2><ul>
 <li>顺其自然不如融入自然。</li>
 <li>一旦你以个人身份出现, 任何团体都会努力扮演利维坦。</li>
@@ -330,7 +341,10 @@
 <hr>
 <h2 id="编程思想"><a href="#编程思想" class="headerlink" title="编程思想"></a>编程思想</h2><ul>
 <li>let it crash （让它崩溃）<br>不是频繁的错误，不需要立马处理，多次错误报警后才进行人工处理</li>
-<li>一切进程都是轻量级的，都可以被监控（monitor）<br>进程树管理，快速重启回稳态，多次不稳定则人工</li>
+<li>一切进程都是轻量级的，都可以被监控（monitor）<br>进程树管理，快速重启使其回到稳态，多次不稳定则人工处理</li>
+<li>美胜丑，显胜隐，简胜杂，杂胜乱，平胜陡，疏胜密。</li>
+<li>找到简单问题的一个方法，最好是唯一的方法（正确的解决之道）。</li>
+<li>难以解释的实现，源自不好的主意；如有非常棒的主意，它的实现肯定易于解释。</li>
 </ul>
 <h2 id="有趣待定"><a href="#有趣待定" class="headerlink" title="有趣待定"></a>有趣待定</h2><ul>
 <li>动态代码图 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9mYXN0YXBpLnRpYW5nb2xvLmNvbS96aC8=">https://fastapi.tiangolo.com/zh/</span></li>
@@ -705,7 +719,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="nav-text">编程思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E8%B6%A3%E5%BE%85%E5%AE%9A"><span class="nav-text">有趣待定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">重启资源管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%9C%86%E8%A7%92"><span class="nav-text">取消圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH"><span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">命名关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">后台运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E5%8A%A8%E6%80%81%E8%AE%B0%E5%BD%95"><span class="nav-text">Redis 动态记录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTOP%E8%AF%B4%E6%98%8E"><span class="nav-text">HTOP说明</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86"><span class="nav-text">零碎知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-text">Mongo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="nav-text">编程思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E8%B6%A3%E5%BE%85%E5%AE%9A"><span class="nav-text">有趣待定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">重启资源管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%9C%86%E8%A7%92"><span class="nav-text">取消圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH"><span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">命名关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">后台运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E5%8A%A8%E6%80%81%E8%AE%B0%E5%BD%95"><span class="nav-text">Redis 动态记录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTOP%E8%AF%B4%E6%98%8E"><span class="nav-text">HTOP说明</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
