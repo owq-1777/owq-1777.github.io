@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>动态规划 打家劫舍</title>
+    <url>/bd9e5b39/</url>
+    <content><![CDATA[<h2 id="Question-Ⅰ🔎"><a href="#Question-Ⅰ🔎" class="headerlink" title="Question Ⅰ🔎"></a>Question Ⅰ🔎</h2><blockquote>
+<p>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，</p>
+<p>影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，<strong>如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警</strong>。</p>
+<p>给定一个代表每个房屋存放金额的非负整数数组，计算你 <strong>不触动警报装置的情况下</strong> ，一夜之内能够偷窃到的最高金额。</p>
+</blockquote>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">输入：[1,2,3,1]</span><br><span class="line">输出：4</span><br><span class="line">解释：偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。</span><br><span class="line">     偷窃到的最高金额 = 1 + 3 = 4 。</span><br><span class="line">     </span><br><span class="line">输入：[2,7,9,3,1]</span><br><span class="line">输出：12</span><br><span class="line">解释：偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。</span><br><span class="line">     偷窃到的最高金额 = 2 + 9 + 1 = 12 。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Code-Ⅰ💡"><a href="#Code-Ⅰ💡" class="headerlink" title="Code Ⅰ💡"></a>Code Ⅰ💡</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">house_rob_i</span>(<span class="params">nums: <span class="built_in">list</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 当无房间时, 直接返回0</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 只有一个房间时, 那就只能偷它的了</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置一个列表, 下标 i 对应着前 i 个房间可以偷取的最大金额</span></span><br><span class="line">    max_money = [<span class="number">0</span>, nums[<span class="number">0</span>]]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 从第2个房间开始计算, 传入第1个房间后的列表</span></span><br><span class="line">    <span class="comment"># 这里需要注意的是, 取 max_money 对应值时, i 要进行加一</span></span><br><span class="line">    <span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums[<span class="number">1</span>:]):</span><br><span class="line">        <span class="comment"># max_money[i+1] 表示不偷取当前房间的累计金额</span></span><br><span class="line">        <span class="comment"># max_money[i] + v 表示偷取当前房间的累计金额</span></span><br><span class="line">        <span class="comment"># 对比2种情况, 取最大值追加到 max_money 中</span></span><br><span class="line">        max_money.append(<span class="built_in">max</span>(max_money[i+<span class="number">1</span>], max_money[i] + v))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 返回最后一个值</span></span><br><span class="line">    <span class="keyword">return</span> max_money[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>原题地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvaG91c2Utcm9iYmVyLw==">https://leetcode-cn.com/problems/house-robber/</span></p>
+</blockquote>
+<h2 id="Test-Ⅰ💠"><a href="#Test-Ⅰ💠" class="headerlink" title="Test Ⅰ💠"></a>Test Ⅰ💠</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;house_rob_i&#x27;</span>)</span><br><span class="line">nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(house_rob_i(nums))</span><br><span class="line">nums = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(house_rob_i(nums))</span><br></pre></td></tr></table></figure>
+
+<h2 id="Question-Ⅱ🔎"><a href="#Question-Ⅱ🔎" class="headerlink" title="Question Ⅱ🔎"></a>Question Ⅱ🔎</h2><blockquote>
+<p>你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。</p>
+<p>这个地方所有的房屋都 <strong>围成一圈</strong> ，这意味着第一个房屋和最后一个房屋是紧挨着的。</p>
+<p>同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警 。</p>
+<p>给定一个代表每个房屋存放金额的非负整数数组，计算你 在不触动警报装置的情况下 ，今晚能够偷窃到的最高金额。</p>
+</blockquote>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">输入：nums = [2,3,2]</span><br><span class="line">输出：3</span><br><span class="line">解释：你不能先偷窃 1 号房屋（金额 = 2），然后偷窃 3 号房屋（金额 = 2）, 因为他们是相邻的。</span><br><span class="line"></span><br><span class="line">输入：nums = [1,2,3,1]</span><br><span class="line">输出：4</span><br><span class="line">解释：你可以先偷窃 1 号房屋（金额 = 1），然后偷窃 3 号房屋（金额 = 3）。</span><br><span class="line">     偷窃到的最高金额 = 1 + 3 = 4 。</span><br></pre></td></tr></table></figure>
+
+<h2 id="Code-Ⅱ💡"><a href="#Code-Ⅱ💡" class="headerlink" title="Code Ⅱ💡"></a>Code Ⅱ💡</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">house_rob_ii</span>(<span class="params">nums: <span class="built_in">list</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">    <span class="comment"># 这里只需要在第一题的基础上考虑两种情况</span></span><br><span class="line">    <span class="comment"># 第一种: 包含首元素, 不包含尾元素</span></span><br><span class="line">    <span class="comment"># 第二种: 不包含首元素, 包含尾元素</span></span><br><span class="line">    <span class="comment"># 综上, 一行代码搞定~</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">max</span>(rob_money_i(nums[<span class="number">1</span>:]), rob_money_i(nums[:-<span class="number">1</span>]))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>原题地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvaG91c2Utcm9iYmVyLWlpLw==">https://leetcode-cn.com/problems/house-robber-ii/</span></p>
+</blockquote>
+<h2 id="Test-Ⅱ💠"><a href="#Test-Ⅱ💠" class="headerlink" title="Test Ⅱ💠"></a>Test Ⅱ💠</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;house_rob_ii&#x27;</span>)</span><br><span class="line">nums = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(house_rob_ii(nums))</span><br><span class="line">nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(house_rob_ii(nums))</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Question-Ⅲ🔎"><a href="#Question-Ⅲ🔎" class="headerlink" title="Question Ⅲ🔎"></a>Question Ⅲ🔎</h2><blockquote>
+<p>在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。</p>
+<p>这个地区只有一个入口，我们称之为“根”。 </p>
+<p>除了“根”之外，每栋房子有且只有一个“父“房子与之相连。</p>
+<p>一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于<strong>一棵二叉树</strong>”。 </p>
+<p>如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。计算在不触动警报的情况下，小偷一晚能够盗取的最高金额。</p>
+</blockquote>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">输入: [3,2,3,null,3,null,1]       3</span><br><span class="line">                                / <span class="keyword">\</span></span><br><span class="line"><span class="keyword"></span>                               2   3</span><br><span class="line">                                <span class="keyword">\ </span>  <span class="keyword">\ </span></span><br><span class="line">                                 3   1</span><br><span class="line">输出: 7 </span><br><span class="line">解释: 小偷一晚能够盗取的最高金额 = 3 + 3 + 1 = 7.</span><br><span class="line"></span><br><span class="line">输入: [3,4,5,1,3,null,1]      3</span><br><span class="line">                            / <span class="keyword">\</span></span><br><span class="line"><span class="keyword"></span>                           4   5</span><br><span class="line">                          / <span class="keyword">\ </span>  <span class="keyword">\ </span></span><br><span class="line">                         1   3   1</span><br><span class="line">输出: 9</span><br><span class="line">解释: 小偷一晚能够盗取的最高金额 = 4 + 5 = 9.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Code-Ⅲ💡"><a href="#Code-Ⅲ💡" class="headerlink" title="Code Ⅲ💡"></a>Code Ⅲ💡</h2><blockquote>
+<p>进阶版来了, 这里考虑的同样是前一个房子和后一个房子是否相隔, 需要考虑的同样只有两种情况, 解题思路是一样的.<br>但要注意的是, 这是二叉树结构, 这样的话, 每个节点有两种情况, 而每个节点由有两个子节点(我们把空的节点当成0), 既有${2^n}$的可能, 因此采用递归的方式来解决问题会更方便.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">house_rob_iii</span>(<span class="params">root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 设置递归函数, 返回偷取当前层和不偷取当前层的钱</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">node = root</span>) -&gt; <span class="built_in">tuple</span>:</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 当前节点为空, 当前层和不偷取当前层的钱都为0, 返回(0,0)</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">            <span class="keyword">return</span> (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 递归获取左右子树能偷取的金额</span></span><br><span class="line">        L, R = dfs(node.left), dfs(node.right)</span><br><span class="line">		</span><br><span class="line">        <span class="comment"># node.val+(L[1]+R[1]) 表示偷取当前层和下下层的金额</span></span><br><span class="line">        <span class="comment"># max(L)+max(R) 表示当前层不偷,偷取下一层的金额</span></span><br><span class="line">        <span class="keyword">return</span> (node.val+(L[<span class="number">1</span>]+R[<span class="number">1</span>]), <span class="built_in">max</span>(L)+<span class="built_in">max</span>(R))</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># 返回偷第一个房子金额和不偷第一个房子金额的最大值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">max</span>(dfs())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>原题地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvaG91c2Utcm9iYmVyLWlpaS8=">https://leetcode-cn.com/problems/house-robber-iii/</span></p>
+</blockquote>
+<h2 id="Test-Ⅲ💠"><a href="#Test-Ⅲ💠" class="headerlink" title="Test Ⅲ💠"></a>Test Ⅲ💠</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, val=<span class="number">0</span>, left=<span class="literal">None</span>, right=<span class="literal">None</span></span>):</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;house_rob_iii&#x27;</span>)</span><br><span class="line">root = TreeNode(<span class="number">3</span>, TreeNode(<span class="number">2</span>,<span class="literal">None</span>,TreeNode(<span class="number">3</span>)), TreeNode(<span class="number">3</span>, <span class="literal">None</span>, TreeNode(<span class="number">1</span>)))</span><br><span class="line"><span class="built_in">print</span>(house_rob_iii(root))</span><br><span class="line">root = TreeNode(<span class="number">3</span>,  TreeNode(<span class="number">4</span>,TreeNode(<span class="number">1</span>),TreeNode(<span class="number">3</span>)), TreeNode(<span class="number">5</span>, <span class="literal">None</span>, TreeNode(<span class="number">1</span>)))</span><br><span class="line"><span class="built_in">print</span>(house_rob_iii(root))</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>结构算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>FastAPI 从入门到落地</title>
     <url>/1a0a2507/</url>
     <content><![CDATA[<blockquote>
@@ -363,8 +425,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>log</tag>
         <tag>YAML</tag>
+        <tag>log</tag>
       </tags>
   </entry>
   <entry>
@@ -1470,6 +1532,10 @@
 
 
 <h2 id="进阶命令"><a href="#进阶命令" class="headerlink" title="进阶命令"></a>进阶命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 difference（差异）</span></span><br><span class="line">git diff		<span class="comment"># 工作区与暂存区</span></span><br><span class="line">git diff --cached 	<span class="comment"># 暂存区与版本库</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚到上一版本 HEAD~100 前100个版本 可指定&lt;版本号&gt;</span></span><br><span class="line">git reset --hard HEAD^</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看分支</span></span><br><span class="line">git branch</span><br><span class="line">git branch &lt;branch&gt; 	<span class="comment"># 创建分支</span></span><br><span class="line">git branch -d &lt;branch&gt;	<span class="comment"># 删除分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复（删除）工作区更改</span></span><br><span class="line">git checkout</span><br><span class="line">git checkout &lt;branch&gt; 	<span class="comment"># 切换分支</span></span><br><span class="line">git checkout -b &lt;branch&gt;<span class="comment"># 创建并切换分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取所有远程分支（不更新本地分支，另需merge）</span></span><br><span class="line">git fetch</span><br><span class="line"><span class="comment"># 获取所有原创分支并清除服务器上已删掉的分支</span></span><br><span class="line">git fetch --prune</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支但不丢弃分支信息</span></span><br><span class="line">git merge --no-ff -m <span class="string">&quot;merge with no-ff&quot;</span> &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建临时分支</span></span><br><span class="line">git stash</span><br><span class="line">git stash list	<span class="comment"># 查看临时分支</span></span><br><span class="line">git stash drop	<span class="comment"># 删除stash</span></span><br><span class="line">git stash apply	<span class="comment"># 恢复分支内容</span></span><br><span class="line">git stash pop	<span class="comment"># 恢复分支内容并删除stash</span></span><br><span class="line">git stash apply stash@&#123;0&#125;<span class="comment"># 恢复指定的stash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制一个特定的提交到当前分支</span></span><br><span class="line">git cherry-pick &lt;版本号&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout 1acd5de</span><br><span class="line"><span class="comment"># 保存修改后分支</span></span><br><span class="line">it switch -c &lt;新分支名&gt;</span><br><span class="line"><span class="comment"># 恢复切换前分支</span></span><br><span class="line">git switch -</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看子模块</span></span><br><span class="line">git submodule</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加子模块</span></span><br><span class="line">git submodule add &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新子模块</span></span><br><span class="line">git submodule update --init --remote --recursive</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除子模块</span></span><br><span class="line">git rm -rf --cached &lt;路径&gt;</span><br></pre></td></tr></table></figure>
 
 
 
