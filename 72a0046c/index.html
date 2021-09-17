@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/09/17/DUGwjaqy7RpZzCX.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/17/GPgl6aoATiHB4tJ.png">
 <meta property="article:published_time" content="2021-09-17T11:53:29.000Z">
-<meta property="article:modified_time" content="2021-09-17T07:51:54.600Z">
+<meta property="article:modified_time" content="2021-09-17T08:05:35.060Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Android">
 <meta property="article:tag" content="adb">
@@ -214,7 +214,7 @@
             <span class="post-meta-item-text">Created</span>
             
 
-            <time title="创建时间：2021-09-17 11:53:29 / 修改时间：07:52:01" itemprop="dateCreated datePublished" datetime="2021-09-17T11:53:29Z">2021-09-17</time>
+            <time title="创建时间：2021-09-17 11:53:29 / 修改时间：08:05:53" itemprop="dateCreated datePublished" datetime="2021-09-17T11:53:29Z">2021-09-17</time>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -222,7 +222,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-17 07:52:01" itemprop="dateModified" datetime="2021-09-17T15:52:01+08:00">2021-09-17</time>
+            <time title="修改时间：2021-09-17 08:05:53" itemprop="dateModified" datetime="2021-09-17T16:05:53+08:00">2021-09-17</time>
             
           </span>
 
@@ -234,7 +234,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>1k</span>
+            <span>1.1k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -327,7 +327,8 @@
 <li><p>验证测试</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># adb 版本</span></span><br><span class="line">adb version</span><br><span class="line"></span><br><span class="line"><span class="comment"># scrcpy 版本</span></span><br><span class="line">scrcpy <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
 
-<p><img data-src="https://i.loli.net/2021/09/17/GPgl6aoATiHB4tJ.png" alt="image-20210917133627214"></p>
+<img data-src="https://i.loli.net/2021/09/17/GPgl6aoATiHB4tJ.png" alt="" style="zoom:67%;" />
+
 <p>成功输出版本信息则配置完成~</p>
 </li>
 </ul>
@@ -342,17 +343,17 @@
 </li>
 <li><p>开放手机<code>TCP</code>服务端口, 用来进行无线连接(关键)</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb tcpip 5555 <span class="comment"># 这里设置端口为5555</span></span><br></pre></td></tr></table></figure></li>
-<li><p>多台设备连接<br>  如果adb已经连接多台设备的话, 运行以上命令会报<code>error: more than one device/emulator</code>错误, 这时你需要指定下<code>device</code></p>
+<li><p>多台设备连接<br>  如果<code>adb</code>已经连接多台设备的话, 运行以上命令会报<code>error: more than one device/emulator</code>错误, 这时你需要指定下<code>device</code></p>
   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看连接的设备</span></span><br><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"><span class="comment"># -s 指定devices开放端口</span></span><br><span class="line">adb -s [devices] tcpip 5555</span><br></pre></td></tr></table></figure>
 
 <p>  <strong>Tips:</strong> 只连接一个设备时可以不用指定<code>device</code></p>
 </li>
 </ul>
 <p><em>PS: 手机重启后设置会丢失, 需要重新连接电脑配置</em> 到这里就可以断开数据线了😏</p>
-<h3 id="无线连接"><a href="#无线连接" class="headerlink" title="无线连接"></a>无线连接</h3><ul>
-<li><p>无线连接</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># scrcpy -s [ip]:[port]</span></span><br><span class="line">scrcpy -s 192.168.0.90:5555</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加上 --turn-screen-off 设置设备黑屏</span></span><br><span class="line">scrcpy --turn-screen-off</span><br></pre></td></tr></table></figure></li>
-</ul>
+<h3 id="无线连接"><a href="#无线连接" class="headerlink" title="无线连接"></a>无线连接</h3><p>使用你设置好的静态IP连接</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># scrcpy -s [ip]:[port]</span></span><br><span class="line">scrcpy -s 192.168.0.90:5555</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加上 --turn-screen-off 设置设备黑屏</span></span><br><span class="line"><span class="comment"># 启动后使用快捷键Alt + o更方便</span></span><br><span class="line">scrcpy --turn-screen-off</span><br></pre></td></tr></table></figure>
+
+<p>接下来开始愉快的投屏之旅吧🥳</p>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><table>
 <thead>
 <tr>
@@ -362,99 +363,99 @@
 </thead>
 <tbody><tr>
 <td align="left">全屏</td>
-<td align="left">Alt+f</td>
+<td align="left">Alt + f</td>
 </tr>
 <tr>
 <td align="left">向左旋转屏幕</td>
-<td align="left">Alt+← <em>(左箭头)</em></td>
+<td align="left">Alt + ← (左箭头)</td>
 </tr>
 <tr>
 <td align="left">向右旋转屏幕</td>
-<td align="left">Alt+→ <em>(右箭头)</em></td>
+<td align="left">Alt + → <em>(<em>右箭头</em>)</em></td>
 </tr>
 <tr>
 <td align="left">将窗口大小重置为1:1 (匹配像素)</td>
-<td align="left">Alt+g</td>
+<td align="left">Alt + g</td>
 </tr>
 <tr>
 <td align="left">将窗口大小重置为消除黑边</td>
-<td align="left">Alt+w | <em>双击¹</em></td>
+<td align="left">Alt + w | 双击</td>
 </tr>
 <tr>
 <td align="left">点按 <code>主屏幕</code></td>
-<td align="left">Alt+h | <em>鼠标中键</em></td>
+<td align="left">Alt + h | 鼠标中键</td>
 </tr>
 <tr>
 <td align="left">点按 <code>返回</code></td>
-<td align="left">Alt+b | <em>鼠标右键²</em></td>
+<td align="left">Alt + b | 鼠标右键</td>
 </tr>
 <tr>
 <td align="left">点按 <code>切换应用</code></td>
-<td align="left">Alt+s</td>
+<td align="left">Alt + s</td>
 </tr>
 <tr>
 <td align="left">点按 <code>菜单</code> (解锁屏幕)</td>
-<td align="left">Alt+m</td>
+<td align="left">Alt + m</td>
 </tr>
 <tr>
-<td align="left">点按 <code>音量+</code></td>
-<td align="left">Alt+↑ <em>(上箭头)</em></td>
+<td align="left">点按 <code>音量 + </code></td>
+<td align="left">Alt + ↑ (上箭头)</td>
 </tr>
 <tr>
 <td align="left">点按 <code>音量-</code></td>
-<td align="left">Alt+↓ <em>(下箭头)</em></td>
+<td align="left">Alt + ↓ (下箭头)</td>
 </tr>
 <tr>
 <td align="left">点按 <code>电源</code></td>
-<td align="left">Alt+p</td>
+<td align="left">Alt + p</td>
 </tr>
 <tr>
 <td align="left">打开屏幕</td>
-<td align="left"><em>鼠标右键²</em></td>
+<td align="left">鼠标右键</td>
 </tr>
 <tr>
 <td align="left">关闭设备屏幕 (但继续在电脑上显示)</td>
-<td align="left">Alt+o</td>
+<td align="left">Alt + o</td>
 </tr>
 <tr>
 <td align="left">打开设备屏幕</td>
-<td align="left">Alt+Shift+o</td>
+<td align="left">Alt + Shift + o</td>
 </tr>
 <tr>
 <td align="left">旋转设备屏幕</td>
-<td align="left">Alt+r</td>
+<td align="left">Alt + r</td>
 </tr>
 <tr>
 <td align="left">展开通知面板</td>
-<td align="left">Alt+n</td>
+<td align="left">Alt + n</td>
 </tr>
 <tr>
 <td align="left">收起通知面板</td>
-<td align="left">Alt+Shift+n</td>
+<td align="left">Alt + Shift + n</td>
 </tr>
 <tr>
 <td align="left">复制到剪贴板</td>
-<td align="left">Alt+c</td>
+<td align="left">Alt + c</td>
 </tr>
 <tr>
 <td align="left">剪切到剪贴板</td>
-<td align="left">Alt+x</td>
+<td align="left">Alt + x</td>
 </tr>
 <tr>
 <td align="left">同步剪贴板并粘贴</td>
-<td align="left">Alt+v</td>
+<td align="left">Alt + v</td>
 </tr>
 <tr>
 <td align="left">注入电脑剪贴板文本</td>
-<td align="left">Alt+Shift+v</td>
+<td align="left">Alt + Shift + v</td>
 </tr>
 <tr>
 <td align="left">打开/关闭FPS显示 (在 stdout)</td>
-<td align="left">Alt+i</td>
+<td align="left">Alt + i</td>
 </tr>
 <tr>
 <td align="left">捏拉缩放</td>
-<td align="left">Ctrl+<em>按住并移动鼠标</em></td>
+<td align="left">Ctrl + 按住并移动鼠标</td>
 </tr>
 </tbody></table>
 
