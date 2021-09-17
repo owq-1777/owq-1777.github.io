@@ -44,7 +44,7 @@
 </ul>
 <p><em>PS: 手机重启后设置会丢失, 需要重新连接电脑配置</em> 到这里就可以断开数据线了😏</p>
 <h3 id="无线连接"><a href="#无线连接" class="headerlink" title="无线连接"></a>无线连接</h3><p>使用你设置好的静态IP连接</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># scrcpy -s [ip]:[port]</span></span><br><span class="line">scrcpy -s 192.168.0.90:5555</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加上 --turn-screen-off 设置设备黑屏</span></span><br><span class="line"><span class="comment"># 启动后使用快捷键Alt + o更方便</span></span><br><span class="line">scrcpy --turn-screen-off</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># scrcpy -s [ip]:[port]</span></span><br><span class="line">scrcpy -s 192.168.0.90:5555</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加上 --turn-screen-off 设置设备黑屏</span></span><br><span class="line"><span class="comment"># 启动后使用快捷键 Alt + o 更加方便哦</span></span><br><span class="line">scrcpy --turn-screen-off</span><br></pre></td></tr></table></figure>
 
 <p>接下来开始愉快的投屏之旅吧🥳</p>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><table>
