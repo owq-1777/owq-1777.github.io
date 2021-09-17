@@ -806,16 +806,16 @@
 <p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
 </blockquote>
 <p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.</p>
-<p>ps:接下来的命令都是在这个终端上执行.</p>
+<p>ps:接来的命令都是在这个终端上执行.</p>
 <img data-src="https://i.loli.net/2021/08/12/C8BjhOs3pi4RwQY.png" />
 
 <ol>
 <li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></li>
 <li><h3 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
 
-<p>ps:到了这一步要重启计算机下</p>
+<p>到了这一步要 <strong>重启计算机</strong> 进行应用(更新)</p>
 </li>
-<li><h3 id="下载-Linux-内核更新包"><a href="#下载-Linux-内核更新包" class="headerlink" title="下载 Linux 内核更新包"></a>下载 Linux 内核更新包</h3><p>选择自己计算机内核架构对应的包, 一般为架构是64位也就是x64.</p>
+<li><h3 id="下载-Linux-内核更新包"><a href="#下载-Linux-内核更新包" class="headerlink" title="下载 Linux 内核更新包"></a>下载 Linux 内核更新包</h3><p><strong>选择自己计算机内核架构对应的包</strong>, 一般为架构是64位也就是x64.</p>
 <ul>
 <li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp">x64更新包</span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV9hcm02NC5tc2k=">ARM64更新包</span></li>
@@ -840,7 +840,7 @@
 <li><h3 id="命令行安装"><a href="#命令行安装" class="headerlink" title="命令行安装"></a>命令行安装</h3><p>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="WSL-位置移动-可选"><a href="#WSL-位置移动-可选" class="headerlink" title="WSL 位置移动(可选)"></a>WSL 位置移动(可选)</h2><blockquote>
+<h2 id="WSL-位置移动-可选"><a href="#WSL-位置移动-可选" class="headerlink" title="WSL 位置移动(可选)"></a>WSL 位置移动(可选)</h2><blockquote>
 <p>这里使用LxRunOffline工具进行移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
 </blockquote>
 <p>如果担心C盘空间不够可以把WSL的安装位置移动到其它盘.</p>
