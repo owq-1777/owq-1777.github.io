@@ -25,17 +25,25 @@
     var CONFIG = {"hostname":"owq-1777.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="爱编程, 懂设计, 喜折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny was born">
-<meta property="og:url" content="https://owq-1777.github.io/tags/SQL/index.html">
+  <meta name="description" content="无需安装额外软件, 在无线下利用adb进行投屏控制\\(￣︶￣*\\))">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scrcpy 优雅的安卓投屏工具">
+<meta property="og:url" content="https://owq-1777.github.io/72a0046c/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="爱编程, 懂设计, 喜折腾">
+<meta property="og:description" content="无需安装额外软件, 在无线下利用adb进行投屏控制\\(￣︶￣*\\))">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/17/WzUnSqctg2BDPlE.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/17/DUGwjaqy7RpZzCX.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/17/GPgl6aoATiHB4tJ.png">
+<meta property="article:published_time" content="2021-09-17T11:53:29.000Z">
+<meta property="article:modified_time" content="2021-09-17T07:51:54.600Z">
 <meta property="article:author" content="OWQ">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="adb">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/17/WzUnSqctg2BDPlE.png">
 
-<link rel="canonical" href="https://owq-1777.github.io/tags/SQL/">
+<link rel="canonical" href="https://owq-1777.github.io/72a0046c/">
 
 
 <script id="page-configurations">
@@ -43,12 +51,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: SQL | Sunny was born</title>
+  <title>scrcpy 优雅的安卓投屏工具 | Sunny was born</title>
   
 
 
@@ -193,10 +201,54 @@
 
 <div id="signature">
   <div class="container">
-        <header class="site-heading">
-          <h1>Sunny was born</h1>
-          <span class="subheading">心中有丘壑，眉目作山河</span>
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>scrcpy 优雅的安卓投屏工具</h1>
+          <h2 class="subheading">无需安装额外软件, 在无线下利用adb进行投屏控制\\(￣︶￣*\\))</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+            
+
+            <time title="创建时间：2021-09-17 11:53:29 / 修改时间：07:52:01" itemprop="dateCreated datePublished" datetime="2021-09-17T11:53:29Z">2021-09-17</time>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar-check"></i>
+            </span>
+            <span class="post-meta-item-text">Updated</span>
+            <time title="修改时间：2021-09-17 07:52:01" itemprop="dateModified" datetime="2021-09-17T15:52:01+08:00">2021-09-17</time>
+            
+          </span>
+
+
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>1k</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>1 min</span>
+          </span>
+
+
         </header>
+
+      
 
   </div>
 </div>
@@ -233,53 +285,234 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">SQL
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owq-1777.github.io/72a0046c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/WbH8Onkatr5Cgew.png">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <style type="text/css">.post img {border-radius: 0;}</style>
+
+<blockquote>
+<p>项目地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0dlbnltb2JpbGUvc2NyY3B5">🚪</span><br>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0dlbnltb2JpbGUvc2NyY3B5L2Jsb2IvbWFzdGVyL1JFQURNRS56aC1IYW5zLm1k">🚪</span></p>
+</blockquote>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
+<li><p>下载包<br>版本页面 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0dlbnltb2JpbGUvc2NyY3B5L3RhZ3M=">https://github.com/Genymobile/scrcpy/tags</span></p>
+</li>
+<li><p>解压(位置随意)</p>
+<p>这里解压到<code>C:\Tools\scrcpy</code><br>因为包自带<code>adb</code>工具, 这里可以不用额外配置<code>adb</code>, 已配置好的可以忽略<br><img data-src="https://i.loli.net/2021/09/17/WzUnSqctg2BDPlE.png"></p>
+</li>
+<li><p>设置环境变量</p>
+<p>系统属性 - 环境变量 - 新增Path变量 -添加解压目录<br><img data-src="https://i.loli.net/2021/09/17/DUGwjaqy7RpZzCX.png"></p>
+</li>
+<li><p>验证测试</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># adb 版本</span></span><br><span class="line">adb version</span><br><span class="line"></span><br><span class="line"><span class="comment"># scrcpy 版本</span></span><br><span class="line">scrcpy <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://i.loli.net/2021/09/17/GPgl6aoATiHB4tJ.png" alt="image-20210917133627214"></p>
+<p>成功输出版本信息则配置完成~</p>
+</li>
+</ul>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h3><ul>
+<li><p>第一次使用, 先进行以下配置, 然后用<strong>数据线</strong>连接PC</p>
+<ul>
+<li>进入开发者选项 打开<strong>USB调试</strong></li>
+<li>进入WiFi设置 配置<strong>静态IP</strong></li>
+</ul>
+</li>
+<li><p>终端输入<code>scrcpy</code>直接进行有线连接控制(可选)</p>
+</li>
+<li><p>开放手机<code>TCP</code>服务端口, 用来进行无线连接(关键)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb tcpip 5555 <span class="comment"># 这里设置端口为5555</span></span><br></pre></td></tr></table></figure></li>
+<li><p>多台设备连接<br>  如果adb已经连接多台设备的话, 运行以上命令会报<code>error: more than one device/emulator</code>错误, 这时你需要指定下<code>device</code></p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看连接的设备</span></span><br><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"><span class="comment"># -s 指定devices开放端口</span></span><br><span class="line">adb -s [devices] tcpip 5555</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>Tips:</strong> 只连接一个设备时可以不用指定<code>device</code></p>
+</li>
+</ul>
+<p><em>PS: 手机重启后设置会丢失, 需要重新连接电脑配置</em> 到这里就可以断开数据线了😏</p>
+<h3 id="无线连接"><a href="#无线连接" class="headerlink" title="无线连接"></a>无线连接</h3><ul>
+<li><p>无线连接</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># scrcpy -s [ip]:[port]</span></span><br><span class="line">scrcpy -s 192.168.0.90:5555</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加上 --turn-screen-off 设置设备黑屏</span></span><br><span class="line">scrcpy --turn-screen-off</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><table>
+<thead>
+<tr>
+<th align="left">操作</th>
+<th align="left">快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">全屏</td>
+<td align="left">Alt+f</td>
+</tr>
+<tr>
+<td align="left">向左旋转屏幕</td>
+<td align="left">Alt+← <em>(左箭头)</em></td>
+</tr>
+<tr>
+<td align="left">向右旋转屏幕</td>
+<td align="left">Alt+→ <em>(右箭头)</em></td>
+</tr>
+<tr>
+<td align="left">将窗口大小重置为1:1 (匹配像素)</td>
+<td align="left">Alt+g</td>
+</tr>
+<tr>
+<td align="left">将窗口大小重置为消除黑边</td>
+<td align="left">Alt+w | <em>双击¹</em></td>
+</tr>
+<tr>
+<td align="left">点按 <code>主屏幕</code></td>
+<td align="left">Alt+h | <em>鼠标中键</em></td>
+</tr>
+<tr>
+<td align="left">点按 <code>返回</code></td>
+<td align="left">Alt+b | <em>鼠标右键²</em></td>
+</tr>
+<tr>
+<td align="left">点按 <code>切换应用</code></td>
+<td align="left">Alt+s</td>
+</tr>
+<tr>
+<td align="left">点按 <code>菜单</code> (解锁屏幕)</td>
+<td align="left">Alt+m</td>
+</tr>
+<tr>
+<td align="left">点按 <code>音量+</code></td>
+<td align="left">Alt+↑ <em>(上箭头)</em></td>
+</tr>
+<tr>
+<td align="left">点按 <code>音量-</code></td>
+<td align="left">Alt+↓ <em>(下箭头)</em></td>
+</tr>
+<tr>
+<td align="left">点按 <code>电源</code></td>
+<td align="left">Alt+p</td>
+</tr>
+<tr>
+<td align="left">打开屏幕</td>
+<td align="left"><em>鼠标右键²</em></td>
+</tr>
+<tr>
+<td align="left">关闭设备屏幕 (但继续在电脑上显示)</td>
+<td align="left">Alt+o</td>
+</tr>
+<tr>
+<td align="left">打开设备屏幕</td>
+<td align="left">Alt+Shift+o</td>
+</tr>
+<tr>
+<td align="left">旋转设备屏幕</td>
+<td align="left">Alt+r</td>
+</tr>
+<tr>
+<td align="left">展开通知面板</td>
+<td align="left">Alt+n</td>
+</tr>
+<tr>
+<td align="left">收起通知面板</td>
+<td align="left">Alt+Shift+n</td>
+</tr>
+<tr>
+<td align="left">复制到剪贴板</td>
+<td align="left">Alt+c</td>
+</tr>
+<tr>
+<td align="left">剪切到剪贴板</td>
+<td align="left">Alt+x</td>
+</tr>
+<tr>
+<td align="left">同步剪贴板并粘贴</td>
+<td align="left">Alt+v</td>
+</tr>
+<tr>
+<td align="left">注入电脑剪贴板文本</td>
+<td align="left">Alt+Shift+v</td>
+</tr>
+<tr>
+<td align="left">打开/关闭FPS显示 (在 stdout)</td>
+<td align="left">Alt+i</td>
+</tr>
+<tr>
+<td align="left">捏拉缩放</td>
+<td align="left">Ctrl+<em>按住并移动鼠标</em></td>
+</tr>
+</tbody></table>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-22T10:50:42Z"
-              content="2021-01-22">
-          01-22
-        </time>
       </div>
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/9ec13a7e/" itemprop="url">
-            <span itemprop="name">MariaDB 安装图文教程</span>
-          </a>
-      </div>
+    
+    
+    
+        
 
-    </header>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://owq-1777.github.io/72a0046c/" title="scrcpy 优雅的安卓投屏工具">https://owq-1777.github.io/72a0046c/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+              <a href="/tags/adb/" rel="tag"><i class="fa fa-tag"></i> adb</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/bd9e5b39/" rel="next" title="动态规划 打家劫舍">
+      动态规划 打家劫舍 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
   
-
-  
-
 
 
           </div>
@@ -330,6 +563,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE"><span class="nav-text">初始配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%BA%BF%E8%BF%9E%E6%8E%A5"><span class="nav-text">无线连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">快捷键</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

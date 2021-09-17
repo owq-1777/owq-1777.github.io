@@ -6,7 +6,7 @@
   <link href="https://owq-1777.github.io/atom.xml" rel="self"/>
   
   <link href="https://owq-1777.github.io/"/>
-  <updated>2021-09-08T07:29:13.030Z</updated>
+  <updated>2021-09-17T07:51:54.600Z</updated>
   <id>https://owq-1777.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>scrcpy 优雅的安卓投屏工具</title>
+    <link href="https://owq-1777.github.io/72a0046c/"/>
+    <id>https://owq-1777.github.io/72a0046c/</id>
+    <published>2021-09-17T11:53:29.000Z</published>
+    <updated>2021-09-17T07:51:54.600Z</updated>
+    
+    
+    <summary type="html">无需安装额外软件, 在无线下利用adb进行投屏控制\\(￣︶￣*\\))</summary>
+    
+    
+    
+    <category term="好软工具" scheme="https://owq-1777.github.io/categories/%E5%A5%BD%E8%BD%AF%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Android" scheme="https://owq-1777.github.io/tags/Android/"/>
+    
+    <category term="adb" scheme="https://owq-1777.github.io/tags/adb/"/>
+    
+  </entry>
   
   <entry>
     <title>动态规划 打家劫舍</title>
@@ -402,25 +423,6 @@
     
     
     <category term="Arch Linux" scheme="https://owq-1777.github.io/tags/Arch-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pip 命令</title>
-    <link href="https://owq-1777.github.io/pip/"/>
-    <id>https://owq-1777.github.io/pip/</id>
-    <published>2020-06-01T00:00:00.000Z</published>
-    <updated>2021-08-24T05:49:36.314Z</updated>
-    
-    
-    <summary type="html">📖 pip 命令文档</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://owq-1777.github.io/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="pip" scheme="https://owq-1777.github.io/tags/pip/"/>
     
   </entry>
   
