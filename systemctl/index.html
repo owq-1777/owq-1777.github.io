@@ -218,7 +218,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-18 02:35:57" itemprop="dateModified" datetime="2021-09-18T10:35:57+08:00">2021-09-18</time>
+            <time title="修改时间：2021-09-18 02:45:36" itemprop="dateModified" datetime="2021-09-18T10:45:36+08:00">2021-09-18</time>
             
           </span>
 
@@ -230,7 +230,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>617</span>
+            <span>581</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -306,11 +306,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">systemctl start &lt;servicename&gt;    	<span class="comment"># 启动服务</span></span><br><span class="line">systemctl stop &lt;servicename&gt;     	<span class="comment"># 关闭服务</span></span><br><span class="line">systemctl restart &lt;servicename&gt;		<span class="comment"># 重启服务</span></span><br><span class="line">systemctl reload &lt;servicename&gt;    	<span class="comment"># 重新加载配置文件</span></span><br><span class="line">systemctl status &lt;servicename&gt;    	<span class="comment"># 查看服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的配置文件</span></span><br><span class="line">systemctl cat &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有服务的状态</span></span><br><span class="line">systemctl -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前系统服务状态</span></span><br><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出服务的依赖关系</span></span><br><span class="line">systemctl list-dependencies &lt;servicename&gt;</span><br></pre></td></tr></table></figure>
+        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start &lt;servicename&gt;    	<span class="comment"># 启动服务</span></span><br><span class="line">systemctl stop &lt;servicename&gt;     	<span class="comment"># 关闭服务</span></span><br><span class="line">systemctl restart &lt;servicename&gt;		<span class="comment"># 重启服务</span></span><br><span class="line">systemctl reload &lt;servicename&gt;    	<span class="comment"># 重新加载配置文件</span></span><br><span class="line">systemctl status &lt;servicename&gt;    	<span class="comment"># 查看服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的配置文件</span></span><br><span class="line">systemctl cat &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有服务的状态</span></span><br><span class="line">systemctl -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前系统服务状态</span></span><br><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出服务的依赖关系</span></span><br><span class="line">systemctl list-dependencies &lt;servicename&gt;</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="电源相关"><a href="#电源相关" class="headerlink" title="电源相关"></a>电源相关</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">systemctl reboot		<span class="comment"># 重启机器</span></span><br><span class="line">systemctl poweroff		<span class="comment"># 关机</span></span><br><span class="line">systemctl <span class="built_in">suspend</span>		<span class="comment"># 挂起 - 睡眠 - 保存在內存</span></span><br><span class="line">systemctl hibernate		<span class="comment"># 休眠 - 断电 - 保存在硬盘</span></span><br><span class="line">systemctl hybrid-sleep		<span class="comment"># 混合休眠模式（同时休眠到硬盘并挂起）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统引导时间</span></span><br><span class="line">systemd-analyze time		<span class="comment"># 仅显示时间</span></span><br><span class="line">systemd-analyze blame		<span class="comment"># 显示每个进程消耗时间</span></span><br><span class="line">systemd-analyze plot		<span class="comment"># 生成网页</span></span><br></pre></td></tr></table></figure>
+<h2 id="电源相关"><a href="#电源相关" class="headerlink" title="电源相关"></a>电源相关</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl reboot		<span class="comment"># 重启机器</span></span><br><span class="line">systemctl poweroff		<span class="comment"># 关机</span></span><br><span class="line">systemctl <span class="built_in">suspend</span>		<span class="comment"># 挂起 - 睡眠 - 保存在內存</span></span><br><span class="line">systemctl hibernate		<span class="comment"># 休眠 - 断电 - 保存在硬盘</span></span><br><span class="line">systemctl hybrid-sleep		<span class="comment"># 混合休眠模式（同时休眠到硬盘并挂起）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统引导时间</span></span><br><span class="line">systemd-analyze time		<span class="comment"># 仅显示时间</span></span><br><span class="line">systemd-analyze blame		<span class="comment"># 显示每个进程消耗时间</span></span><br><span class="line">systemd-analyze plot		<span class="comment"># 生成网页</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -533,12 +533,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 min</span>
+    <span title="站点阅读时长">41 min</span>
 </div>
 
 </div>

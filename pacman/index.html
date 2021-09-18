@@ -217,7 +217,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-18 02:35:57" itemprop="dateModified" datetime="2021-09-18T10:35:57+08:00">2021-09-18</time>
+            <time title="修改时间：2021-09-18 02:45:36" itemprop="dateModified" datetime="2021-09-18T10:45:36+08:00">2021-09-18</time>
             
           </span>
 
@@ -229,7 +229,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>531</span>
+            <span>496</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -305,23 +305,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 升级整个系统，-y 更新数据库, -yy 强制更新, -u是升级软件</span></span><br><span class="line">pacman -Syu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除软件缓存，即/var/cache/pacman/pkg目录下的文件</span></span><br><span class="line">pacman -Sc</span><br></pre></td></tr></table></figure>
+        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 升级整个系统，-y 更新数据库, -yy 强制更新, -u是升级软件</span></span><br><span class="line">pacman -Syu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除软件缓存，即/var/cache/pacman/pkg目录下的文件</span></span><br><span class="line">pacman -Sc</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在包数据库中查询软件</span></span><br><span class="line">pacman -Ss &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示软件的详细信息</span></span><br><span class="line">pacman -Si &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询已安装的软件包</span></span><br><span class="line">pacman -Qs &lt;package&gt;</span><br><span class="line"><span class="comment"># 查询本地安装包的详细信息</span></span><br><span class="line">pacman -Qi &lt;package&gt;</span><br><span class="line"><span class="comment"># 获取已安装软件所包含的文件的列表</span></span><br><span class="line">pacman -Ql &lt;package&gt;	</span><br></pre></td></tr></table></figure>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在包数据库中查询软件</span></span><br><span class="line">pacman -Ss &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示软件的详细信息</span></span><br><span class="line">pacman -Si &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询已安装的软件包</span></span><br><span class="line">pacman -Qs &lt;package&gt;</span><br><span class="line"><span class="comment"># 查询本地安装包的详细信息</span></span><br><span class="line">pacman -Qi &lt;package&gt;</span><br><span class="line"><span class="comment"># 获取已安装软件所包含的文件的列表</span></span><br><span class="line">pacman -Ql &lt;package&gt;	</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line">pacman -S &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装不同仓库中的版本</span></span><br><span class="line">pacman -S &lt;extra&gt;/&lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从本地文件安装</span></span><br><span class="line">pacman -U package.tar.zx</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line">pacman -S &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装不同仓库中的版本</span></span><br><span class="line">pacman -S &lt;extra&gt;/&lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从本地文件安装</span></span><br><span class="line">pacman -U package.tar.zx</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除单个软件</span></span><br><span class="line">pacman -R &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定软件及其没有被其他已安装软件使用的依赖关系</span></span><br><span class="line">pacman -Rs &lt;package&gt; </span><br></pre></td></tr></table></figure>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除单个软件</span></span><br><span class="line">pacman -R &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定软件及其没有被其他已安装软件使用的依赖关系</span></span><br><span class="line">pacman -Rs &lt;package&gt; </span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示软件的依赖树</span></span><br><span class="line">pactree &lt;package&gt;  </span><br></pre></td></tr></table></figure>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示软件的依赖树</span></span><br><span class="line">pactree &lt;package&gt;  </span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -547,12 +547,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 min</span>
+    <span title="站点阅读时长">41 min</span>
 </div>
 
 </div>

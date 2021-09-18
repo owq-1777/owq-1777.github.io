@@ -217,7 +217,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-18 02:35:57" itemprop="dateModified" datetime="2021-09-18T10:35:57+08:00">2021-09-18</time>
+            <time title="修改时间：2021-09-18 02:45:36" itemprop="dateModified" datetime="2021-09-18T10:45:36+08:00">2021-09-18</time>
             
           </span>
 
@@ -229,7 +229,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>775</span>
+            <span>730</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -305,15 +305,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Linux-安装"><a href="#Linux-安装" class="headerlink" title="Linux 安装"></a>Linux 安装</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">apt</span> install python<span class="number">3</span>-pip</span><br></pre></td></tr></table></figure>
+        <h2 id="Linux-安装"><a href="#Linux-安装" class="headerlink" title="Linux 安装"></a>Linux 安装</h2><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">apt</span> install python<span class="number">3</span>-pip</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">pip list			<span class="meta"># 显示已安装的库</span></span><br><span class="line">pip list -o			<span class="meta"># 显示已过时的库</span></span><br><span class="line">pip <span class="keyword">show</span> &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 显示库信息</span></span><br><span class="line">pip install &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 安装库</span></span><br><span class="line">pip install -U &lt;<span class="keyword">library</span>&gt;	<span class="meta"># 更新库</span></span><br><span class="line">pip uninstall &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 卸载库</span></span><br><span class="line">pip check &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 检查依赖</span></span><br><span class="line">pip [cmd] -h			<span class="meta"># 显示帮助</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 生成已按照包列表文件</span></span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="meta"># 安装文件内所有包</span></span><br><span class="line">pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="meta"># 设置默认使用pip3</span></span><br><span class="line">pip3 intall --upgrade pip</span><br></pre></td></tr></table></figure>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">pip list			<span class="meta"># 显示已安装的库</span></span><br><span class="line">pip list -o			<span class="meta"># 显示已过时的库</span></span><br><span class="line">pip <span class="keyword">show</span> &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 显示库信息</span></span><br><span class="line">pip install &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 安装库</span></span><br><span class="line">pip install -U &lt;<span class="keyword">library</span>&gt;	<span class="meta"># 更新库</span></span><br><span class="line">pip uninstall &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 卸载库</span></span><br><span class="line">pip check &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 检查依赖</span></span><br><span class="line">pip [cmd] -h			<span class="meta"># 显示帮助</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 生成已按照包列表文件</span></span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="meta"># 安装文件内所有包</span></span><br><span class="line">pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="meta"># 设置默认使用pip3</span></span><br><span class="line">pip3 intall --upgrade pip</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时使用 -i</span></span><br><span class="line">pip install [module] -i https:<span class="regexp">//</span>pypi.org/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 全局配置</span></span><br><span class="line"><span class="comment"># 清华源</span></span><br><span class="line">pip config set global.index-url https:<span class="regexp">//</span>pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line">pip config set global.index-url https:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/pypi/</span>simple/</span><br><span class="line"><span class="comment"># 腾讯源</span></span><br><span class="line">pip config set global.index-url http:<span class="regexp">//mi</span>rrors.cloud.tencent.com<span class="regexp">/pypi/</span>simple</span><br><span class="line"><span class="comment"># 豆瓣源</span></span><br><span class="line">pip config set global.index-url http:<span class="regexp">//</span>pypi.douban.com<span class="regexp">/simple/</span></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">pip config set global.index-url https:<span class="regexp">//</span>pypi.org/simple</span><br></pre></td></tr></table></figure>
+<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 临时使用 -i</span></span><br><span class="line">pip install [module] -i https:<span class="regexp">//</span>pypi.org/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 全局配置</span></span><br><span class="line"><span class="comment"># 清华源</span></span><br><span class="line">pip config set global.index-url https:<span class="regexp">//</span>pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line">pip config set global.index-url https:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/pypi/</span>simple/</span><br><span class="line"><span class="comment"># 腾讯源</span></span><br><span class="line">pip config set global.index-url http:<span class="regexp">//mi</span>rrors.cloud.tencent.com<span class="regexp">/pypi/</span>simple</span><br><span class="line"><span class="comment"># 豆瓣源</span></span><br><span class="line">pip config set global.index-url http:<span class="regexp">//</span>pypi.douban.com<span class="regexp">/simple/</span></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">pip config set global.index-url https:<span class="regexp">//</span>pypi.org/simple</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -538,12 +538,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 min</span>
+    <span title="站点阅读时长">41 min</span>
 </div>
 
 </div>

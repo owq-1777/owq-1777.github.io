@@ -218,7 +218,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-18 02:35:57" itemprop="dateModified" datetime="2021-09-18T10:35:57+08:00">2021-09-18</time>
+            <time title="修改时间：2021-09-18 02:45:36" itemprop="dateModified" datetime="2021-09-18T10:45:36+08:00">2021-09-18</time>
             
           </span>
 
@@ -230,7 +230,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>395</span>
+            <span>386</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -306,16 +306,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
+        <h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db</span><br></pre></td></tr></table></figure>
+<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db</span><br></pre></td></tr></table></figure>
 
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p <span class="number">27017</span>:<span class="number">27017</span> -v <span class="regexp">/data/m</span>ongo:<span class="regexp">/data/</span>db --name mongodb -d mongo --auth</span><br></pre></td></tr></table></figure>
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker run -p <span class="number">27017</span>:<span class="number">27017</span> -v <span class="regexp">/data/m</span>ongo:<span class="regexp">/data/</span>db --name mongodb -d mongo --auth</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>创建用户密码</p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 进入容器</span><br><span class="line">docker exec -it mongo mongo admin</span><br><span class="line"></span><br><span class="line"># 创建用户密码</span><br><span class="line">db.create<span class="constructor">User(&#123; <span class="params">user</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">pwd</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">roles</span>:[ &#123; <span class="params">role</span>:&#x27;<span class="params">userAdminAnyDatabase</span>&#x27;, <span class="params">db</span>: &#x27;<span class="params">admin</span>&#x27;&#125;,<span class="string">&quot;readWriteAnyDatabase&quot;</span>]&#125;)</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"># 进入容器</span><br><span class="line">docker exec -it mongo mongo admin</span><br><span class="line"></span><br><span class="line"># 创建用户密码</span><br><span class="line">db.create<span class="constructor">User(&#123; <span class="params">user</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">pwd</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">roles</span>:[ &#123; <span class="params">role</span>:&#x27;<span class="params">userAdminAnyDatabase</span>&#x27;, <span class="params">db</span>: &#x27;<span class="params">admin</span>&#x27;&#125;,<span class="string">&quot;readWriteAnyDatabase&quot;</span>]&#125;)</span>;</span><br></pre></td></tr></table></figure>
 
-<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:admin<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:admin<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -542,12 +542,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 min</span>
+    <span title="站点阅读时长">41 min</span>
 </div>
 
 </div>

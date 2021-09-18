@@ -219,7 +219,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-18 02:35:57" itemprop="dateModified" datetime="2021-09-18T10:35:57+08:00">2021-09-18</time>
+            <time title="修改时间：2021-09-18 02:45:36" itemprop="dateModified" datetime="2021-09-18T10:45:36+08:00">2021-09-18</time>
             
           </span>
 
@@ -231,7 +231,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>575</span>
+            <span>554</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -326,7 +326,7 @@
 <li>并发表示<strong>多个程序可以在同一个时间段内被执行</strong></li>
 <li>并行表示多个程序可以在<strong>同一时刻</strong>被运行</li>
 </ul>
-<h2 id="Threading库"><a href="#Threading库" class="headerlink" title="Threading库"></a>Threading库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longtime</span>(<span class="params">n</span>):</span> <span class="comment"># 需要被线程执行的函数</span></span><br><span class="line">    time.sleep(n)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># 实例化线程</span></span><br><span class="line">    t = threading.Thread(target=longtime, args=[<span class="number">10</span>])</span><br><span class="line">    t.start()</span><br><span class="line">    t.join()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Done&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h2 id="Threading库"><a href="#Threading库" class="headerlink" title="Threading库"></a>Threading库</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longtime</span>(<span class="params">n</span>):</span> <span class="comment"># 需要被线程执行的函数</span></span><br><span class="line">    time.sleep(n)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># 实例化线程</span></span><br><span class="line">    t = threading.Thread(target=longtime, args=[<span class="number">10</span>])</span><br><span class="line">    t.start()</span><br><span class="line">    t.join()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Done&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 
 
 
@@ -557,12 +557,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 min</span>
+    <span title="站点阅读时长">41 min</span>
 </div>
 
 </div>

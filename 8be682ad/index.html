@@ -218,7 +218,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-18 02:35:57" itemprop="dateModified" datetime="2021-09-18T10:35:57+08:00">2021-09-18</time>
+            <time title="修改时间：2021-09-18 02:45:36" itemprop="dateModified" datetime="2021-09-18T10:45:36+08:00">2021-09-18</time>
             
           </span>
 
@@ -230,7 +230,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>781</span>
+            <span>732</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -306,25 +306,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker pull redis</span></span><br></pre></td></tr></table></figure>
+        <h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker pull redis</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db<span class="regexp">/redis &amp;&amp; mkdir -p /</span>data<span class="regexp">/config/</span>redis</span><br></pre></td></tr></table></figure>
+<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db<span class="regexp">/redis &amp;&amp; mkdir -p /</span>data<span class="regexp">/config/</span>redis</span><br></pre></td></tr></table></figure>
 
-<h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/data/</span>db<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
+<h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/data/</span>db<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
 
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/data/</span>db<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/data/</span>db<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
 
 <p>根据需求修改配置文件</p>
 <blockquote>
 <p>参考资料 &gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC80MWYzOTNmNTk0ZTg=">🚪</span></p>
 </blockquote>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 监听端口</span></span><br><span class="line"><span class="attribute">bind</span> <span class="number">127.0.0.1</span></span><br><span class="line"></span><br><span class="line">port <span class="number">6379</span></span><br><span class="line">requirepass ****</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启保护模式，默认开启，如果没有设置bind项和redis密码的话，服务将只允许本地访问。</span></span><br><span class="line">protected-mode <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库个数</span></span><br><span class="line">databases <span class="number">16</span></span><br><span class="line"></span><br><span class="line">dir ./	<span class="comment"># 输入本地redis数据库存放文件夹</span></span><br><span class="line"></span><br><span class="line">appendonly <span class="literal">yes</span> <span class="comment"># redis持久化</span></span><br><span class="line"></span><br><span class="line">logfile <span class="string">&quot;redis.log&quot;</span> <span class="comment"># 日志文件存放</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 监听端口</span></span><br><span class="line"><span class="attribute">bind</span> <span class="number">127.0.0.1</span></span><br><span class="line"></span><br><span class="line">port <span class="number">6379</span></span><br><span class="line">requirepass ****</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启保护模式，默认开启，如果没有设置bind项和redis密码的话，服务将只允许本地访问。</span></span><br><span class="line">protected-mode <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库个数</span></span><br><span class="line">databases <span class="number">16</span></span><br><span class="line"></span><br><span class="line">dir ./	<span class="comment"># 输入本地redis数据库存放文件夹</span></span><br><span class="line"></span><br><span class="line">appendonly <span class="literal">yes</span> <span class="comment"># redis持久化</span></span><br><span class="line"></span><br><span class="line">logfile <span class="string">&quot;redis.log&quot;</span> <span class="comment"># 日志文件存放</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">-p 6379:6379 --name redis \</span><br><span class="line">-v /data/redis/redis.conf:/etc/redis/redis.conf \</span><br><span class="line">-v /data/redis/data:/data:rw \</span><br><span class="line">--privileged=<span class="literal">true</span> -d redis redis-server /etc/redis/redis.conf \</span><br><span class="line">--appendonly yes</span><br></pre></td></tr></table></figure>
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">-p 6379:6379 --name redis \</span><br><span class="line">-v /data/redis/redis.conf:/etc/redis/redis.conf \</span><br><span class="line">-v /data/redis/data:/data:rw \</span><br><span class="line">--privileged=<span class="literal">true</span> -d redis redis-server /etc/redis/redis.conf \</span><br><span class="line">--appendonly yes</span><br></pre></td></tr></table></figure>
 
-<h2 id="验证启动"><a href="#验证启动" class="headerlink" title="验证启动"></a>验证启动</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker ps</span></span><br></pre></td></tr></table></figure>
+<h2 id="验证启动"><a href="#验证启动" class="headerlink" title="验证启动"></a>验证启动</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker ps</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="失败处理"><a href="#失败处理" class="headerlink" title="失败处理"></a>失败处理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看错误日志</span></span><br><span class="line">docker logs redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis 挂载端口映射等信息</span></span><br><span class="line">docker inspect redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis 端口映射</span></span><br><span class="line">docker port myredis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除重试</span></span><br><span class="line">docker rm redis</span><br></pre></td></tr></table></figure>
+<h2 id="失败处理"><a href="#失败处理" class="headerlink" title="失败处理"></a>失败处理</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看错误日志</span></span><br><span class="line">docker logs redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis 挂载端口映射等信息</span></span><br><span class="line">docker inspect redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis 端口映射</span></span><br><span class="line">docker port myredis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除重试</span></span><br><span class="line">docker rm redis</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -551,12 +551,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 min</span>
+    <span title="站点阅读时长">41 min</span>
 </div>
 
 </div>

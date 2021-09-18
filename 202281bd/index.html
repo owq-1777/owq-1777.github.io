@@ -221,7 +221,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-18 02:35:57" itemprop="dateModified" datetime="2021-09-18T10:35:57+08:00">2021-09-18</time>
+            <time title="修改时间：2021-09-18 02:45:36" itemprop="dateModified" datetime="2021-09-18T10:45:36+08:00">2021-09-18</time>
             
           </span>
 
@@ -233,7 +233,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>609</span>
+            <span>597</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -312,18 +312,18 @@
         <blockquote>
 <p>Win-KeX官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy93c2wvd2luLWtleC8=">🚪</span></p>
 </blockquote>
-<h2 id="安装win-kex"><a href="#安装win-kex" class="headerlink" title="安装win-kex"></a>安装win-kex</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install kali-win-kex</span><br></pre></td></tr></table></figure>
+<h2 id="安装win-kex"><a href="#安装win-kex" class="headerlink" title="安装win-kex"></a>安装win-kex</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install kali-win-kex</span><br></pre></td></tr></table></figure>
 
 <h2 id="启动Win-Kex"><a href="#启动Win-Kex" class="headerlink" title="启动Win-Kex"></a>启动Win-Kex</h2><blockquote>
 <p>Win-KeX 有三种启动模式</p>
 </blockquote>
 <ul>
 <li><p>窗口模式<br>在专用窗口中启动 Kali Linux 桌面.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kex --win -s	</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --win -s	</span><br></pre></td></tr></table></figure></li>
 <li><p>远程连接（推荐）<br>微软自带的远程桌面工具，用过的都说好~</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kex --esm --ip -s</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kex --esm --ip -s</span><br></pre></td></tr></table></figure></li>
 <li><p>无缝模式<br>在 Windows 和 Kali 应用程序和菜单之间共享 Windows 桌面.</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kex <span class="comment">--sl -s</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">kex <span class="comment">--sl -s</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <p><em>注: 后面参数<code>-s</code>是启动声音支持.</em></p>
 <h2 id="高分屏下的使用"><a href="#高分屏下的使用" class="headerlink" title="高分屏下的使用"></a>高分屏下的使用</h2><blockquote>
@@ -337,12 +337,12 @@
 <h2 id="快捷启动"><a href="#快捷启动" class="headerlink" title="快捷启动"></a>快捷启动</h2><ul>
 <li>添加到<code>Windows Termial</code>启动</li>
 </ul>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;576cd4fd-d6e2-4b99-9305-2e03a898af04&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Win-KeX&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;wsl -d kali-linux kex --esm --wtstart -s&quot;</span>,</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;576cd4fd-d6e2-4b99-9305-2e03a898af04&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Win-KeX&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;wsl -d kali-linux kex --esm --wtstart -s&quot;</span>,</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>设置命令别名</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> winkex=<span class="string">&#x27;kex --esm --ip -s&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> winkex=<span class="string">&#x27;kex --esm --ip -s&#x27;</span></span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -569,12 +569,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 min</span>
+    <span title="站点阅读时长">41 min</span>
 </div>
 
 </div>

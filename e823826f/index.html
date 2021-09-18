@@ -221,7 +221,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-09-18 02:35:57" itemprop="dateModified" datetime="2021-09-18T10:35:57+08:00">2021-09-18</time>
+            <time title="修改时间：2021-09-18 02:45:36" itemprop="dateModified" datetime="2021-09-18T10:45:36+08:00">2021-09-18</time>
             
           </span>
 
@@ -233,7 +233,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>2.4k</span>
+            <span>2.3k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -322,79 +322,79 @@
 <li><p>Nginx<br>一款反向代理网页服务器，让你的网站得以被外部访问的关键。</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Ubuntu</span></span><br><span class="line">apt install git nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># CentOS</span></span><br><span class="line">yum install -y git nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Ubuntu</span></span><br><span class="line">apt install git nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># CentOS</span></span><br><span class="line">yum install -y git nginx</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="创建一个-git-用户-可选"><a href="#创建一个-git-用户-可选" class="headerlink" title="创建一个 git 用户(可选)"></a>创建一个 git 用户(可选)</h3><p>创建专门用来管理Git仓库的用户，主要是为了权限管理，可参考<span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9ib29rL2VuL3YyL0dpdC1vbi10aGUtU2VydmVyLVNldHRpbmctVXAtdGhlLVNlcnZlcg==">官方文档</span></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure>
 
 <h3 id="启用git-shell-可选"><a href="#启用git-shell-可选" class="headerlink" title="启用git shell(可选)"></a>启用<code>git shell</code>(可选)</h3><p>查看git-shell是否存在</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat /etc/shells</span><br></pre></td></tr></table></figure>
 
 <p>不存在则添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看git-shell路径 默认：/usr/bin/git-shell</span></span><br><span class="line"><span class="built_in">which</span> git-shell</span><br><span class="line"><span class="comment"># 把路径添加到shells文件里</span></span><br><span class="line">sudo vim /etc/shells</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看git-shell路径 默认：/usr/bin/git-shell</span></span><br><span class="line"><span class="built_in">which</span> git-shell</span><br><span class="line"><span class="comment"># 把路径添加到shells文件里</span></span><br><span class="line">sudo vim /etc/shells</span><br></pre></td></tr></table></figure>
 
 <p>修改git用户默认shell</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chsh git -s $(<span class="built_in">which</span> git-shell)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo chsh git -s $(<span class="built_in">which</span> git-shell)</span><br></pre></td></tr></table></figure>
 
 <p>测试ssh连接，登录不成功即配置ok</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="symbol">git@<span class="keyword">&lt;IP地址&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">ssh <span class="symbol">git@<span class="keyword">&lt;IP地址&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="配置ssh公钥"><a href="#配置ssh公钥" class="headerlink" title="配置ssh公钥"></a>配置ssh公钥</h3><p>用户目录下创建 <code>.ssh</code> 文件夹并设置权限为 700</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用git用户需要进行切换</span></span><br><span class="line">su git</span><br><span class="line"></span><br><span class="line">mkdir ~/.ssh &amp;&amp; chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用git用户需要进行切换</span></span><br><span class="line">su git</span><br><span class="line"></span><br><span class="line">mkdir ~/.ssh &amp;&amp; chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
 
 <p>创建 <code>authorized_keys </code> 文件, 将本机公钥复制到里面.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 
 <p>修改权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="创建相关目录"><a href="#创建相关目录" class="headerlink" title="创建相关目录"></a>创建相关目录</h3><p>创建存放Blog的git仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/repo &amp;&amp; <span class="built_in">cd</span> /var/repo</span><br><span class="line">git init --bare blog.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir /var/repo &amp;&amp; <span class="built_in">cd</span> /var/repo</span><br><span class="line">git init --bare blog.git</span><br></pre></td></tr></table></figure>
 
 <p>创建存放网站静态文件的目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/www/hexo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir /var/www/hexo</span><br></pre></td></tr></table></figure>
 
 <p>设置目录权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R git:git /var/www/hexo</span><br><span class="line">chmod -R 755 /var/www/hexo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chown -R git:git /var/www/hexo</span><br><span class="line">chmod -R 755 /var/www/hexo</span><br></pre></td></tr></table></figure>
 
 <p><em>PS:仓库名<code>blog.git</code>、静态文件目录<code>hoxo</code>可自定义</em></p>
 <h3 id="添加post-receive钩子"><a href="#添加post-receive钩子" class="headerlink" title="添加post-receive钩子"></a>添加<code>post-receive</code>钩子</h3><blockquote>
 <p>官方参考文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9ib29rL3poL3YyLyVFOCU4NyVBQSVFNSVBRSU5QSVFNCVCOSU4OS1HaXQtR2l0LSVFOSU5MiVBOSVFNSVBRCU5MA==">🚪</span></p>
 </blockquote>
 <p>在仓库下的 <code>hooks</code> 目录创建 <code>post-receive</code> 文件</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/var/</span>repo<span class="regexp">/blog.git/</span>hooks/post-receive</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/var/</span>repo<span class="regexp">/blog.git/</span>hooks/post-receive</span><br></pre></td></tr></table></figure>
 
 <p>添加以下内容, 这个钩子会在你本地更新推送到服务器完成后执行, 更新你的网站内容。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/var/www/hexo --git-dir=/var/repo/blog.git checkout -f</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/var/www/hexo --git-dir=/var/repo/blog.git checkout -f</span><br></pre></td></tr></table></figure>
 
 <p>配置权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/repo/blog.git/hooks/</span><br><span class="line">chown -R git:git /var/repo/</span><br><span class="line">chown -R git:git /var/www/hexo</span><br><span class="line">chmod +x post-receive</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/repo/blog.git/hooks/</span><br><span class="line">chown -R git:git /var/repo/</span><br><span class="line">chown -R git:git /var/www/hexo</span><br><span class="line">chmod +x post-receive</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="检测仓库是否配置成功"><a href="#检测仓库是否配置成功" class="headerlink" title="检测仓库是否配置成功"></a>检测仓库是否配置成功</h3><p>能成功克隆则代表配置正确</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;使用的用户名&gt;@&lt;你的服务器IP&gt;:/var/repo/blog.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例子</span></span><br><span class="line">git <span class="built_in">clone</span> git@8.8.8.8:/var/repo/blog.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;使用的用户名&gt;@&lt;你的服务器IP&gt;:/var/repo/blog.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例子</span></span><br><span class="line">git <span class="built_in">clone</span> git@8.8.8.8:/var/repo/blog.git</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><p>这里修改下Nginx的默认站点配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx/</span><br><span class="line">vim sites-enabled/default</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx/</span><br><span class="line">vim sites-enabled/default</span><br></pre></td></tr></table></figure>
 
 <p>里面长这样 ↓<br><img data-src="https://i.loli.net/2021/08/20/3aC8W5VJhrP4sBk.png"  /></p>
 <p>这里修改root网站根目录就行了，其它可以保持不动</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root /var/www/hexo;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">root /var/www/hexo;</span><br></pre></td></tr></table></figure>
 
 <p><code>server_name _;</code> 一行表示全匹配，只要访问服务器，都会直接转发到当前<code>server</code>下，有域名后可以设置为域名，然后配置<code>不允许ip访问</code>，这样可以避免其他人把未备案的域名解析到自己的服务器 IP，而导致服务器被断网。(如果你没备案就解析域名了，那现在就该知道服务器登不了的原因了🤣)</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意：以下内容可以z在default文件中修改，不过推荐先了解Nginx然后再配置为妙。</span></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    <span class="comment">// 新增server，设置不允许Ip访问web(default_server)</span></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80 default_server;</span><br><span class="line">        server_name _;</span><br><span class="line">        return 403;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 原有default，设置www.you.com域名访问web</span></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.you.com;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新增server，设置顶级域名you.com重定向</span></span><br><span class="line">    server &#123;</span><br><span class="line">       listen 80;</span><br><span class="line">       server_name you.com;</span><br><span class="line">       return 301 http:<span class="comment">//www.you.com$request_uri;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 注意：以下内容可以z在default文件中修改，不过推荐先了解Nginx然后再配置为妙。</span></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    <span class="comment">// 新增server，设置不允许Ip访问web(default_server)</span></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80 default_server;</span><br><span class="line">        server_name _;</span><br><span class="line">        return 403;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 原有default，设置www.you.com域名访问web</span></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.you.com;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新增server，设置顶级域名you.com重定向</span></span><br><span class="line">    server &#123;</span><br><span class="line">       listen 80;</span><br><span class="line">       server_name you.com;</span><br><span class="line">       return 301 http:<span class="comment">//www.you.com$request_uri;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>检查配置然后重载 Nginx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -t	<span class="comment"># 检查配置</span></span><br><span class="line">nginx -s reload	<span class="comment"># 重载配置</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t	<span class="comment"># 检查配置</span></span><br><span class="line">nginx -s reload	<span class="comment"># 重载配置</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -402,14 +402,14 @@
 <p>部署插件项目 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">🚪</span></p>
 </blockquote>
 <p><strong>修改站点目录下<code>_config.yml</code>文件</strong></p>
-<h3 id="单个存储部署配置"><a href="#单个存储部署配置" class="headerlink" title="单个存储部署配置"></a>单个存储部署配置</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> git@x.x.x.x:<span class="meta-keyword">/var/</span>repo/blog.git</span><br></pre></td></tr></table></figure>
+<h3 id="单个存储部署配置"><a href="#单个存储部署配置" class="headerlink" title="单个存储部署配置"></a>单个存储部署配置</h3><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> git@x.x.x.x:<span class="meta-keyword">/var/</span>repo/blog.git</span><br></pre></td></tr></table></figure>
 
 <h3 id="多个存储库部署配置（可选）"><a href="#多个存储库部署配置（可选）" class="headerlink" title="多个存储库部署配置（可选）"></a>多个存储库部署配置（可选）</h3><p>这里同时对github和服务器进行同步，可以用来应付一些特殊情况，比如：服务器挂了、封了什么的。</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span></span><br><span class="line"><span class="symbol">    server:</span> <span class="meta"># 名称可自定义</span></span><br><span class="line"><span class="symbol">      url:</span> git@x.x.x.x:<span class="meta-keyword">/var/</span>repo/blog.git</span><br><span class="line"><span class="symbol">      branch:</span> master</span><br><span class="line"><span class="symbol">    git:</span></span><br><span class="line"><span class="symbol">      url:</span> git@github.com:owq/owq.github.io.git</span><br><span class="line"><span class="symbol">      branch:</span> main</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span></span><br><span class="line"><span class="symbol">    server:</span> <span class="meta"># 名称可自定义</span></span><br><span class="line"><span class="symbol">      url:</span> git@x.x.x.x:<span class="meta-keyword">/var/</span>repo/blog.git</span><br><span class="line"><span class="symbol">      branch:</span> master</span><br><span class="line"><span class="symbol">    git:</span></span><br><span class="line"><span class="symbol">      url:</span> git@github.com:owq/owq.github.io.git</span><br><span class="line"><span class="symbol">      branch:</span> main</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清除缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一键部署</span></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清除缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一键部署</span></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -635,12 +635,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 min</span>
+    <span title="站点阅读时长">41 min</span>
 </div>
 
 </div>
