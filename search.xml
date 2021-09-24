@@ -1224,7 +1224,7 @@
 
 </li>
 </ul>
-<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> setting <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 ...</span></span><br><span class="line"></span><br><span class="line">brower = Chrome(executable_path=driver_path, options=options)</span><br></pre></td></tr></table></figure>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> setting <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 ...</span></span><br><span class="line"></span><br><span class="line">brower = webdriver.Chrome(executable_path=DRIVER_PATH, options=options)</span><br></pre></td></tr></table></figure>
 
 
 
