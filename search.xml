@@ -1241,7 +1241,7 @@
 <li><p>禁用图片加载</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable image loading</span></span><br><span class="line">prefs = &#123; <span class="string">&#x27;profile.managed_default_content_settings.images&#x27;</span>: <span class="number">2</span> &#125;</span><br><span class="line">options.add_experimental_option(<span class="string">&quot;prefs&quot;</span>, prefs)</span><br></pre></td></tr></table></figure></li>
 <li><p>设置User-Agent</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># UA</span></span><br><span class="line">options.add_argument(UA)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># UA</span></span><br><span class="line">options.add_argument(<span class="string">f&#x27;user-agent=<span class="subst">&#123;UA&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 <li><p>设置代理</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Proxy</span></span><br><span class="line">options.add_argument(<span class="string">f&quot;--proxy-server=<span class="subst">&#123;PROXY&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure></li>
 <li><p>设置缓存</p>
