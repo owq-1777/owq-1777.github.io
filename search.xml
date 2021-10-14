@@ -621,12 +621,15 @@
     <url>/d2633d2c/</url>
     <content><![CDATA[<h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db</span><br></pre></td></tr></table></figure>
+<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /data/db</span><br></pre></td></tr></table></figure>
 
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker run -p <span class="number">27017</span>:<span class="number">27017</span> -v <span class="regexp">/data/m</span>ongo:<span class="regexp">/data/</span>db --name mongodb -d mongo --auth</span><br></pre></td></tr></table></figure>
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -p 27017:27017 -v /data/mongo:/data/db --name mongo -d mongo --auth</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>创建用户密码</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"># 进入容器</span><br><span class="line">docker exec -it mongo mongo admin</span><br><span class="line"></span><br><span class="line"># 创建用户密码</span><br><span class="line">db.create<span class="constructor">User(&#123; <span class="params">user</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">pwd</span>:&#x27;<span class="params">admin</span>&#x27;,<span class="params">roles</span>:[ &#123; <span class="params">role</span>:&#x27;<span class="params">userAdminAnyDatabase</span>&#x27;, <span class="params">db</span>: &#x27;<span class="params">admin</span>&#x27;&#125;,<span class="string">&quot;readWriteAnyDatabase&quot;</span>]&#125;)</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mongo mongo admin</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">db.createUser(&#123; user:<span class="string">&#x27;admin&#x27;</span>,<span class="built_in">pwd</span>:<span class="string">&#x27;admin&#x27;</span>,roles:[ &#123; role:<span class="string">&#x27;userAdminAnyDatabase&#x27;</span>, db: <span class="string">&#x27;admin&#x27;</span>&#125;,<span class="string">&quot;readWriteAnyDatabase&quot;</span>]&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:admin<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
 
