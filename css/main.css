@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f97fb6;
+  background: #e78350;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2799,7 +2799,18 @@ h1 {
 }
 h2 {
   font-size: 1.375em;
-  margin-top: 30px;
+}
+.post-body>h2 {
+  font-size: 1.6rem;
+  display: inline-block;
+}
+.post-body>h2:after {
+  display: block;
+  content: '';
+  height: 2px;
+  margin-top: 4px;
+  background-color: #273849;
+  border-radius: 2px;
 }
 h3 {
   font-size: 1.1em;
