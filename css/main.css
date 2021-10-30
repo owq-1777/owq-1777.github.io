@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #87fbc4;
+  background: #30ff57;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2821,6 +2821,20 @@ ul {
 li p {
   margin-bottom: 5px;
 }
+.beian {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.beian > a {
+  color: #999;
+  border-bottom: 0;
+}
+.beian > img {
+  box-shadow: none;
+  margin-left: 4px;
+  margin-right: 4px;
+}
 .post-body {
   text-align: initial;
 }
@@ -2976,6 +2990,11 @@ blockquote p {
 @media (max-width: 991px) {
   #live2d-widget {
     display: none;
+  }
+}
+@media (max-width: 991px) {
+  #menu {
+    position: absolute;
   }
 }
 @media (max-width: 1100px) {
@@ -3294,7 +3313,7 @@ blockquote p {
   position: relative;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -1px;
   z-index: 2;
 }
 .preview-overlay .preview-waves {
