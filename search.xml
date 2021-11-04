@@ -779,8 +779,9 @@
 <p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy9nZW5lcmFsLXVzZS9oaWRwaS8=">🚪</span></p>
 </blockquote>
 <p>菜单搜索<code>hidpi</code>, 打开它</p>
+<p><img data-src="https://img.owq.world/2021/11/2110-eb457c.png"></p>
 <p>默认缩放2X, 点击<code>是</code>确认, 然后开始愉快的Linux之旅吧~</p>
-<p><img data-src="https://i.loli.net/2021/08/16/sM3KuCyPQkjitpD.png" alt="img"></p>
+<p><img data-src="https://img.owq.world/2021/11/2110-542567.png"></p>
 <p><em>注:如果要自定义缩放因子请参考官方文档</em></p>
 <h2 id="快捷启动"><a href="#快捷启动" class="headerlink" title="快捷启动"></a>快捷启动</h2><ul>
 <li>添加到<code>Windows Termial</code>启动</li>
@@ -1037,7 +1038,7 @@
 </ul>
 <h2 id="下载-MariaDB-安装包"><a href="#下载-MariaDB-安装包" class="headerlink" title="下载 MariaDB 安装包"></a>下载 MariaDB 安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly9tYXJpYWRiLmNvbS9kb3dubG9hZHMv">官网下载</span></p>
 <p>打开后大概是这个样子，这里要注意下，不同时期网站的外观可能会不同，但软件的下载页地址是不会变的。</p>
-<p><img data-src="https://i.loli.net/2021/08/20/Vfj2b1EIG7kPeqJ.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2111-62424c.png"></p>
 <p>软件版本选择默认(最新版)就行了<br>手动选择下系统版本, Windows 64位选择 <code>MS Windows (64-bit)</code><br>如果不知道自己的系统是多少位的, 那就选择32位包 <code>MS Windows (32-bit)</code><br>选择好后, 你会发现下面的链接是会变的, 这就是你要下载的文件, 让我们点击 <code>Download</code> 开始下载</p>
 <p><img data-src="https://i.loli.net/2021/08/20/d7mW9EbtUXYCKga.png"></p>
 <p>点击后会跳转到 &quot;感谢下载&quot; 页面, 这时候等待下载链接建立起来就行了</p>
