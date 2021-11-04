@@ -12,15 +12,15 @@
 <li><p>下载包<br>版本页面 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0dlbnltb2JpbGUvc2NyY3B5L3RhZ3M=">https://github.com/Genymobile/scrcpy/tags</span></p>
 </li>
 <li><p>解压(位置随意)</p>
-<p>这里解压到<code>C:\Tools\scrcpy</code><br>因为包自带<code>adb</code>工具, 这里可以不用额外配置<code>adb</code>, 已配置好的可以忽略<br><img data-src="https://i.loli.net/2021/09/17/WzUnSqctg2BDPlE.png"></p>
-</li>
+<p>这里解压到<code>C:\Tools\scrcpy</code><br>因为包自带<code>adb</code>工具, 这里可以不用额外配置<code>adb</code>, 已配置好的可以忽略</p>
+<img data-src="https://img.owq.world/2021/11/2124-7e8658.png" style="zoom:50%;" /></li>
 <li><p>设置环境变量</p>
-<p>系统属性 - 环境变量 - 新增Path变量 -添加解压目录<br><img data-src="https://i.loli.net/2021/09/17/DUGwjaqy7RpZzCX.png"></p>
+<p>系统属性 - 环境变量 - 新增Path变量 -添加解压目录<br><img data-src="https://img.owq.world/2021/11/2127-fb6625.png"></p>
 </li>
 <li><p>验证测试</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># adb 版本</span></span><br><span class="line">adb version</span><br><span class="line"></span><br><span class="line"><span class="comment"># scrcpy 版本</span></span><br><span class="line">scrcpy <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
 
-<img data-src="https://i.loli.net/2021/09/17/GPgl6aoATiHB4tJ.png" alt="" style="zoom:67%;" />
+<img data-src="https://img.owq.world/2021/11/2124-6ca332.png" alt="" style="zoom:67%;" />
 
 <p>成功输出版本信息则配置完成~</p>
 </li>
@@ -566,7 +566,7 @@
 <h2 id="记录流程图"><a href="#记录流程图" class="headerlink" title="记录流程图"></a>记录流程图</h2><blockquote>
 <p>有个印象(～￣▽￣)～</p>
 </blockquote>
-<img data-src="https://docs.python.org/zh-tw/3/_images/logging_flow.png" style="border-radius: 0px;" />
+<img data-src="https://img.owq.world/2021/11/2123-044c15.png" style="border-radius: 0px;" />
 
 
 
@@ -722,7 +722,7 @@
 <h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><p>这里修改下Nginx的默认站点配置</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx/</span><br><span class="line">vim sites-enabled/default</span><br></pre></td></tr></table></figure>
 
-<p>里面长这样 ↓<br><img data-src="https://i.loli.net/2021/08/20/3aC8W5VJhrP4sBk.png"  /></p>
+<p>里面长这样 ↓<br><img data-src="https://img.owq.world/2021/11/2122-11343b.png"  /></p>
 <p>这里修改root网站根目录就行了，其它可以保持不动</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">root /var/www/hexo;</span><br></pre></td></tr></table></figure>
 
@@ -810,7 +810,7 @@
 </blockquote>
 <p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.</p>
 <p>ps:接来的命令都是在这个终端上执行.</p>
-<img data-src="https://i.loli.net/2021/08/12/C8BjhOs3pi4RwQY.png" />
+<img data-src="https://img.owq.world/2021/11/2125-658665.png" style="zoom:50%;" />
 
 <ol>
 <li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></li>
@@ -857,7 +857,8 @@
 </blockquote>
 <h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改Windows位于用户目录<code>%home%</code>下的<code>.wslconfig</code>文件，若没有则自己创建一个.</p>
 <p>ps:直接在资源管理器输入<code>%home%</code>按回车就可跳转, 若出错则是电脑环境变量没有配置好</p>
-<p><img data-src="https://i.loli.net/2021/08/12/Q6MjR8sqKba3BOZ.png"></p>
+<img data-src="https://img.owq.world/2021/11/2125-5f3eaf.png" style="zoom:50%;" />
+
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>主要配置内存和交换内存, 其它可以不用管, 看自己电脑配置设置.</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="comment"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="comment"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">0</span></span><br><span class="line"><span class="comment"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span></span><br><span class="line"><span class="attr">swapFile</span>=&lt;path&gt;</span><br><span class="line"><span class="comment"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span></span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
@@ -921,7 +922,7 @@
 <p>死马当活马医😂</p>
 </blockquote>
 <p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBhZGRyZXNzLmNvbS8=">https://www.ipaddress.com/</span> 获取域名的映射IP</p>
-<p><img data-src="https://i.loli.net/2021/08/16/v75LtJBaPjToRZ6.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2123-f639cc.png"></p>
 <p>修改<code>hosts</code>文件</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>hosts</span><br></pre></td></tr></table></figure>
 
@@ -931,14 +932,14 @@
 <h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><blockquote>
 <p>主题文件位于 <code>.oh-my-zsh/themes</code> 目录下，可自定义修改</p>
 </blockquote>
-<h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="https://i.loli.net/2021/08/06/51yhlPEQH7WOCnF.png" style="zoom:80%;" />
+<h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="https://img.owq.world/2021/11/2124-f27aa9.png" style="zoom:80%;" />
 
 <p>修改 <code>~/.zshrc</code> 文件</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">&quot;ys&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="https://i.loli.net/2021/08/06/K2MYl3UE5T1yDaI.png" style="zoom: 80%;" />
+<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="https://img.owq.world/2021/11/2124-9962fa.png" style="zoom: 80%;" />
 
 <h4 id="安装powerline主题"><a href="#安装powerline主题" class="headerlink" title="安装powerline主题"></a><strong>安装powerline主题</strong></h4><blockquote>
 <p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
@@ -1040,30 +1041,30 @@
 <p>打开后大概是这个样子，这里要注意下，不同时期网站的外观可能会不同，但软件的下载页地址是不会变的。</p>
 <p><img data-src="https://img.owq.world/2021/11/2111-62424c.png"></p>
 <p>软件版本选择默认(最新版)就行了<br>手动选择下系统版本, Windows 64位选择 <code>MS Windows (64-bit)</code><br>如果不知道自己的系统是多少位的, 那就选择32位包 <code>MS Windows (32-bit)</code><br>选择好后, 你会发现下面的链接是会变的, 这就是你要下载的文件, 让我们点击 <code>Download</code> 开始下载</p>
-<p><img data-src="https://i.loli.net/2021/08/20/d7mW9EbtUXYCKga.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2112-284361.png"></p>
 <p>点击后会跳转到 &quot;感谢下载&quot; 页面, 这时候等待下载链接建立起来就行了</p>
-<p><img data-src="https://i.loli.net/2021/08/20/5tVcPRe2zJCSKkx.png"></p>
-<h2 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h2><img data-src="https://i.loli.net/2021/08/20/uiKp4tRGkhT3QNa.png" style="zoom:50%;" />
+<p><img data-src="https://img.owq.world/2021/11/2115-3660c6.png"></p>
+<h2 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h2><img data-src="https://img.owq.world/2021/11/2114-1271e8.png" style="zoom:50%;" />
 
 <p>勾选&quot;接受使用许可条款&quot;, 然后<code>Next</code>进入下一步</p>
-<img data-src="https://i.loli.net/2021/08/20/uiKp4tRGkhT3QNa.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2115-52857d.png" style="zoom:50%;" />
 
 <p>左边区域是要安装的组件, 右边是对应组件的说明, 默认设置就行了<br><em>(之后如果要删除不需要的组件, 重新打开安装包下就可以删除了)</em><br>点击 <code>Browse...</code> , 修改下储存路径, 默认软件是放在 C盘 下的<br>这里推荐放在其它盘里, 比如我就放在 <code>D:\Environment\MariaDB</code> 这个路径下</p>
-<img data-src="https://i.loli.net/2021/08/20/r86WxudzawCYyQe.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-2e7524.png" style="zoom:50%;" />
 
 <p>设置 <code>root</code> 用户密码, 输入两次密码以确认, <strong>密码要记牢, 忘记的话就只能重新安装了</strong>, 然后勾上 <code>Use UTF8 as default server&#39;s character set</code>, 这个是设置 <code>*UTF-8*</code> 为默认编码的, 防止中文乱码必备选项</p>
-<img data-src="https://i.loli.net/2021/08/20/ux6fba57wJSVnQt.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-7f0aec.png" style="zoom:50%;" />
 
 
 
 <p>设置服务名称, 这里我填的是 <code>MariaDB</code> , 名称是可以自定义的<br>设置访问端口号, 用来访问你的 MariaDB 数据库用的, 默认填 <code>3306</code> ,这个要牢记<br>下面的缓冲池大小不用管它, 对前期学习没有影响的</p>
-<img data-src="https://i.loli.net/2021/08/20/LxMvgzNQCHsBnhj.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-59615f.png" style="zoom:50%;" />
 
 <p>开始安装...</p>
-<img data-src="https://i.loli.net/2021/08/20/5O7qNaJUpsingZE.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-ff9d22.png" style="zoom:50%;" />
 
 <p>静待一会儿 就大功告成了~</p>
-<img data-src="https://i.loli.net/2021/08/20/Ha4UBfxpK7wCjlQ.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-d26191.png" style="zoom:50%;" />
 ]]></content>
       <categories>
         <category>入门教程</category>
@@ -1079,28 +1080,28 @@
     <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
 
 <h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMv">官网下载</span>, 刚开始学习的话直接下载最新版本的就行了</p>
-<p><img data-src="https://i.loli.net/2020/12/14/In5w1JRT84x6r9F.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2120-1da682.png"></p>
 <p>默认下载为64位版本就行了 要下载32位请跳转<span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMvd2luZG93cy8=">详细页面下载</span></p>
-<p><img data-src="https://i.loli.net/2020/12/14/n64fcbu2SiYC3LH.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2120-92875c.png"></p>
 <h2 id="安装图示"><a href="#安装图示" class="headerlink" title="安装图示"></a>安装图示</h2><p>打开安装包 勾上环境变量 然后选择自定义安装</p>
-<img data-src="https://i.loli.net/2020/12/14/nM2tKi6V9xXkbFW.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2118-b66de4.png" style="zoom:50%;" />
 
 <p>配置安装选项 依需求更改 默认全勾上就行了 &gt;&gt; <strong>Next</strong></p>
-<img data-src="https://i.loli.net/2020/12/14/RhuSvx2MrnocHZ3.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2120-00e3ae.png" style="zoom:50%;" />
 
 <p>勾上第一个选项 &quot;为全部用户安装&quot; &gt;&gt; <strong>Install</strong></p>
-<img data-src="https://i.loli.net/2020/12/14/HzORUQhSbpG3BYL.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2122-72c13f.png" style="zoom:50%;" />
 
 <p>等待安装完成 然后点一下它 解除路径长度限制 &gt;&gt; <strong>Close</strong></p>
-<img data-src="https://i.loli.net/2020/12/14/nM2tKi6V9xXkbFW.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2121-7daf02.png" style="zoom:50%;" />
 
 
 
 <h2 id="验证安装结果"><a href="#验证安装结果" class="headerlink" title="验证安装结果"></a>验证安装结果</h2><p>Win + R 打开&quot;运行&quot; 输入 cmd 回车打开</p>
-<img data-src="https://i.loli.net/2020/12/14/gMwZ4NonyKHLheD.png" style="zoom:33%;" />
+<img data-src="https://img.owq.world/2021/11/2121-be174c.png" style="zoom:33%;" />
 
 <p>输入 <code>python -V</code> 查看 python 版本 如成功输出则安装成功</p>
-<img data-src="https://i.loli.net/2020/12/14/F4cD2jrbt5UMYp1.png" style="zoom:33%;" />
+<img data-src="https://img.owq.world/2021/11/2122-8b7be8.png" style="zoom:33%;" />
 
 
 
