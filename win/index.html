@@ -33,7 +33,7 @@
 <meta property="og:description" content="📖 Windows 命令文档">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-01T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-04T05:18:47.110Z">
+<meta property="article:modified_time" content="2021-11-04T05:21:20.710Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="cmd">
@@ -219,7 +219,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-11-04 05:19:39" itemprop="dateModified" datetime="2021-11-04T13:19:39+08:00">2021-11-04</time>
+            <time title="修改时间：2021-11-04 05:21:36" itemprop="dateModified" datetime="2021-11-04T13:21:36+08:00">2021-11-04</time>
             
           </span>
 
@@ -311,7 +311,7 @@
 <p>从玩Windows至今遇到超过2次的命令或问题记录.</p>
 <p>部分命令cmd和PowerShell环境下均可用, 故不作细分😜</p>
 </blockquote>
-<p><em>PS: 大多数情况使用 <code>help &lt;命令&gt;</code> 或者 <code>&lt;命令&gt; help</code> 可以查看帮助文档自行解决问题.</em></p>
+<p>PS: 大多数情况使用 <code>help &lt;命令&gt;</code> 或者 <code>&lt;命令&gt; help</code> 查看帮助文档可以自行解决问题.</p>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清屏</span></span><br><span class="line"><span class="built_in">cls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置永久变量, 加上 /m 为系统变量, 路径有空格要用双引号括起来</span></span><br><span class="line">setx env_name env_value /m</span><br><span class="line"><span class="comment"># 追加环境变量</span></span><br><span class="line">setx <span class="string">&quot;path&quot;</span> <span class="string">&quot;%path%D:\test;&quot;</span> /m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启资源管理器</span></span><br><span class="line">taskkill /f /im explorer.exe &amp; <span class="built_in">start</span> explorer.exe</span><br><span class="line"></span><br><span class="line"><span class="comment"># 寻找端口程序</span></span><br><span class="line">netstat <span class="literal">-ano</span> | findstr <span class="number">8080</span></span><br><span class="line"><span class="comment"># 停止程序</span></span><br><span class="line">taskkill <span class="literal">-pid</span> &lt;进程pid&gt; <span class="operator">-f</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看序列号</span></span><br><span class="line">wmic bios get serialnumber</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示正在运行服务</span></span><br><span class="line">net <span class="built_in">start</span></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">net <span class="built_in">start</span> [服务名]</span><br><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line">net stop</span><br></pre></td></tr></table></figure>
 
 <p><strong>PowerShell环境变量操作</strong></p>
