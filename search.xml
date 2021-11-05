@@ -13,14 +13,14 @@
 </li>
 <li><p>解压(位置随意)</p>
 <p>这里解压到<code>C:\Tools\scrcpy</code><br>因为包自带<code>adb</code>工具, 这里可以不用额外配置<code>adb</code>, 已配置好的可以忽略</p>
-<img data-src="https://img.owq.world/2021/11/2124-7e8658.png" style="zoom:50%;" /></li>
+<img data-src="http://img.owq.world/2021/11/2124-7e8658.png" style="zoom:50%;" /></li>
 <li><p>设置环境变量</p>
-<p>系统属性 - 环境变量 - 新增Path变量 -添加解压目录<br><img data-src="https://img.owq.world/2021/11/2127-fb6625.png"></p>
+<p>系统属性 - 环境变量 - 新增Path变量 -添加解压目录<br><img data-src="http://img.owq.world/2021/11/2127-fb6625.png"></p>
 </li>
 <li><p>验证测试</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># adb 版本</span></span><br><span class="line">adb version</span><br><span class="line"></span><br><span class="line"><span class="comment"># scrcpy 版本</span></span><br><span class="line">scrcpy <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
 
-<img data-src="https://img.owq.world/2021/11/2124-6ca332.png" alt="" style="zoom:67%;" />
+<img data-src="http://img.owq.world/2021/11/2124-6ca332.png" alt="" style="zoom:67%;" />
 
 <p>成功输出版本信息则配置完成~</p>
 </li>
@@ -463,7 +463,7 @@
 <p>来自 Erlang之父 Joe Armstrong 的解释</p>
 <p>并发：两个队列和一台咖啡机<br>并行：两个队列和两台咖啡机</p>
 </blockquote>
-<p><img data-src="https://img.owq.world/2021/11/2134-81fe70.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2134-81fe70.png"></p>
 <ul>
 <li>并发表示<strong>多个程序可以在同一个时间段内被执行</strong></li>
 <li>并行表示多个程序可以在<strong>同一时刻</strong>被运行</li>
@@ -566,7 +566,7 @@
 <h2 id="记录流程图"><a href="#记录流程图" class="headerlink" title="记录流程图"></a>记录流程图</h2><blockquote>
 <p>有个印象(～￣▽￣)～</p>
 </blockquote>
-<img data-src="https://img.owq.world/2021/11/2123-044c15.png" style="border-radius: 0px;" />
+<img data-src="http://img.owq.world/2021/11/2123-044c15.png" style="border-radius: 0px;" />
 
 
 
@@ -722,7 +722,7 @@
 <h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><p>这里修改下Nginx的默认站点配置</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx/</span><br><span class="line">vim sites-enabled/default</span><br></pre></td></tr></table></figure>
 
-<p>里面长这样 ↓<br><img data-src="https://img.owq.world/2021/11/2122-11343b.png"  /></p>
+<p>里面长这样 ↓<br><img data-src="http://img.owq.world/2021/11/2122-11343b.png"  /></p>
 <p>这里修改root网站根目录就行了，其它可以保持不动</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">root /var/www/hexo;</span><br></pre></td></tr></table></figure>
 
@@ -779,9 +779,9 @@
 <p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy9nZW5lcmFsLXVzZS9oaWRwaS8=">🚪</span></p>
 </blockquote>
 <p>菜单搜索<code>hidpi</code>, 打开它</p>
-<p><img data-src="https://img.owq.world/2021/11/2110-eb457c.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2110-eb457c.png"></p>
 <p>默认缩放2X, 点击<code>是</code>确认, 然后开始愉快的Linux之旅吧~</p>
-<p><img data-src="https://img.owq.world/2021/11/2110-542567.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2110-542567.png"></p>
 <p><em>注:如果要自定义缩放因子请参考官方文档</em></p>
 <h2 id="快捷启动"><a href="#快捷启动" class="headerlink" title="快捷启动"></a>快捷启动</h2><ul>
 <li>添加到<code>Windows Termial</code>启动</li>
@@ -810,7 +810,7 @@
 </blockquote>
 <p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.</p>
 <p>ps:接来的命令都是在这个终端上执行.</p>
-<img data-src="https://img.owq.world/2021/11/2125-658665.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2125-658665.png" style="zoom:50%;" />
 
 <ol>
 <li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></li>
@@ -857,7 +857,7 @@
 </blockquote>
 <h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改Windows位于用户目录<code>%home%</code>下的<code>.wslconfig</code>文件，若没有则自己创建一个.</p>
 <p>ps:直接在资源管理器输入<code>%home%</code>按回车就可跳转, 若出错则是电脑环境变量没有配置好</p>
-<img data-src="https://img.owq.world/2021/11/2125-5f3eaf.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2125-5f3eaf.png" style="zoom:50%;" />
 
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>主要配置内存和交换内存, 其它可以不用管, 看自己电脑配置设置.</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="comment"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="comment"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">0</span></span><br><span class="line"><span class="comment"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span></span><br><span class="line"><span class="attr">swapFile</span>=&lt;path&gt;</span><br><span class="line"><span class="comment"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span></span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
@@ -922,7 +922,7 @@
 <p>死马当活马医😂</p>
 </blockquote>
 <p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBhZGRyZXNzLmNvbS8=">https://www.ipaddress.com/</span> 获取域名的映射IP</p>
-<p><img data-src="https://img.owq.world/2021/11/2123-f639cc.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2123-f639cc.png"></p>
 <p>修改<code>hosts</code>文件</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>hosts</span><br></pre></td></tr></table></figure>
 
@@ -932,14 +932,14 @@
 <h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><blockquote>
 <p>主题文件位于 <code>.oh-my-zsh/themes</code> 目录下，可自定义修改</p>
 </blockquote>
-<h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="https://img.owq.world/2021/11/2124-f27aa9.png" style="zoom:80%;" />
+<h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="http://img.owq.world/2021/11/2124-f27aa9.png" style="zoom:80%;" />
 
 <p>修改 <code>~/.zshrc</code> 文件</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">&quot;ys&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="https://img.owq.world/2021/11/2124-9962fa.png" style="zoom: 80%;" />
+<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="http://img.owq.world/2021/11/2124-9962fa.png" style="zoom: 80%;" />
 
 <h4 id="安装powerline主题"><a href="#安装powerline主题" class="headerlink" title="安装powerline主题"></a><strong>安装powerline主题</strong></h4><blockquote>
 <p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
@@ -1039,32 +1039,32 @@
 </ul>
 <h2 id="下载-MariaDB-安装包"><a href="#下载-MariaDB-安装包" class="headerlink" title="下载 MariaDB 安装包"></a>下载 MariaDB 安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly9tYXJpYWRiLmNvbS9kb3dubG9hZHMv">官网下载</span></p>
 <p>打开后大概是这个样子，这里要注意下，不同时期网站的外观可能会不同，但软件的下载页地址是不会变的。</p>
-<p><img data-src="https://img.owq.world/2021/11/2111-62424c.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2111-62424c.png"></p>
 <p>软件版本选择默认(最新版)就行了<br>手动选择下系统版本, Windows 64位选择 <code>MS Windows (64-bit)</code><br>如果不知道自己的系统是多少位的, 那就选择32位包 <code>MS Windows (32-bit)</code><br>选择好后, 你会发现下面的链接是会变的, 这就是你要下载的文件, 让我们点击 <code>Download</code> 开始下载</p>
-<p><img data-src="https://img.owq.world/2021/11/2112-284361.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2112-284361.png"></p>
 <p>点击后会跳转到 &quot;感谢下载&quot; 页面, 这时候等待下载链接建立起来就行了</p>
-<p><img data-src="https://img.owq.world/2021/11/2115-3660c6.png"></p>
-<h2 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h2><img data-src="https://img.owq.world/2021/11/2114-1271e8.png" style="zoom:50%;" />
+<p><img data-src="http://img.owq.world/2021/11/2115-3660c6.png"></p>
+<h2 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h2><img data-src="http://img.owq.world/2021/11/2114-1271e8.png" style="zoom:50%;" />
 
 <p>勾选&quot;接受使用许可条款&quot;, 然后<code>Next</code>进入下一步</p>
-<img data-src="https://img.owq.world/2021/11/2115-52857d.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2115-52857d.png" style="zoom:50%;" />
 
 <p>左边区域是要安装的组件, 右边是对应组件的说明, 默认设置就行了<br><em>(之后如果要删除不需要的组件, 重新打开安装包下就可以删除了)</em><br>点击 <code>Browse...</code> , 修改下储存路径, 默认软件是放在 C盘 下的<br>这里推荐放在其它盘里, 比如我就放在 <code>D:\Environment\MariaDB</code> 这个路径下</p>
-<img data-src="https://img.owq.world/2021/11/2116-2e7524.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2116-2e7524.png" style="zoom:50%;" />
 
 <p>设置 <code>root</code> 用户密码, 输入两次密码以确认, <strong>密码要记牢, 忘记的话就只能重新安装了</strong>, 然后勾上 <code>Use UTF8 as default server&#39;s character set</code>, 这个是设置 <code>*UTF-8*</code> 为默认编码的, 防止中文乱码必备选项</p>
-<img data-src="https://img.owq.world/2021/11/2116-7f0aec.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2116-7f0aec.png" style="zoom:50%;" />
 
 
 
 <p>设置服务名称, 这里我填的是 <code>MariaDB</code> , 名称是可以自定义的<br>设置访问端口号, 用来访问你的 MariaDB 数据库用的, 默认填 <code>3306</code> ,这个要牢记<br>下面的缓冲池大小不用管它, 对前期学习没有影响的</p>
-<img data-src="https://img.owq.world/2021/11/2116-59615f.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2116-59615f.png" style="zoom:50%;" />
 
 <p>开始安装...</p>
-<img data-src="https://img.owq.world/2021/11/2116-ff9d22.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2116-ff9d22.png" style="zoom:50%;" />
 
 <p>静待一会儿 就大功告成了~</p>
-<img data-src="https://img.owq.world/2021/11/2116-d26191.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2116-d26191.png" style="zoom:50%;" />
 ]]></content>
       <categories>
         <category>入门教程</category>
@@ -1080,28 +1080,28 @@
     <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
 
 <h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMv">官网下载</span>, 刚开始学习的话直接下载最新版本的就行了</p>
-<p><img data-src="https://img.owq.world/2021/11/2120-1da682.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2120-1da682.png"></p>
 <p>默认下载为64位版本就行了 要下载32位请跳转<span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMvd2luZG93cy8=">详细页面下载</span></p>
-<p><img data-src="https://img.owq.world/2021/11/2120-92875c.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2120-92875c.png"></p>
 <h2 id="安装图示"><a href="#安装图示" class="headerlink" title="安装图示"></a>安装图示</h2><p>打开安装包 勾上环境变量 然后选择自定义安装</p>
-<img data-src="https://img.owq.world/2021/11/2118-b66de4.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2118-b66de4.png" style="zoom:50%;" />
 
 <p>配置安装选项 依需求更改 默认全勾上就行了 &gt;&gt; <strong>Next</strong></p>
-<img data-src="https://img.owq.world/2021/11/2120-00e3ae.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2120-00e3ae.png" style="zoom:50%;" />
 
 <p>勾上第一个选项 &quot;为全部用户安装&quot; &gt;&gt; <strong>Install</strong></p>
-<img data-src="https://img.owq.world/2021/11/2122-72c13f.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2122-72c13f.png" style="zoom:50%;" />
 
 <p>等待安装完成 然后点一下它 解除路径长度限制 &gt;&gt; <strong>Close</strong></p>
-<img data-src="https://img.owq.world/2021/11/2121-7daf02.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2121-7daf02.png" style="zoom:50%;" />
 
 
 
 <h2 id="验证安装结果"><a href="#验证安装结果" class="headerlink" title="验证安装结果"></a>验证安装结果</h2><p>Win + R 打开&quot;运行&quot; 输入 cmd 回车打开</p>
-<img data-src="https://img.owq.world/2021/11/2121-be174c.png" style="zoom:33%;" />
+<img data-src="http://img.owq.world/2021/11/2121-be174c.png" style="zoom:33%;" />
 
 <p>输入 <code>python -V</code> 查看 python 版本 如成功输出则安装成功</p>
-<img data-src="https://img.owq.world/2021/11/2122-8b7be8.png" style="zoom:33%;" />
+<img data-src="http://img.owq.world/2021/11/2122-8b7be8.png" style="zoom:33%;" />
 
 
 
@@ -1133,10 +1133,10 @@
 <ul>
 <li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cub3JhY2xlLmNvbS9qYXZhL3RlY2hub2xvZ2llcy9qYXZhc2UtZG93bmxvYWRzLmh0bWw=">官网</span></p>
 <p>官网的 Java 8 只提供安装包下载 可以到其它地方下载打包好的JDK,这里使用 Java 11 做为示例</p>
-<p><img data-src="https://img.owq.world/2021/11/2055-078cf6.png"><br><img data-src="https://img.owq.world/2021/11/2056-418efc.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2055-078cf6.png"><br><img data-src="http://img.owq.world/2021/11/2056-418efc.png"></p>
 </li>
 <li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYXp1bC5jb20vZG93bmxvYWRzL3p1bHUtY29tbXVuaXR5Lz9wYWNrYWdlPWpkaw==">Azul Zulu</span><br>网页往下拉，找到下载处，选择Java版本和系统，然后下载压缩包</p>
-<p><img data-src="https://img.owq.world/2021/11/2057-075278.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2057-075278.png"></p>
 </li>
 <li><p><span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTJoRnFBZ1BOQ0h6b09TV21xVG9qdmc=">网盘下载</span><br>提取码: 47w5</p>
 </li>
@@ -1158,29 +1158,29 @@
 </li>
 </ul>
 <h2 id="解压-Java-JDK"><a href="#解压-Java-JDK" class="headerlink" title="解压 Java JDK"></a>解压 Java JDK</h2><p>记住解压路径 这是 Java JDK 的根目录</p>
-<p><img data-src="https://img.owq.world/2021/11/2057-02a578.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2057-02a578.png"></p>
 <h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><p><code>Win + R</code> 运行 输入 <code>sysdm.cpl</code> 回车进入 系统属性配置</p>
-<img data-src="https://img.owq.world/2021/11/2058-06af6e.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2058-06af6e.png" style="zoom:50%;" />
 
 <p>依次点击 高级 &gt;&gt; 环境变量</p>
-<img data-src="https://img.owq.world/2021/11/2058-e21112.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2058-e21112.png" style="zoom:50%;" />
 
 <p>新建 变量名: <code>JAVA_HOME</code>  变量值: <code>C:\Java\jdk8.0.275</code>(刚刚解压的Java路径)</p>
-<img data-src="https://img.owq.world/2021/11/2102-13fe59.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2102-13fe59.png" style="zoom:50%;" />
 
 <p>双击 <strong>Path</strong> 环境变量  进入编辑 (图示操作也是可以的)</p>
-<img data-src="https://img.owq.world/2021/11/2102-9698ea.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2102-9698ea.png" style="zoom:50%;" />
 
 <p>新建变量 <code>%JAVA_HOME%/bin</code></p>
-<img data-src="https://img.owq.world/2021/11/2103-f557ae.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2103-f557ae.png" style="zoom:50%;" />
 
 <p>Win7 下添加环境变量要用<strong>分号</strong>隔开</p>
-<img data-src="https://img.owq.world/2021/11/2103-ee21ba.png" style="zoom:80%;" />
+<img data-src="http://img.owq.world/2021/11/2103-ee21ba.png" style="zoom:80%;" />
 
 
 
 <h2 id="检验环境"><a href="#检验环境" class="headerlink" title="检验环境"></a>检验环境</h2><p><code>Win +R</code> 运行 cmd 输入 <code>java -version</code>  输出版本信息</p>
-<p><img data-src="https://img.owq.world/2021/11/2103-5f568b.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2103-5f568b.png"></p>
 <h2 id="错误排查"><a href="#错误排查" class="headerlink" title="错误排查"></a>错误排查</h2><ul>
 <li>若是没有正常输出 请检查环境变量的<strong>路径</strong>是否配置正确</li>
 <li>在 cmd 窗口 输入 <code>echo %JAVA_HOME%</code> 查看路径<ul>
@@ -1190,7 +1190,7 @@
 </ul>
 </li>
 <li>在 cmd 窗口 输入 <code>echo %PATH%</code> 查看 是否有 <code>%JAVA_HOME%\bin</code><ul>
-<li>系统会自动把 <code>%JAVA_HOME%</code> 变量转换成路径<br><img data-src="https://img.owq.world/2021/11/2103-615b99.png"></li>
+<li>系统会自动把 <code>%JAVA_HOME%</code> 变量转换成路径<br><img data-src="http://img.owq.world/2021/11/2103-615b99.png"></li>
 </ul>
 </li>
 </ul>
