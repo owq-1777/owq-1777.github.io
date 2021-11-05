@@ -33,7 +33,7 @@
 <meta property="og:description" content="📖 正则表达式手册">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-01T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-05T06:43:19.300Z">
+<meta property="article:modified_time" content="2021-11-05T07:32:16.050Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="regex">
 <meta name="twitter:card" content="summary">
@@ -217,7 +217,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-11-05 06:43:54" itemprop="dateModified" datetime="2021-11-05T14:43:54+08:00">2021-11-05</time>
+            <time title="修改时间：2021-11-05 07:32:24" itemprop="dateModified" datetime="2021-11-05T15:32:24+08:00">2021-11-05</time>
             
           </span>
 
@@ -313,7 +313,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">*<em>*</em></td>
+<td align="center"><strong>*</strong></td>
 <td align="left">将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，<code>n</code>匹配字符<code>n</code>。<code>\n</code>匹配一个换行符。串行<code>\\</code>匹配<code>\</code>而<code>\(</code>则匹配<code>(</code>。</td>
 </tr>
 <tr>
@@ -325,7 +325,7 @@
 <td align="left">匹配输入字符串的结束位置。如果设置了RegExp对象的Multiline属性，$也匹配<code>\n</code>或<code>\r</code>之前的位置。</td>
 </tr>
 <tr>
-<td align="center">*****</td>
+<td align="center"><strong>*</strong></td>
 <td align="left">匹配前面的子表达式零次或多次。例如，zo<em>能匹配<code>z</code>以及<code>zoo</code>。</em>等价于{0,}。</td>
 </tr>
 <tr>
@@ -484,40 +484,44 @@
 <h2 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h2><table>
 <thead>
 <tr>
-<th align="center">用户名</th>
-<th>/^[a-z0-9_-]{3,16}$/</th>
+<th align="left">类型</th>
+<th>regex</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">密码</td>
+<td align="left">用户名</td>
+<td>/^[a-z0-9_-]{3,16}$/</td>
+</tr>
+<tr>
+<td align="left">密码</td>
 <td>/^[a-z0-9_-]{6,18}$/</td>
 </tr>
 <tr>
-<td align="center">十六进制值</td>
+<td align="left">十六进制值</td>
 <td>/^#?([a-f0-9]{6}|[a-f0-9]{3})$/</td>
 </tr>
 <tr>
-<td align="center">电子邮箱</td>
+<td align="left">电子邮箱</td>
 <td>/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/ /^[a-z\d]+(.[a-z\d]+)*@(<a href="-%5B%5Cda-z%5D">\da-z</a>?)+(.{1,2}[a-z]+)+$/</td>
 </tr>
 <tr>
-<td align="center">URL</td>
+<td align="left">URL</td>
 <td>/^(https?://)?([\da-z.-]+).([a-z.]{2,6})([/\w .-]*)*/?$/</td>
 </tr>
 <tr>
-<td align="center">IP 地址</td>
+<td align="left">IP 地址</td>
 <td>/((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/ /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</td>
 </tr>
 <tr>
-<td align="center">HTML 标签</td>
+<td align="left">HTML 标签</td>
 <td>/^&lt;([a-z]+)([^&lt;]+)<em>(?:&gt;(.</em>)&lt;/\1&gt;|\s+/&gt;)$/</td>
 </tr>
 <tr>
-<td align="center">删除代码\注释</td>
+<td align="left">删除代码\注释</td>
 <td>(?&lt;!http:|\S)//.*$</td>
 </tr>
 <tr>
-<td align="center">Unicode编码中的汉字范围</td>
+<td align="left">Unicode编码中的汉字范围</td>
 <td>/^[\u2E80-\u9FFF]+$/</td>
 </tr>
 </tbody></table>
