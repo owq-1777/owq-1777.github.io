@@ -164,7 +164,7 @@
     <link href="https://owq.world/e823826f/"/>
     <id>https://owq.world/e823826f/</id>
     <published>2021-08-20T11:24:33.000Z</published>
-    <updated>2021-11-05T08:58:06.920Z</updated>
+    <updated>2021-11-05T09:43:18.540Z</updated>
     
     
     <summary type="html">翻阅了好几篇文章, 步骤可以说是非常详细, 但仍踩了好多坑, 知其云不知所以云是问题出现的关键, 所以便有了这篇超详细的注释文章（￣︶￣）↗　</summary>
@@ -370,25 +370,6 @@
   </entry>
   
   <entry>
-    <title>docker 命令</title>
-    <link href="https://owq.world/docker/"/>
-    <id>https://owq.world/docker/</id>
-    <published>2020-06-01T00:00:00.000Z</published>
-    <updated>2021-10-21T07:19:53.473Z</updated>
-    
-    
-    <summary type="html">📖 docker 命令文档</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="docker" scheme="https://owq.world/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
     <title>git 命令</title>
     <link href="https://owq.world/git/"/>
     <id>https://owq.world/git/</id>
@@ -423,6 +404,25 @@
     
     
     <category term="Arch Linux" scheme="https://owq.world/tags/Arch-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pip 命令</title>
+    <link href="https://owq.world/pip/"/>
+    <id>https://owq.world/pip/</id>
+    <published>2020-06-01T00:00:00.000Z</published>
+    <updated>2021-08-24T05:49:36.314Z</updated>
+    
+    
+    <summary type="html">📖 pip 命令文档</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="pip" scheme="https://owq.world/tags/pip/"/>
     
   </entry>
   
