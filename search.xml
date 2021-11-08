@@ -646,7 +646,7 @@
     <title>Hexo + Nginx 服务器部署踩坑记录</title>
     <url>/e823826f/</url>
     <content><![CDATA[<blockquote>
-<p>Hexo 部署方式有很多, 这里选择是默认的 Git 一键部署方式.<br>前提条件: 搭建好的 Hexo 本地环境, 具有公网IP的服务器, 具备ssh连接知识.</p>
+<p>Hexo 部署方式有很多, 这里选择是默认的 Git 一键部署方式.<br>前提条件: 搭建好的 Hexo 本地环境, 具有公网IP的服务器, 具备ssh知识.</p>
 </blockquote>
 <h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><ul>
 <li><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudA==">官方文档</span> （用处较小）</li>
@@ -726,10 +726,11 @@
 <p>这里修改root网站根目录就行了，其它可以保持不动</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">root /var/www/hexo;</span><br></pre></td></tr></table></figure>
 
-<p><code>server_name _;</code> 一行表示全匹配，只要访问服务器，都会直接转发到当前<code>server</code>下，有域名后可以设置为域名，然后配置<code>不允许ip访问</code>，这样可以避免其他人把未备案的域名解析到自己的服务器 IP，而导致服务器被断网。(如果你没备案就解析域名了，那现在就该知道服务器登不了的原因了🤣)</p>
+<h3 id="可选配置"><a href="#可选配置" class="headerlink" title="可选配置"></a>可选配置</h3><p><code>server_name _;</code> 一行表示全匹配，只要访问服务器，都会直接转发到当前<code>server</code>下，有域名后可以设置为域名，然后配置<code>不允许ip访问</code>，这样可以避免其他人把未备案的域名解析到自己的服务器 IP，而导致服务器被断网。(如果你没备案就解析域名了，那现在就该知道服务器登不了的原因了🤣)</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 注意：以下内容可以在default文件中修改，不过推荐先了解Nginx然后再配置为妙。</span></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    <span class="comment">// 新增server，设置不允许Ip访问web(default_server)</span></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80 default_server;</span><br><span class="line">        server_name _;</span><br><span class="line">        return 403;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 原有default，设置www.you.com域名访问web</span></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.you.com;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新增server，设置顶级域名you.com重定向</span></span><br><span class="line">    server &#123;</span><br><span class="line">       listen 80;</span><br><span class="line">       server_name you.com;</span><br><span class="line">       return 301 http:<span class="comment">//www.you.com$request_uri;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>检查配置然后重载 Nginx</p>
+
+<p>检查配置然后重载<code>Nginx</code></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t	<span class="comment"># 检查配置</span></span><br><span class="line">nginx -s reload	<span class="comment"># 重载配置</span></span><br></pre></td></tr></table></figure>
 
 
@@ -745,7 +746,13 @@
 
 
 
-<h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清除缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一键部署</span></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="部署到服务器"><a href="#部署到服务器" class="headerlink" title="部署到服务器"></a>部署到服务器</h2><p>本地操作</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清除缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一键部署</span></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>浏览器输入服务器IP,能正常访问就成功了</p>
+</blockquote>
+]]></content>
       <categories>
         <category>技术记录</category>
       </categories>
@@ -1639,6 +1646,358 @@
       </categories>
       <tags>
         <tag>regex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx configure 参数</title>
+    <url>/9967ace7/</url>
+    <content><![CDATA[<blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9jb25maWd1cmUuaHRtbA==">🚪</span></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 命令行查看</span> </span><br><span class="line">./configure --help</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--help</td>
+<td>显示本提示信息</td>
+</tr>
+<tr>
+<td>--prefix=PATH</td>
+<td>设定安装目录</td>
+</tr>
+<tr>
+<td>--sbin-path=PATH</td>
+<td>设定程序文件目录</td>
+</tr>
+<tr>
+<td>--conf-path=PATH</td>
+<td>设定配置文件(nginx.conf)目录</td>
+</tr>
+<tr>
+<td>--error-log-path=PATH</td>
+<td>设定错误日志目录</td>
+</tr>
+<tr>
+<td>--pid-path=PATH</td>
+<td>设定pid文件(nginx.pid)目录</td>
+</tr>
+<tr>
+<td>--lock-path=PATH</td>
+<td>设定lock文件(nginx.lock)目录</td>
+</tr>
+<tr>
+<td>--user=USER</td>
+<td>设定程序运行的用户环境(www)</td>
+</tr>
+<tr>
+<td>--group=GROUP</td>
+<td>设定程序运行的组环境(www)</td>
+</tr>
+<tr>
+<td>--builddir=DIR</td>
+<td>设定程序编译目录</td>
+</tr>
+<tr>
+<td>--with-rtsig_module</td>
+<td>允许rtsig模块</td>
+</tr>
+<tr>
+<td>--with-select_module</td>
+<td>允许select模块(一种轮询模式,不推荐用在高载环境)</td>
+</tr>
+<tr>
+<td>--without-select_module</td>
+<td>不使用select模块</td>
+</tr>
+<tr>
+<td>--with-poll_module</td>
+<td>允许poll模块(一种轮询模式,不推荐用在高载环境)</td>
+</tr>
+<tr>
+<td>--without-poll_module</td>
+<td>不使用poll模块</td>
+</tr>
+<tr>
+<td>--with-http_ssl_module</td>
+<td>允许ngx_http_ssl_module模块(Apache对应:mod_ssl)</td>
+</tr>
+<tr>
+<td>--with-http_realip_module</td>
+<td>允许ngx_http_realip_module模块(mod_rpaf)</td>
+</tr>
+<tr>
+<td>--with-http_addition_module</td>
+<td>允许ngx_http_addition_module模块(mod_layout)</td>
+</tr>
+<tr>
+<td>--with-http_xslt_module</td>
+<td>允许ngx_http_xslt_module模块</td>
+</tr>
+<tr>
+<td>--with-http_sub_module</td>
+<td>允许ngx_http_sub_module模块</td>
+</tr>
+<tr>
+<td>--with-http_dav_module</td>
+<td>允许ngx_http_dav_module模块(mod_dav)</td>
+</tr>
+<tr>
+<td>--with-http_flv_module</td>
+<td>允许ngx_http_flv_module模块(mod_flvx)</td>
+</tr>
+<tr>
+<td>--with-http_gzip_static_module</td>
+<td>允许ngx_http_gzip_static_module模块(mod_dflate)</td>
+</tr>
+<tr>
+<td>--with-http_random_index_module</td>
+<td>允许ngx_http_random_index_module模块(mod_autoindex)</td>
+</tr>
+<tr>
+<td>--with-http_stub_status_module</td>
+<td>允许ngx_http_stub_status_module模块(mod_status)</td>
+</tr>
+<tr>
+<td>--without-http_charset_module</td>
+<td>不使用ngx_http_charset_module模块</td>
+</tr>
+<tr>
+<td>--without-http_gzip_module</td>
+<td>不使用ngx_http_gzip_module模块</td>
+</tr>
+<tr>
+<td>--without-http_ssi_module</td>
+<td>不使用ngx_http_ssi_module模块</td>
+</tr>
+<tr>
+<td>--without-http_userid_module</td>
+<td>不使用ngx_http_userid_module模块</td>
+</tr>
+<tr>
+<td>--without-http_access_module</td>
+<td>不使用ngx_http_access_module模块</td>
+</tr>
+<tr>
+<td>--without-http_auth_basic_module</td>
+<td>不使用ngx_http_auth_basic_module模块</td>
+</tr>
+<tr>
+<td>--without-http_autoindex_module</td>
+<td>不使用ngx_http_autoindex_module模块</td>
+</tr>
+<tr>
+<td>--without-http_geo_module</td>
+<td>不使用ngx_http_geo_module模块</td>
+</tr>
+<tr>
+<td>--without-http_map_module</td>
+<td>不使用ngx_http_map_module模块</td>
+</tr>
+<tr>
+<td>--without-http_referer_module</td>
+<td>不使用ngx_http_referer_module模块</td>
+</tr>
+<tr>
+<td>--without-http_rewrite_module</td>
+<td>不使用ngx_http_rewrite_module模块</td>
+</tr>
+<tr>
+<td>--without-http_proxy_module</td>
+<td>不使用ngx_http_proxy_module模块</td>
+</tr>
+<tr>
+<td>--without-http_fastcgi_module</td>
+<td>不使用ngx_http_fastcgi_module模块</td>
+</tr>
+<tr>
+<td>--without-http_memcached_module</td>
+<td>不使用ngx_http_memcached_module模块</td>
+</tr>
+<tr>
+<td>--without-http_limit_zone_module</td>
+<td>不使用ngx_http_limit_zone_module模块</td>
+</tr>
+<tr>
+<td>--without-http_empty_gif_module</td>
+<td>不使用ngx_http_empty_gif_module模块</td>
+</tr>
+<tr>
+<td>--without-http_browser_module</td>
+<td>不使用ngx_http_browser_module模块</td>
+</tr>
+<tr>
+<td>--without-http_upstream_ip_hash_module</td>
+<td>不使用ngx_http_upstream_ip_hash_module模块</td>
+</tr>
+<tr>
+<td>--with-http_perl_module</td>
+<td>允许ngx_http_perl_module模块</td>
+</tr>
+<tr>
+<td>--with-perl_modules_path=PATH</td>
+<td>设置perl模块路径</td>
+</tr>
+<tr>
+<td>--with-perl=PATH</td>
+<td>设置perl库文件路径</td>
+</tr>
+<tr>
+<td>--http-log-path=PATH</td>
+<td>设置access log文件路径</td>
+</tr>
+<tr>
+<td>--http-client-body-temp-path=PATH</td>
+<td>设置客户端请求临时文件路径</td>
+</tr>
+<tr>
+<td>--http-proxy-temp-path=PATH</td>
+<td>设置http proxy临时文件路径</td>
+</tr>
+<tr>
+<td>--http-fastcgi-temp-path=PATH</td>
+<td>设置http fastcgi临时文件路径</td>
+</tr>
+<tr>
+<td>--without-http</td>
+<td>不使用HTTP server功能</td>
+</tr>
+<tr>
+<td>--with-mail</td>
+<td>允许POP3/IMAP4/SMTP代理模块</td>
+</tr>
+<tr>
+<td>--with-mail_ssl_module</td>
+<td>允许ngx_mail_ssl_module模块</td>
+</tr>
+<tr>
+<td>--without-mail_pop3_module</td>
+<td>不允许ngx_mail_pop3_module模块</td>
+</tr>
+<tr>
+<td>--without-mail_imap_module</td>
+<td>不允许ngx_mail_imap_module模块</td>
+</tr>
+<tr>
+<td>--without-mail_smtp_module</td>
+<td>不允许ngx_mail_smtp_module模块</td>
+</tr>
+<tr>
+<td>--with-google_perftools_module</td>
+<td>允许ngx_google_perftools_module模块(调试用)</td>
+</tr>
+<tr>
+<td>--with-cpp_test_module</td>
+<td>允许ngx_cpp_test_module模块</td>
+</tr>
+<tr>
+<td>--add-module=PATH</td>
+<td>允许使用外部模块,以及路径</td>
+</tr>
+<tr>
+<td>--with-cc=PATH</td>
+<td>设置C编译器路径</td>
+</tr>
+<tr>
+<td>--with-cpp=PATH</td>
+<td>设置C预处理路径</td>
+</tr>
+<tr>
+<td>--with-cc-opt=OPTIONS</td>
+<td>设置C编译器参数</td>
+</tr>
+<tr>
+<td>--with-ld-opt=OPTIONS</td>
+<td>设置连接文件参数</td>
+</tr>
+<tr>
+<td>--with-cpu-opt=CPU</td>
+<td>为指定CPU优化,可选参数有:</td>
+</tr>
+<tr>
+<td>pentium,</td>
+<td>pentiumpro, pentium3, pentium4,</td>
+</tr>
+<tr>
+<td>athlon,</td>
+<td>opteron, sparc32, sparc64, ppc64</td>
+</tr>
+<tr>
+<td>--without-pcre</td>
+<td>不使用pcre库文件</td>
+</tr>
+<tr>
+<td>--with-pcre=DIR</td>
+<td>设定PCRE库路径</td>
+</tr>
+<tr>
+<td>--with-pcre-opt=OPTIONS</td>
+<td>设置PCRE运行参数</td>
+</tr>
+<tr>
+<td>--with-md5=DIR</td>
+<td>设定md5库文件路径</td>
+</tr>
+<tr>
+<td>--with-md5-opt=OPTIONS</td>
+<td>设置md5运行参数</td>
+</tr>
+<tr>
+<td>--with-md5-asm</td>
+<td>使用md5源文件编译</td>
+</tr>
+<tr>
+<td>--with-sha1=DIR</td>
+<td>设定sha1库文件路径</td>
+</tr>
+<tr>
+<td>--with-sha1-opt=OPTIONS</td>
+<td>设置sha1运行参数</td>
+</tr>
+<tr>
+<td>--with-sha1-asm</td>
+<td>使用sha1源文件编译</td>
+</tr>
+<tr>
+<td>--with-zlib=DIR</td>
+<td>设定zlib库文件路径</td>
+</tr>
+<tr>
+<td>--with-zlib-opt=OPTIONS</td>
+<td>设置zlib运行参数</td>
+</tr>
+<tr>
+<td>--with-zlib-asm=CPU</td>
+<td>使zlib对特定的CPU进行优化,可选参数:</td>
+</tr>
+<tr>
+<td>pentium,</td>
+<td>pentiumpro</td>
+</tr>
+<tr>
+<td>--with-openssl=DIR</td>
+<td>设定OpenSSL库文件路径</td>
+</tr>
+<tr>
+<td>--with-openssl-opt=OPTIONS</td>
+<td>设置OpenSSL运行参数</td>
+</tr>
+<tr>
+<td>--with-debug</td>
+<td>允许调试日志</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
