@@ -1791,8 +1791,7 @@
 <p>删除所有定时任务（/var/spool/cron目录下）</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -r </span><br></pre></td></tr></table></figure>
 
-
-
+<p><em>注: 新创建的cron job，不会马上执行，至少要过2分钟才执行。如果重启cron则马上执行。</em></p>
 <h2 id="图解命令"><a href="#图解命令" class="headerlink" title="图解命令"></a>图解命令</h2><p><img data-src="http://img.owq.world/2021/11/1717-e7ebb9.png"></p>
 <h2 id="命令示例"><a href="#命令示例" class="headerlink" title="命令示例"></a>命令示例</h2><table>
 <thead>
