@@ -393,7 +393,7 @@
     <link href="https://owq.world/crontab/"/>
     <id>https://owq.world/crontab/</id>
     <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-11-12T10:11:47.230Z</updated>
+    <updated>2021-11-12T10:16:29.640Z</updated>
     
     
     <summary type="html">📖 Linux crontab 命令</summary>
@@ -404,6 +404,8 @@
     
     
     <category term="Linux" scheme="https://owq.world/tags/Linux/"/>
+    
+    <category term="crontab" scheme="https://owq.world/tags/crontab/"/>
     
   </entry>
   
