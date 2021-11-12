@@ -25,17 +25,22 @@
     var CONFIG = {"hostname":"owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="爱编程, 懂设计, 喜折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny was born">
-<meta property="og:url" content="https://owq.world/tags/Windows/index.html">
+  <meta name="description" content="📖 Linux crontab 命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux crontab 命令">
+<meta property="og:url" content="https://owq.world/crontab/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="爱编程, 懂设计, 喜折腾">
+<meta property="og:description" content="📖 Linux crontab 命令">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.owq.world/2021/11/1717-e7ebb9.png">
+<meta property="article:published_time" content="2020-06-01T08:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-12T10:07:11.150Z">
 <meta property="article:author" content="OWQ">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.owq.world/2021/11/1717-e7ebb9.png">
 
-<link rel="canonical" href="https://owq.world/tags/Windows/">
+<link rel="canonical" href="https://owq.world/crontab/">
 
 
 <script id="page-configurations">
@@ -43,12 +48,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: Windows | Sunny was born</title>
+  <title>Linux crontab 命令 | Sunny was born</title>
   
 
 
@@ -193,10 +198,54 @@
 
 <div id="signature">
   <div class="container">
-        <header class="site-heading">
-          <h1>Sunny was born</h1>
-          <span class="subheading">心中有丘壑，眉目作山河</span>
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>Linux crontab 命令</h1>
+          <h2 class="subheading">📖 Linux crontab 命令</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+            
+
+            <time title="创建时间：2020-06-01 08:00:00" itemprop="dateCreated datePublished" datetime="2020-06-01T08:00:00Z">2020-06-01</time>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar-check"></i>
+            </span>
+            <span class="post-meta-item-text">Updated</span>
+            <time title="修改时间：2021-11-12 10:07:57" itemprop="dateModified" datetime="2021-11-12T18:07:57+08:00">2021-11-12</time>
+            
+          </span>
+
+
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>559</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>1 min</span>
+          </span>
+
+
         </header>
+
+      
 
   </div>
 </div>
@@ -233,53 +282,148 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Windows
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owq.world/crontab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <blockquote>
+<p>通过crontab 命令，我们可以在固定的间隔时间执行指定的系统指令或 shell script脚本。</p>
+</blockquote>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>修改定时任务</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo crontab -e</span><br></pre></td></tr></table></figure>
+
+<p>查看定时任务（当前用户）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -l </span><br></pre></td></tr></table></figure>
+
+<p>删除所有定时任务（/var/spool/cron目录下）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -r </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="图解命令"><a href="#图解命令" class="headerlink" title="图解命令"></a>图解命令</h2><p><img data-src="http://img.owq.world/2021/11/1717-e7ebb9.png"></p>
+<h2 id="命令示例"><a href="#命令示例" class="headerlink" title="命令示例"></a>命令示例</h2><table>
+<thead>
+<tr>
+<th align="left">Crontab Entry</th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">*/5 * * * *</td>
+<td align="left">每 5 分钟运行一次任务</td>
+</tr>
+<tr>
+<td align="left">0 * * * *</td>
+<td align="left">每小时执行一次任务</td>
+</tr>
+<tr>
+<td align="left">0 0 * * *</td>
+<td align="left">每天 00:00 执行一次任务</td>
+</tr>
+<tr>
+<td align="left">00 14 10 3,6,9,12 *</td>
+<td align="left">在3月、6月、9月和12月的10日14:00执行一次</td>
+</tr>
+<tr>
+<td align="left">25,50 1 15 * 2</td>
+<td align="left">在每周二1:25、1:50和每月15日执行一次</td>
+</tr>
+<tr>
+<td align="left">*/5 * * * 1-5</td>
+<td align="left">在每周的周一至周五每5分钟执行一次</td>
+</tr>
+</tbody></table>
+<h2 id="服务操作"><a href="#服务操作" class="headerlink" title="服务操作"></a>服务操作</h2><p>重启服务</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo service cron restart</span></span><br></pre></td></tr></table></figure>
+
+<p>ubuntu下启动、停止与重启cron</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron start</span><br><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron stop</span><br><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9saW51eHRvb2xzLXJzdC5yZWFkdGhlZG9jcy5pby96aF9DTi9sYXRlc3QvdG9vbC9jcm9udGFiLmh0bWw=">https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9saW51eGNvbmZpZy5vcmcvbGludXgtY3JvbnRhYi1yZWZlcmVuY2UtZ3VpZGU=">https://linuxconfig.org/linux-crontab-reference-guide</span></li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-01T08:00:00Z"
-              content="2020-06-01">
-          06-01
-        </time>
       </div>
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/win/" itemprop="url">
-            <span itemprop="name">Windows 命令文档</span>
-          </a>
-      </div>
+    
+    
+    
+        
 
-    </header>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://owq.world/crontab/" title="Linux crontab 命令">https://owq.world/crontab/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/9967ace7/" rel="prev" title="Nginx configure 参数">
+      <i class="fa fa-chevron-left"></i> Nginx configure 参数
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/git/" rel="next" title="git 命令">
+      git 命令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
   
-
-  
-
 
 
           </div>
@@ -330,6 +474,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%A7%A3%E5%91%BD%E4%BB%A4"><span class="nav-text">图解命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B"><span class="nav-text">命令示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="nav-text">服务操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

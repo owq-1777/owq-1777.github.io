@@ -374,7 +374,7 @@
     <link href="https://owq.world/9967ace7/"/>
     <id>https://owq.world/9967ace7/</id>
     <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-11-08T12:11:22.650Z</updated>
+    <updated>2021-11-09T02:45:25.430Z</updated>
     
     
     <summary type="html">📖 Nginx configure 参数</summary>
@@ -385,6 +385,25 @@
     
     
     <category term="Nginx" scheme="https://owq.world/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux crontab 命令</title>
+    <link href="https://owq.world/crontab/"/>
+    <id>https://owq.world/crontab/</id>
+    <published>2020-06-01T08:00:00.000Z</published>
+    <updated>2021-11-12T10:07:11.150Z</updated>
+    
+    
+    <summary type="html">📖 Linux crontab 命令</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="Linux" scheme="https://owq.world/tags/Linux/"/>
     
   </entry>
   
@@ -404,25 +423,6 @@
     
     
     <category term="git" scheme="https://owq.world/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pacman 命令</title>
-    <link href="https://owq.world/pacman/"/>
-    <id>https://owq.world/pacman/</id>
-    <published>2020-06-01T00:00:00.000Z</published>
-    <updated>2021-08-31T11:15:32.690Z</updated>
-    
-    
-    <summary type="html">📖 pacman 命令文档，Arch Linux大法好o(*￣▽￣*)ブ</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="Arch Linux" scheme="https://owq.world/tags/Arch-Linux/"/>
     
   </entry>
   
