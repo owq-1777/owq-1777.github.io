@@ -1654,9 +1654,7 @@
     <content><![CDATA[<blockquote>
 <p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0L3RvcGljcy90dXRvcmlhbHMvaW5zdGFsbG9wdGlvbnMv">🚪</span></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 命令行查看</span> </span><br><span class="line">./configure --help</span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 命令行查看</span></span><br><span class="line">./configure --help</span><br></pre></td></tr></table></figure>
 
 <h2 id="文件和权限"><a href="#文件和权限" class="headerlink" title="文件和权限"></a>文件和权限</h2><table>
 <thead>
