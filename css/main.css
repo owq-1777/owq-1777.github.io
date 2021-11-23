@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #30ff57;
+  background: #58e573;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2807,7 +2807,7 @@ h2 {
 .post-body>h2:after {
   display: block;
   content: '';
-  height: 2px;
+  height: 3px;
   margin-top: 4px;
   background-color: #273849;
   border-radius: 2px;
@@ -2889,7 +2889,7 @@ img {
 }
 .table-container td,
 .table-container th {
-  font-size: 0.85em;
+  font-size: 1em;
   font-family: Verdana;
 }
 .table-container tr:nth-child(even) {
@@ -2969,6 +2969,13 @@ blockquote {
 }
 blockquote p {
   margin: 0;
+}
+.table-container td,
+th {
+  border: 0;
+}
+.table-container th {
+  border-bottom: 2px solid #818181;
 }
 .search-popup input.search-input {
   line-height: 1;

@@ -1210,6 +1210,202 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux crontab 命令</title>
+    <url>/crontab/</url>
+    <content><![CDATA[<blockquote>
+<p>通过crontab 命令，我们可以在固定的间隔时间执行指定的系统指令或 shell script脚本。</p>
+</blockquote>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>修改定时任务</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo crontab -e</span><br></pre></td></tr></table></figure>
+
+<p>查看定时任务（当前用户）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -l </span><br></pre></td></tr></table></figure>
+
+<p>删除所有定时任务（/var/spool/cron目录下）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -r </span><br></pre></td></tr></table></figure>
+
+<p><em>注: 新创建的cron job，不会马上执行，至少要过2分钟才执行。如果重启cron则马上执行。</em></p>
+<h2 id="图解命令"><a href="#图解命令" class="headerlink" title="图解命令"></a>图解命令</h2><p><img data-src="http://img.owq.world/2021/11/1717-e7ebb9.png"></p>
+<h2 id="命令示例"><a href="#命令示例" class="headerlink" title="命令示例"></a>命令示例</h2><table>
+<thead>
+<tr>
+<th align="left">Crontab Entry</th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">*/5 * * * *</td>
+<td align="left">每 5 分钟运行一次任务</td>
+</tr>
+<tr>
+<td align="left">0 * * * *</td>
+<td align="left">每小时执行一次任务</td>
+</tr>
+<tr>
+<td align="left">0 0 * * *</td>
+<td align="left">每天 00:00 执行一次任务</td>
+</tr>
+<tr>
+<td align="left">00 14 10 3,6,9,12 *</td>
+<td align="left">在3月、6月、9月和12月的10日14:00执行一次</td>
+</tr>
+<tr>
+<td align="left">25,50 1 15 * 2</td>
+<td align="left">在每周二1:25、1:50和每月15日执行一次</td>
+</tr>
+<tr>
+<td align="left">*/5 * * * 1-5</td>
+<td align="left">在每周的周一至周五每5分钟执行一次</td>
+</tr>
+</tbody></table>
+<h2 id="服务操作"><a href="#服务操作" class="headerlink" title="服务操作"></a>服务操作</h2><p>重启服务</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo service cron restart</span></span><br></pre></td></tr></table></figure>
+
+<p>ubuntu下启动、停止与重启cron</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron start</span><br><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron stop</span><br><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9saW51eHRvb2xzLXJzdC5yZWFkdGhlZG9jcy5pby96aF9DTi9sYXRlc3QvdG9vbC9jcm9udGFiLmh0bWw=">https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9saW51eGNvbmZpZy5vcmcvbGludXgtY3JvbnRhYi1yZWZlcmVuY2UtZ3VpZGU=">https://linuxconfig.org/linux-crontab-reference-guide</span></li>
+</ul>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>crontab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx configure 参数</title>
+    <url>/9967ace7/</url>
+    <content><![CDATA[<blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0L3RvcGljcy90dXRvcmlhbHMvaW5zdGFsbG9wdGlvbnMv">🚪</span></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 命令行查看</span></span><br><span class="line">./configure --help</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件和权限"><a href="#文件和权限" class="headerlink" title="文件和权限"></a>文件和权限</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>–prefix=*path*</strong></td>
+<td>定义保存服务器文件的目录。这个目录也将用于所有由configure设置的相对路径(库源路径除外)和nginx.conf配置文件中。默认设置为<code>/usr/local/nginx</code>目录。</td>
+</tr>
+<tr>
+<td><strong>–sbin-path=*path*</strong></td>
+<td>设置NGINX可执行文件的名称。此名称仅在安装过程中使用。默认文件名为<code>prefix/sbin/nginx</code>。</td>
+</tr>
+<tr>
+<td><strong>–conf-path=*path*</strong></td>
+<td>设置<code>nginx.conf</code>配置文件的名称。如果需要，NGINX总是可以通过命令行参数<code>-c file</code>指定一个不同的配置文件来启动。默认文件名为<code>prefix/conf/nginx.conf</code>。</td>
+</tr>
+<tr>
+<td><strong>–pid-path=*path*</strong></td>
+<td>设置nginx的名称。pid文件，用于存储主进程的进程ID。安装完成后，可以在<code>nginx.conf</code>配置文件中使用pid指令更改文件名。默认文件名为<code>prefix/logs/nginx.pid</code>。</td>
+</tr>
+<tr>
+<td><strong>–error-log-path=*path*</strong></td>
+<td>设置主要错误、警告和诊断文件的名称。安装完成后，可以使用错误日志指令在<code>nginx.conf</code>配置文件中更改文件名。默认文件名为<code>prefix/logs/error.log</code>。特殊的“stderr”值告诉NGINX将预配置消息记录到标准错误。</td>
+</tr>
+<tr>
+<td><strong>–http-log-path=*path*</strong></td>
+<td>设置HTTP服务器的主请求日志文件的名称。安装完成后，可以使用<code>access log</code>指令在<code>nginx.conf</code>配置文件中更改文件名。默认文件名为<code>prefix/logs/access.log</code>。</td>
+</tr>
+<tr>
+<td><strong>–user=*name*</strong></td>
+<td>设置工作进程将使用其凭证的非特权用户的名称。在安装之后，这个名字总是可以在<code>nginx.conf</code>配置文件中使用user指令更改。默认用户名为nobody。</td>
+</tr>
+<tr>
+<td><strong>–group=*name*</strong></td>
+<td>设置工作进程将使用其凭证的组的名称。安装后，在<code>nginx.conf</code>配置文件中可以使用user指令更改名称。缺省情况下，组名为非特权用户的名称。</td>
+</tr>
+</tbody></table>
+<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>–with-select_module, –without-select_module</strong></td>
+<td>启用或禁用构建允许服务器使用<code>select()</code>方法的模块。如果平台不支持更合适的方法，如<code>kqueue</code>、<code>epoll</code>、<code>rtsig</code>或<code>/dev/poll</code>，则会自动构建此模块。</td>
+</tr>
+<tr>
+<td><strong>–with-poll_module, –without-poll_module</strong></td>
+<td>启用或禁用构建允许服务器使用<code>poll()</code>方法的模块。如果平台不支持更合适的方法，如<code>kqueue</code>、<code>epoll</code>、<code>rtsig</code>或<code>/dev/poll</code>，则会自动构建此模块。</td>
+</tr>
+</tbody></table>
+<h2 id="其它可选"><a href="#其它可选" class="headerlink" title="其它可选"></a>其它可选</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>–without-http_gzip_module</strong></td>
+<td>禁用构建压缩HTTP服务器响应的模块。构建和运行此模块需要zlib库。</td>
+</tr>
+<tr>
+<td><strong>–without-http_rewrite_module</strong></td>
+<td>禁用构建允许HTTP服务器重定向请求和更改请求URI的模块。构建和运行此模块需要PCRE库。这个模块是实验性的，所以它的指令将来可能会改变。</td>
+</tr>
+<tr>
+<td><strong>–without-http_proxy_module</strong></td>
+<td>禁用构建HTTP服务器代理模块。</td>
+</tr>
+<tr>
+<td><strong>–with-http_ssl_module</strong></td>
+<td>支持构建将HTTPS协议支持添加到HTTP服务器的模块。默认情况下，此模块不会生成。构建和运行此模块需要OpenSSL库。</td>
+</tr>
+<tr>
+<td><strong>–with-pcre=*path*</strong></td>
+<td>设置PCRE库源的路径。库分发版(版本4.4 - 8.21)需要从PCRE网站下载并提取。剩下的由NGINX的。/configure和make完成。location指令和ngx_http_rewrite_module的正则表达式支持都需要这个库。在FreeBSD系统上使用PCRE系统，请参阅下面的注释。</td>
+</tr>
+<tr>
+<td><strong>–with-pcre-jit</strong></td>
+<td>构建带有“即时编译”支持的PCRE库。</td>
+</tr>
+<tr>
+<td><strong>–with-zlib=*path*</strong></td>
+<td>设置zlib库的源代码的路径。库发行版(版本1.1.3 - 1.2.5)需要从zlib站点下载并解压。剩下的由NGINX的。/configure和make完成。这个库是ngx_http_gzip_module所必需的。</td>
+</tr>
+</tbody></table>
+<h2 id="编译控制"><a href="#编译控制" class="headerlink" title="编译控制"></a>编译控制</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>–with-cc-opt=*parameters*</strong></td>
+<td>设置将添加到CFLAGS变量的附加参数。</td>
+</tr>
+<tr>
+<td><strong>–with-ld-opt=*parameters*</strong></td>
+<td>设置将在链接期间使用的附加参数。</td>
+</tr>
+</tbody></table>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">./configure</span><br><span class="line">    --sbin-path=/<span class="keyword">usr</span>/local/nginx/nginx</span><br><span class="line">    --conf-path=/<span class="keyword">usr</span>/local/nginx/nginx.conf</span><br><span class="line">    --pid-path=/<span class="keyword">usr</span>/local/nginx/nginx.pid</span><br><span class="line">    --with-http_ssl_module</span><br><span class="line">    --with-pcre=../pcre-<span class="number">4.4</span></span><br><span class="line">    --with-zlib=../zlib-<span class="number">1.1</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>Nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Selenium 操作文档</title>
     <url>/selenium/</url>
     <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><blockquote>
@@ -1649,199 +1845,58 @@
       </tags>
   </entry>
   <entry>
-    <title>Nginx configure 参数</title>
-    <url>/9967ace7/</url>
-    <content><![CDATA[<blockquote>
-<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0L3RvcGljcy90dXRvcmlhbHMvaW5zdGFsbG9wdGlvbnMv">🚪</span></p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 命令行查看</span></span><br><span class="line">./configure --help</span><br></pre></td></tr></table></figure>
+    <title>Docker 命令</title>
+    <url>/docker/</url>
+    <content><![CDATA[<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;https://registry.docker-cn.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="文件和权限"><a href="#文件和权限" class="headerlink" title="文件和权限"></a>文件和权限</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>–prefix=*path*</strong></td>
-<td>定义保存服务器文件的目录。这个目录也将用于所有由configure设置的相对路径(库源路径除外)和nginx.conf配置文件中。默认设置为<code>/usr/local/nginx</code>目录。</td>
-</tr>
-<tr>
-<td><strong>–sbin-path=*path*</strong></td>
-<td>设置NGINX可执行文件的名称。此名称仅在安装过程中使用。默认文件名为<code>prefix/sbin/nginx</code>。</td>
-</tr>
-<tr>
-<td><strong>–conf-path=*path*</strong></td>
-<td>设置<code>nginx.conf</code>配置文件的名称。如果需要，NGINX总是可以通过命令行参数<code>-c file</code>指定一个不同的配置文件来启动。默认文件名为<code>prefix/conf/nginx.conf</code>。</td>
-</tr>
-<tr>
-<td><strong>–pid-path=*path*</strong></td>
-<td>设置nginx的名称。pid文件，用于存储主进程的进程ID。安装完成后，可以在<code>nginx.conf</code>配置文件中使用pid指令更改文件名。默认文件名为<code>prefix/logs/nginx.pid</code>。</td>
-</tr>
-<tr>
-<td><strong>–error-log-path=*path*</strong></td>
-<td>设置主要错误、警告和诊断文件的名称。安装完成后，可以使用错误日志指令在<code>nginx.conf</code>配置文件中更改文件名。默认文件名为<code>prefix/logs/error.log</code>。特殊的“stderr”值告诉NGINX将预配置消息记录到标准错误。</td>
-</tr>
-<tr>
-<td><strong>–http-log-path=*path*</strong></td>
-<td>设置HTTP服务器的主请求日志文件的名称。安装完成后，可以使用<code>access log</code>指令在<code>nginx.conf</code>配置文件中更改文件名。默认文件名为<code>prefix/logs/access.log</code>。</td>
-</tr>
-<tr>
-<td><strong>–user=*name*</strong></td>
-<td>设置工作进程将使用其凭证的非特权用户的名称。在安装之后，这个名字总是可以在<code>nginx.conf</code>配置文件中使用user指令更改。默认用户名为nobody。</td>
-</tr>
-<tr>
-<td><strong>–group=*name*</strong></td>
-<td>设置工作进程将使用其凭证的组的名称。安装后，在<code>nginx.conf</code>配置文件中可以使用user指令更改名称。缺省情况下，组名为非特权用户的名称。</td>
-</tr>
-</tbody></table>
-<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>–with-select_module, –without-select_module</strong></td>
-<td>启用或禁用构建允许服务器使用<code>select()</code>方法的模块。如果平台不支持更合适的方法，如<code>kqueue</code>、<code>epoll</code>、<code>rtsig</code>或<code>/dev/poll</code>，则会自动构建此模块。</td>
-</tr>
-<tr>
-<td><strong>–with-poll_module, –without-poll_module</strong></td>
-<td>启用或禁用构建允许服务器使用<code>poll()</code>方法的模块。如果平台不支持更合适的方法，如<code>kqueue</code>、<code>epoll</code>、<code>rtsig</code>或<code>/dev/poll</code>，则会自动构建此模块。</td>
-</tr>
-</tbody></table>
-<h2 id="其它可选"><a href="#其它可选" class="headerlink" title="其它可选"></a>其它可选</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>–without-http_gzip_module</strong></td>
-<td>禁用构建压缩HTTP服务器响应的模块。构建和运行此模块需要zlib库。</td>
-</tr>
-<tr>
-<td><strong>–without-http_rewrite_module</strong></td>
-<td>禁用构建允许HTTP服务器重定向请求和更改请求URI的模块。构建和运行此模块需要PCRE库。这个模块是实验性的，所以它的指令将来可能会改变。</td>
-</tr>
-<tr>
-<td><strong>–without-http_proxy_module</strong></td>
-<td>禁用构建HTTP服务器代理模块。</td>
-</tr>
-<tr>
-<td><strong>–with-http_ssl_module</strong></td>
-<td>支持构建将HTTPS协议支持添加到HTTP服务器的模块。默认情况下，此模块不会生成。构建和运行此模块需要OpenSSL库。</td>
-</tr>
-<tr>
-<td><strong>–with-pcre=*path*</strong></td>
-<td>设置PCRE库源的路径。库分发版(版本4.4 - 8.21)需要从PCRE网站下载并提取。剩下的由NGINX的。/configure和make完成。location指令和ngx_http_rewrite_module的正则表达式支持都需要这个库。在FreeBSD系统上使用PCRE系统，请参阅下面的注释。</td>
-</tr>
-<tr>
-<td><strong>–with-pcre-jit</strong></td>
-<td>构建带有“即时编译”支持的PCRE库。</td>
-</tr>
-<tr>
-<td><strong>–with-zlib=*path*</strong></td>
-<td>设置zlib库的源代码的路径。库发行版(版本1.1.3 - 1.2.5)需要从zlib站点下载并解压。剩下的由NGINX的。/configure和make完成。这个库是ngx_http_gzip_module所必需的。</td>
-</tr>
-</tbody></table>
-<h2 id="编译控制"><a href="#编译控制" class="headerlink" title="编译控制"></a>编译控制</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>–with-cc-opt=*parameters*</strong></td>
-<td>设置将添加到CFLAGS变量的附加参数。</td>
-</tr>
-<tr>
-<td><strong>–with-ld-opt=*parameters*</strong></td>
-<td>设置将在链接期间使用的附加参数。</td>
-</tr>
-</tbody></table>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">./configure</span><br><span class="line">    --sbin-path=/<span class="keyword">usr</span>/local/nginx/nginx</span><br><span class="line">    --conf-path=/<span class="keyword">usr</span>/local/nginx/nginx.conf</span><br><span class="line">    --pid-path=/<span class="keyword">usr</span>/local/nginx/nginx.pid</span><br><span class="line">    --with-http_ssl_module</span><br><span class="line">    --with-pcre=../pcre-<span class="number">4.4</span></span><br><span class="line">    --with-zlib=../zlib-<span class="number">1.1</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker version		<span class="comment"># 版本信息</span></span><br><span class="line">docker info		<span class="comment"># 系统信息</span></span><br><span class="line">docker &lt;order&gt; --<span class="built_in">help</span>	<span class="comment"># 帮助命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器最后10条日志</span></span><br><span class="line">docker logs -f -t --tail 10 &lt;container&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker images			<span class="comment"># 查看镜像</span></span><br><span class="line">docker images -aq		<span class="comment"># 只显示镜像ID</span></span><br><span class="line">docker search &lt;image&gt;		<span class="comment"># 搜索镜像</span></span><br><span class="line">docker pull &lt;image&gt;		<span class="comment"># 下载镜像</span></span><br><span class="line">docker rmi -f &lt;image&gt;		<span class="comment"># 删除镜像</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除全部镜像</span></span><br><span class="line">docker rmi -f $(docker images -aq)</span><br><span class="line"></span><br><span class="line"><span class="comment"># commit 镜像</span></span><br><span class="line">docker commit  -m=<span class="string">&#x27;描述信息&#x27;</span> -a=<span class="string">&#x27;作者&#x27;</span> 容器id 目标镜像名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 镜像重命名</span></span><br><span class="line">docker tag local-image:tagname new-repo:tagname</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送到Hub</span></span><br><span class="line">docker push new-repo:tagname</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 运行容器</span></span><br><span class="line">docker run [param] &lt;image&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># run参数说明</span></span><br><span class="line">  --name=<span class="string">&quot;Name&quot;</span>		<span class="comment"># 容器名字 用来区分</span></span><br><span class="line">  -d	<span class="comment"># 后台方式运行</span></span><br><span class="line">  -it	<span class="comment"># 使用交互方式运行</span></span><br><span class="line">  -p	<span class="comment"># 指定容器端口 -p 8080:8080</span></span><br><span class="line">    -p	 <span class="comment"># ip:主机端口:容器端口</span></span><br><span class="line">    -p	 <span class="comment"># 主机端口:容器端口</span></span><br><span class="line">    -p	 <span class="comment"># 容器端口</span></span><br><span class="line">  -P	<span class="comment"># 大写P 随机端口</span></span><br><span class="line"></span><br><span class="line">dockee ps	<span class="comment"># 查看正在运行容器</span></span><br><span class="line">docker ps -a	<span class="comment"># 查看全部容器</span></span><br><span class="line">docker ps -a --no-trunc	<span class="comment"># 显示所以启动参数</span></span><br><span class="line">docker rm &lt;containerID&gt; <span class="comment"># 删除容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器详细信息</span></span><br><span class="line">docker inspect &lt;container&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器占用空间</span></span><br><span class="line">docker system df -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除全部容器</span></span><br><span class="line">docker rm -f $(docker images -aq)</span><br><span class="line"></span><br><span class="line">docker start &lt;container&gt;	<span class="comment"># 启动容器</span></span><br><span class="line">docker restart &lt;container&gt;	<span class="comment"># 重启容器</span></span><br><span class="line">docker stop &lt;container&gt;		<span class="comment"># 停止容器</span></span><br><span class="line">docker <span class="built_in">kill</span> &lt;container&gt;		<span class="comment"># 强制停止容器</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> &lt;container&gt;		<span class="comment"># 开启新的终端</span></span><br><span class="line">docker attach &lt;container&gt;	<span class="comment"># 进入当前运行终端</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 交互模式进入正在运行容器 </span></span><br><span class="line">docker <span class="built_in">exec</span> -it &lt;container&gt; /bin/bash	</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从容器内拷贝文件到主机</span></span><br><span class="line">docker cp &lt;container&gt;:容器路径 主机路径</span><br><span class="line"><span class="comment"># 从主机内拷贝文件到容器</span></span><br><span class="line">docker cp 主机路径 &lt;container&gt;:容器路径</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="退出命令"><a href="#退出命令" class="headerlink" title="退出命令"></a>退出命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 停止并退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 退出不停止（快捷键）</span></span><br><span class="line">Ctrl + P + Q</span><br></pre></td></tr></table></figure>
+
+<h2 id="挂载命令"><a href="#挂载命令" class="headerlink" title="挂载命令"></a>挂载命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 -v 挂载</span></span><br><span class="line">docker run -it -v &lt;主机目录&gt;:&lt;容器目录&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定路径挂载</span></span><br><span class="line">docker run -it -v /home/<span class="built_in">test</span>:/home centos /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 匿名挂载 -v 容器内路径</span></span><br><span class="line">docker run -d -P --name nginx01 -v /ect/nginx nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有 volume 的情况</span></span><br><span class="line">docker volume ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 具名挂载</span></span><br><span class="line">docker run -d -P --name nginx02 -v v-nginx:/etc/nginx nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过 -v 容器路径 ro rw 改变读写权限</span></span><br><span class="line">  ro	<span class="built_in">readonly</span> 		<span class="comment"># 只读</span></span><br><span class="line">  rw	readwrite		<span class="comment"># 可读可写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只读权限设置</span></span><br><span class="line">dockers run -d -P --name nginx02 -v nginx:/etc/nginx:ro</span><br></pre></td></tr></table></figure>
+
+<h2 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker network ls		<span class="comment"># 查看网络列表</span></span><br><span class="line">docker network inspect &lt;name&gt;	<span class="comment"># 查看网络详情</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># --net 指定网卡(docker默认是bridge)</span></span><br><span class="line">docker run -d -P --net bridge tomcat</span><br><span class="line">	<span class="comment"># 自定义网络配置</span></span><br><span class="line">    --driver bridge		<span class="comment"># 网络模式</span></span><br><span class="line">    --subnet 192.168.0.0/16	<span class="comment"># 子网</span></span><br><span class="line">    --gateway 192.168.0.1	<span class="comment"># 网关</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建虚拟网卡</span></span><br><span class="line">docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 net</span><br><span class="line"></span><br><span class="line"><span class="comment"># 容器连接到网卡 打通容器与容器间网络</span></span><br><span class="line">docker network connect &lt;net&gt; &lt;ctn&gt;		<span class="comment"># 建立桥接</span></span><br><span class="line">docker network disconnect &lt;net&gt; &lt;ctn&gt;	<span class="comment"># 断开桥接</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将容器连接到网络</span></span><br><span class="line">docker network connect &lt;net&gt; &lt;ctn&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="commit-镜像"><a href="#commit-镜像" class="headerlink" title="commit 镜像"></a>commit 镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 命令和git类似类似, 把自己修改的东西形成一个层 封装成一个镜像</span></span><br><span class="line">docker commit -m=<span class="string">&#x27;描述信息&#x27;</span> -a=<span class="string">&#x27;作者&#x27;</span> 容器id 目标镜像名</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="迁移操作"><a href="#迁移操作" class="headerlink" title="迁移操作"></a>迁移操作</h2><p><strong>镜像</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 压缩镜像</span></span><br><span class="line">docker save -o image-name.tar image-name </span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载镜像</span></span><br><span class="line">docker load image-name.tar</span><br></pre></td></tr></table></figure>
+
+<p><strong>容器</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导出容器到tar文件</span></span><br><span class="line">docker <span class="built_in">export</span> container-name container-name.tar</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载容器文件创建镜像文件</span></span><br><span class="line">docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="DockerFile-命令"><a href="#DockerFile-命令" class="headerlink" title="DockerFile 命令"></a>DockerFile 命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成镜像</span></span><br><span class="line">docker build -f dockerfile文件 -t 镜像名:[tag] .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看初始化运行记录</span></span><br><span class="line">docker <span class="built_in">history</span> 镜像id</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="DockerFile-指令"><a href="#DockerFile-指令" class="headerlink" title="DockerFile 指令"></a>DockerFile 指令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">FROM		<span class="comment"># 基础镜像 一切从这里开始构建</span></span><br><span class="line">MAINTAINER	<span class="comment"># 镜像是谁写的 name+mail</span></span><br><span class="line">RUN		<span class="comment"># 镜像构建时候运行的命令</span></span><br><span class="line">ADD		<span class="comment"># 步骤 tomcat镜像 这个tomcat压缩包！添加内容</span></span><br><span class="line">WORKDIT		<span class="comment"># 镜像工作目录</span></span><br><span class="line">VOLUME		<span class="comment"># 挂载的目录</span></span><br><span class="line">EXPOST		<span class="comment"># 保留端口配置</span></span><br><span class="line">CMD		<span class="comment"># 指定这个容器启动时候运行的命令,自由最后一个会生效，可被替代</span></span><br><span class="line">ENTRTPOINT	<span class="comment"># 指定这个容器启动时候要运行的命令，可以追加命令</span></span><br><span class="line">ONBUILD		<span class="comment"># 被继承 DockerFIle 时候运行，触发命令</span></span><br><span class="line">COPY		<span class="comment"># 类型ADD,将文件拷贝到镜像</span></span><br><span class="line">ENV		<span class="comment"># 构建时候设置环境变量</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="docker-compose-命令"><a href="#docker-compose-命令" class="headerlink" title="docker-compose 命令"></a>docker-compose 命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker-compose up                  <span class="comment"># 启动所有容器</span></span><br><span class="line">docker-compose up -d               <span class="comment"># 后台启动并运行所有容器</span></span><br><span class="line">docker-compose up --no-recreate -d <span class="comment"># 不重新创建已经停止的容器</span></span><br><span class="line">docker-compose up -d test2         <span class="comment"># 只启动test2这个容器</span></span><br><span class="line">docker-compose stop                <span class="comment"># 停止容器</span></span><br><span class="line">docker-compose start               <span class="comment"># 启动容器</span></span><br><span class="line">docker-compose down                <span class="comment"># 停止并销毁容器</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
         <category>命令文档</category>
       </categories>
       <tags>
-        <tag>Nginx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux crontab 命令</title>
-    <url>/crontab/</url>
-    <content><![CDATA[<blockquote>
-<p>通过crontab 命令，我们可以在固定的间隔时间执行指定的系统指令或 shell script脚本。</p>
-</blockquote>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>修改定时任务</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo crontab -e</span><br></pre></td></tr></table></figure>
-
-<p>查看定时任务（当前用户）</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -l </span><br></pre></td></tr></table></figure>
-
-<p>删除所有定时任务（/var/spool/cron目录下）</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -r </span><br></pre></td></tr></table></figure>
-
-<p><em>注: 新创建的cron job，不会马上执行，至少要过2分钟才执行。如果重启cron则马上执行。</em></p>
-<h2 id="图解命令"><a href="#图解命令" class="headerlink" title="图解命令"></a>图解命令</h2><p><img data-src="http://img.owq.world/2021/11/1717-e7ebb9.png"></p>
-<h2 id="命令示例"><a href="#命令示例" class="headerlink" title="命令示例"></a>命令示例</h2><table>
-<thead>
-<tr>
-<th align="left">Crontab Entry</th>
-<th align="left"><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">*/5 * * * *</td>
-<td align="left">每 5 分钟运行一次任务</td>
-</tr>
-<tr>
-<td align="left">0 * * * *</td>
-<td align="left">每小时执行一次任务</td>
-</tr>
-<tr>
-<td align="left">0 0 * * *</td>
-<td align="left">每天 00:00 执行一次任务</td>
-</tr>
-<tr>
-<td align="left">00 14 10 3,6,9,12 *</td>
-<td align="left">在3月、6月、9月和12月的10日14:00执行一次</td>
-</tr>
-<tr>
-<td align="left">25,50 1 15 * 2</td>
-<td align="left">在每周二1:25、1:50和每月15日执行一次</td>
-</tr>
-<tr>
-<td align="left">*/5 * * * 1-5</td>
-<td align="left">在每周的周一至周五每5分钟执行一次</td>
-</tr>
-</tbody></table>
-<h2 id="服务操作"><a href="#服务操作" class="headerlink" title="服务操作"></a>服务操作</h2><p>重启服务</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo service cron restart</span></span><br></pre></td></tr></table></figure>
-
-<p>ubuntu下启动、停止与重启cron</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron start</span><br><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron stop</span><br><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron restart</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9saW51eHRvb2xzLXJzdC5yZWFkdGhlZG9jcy5pby96aF9DTi9sYXRlc3QvdG9vbC9jcm9udGFiLmh0bWw=">https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html</span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9saW51eGNvbmZpZy5vcmcvbGludXgtY3JvbnRhYi1yZWZlcmVuY2UtZ3VpZGU=">https://linuxconfig.org/linux-crontab-reference-guide</span></li>
-</ul>
-]]></content>
-      <categories>
-        <category>命令文档</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>crontab</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1941,61 +1996,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>systemctl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Docker 命令</title>
-    <url>/docker/</url>
-    <content><![CDATA[<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;https://registry.docker-cn.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker version		<span class="comment"># 版本信息</span></span><br><span class="line">docker info		<span class="comment"># 系统信息</span></span><br><span class="line">docker &lt;order&gt; --<span class="built_in">help</span>	<span class="comment"># 帮助命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器最后10条日志</span></span><br><span class="line">docker logs -f -t --tail 10 &lt;container&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker images			<span class="comment"># 查看镜像</span></span><br><span class="line">docker images -aq		<span class="comment"># 只显示镜像ID</span></span><br><span class="line">docker search &lt;image&gt;		<span class="comment"># 搜索镜像</span></span><br><span class="line">docker pull &lt;image&gt;		<span class="comment"># 下载镜像</span></span><br><span class="line">docker rmi -f &lt;image&gt;		<span class="comment"># 删除镜像</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除全部镜像</span></span><br><span class="line">docker rmi -f $(docker images -aq)</span><br><span class="line"></span><br><span class="line"><span class="comment"># commit 镜像</span></span><br><span class="line">docker commit  -m=<span class="string">&#x27;描述信息&#x27;</span> -a=<span class="string">&#x27;作者&#x27;</span> 容器id 目标镜像名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 镜像重命名</span></span><br><span class="line">docker tag local-image:tagname new-repo:tagname</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送到Hub</span></span><br><span class="line">docker push new-repo:tagname</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 运行容器</span></span><br><span class="line">docker run [param] &lt;image&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># run参数说明</span></span><br><span class="line">  --name=<span class="string">&quot;Name&quot;</span>		<span class="comment"># 容器名字 用来区分</span></span><br><span class="line">  -d	<span class="comment"># 后台方式运行</span></span><br><span class="line">  -it	<span class="comment"># 使用交互方式运行</span></span><br><span class="line">  -p	<span class="comment"># 指定容器端口 -p 8080:8080</span></span><br><span class="line">    -p	 <span class="comment"># ip:主机端口:容器端口</span></span><br><span class="line">    -p	 <span class="comment"># 主机端口:容器端口</span></span><br><span class="line">    -p	 <span class="comment"># 容器端口</span></span><br><span class="line">  -P	<span class="comment"># 大写P 随机端口</span></span><br><span class="line"></span><br><span class="line">dockee ps	<span class="comment"># 查看正在运行容器</span></span><br><span class="line">docker ps -a	<span class="comment"># 查看全部容器</span></span><br><span class="line">docker ps -a --no-trunc	<span class="comment"># 显示所以启动参数</span></span><br><span class="line">docker rm &lt;containerID&gt; <span class="comment"># 删除容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器详细信息</span></span><br><span class="line">docker inspect &lt;container&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器占用空间</span></span><br><span class="line">docker system df -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除全部容器</span></span><br><span class="line">docker rm -f $(docker images -aq)</span><br><span class="line"></span><br><span class="line">docker start &lt;container&gt;	<span class="comment"># 启动容器</span></span><br><span class="line">docker restart &lt;container&gt;	<span class="comment"># 重启容器</span></span><br><span class="line">docker stop &lt;container&gt;		<span class="comment"># 停止容器</span></span><br><span class="line">docker <span class="built_in">kill</span> &lt;container&gt;		<span class="comment"># 强制停止容器</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> &lt;container&gt;		<span class="comment"># 开启新的终端</span></span><br><span class="line">docker attach &lt;container&gt;	<span class="comment"># 进入当前运行终端</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 交互模式进入正在运行容器 </span></span><br><span class="line">docker <span class="built_in">exec</span> -it &lt;container&gt; /bin/bash	</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从容器内拷贝文件到主机</span></span><br><span class="line">docker cp &lt;container&gt;:容器路径 主机路径</span><br><span class="line"><span class="comment"># 从主机内拷贝文件到容器</span></span><br><span class="line">docker cp 主机路径 &lt;container&gt;:容器路径</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="退出命令"><a href="#退出命令" class="headerlink" title="退出命令"></a>退出命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 停止并退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 退出不停止（快捷键）</span></span><br><span class="line">Ctrl + P + Q</span><br></pre></td></tr></table></figure>
-
-<h2 id="挂载命令"><a href="#挂载命令" class="headerlink" title="挂载命令"></a>挂载命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 -v 挂载</span></span><br><span class="line">docker run -it -v &lt;主机目录&gt;:&lt;容器目录&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定路径挂载</span></span><br><span class="line">docker run -it -v /home/<span class="built_in">test</span>:/home centos /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 匿名挂载 -v 容器内路径</span></span><br><span class="line">docker run -d -P --name nginx01 -v /ect/nginx nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有 volume 的情况</span></span><br><span class="line">docker volume ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 具名挂载</span></span><br><span class="line">docker run -d -P --name nginx02 -v v-nginx:/etc/nginx nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过 -v 容器路径 ro rw 改变读写权限</span></span><br><span class="line">  ro	<span class="built_in">readonly</span> 		<span class="comment"># 只读</span></span><br><span class="line">  rw	readwrite		<span class="comment"># 可读可写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只读权限设置</span></span><br><span class="line">dockers run -d -P --name nginx02 -v nginx:/etc/nginx:ro</span><br></pre></td></tr></table></figure>
-
-<h2 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker network ls		<span class="comment"># 查看网络列表</span></span><br><span class="line">docker network inspect &lt;name&gt;	<span class="comment"># 查看网络详情</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># --net 指定网卡(docker默认是bridge)</span></span><br><span class="line">docker run -d -P --net bridge tomcat</span><br><span class="line">	<span class="comment"># 自定义网络配置</span></span><br><span class="line">    --driver bridge		<span class="comment"># 网络模式</span></span><br><span class="line">    --subnet 192.168.0.0/16	<span class="comment"># 子网</span></span><br><span class="line">    --gateway 192.168.0.1	<span class="comment"># 网关</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建虚拟网卡</span></span><br><span class="line">docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 net</span><br><span class="line"></span><br><span class="line"><span class="comment"># 容器连接到网卡 打通容器与容器间网络</span></span><br><span class="line">docker network connect &lt;net&gt; &lt;ctn&gt;		<span class="comment"># 建立桥接</span></span><br><span class="line">docker network disconnect &lt;net&gt; &lt;ctn&gt;	<span class="comment"># 断开桥接</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将容器连接到网络</span></span><br><span class="line">docker network connect &lt;net&gt; &lt;ctn&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="commit-镜像"><a href="#commit-镜像" class="headerlink" title="commit 镜像"></a>commit 镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 命令和git类似类似, 把自己修改的东西形成一个层 封装成一个镜像</span></span><br><span class="line">docker commit -m=<span class="string">&#x27;描述信息&#x27;</span> -a=<span class="string">&#x27;作者&#x27;</span> 容器id 目标镜像名</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="迁移操作"><a href="#迁移操作" class="headerlink" title="迁移操作"></a>迁移操作</h2><p><strong>镜像</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 压缩镜像</span></span><br><span class="line">docker save -o image-name.tar image-name </span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载镜像</span></span><br><span class="line">docker load image-name.tar</span><br></pre></td></tr></table></figure>
-
-<p><strong>容器</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导出容器到tar文件</span></span><br><span class="line">docker <span class="built_in">export</span> container-name container-name.tar</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载容器文件创建镜像文件</span></span><br><span class="line">docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="DockerFile-命令"><a href="#DockerFile-命令" class="headerlink" title="DockerFile 命令"></a>DockerFile 命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成镜像</span></span><br><span class="line">docker build -f dockerfile文件 -t 镜像名:[tag] .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看初始化运行记录</span></span><br><span class="line">docker <span class="built_in">history</span> 镜像id</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="DockerFile-指令"><a href="#DockerFile-指令" class="headerlink" title="DockerFile 指令"></a>DockerFile 指令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">FROM		<span class="comment"># 基础镜像 一切从这里开始构建</span></span><br><span class="line">MAINTAINER	<span class="comment"># 镜像是谁写的 name+mail</span></span><br><span class="line">RUN		<span class="comment"># 镜像构建时候运行的命令</span></span><br><span class="line">ADD		<span class="comment"># 步骤 tomcat镜像 这个tomcat压缩包！添加内容</span></span><br><span class="line">WORKDIT		<span class="comment"># 镜像工作目录</span></span><br><span class="line">VOLUME		<span class="comment"># 挂载的目录</span></span><br><span class="line">EXPOST		<span class="comment"># 保留端口配置</span></span><br><span class="line">CMD		<span class="comment"># 指定这个容器启动时候运行的命令,自由最后一个会生效，可被替代</span></span><br><span class="line">ENTRTPOINT	<span class="comment"># 指定这个容器启动时候要运行的命令，可以追加命令</span></span><br><span class="line">ONBUILD		<span class="comment"># 被继承 DockerFIle 时候运行，触发命令</span></span><br><span class="line">COPY		<span class="comment"># 类型ADD,将文件拷贝到镜像</span></span><br><span class="line">ENV		<span class="comment"># 构建时候设置环境变量</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="docker-compose-命令"><a href="#docker-compose-命令" class="headerlink" title="docker-compose 命令"></a>docker-compose 命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker-compose up                  <span class="comment"># 启动所有容器</span></span><br><span class="line">docker-compose up -d               <span class="comment"># 后台启动并运行所有容器</span></span><br><span class="line">docker-compose up --no-recreate -d <span class="comment"># 不重新创建已经停止的容器</span></span><br><span class="line">docker-compose up -d test2         <span class="comment"># 只启动test2这个容器</span></span><br><span class="line">docker-compose stop                <span class="comment"># 停止容器</span></span><br><span class="line">docker-compose start               <span class="comment"># 启动容器</span></span><br><span class="line">docker-compose down                <span class="comment"># 停止并销毁容器</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>命令文档</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
       </tags>
   </entry>
 </search>

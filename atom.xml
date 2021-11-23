@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Sunny was born</title>
-  <icon>https://owq.world/icon.png</icon>
+  <icon>https://www.owq.world/icon.png</icon>
   <subtitle>心中有丘壑，眉目作山河</subtitle>
-  <link href="https://owq.world/atom.xml" rel="self"/>
+  <link href="https://www.owq.world/atom.xml" rel="self"/>
   
-  <link href="https://owq.world/"/>
+  <link href="https://www.owq.world/"/>
   <updated>2021-11-05T06:37:45.360Z</updated>
-  <id>https://owq.world/</id>
+  <id>https://www.owq.world/</id>
   
   <author>
     <name>OWQ</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>scrcpy 优雅的安卓投屏工具</title>
-    <link href="https://owq.world/72a0046c/"/>
-    <id>https://owq.world/72a0046c/</id>
+    <link href="https://www.owq.world/72a0046c/"/>
+    <id>https://www.owq.world/72a0046c/</id>
     <published>2021-09-17T11:53:29.000Z</published>
     <updated>2021-11-05T06:37:45.360Z</updated>
     
@@ -28,19 +28,19 @@
     
     
     
-    <category term="好软工具" scheme="https://owq.world/categories/%E5%A5%BD%E8%BD%AF%E5%B7%A5%E5%85%B7/"/>
+    <category term="好软工具" scheme="https://www.owq.world/categories/%E5%A5%BD%E8%BD%AF%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Android" scheme="https://owq.world/tags/Android/"/>
+    <category term="Android" scheme="https://www.owq.world/tags/Android/"/>
     
-    <category term="adb" scheme="https://owq.world/tags/adb/"/>
+    <category term="adb" scheme="https://www.owq.world/tags/adb/"/>
     
   </entry>
   
   <entry>
     <title>动态规划 打家劫舍</title>
-    <link href="https://owq.world/bd9e5b39/"/>
-    <id>https://owq.world/bd9e5b39/</id>
+    <link href="https://www.owq.world/bd9e5b39/"/>
+    <id>https://www.owq.world/bd9e5b39/</id>
     <published>2021-09-07T21:17:25.000Z</published>
     <updated>2021-09-08T07:29:13.030Z</updated>
     
@@ -49,15 +49,15 @@
     
     
     
-    <category term="结构算法" scheme="https://owq.world/categories/%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95/"/>
+    <category term="结构算法" scheme="https://www.owq.world/categories/%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95/"/>
     
     
   </entry>
   
   <entry>
     <title>FastAPI 从入门到落地</title>
-    <link href="https://owq.world/1a0a2507/"/>
-    <id>https://owq.world/1a0a2507/</id>
+    <link href="https://www.owq.world/1a0a2507/"/>
+    <id>https://www.owq.world/1a0a2507/</id>
     <published>2021-08-30T18:33:04.000Z</published>
     <updated>2021-08-31T11:15:04.840Z</updated>
     
@@ -66,19 +66,19 @@
     
     
     
-    <category term="入门教程" scheme="https://owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <category term="入门教程" scheme="https://www.owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Python" scheme="https://owq.world/tags/Python/"/>
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
-    <category term="FastAPI" scheme="https://owq.world/tags/FastAPI/"/>
+    <category term="FastAPI" scheme="https://www.owq.world/tags/FastAPI/"/>
     
   </entry>
   
   <entry>
     <title>Python 线程进程相关库的简单应用</title>
-    <link href="https://owq.world/f89f9ea4/"/>
-    <id>https://owq.world/f89f9ea4/</id>
+    <link href="https://www.owq.world/f89f9ea4/"/>
+    <id>https://www.owq.world/f89f9ea4/</id>
     <published>2021-08-27T15:59:51.000Z</published>
     <updated>2021-11-05T06:36:58.690Z</updated>
     
@@ -87,17 +87,17 @@
     
     
     
-    <category term="技术记录" scheme="https://owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Python" scheme="https://owq.world/tags/Python/"/>
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python 使用 YAML 配置带有颜色输出的loging</title>
-    <link href="https://owq.world/dfbb4c9/"/>
-    <id>https://owq.world/dfbb4c9/</id>
+    <link href="https://www.owq.world/dfbb4c9/"/>
+    <id>https://www.owq.world/dfbb4c9/</id>
     <published>2021-08-26T16:45:57.000Z</published>
     <updated>2021-11-05T06:38:18.210Z</updated>
     
@@ -106,21 +106,21 @@
     
     
     
-    <category term="技术记录" scheme="https://owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Python" scheme="https://owq.world/tags/Python/"/>
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
-    <category term="YAML" scheme="https://owq.world/tags/YAML/"/>
+    <category term="YAML" scheme="https://www.owq.world/tags/YAML/"/>
     
-    <category term="log" scheme="https://owq.world/tags/log/"/>
+    <category term="log" scheme="https://www.owq.world/tags/log/"/>
     
   </entry>
   
   <entry>
     <title>Docker+Redis 安装配置</title>
-    <link href="https://owq.world/8be682ad/"/>
-    <id>https://owq.world/8be682ad/</id>
+    <link href="https://www.owq.world/8be682ad/"/>
+    <id>https://www.owq.world/8be682ad/</id>
     <published>2021-08-23T20:48:02.000Z</published>
     <updated>2021-08-24T06:42:28.874Z</updated>
     
@@ -129,19 +129,19 @@
     
     
     
-    <category term="配置记录" scheme="https://owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="配置记录" scheme="https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Docker" scheme="https://owq.world/tags/Docker/"/>
+    <category term="Docker" scheme="https://www.owq.world/tags/Docker/"/>
     
-    <category term="Redis" scheme="https://owq.world/tags/Redis/"/>
+    <category term="Redis" scheme="https://www.owq.world/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Docker+MongoDB 安装配置</title>
-    <link href="https://owq.world/d2633d2c/"/>
-    <id>https://owq.world/d2633d2c/</id>
+    <link href="https://www.owq.world/d2633d2c/"/>
+    <id>https://www.owq.world/d2633d2c/</id>
     <published>2021-08-23T20:39:01.000Z</published>
     <updated>2021-10-21T07:15:21.583Z</updated>
     
@@ -150,19 +150,19 @@
     
     
     
-    <category term="配置记录" scheme="https://owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="配置记录" scheme="https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Docker" scheme="https://owq.world/tags/Docker/"/>
+    <category term="Docker" scheme="https://www.owq.world/tags/Docker/"/>
     
-    <category term="Mongo" scheme="https://owq.world/tags/Mongo/"/>
+    <category term="Mongo" scheme="https://www.owq.world/tags/Mongo/"/>
     
   </entry>
   
   <entry>
     <title>Hexo + Nginx 服务器部署踩坑记录</title>
-    <link href="https://owq.world/e823826f/"/>
-    <id>https://owq.world/e823826f/</id>
+    <link href="https://www.owq.world/e823826f/"/>
+    <id>https://www.owq.world/e823826f/</id>
     <published>2021-08-20T11:24:33.000Z</published>
     <updated>2021-11-07T20:40:11.250Z</updated>
     
@@ -171,21 +171,21 @@
     
     
     
-    <category term="技术记录" scheme="https://owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
+    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Hexo" scheme="https://owq.world/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://www.owq.world/tags/Hexo/"/>
     
-    <category term="Nginx" scheme="https://owq.world/tags/Nginx/"/>
+    <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
     
-    <category term="Linux" scheme="https://owq.world/tags/Linux/"/>
+    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>优雅的使用WSL2-Kali桌面环境</title>
-    <link href="https://owq.world/202281bd/"/>
-    <id>https://owq.world/202281bd/</id>
+    <link href="https://www.owq.world/202281bd/"/>
+    <id>https://www.owq.world/202281bd/</id>
     <published>2021-08-16T16:25:28.000Z</published>
     <updated>2021-11-05T06:39:38.270Z</updated>
     
@@ -194,19 +194,19 @@
     
     
     
-    <category term="配置记录" scheme="https://owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="配置记录" scheme="https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="WSL2" scheme="https://owq.world/tags/WSL2/"/>
+    <category term="WSL2" scheme="https://www.owq.world/tags/WSL2/"/>
     
-    <category term="Kali Linux" scheme="https://owq.world/tags/Kali-Linux/"/>
+    <category term="Kali Linux" scheme="https://www.owq.world/tags/Kali-Linux/"/>
     
   </entry>
   
   <entry>
     <title>WSL2 安装配置</title>
-    <link href="https://owq.world/1fe3c459/"/>
-    <id>https://owq.world/1fe3c459/</id>
+    <link href="https://www.owq.world/1fe3c459/"/>
+    <id>https://www.owq.world/1fe3c459/</id>
     <published>2021-07-15T14:13:58.000Z</published>
     <updated>2021-11-05T06:37:58.670Z</updated>
     
@@ -215,19 +215,19 @@
     
     
     
-    <category term="入门教程" scheme="https://owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <category term="入门教程" scheme="https://www.owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Linux" scheme="https://owq.world/tags/Linux/"/>
+    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
     
-    <category term="WSL" scheme="https://owq.world/tags/WSL/"/>
+    <category term="WSL" scheme="https://www.owq.world/tags/WSL/"/>
     
   </entry>
   
   <entry>
     <title>zsh + oh-my-zsh 简易配置</title>
-    <link href="https://owq.world/4bfebac1/"/>
-    <id>https://owq.world/4bfebac1/</id>
+    <link href="https://www.owq.world/4bfebac1/"/>
+    <id>https://www.owq.world/4bfebac1/</id>
     <published>2021-07-08T17:50:36.000Z</published>
     <updated>2021-11-05T06:38:06.370Z</updated>
     
@@ -236,21 +236,21 @@
     
     
     
-    <category term="配置记录" scheme="https://owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="配置记录" scheme="https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Linux" scheme="https://owq.world/tags/Linux/"/>
+    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
     
-    <category term="Terminal" scheme="https://owq.world/tags/Terminal/"/>
+    <category term="Terminal" scheme="https://www.owq.world/tags/Terminal/"/>
     
-    <category term="zsh" scheme="https://owq.world/tags/zsh/"/>
+    <category term="zsh" scheme="https://www.owq.world/tags/zsh/"/>
     
   </entry>
   
   <entry>
     <title>MariaDB 安装图文教程</title>
-    <link href="https://owq.world/9ec13a7e/"/>
-    <id>https://owq.world/9ec13a7e/</id>
+    <link href="https://www.owq.world/9ec13a7e/"/>
+    <id>https://www.owq.world/9ec13a7e/</id>
     <published>2021-01-22T10:50:42.000Z</published>
     <updated>2021-11-05T06:39:12.750Z</updated>
     
@@ -259,19 +259,19 @@
     
     
     
-    <category term="入门教程" scheme="https://owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <category term="入门教程" scheme="https://www.owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="SQL" scheme="https://owq.world/tags/SQL/"/>
+    <category term="SQL" scheme="https://www.owq.world/tags/SQL/"/>
     
-    <category term="MariaDB" scheme="https://owq.world/tags/MariaDB/"/>
+    <category term="MariaDB" scheme="https://www.owq.world/tags/MariaDB/"/>
     
   </entry>
   
   <entry>
     <title>Python 开发环境搭建萌新教程</title>
-    <link href="https://owq.world/958bc56b/"/>
-    <id>https://owq.world/958bc56b/</id>
+    <link href="https://www.owq.world/958bc56b/"/>
+    <id>https://www.owq.world/958bc56b/</id>
     <published>2021-01-20T10:40:37.000Z</published>
     <updated>2021-11-05T06:38:58.060Z</updated>
     
@@ -280,17 +280,17 @@
     
     
     
-    <category term="入门教程" scheme="https://owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <category term="入门教程" scheme="https://www.owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Python" scheme="https://owq.world/tags/Python/"/>
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Java 开发环境搭建萌新教程</title>
-    <link href="https://owq.world/46118abd/"/>
-    <id>https://owq.world/46118abd/</id>
+    <link href="https://www.owq.world/46118abd/"/>
+    <id>https://www.owq.world/46118abd/</id>
     <published>2021-01-19T18:35:31.000Z</published>
     <updated>2021-01-19T00:00:00.000Z</updated>
     
@@ -299,99 +299,17 @@
     
     
     
-    <category term="入门教程" scheme="https://owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <category term="入门教程" scheme="https://www.owq.world/categories/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Java" scheme="https://owq.world/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Selenium 操作文档</title>
-    <link href="https://owq.world/selenium/"/>
-    <id>https://owq.world/selenium/</id>
-    <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-09-24T09:11:06.800Z</updated>
-    
-    
-    <summary type="html">📖 Python 下的 Selenium 操作汇总</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="Python" scheme="https://owq.world/tags/Python/"/>
-    
-    <category term="Selenium" scheme="https://owq.world/tags/Selenium/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 命令文档</title>
-    <link href="https://owq.world/win/"/>
-    <id>https://owq.world/win/</id>
-    <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-11-04T05:21:20.710Z</updated>
-    
-    
-    <summary type="html">📖 Windows 命令文档</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="Windows" scheme="https://owq.world/tags/Windows/"/>
-    
-    <category term="cmd" scheme="https://owq.world/tags/cmd/"/>
-    
-    <category term="PowerShell" scheme="https://owq.world/tags/PowerShell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式手册</title>
-    <link href="https://owq.world/regex/"/>
-    <id>https://owq.world/regex/</id>
-    <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-11-05T07:32:16.050Z</updated>
-    
-    
-    <summary type="html">📖 正则表达式手册</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="regex" scheme="https://owq.world/tags/regex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nginx configure 参数</title>
-    <link href="https://owq.world/9967ace7/"/>
-    <id>https://owq.world/9967ace7/</id>
-    <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-11-12T10:33:41.000Z</updated>
-    
-    
-    <summary type="html">📖 Nginx configure 参数</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="Nginx" scheme="https://owq.world/tags/Nginx/"/>
+    <category term="Java" scheme="https://www.owq.world/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Linux crontab 命令</title>
-    <link href="https://owq.world/crontab/"/>
-    <id>https://owq.world/crontab/</id>
+    <link href="https://www.owq.world/crontab/"/>
+    <id>https://www.owq.world/crontab/</id>
     <published>2020-06-01T08:00:00.000Z</published>
     <updated>2021-11-12T10:16:29.640Z</updated>
     
@@ -400,31 +318,113 @@
     
     
     
-    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
     
     
-    <category term="Linux" scheme="https://owq.world/tags/Linux/"/>
+    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
     
-    <category term="crontab" scheme="https://owq.world/tags/crontab/"/>
+    <category term="crontab" scheme="https://www.owq.world/tags/crontab/"/>
     
   </entry>
   
   <entry>
-    <title>git 命令</title>
-    <link href="https://owq.world/git/"/>
-    <id>https://owq.world/git/</id>
+    <title>Nginx configure 参数</title>
+    <link href="https://www.owq.world/9967ace7/"/>
+    <id>https://www.owq.world/9967ace7/</id>
+    <published>2020-06-01T08:00:00.000Z</published>
+    <updated>2021-11-12T10:33:41.000Z</updated>
+    
+    
+    <summary type="html">📖 Nginx configure 参数</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Selenium 操作文档</title>
+    <link href="https://www.owq.world/selenium/"/>
+    <id>https://www.owq.world/selenium/</id>
+    <published>2020-06-01T08:00:00.000Z</published>
+    <updated>2021-09-24T09:11:06.800Z</updated>
+    
+    
+    <summary type="html">📖 Python 下的 Selenium 操作汇总</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
+    
+    <category term="Selenium" scheme="https://www.owq.world/tags/Selenium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 命令文档</title>
+    <link href="https://www.owq.world/win/"/>
+    <id>https://www.owq.world/win/</id>
+    <published>2020-06-01T08:00:00.000Z</published>
+    <updated>2021-11-04T05:21:20.710Z</updated>
+    
+    
+    <summary type="html">📖 Windows 命令文档</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="Windows" scheme="https://www.owq.world/tags/Windows/"/>
+    
+    <category term="cmd" scheme="https://www.owq.world/tags/cmd/"/>
+    
+    <category term="PowerShell" scheme="https://www.owq.world/tags/PowerShell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式手册</title>
+    <link href="https://www.owq.world/regex/"/>
+    <id>https://www.owq.world/regex/</id>
+    <published>2020-06-01T08:00:00.000Z</published>
+    <updated>2021-11-05T07:32:16.050Z</updated>
+    
+    
+    <summary type="html">📖 正则表达式手册</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="regex" scheme="https://www.owq.world/tags/regex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker 命令</title>
+    <link href="https://www.owq.world/docker/"/>
+    <id>https://www.owq.world/docker/</id>
     <published>2020-06-01T00:00:00.000Z</published>
-    <updated>2021-09-15T10:36:44.870Z</updated>
+    <updated>2021-11-06T04:28:31.870Z</updated>
     
     
-    <summary type="html">📖 git 命令文档</summary>
+    <summary type="html">📖 Docker 命令文档</summary>
     
     
     
-    <category term="命令文档" scheme="https://owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
     
     
-    <category term="git" scheme="https://owq.world/tags/git/"/>
+    <category term="docker" scheme="https://www.owq.world/tags/docker/"/>
     
   </entry>
   
