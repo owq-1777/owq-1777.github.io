@@ -25,20 +25,51 @@
     var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="📖 Nginx configure 参数">
+  <meta name="description" content="用域名+CDN+OSS搭建个人安全图床，超详细的图文踩坑记录(*￣０￣)ノ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx configure 参数">
-<meta property="og:url" content="https://www.owq.world/9967ace7/index.html">
+<meta property="og:title" content="阿里云OSS 图床搭建">
+<meta property="og:url" content="https://www.owq.world/bee760ec/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="📖 Nginx configure 参数">
+<meta property="og:description" content="用域名+CDN+OSS搭建个人安全图床，超详细的图文踩坑记录(*￣０￣)ノ">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-01T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-12T10:33:41.000Z">
+<meta property="og:image" content="http://img.owq.world/2021/11/2044-022e40.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/1541-68155b.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/1543-217218.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2055-4aa5bc.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2125-8bdcd6.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2058-d7c8f7.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2123-4c2bfd.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2151-6ad1d9.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2204-213d3a.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2210-888938.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2214-250364.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2227-615f8f.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2230-02d11e.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2231-eac809.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2232-255f3f.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2237-4ccd07.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2240-55d797.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/1229-76fcbb.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/1230-af5e88.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2246-aba139.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/1243-0192a4.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/1246-6948f3.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2128-5d7085.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2135-cdb631.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2136-25099d.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2139-e4162c.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2142-4c4b7f.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/2143-3fcdd0.png">
+<meta property="og:image" content="http://img.owq.world/2021/11/1214-2b0efd.png">
+<meta property="article:published_time" content="2021-11-25T10:28:09.000Z">
+<meta property="article:modified_time" content="2021-11-25T02:42:51.650Z">
 <meta property="article:author" content="OWQ">
-<meta property="article:tag" content="Nginx">
+<meta property="article:tag" content="oss">
+<meta property="article:tag" content="cdn">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.owq.world/2021/11/2044-022e40.png">
 
-<link rel="canonical" href="https://www.owq.world/9967ace7/">
+<link rel="canonical" href="https://www.owq.world/bee760ec/">
 
 
 <script id="page-configurations">
@@ -51,7 +82,7 @@
   };
 </script>
 
-  <title>Nginx configure 参数 | Sunny was born</title>
+  <title>阿里云OSS 图床搭建 | Sunny was born</title>
   
 
 
@@ -199,8 +230,8 @@
         <header class="post-heading">
           <div class="tags">
           </div>
-          <h1>Nginx configure 参数</h1>
-          <h2 class="subheading">📖 Nginx configure 参数</h2>
+          <h1>阿里云OSS 图床搭建</h1>
+          <h2 class="subheading">用域名+CDN+OSS搭建个人安全图床，超详细的图文踩坑记录(*￣０￣)ノ</h2>
 
           <span class="post-meta-item">
             <span class="post-meta-item-icon">
@@ -209,7 +240,7 @@
             <span class="post-meta-item-text">Created</span>
             
 
-            <time title="创建时间：2020-06-01 08:00:00" itemprop="dateCreated datePublished" datetime="2020-06-01T08:00:00Z">2020-06-01</time>
+            <time title="创建时间：2021-11-25 10:28:09 / 修改时间：02:43:10" itemprop="dateCreated datePublished" datetime="2021-11-25T10:28:09Z">2021-11-25</time>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -229,7 +260,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>2k</span>
+            <span>1.4k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -237,7 +268,7 @@
               <i class="far fa-clock"></i>
             </span>
             <span class="post-meta-item-text">Reading time: &asymp;</span>
-            <span>2 min</span>
+            <span>1 min</span>
           </span>
 
 
@@ -287,7 +318,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.owq.world/9967ace7/">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/bee760ec/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -305,121 +336,116 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
-<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0L3RvcGljcy90dXRvcmlhbHMvaW5zdGFsbG9wdGlvbnMv">🚪</span></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>事情起因是smms的链接在网站备案后不知为何加载不了，而且还存在图片数据丢失情况，考虑到加载速度和稳定性，便决定使用阿里云OSS，用它来搭建个人图床。</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 命令行查看</span></span><br><span class="line">./configure --help</span><br></pre></td></tr></table></figure>
+<h3 id="说说优点"><a href="#说说优点" class="headerlink" title="说说优点"></a>说说优点</h3><ul>
+<li>图床配置简单</li>
+<li>数据不会丢失</li>
+<li>国内访问速度快</li>
+<li>阿里云服务支持</li>
+</ul>
+<h3 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h3><ul>
+<li>通过IPC备案好的域名</li>
+<li>使用过PicGo上传过图片</li>
+</ul>
+<h3 id="请求流程"><a href="#请求流程" class="headerlink" title="请求流程"></a>请求流程</h3><blockquote>
+<p>完成配置好, 访问图片时将会是这样的一个流程</p>
+</blockquote>
+<ul>
+<li>子域名(外网跳转) -&gt; CDN(内网访问) -&gt; OSS(资源文件)</li>
+</ul>
+<h2 id="创建OSS"><a href="#创建OSS" class="headerlink" title="创建OSS"></a>创建OSS</h2><p>打开阿里云 <span class="exturl" data-url="aHR0cHM6Ly9vc3MuY29uc29sZS5hbGl5dW4uY29tL292ZXJ2aWV3">对象存储OSS</span><br>链接失效的话, 手动点击右上角菜单找到<code>对象存储OSS</code>打开</p>
+<p><em><img data-src="http://img.owq.world/2021/11/2044-022e40.png" style="zoom: 50%;" /></em></p>
+<p>找到<code>Bucket列表</code>点击<code>创建Bucket</code></p>
+<img data-src="http://img.owq.world/2021/11/1541-68155b.png" style="zoom:50%;" />
 
-<h2 id="文件和权限"><a href="#文件和权限" class="headerlink" title="文件和权限"></a>文件和权限</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>–prefix=*path*</strong></td>
-<td>定义保存服务器文件的目录。这个目录也将用于所有由configure设置的相对路径(库源路径除外)和nginx.conf配置文件中。默认设置为<code>/usr/local/nginx</code>目录。</td>
-</tr>
-<tr>
-<td><strong>–sbin-path=*path*</strong></td>
-<td>设置NGINX可执行文件的名称。此名称仅在安装过程中使用。默认文件名为<code>prefix/sbin/nginx</code>。</td>
-</tr>
-<tr>
-<td><strong>–conf-path=*path*</strong></td>
-<td>设置<code>nginx.conf</code>配置文件的名称。如果需要，NGINX总是可以通过命令行参数<code>-c file</code>指定一个不同的配置文件来启动。默认文件名为<code>prefix/conf/nginx.conf</code>。</td>
-</tr>
-<tr>
-<td><strong>–pid-path=*path*</strong></td>
-<td>设置nginx的名称。pid文件，用于存储主进程的进程ID。安装完成后，可以在<code>nginx.conf</code>配置文件中使用pid指令更改文件名。默认文件名为<code>prefix/logs/nginx.pid</code>。</td>
-</tr>
-<tr>
-<td><strong>–error-log-path=*path*</strong></td>
-<td>设置主要错误、警告和诊断文件的名称。安装完成后，可以使用错误日志指令在<code>nginx.conf</code>配置文件中更改文件名。默认文件名为<code>prefix/logs/error.log</code>。特殊的“stderr”值告诉NGINX将预配置消息记录到标准错误。</td>
-</tr>
-<tr>
-<td><strong>–http-log-path=*path*</strong></td>
-<td>设置HTTP服务器的主请求日志文件的名称。安装完成后，可以使用<code>access log</code>指令在<code>nginx.conf</code>配置文件中更改文件名。默认文件名为<code>prefix/logs/access.log</code>。</td>
-</tr>
-<tr>
-<td><strong>–user=*name*</strong></td>
-<td>设置工作进程将使用其凭证的非特权用户的名称。在安装之后，这个名字总是可以在<code>nginx.conf</code>配置文件中使用user指令更改。默认用户名为nobody。</td>
-</tr>
-<tr>
-<td><strong>–group=*name*</strong></td>
-<td>设置工作进程将使用其凭证的组的名称。安装后，在<code>nginx.conf</code>配置文件中可以使用user指令更改名称。缺省情况下，组名为非特权用户的名称。</td>
-</tr>
-</tbody></table>
-<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>–with-select_module, –without-select_module</strong></td>
-<td>启用或禁用构建允许服务器使用<code>select()</code>方法的模块。如果平台不支持更合适的方法，如<code>kqueue</code>、<code>epoll</code>、<code>rtsig</code>或<code>/dev/poll</code>，则会自动构建此模块。</td>
-</tr>
-<tr>
-<td><strong>–with-poll_module, –without-poll_module</strong></td>
-<td>启用或禁用构建允许服务器使用<code>poll()</code>方法的模块。如果平台不支持更合适的方法，如<code>kqueue</code>、<code>epoll</code>、<code>rtsig</code>或<code>/dev/poll</code>，则会自动构建此模块。</td>
-</tr>
-</tbody></table>
-<h2 id="其它可选"><a href="#其它可选" class="headerlink" title="其它可选"></a>其它可选</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>–without-http_gzip_module</strong></td>
-<td>禁用构建压缩HTTP服务器响应的模块。构建和运行此模块需要zlib库。</td>
-</tr>
-<tr>
-<td><strong>–without-http_rewrite_module</strong></td>
-<td>禁用构建允许HTTP服务器重定向请求和更改请求URI的模块。构建和运行此模块需要PCRE库。这个模块是实验性的，所以它的指令将来可能会改变。</td>
-</tr>
-<tr>
-<td><strong>–without-http_proxy_module</strong></td>
-<td>禁用构建HTTP服务器代理模块。</td>
-</tr>
-<tr>
-<td><strong>–with-http_ssl_module</strong></td>
-<td>支持构建将HTTPS协议支持添加到HTTP服务器的模块。默认情况下，此模块不会生成。构建和运行此模块需要OpenSSL库。</td>
-</tr>
-<tr>
-<td><strong>–with-pcre=*path*</strong></td>
-<td>设置PCRE库源的路径。库分发版(版本4.4 - 8.21)需要从PCRE网站下载并提取。剩下的由NGINX的。/configure和make完成。location指令和ngx_http_rewrite_module的正则表达式支持都需要这个库。在FreeBSD系统上使用PCRE系统，请参阅下面的注释。</td>
-</tr>
-<tr>
-<td><strong>–with-pcre-jit</strong></td>
-<td>构建带有“即时编译”支持的PCRE库。</td>
-</tr>
-<tr>
-<td><strong>–with-zlib=*path*</strong></td>
-<td>设置zlib库的源代码的路径。库发行版(版本1.1.3 - 1.2.5)需要从zlib站点下载并解压。剩下的由NGINX的。/configure和make完成。这个库是ngx_http_gzip_module所必需的。</td>
-</tr>
-</tbody></table>
-<h2 id="编译控制"><a href="#编译控制" class="headerlink" title="编译控制"></a>编译控制</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>–with-cc-opt=*parameters*</strong></td>
-<td>设置将添加到CFLAGS变量的附加参数。</td>
-</tr>
-<tr>
-<td><strong>–with-ld-opt=*parameters*</strong></td>
-<td>设置将在链接期间使用的附加参数。</td>
-</tr>
-</tbody></table>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">./configure</span><br><span class="line">    --sbin-path=/<span class="keyword">usr</span>/local/nginx/nginx</span><br><span class="line">    --conf-path=/<span class="keyword">usr</span>/local/nginx/nginx.conf</span><br><span class="line">    --pid-path=/<span class="keyword">usr</span>/local/nginx/nginx.pid</span><br><span class="line">    --with-http_ssl_module</span><br><span class="line">    --with-pcre=../pcre-<span class="number">4.4</span></span><br><span class="line">    --with-zlib=../zlib-<span class="number">1.1</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>这里注意几个点就行了，名称和地域自行选择，<strong>存储类型</strong>选择<strong>标准存储</strong>，<strong>读写权限</strong>选择<strong>私有</strong>（<em>之后通过CDN加速访问，不走公网流量</em>），其它服务一般用不到，所以选择不开通，然后点击确认。</p>
+<img data-src="http://img.owq.world/2021/11/1543-217218.png" style="zoom:67%;" />
 
+<p>然后看看你的 Bucket列表 是不是多了一个Bucket</p>
+<p><img data-src="http://img.owq.world/2021/11/2055-4aa5bc.png"></p>
+<h2 id="资源包购买"><a href="#资源包购买" class="headerlink" title="资源包购买"></a>资源包购买</h2><blockquote>
+<p>如果你储存的数据只有几G, 甚至不到1G的话，是没有购买的必要的, 因为使用按量计算价格反而会比购买资源包便宜。</p>
+<p>具体可以参考阿里云产品价格 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWxpeXVuLmNvbS9wcmljZS9wcm9kdWN0">🚪</span></p>
+</blockquote>
+<p><img data-src="http://img.owq.world/2021/11/2125-8bdcd6.png"></p>
+<p>按图示进入购买资源包页面</p>
+<img data-src="http://img.owq.world/2021/11/2058-d7c8f7.png" style="zoom:50%;" />
+
+<p>然后选择对应储存下单购买即可</p>
+<p><img data-src="http://img.owq.world/2021/11/2123-4c2bfd.png"></p>
+<h2 id="配置域名绑定"><a href="#配置域名绑定" class="headerlink" title="配置域名绑定"></a>配置域名绑定</h2><blockquote>
+<p>只有绑定好域名后才能配置CDN加速.</p>
+</blockquote>
+<p>打开刚刚创建的<code>Bucket</code></p>
+<img data-src="http://img.owq.world/2021/11/2151-6ad1d9.png" style="zoom:50%;" />
+
+<p>进入传输管理, 点击绑定域名</p>
+<img data-src="http://img.owq.world/2021/11/2204-213d3a.png" style="zoom:50%;" />
+
+
+
+<p>输入要绑定的子域名, 勾上自动添加解析然后提交</p>
+<img data-src="http://img.owq.world/2021/11/2210-888938.png" style="zoom: 50%;" />
+
+
+
+<p>这时候访问域名会跳转到oss处, 但是因为<code>Bucket</code>设置的是私有, 所以外网是没法访问里面的文件, 但是通过CDN却可以, 所以接下来配置CDN<br><img data-src="http://img.owq.world/2021/11/2214-250364.png" style="zoom: 50%;" /></p>
+<h2 id="配置CDN加速"><a href="#配置CDN加速" class="headerlink" title="配置CDN加速"></a>配置CDN加速</h2><blockquote>
+<p>CDN可以让你图片加载更快, 我们还可以通过阿里云的CDN控制台配置第一道防护墙, 防止服务器被攻击, 跑太多流量而造成金钱损失.</p>
+</blockquote>
+<p>进入CDN配置</p>
+<p><img data-src="http://img.owq.world/2021/11/2227-615f8f.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2230-02d11e.png"></p>
+<p>点击新增源站信息,选择刚才创建的oss</p>
+<img data-src="http://img.owq.world/2021/11/2231-eac809.png" style="zoom:50%;" />
+
+<p>  进入下一步</p>
+<p><img data-src="http://img.owq.world/2021/11/2232-255f3f.png"></p>
+<p>接下来就是一大堆可选配置了，这里稍微配置下安全性，其它的请自行阅读说明进行配置<del>绝对不是因为说明太详细我懒的写</del></p>
+<p><img data-src="http://img.owq.world/2021/11/2237-4ccd07.png"></p>
+<p>修改配置设置带宽封顶，可以避免被恶意攻击或刷流量而产生高额的CDN账单。</p>
+<img data-src="http://img.owq.world/2021/11/2240-55d797.png" style="zoom: 50%;" />
+
+<p>配置好后按进入下一步按系统提示配置CNAME，之后这些都可以修改，所以可以先走一遍流程然后回头再详细配置下。</p>
+<h2 id="CDN配置"><a href="#CDN配置" class="headerlink" title="CDN配置"></a>CDN配置</h2><p>回到Bucket管理配置下缓存自动刷新，将其开启.</p>
+<p><img data-src="http://img.owq.world/2021/11/1229-76fcbb.png"></p>
+<p>全部勾上就行了<br><img data-src="http://img.owq.world/2021/11/1230-af5e88.png" style="zoom: 50%;" /></p>
+<p>弄好后打开<code>CDN控制台</code><br><img data-src="http://img.owq.world/2021/11/2246-aba139.png" alt="image-20211124224602282" style="zoom:50%;" /></p>
+<p>打开配置</p>
+<p><img data-src="http://img.owq.world/2021/11/1243-0192a4.png"></p>
+<p>配置回源设置，让通过CDN的链接可以访问到OSS里面内容，顺便指定下回源协议为http</p>
+<p><img data-src="http://img.owq.world/2021/11/1246-6948f3.png"></p>
+<p>其它配置可以等流程走完再去弄</p>
+<h2 id="创建管理用户"><a href="#创建管理用户" class="headerlink" title="创建管理用户"></a>创建管理用户</h2><blockquote>
+<p>专门用来访问oss存储的账户</p>
+</blockquote>
+<p>点击右上角的个人头像，打开访问控制</p>
+<img data-src="http://img.owq.world/2021/11/2128-5d7085.png" style="zoom: 67%;" />
+
+<p>创建用户</p>
+<img data-src="http://img.owq.world/2021/11/2135-cdb631.png" style="zoom:50%;" />
+
+<p>输入登录和显示名称,勾上 <code>Open API 调用访问</code>, 然后点击确认</p>
+<img data-src="http://img.owq.world/2021/11/2136-25099d.png" style="zoom:50%;" />
+
+<p>创建成功后记得保存好<code>AccessKey</code>信息</p>
+<p><img data-src="http://img.owq.world/2021/11/2139-e4162c.png"></p>
+<p>接下来为刚刚创建的用户添加权限</p>
+<p><img data-src="http://img.owq.world/2021/11/2142-4c4b7f.png"></p>
+<p>添加 <code>AliyunOSSFullAccess</code> 用来管理OSS, 确认完毕后管理用户就配置好了</p>
+<img data-src="http://img.owq.world/2021/11/2143-3fcdd0.png" style="zoom:50%;" />
+
+<h2 id="PicGO配置"><a href="#PicGO配置" class="headerlink" title="PicGO配置"></a>PicGO配置</h2><p>将刚刚生成的<code>AccessKey</code>信息填进去，然后填写你的<code>Bucket</code>名和存储区域还有域名，其它可以自定义。</p>
+<img data-src="http://img.owq.world/2021/11/1214-2b0efd.png" style="zoom:50%;" />
+
+<p>随便上传一张图像，然后访问图像地址正常显示就成功了，如有意外请参照阿里云帮助文档<del>笑</del>。</p>
+<h2 id="OSS管理器"><a href="#OSS管理器" class="headerlink" title="OSS管理器"></a>OSS管理器</h2><blockquote>
+<p>用oss搭建图床只是一个小小的功能，就比如你还可以把它当作一个人云盘存放资料用。</p>
+</blockquote>
+<p>这里推荐阿里云的可视化管理器，可以非常方便的操作里面的文件，已经进行一些配置。</p>
+<p>github -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FsaXl1bi9vc3MtYnJvd3Nlcg==">https://github.com/aliyun/oss-browser</span><br>gitee -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vbWlycm9ycy9vc3MtYnJvd3Nlcg==">https://gitee.com/mirrors/oss-browser</span></p>
 
     </div>
 
@@ -443,7 +469,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.owq.world/9967ace7/" title="Nginx configure 参数">https://www.owq.world/9967ace7/</a>
+    <a href="https://www.owq.world/bee760ec/" title="阿里云OSS 图床搭建">https://www.owq.world/bee760ec/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
@@ -455,7 +481,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
+              <a href="/tags/oss/" rel="tag"><i class="fa fa-tag"></i> oss</a>
+              <a href="/tags/cdn/" rel="tag"><i class="fa fa-tag"></i> cdn</a>
           </div>
 
         
@@ -463,13 +490,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/crontab/" rel="prev" title="Linux crontab 命令">
-      <i class="fa fa-chevron-left"></i> Linux crontab 命令
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/selenium/" rel="next" title="Selenium 操作文档">
-      Selenium 操作文档 <i class="fa fa-chevron-right"></i>
+    <a href="/72a0046c/" rel="next" title="scrcpy 优雅的安卓投屏工具">
+      scrcpy 优雅的安卓投屏工具 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -528,7 +552,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E6%9D%83%E9%99%90"><span class="nav-text">文件和权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="nav-text">事件循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E5%8F%AF%E9%80%89"><span class="nav-text">其它可选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%8E%A7%E5%88%B6"><span class="nav-text">编译控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B4%E8%AF%B4%E4%BC%98%E7%82%B9"><span class="nav-text">说说优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="nav-text">前置条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B"><span class="nav-text">请求流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAOSS"><span class="nav-text">创建OSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E5%8C%85%E8%B4%AD%E4%B9%B0"><span class="nav-text">资源包购买</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A"><span class="nav-text">配置域名绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AECDN%E5%8A%A0%E9%80%9F"><span class="nav-text">配置CDN加速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN%E9%85%8D%E7%BD%AE"><span class="nav-text">CDN配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7"><span class="nav-text">创建管理用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PicGO%E9%85%8D%E7%BD%AE"><span class="nav-text">PicGO配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSS%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">OSS管理器</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

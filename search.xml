@@ -1,6 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>阿里云OSS 图床搭建</title>
+    <url>/bee760ec/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>事情起因是smms的链接在网站备案后不知为何加载不了，而且还存在图片数据丢失情况，考虑到加载速度和稳定性，便决定使用阿里云OSS，用它来搭建个人图床。</p>
+</blockquote>
+<h3 id="说说优点"><a href="#说说优点" class="headerlink" title="说说优点"></a>说说优点</h3><ul>
+<li>图床配置简单</li>
+<li>数据不会丢失</li>
+<li>国内访问速度快</li>
+<li>阿里云服务支持</li>
+</ul>
+<h3 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h3><ul>
+<li>通过IPC备案好的域名</li>
+<li>使用过PicGo上传过图片</li>
+</ul>
+<h3 id="请求流程"><a href="#请求流程" class="headerlink" title="请求流程"></a>请求流程</h3><blockquote>
+<p>完成配置好, 访问图片时将会是这样的一个流程</p>
+</blockquote>
+<ul>
+<li>子域名(外网跳转) -&gt; CDN(内网访问) -&gt; OSS(资源文件)</li>
+</ul>
+<h2 id="创建OSS"><a href="#创建OSS" class="headerlink" title="创建OSS"></a>创建OSS</h2><p>打开阿里云 <span class="exturl" data-url="aHR0cHM6Ly9vc3MuY29uc29sZS5hbGl5dW4uY29tL292ZXJ2aWV3">对象存储OSS</span><br>链接失效的话, 手动点击右上角菜单找到<code>对象存储OSS</code>打开</p>
+<p><em><img data-src="http://img.owq.world/2021/11/2044-022e40.png" style="zoom: 50%;" /></em></p>
+<p>找到<code>Bucket列表</code>点击<code>创建Bucket</code></p>
+<img data-src="http://img.owq.world/2021/11/1541-68155b.png" style="zoom:50%;" />
+
+<p>这里注意几个点就行了，名称和地域自行选择，<strong>存储类型</strong>选择<strong>标准存储</strong>，<strong>读写权限</strong>选择<strong>私有</strong>（<em>之后通过CDN加速访问，不走公网流量</em>），其它服务一般用不到，所以选择不开通，然后点击确认。</p>
+<img data-src="http://img.owq.world/2021/11/1543-217218.png" style="zoom:67%;" />
+
+<p>然后看看你的 Bucket列表 是不是多了一个Bucket</p>
+<p><img data-src="http://img.owq.world/2021/11/2055-4aa5bc.png"></p>
+<h2 id="资源包购买"><a href="#资源包购买" class="headerlink" title="资源包购买"></a>资源包购买</h2><blockquote>
+<p>如果你储存的数据只有几G, 甚至不到1G的话，是没有购买的必要的, 因为使用按量计算价格反而会比购买资源包便宜。</p>
+<p>具体可以参考阿里云产品价格 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWxpeXVuLmNvbS9wcmljZS9wcm9kdWN0">🚪</span></p>
+</blockquote>
+<p><img data-src="http://img.owq.world/2021/11/2125-8bdcd6.png"></p>
+<p>按图示进入购买资源包页面</p>
+<img data-src="http://img.owq.world/2021/11/2058-d7c8f7.png" style="zoom:50%;" />
+
+<p>然后选择对应储存下单购买即可</p>
+<p><img data-src="http://img.owq.world/2021/11/2123-4c2bfd.png"></p>
+<h2 id="配置域名绑定"><a href="#配置域名绑定" class="headerlink" title="配置域名绑定"></a>配置域名绑定</h2><blockquote>
+<p>只有绑定好域名后才能配置CDN加速.</p>
+</blockquote>
+<p>打开刚刚创建的<code>Bucket</code></p>
+<img data-src="http://img.owq.world/2021/11/2151-6ad1d9.png" style="zoom:50%;" />
+
+<p>进入传输管理, 点击绑定域名</p>
+<img data-src="http://img.owq.world/2021/11/2204-213d3a.png" style="zoom:50%;" />
+
+
+
+<p>输入要绑定的子域名, 勾上自动添加解析然后提交</p>
+<img data-src="http://img.owq.world/2021/11/2210-888938.png" style="zoom: 50%;" />
+
+
+
+<p>这时候访问域名会跳转到oss处, 但是因为<code>Bucket</code>设置的是私有, 所以外网是没法访问里面的文件, 但是通过CDN却可以, 所以接下来配置CDN<br><img data-src="http://img.owq.world/2021/11/2214-250364.png" style="zoom: 50%;" /></p>
+<h2 id="配置CDN加速"><a href="#配置CDN加速" class="headerlink" title="配置CDN加速"></a>配置CDN加速</h2><blockquote>
+<p>CDN可以让你图片加载更快, 我们还可以通过阿里云的CDN控制台配置第一道防护墙, 防止服务器被攻击, 跑太多流量而造成金钱损失.</p>
+</blockquote>
+<p>进入CDN配置</p>
+<p><img data-src="http://img.owq.world/2021/11/2227-615f8f.png"></p>
+<p><img data-src="http://img.owq.world/2021/11/2230-02d11e.png"></p>
+<p>点击新增源站信息,选择刚才创建的oss</p>
+<img data-src="http://img.owq.world/2021/11/2231-eac809.png" style="zoom:50%;" />
+
+<p>  进入下一步</p>
+<p><img data-src="http://img.owq.world/2021/11/2232-255f3f.png"></p>
+<p>接下来就是一大堆可选配置了，这里稍微配置下安全性，其它的请自行阅读说明进行配置<del>绝对不是因为说明太详细我懒的写</del></p>
+<p><img data-src="http://img.owq.world/2021/11/2237-4ccd07.png"></p>
+<p>修改配置设置带宽封顶，可以避免被恶意攻击或刷流量而产生高额的CDN账单。</p>
+<img data-src="http://img.owq.world/2021/11/2240-55d797.png" style="zoom: 50%;" />
+
+<p>配置好后按进入下一步按系统提示配置CNAME，之后这些都可以修改，所以可以先走一遍流程然后回头再详细配置下。</p>
+<h2 id="CDN配置"><a href="#CDN配置" class="headerlink" title="CDN配置"></a>CDN配置</h2><p>回到Bucket管理配置下缓存自动刷新，将其开启.</p>
+<p><img data-src="http://img.owq.world/2021/11/1229-76fcbb.png"></p>
+<p>全部勾上就行了<br><img data-src="http://img.owq.world/2021/11/1230-af5e88.png" style="zoom: 50%;" /></p>
+<p>弄好后打开<code>CDN控制台</code><br><img data-src="http://img.owq.world/2021/11/2246-aba139.png" alt="image-20211124224602282" style="zoom:50%;" /></p>
+<p>打开配置</p>
+<p><img data-src="http://img.owq.world/2021/11/1243-0192a4.png"></p>
+<p>配置回源设置，让通过CDN的链接可以访问到OSS里面内容，顺便指定下回源协议为http</p>
+<p><img data-src="http://img.owq.world/2021/11/1246-6948f3.png"></p>
+<p>其它配置可以等流程走完再去弄</p>
+<h2 id="创建管理用户"><a href="#创建管理用户" class="headerlink" title="创建管理用户"></a>创建管理用户</h2><blockquote>
+<p>专门用来访问oss存储的账户</p>
+</blockquote>
+<p>点击右上角的个人头像，打开访问控制</p>
+<img data-src="http://img.owq.world/2021/11/2128-5d7085.png" style="zoom: 67%;" />
+
+<p>创建用户</p>
+<img data-src="http://img.owq.world/2021/11/2135-cdb631.png" style="zoom:50%;" />
+
+<p>输入登录和显示名称,勾上 <code>Open API 调用访问</code>, 然后点击确认</p>
+<img data-src="http://img.owq.world/2021/11/2136-25099d.png" style="zoom:50%;" />
+
+<p>创建成功后记得保存好<code>AccessKey</code>信息</p>
+<p><img data-src="http://img.owq.world/2021/11/2139-e4162c.png"></p>
+<p>接下来为刚刚创建的用户添加权限</p>
+<p><img data-src="http://img.owq.world/2021/11/2142-4c4b7f.png"></p>
+<p>添加 <code>AliyunOSSFullAccess</code> 用来管理OSS, 确认完毕后管理用户就配置好了</p>
+<img data-src="http://img.owq.world/2021/11/2143-3fcdd0.png" style="zoom:50%;" />
+
+<h2 id="PicGO配置"><a href="#PicGO配置" class="headerlink" title="PicGO配置"></a>PicGO配置</h2><p>将刚刚生成的<code>AccessKey</code>信息填进去，然后填写你的<code>Bucket</code>名和存储区域还有域名，其它可以自定义。</p>
+<img data-src="http://img.owq.world/2021/11/1214-2b0efd.png" style="zoom:50%;" />
+
+<p>随便上传一张图像，然后访问图像地址正常显示就成功了，如有意外请参照阿里云帮助文档<del>笑</del>。</p>
+<h2 id="OSS管理器"><a href="#OSS管理器" class="headerlink" title="OSS管理器"></a>OSS管理器</h2><blockquote>
+<p>用oss搭建图床只是一个小小的功能，就比如你还可以把它当作一个人云盘存放资料用。</p>
+</blockquote>
+<p>这里推荐阿里云的可视化管理器，可以非常方便的操作里面的文件，已经进行一些配置。</p>
+<p>github -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FsaXl1bi9vc3MtYnJvd3Nlcg==">https://github.com/aliyun/oss-browser</span><br>gitee -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vbWlycm9ycy9vc3MtYnJvd3Nlcg==">https://gitee.com/mirrors/oss-browser</span></p>
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>oss</tag>
+        <tag>cdn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>scrcpy 优雅的安卓投屏工具</title>
     <url>/72a0046c/</url>
     <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
@@ -1910,11 +2032,11 @@
 
 
 
-<h2 id="进阶命令"><a href="#进阶命令" class="headerlink" title="进阶命令"></a>进阶命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 difference（差异）</span></span><br><span class="line">git diff		<span class="comment"># 工作区与暂存区</span></span><br><span class="line">git diff --cached 	<span class="comment"># 暂存区与版本库</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚到上一版本 HEAD~100 前100个版本 可指定&lt;版本号&gt;</span></span><br><span class="line">git reset --hard HEAD^</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看分支</span></span><br><span class="line">git branch</span><br><span class="line">git branch &lt;branch&gt; 	<span class="comment"># 创建分支</span></span><br><span class="line">git branch -d &lt;branch&gt;	<span class="comment"># 删除分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复（删除）工作区更改</span></span><br><span class="line">git checkout</span><br><span class="line">git checkout &lt;branch&gt; 	<span class="comment"># 切换分支</span></span><br><span class="line">git checkout -b &lt;branch&gt;<span class="comment"># 创建并切换分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取所有远程分支（不更新本地分支，另需merge）</span></span><br><span class="line">git fetch</span><br><span class="line"><span class="comment"># 获取所有原创分支并清除服务器上已删掉的分支</span></span><br><span class="line">git fetch --prune</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支但不丢弃分支信息</span></span><br><span class="line">git merge --no-ff -m <span class="string">&quot;merge with no-ff&quot;</span> &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建临时分支</span></span><br><span class="line">git stash</span><br><span class="line">git stash list	<span class="comment"># 查看临时分支</span></span><br><span class="line">git stash drop	<span class="comment"># 删除stash</span></span><br><span class="line">git stash apply	<span class="comment"># 恢复分支内容</span></span><br><span class="line">git stash pop	<span class="comment"># 恢复分支内容并删除stash</span></span><br><span class="line">git stash apply stash@&#123;0&#125;<span class="comment"># 恢复指定的stash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制一个特定的提交到当前分支</span></span><br><span class="line">git cherry-pick &lt;版本号&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout 1acd5de</span><br><span class="line"><span class="comment"># 保存修改后分支</span></span><br><span class="line">it switch -c &lt;新分支名&gt;</span><br><span class="line"><span class="comment"># 恢复切换前分支</span></span><br><span class="line">git switch -</span><br></pre></td></tr></table></figure>
+<h2 id="进阶命令"><a href="#进阶命令" class="headerlink" title="进阶命令"></a>进阶命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 difference（差异）</span></span><br><span class="line">git diff		<span class="comment"># 工作区与暂存区</span></span><br><span class="line">git diff --cached 	<span class="comment"># 暂存区与版本库</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚到上一版本 HEAD~100 前100个版本 可指定&lt;版本号&gt;</span></span><br><span class="line">git reset --hard HEAD^</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看分支</span></span><br><span class="line">git branch</span><br><span class="line">git branch &lt;branch&gt; 	<span class="comment"># 创建分支</span></span><br><span class="line">git branch -d &lt;branch&gt;	<span class="comment"># 删除分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复（删除）工作区更改</span></span><br><span class="line">git checkout</span><br><span class="line">git checkout &lt;branch&gt; 	<span class="comment"># 切换分支</span></span><br><span class="line">git checkout -b &lt;branch&gt;<span class="comment"># 创建并切换分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取所有远程分支（不更新本地分支，另需merge）</span></span><br><span class="line">git fetch</span><br><span class="line"><span class="comment"># 获取所有原创分支并清除服务器上已删掉的分支</span></span><br><span class="line">git fetch --prune</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支但不丢弃分支信息</span></span><br><span class="line">git merge --no-ff -m <span class="string">&quot;merge with no-ff&quot;</span> &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建临时分支</span></span><br><span class="line">git stash</span><br><span class="line">git stash list	<span class="comment"># 查看临时分支</span></span><br><span class="line">git stash drop	<span class="comment"># 删除stash</span></span><br><span class="line">git stash apply	<span class="comment"># 恢复分支内容</span></span><br><span class="line">git stash pop	<span class="comment"># 恢复分支内容并删除stash</span></span><br><span class="line">git stash apply stash@&#123;0&#125;<span class="comment"># 恢复指定的stash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制一个特定的提交到当前分支</span></span><br><span class="line">git cherry-pick &lt;版本号&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout 1acd5de</span><br><span class="line"><span class="comment"># 保存修改后分支</span></span><br><span class="line">it switch -c &lt;新分支名&gt;</span><br><span class="line"><span class="comment"># 恢复切换前分支</span></span><br><span class="line">git switch -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地仓库强制替换远程仓库</span></span><br><span class="line">git push --force --set-upstream origin &lt;branch&gt;</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="分支相关"><a href="#分支相关" class="headerlink" title="分支相关"></a>分支相关</h2><h3 id="替换分支"><a href="#替换分支" class="headerlink" title="替换分支"></a>替换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将master替换成mainf</span></span><br><span class="line">git checkout main</span><br><span class="line">git merge -s ours master	<span class="comment"># git --strategy=ours ours master</span></span><br><span class="line">git checkout master</span><br><span class="line">git merge main</span><br></pre></td></tr></table></figure>
+<h3 id="替换分支"><a href="#替换分支" class="headerlink" title="替换分支"></a>替换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将master替换成mainf</span></span><br><span class="line">git checkout main</span><br><span class="line">git merge -s ours master	<span class="comment"># git --strategy=ours ours master</span></span><br><span class="line">git checkout master</span><br><span class="line">git merge main</span><br></pre></td></tr></table></figure>
 
 
 

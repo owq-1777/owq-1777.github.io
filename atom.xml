@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2021-11-05T06:37:45.360Z</updated>
+  <updated>2021-11-25T02:42:51.650Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里云OSS 图床搭建</title>
+    <link href="https://www.owq.world/bee760ec/"/>
+    <id>https://www.owq.world/bee760ec/</id>
+    <published>2021-11-25T10:28:09.000Z</published>
+    <updated>2021-11-25T02:42:51.650Z</updated>
+    
+    
+    <summary type="html">用域名+CDN+OSS搭建个人安全图床，超详细的图文踩坑记录(*￣０￣)ノ</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="oss" scheme="https://www.owq.world/tags/oss/"/>
+    
+    <category term="cdn" scheme="https://www.owq.world/tags/cdn/"/>
+    
+  </entry>
   
   <entry>
     <title>scrcpy 优雅的安卓投屏工具</title>
@@ -406,25 +427,6 @@
     
     
     <category term="regex" scheme="https://www.owq.world/tags/regex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker 命令</title>
-    <link href="https://www.owq.world/docker/"/>
-    <id>https://www.owq.world/docker/</id>
-    <published>2020-06-01T00:00:00.000Z</published>
-    <updated>2021-11-06T04:28:31.870Z</updated>
-    
-    
-    <summary type="html">📖 Docker 命令文档</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="docker" scheme="https://www.owq.world/tags/docker/"/>
     
   </entry>
   
