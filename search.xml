@@ -346,9 +346,7 @@
 <p>FastAPI 是一个现代、快速（高性能）的 Web 框架.</p>
 </blockquote>
 <blockquote>
-<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9mYXN0YXBpLnRpYW5nb2xvLmNvbS96aC8=">🚪</span></p>
-<p>项目源码 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RpYW5nb2xvL2Zhc3RhcGk=">🚪</span></p>
-<p>Uvicorn -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cudXZpY29ybi5vcmcv">🚪</span></p>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9mYXN0YXBpLnRpYW5nb2xvLmNvbS96aC8=">🚪</span><br>项目源码 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RpYW5nb2xvL2Zhc3RhcGk=">🚪</span><br>Uvicorn -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cudXZpY29ybi5vcmcv">🚪</span></p>
 </blockquote>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install fastapi uvicorn[standard]</span><br></pre></td></tr></table></figure>
 
@@ -561,7 +559,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>入门教程</category>
+        <category>学习教程</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -996,7 +994,7 @@
 
 ]]></content>
       <categories>
-        <category>入门教程</category>
+        <category>学习教程</category>
       </categories>
       <tags>
         <tag>Linux</tag>
@@ -1196,7 +1194,7 @@
 <img data-src="http://img.owq.world/2021/11/2116-d26191.png" style="zoom:50%;" />
 ]]></content>
       <categories>
-        <category>入门教程</category>
+        <category>学习教程</category>
       </categories>
       <tags>
         <tag>SQL</tag>
@@ -1242,7 +1240,7 @@
 
 ]]></content>
       <categories>
-        <category>入门教程</category>
+        <category>学习教程</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -1325,7 +1323,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>入门教程</category>
+        <category>学习教程</category>
       </categories>
       <tags>
         <tag>Java</tag>
