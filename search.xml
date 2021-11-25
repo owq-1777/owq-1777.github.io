@@ -58,7 +58,7 @@
 
 
 
-<p>这时候访问域名会跳转到oss处, 但是因为<code>Bucket</code>设置的是私有, 所以外网是没法访问里面的文件, 但是通过CDN却可以, 所以接下来配置CDN<br><img data-src="http://img.owq.world/2021/11/2214-250364.png" style="zoom: 50%;" /></p>
+<p>这时候访问域名会跳转到oss处, 但是因为<code>Bucket</code>设置的是私有, 所以外网是没法访问里面的文件, 但是通过CDN却可以, 所以接下来配置CDN<br><img data-src="http://img.owq.world/2021/11/2214-250364.png" style="zoom: 67%;" /></p>
 <h2 id="配置CDN加速"><a href="#配置CDN加速" class="headerlink" title="配置CDN加速"></a>配置CDN加速</h2><blockquote>
 <p>CDN可以让你图片加载更快, 我们还可以通过阿里云的CDN控制台配置第一道防护墙, 防止服务器被攻击, 跑太多流量而造成金钱损失.</p>
 </blockquote>
@@ -66,7 +66,7 @@
 <p><img data-src="http://img.owq.world/2021/11/2227-615f8f.png"></p>
 <p><img data-src="http://img.owq.world/2021/11/2230-02d11e.png"></p>
 <p>点击新增源站信息,选择刚才创建的oss</p>
-<img data-src="http://img.owq.world/2021/11/2231-eac809.png" style="zoom:50%;" />
+<img data-src="http://img.owq.world/2021/11/2231-eac809.png" style="zoom: 80%;" />
 
 <p>  进入下一步</p>
 <p><img data-src="http://img.owq.world/2021/11/2232-255f3f.png"></p>
@@ -78,8 +78,8 @@
 <p>配置好后按进入下一步按系统提示配置CNAME，之后这些都可以修改，所以可以先走一遍流程然后回头再详细配置下。</p>
 <h2 id="CDN配置"><a href="#CDN配置" class="headerlink" title="CDN配置"></a>CDN配置</h2><p>回到Bucket管理配置下缓存自动刷新，将其开启.</p>
 <p><img data-src="http://img.owq.world/2021/11/1229-76fcbb.png"></p>
-<p>全部勾上就行了<br><img data-src="http://img.owq.world/2021/11/1230-af5e88.png" style="zoom: 50%;" /></p>
-<p>弄好后打开<code>CDN控制台</code><br><img data-src="http://img.owq.world/2021/11/2246-aba139.png" alt="image-20211124224602282" style="zoom:50%;" /></p>
+<p>全部勾上就行了<br><img data-src="http://img.owq.world/2021/11/1230-af5e88.png" style="zoom: 80%;" /></p>
+<p>弄好后打开<code>CDN控制台</code><br><img data-src="http://img.owq.world/2021/11/2246-aba139.png" alt="" style="zoom: 67%;" /></p>
 <p>打开配置</p>
 <p><img data-src="http://img.owq.world/2021/11/1243-0192a4.png"></p>
 <p>配置回源设置，让通过CDN的链接可以访问到OSS里面内容，顺便指定下回源协议为http</p>
