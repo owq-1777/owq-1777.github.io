@@ -1049,8 +1049,7 @@
     <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
 <p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
 </blockquote>
-<p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.</p>
-<p>ps:接来的命令都是在这个终端上执行.</p>
+<p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.（接下来的命令都是在这个终端上执行.）</p>
 <img data-src="http://img.owq.world/2021/11/2125-658665.png" style="zoom:50%;" />
 
 <ol>
