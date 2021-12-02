@@ -1086,10 +1086,24 @@
   <entry>
     <title>WSL2 安装配置</title>
     <url>/1fe3c459/</url>
-    <content><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><blockquote>
-<p>WSL1 升级 WSL2 官方文档传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbC13aW4xMA==">🚪</span></p>
+    <content><![CDATA[<blockquote>
+<p>官方文档: <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy93c2wvaW5zdGFsbA==">https://docs.microsoft.com/en-us/windows/wsl/install</span></p>
 </blockquote>
-<p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.（接下来的命令都是在这个终端上执行.）</p>
+<h2 id="一键安装"><a href="#一键安装" class="headerlink" title="一键安装"></a>一键安装</h2><blockquote>
+<p>系统内部版本号大于19041可用，<code>Win+R</code>运行<code>winver</code>查看</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-install</span>	<span class="comment"># 默认安装Ububtu</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义安装"><a href="#自定义安装" class="headerlink" title="自定义安装"></a>自定义安装</h3><p>查看可安装发行版</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl.exe <span class="literal">-l</span> <span class="literal">-o</span></span><br></pre></td></tr></table></figure>
+
+<p>安装指定发行版</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line">wsl -<span class="literal">-install</span> <span class="literal">-d</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Kail Linux</span></span><br><span class="line">wsl -<span class="literal">-install</span> <span class="literal">-d</span> kali<span class="literal">-linux</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="旧版安装方法"><a href="#旧版安装方法" class="headerlink" title="旧版安装方法"></a>旧版安装方法</h2><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.（接下来的命令都是在这个终端上执行.）</p>
 <img data-src="http://img.owq.world/2021/11/2125-658665.png" style="zoom:50%;" />
 
 <ol>
@@ -1108,7 +1122,7 @@
 </li>
 <li><h3 id="将-WSL-2-设置为默认版本"><a href="#将-WSL-2-设置为默认版本" class="headerlink" title="将 WSL 2 设置为默认版本"></a>将 WSL 2 设置为默认版本</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><p>安装子系统方式有三, 可根据个人喜好选择.</p>
+<h3 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h3><p>安装子系统方式有三, 可根据个人喜好选择.</p>
 <ul>
 <li><h3 id="微软商店搜索安装-推荐"><a href="#微软商店搜索安装-推荐" class="headerlink" title="微软商店搜索安装(推荐)"></a>微软商店搜索安装(推荐)</h3><ul>
 <li><code>Win + S</code> 搜索打开 <code>Microsoft Store</code> 搜索 Linux 找到对应版本安装即可.</li>
@@ -1125,6 +1139,7 @@
 <li><h3 id="命令行安装"><a href="#命令行安装" class="headerlink" title="命令行安装"></a>命令行安装</h3><p>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
 </ul>
+<hr>
 <h2 id="WSL-位置移动-可选"><a href="#WSL-位置移动-可选" class="headerlink" title="WSL 位置移动(可选)"></a>WSL 位置移动(可选)</h2><blockquote>
 <p>这里使用LxRunOffline工具进行移动 下载传送门 -&gt;  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0REb1NvbGl0YXJ5L0x4UnVuT2ZmbGluZS9yZWxlYXNlcw==">🚪</span></p>
 </blockquote>
