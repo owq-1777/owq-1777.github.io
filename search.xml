@@ -875,7 +875,7 @@
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db<span class="regexp">/redis &amp;&amp; mkdir -p /</span>data<span class="regexp">/config/</span>redis</span><br></pre></td></tr></table></figure>
 
-<h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/data/</span>db<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
+<h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/data/</span>config/redisredis.conf</span><br></pre></td></tr></table></figure>
 
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/data/</span>db<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
 
@@ -885,7 +885,7 @@
 </blockquote>
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 监听端口</span></span><br><span class="line"><span class="attribute">bind</span> <span class="number">127.0.0.1</span></span><br><span class="line"></span><br><span class="line">port <span class="number">6379</span></span><br><span class="line">requirepass ****</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启保护模式，默认开启，如果没有设置bind项和redis密码的话，服务将只允许本地访问。</span></span><br><span class="line">protected-mode <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库个数</span></span><br><span class="line">databases <span class="number">16</span></span><br><span class="line"></span><br><span class="line">dir ./	<span class="comment"># 输入本地redis数据库存放文件夹</span></span><br><span class="line"></span><br><span class="line">appendonly <span class="literal">yes</span> <span class="comment"># redis持久化</span></span><br><span class="line"></span><br><span class="line">logfile <span class="string">&quot;redis.log&quot;</span> <span class="comment"># 日志文件存放</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">-p 6379:6379 --name redis \</span><br><span class="line">-v /data/redis/redis.conf:/etc/redis/redis.conf \</span><br><span class="line">-v /data/redis/data:/data:rw \</span><br><span class="line">--privileged=<span class="literal">true</span> -d redis redis-server /etc/redis/redis.conf \</span><br><span class="line">--appendonly yes</span><br></pre></td></tr></table></figure>
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">-p 6379:6379 --name redis \</span><br><span class="line">-v /data/config/redis/redis.conf:/etc/redis/redis.conf \</span><br><span class="line">-v /data/db/redis:/data:rw \</span><br><span class="line">--privileged=<span class="literal">true</span> -d redis redis-server /etc/redis/redis.conf \</span><br><span class="line">--appendonly yes</span><br></pre></td></tr></table></figure>
 
 <h2 id="验证启动"><a href="#验证启动" class="headerlink" title="验证启动"></a>验证启动</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker ps</span></span><br></pre></td></tr></table></figure>
 
@@ -907,7 +907,7 @@
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /data/db/mongo</span><br></pre></td></tr></table></figure>
 
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -p 27017:27017 -v /data/db:/data/db/mongo --name mongo -d mongo --auth</span><br></pre></td></tr></table></figure>
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -p 27017:27017 -v /data/db/mongo:/data/db --name mongo -d mongo --auth</span><br></pre></td></tr></table></figure>
 
 <h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mongo mongo admin</span><br></pre></td></tr></table></figure>
 
