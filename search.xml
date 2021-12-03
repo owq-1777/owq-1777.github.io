@@ -2135,6 +2135,52 @@
       </tags>
   </entry>
   <entry>
+    <title>conda 命令</title>
+    <url>/conda/</url>
+    <content><![CDATA[<blockquote>
+<p>Windows安装包：<span class="exturl" data-url="aHR0cHM6Ly9yZXBvLmNvbnRpbnV1bS5pby9taW5pY29uZGEvTWluaWNvbmRhMy1sYXRlc3QtV2luZG93cy14ODZfNjQuZXhl">https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe</span></p>
+</blockquote>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><ul>
+<li><p>下载脚本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure></li>
+<li><p>启动脚本</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sh</span> Miniconda<span class="number">3</span>-latest-Linux-x<span class="number">86</span>_<span class="number">64</span>.sh</span><br></pre></td></tr></table></figure></li>
+<li><p>取消默认激活conda环境</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">conda<span class="built_in"> config </span>--<span class="builtin-name">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li><p>初始化配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda init zsh	<span class="comment"># 使用的终端</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h2><blockquote>
+<p>使用conda创建Python虚拟环境</p>
+</blockquote>
+<ul>
+<li><p>3.6</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">6</span> python=<span class="number">3</span>.<span class="number">6</span></span><br></pre></td></tr></table></figure></li>
+<li><p>3.8</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">8</span> python=<span class="number">3</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure></li>
+<li><p>3.9</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">9</span> python=<span class="number">3</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure></li>
+<li><p>3.10</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">10</span> python=<span class="number">3</span>.<span class="number">10</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="卸载操作"><a href="#卸载操作" class="headerlink" title="卸载操作"></a>卸载操作</h2><ul>
+<li><p>查看安装目录</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">where</span> conda</span><br></pre></td></tr></table></figure></li>
+<li><p>删除安装目录</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">rm -rf <span class="regexp">/home/</span>owq/miniconda3</span><br></pre></td></tr></table></figure></li>
+<li><p>删除路径变量</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="string">&quot;/home/owq/miniconda3:<span class="variable">$PATH</span>&quot;</span> </span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>venv</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker 命令</title>
     <url>/docker/</url>
     <content><![CDATA[<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;https://registry.docker-cn.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
