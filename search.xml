@@ -2146,11 +2146,11 @@
 <li><p>启动脚本</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sh</span> Miniconda<span class="number">3</span>-latest-Linux-x<span class="number">86</span>_<span class="number">64</span>.sh</span><br></pre></td></tr></table></figure>
 
-<p>按提示进行安装，默认会安装在<code>$HOME/miniconda3</code>目录下，这里我将其安装在<code>/usr/local/miniconda</code>目录下</p>
+<p>默认安装在<code>$HOME/miniconda3</code>下，这里我将其安装在<code>/usr/local/miniconda</code>下</p>
 </li>
 <li><p>取消默认激活conda环境</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">conda<span class="built_in"> config </span>--<span class="builtin-name">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
-<li><p>环境初始化</p>
+<li><p>环境配置</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/miniconda/bin/activate <span class="comment"># 激活环境</span></span><br><span class="line">conda init zsh	<span class="comment"># 使用的终端</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h2><blockquote>
