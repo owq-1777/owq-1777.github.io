@@ -1248,7 +1248,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> powerline &amp;&amp; ./install_in_omz.sh</span><br></pre></td></tr></table></figure>
 
 <p>修改 <code>~/.zshrc</code> 配置文件</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改主题</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;powerline&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改终端为256位颜色模式</span></span><br><span class="line"><span class="built_in">export</span> TERM=<span class="string">&quot;xterm-256color&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ZSH_THEME=<span class="string">&quot;powerline&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># powerline other config</span></span><br><span class="line">POWERLINE_HIDE_HOST_NAME=<span class="string">&quot;true&quot;</span></span><br><span class="line">POWERLINE_PATH=<span class="string">&quot;short&quot;</span></span><br><span class="line">POWERLINE_SHOW_GIT_ON_RIGHT=<span class="string">&quot;true&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 256 Color pattern</span></span><br><span class="line"><span class="built_in">export</span> TERM=<span class="string">&quot;xterm-256color&quot;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>若终端符号显示不全或错位需要设置为 <code>TureType字体</code></p>
