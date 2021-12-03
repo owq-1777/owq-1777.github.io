@@ -907,7 +907,7 @@
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /data/db/mongo</span><br></pre></td></tr></table></figure>
 
-<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -p 27017:27017 -v /data/mongo:/data/db/mongo --name mongo -d mongo --auth</span><br></pre></td></tr></table></figure>
+<h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -p 27017:27017 -v /data/db:/data/db/mongo --name mongo -d mongo --auth</span><br></pre></td></tr></table></figure>
 
 <h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mongo mongo admin</span><br></pre></td></tr></table></figure>
 
