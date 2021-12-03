@@ -2166,6 +2166,12 @@
 <li><p>3.10</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">10</span> python=<span class="number">3</span>.<span class="number">10</span></span><br></pre></td></tr></table></figure></li>
 </ul>
+<h3 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">conda <span class="built_in">remove</span> -n <span class="symbol">&lt;name&gt;</span> --<span class="keyword">all</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="退出环境"><a href="#退出环境" class="headerlink" title="退出环境"></a>退出环境</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda deactivate</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="卸载操作"><a href="#卸载操作" class="headerlink" title="卸载操作"></a>卸载操作</h2><ul>
 <li><p>删除安装目录</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">rm -rf <span class="regexp">/usr/</span>local/miniconda</span><br></pre></td></tr></table></figure></li>
