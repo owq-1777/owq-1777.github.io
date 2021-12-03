@@ -2146,7 +2146,7 @@
 <li><p>启动脚本</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sh</span> Miniconda<span class="number">3</span>-latest-Linux-x<span class="number">86</span>_<span class="number">64</span>.sh</span><br></pre></td></tr></table></figure>
 
-<p>安装提示进行安装，默认安装在<code>$HOME/miniconda3</code>下</p>
+<p>按提示进行安装，默认会安装在<code>$HOME/miniconda3</code>目录下，这里我将其安装在<code>/usr/local/miniconda</code>目录下</p>
 </li>
 <li><p>取消默认激活conda环境</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">conda<span class="built_in"> config </span>--<span class="builtin-name">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
