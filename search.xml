@@ -875,7 +875,7 @@
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db<span class="regexp">/redis &amp;&amp; mkdir -p /</span>data<span class="regexp">/config/</span>redis</span><br></pre></td></tr></table></figure>
 
-<h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/data/</span>config/redisredis.conf</span><br></pre></td></tr></table></figure>
+<h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/data/</span>config<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
 
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/data/</span>db<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
 

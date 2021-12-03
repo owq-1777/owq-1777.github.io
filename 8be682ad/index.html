@@ -33,7 +33,7 @@
 <meta property="og:description" content="Docker下安装Redis的快捷配置~">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-23T20:48:02.000Z">
-<meta property="article:modified_time" content="2021-12-03T10:25:21.597Z">
+<meta property="article:modified_time" content="2021-12-03T10:27:39.247Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="Redis">
@@ -218,7 +218,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2021-12-03 10:25:30" itemprop="dateModified" datetime="2021-12-03T18:25:30+08:00">2021-12-03</time>
+            <time title="修改时间：2021-12-03 10:27:44" itemprop="dateModified" datetime="2021-12-03T18:27:44+08:00">2021-12-03</time>
             
           </span>
 
@@ -230,7 +230,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>740</span>
+            <span>741</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -310,7 +310,7 @@
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>db<span class="regexp">/redis &amp;&amp; mkdir -p /</span>data<span class="regexp">/config/</span>redis</span><br></pre></td></tr></table></figure>
 
-<h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/data/</span>config/redisredis.conf</span><br></pre></td></tr></table></figure>
+<h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/data/</span>config<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
 
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/data/</span>db<span class="regexp">/redis/</span>redis.conf</span><br></pre></td></tr></table></figure>
 
