@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2021-12-03T08:45:59.967Z</updated>
+  <updated>2022-01-05T09:32:25.645Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Scrapy 启动源码分析</title>
+    <link href="https://www.owq.world/66180b04/"/>
+    <id>https://www.owq.world/66180b04/</id>
+    <published>2022-01-05T17:24:19.000Z</published>
+    <updated>2022-01-05T09:32:25.645Z</updated>
+    
+    
+    <summary type="html">近期准备搭建一个框架, 深感知识欠缺, 遂向优秀的`Scrapy`取取经( •̀ .̫ •́ )✧</summary>
+    
+    
+    
+    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="python" scheme="https://www.owq.world/tags/python/"/>
+    
+    <category term="Scrapy" scheme="https://www.owq.world/tags/Scrapy/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows Terminal 快速配置</title>
@@ -402,27 +423,6 @@
     
     
     <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Selenium 操作文档</title>
-    <link href="https://www.owq.world/selenium/"/>
-    <id>https://www.owq.world/selenium/</id>
-    <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-09-24T09:11:06.800Z</updated>
-    
-    
-    <summary type="html">📖 Python 下的 Selenium 操作汇总</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
-    
-    <category term="Selenium" scheme="https://www.owq.world/tags/Selenium/"/>
     
   </entry>
   
