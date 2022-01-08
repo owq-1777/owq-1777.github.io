@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #112942;
+  background: #8aa66f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2998,10 +2998,8 @@ th {
   #live2d-widget {
     display: none;
   }
-}
-@media (max-width: 991px) {
-  #menu {
-    position: absolute;
+  body {
+    font-size: 80%;
   }
 }
 @media (max-width: 1100px) {
@@ -3317,10 +3315,10 @@ th {
 }
 .preview-overlay {
   width: 100%;
-  position: relative;
+  position: absolute;
   left: 0;
   right: 0;
-  bottom: -1px;
+  bottom: -2px;
   z-index: 2;
 }
 .preview-overlay .preview-waves {

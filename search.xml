@@ -1984,6 +1984,56 @@
       </tags>
   </entry>
   <entry>
+    <title>conda 命令</title>
+    <url>/conda/</url>
+    <content><![CDATA[<blockquote>
+<p>Windows安装包：<span class="exturl" data-url="aHR0cHM6Ly9yZXBvLmNvbnRpbnV1bS5pby9taW5pY29uZGEvTWluaWNvbmRhMy1sYXRlc3QtV2luZG93cy14ODZfNjQuZXhl">https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe</span></p>
+</blockquote>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><ul>
+<li><p>下载脚本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure></li>
+<li><p>启动脚本</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sh</span> Miniconda<span class="number">3</span>-latest-Linux-x<span class="number">86</span>_<span class="number">64</span>.sh</span><br></pre></td></tr></table></figure>
+
+<p>默认安装在<code>$HOME/miniconda3</code>下，这里我将其安装在<code>/usr/local/miniconda</code>下</p>
+</li>
+<li><p>取消默认激活conda环境</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">conda<span class="built_in"> config </span>--<span class="builtin-name">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li><p>环境配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/miniconda/bin/activate <span class="comment"># 激活环境</span></span><br><span class="line">conda init zsh	<span class="comment"># 使用的终端</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h2><h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><ul>
+<li><p>3.6</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">6</span> python=<span class="number">3</span>.<span class="number">6</span></span><br></pre></td></tr></table></figure></li>
+<li><p>3.8</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">8</span> python=<span class="number">3</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure></li>
+<li><p>3.9</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">9</span> python=<span class="number">3</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure></li>
+<li><p>3.10</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">10</span> python=<span class="number">3</span>.<span class="number">10</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">conda <span class="built_in">remove</span> -n <span class="symbol">&lt;name&gt;</span> --<span class="keyword">all</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="退出环境"><a href="#退出环境" class="headerlink" title="退出环境"></a>退出环境</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda deactivate</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="卸载操作"><a href="#卸载操作" class="headerlink" title="卸载操作"></a>卸载操作</h2><ul>
+<li><p>删除安装目录</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">rm -rf <span class="regexp">/usr/</span>local/miniconda</span><br></pre></td></tr></table></figure></li>
+<li><p>删除路径变量（终端配置文件）</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="string">&quot;/usr/local/miniconda:<span class="variable">$PATH</span>&quot;</span> </span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>venv</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>正则表达式手册</title>
     <url>/regex/</url>
     <content><![CDATA[<h2 id="表达式全集"><a href="#表达式全集" class="headerlink" title="表达式全集"></a>表达式全集</h2><table>
@@ -2212,56 +2262,6 @@
       </categories>
       <tags>
         <tag>regex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>conda 命令</title>
-    <url>/conda/</url>
-    <content><![CDATA[<blockquote>
-<p>Windows安装包：<span class="exturl" data-url="aHR0cHM6Ly9yZXBvLmNvbnRpbnV1bS5pby9taW5pY29uZGEvTWluaWNvbmRhMy1sYXRlc3QtV2luZG93cy14ODZfNjQuZXhl">https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe</span></p>
-</blockquote>
-<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><ul>
-<li><p>下载脚本</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure></li>
-<li><p>启动脚本</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sh</span> Miniconda<span class="number">3</span>-latest-Linux-x<span class="number">86</span>_<span class="number">64</span>.sh</span><br></pre></td></tr></table></figure>
-
-<p>默认安装在<code>$HOME/miniconda3</code>下，这里我将其安装在<code>/usr/local/miniconda</code>下</p>
-</li>
-<li><p>取消默认激活conda环境</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">conda<span class="built_in"> config </span>--<span class="builtin-name">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
-<li><p>环境配置</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/miniconda/bin/activate <span class="comment"># 激活环境</span></span><br><span class="line">conda init zsh	<span class="comment"># 使用的终端</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h2><h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><ul>
-<li><p>3.6</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">6</span> python=<span class="number">3</span>.<span class="number">6</span></span><br></pre></td></tr></table></figure></li>
-<li><p>3.8</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">8</span> python=<span class="number">3</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure></li>
-<li><p>3.9</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">9</span> python=<span class="number">3</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure></li>
-<li><p>3.10</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">10</span> python=<span class="number">3</span>.<span class="number">10</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">conda <span class="built_in">remove</span> -n <span class="symbol">&lt;name&gt;</span> --<span class="keyword">all</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="退出环境"><a href="#退出环境" class="headerlink" title="退出环境"></a>退出环境</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda deactivate</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="卸载操作"><a href="#卸载操作" class="headerlink" title="卸载操作"></a>卸载操作</h2><ul>
-<li><p>删除安装目录</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">rm -rf <span class="regexp">/usr/</span>local/miniconda</span><br></pre></td></tr></table></figure></li>
-<li><p>删除路径变量（终端配置文件）</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="string">&quot;/usr/local/miniconda:<span class="variable">$PATH</span>&quot;</span> </span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>命令文档</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>venv</tag>
       </tags>
   </entry>
   <entry>
