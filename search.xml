@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>在浏览器上使用 vsCode 进行云开发</title>
+    <url>/20130c79/</url>
+    <content><![CDATA[<blockquote>
+<p>项目地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NvZGVyL2NvZGUtc2VydmVy">https://github.com/coder/code-server</span><br>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9jb2Rlci5jb20vZG9jcy9jb2RlLXNlcnZlci9sYXRlc3QvZ3VpZGU=">https://coder.com/docs/code-server/latest/guide</span></p>
+</blockquote>
+<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>为了实现在网页上进行云开发，需要用到<code>vsCode</code>开发的一款利器<code>code-server</code>， 因为<code>vsCode</code>是基于<code>Electron</code>开发的，而<code>Electron</code>是一款跨平台的、基于<code>Web</code>的桌面GUI应用程序开发框架。</p>
+<p>所以<code>code-server</code>就是一款把<code>vsCode</code>托管成<code>Web</code>服务来达到云开发的利器~</p>
+<p><strong>需要注意的点</strong></p>
+<ul>
+<li><code>code-server</code>目前不支持登录账号进行配置同步。</li>
+<li><code>code-server</code>本身就是远程连接，即不支持使用<code>ssh-remote</code>进行套娃连接（未来有计划处理）。</li>
+<li>部分快捷键和浏览器有冲突，要不处理<code>vsCode</code>，要不就处理浏览器。</li>
+<li>使用时会获取服务器权限，暴露端口需做好安全措辞，防止意外。</li>
+<li>综上，要在<code>code-server</code>进行日常开发需要大量配置，针对性场景较强（没有电脑的情况下）。</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="脚本安装"><a href="#脚本安装" class="headerlink" title="脚本安装"></a>脚本安装</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>先运行下测试，这条命令只是输出执行安装步骤，不会进行安装。</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -fsSL http<span class="variable">s:</span>//code-server.dev/install.<span class="keyword">sh</span> | <span class="keyword">sh</span> -s -- --dry-run</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="http://img.owq.world/2022/01/2116-18d0a8.png"></p>
+<p>可以看到是下载了<code>code-server_4.0.1_amd64.deb</code>包到<code>~/.cache/code-server/</code>下然后继续安装就完事了。<br>了解了下脚本做的事，接下来直接安装就行了。</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -fsSL http<span class="variable">s:</span>//code-server.dev/install.<span class="keyword">sh</span> | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="http://img.owq.world/2022/01/1253-9d7fca.png"></p>
+<p>这里你会可能会遇到<code>github</code>被墙导致下载不辽或者下载缓慢的问题，这时配置下<code>/etc/ssh/ssh_config</code>中的<code>GSSAPIAuthentication</code>设置为<code>no</code>一般就能解决问题，解决不辽问题的话就只能使用科学的魔法了~</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">vim ~<span class="regexp">/.config/</span>code-server/config.yaml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">bind-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8080</span>	<span class="comment"># 转发ip和端口</span></span><br><span class="line"><span class="attr">auth:</span> <span class="string">password</span>	<span class="comment"># 是否启用验证</span></span><br><span class="line"><span class="attr">password:</span> <span class="string">***</span>	<span class="comment"># 登录密码</span></span><br><span class="line"><span class="attr">cert:</span> <span class="literal">false</span>	<span class="comment"># 证书验证</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> --now code-server@<span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>先使用<code>ssh</code>转发到本地端口后，浏览器打开<code>http://localhost:8080</code>进入登录页面</p>
+<p><img data-src="http://img.owq.world/2022/01/1658-ae2061.png" alt="image-20220107165822570"></p>
+<p>输入密码登录后就可以看到熟悉的开始页面了~</p>
+<p><img data-src="http://img.owq.world/2022/01/1706-df356f.png"></p>
+<p>先不急，为了让大部分快捷键可以正常使用，先把网页添加成应用<br><img data-src="http://img.owq.world/2022/01/1717-2a8ff3.png"></p>
+<img data-src="http://img.owq.world/2022/01/1714-27070f.png" style="zoom: 50%;" />
+
+<p>之后就开始配置你的<code>vsCode</code>吧~</p>
+<h2 id="暴露公网"><a href="#暴露公网" class="headerlink" title="暴露公网"></a>暴露公网</h2><blockquote>
+<p>官方推荐使用<code>SSH</code>进行转发连接，这种连接方式是最安全的，但实际情况反而浏览器使用率高，所以采用域名+https的方式来进行连接。</p>
+</blockquote>
+<h3 id="Nginx-代理转发"><a href="#Nginx-代理转发" class="headerlink" title="Nginx 代理转发"></a>Nginx 代理转发</h3><p>这里使用<code>Nginx</code>进行代理转发，配置文件<strong>依自身情况进行修改</strong>。</p>
+<p>使用<code>certbot</code>添加证书验证</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装certbot</span></span><br><span class="line">sudo apt install -y certbot python3-certbot-nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建证书 并自动配置 Nginx</span></span><br><span class="line">sudo certbot --non-interactive --redirect --agree-tos --nginx -d [域名] -m [邮箱]</span><br></pre></td></tr></table></figure>
+
+<p>配置应该是这样子</p>
+<p><img data-src="http://img.owq.world/2022/01/2205-ba41b1.png"></p>
+<p>重载<code>nginx</code>应用配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t <span class="comment"># 测试</span></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<p>这时使用域名就可以直接访问了。</p>
+<h2 id="完全卸载"><a href="#完全卸载" class="headerlink" title="完全卸载"></a>完全卸载</h2><p>通过删除应用程序目录和用户配置目录，可以完全卸载代码服务器。</p>
+<p>卸载程序</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="builtin-name">remove</span> code-server</span><br></pre></td></tr></table></figure>
+
+<p>删除设置和数据</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">rm -rf ~<span class="regexp">/.local/</span>share/code-server ~<span class="regexp">/.config/</span>code-server</span><br></pre></td></tr></table></figure>
+
+<p>删除安装包</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">rm -rf ~<span class="regexp">/.cache/</span>code-server</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术记录</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+        <tag>vsCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Scrapy 启动源码分析</title>
     <url>/66180b04/</url>
     <content><![CDATA[<blockquote>

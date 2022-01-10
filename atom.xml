@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-01-05T09:32:25.645Z</updated>
+  <updated>2022-01-10T14:11:11.004Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在浏览器上使用 vsCode 进行云开发</title>
+    <link href="https://www.owq.world/20130c79/"/>
+    <id>https://www.owq.world/20130c79/</id>
+    <published>2022-01-10T22:07:07.000Z</published>
+    <updated>2022-01-10T14:11:11.004Z</updated>
+    
+    
+    <summary type="html">对于一个懒人来说，出门还带个包包多不优雅阿，随时随地就能进行开发才够爽快( *︾▽︾)</summary>
+    
+    
+    
+    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="nginx" scheme="https://www.owq.world/tags/nginx/"/>
+    
+    <category term="vsCode" scheme="https://www.owq.world/tags/vsCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Scrapy 启动源码分析</title>
@@ -404,25 +425,6 @@
     <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
     
     <category term="crontab" scheme="https://www.owq.world/tags/crontab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nginx configure 参数</title>
-    <link href="https://www.owq.world/nginx-configure/"/>
-    <id>https://www.owq.world/nginx-configure/</id>
-    <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-11-25T03:23:29.010Z</updated>
-    
-    
-    <summary type="html">📖 Nginx configure 参数</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
     
   </entry>
   
