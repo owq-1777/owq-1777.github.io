@@ -16,7 +16,7 @@
 <li>使用时会获取服务器权限，暴露端口需做好安全措辞，防止意外。</li>
 <li>综上，要在<code>code-server</code>进行日常开发需要大量配置，针对性场景较强（没有电脑的情况下）。</li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="脚本安装"><a href="#脚本安装" class="headerlink" title="脚本安装"></a>脚本安装</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>先运行下测试，这条命令只是输出执行安装步骤，不会进行安装。</p>
+<h2 id="脚本安装"><a href="#脚本安装" class="headerlink" title="脚本安装"></a>脚本安装</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>先运行下测试，这条命令只是输出执行安装步骤，不会进行安装。</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -fsSL http<span class="variable">s:</span>//code-server.dev/install.<span class="keyword">sh</span> | <span class="keyword">sh</span> -s -- --dry-run</span><br></pre></td></tr></table></figure>
 
 <p><img data-src="http://img.owq.world/2022/01/2116-18d0a8.png"></p>
