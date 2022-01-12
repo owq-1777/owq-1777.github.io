@@ -1012,7 +1012,7 @@
   <entry>
     <title>Docker+Redis 安装配置</title>
     <url>/8be682ad/</url>
-    <content><![CDATA[<h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker pull redis</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker pull redis</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>redis</span><br></pre></td></tr></table></figure>
 
