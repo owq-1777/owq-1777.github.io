@@ -1044,7 +1044,7 @@
   <entry>
     <title>Docker+MongoDB 安装配置</title>
     <url>/d2633d2c/</url>
-    <content><![CDATA[<h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mongo</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p /data/mongo</span><br></pre></td></tr></table></figure>
 
@@ -1052,11 +1052,9 @@
 
 <h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mongo mongo admin</span><br></pre></td></tr></table></figure>
 
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">db.createUser(</span><br><span class="line">  &#123;</span><br><span class="line">    user: <span class="string">&#x27;admin&#x27;</span>,</span><br><span class="line">    <span class="built_in">pwd</span>: <span class="string">&#x27;password&#x27;</span>,</span><br><span class="line">    roles: [ &#123; role: <span class="string">&#x27;root&#x27;</span>, db: <span class="string">&#x27;admin&#x27;</span> &#125; ]	<span class="comment"># 指定权限和数据库</span></span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-
-<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">db.createUser(&#123; user:<span class="string">&#x27;admin&#x27;</span>,<span class="built_in">pwd</span>:<span class="string">&#x27;***&#x27;</span>,roles:[ &#123; role:<span class="string">&#x27;userAdminAnyDatabase&#x27;</span>, db: <span class="string">&#x27;admin&#x27;</span>&#125;,<span class="string">&quot;readWriteAnyDatabase&quot;</span>]&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:***<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:password<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
