@@ -181,7 +181,7 @@
     <link href="https://www.owq.world/f89f9ea4/"/>
     <id>https://www.owq.world/f89f9ea4/</id>
     <published>2021-08-27T15:59:51.000Z</published>
-    <updated>2021-11-05T06:36:58.690Z</updated>
+    <updated>2022-02-17T04:34:54.795Z</updated>
     
     
     <summary type="html">了解线程和进程、同步和异步、并发和并行和相关库的使用。</summary>
@@ -192,6 +192,10 @@
     
     
     <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
+    
+    <category term="Threading" scheme="https://www.owq.world/tags/Threading/"/>
+    
+    <category term="Multiprocessing" scheme="https://www.owq.world/tags/Multiprocessing/"/>
     
   </entry>
   
