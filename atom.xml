@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Sunny was born</title>
   <icon>https://www.owq.world/icon.png</icon>
-  <subtitle>心中有丘壑，眉目作山河</subtitle>
+  <subtitle>心中有丘壑, 眉目做山河</subtitle>
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
