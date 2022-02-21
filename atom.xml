@@ -412,23 +412,21 @@
   </entry>
   
   <entry>
-    <title>Linux crontab 命令</title>
-    <link href="https://www.owq.world/crontab/"/>
-    <id>https://www.owq.world/crontab/</id>
+    <title>Nginx configure 参数</title>
+    <link href="https://www.owq.world/nginx-configure/"/>
+    <id>https://www.owq.world/nginx-configure/</id>
     <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-11-12T10:16:29.640Z</updated>
+    <updated>2021-11-25T03:23:29.010Z</updated>
     
     
-    <summary type="html">📖 Linux crontab 命令</summary>
+    <summary type="html">📖 Nginx configure 参数</summary>
     
     
     
     <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
     
     
-    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
-    
-    <category term="crontab" scheme="https://www.owq.world/tags/crontab/"/>
+    <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
     
   </entry>
   
