@@ -311,7 +311,7 @@
         },
         _onScroll: function(e) {
             var screen = screenInfo(e);
-            this._scroll = screen.scrolly * 0.1;
+            this._scroll = screen.scrolly * 0.2;
         }
     };
     return Factory;
