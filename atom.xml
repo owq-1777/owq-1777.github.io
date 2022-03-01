@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-01-12T09:15:37.555Z</updated>
+  <updated>2022-03-01T04:31:14.461Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>说说 python 中单例模式的实现</title>
+    <link href="https://www.owq.world/34b94b2a/"/>
+    <id>https://www.owq.world/34b94b2a/</id>
+    <published>2022-03-01T11:01:05.000Z</published>
+    <updated>2022-03-01T04:31:14.461Z</updated>
+    
+    
+    <summary type="html">单例模式设计要注意的细节可真不少(。_。)</summary>
+    
+    
+    
+    <category term="设计模式" scheme="https://www.owq.world/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="python" scheme="https://www.owq.world/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>在浏览器上使用 vsCode 进行云开发</title>
@@ -408,27 +427,6 @@
     
     
     <category term="Java" scheme="https://www.owq.world/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux crontab 命令</title>
-    <link href="https://www.owq.world/crontab/"/>
-    <id>https://www.owq.world/crontab/</id>
-    <published>2020-06-01T08:00:00.000Z</published>
-    <updated>2021-11-12T10:16:29.640Z</updated>
-    
-    
-    <summary type="html">📖 Linux crontab 命令</summary>
-    
-    
-    
-    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
-    
-    <category term="crontab" scheme="https://www.owq.world/tags/crontab/"/>
     
   </entry>
   
