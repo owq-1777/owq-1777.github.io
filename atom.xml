@@ -36,6 +36,27 @@
   </entry>
   
   <entry>
+    <title>Django 简单入门</title>
+    <link href="https://www.owq.world/afc60718/"/>
+    <id>https://www.owq.world/afc60718/</id>
+    <published>2022-02-19T14:28:49.000Z</published>
+    <updated>2022-03-09T07:40:17.719Z</updated>
+    
+    
+    <summary type="html">让我们从零开始学习这个超棒的web框架吧...(*￣０￣)ノ</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Django" scheme="https://www.owq.world/tags/Django/"/>
+    
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在浏览器上使用 vsCode 进行云开发</title>
     <link href="https://www.owq.world/20130c79/"/>
     <id>https://www.owq.world/20130c79/</id>
@@ -200,7 +221,7 @@
     <link href="https://www.owq.world/f89f9ea4/"/>
     <id>https://www.owq.world/f89f9ea4/</id>
     <published>2021-08-27T15:59:51.000Z</published>
-    <updated>2022-02-28T08:21:25.410Z</updated>
+    <updated>2022-02-28T10:03:49.981Z</updated>
     
     
     <summary type="html">了解线程和进程、同步和异步、并发和并行和相关库的使用。</summary>
@@ -408,25 +429,6 @@
     
     
     <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java 开发环境搭建萌新教程</title>
-    <link href="https://www.owq.world/46118abd/"/>
-    <id>https://www.owq.world/46118abd/</id>
-    <published>2021-01-19T18:35:31.000Z</published>
-    <updated>2021-01-19T00:00:00.000Z</updated>
-    
-    
-    <summary type="html">这是适用于 Windows 系统, 图文并茂的 Java 环境搭建萌新教程（￣︶￣）↗　</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Java" scheme="https://www.owq.world/tags/Java/"/>
     
   </entry>
   

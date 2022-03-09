@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #79f9a7;
+  background: #01918f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3014,6 +3014,9 @@ th {
     padding: 20px;
     width: 100%;
   }
+}
+.post-toc .nav .nav-level-1>.nav-child {
+  display: block;
 }
 .headband {
   display: none;
