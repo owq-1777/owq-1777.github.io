@@ -176,7 +176,8 @@
 <li><p>修改<code>polls/admin.py</code>, 向管理页面加入投票应用</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line"><span class="comment"># Register your models here.</span></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"></span><br><span class="line">admin.site.register(Question)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><blockquote>
+<p><strong>测试一下</strong></p>
+<blockquote>
 <p>如果你之前没有关闭<code>Django</code>的话,会发现已经热更新代码了.</p>
 </blockquote>
 <p>这时浏览器输入<span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4ODg4L2FkbWluJUU4JUJGJTlCJUU1JTg1JUE1JUU3JUFFJUExJUU3JTkwJTg2JUU1JTkwJThFJUU1JThGJUIw">http://127.0.0.1:8888/admin进入管理后台</span></p>
