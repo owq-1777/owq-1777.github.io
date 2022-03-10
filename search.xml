@@ -76,7 +76,7 @@
 <blockquote>
 <p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL3poLWhhbnMvMy4yLw==">Django 文档</span></p>
 </blockquote>
-<h2 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h2><p>3.2的LTS版本在21年的4月份发布, 会作为下一个主流版本, 这里从3.2开始学习进程.</p>
+<h2 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h2><p>3.2的LTS版本在21年的4月份发布, 会作为下一个主流版本, 这里从3.2版本进行学习.</p>
 <p><img data-src="http://img.owq.world/2022/03/2350-d2127f.png"></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install django==3.2</span><br></pre></td></tr></table></figure>
 
@@ -154,15 +154,16 @@
 <p><code>Django</code>使用的是<code>mysqlclient</code>, 这里将其改成熟悉的<code>pymysql</code>, 修改<code>mysite\__init__.py</code>, 添加以下代码</p>
 <figure class="highlight elm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line"><span class="title">pymysql</span>.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
 
+<p>然后初始化数据库, 生成初始的管理表.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>这里需要注意一个点, Django并不会自动帮我们建库, 如果直接运行的话, 会报错:<br><code>django.db.utils.OperationalError: (1049, &quot;Unknown database &#39;polls&#39;&quot;)</code>, 表示没有<code>polls</code>这个数据库</p>
+<p>这里需要注意一个点, Django并不会自动帮我们建库, 如果直接运行的话, 会报错:<code>django.db.utils.OperationalError: (1049, &quot;Unknown database &#39;polls&#39;&quot;)</code>, 表示没有<code>polls</code>这个数据库</p>
 </blockquote>
 <p>这里手动建下库, 注意下<strong>字符集</strong>和<strong>排序规则</strong>.</p>
 <img data-src="http://img.owq.world/2022/03/1611-713a00.png" alt="image-20220306161116383" style="zoom:80%;" />
 
-<p>初始化数据库, 生成初始的管理表</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
-
+<p>建好后的表是这样子的.</p>
 <img data-src="http://img.owq.world/2022/03/1619-5b9089.png" style="zoom:67%;" />
 
 <h3 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h3><h4 id="添加应用"><a href="#添加应用" class="headerlink" title="添加应用"></a>添加应用</h4><p>修改<code>polls/models.py</code>, 添加投票应用, 这里创建<code>Question</code>、<code>Choice</code>两个模型.</p>
