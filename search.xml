@@ -1,6 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Django 模型层</title>
+    <url>/94470483/</url>
+    <content><![CDATA[<h2 id="字段类型"><a href="#字段类型" class="headerlink" title="字段类型"></a>字段类型</h2><blockquote>
+<p>Django 有丰富了字段类型, 为降低学习成本, 同时也为了维护方便, 尽量使用和数据库一致的数据类型.</p>
+</blockquote>
+<h3 id="数字类"><a href="#数字类" class="headerlink" title="数字类"></a>数字类</h3><ul>
+<li><code>IntegerField</code></li>
+<li><code>BigIntField</code></li>
+<li><code>FloatField</code></li>
+<li><code>DecimalField</code></li>
+</ul>
+<h3 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h3><ul>
+<li><p><code>CharField</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在MySQL中对应的就是varchar, 所以必须指定长度</span></span><br><span class="line">name = models.CharField(max_length=<span class="number">200</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p><code>TextField</code></p>
+<p>遇到大的文件或图片时, 将其存放在静态资源服务器, 然后使用URI或者URL存储会更合理.</p>
+</li>
+</ul>
+<h3 id="常用类"><a href="#常用类" class="headerlink" title="常用类"></a>常用类</h3><ul>
+<li><p><code>BooleanField</code></p>
+</li>
+<li><p><code>DateField</code></p>
+</li>
+<li><p><code>DateTimeField</code></p>
+</li>
+<li><p><code>AutoField</code></p>
+<p>没有指定主键时, 当前模型会自动将一个自增id的<code>IntegerField</code>做为主键.</p>
+</li>
+<li><p><code>ImageField</code><br>用来做特殊约束和校验的字段, 会校验传入数据是否图片.</p>
+</li>
+<li><p><code>EmailField</code></p>
+<p>用来做特殊约束和校验的字段, 会校验传入数据是否邮箱地址.</p>
+</li>
+<li><p><code>UUIDField</code><br>一般来说, <code>uuid</code>会用作当前数据表的主键.</p>
+</li>
+</ul>
+<h2 id="字段选项-约束"><a href="#字段选项-约束" class="headerlink" title="字段选项/约束"></a>字段选项/约束</h2><ul>
+<li><p><code>primary_key</code><br>如果为<code>True</code>, 将当前字段设置为主键, 默认为<code>False</code>.</p>
+</li>
+<li><p><code>null</code></p>
+<p>如果为<code>True</code>， <code>Django</code>将在数据库中存储空值为 <code>NULL</code>, 默认为 <code>False</code>.</p>
+</li>
+<li><p><code>blank</code><br>代表空白字符<code>&quot;&quot;</code>, 如果是<code>True</code>, 当前字段允许为空, 默认为<code>False</code></p>
+<blockquote>
+<p><code>null</code>是数据库上的设置, <code>blank</code>是字段验证上的设置.<br><code>blank</code>设置的字段不可以为<code>NULL</code>.</p>
+</blockquote>
+</li>
+<li><p><code>unique</code><br>唯一约束设置, 默认为<code>False</code></p>
+</li>
+<li><p><code>default</code><br>设置字段默认值</p>
+</li>
+<li><p>时间类型</p>
+<ul>
+<li><p><code>auto_now</code><br>每次保存时更新字段时间为现在, 只有调用<code>Model.seve()</code>时才会生效.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">update_time = models.DateTimeField(auto_now=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p><code>auto_now_add</code><br>第一次创建对象时设置时间.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">create_time = models.DateTimeField(auto_now_add=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p><strong>测试一下</strong></p>
+<p>创建应用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py startapp myblog</span><br></pre></td></tr></table></figure>
+
+<p>添加模板</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">200</span>, primary_key=<span class="literal">True</span>)</span><br><span class="line">    email = models.EmailField(null=<span class="literal">True</span>)</span><br><span class="line">    date = models.DateField(auto_now=<span class="literal">True</span>)</span><br><span class="line">    update_time = models.DateTimeField(auto_now=<span class="literal">True</span>)</span><br><span class="line">    create_time = models.DateTimeField(auto_now_add=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    null_test = models.CharField(max_length=<span class="number">200</span>, null=<span class="literal">True</span>)</span><br><span class="line">    blank_test = models.CharField(max_length=<span class="number">200</span>, blank=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>更新同步</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python</span> manage.<span class="keyword">py</span> makemigrations</span><br><span class="line"><span class="keyword">python</span> manage.<span class="keyword">py</span> migrate</span><br></pre></td></tr></table></figure>
+
+<p>进入shell, 创建保存一条数据</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python</span> manage.<span class="keyword">py</span> <span class="keyword">shell</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; from myblog.models import Person</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; p = Person(name=<span class="string">&#x27;owq&#x27;</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; p.save()</span></span><br></pre></td></tr></table></figure>
+
+<p>回头看看数据库</p>
+<p><img data-src="http://img.owq.world/2022/03/1553-ee0a9f.png"></p>
+<h2 id="数据表重构"><a href="#数据表重构" class="headerlink" title="数据表重构"></a>数据表重构</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><blockquote>
+<p>执行<code>python manage.py migrate</code>同步失败时</p>
+</blockquote>
+<ul>
+<li>更改<code>migrations</code>中的文件解决问题<ul>
+<li>通过调试确认是哪个字段发生错误</li>
+</ul>
+</li>
+</ul>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><blockquote>
+<p>数据结构发生改变时</p>
+</blockquote>
+<ul>
+<li>删除<code>migrations</code>文件然后推倒重来<ul>
+<li><code>django</code>会在数据表<code>django_migrations</code>中创建同步记录, 需要删除对应的同步记录</li>
+<li>删除已经创建记录的表</li>
+</ul>
+</li>
+</ul>
+<h2 id="Meta内嵌类"><a href="#Meta内嵌类" class="headerlink" title="Meta内嵌类"></a>Meta内嵌类</h2><blockquote>
+<p>通过一个内嵌类Meta来定义元数据.<br>元数据又被称为中介数据, 用来描述数据的数据, 既“所有不是字段的东西”.</p>
+</blockquote>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ox</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    horn_length = models.IntegerField()</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        ordering = [<span class="string">&quot;horn_length&quot;</span>]</span><br><span class="line">        verbose_name_plural = <span class="string">&quot;oxen&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字段选项"><a href="#字段选项" class="headerlink" title="字段选项"></a>字段选项</h3><ul>
+<li><p><code>abstract</code><br>将当前模型类转换为抽象类, 进行<code>migrate</code>的时候会被忽略, 也就不会对实体表进行修改.</p>
+</li>
+<li><p><code>app_label</code><br>指定当前<code>model</code>从属于哪个已经注册的应用.<br>一般为应用只编写视图层来处理业务逻辑. 模型层统一由一个<code>models</code>模块来管理<br>比如博客的个人信息<code>models</code>, 很多应用都会使用到, 这时就要使用<code>app_label</code>来区分所属应用了.</p>
+</li>
+<li><p><code>db_table</code><br>自定义表名, 不指定默认为<code>应用名_模型名</code>, 一般在以下情况使用.</p>
+<ul>
+<li>目标表已经存在时</li>
+<li>没有管理表的权限. 需要dba建表再开发时</li>
+<li>规范数据库的表名命名时</li>
+</ul>
+</li>
+<li><p><code>managed</code><br>默认为<code>True</code>, 为<code>False</code>将不会针对当前模型创建和删除数据库表, 也就是会忽略该模型. 一般会在公司有DBA时使用.</p>
+</li>
+<li><p><code>ordering</code><br>设置排序字段, 默认规则为升序.</p>
+<ul>
+<li><p>默认升序</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ordering = <span class="string">&#x27;order_date&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>-</code>号表示降序</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ordering = [<span class="string">&#x27;-order_date&#x27;</span>]</span><br><span class="line">ordering = [<span class="string">&#x27;-pub_date&#x27;</span>, <span class="string">&#x27;author&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+<li><p><code>?</code>号表示随机</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ordering = [<span class="string">&#x27;?field_name&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>get_latest_by</code><br>设置获取最后一条记录的排序规则, 和模型的实例方法<code>latest()</code>相关联</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 升序排序 order_date 字段</span></span><br><span class="line">get_latest_by = <span class="string">&#x27;order_date&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 降序排序 priority, 后升序排序 order_date</span></span><br><span class="line">get_latest_by = [<span class="string">&#x27;-priority&#x27;</span>, <span class="string">&#x27;order_date&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+<li><p><code>indexes</code><br>设置索引, 同样的, 在由DBA的情况下不需要用到.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">    indexes = [</span><br><span class="line">        models.Index(fields=[<span class="string">&#x27;last_name&#x27;</span>, <span class="string">&#x27;first_name&#x27;</span>]),</span><br><span class="line">        models.Index(fields=[<span class="string">&#x27;first_name&#x27;</span>], name=<span class="string">&#x27;first_name_idx&#x27;</span>),</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure></li>
+<li><p><code>constraints</code><br>自定义约束</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">    constraints = [</span><br><span class="line">        <span class="comment"># 创建一个检查约束</span></span><br><span class="line">        <span class="comment"># 确保年龄等于18</span></span><br><span class="line">        models.CheckConstraint(check=models.Q(age__gte=<span class="number">18</span>), name=<span class="string">&#x27;age_gte_18&#x27;</span>),</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 创建一个唯一约束</span></span><br><span class="line">        <span class="comment"># 确保每个房间在每个日期只能被预订一次</span></span><br><span class="line">		UniqueConstraint(field=[<span class="string">&#x27;room&#x27;</span>, <span class="string">&#x27;date&#x27;</span>], name=<span class="string">&#x27;unique_booking&#x27;</span>)</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure></li>
+<li><p><code>unique_together</code><br>多字段唯一性约束(未来可能被弃用, 了解下就行)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一组字段名，合起来必须是唯一的</span></span><br><span class="line">unique_together = [<span class="string">&#x27;driver&#x27;</span>, <span class="string">&#x27;restaurant&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="模型继承"><a href="#模型继承" class="headerlink" title="模型继承"></a>模型继承</h2><h3 id="直接继承"><a href="#直接继承" class="headerlink" title="直接继承"></a>直接继承</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommonInfo</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    age = models.PositiveIntegerField()</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        abstract = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="params">CommonInfo</span>):</span></span><br><span class="line">    home_group = models.CharField(max_length=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h3><blockquote>
+<p>默认情况下，Django 给每个模型一个自动递增的主键.<br>如果当前模型对象没有指定主键, 那么两张表主键会产生冲突, 为了解决多重继承产生的id冲突, 需要覆盖主键字段.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    <span class="comment"># db_column为数据库中的字段</span></span><br><span class="line">    student_id = models.AutoField(primary_key=<span class="literal">True</span>, db_column=<span class="string">&quot;id&quot;</span>)</span><br><span class="line">    name = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    book_id = models.AutoField(primary_key=<span class="literal">True</span>, db_column=<span class="string">&quot;id&quot;</span>)</span><br><span class="line">    book_name = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BorrowRecord</span>(<span class="params">Student, Book</span>):</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 两张表主键冲突时, 要覆盖主键字段</span></span><br><span class="line">    _<span class="built_in">id</span> = models.AutoField(primary_key=<span class="literal">True</span>, db_column=<span class="string">&quot;id&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    borrow_time = models.DateTimeField(auto_now_add=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><ul>
+<li><p><code>save()</code><br>将对象保存到数据库(或进行更新操作)</p>
+<blockquote>
+<p>只会进行数据库操作, 并不会进行字段验证.</p>
+</blockquote>
+</li>
+<li><p><code>clean_fields()</code><br>验证模型上所有字段, 调用<code>save()</code>方法时不会被自动调用.</p>
+</li>
+<li><p><code>clean()</code><br>自定义模型验证的方法.</p>
+</li>
+<li><p><code>validate_unique()</code><br>验证模型上所有唯一约束, 和<code>unique_together</code>属性搭配使用.</p>
+</li>
+<li><p><code>full_clean()</code></p>
+<p>依次调用 Model.clean_fields()、 Model.clean() 和 Model.validate_unique()</p>
+</li>
+<li><p><code>latest()</code><br>获取最后一条记录, 根据<code>get_latest_by</code>属性进行获取.</p>
+</li>
+<li><p><code>refresh_from_db()</code><br>从数据库里刷新当前记录, 适用于数据库数据发生变动时.</p>
+</li>
+<li><p><code>__str__()</code><br>用来自定义模型输出.</p>
+</li>
+</ul>
+<h2 id="django-setup"><a href="#django-setup" class="headerlink" title="django.setup()"></a>django.setup()</h2><blockquote>
+<p>用来独立运行Django中的应用, 类似于第三方库的使用.<br>比如，编写一个脚本, 然后进行一些ORM操作, 同时也方便我们进行调试.</p>
+</blockquote>
+<p>这里创建一个测试文件<code>test.py</code>, 使用它来进行调试学习.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> django</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_person_data</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">        person = Person(</span><br><span class="line">            name=<span class="string">f&#x27;name_<span class="subst">&#123;i&#125;</span>&#x27;</span>,</span><br><span class="line">            email=<span class="string">f&#x27;email_<span class="subst">&#123;i&#125;</span>@163.com&#x27;</span>,</span><br><span class="line">            null_test=<span class="literal">None</span>,</span><br><span class="line">            blank_test=<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 运行字段校验</span></span><br><span class="line">        <span class="comment"># 需要注意这里需要排除 null_test 字段, 忽略 NULL 值的校验</span></span><br><span class="line">        person.clean_fields(exclude=[<span class="string">&#x27;null_test&#x27;</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 保存数据</span></span><br><span class="line">        person.save()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置DJANGO_SETTINGS_MODULE环境变量</span></span><br><span class="line">    os.environ.setdefault(<span class="string">&quot;DJANGO_SETTINGS_MODULE&quot;</span>, <span class="string">&quot;mysite.settings&quot;</span>)</span><br><span class="line">    django.setup()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">from</span> myblog.models <span class="keyword">import</span> Person</span><br><span class="line"></span><br><span class="line">    create_person_data()</span><br></pre></td></tr></table></figure>
+
+<h2 id="QuerySet-API"><a href="#QuerySet-API" class="headerlink" title="QuerySet API"></a>QuerySet API</h2><blockquote>
+<p><code>QuerySet</code> 本身被构造，过滤，切片，或者复制赋值等操作，是无需访问数据库的。<br>只有在你需要从数据库取出数据或者向数据库存入数据时才需要访问数据库.</p>
+</blockquote>
+<p>下面用CRUD给这些方法进行分类</p>
+<ul>
+<li><p><strong>Create</strong></p>
+<ul>
+<li><code>save()</code></li>
+</ul>
+</li>
+<li><p><strong>Retrieve</strong></p>
+<ul>
+<li><p><code>all()</code><br>获取表中所有记录.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Model.objects.<span class="built_in">all</span>()</span><br></pre></td></tr></table></figure></li>
+<li><p><code>get()</code><br>通过指定条件, 获取<strong>一条</strong>数据, 如果有多条或不存在, 则会报错.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># SELECT ... WHERE id = 22;</span></span><br><span class="line">Model.objects.get(<span class="built_in">id</span>=<span class="number">22</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p><code>filter()</code><br>匹配满足条件的记录, 类似于<code>SQL</code>中的<code>WHERE</code>语句.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># SELECT ... WHERE name = name_0;</span></span><br><span class="line">Model.objects.<span class="built_in">filter</span>(name=<span class="string">&quot;name_0&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>Django</code>使用<code>__</code>来作为过滤条件标识符, 后面接上关键字来进行查询.</p>
+</blockquote>
+<p><strong>条件查询</strong></p>
+<ul>
+<li>gt --- &gt;</li>
+<li>get -- &gt;=</li>
+<li>lt --- &lt;</li>
+<li>lte -- &lt;</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># SELECT ... WHERE id &gt; 22;</span></span><br><span class="line">Model.objects.<span class="built_in">filter</span>(id__gt=<span class="number">22</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># SELECT ... WHERE id &lt;= 22;</span></span><br><span class="line">Model.objects.<span class="built_in">filter</span>(id__lte=<span class="number">22</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>模糊查询</strong></p>
+<ul>
+<li>startswith --- 匹配开头</li>
+<li>endswith ----- 匹配结尾</li>
+<li>icontains ---- 匹配内容</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># SELECT ... WHERE name LIKE &#x27;Lennon%&#x27;;</span></span><br><span class="line">Model.objects.<span class="built_in">filter</span>(name__startswith=<span class="string">&#x27;Lennon&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># SELECT ... WHERE name LIKE &#x27;%Lennon%&#x27;;</span></span><br><span class="line">Model.objects.<span class="built_in">filter</span>(name__startswith=<span class="string">&#x27;%Lennon%&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p><code>exclude()</code><br>匹配不匹配对象, 与<code>filter()</code>逻辑相反.</p>
+</li>
+<li><p><code>latest()</code></p>
+<p>返回最后一条数据.</p>
+</li>
+<li><p><code>order_by()</code></p>
+<p>设置排序, 可以覆盖<code>ordering</code>选项</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这里需要注意, 排序并不涉及数据库操作, 是在本地进行的</span></span><br><span class="line">Model.objects.<span class="built_in">all</span>().order_by(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;id&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>Update</strong></p>
+<ul>
+<li><code>save()</code></li>
+</ul>
+</li>
+<li><p><strong>Delete</strong></p>
+<ul>
+<li><p><code>delete()</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除id大于</span></span><br><span class="line">Model.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>&gt;=<span class="number">22</span>).delete()</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h2><h3 id="原始SQL"><a href="#原始SQL" class="headerlink" title="原始SQL"></a>原始SQL</h3><blockquote>
+<p>遇到复杂的场景, 使用<code>raw()</code>来执行<code>SQL</code>语句.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reader._meta.db_table -- 记录所在表名</span></span><br><span class="line">Mode.objects.raw(<span class="string">f&quot;select * from <span class="subst">&#123;Reader._meta.db_table&#125;</span> limit 1&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="多个数据库"><a href="#多个数据库" class="headerlink" title="多个数据库"></a>多个数据库</h3><p>修改<code>mysite/settings.py</code>添加数据库配置.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;polls&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;HOST&#x27;</span>: <span class="string">&#x27;127.0.0.1&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PORT&#x27;</span>: <span class="string">&#x27;3306&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;person&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;person&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;HOST&#x27;</span>: <span class="string">&#x27;127.0.0.1&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PORT&#x27;</span>: <span class="string">&#x27;3306&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>using</code> 参数指定数据库.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">person.save(using=<span class="string">&#x27;person&#x27;</span>)</span><br><span class="line">Person.objects.using(<span class="string">&#x27;person&#x27;</span>).<span class="built_in">all</span>()</span><br></pre></td></tr></table></figure>
+
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>使用<code>transaction.atomic()</code>控制数据库事务</p>
+<ul>
+<li><p>基于HTTP请求的事务</p>
+<ul>
+<li>在<code>settings</code>中要设置<code>ATOMIC_REQUESTS</code>为<code>True</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> transaction</span><br><span class="line"></span><br><span class="line"><span class="meta">@transaction.atomic</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">viewfunc</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="comment"># 在事务中执行的代码</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure></li>
+<li><p>基于视图具体逻辑的事务</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> transaction</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">viewfunc</span>(<span class="params">request</span>):</span></span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">with</span> transaction.atomic():</span><br><span class="line">		<span class="comment"># 在事务中执行的代码</span></span><br><span class="line">		...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>注意，只有视图被限制在事务中执行。中间件在事务之外运行，同理，渲染模板响应也是在事务之外运行的。</p>
+<p><strong>参考文档📕</strong></p>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL3poLWhhbnMvMy4yL3RvcGljcy9kYi9tb2RlbHMv">模型 | Django 文档 | Django (djangoproject.com)</span><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL3poLWhhbnMvMy4yL3JlZi9tb2RlbHMvZmllbGRzLw==">模型字段参考 | Django 文档 | Django (djangoproject.com)</span><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL3poLWhhbnMvMy4yL3JlZi9tb2RlbHMvb3B0aW9ucy8=">模型 Meta 选项 | Django 文档 | Django (djangoproject.com)</span><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL3poLWhhbnMvMy4yL3JlZi9tb2RlbHMvY29uc3RyYWludHMv">约束参考 | Django 文档 | Django (djangoproject.com)</span><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL3poLWhhbnMvMy4yL3RvcGljcy9zZXR0aW5ncy8=">Django 配置 | Django 文档 | Django (djangoproject.com)</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>Django</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>说说 python 中单例模式的实现</title>
     <url>/34b94b2a/</url>
     <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><blockquote>
@@ -68,7 +335,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Django 入门教程</title>
+    <title>Django 初体验</title>
     <url>/21619794/</url>
     <content><![CDATA[<blockquote>
 <p>Django 有着非常齐全的文档, 善用文档将能使学习事半功倍.</p>
