@@ -49,7 +49,7 @@
 <meta property="og:image" content="http://img.owq.world/2022/03/1708-84d281.png">
 <meta property="og:image" content="http://img.owq.world/2022/03/1712-601d4a.png">
 <meta property="article:published_time" content="2022-02-26T14:28:49.000Z">
-<meta property="article:modified_time" content="2022-03-24T09:12:41.124Z">
+<meta property="article:modified_time" content="2022-03-24T09:18:18.294Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Django">
 <meta property="article:tag" content="Python">
@@ -235,7 +235,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-03-24 09:13:23" itemprop="dateModified" datetime="2022-03-24T17:13:23+08:00">2022-03-24</time>
+            <time title="修改时间：2022-03-24 09:18:34" itemprop="dateModified" datetime="2022-03-24T17:18:34+08:00">2022-03-24</time>
             
           </span>
 
@@ -566,7 +566,7 @@
 <p>修改<code>polls/admin.py</code>, 配置后台管理, 用于添加Choice.</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Choice, Question</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChoiceInline</span>(<span class="params">admin.StackedInline</span>):</span></span><br><span class="line">    model = Choice</span><br><span class="line">    extra = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QuestionAdmin</span>(<span class="params">admin.ModelAdmin</span>):</span></span><br><span class="line">    fieldsets = [</span><br><span class="line">        (<span class="literal">None</span>,               &#123;<span class="string">&#x27;fields&#x27;</span>: [<span class="string">&#x27;question_text&#x27;</span>]&#125;),</span><br><span class="line">        (<span class="string">&#x27;Date information&#x27;</span>, &#123;<span class="string">&#x27;fields&#x27;</span>: [<span class="string">&#x27;pub_date&#x27;</span>], <span class="string">&#x27;classes&#x27;</span>: [<span class="string">&#x27;collapse&#x27;</span>]&#125;),</span><br><span class="line">    ]</span><br><span class="line">    inlines = [ChoiceInline]</span><br><span class="line"></span><br><span class="line">admin.site.register(Question, QuestionAdmin)</span><br></pre></td></tr></table></figure>
 
-<p>进入后台管理, 修改相应的选项就可以进行测试了.</p>
+<p>进入后台管理, 修改相应的选项保存后就可以进行测试了.</p>
 <p><img data-src="http://img.owq.world/2022/03/1708-84d281.png"></p>
 <p>测试一下</p>
 <p><img data-src="http://img.owq.world/2022/03/1712-601d4a.png"></p>
