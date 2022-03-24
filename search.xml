@@ -558,7 +558,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404, render</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span>(<span class="params">request, question_id</span>):</span></span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;polls/detail.html&#x27;</span>, &#123;<span class="string">&#x27;question&#x27;</span>: question&#125;)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>↑ pk 表示主键 &quot;primary key&quot;, 是 Django 提供查询快捷方式 ↑ </p>
+<p>↑ pk 参数表示主键 &quot;primary key&quot;, 是 Django 提供查询的快捷方式 ↑ </p>
 </blockquote>
 <p>测试之前先修改下设置</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DEBUG = <span class="literal">False</span>	<span class="comment"># 关闭调试</span></span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">&#x27;127.0.0.1&#x27;</span>]	<span class="comment"># 添加合法主机地址</span></span><br></pre></td></tr></table></figure>

@@ -49,7 +49,7 @@
 <meta property="og:image" content="http://img.owq.world/2022/03/1708-84d281.png">
 <meta property="og:image" content="http://img.owq.world/2022/03/1712-601d4a.png">
 <meta property="article:published_time" content="2022-02-26T14:28:49.000Z">
-<meta property="article:modified_time" content="2022-03-24T12:54:28.834Z">
+<meta property="article:modified_time" content="2022-03-24T12:55:43.564Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Django">
@@ -235,7 +235,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-03-24 12:54:35" itemprop="dateModified" datetime="2022-03-24T20:54:35+08:00">2022-03-24</time>
+            <time title="修改时间：2022-03-24 12:55:57" itemprop="dateModified" datetime="2022-03-24T20:55:57+08:00">2022-03-24</time>
             
           </span>
 
@@ -544,7 +544,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404, render</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span>(<span class="params">request, question_id</span>):</span></span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;polls/detail.html&#x27;</span>, &#123;<span class="string">&#x27;question&#x27;</span>: question&#125;)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>↑ pk 表示主键 &quot;primary key&quot;, 是 Django 提供查询快捷方式 ↑ </p>
+<p>↑ pk 参数表示主键 &quot;primary key&quot;, 是 Django 提供查询的快捷方式 ↑ </p>
 </blockquote>
 <p>测试之前先修改下设置</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DEBUG = <span class="literal">False</span>	<span class="comment"># 关闭调试</span></span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">&#x27;127.0.0.1&#x27;</span>]	<span class="comment"># 添加合法主机地址</span></span><br></pre></td></tr></table></figure>
