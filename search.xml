@@ -2508,7 +2508,7 @@
 </tr>
 <tr>
 <td align="center"><strong>.</strong></td>
-<td align="left">匹配除<code>\</code>*<code>n</code><em>之外的任何单个字符。要匹配包括<code>\</code></em><code>n</code>*在内的任何字符，请使用像`(.</td>
+<td align="left">匹配除<code>\n</code>之外的任何单个字符。要匹配包括<code>\n</code>在内的任何字符，请使用像`(.</td>
 </tr>
 <tr>
 <td align="center"><strong>(pattern)</strong></td>
