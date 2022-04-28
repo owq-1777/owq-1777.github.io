@@ -1,6 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Django 视图层</title>
+    <url>/80aa4d4c/</url>
+    <content><![CDATA[<h2 id="URL调度器"><a href="#URL调度器" class="headerlink" title="URL调度器"></a>URL调度器</h2><h3 id="urlpatterns"><a href="#urlpatterns" class="headerlink" title="urlpatterns"></a>urlpatterns</h3><blockquote>
+<p>当接收一个<code>HttpRequest</code>对象时, <code>Django</code>会自按顺序遍历<code>urlpatterns</code>进行匹配.<br>它是 <a href="https://docs.djangoproject.com/zh-hans/3.2/ref/urls/#django.urls.path"><code>django.urls.path()</code></a> 和(或) <a href="https://docs.djangoproject.com/zh-hans/3.2/ref/urls/#django.urls.re_path"><code>django.urls.re_path()</code></a> 实例的序列</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;articles/2003/&#x27;</span>, views.special_case_2003),</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="URL匹配"><a href="#URL匹配" class="headerlink" title="URL匹配"></a>URL匹配</h3><ul>
+<li><p>变量匹配 --- <code>path()</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">path(<span class="string">&#x27;&lt;int:question_id&gt;/vote/&#x27;</span>, views.vote, name=<span class="string">&#x27;vote&#x27;</span>),</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>要捕获的部分由<code>&lt;&gt;</code>包围.</li>
+<li><code>int</code>代表数据类型, 也可以是<code>str</code>.</li>
+<li>默认是在路径的结尾添加<code>/</code>.</li>
+</ul>
+</li>
+<li><p>正则匹配 --- <code>re_path()</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re_path(<span class="string">r&#x27;^(?P&lt;question_id&gt;\d+)/vote/$&#x27;</span>, views.vote, name=<span class="string">&#x27;vote&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>本质上是<code>re</code>模块的封装</li>
+<li><code>^</code> 和 <code>$</code> 注意加上, 防止上级路径捕获次级路径</li>
+</ul>
+</li>
+<li><p><code>include()</code></p>
+<ul>
+<li><code>include()</code>可以将其他<code>urlconf</code>添加到当前的<code>urlpatterns</code>序列当中.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">path(<span class="string">&#x27;polls/&#x27;</span>, include(<span class="string">&#x27;polls.urls&#x27;</span>)),</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>也可以将相同的路径前缀下后面的部分一起声明.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">path(<span class="string">&#x27;&lt;page_slug&gt;-&lt;page_id&gt;/&#x27;</span>, include([</span><br><span class="line">    path(<span class="string">&#x27;history/&#x27;</span>, views.history),</span><br><span class="line">    path(<span class="string">&#x27;edit/&#x27;</span>, views.edit),</span><br><span class="line">    path(<span class="string">&#x27;discuss/&#x27;</span>, views.discuss),</span><br><span class="line">    path(<span class="string">&#x27;permissions/&#x27;</span>, views.permissions),</span><br><span class="line">]))</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="HttpRequest"><a href="#HttpRequest" class="headerlink" title="HttpRequest"></a>HttpRequest</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li><p><code>HttpRequest.path</code><br>当前请求路径</p>
+</li>
+<li><p><code>HttpRequest.body</code></p>
+<p>当前请求体</p>
+</li>
+<li><p><code>HttpRequest.method</code><br>当前请求方法</p>
+</li>
+<li><p><code>HttpRequest.GET</code></p>
+<p>GET携带的<code>params</code>参数</p>
+</li>
+<li><p><code>HttpRequest.POST</code><br>POST携带的<code>data</code>参数</p>
+</li>
+<li><p><code>HttpRequest.COOKIES</code><br>cookies 字典</p>
+</li>
+<li><p><code>HttpRequest.FILES</code><br>上传的文件</p>
+</li>
+<li><p><code>HttpRequest.content_type</code><br>当前传输数据类型</p>
+</li>
+<li><p><code>HttpRequest.session</code><br>请求的服务器信息</p>
+</li>
+<li><p><code>HttpRequest.META</code><br>包含了 HTTP 头文件的字典</p>
+</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><p><code>get_host()</code></p>
+<p>获取请求主机</p>
+</li>
+</ul>
+<h2 id="HttpResponse"><a href="#HttpResponse" class="headerlink" title="HttpResponse"></a>HttpResponse</h2><ul>
+<li><p>模板使用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">&#x27;polls/results.html&#x27;</span>, &#123;<span class="string">&#x27;question&#x27;</span>: question&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><p>返回字符串</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> HttpResponse(<span class="string">&quot;Here&#x27;s the text of the Web page.&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>返回JSON格式的字符串</p>
+<blockquote>
+<p>本质上和<code>HttpResponse(json.dumps(&#123;&#125;))</code>一样,, 但提供了更多功能.<br>默认只接受<code>dict</code>格式, 需要设置<code>safe</code>为<code>False</code>才能传入其它格式.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> JsonResponse</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> JsonResponse(&#123;<span class="string">&#x27;foo&#x27;</span>: <span class="string">&#x27;bar&#x27;</span>&#125;, safe=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>返回文件</p>
+<blockquote>
+<p>主要是 <code>Content-Disposition</code> 里的内容, 这里没有<code>Django</code>特有的语法.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">response = HttpResponse(<span class="string">&#x27;test&#x27;</span>, headers=&#123;</span><br><span class="line">        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/octet-stream&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;Content-Disposition&#x27;</span>: <span class="string">&#x27;attachment; filename=&quot;test.txt&quot;&#x27;</span>,</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> response</span><br></pre></td></tr></table></figure></li>
+<li><p>返回异常</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> Http404</span><br><span class="line"></span><br><span class="line"><span class="keyword">raise</span> Http404(<span class="string">&#x27;Page not found&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><blockquote>
+<p>简单了解下4种HTTP协议请求方式</p>
+<p>GET    获取资源<br>POST    新建资源(更新资源)<br>PUT    更改资源<br>DELETE 删除资源</p>
+</blockquote>
+<h3 id="基于函数的视图"><a href="#基于函数的视图" class="headerlink" title="基于函数的视图"></a>基于函数的视图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">&quot;Hello, world. You&#x27;re at the polls index.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>实现<code>RESTful api</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index_get</span>(<span class="params">request</span>):</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index_post</span>(<span class="params">request</span>):</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index_put</span>(<span class="params">request</span>):</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index_delete</span>(<span class="params">request</span>):</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>绑定url</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">path(<span class="string">&#x27;get&#x27;</span>, views.xxx, name=<span class="string">&#x27;index_get&#x27;</span>),</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="基于类的视图"><a href="#基于类的视图" class="headerlink" title="基于类的视图"></a>基于类的视图</h3><blockquote>
+<p>不用写多个绑定, 而且层次分明, 模块开发时优选.</p>
+</blockquote>
+<ol>
+<li><p>绑定url</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">path(<span class="string">&#x27;&#x27;</span>, views.IndexView.as_view(), name=<span class="string">&#x27;index&#x27;</span>),</span><br></pre></td></tr></table></figure></li>
+<li><p>只需要绑定一次<code>path</code>,  会根据<code>HttpRequest.method</code>自动选择相应的处理方法.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexView</span>(<span class="params">generic.View</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Django 模型层</title>
     <url>/94470483/</url>
     <content><![CDATA[<h2 id="字段类型"><a href="#字段类型" class="headerlink" title="字段类型"></a>字段类型</h2><blockquote>

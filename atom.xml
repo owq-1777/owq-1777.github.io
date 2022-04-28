@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-03-23T14:24:31.012Z</updated>
+  <updated>2022-04-28T12:32:43.665Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django 视图层</title>
+    <link href="https://www.owq.world/80aa4d4c/"/>
+    <id>https://www.owq.world/80aa4d4c/</id>
+    <published>2022-04-28T20:29:24.000Z</published>
+    <updated>2022-04-28T12:32:43.665Z</updated>
+    
+    
+    <summary type="html">视图层注重业务的实现, 了解一些常用知识就够了, 更考验Python功底</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
+    
+    <category term="Django" scheme="https://www.owq.world/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>Django 模型层</title>
@@ -410,27 +431,6 @@
     <category term="Terminal" scheme="https://www.owq.world/tags/Terminal/"/>
     
     <category term="zsh" scheme="https://www.owq.world/tags/zsh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MariaDB 安装图文教程</title>
-    <link href="https://www.owq.world/9ec13a7e/"/>
-    <id>https://www.owq.world/9ec13a7e/</id>
-    <published>2021-01-22T10:50:42.000Z</published>
-    <updated>2021-11-25T02:57:17.270Z</updated>
-    
-    
-    <summary type="html">这是适用于 Windows 系统, 图文并茂的 MariaDB 安装图文教程（￣︶￣）↗</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="SQL" scheme="https://www.owq.world/tags/SQL/"/>
-    
-    <category term="MariaDB" scheme="https://www.owq.world/tags/MariaDB/"/>
     
   </entry>
   
