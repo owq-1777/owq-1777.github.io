@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="用 python 不会自动化办公可不行, 学习一下一键发邮件的方法吧(๑•̀ㅂ•́)و✧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 优雅的群发邮件">
+<meta property="og:url" content="https://www.owq.world/9f9b4f64/index.html">
+<meta property="og:site_name" content="Sunny was born">
+<meta property="og:description" content="用 python 不会自动化办公可不行, 学习一下一键发邮件的方法吧(๑•̀ㅂ•́)و✧">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.owq.world/2022/04/2141-ca5732.png">
+<meta property="og:image" content="http://img.owq.world/2022/05/2055-d813fd.png">
+<meta property="og:image" content="http://img.owq.world/2022/05/1749-a5c938.gif">
+<meta property="og:image" content="http://img.owq.world/2022/05/2134-5ee714.gif">
+<meta property="article:published_time" content="2022-05-01T20:44:57.000Z">
+<meta property="article:modified_time" content="2022-05-01T13:43:40.522Z">
+<meta property="article:author" content="OWQ">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.owq.world/2022/04/2141-ca5732.png">
+
+<link rel="canonical" href="https://www.owq.world/9f9b4f64/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python 优雅的群发邮件 | Sunny was born</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Sunny was born" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Sunny was born</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<span style="flex-grow: 2;"></span>
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+      
+
+
+<div class='bg-container' style="z-index: -1;">
+  <span class="header-bg"></span>
+  <script data-pjax>
+    console.info("")
+    var header=document.querySelector('.header-bg');
+    var img_arr = ["/img/header_img/bg1.webp","/img/header_img/bg2.webp","/img/header_img/bg3.webp","/img/header_img/bg4.webp","/img/header_img/bg5.webp","/img/header_img/bg6.webp"]
+    var index = Math.floor((Math.random()*img_arr.length));
+    header.setAttribute("style", "background-image: url('"+img_arr[index]+"')");
+  </script>
+</div>
+
+<div id="signature">
+  <div class="container">
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>Python 优雅的群发邮件</h1>
+          <h2 class="subheading">用 python 不会自动化办公可不行, 学习一下一键发邮件的方法吧(๑•̀ㅂ•́)و✧</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+            
+
+            <time title="创建时间：2022-05-01 20:44:57 / 修改时间：13:47:52" itemprop="dateCreated datePublished" datetime="2022-05-01T20:44:57Z">2022-05-01</time>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar-check"></i>
+            </span>
+            <span class="post-meta-item-text">Updated</span>
+            <time title="修改时间：2022-05-01 13:47:52" itemprop="dateModified" datetime="2022-05-01T21:47:52+08:00">2022-05-01</time>
+            
+          </span>
+
+
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>4.7k</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>4 min</span>
+          </span>
+
+
+        </header>
+
+      
+
+  </div>
+</div>
+
+
+
+<!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main" id="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/9f9b4f64/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><blockquote>
+<p>邮箱需要开启<strong>SMTP功能</strong></p>
+</blockquote>
+<h3 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h3><ul>
+<li><p><strong>SMTP</strong>(Simple Mail Transfer Protocol)<br>简单邮件传输协议, 是电子邮件发送的行业标准协议.(发送用)</p>
+</li>
+<li><p><strong>IMAP</strong>(Internet Access Message Protocol)<br>处理从接收服务器管理和检索电子邮件消息的电子邮件协议.（接受用)<br><strong>可以跨所有设备同步消息</strong>.</p>
+</li>
+<li><p><strong>POP3</strong><br>POP(邮局协议), 3(版本号), 也是接受用的协议.<br>和<code>IMAP</code>主要区别在, <code>POP3</code>会保存文件到本地, 服务器删了也没事, 便于脱机.</p>
+</li>
+</ul>
+<h3 id="开启SMTP"><a href="#开启SMTP" class="headerlink" title="开启SMTP"></a>开启SMTP</h3><p>以 <strong>outlook</strong> 邮箱为例:</p>
+<ul>
+<li><p>登录网页版邮箱 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9vdXRsb29rLmNvbS8=">https://outlook.com</span></p>
+</li>
+<li><p>右上角打开<code>设置</code>-搜索<code>IMAP</code>-打开<code>POP和IMAP</code>设置</p>
+<p><img data-src="http://img.owq.world/2022/04/2141-ca5732.png"></p>
+</li>
+<li><p>默认是开启<code>SMTP </code>服务的<br><img data-src="http://img.owq.world/2022/05/2055-d813fd.png"></p>
+</li>
+<li><p>记录下 <code>SMTP</code> 配置</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">服务器名称: smtp.office365.com</span></span><br><span class="line"><span class="section">端口: 587</span></span><br><span class="line"><span class="section">加密方法: STARTTLS</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><em>注: 其它类型的邮箱大多需要获取<strong>授权码</strong>才能登录邮箱, 而<code>outlook</code>用账号密码就可以.</em></p>
+<h2 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h2><p>先介绍要用到的库</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMy9saWJyYXJ5L3NtdHBsaWIuaHRtbA==">smtplib</span><br>定义了SMTP客户端的使用</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMy9saWJyYXJ5L2VtYWlsLmV4YW1wbGVzLmh0bWw=">email</span><br>邮件的编写和简单发送</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.message <span class="keyword">import</span> EmailMessage</span><br><span class="line"></span><br><span class="line">msg = EmailMessage()</span><br><span class="line">msg[<span class="string">&#x27;From&#x27;</span>] = <span class="string">&#x27;me@outlook.com&#x27;</span>    <span class="comment"># 发送邮箱</span></span><br><span class="line">msg[<span class="string">&#x27;To&#x27;</span>] = [<span class="string">&#x27;example@outlook.com&#x27;</span>, <span class="string">&#x27;example@qq.com&#x27;</span>]   <span class="comment"># 接受邮箱</span></span><br><span class="line">password = <span class="string">&#x27;*****&#x27;</span></span><br><span class="line"></span><br><span class="line">msg[<span class="string">&#x27;Subject&#x27;</span>] = <span class="string">&#x27;This is a test email&#x27;</span>	<span class="comment"># 邮件标题</span></span><br><span class="line">msg.set_content(<span class="string">&#x27;Hello !&#x27;</span>)		<span class="comment"># 邮件内容</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> smtplib.SMTP(<span class="string">&#x27;smtp.office365.com&#x27;</span>, port=<span class="number">587</span>) <span class="keyword">as</span> smtp:</span><br><span class="line">    smtp.starttls()                     <span class="comment"># 设置连接模式为TLS</span></span><br><span class="line">    smtp.login(msg[<span class="string">&#x27;From&#x27;</span>], password)   <span class="comment"># 登录客户端</span></span><br><span class="line">    smtp.send_message(msg)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 另一种发送方式</span></span><br><span class="line">    <span class="comment"># smtp.sendmail(from_addr=f&quot;owq&lt;&#123;msg[&#x27;From&#x27;]&#125;&gt;&quot;, to_addrs=msg[&#x27;To&#x27;], msg=msg.as_string())</span></span><br></pre></td></tr></table></figure>
+
+<p>当出现更复杂的需求出现时, 上面的代码很显然不够便捷, 这时要不就自己封装一个库, 要不就找找有没有现成的, 而<code>redmail</code>就是一个不错的选择.</p>
+<h2 id="redmail-库"><a href="#redmail-库" class="headerlink" title="redmail 库"></a>redmail 库</h2><blockquote>
+<p>一个高级邮件发送库, 可以快速简易的进行邮件发送.</p>
+</blockquote>
+<blockquote>
+<p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9yZWQtbWFpbC5yZWFkdGhlZG9jcy5pby9lbi9sYXRlc3QvaW5kZXguaHRtbA==">🚪</span></p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install redmail</span><br></pre></td></tr></table></figure>
+
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> redmail <span class="keyword">import</span> EmailSender</span><br><span class="line"></span><br><span class="line">email = EmailSender(host=<span class="string">&#x27;smtp.office365.com&#x27;</span>, port=<span class="number">587</span>,</span><br><span class="line">                    username=<span class="string">&#x27;me@outlook.com&#x27;</span>, password=<span class="string">&#x27;*****&#x27;</span>)</span><br><span class="line"></span><br><span class="line">email.send(</span><br><span class="line">    subject=<span class="string">&#x27;This is a test email&#x27;</span>,</span><br><span class="line">    sender=<span class="string">&#x27;me@outlook.com&#x27;</span>,</span><br><span class="line">    receivers=[<span class="string">&#x27;example@outlook.com&#x27;</span>, <span class="string">&#x27;example@qq.com&#x27;</span>],</span><br><span class="line">    text=<span class="string">&#x27;Hello!&#x27;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="一键群发"><a href="#一键群发" class="headerlink" title="一键群发"></a>一键群发</h2><h3 id="大致流程"><a href="#大致流程" class="headerlink" title="大致流程"></a>大致流程</h3><p>现在有这么一个需求:</p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">截图到剪贴板-&gt;粘贴到邮件客户端-&gt;填写收件人-&gt;点击发送-&gt;关闭客户端</span><br></pre></td></tr></table></figure>
+
+<p>我们把它优化成这样:</p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">截图到剪贴板-&gt;启动脚本完成群发</span><br></pre></td></tr></table></figure>
+
+<h3 id="构建配置"><a href="#构建配置" class="headerlink" title="构建配置"></a>构建配置</h3><p>先定义一下配置文件<code>config/email_archive.yml</code>, 有不同需求时可以通过切换配置文件来快速应用.</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># SMTP 服务配置</span></span><br><span class="line"><span class="attr">smtp:</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">me@outlook.com</span></span><br><span class="line">  <span class="attr">password:</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">smtp.office365.com</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">587</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件发送配置</span></span><br><span class="line"><span class="attr">send:</span></span><br><span class="line">  <span class="comment"># 发送</span></span><br><span class="line">  <span class="attr">sender:</span> <span class="string">owq&lt;me@outlook.com&gt;</span></span><br><span class="line">  <span class="comment"># 接收</span></span><br><span class="line">  <span class="attr">receive:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">example01@outlook.com</span></span><br><span class="line">  <span class="comment"># 抄送</span></span><br><span class="line">  <span class="attr">cc:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">example02@outlook.com</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">example03@outlook.com</span></span><br><span class="line">  <span class="comment"># 密送</span></span><br><span class="line">  <span class="attr">bcc:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">example04@outlook.com</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">example05@outlook.com</span></span><br></pre></td></tr></table></figure>
+
+<p>加载<code>yml</code>文件用的函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> yaml</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_yml</span>(<span class="params">conf_path:<span class="built_in">str</span></span>) -&gt; <span class="built_in">dict</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;Load .yml file &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file=conf_path, mode=<span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">return</span> yaml.load(stream=f, Loader=yaml.FullLoader)</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片提取"><a href="#图片提取" class="headerlink" title="图片提取"></a>图片提取</h3><p>使用<code>PIL</code>库从剪贴板提取图片保存</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageGrab</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_paste_pic</span>(<span class="params">filename: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot; Save the clipboard picture &quot;&quot;&quot;</span></span><br><span class="line">    im = ImageGrab.grabclipboard()</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(im, Image.Image):</span><br><span class="line">        im.save(filename)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="密文密码"><a href="#密文密码" class="headerlink" title="密文密码"></a>密文密码</h3><p>对于不想把密码保存在配置里的情况, 这里可以定义一个模拟密码输入的函数.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> msvcrt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">input_password</span>(<span class="params">info: <span class="built_in">str</span> = <span class="string">&#x27;Password: &#x27;</span></span>) -&gt; <span class="built_in">tuple</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;shell密码输入</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    按键绑定: 回车确认, 退格删除, Esc/Ctrl+C 退出(信号为False)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param info: 输入提示信息, defaults to &#x27;Password: &#x27;</span></span><br><span class="line"><span class="string">    :return: 信号和输入密码</span></span><br><span class="line"><span class="string">    :rtype: tuple</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(info, end=<span class="string">&#x27;&#x27;</span>, flush=<span class="literal">True</span>)</span><br><span class="line">    pawd_arr, sing = [], <span class="literal">False</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"></span><br><span class="line">        keypad = msvcrt.getch()</span><br><span class="line">        <span class="comment"># Enter</span></span><br><span class="line">        <span class="keyword">if</span> keypad == <span class="string">b&#x27;\r&#x27;</span>:</span><br><span class="line">            msvcrt.putch(<span class="string">b&#x27;\n&#x27;</span>)</span><br><span class="line">            sing = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="comment"># Esc or Ctrl+C</span></span><br><span class="line">        <span class="keyword">elif</span> keypad <span class="keyword">in</span> [<span class="string">b&#x27;\x1b&#x27;</span>, <span class="string">b&#x27;\x03&#x27;</span>]:</span><br><span class="line">            msvcrt.putch(<span class="string">b&#x27;\n&#x27;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="comment"># Backspace</span></span><br><span class="line">        <span class="keyword">elif</span> keypad == <span class="string">b&#x27;\x08&#x27;</span>:</span><br><span class="line">            <span class="keyword">if</span> pawd_arr:</span><br><span class="line">                pawd_arr.pop()</span><br><span class="line">                msvcrt.putch(<span class="string">b&#x27;\b&#x27;</span>)</span><br><span class="line">                msvcrt.putch(<span class="string">b&#x27; &#x27;</span>)</span><br><span class="line">                msvcrt.putch(<span class="string">b&#x27;\b&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pawd_arr.append(keypad)</span><br><span class="line">            msvcrt.putch(<span class="string">b&#x27;*&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sing, <span class="string">b&#x27;&#x27;</span>.join(pawd_arr).decode()</span><br></pre></td></tr></table></figure>
+
+<center>↓ 效果是这样子 ↓</center>
+
+<p><img data-src="http://img.owq.world/2022/05/1749-a5c938.gif"></p>
+<h3 id="封装函数"><a href="#封装函数" class="headerlink" title="封装函数"></a>封装函数</h3><p>创建<code>templates\archive_pic.html</code>编写内容模板, 便于邮件内容修改.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;h1&gt;Archive&lt;/h1&gt;</span><br><span class="line">&#123;&#123; pic &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义下发送邮件的函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_archive_email</span>(<span class="params">conf: <span class="built_in">dict</span>, img_path: <span class="built_in">str</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;加载配置发送附加图片的归档邮件</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param conf: 发送配置</span></span><br><span class="line"><span class="string">    :param img_path: 发送图片路径</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    email = EmailSender(**conf[<span class="string">&#x27;smtp&#x27;</span>])</span><br><span class="line">    email.set_template_paths(html=<span class="string">&#x27;templates&#x27;</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        email.send(</span><br><span class="line">            **conf[<span class="string">&#x27;send&#x27;</span>],</span><br><span class="line">            subject=<span class="string">f&quot;Recorded in <span class="subst">&#123;time.strftime(<span class="string">&#x27;%b %d, %Y&#x27;</span>, time.localtime())&#125;</span>&quot;</span>,</span><br><span class="line">            html_template=<span class="string">&#x27;archive_pic.html&#x27;</span>,</span><br><span class="line">            body_images=&#123;<span class="string">&#x27;pic&#x27;</span>: img_path&#125;,</span><br><span class="line">        )</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Email send done.&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> smtplib.SMTPAuthenticationError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Authentication unsuccessful.&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> smtplib.SMTPDataError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;SMTP service exception, login authentication is required.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>接下来编写一下流程, 就基本完成了~</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot; 获取剪贴板图片添加到邮件发送 &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    img_path = <span class="string">r&#x27;paste_pic.png&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> save_paste_pic(img_path):</span><br><span class="line"></span><br><span class="line">        conf = load_yml(<span class="string">r&#x27;config/email_archive.yml&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> conf[<span class="string">&#x27;smtp&#x27;</span>][<span class="string">&#x27;password&#x27;</span>]:</span><br><span class="line">            sign, password = input_password()</span><br><span class="line">            <span class="keyword">if</span> sign:</span><br><span class="line">                conf[<span class="string">&#x27;smtp&#x27;</span>][<span class="string">&#x27;password&#x27;</span>] = password</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        send_archive_email(conf, img_path)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Clipboard has no pictures!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="快速启动"><a href="#快速启动" class="headerlink" title="快速启动"></a>快速启动</h3><p>这里使用的是<code>PowerShell</code>, 打开它的配置文件(没有需要创建).</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">code <span class="variable">$profile</span></span><br></pre></td></tr></table></figure>
+
+<p>创建运行函数和别名</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendArchiveEmail</span></span> &#123;</span><br><span class="line">    <span class="variable">$Pwd</span> = <span class="built_in">Get-Location</span></span><br><span class="line">    <span class="built_in">Write-Output</span> <span class="string">&#x27;Start send_archive_email.py.&#x27;</span></span><br><span class="line">    <span class="built_in">cd</span> D:\Project\auto_email &amp;&amp; python send_archive_email.py</span><br><span class="line">    <span class="built_in">cd</span> <span class="variable">$Pwd</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">New-Alias</span> <span class="built_in">send-email</span> sendArchiveEmail</span><br></pre></td></tr></table></figure>
+
+<p>刷新终端后使用<code>send-email</code>命令就可以启动脚本了</p>
+<p><img data-src="http://img.owq.world/2022/05/2134-5ee714.gif"></p>
+
+    </div>
+
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
+
+      </div>
+    
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.owq.world/9f9b4f64/" title="Python 优雅的群发邮件">https://www.owq.world/9f9b4f64/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/80aa4d4c/" rel="next" title="Django 视图层">
+      Django 视图层 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          目录
+        </li>
+        <li class="sidebar-nav-overview">
+          概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="nav-text">前置条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3"><span class="nav-text">简单了解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AFSMTP"><span class="nav-text">开启SMTP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0"><span class="nav-text">简单实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redmail-%E5%BA%93"><span class="nav-text">redmail 库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E7%BE%A4%E5%8F%91"><span class="nav-text">一键群发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E8%87%B4%E6%B5%81%E7%A8%8B"><span class="nav-text">大致流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE"><span class="nav-text">构建配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E6%8F%90%E5%8F%96"><span class="nav-text">图片提取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E6%96%87%E5%AF%86%E7%A0%81"><span class="nav-text">密文密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E5%87%BD%E6%95%B0"><span class="nav-text">封装函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"><span class="nav-text">快速启动</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="OWQ"
+      src="/images/avatar.webp">
+  <p class="site-author-name" itemprop="name">OWQ</p>
+  <div class="site-description" itemprop="description">爱编程, 懂设计, 喜折腾</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnF3cWlvd29Ab3V0bG9vay5jb20=" title="E-Mail → mailto:qwqiowo@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github-alt" fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      <hr class="hr-solid">
+    </div>
+
+
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><span class="exturl" data-url="aHR0cHM6Ly9iZWlhbi5taWl0Lmdvdi5jbg==">粤ICP备2021144316号 </span>
+      <img src="/images/gongan.png" style="display: inline-block;"><span class="exturl" data-url="aHR0cDovL3d3dy5iZWlhbi5nb3YuY24vcG9ydGFsL3JlZ2lzdGVyU3lzdGVtSW5mbz9yZWNvcmRjb2RlPTQ0MDMwNTAyMDA4Mzk2">粤公网安备 44030502008396号 </span>
+  </div>
+
+<div class="copyright">
+  <span id="RunTime"></span>
+  <!-- 网站运行时间的设置 -->
+  <script>
+    var BootDate = new Date("2021/08/01 00:00:00");
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " d " + RunHours + " h " + RunMinutes + " m " + RunSeconds + " s ";
+      document.getElementById(id).innerHTML = "This blog has running: " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OWQ</span>
+
+<div class="busuanzi-count">
+
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">93k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:25</span>
+</div>
+
+</div>
+  <script src="/js/ribbonDynamic.js"></script>
+        
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.bg-container',
+    '#signature .container',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
+</html>
+
+<script type="text/javascript" src="/js/src/funny_title.js"></script>
