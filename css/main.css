@@ -451,6 +451,7 @@ td {
   width: 12px;
 }
 .highlight-container .highlight {
+  -webkit-border-radius: 0px;
   border-radius: 0 0 5px 5px;
 }
 .highlight-container .highlight .table-container {
@@ -1303,7 +1304,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #3d208e;
+  background: #4bffb6;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
