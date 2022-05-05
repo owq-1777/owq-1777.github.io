@@ -2176,29 +2176,20 @@
     <title>zsh + oh-my-zsh 简易配置</title>
     <url>/4bfebac1/</url>
     <content><![CDATA[<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>使用系统对应的包管理器安装</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install zsh</span><br></pre></td></tr></table></figure>
 
 
-<h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Command</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>curl</strong></td>
-<td>sh -c &quot;$(curl -fsSL <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
-</tr>
-<tr>
-<td><strong>wget</strong></td>
-<td>sh -c &quot;$(wget -O- <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
-</tr>
-<tr>
-<td><strong>fetch</strong></td>
-<td>sh -c &quot;$(fetch -o - <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL29obXl6c2gvb2hteXpzaC9tYXN0ZXIvdG9vbHMvaW5zdGFsbC5zaCkmcXVvdDs=">https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span></td>
-</tr>
-</tbody></table>
+
+<h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><p>安装前提要有<code>git</code></p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> git</span><br></pre></td></tr></table></figure>
+
+<p>根据已有的网络工具选其一执行即可.</p>
+<h4 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="连接被墙问题"><a href="#连接被墙问题" class="headerlink" title="连接被墙问题"></a>连接被墙问题</h2><h3 id="方法一-科学上网"><a href="#方法一-科学上网" class="headerlink" title="方法一: 科学上网"></a>方法一: <del>科学上网</del></h3><blockquote>
 <p>只可意会不可言传🐕</p>
 </blockquote>
