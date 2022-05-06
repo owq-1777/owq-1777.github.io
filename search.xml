@@ -2367,17 +2367,23 @@
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
 
+<h3 id="zsh-syntax-highlighting"><a href="#zsh-syntax-highlighting" class="headerlink" title="zsh-syntax-highlighting"></a><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtc3ludGF4LWhpZ2hsaWdodGluZw==">zsh-syntax-highlighting</span></h3><blockquote>
+<p>正确语法高亮提示</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+
 <h3 id="git-open"><a href="#git-open" class="headerlink" title="git-open"></a><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhdWxpcmlzaC9naXQtb3Blbg==">git-open</span></h3><blockquote>
 <p>浏览器快速打开git项目</p>
 </blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/paulirish/git-open.git <span class="variable">$ZSH_CUSTOM</span>/plugins/git-open</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/paulirish/git-open.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/git-open</span><br></pre></td></tr></table></figure>
 
+<p>直接在仓库目录下使用</p>
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">git open</span><br></pre></td></tr></table></figure>
 
-<p><strong>配置插件</strong></p>
-<p><em>注意：插件中间是以空格分开</em></p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">plugins</span>=(git zsh-autosuggestions git-open)</span><br></pre></td></tr></table></figure>
+<h3 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h3><p><em>注意：插件中间是以空格分开</em></p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">plugins</span>=(git zsh-autosuggestions zsh-syntax-highlighting git-open)</span><br></pre></td></tr></table></figure>
 
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Bvc3NhdHRpL3Bva2Vtb25zYXk=">pokemonsay</span></p>
 ]]></content>
       <categories>
         <category>配置记录</category>
@@ -3372,6 +3378,7 @@
         <category>命令文档</category>
       </categories>
       <tags>
+        <tag>Linux</tag>
         <tag>Arch Linux</tag>
       </tags>
   </entry>
