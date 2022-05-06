@@ -2383,7 +2383,7 @@
 <h3 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h3><p><em>注意：插件中间是以空格分开</em></p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">plugins</span>=(git zsh-autosuggestions zsh-syntax-highlighting git-open)</span><br></pre></td></tr></table></figure>
 
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Bvc3NhdHRpL3Bva2Vtb25zYXk=">pokemonsay</span></p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>打印一只宝可梦: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Bvc3NhdHRpL3Bva2Vtb25zYXk=">pokemonsay</span></p>
 ]]></content>
       <categories>
         <category>配置记录</category>
