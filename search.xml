@@ -2306,10 +2306,22 @@
 
 
 
-<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><img data-src="http://img.owq.world/2021/11/2124-9962fa.png" style="zoom: 80%;" />
+<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><h3 id="powerlevel10"><a href="#powerlevel10" class="headerlink" title="powerlevel10"></a>powerlevel10</h3><blockquote>
+<p>仓库传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JvbWthdHYvcG93ZXJsZXZlbDEwaw==">🚪</span></p>
+</blockquote>
+<p><img data-src="http://img.owq.world/2022/05/1500-a5e012.png"></p>
+<p><strong>Arch</strong></p>
+<p>直接从软件源安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S zsh-theme-powerlevel10k</span><br></pre></td></tr></table></figure>
+
+<p>添加到配置里</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>重新进入shell配置即可</p>
+<h3 id="powerline"><a href="#powerline" class="headerlink" title="powerline"></a>powerline</h3><img data-src="http://img.owq.world/2021/11/2124-9962fa.png" style="zoom: 80%;" />
 
 <h4 id="安装powerline主题"><a href="#安装powerline主题" class="headerlink" title="安装powerline主题"></a><strong>安装powerline主题</strong></h4><blockquote>
-<p>传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
+<p>仓库传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
 </blockquote>
 <p>克隆主题文件到本地</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git powerline</span><br></pre></td></tr></table></figure>
