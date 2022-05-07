@@ -2304,13 +2304,11 @@
 <p>修改 <code>~/.zshrc</code> 文件</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">&quot;ys&quot;</span></span><br></pre></td></tr></table></figure>
 
-
-
-<h3 id="复杂炫酷的"><a href="#复杂炫酷的" class="headerlink" title="复杂炫酷的"></a>复杂炫酷的</h3><h3 id="powerlevel10"><a href="#powerlevel10" class="headerlink" title="powerlevel10"></a>powerlevel10</h3><blockquote>
+<h3 id="powerlevel10"><a href="#powerlevel10" class="headerlink" title="powerlevel10"></a>powerlevel10</h3><blockquote>
 <p>仓库传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JvbWthdHYvcG93ZXJsZXZlbDEwaw==">🚪</span></p>
 </blockquote>
 <p><img data-src="http://img.owq.world/2022/05/1500-a5e012.png"></p>
-<p><strong>Arch</strong></p>
+<p><strong>Arch 安装方法</strong></p>
 <p>直接从软件源安装</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S zsh-theme-powerlevel10k</span><br></pre></td></tr></table></figure>
 
