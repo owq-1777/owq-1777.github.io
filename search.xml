@@ -3320,6 +3320,11 @@
 
 <h2 id="docker-compose-命令"><a href="#docker-compose-命令" class="headerlink" title="docker-compose 命令"></a>docker-compose 命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker-compose up                  <span class="comment"># 启动所有容器</span></span><br><span class="line">docker-compose up -d               <span class="comment"># 后台启动并运行所有容器</span></span><br><span class="line">docker-compose up --no-recreate -d <span class="comment"># 不重新创建已经停止的容器</span></span><br><span class="line">docker-compose up -d test2         <span class="comment"># 只启动test2这个容器</span></span><br><span class="line">docker-compose stop                <span class="comment"># 停止容器</span></span><br><span class="line">docker-compose start               <span class="comment"># 启动容器</span></span><br><span class="line">docker-compose down                <span class="comment"># 停止并销毁容器</span></span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><p>db容器无法连接解决方法<br>错误信息: <code>Access denied for user &#39;root&#39;@&#39;172.18.0.5&#39; (using password: YES)</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker-compose down --volumes</span><br><span class="line">docker-compose up -d --build</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>命令文档</category>
