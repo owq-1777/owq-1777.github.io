@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-05-07T13:47:34.914Z</updated>
+  <updated>2022-05-19T14:47:08.640Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Celery 快速上手使用 Python篇</title>
+    <link href="https://www.owq.world/73d2d4df/"/>
+    <id>https://www.owq.world/73d2d4df/</id>
+    <published>2022-05-19T22:40:25.000Z</published>
+    <updated>2022-05-19T14:47:08.640Z</updated>
+    
+    
+    <summary type="html">Celery 一个强大的分布式任务调度器, 这是一篇快速上手指南~</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
+    
+    <category term="Celery" scheme="https://www.owq.world/tags/Celery/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux 安装 Docker</title>
@@ -410,27 +431,6 @@
     <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
     
     <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>优雅的使用WSL2-Kali桌面环境</title>
-    <link href="https://www.owq.world/202281bd/"/>
-    <id>https://www.owq.world/202281bd/</id>
-    <published>2021-08-16T16:25:28.000Z</published>
-    <updated>2021-11-05T06:39:38.270Z</updated>
-    
-    
-    <summary type="html">让我们在高分屏下用最舒服的姿势来使用WSL桌面环境吧^(*￣(oo)￣)^</summary>
-    
-    
-    
-    <category term="配置记录" scheme="https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="WSL2" scheme="https://www.owq.world/tags/WSL2/"/>
-    
-    <category term="Kali Linux" scheme="https://www.owq.world/tags/Kali-Linux/"/>
     
   </entry>
   

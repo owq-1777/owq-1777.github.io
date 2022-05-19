@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Celery 一个强大的分布式任务调度器, 这是一篇快速上手指南~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Celery 快速上手使用 Python篇">
+<meta property="og:url" content="https://www.owq.world/73d2d4df/index.html">
+<meta property="og:site_name" content="Sunny was born">
+<meta property="og:description" content="Celery 一个强大的分布式任务调度器, 这是一篇快速上手指南~">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.owq.world/2022/05/1540-a7efa3.png">
+<meta property="article:published_time" content="2022-05-19T22:40:25.000Z">
+<meta property="article:modified_time" content="2022-05-19T14:47:08.640Z">
+<meta property="article:author" content="OWQ">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Celery">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.owq.world/2022/05/1540-a7efa3.png">
+
+<link rel="canonical" href="https://www.owq.world/73d2d4df/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Celery 快速上手使用 Python篇 | Sunny was born</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Sunny was born" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Sunny was born</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<span style="flex-grow: 2;"></span>
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+      
+
+
+<div class='bg-container' style="z-index: -1;">
+  <span class="header-bg"></span>
+  <script data-pjax>
+    console.info("")
+    var header=document.querySelector('.header-bg');
+    var img_arr = ["/img/header_img/bg1.webp","/img/header_img/bg2.webp","/img/header_img/bg3.webp","/img/header_img/bg4.webp","/img/header_img/bg5.webp","/img/header_img/bg6.webp"]
+    var index = Math.floor((Math.random()*img_arr.length));
+    header.setAttribute("style", "background-image: url('"+img_arr[index]+"')");
+  </script>
+</div>
+
+<div id="signature">
+  <div class="container">
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>Celery 快速上手使用 Python篇</h1>
+          <h2 class="subheading">Celery 一个强大的分布式任务调度器, 这是一篇快速上手指南~</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+            
+
+            <time title="创建时间：2022-05-19 22:40:25 / 修改时间：14:47:16" itemprop="dateCreated datePublished" datetime="2022-05-19T22:40:25Z">2022-05-19</time>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar-check"></i>
+            </span>
+            <span class="post-meta-item-text">Updated</span>
+            <time title="修改时间：2022-05-19 14:47:16" itemprop="dateModified" datetime="2022-05-19T22:47:16+08:00">2022-05-19</time>
+            
+          </span>
+
+
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>5.2k</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>5 min</span>
+          </span>
+
+
+        </header>
+
+      
+
+  </div>
+</div>
+
+
+
+<!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main" id="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/73d2d4df/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Github -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NlbGVyeS9jZWxlcnk=">https://github.com/celery/celery</span><br>Docs   -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmNlbGVyeXEuZGV2L2VuL3N0YWJsZS9pbmRleC5odG1s">https://docs.celeryq.dev/en/stable/index.html</span></p>
+</blockquote>
+<h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><ul>
+<li>Celery 是一个异步任务队列, 用于分布式调度任务</li>
+<li>组件<ul>
+<li>Celery Beat 任务调度器<br>用于发布任务到任务队列</li>
+<li>Celery Workers 执行任务的消费者<br>默认情况下 Celery 会在不同进程执行任务, 可以分布到多台机器</li>
+<li>Broker 消息代理<br>用来传递任务的, 通常搭配 <code>RabbitMQ</code> or <code>Redis</code> 使用</li>
+<li>Producer 任务生产者<br>调用Celery提供的API进行任务添加</li>
+<li>Result Backend 结果后端<br>保存了任务结果以供查询</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="http://img.owq.world/2022/05/1540-a7efa3.png"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> -U Celery</span><br></pre></td></tr></table></figure>
+
+<p>这里用 <code>Redis</code> 作为传递消息队列和后端, 可以直接安装捆绑包.</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> -U <span class="string">&quot;celery[redis]&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>创建文件 <code>dome.py</code> 和 <code>test.py</code></p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── dome.<span class="keyword">py</span></span><br><span class="line">└── test.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>dome.py</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"></span><br><span class="line"><span class="comment"># redis://:password@hostname:port/db_number</span></span><br><span class="line">broker = <span class="string">&#x27;redis://localhost:6379/2&#x27;</span>		<span class="comment"># 任务队列</span></span><br><span class="line">backend = <span class="string">&#x27;redis://localhost:6379/3&#x27;</span>	<span class="comment"># 后端(存储任务结果)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一个参数是生成任务名的前缀, 不影响后续操作</span></span><br><span class="line"><span class="comment"># result_expires 参数是后端结果保存时间</span></span><br><span class="line">app = Celery(<span class="string">&#x27;test&#x27;</span>, broker=broker, backend=backend, result_expires=<span class="number">120</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task	</span><span class="comment"># 装饰add函数成为 Task 实例</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wait</span>(<span class="params">wait</span>):</span><br><span class="line">    time.sleep(wait)</span><br><span class="line">    <span class="keyword">return</span> wait</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行Celery"><a href="#运行Celery" class="headerlink" title="运行Celery"></a>运行Celery</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">celery -A dome worker -l info</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-A</code>: 指定创建的celery对象的位置<br><code>dome</code>里有初始化后的实例, <code>worker</code>表示该实例是任务执行者</li>
+<li><code>-l</code>:输出的日志等级</li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><blockquote>
+<p>任务调用 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmNlbGVyeXEuZGV2L2VuL3N0YWJsZS91c2VyZ3VpZGUvY2FsbGluZy5odG1s">https://docs.celeryq.dev/en/stable/userguide/calling.html</span></p>
+</blockquote>
+<p>进入<code>pyhton</code>交互模式或编写<code>test.py</code>测试文件测试都可</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> dome</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>delay()</code>: 用于异步调用任务</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 返回的是 AsyncResult 实例</span></span><br><span class="line">dome.add.delay(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>apply_async()</code>: 和<code>delay()</code>作用一样, 但支持更多操作</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dome.add.apply_async(args=[<span class="number">1</span>,<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ready()</code>: 返回任务完成状态</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result.ready()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>get()</code>: 获取任务结果(执行过程是阻塞的)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置超时, 超时未完成抛出 TimeoutError</span></span><br><span class="line">result.get(timeout=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略异常</span></span><br><span class="line">result.get(propagate=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>traceback</code>: 获取异常, 无异常为<code>None</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result.traceback</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h2><p>这里添加下100个任务</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[dome.wait.delay(<span class="number">60</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>这时<code>Redis</code>会存在3个键, 实际上执行<code>dome.add.delay(1,2)</code>也有, 但任务已经被取走执行了, 观察不到过程.</p>
+<ul>
+<li><code>celery</code>: 里面存放的是待执行的任务队列</li>
+<li><code>unacked</code>: 里面是存放的待确认的任务队列(已被分配给<code>Workers</code>的任务)<br>unacked 表示为未收到ack(确认讯息)</li>
+<li><code>unacked_index</code>: 优先队列, 存放的是<code>unacked</code>相应的索引</li>
+</ul>
+<p>任务在生成时会被添加到任务队列里, 这时任务调度器没有运行的话, 你会看到100个任务在<strong>任务队列</strong>安安静静的躺着.</p>
+<p>因为电脑CPU有16核, 默认会创建16个<code>worker</code>, 在添加完任务后的60秒内, <code>unacked</code>里面应该是存在着64条待确认任务(每个<code>worker</code>分配5条), 而任务队列里面有20条待执行任务, 剩下的16条在<code>worker</code>中执行.</p>
+<p>任务执行完, <code>worker</code>会拿<code>unacked</code>里的任务执行, 任务队列里会继续把任务分配给有空闲的<code>worker</code>, 真到任务都执行完.</p>
+<p>如果直接中断程序的话, <code>unacked</code>里的任务会重新被塞回任务队列里面, 而正在执行中任务则会被丢失, 这是极不推荐的做法, 正确的做法是给<code>celery</code>进程发送<code>TERM</code>信号, 这样<code>woeker</code>会等待任务完成后再关闭.</p>
+<h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><h3 id="默认使用"><a href="#默认使用" class="headerlink" title="默认使用"></a>默认使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
+<li><strong>name</strong>: 可以显式指定任务的名字默认是模块的命名空间中本函数的名字</li>
+<li><strong>serializer</strong>: 指定本任务的序列化的方法</li>
+<li><strong>bind</strong>: 一个bool值, 设置是否绑定一个task的实例, 如果绑定, task实例会作为参数传递到任务方法中, 可以访问task实例的所有的属性, 即前面反序列化中那些属性</li>
+<li><strong>base</strong>: 定义任务的基类, 可以以此来定义回调函数, 默认是Task类</li>
+<li><strong>default_retry_delay</strong>: 设置该任务重试的延迟时间, 当任务执行失败后, 会自动重试, 单位是秒, 默认3分钟</li>
+<li><strong>autoretry_for</strong>: 设置在特定异常时重试任务, 默认False即不重试</li>
+<li><strong>retry_backoff</strong>: 默认False, 设置重试时的延迟时间间隔策略</li>
+<li><strong>retry_backoff_max</strong>: 设置最大延迟重试时间, 默认10分钟, 如果失败则不再重试</li>
+<li><strong>retry_jitter</strong>: 默认True, 即引入抖动, 避免重试任务集中执行</li>
+</ul>
+<h3 id="函数要求"><a href="#函数要求" class="headerlink" title="函数要求"></a>函数要求</h3><ul>
+<li>方法应该是等幂的<ul>
+<li>默认情况下Celery不会执行任何重试逻辑</li>
+<li>重试的话需要根据Celery说明配置</li>
+</ul>
+</li>
+<li>涉及<code>I/O</code>的操作应该做好超时处理</li>
+</ul>
+<h3 id="重试"><a href="#重试" class="headerlink" title="重试"></a>重试</h3><figure class="highlight node-repl"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">...</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="取消任务"><a href="#取消任务" class="headerlink" title="取消任务"></a>取消任务</h3><h4 id="revoke"><a href="#revoke" class="headerlink" title="revoke()"></a>revoke()</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result = add.apply_async(args=[<span class="number">2</span>, <span class="number">2</span>], countdown=<span class="number">120</span>)</span><br><span class="line">result.revoke()</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用任务id取消</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> proj.celery <span class="keyword">import</span> app</span><br><span class="line">app.control.revoke(task_id)</span><br></pre></td></tr></table></figure>
+
+<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><blockquote>
+<p>crontab -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmNlbGVyeXEuZGV2L2VuL3N0YWJsZS9yZWZlcmVuY2UvY2VsZXJ5LnNjaGVkdWxlcy5odG1s">https://docs.celeryq.dev/en/stable/reference/celery.schedules.html</span></p>
+</blockquote>
+<h3 id="配置时区"><a href="#配置时区" class="headerlink" title="配置时区"></a>配置时区</h3><p><strong>timezone</strong>: 默认为UTC(version&gt;3.0)<br>值为<code>pytz</code>库支持的时区 -&gt; <code>pytz.common_timezones</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">app.conf.timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>enable_utc</strong>: 设置为 false 时，将使用系统本地时区.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">app.conf.enable_utc</span> = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Dome"><a href="#Dome" class="headerlink" title="Dome"></a>Dome</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery  <span class="comment"># pip install -U Celery</span></span><br><span class="line"><span class="keyword">from</span> celery.schedules <span class="keyword">import</span> crontab</span><br><span class="line"></span><br><span class="line">broker = <span class="string">&#x27;redis://localhost:6379/2&#x27;</span></span><br><span class="line">backend = <span class="string">&#x27;redis://localhost:6379/3&#x27;</span></span><br><span class="line"></span><br><span class="line">app = Celery(<span class="string">&#x27;dome&#x27;</span>, broker=broker, backend=backend, result_expires=<span class="number">120</span>)</span><br><span class="line"></span><br><span class="line">app.conf.timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line">app.conf.beat_schedule = &#123;</span><br><span class="line">    <span class="string">&#x27;add_schedule&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;dome.add&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: <span class="number">3.0</span>,	<span class="comment"># 每3秒执行一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (<span class="number">16</span>, <span class="number">16</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;wait_schedule&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;dome.wait&#x27;</span>,		<span class="comment"># 注意模块名要一致</span></span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: crontab(),  	<span class="comment"># 每分钟执行一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (randint(<span class="number">2</span>,<span class="number">20</span>),)	<span class="comment"># 注意参数是元组</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wait</span>(<span class="params">wait</span>):</span><br><span class="line">    time.sleep(wait)</span><br><span class="line">    <span class="keyword">return</span> wait</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行celery"><a href="#运行celery" class="headerlink" title="运行celery"></a>运行celery</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">celery</span> -A dome worker -l <span class="literal">info</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启动定时任务"><a href="#启动定时任务" class="headerlink" title="启动定时任务"></a>启动定时任务</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">celery</span> -A dome beat -l <span class="literal">info</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用配置文件"><a href="#使用配置文件" class="headerlink" title="使用配置文件"></a>使用配置文件</h2><p>创建<code>config</code>文件夹, 然后创建 <code>celery.py</code>和<code>__init__.py</code>文件</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="keyword">conf</span></span><br><span class="line">│   ├── celery.<span class="keyword">py</span></span><br><span class="line">│   └── __init__.<span class="keyword">py</span></span><br><span class="line">├── dome.<span class="keyword">py</span></span><br><span class="line">└── test.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>celery.py</code>, 把前面的配置转移进来</p>
+<blockquote>
+<p>配置 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmNlbGVyeXEuZGV2L2VuL3N0YWJsZS91c2VyZ3VpZGUvY29uZmlndXJhdGlvbi5odG1s">https://docs.celeryq.dev/en/stable/userguide/configuration.html</span></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery.schedules <span class="keyword">import</span> crontab</span><br><span class="line"></span><br><span class="line">broker_url = <span class="string">&#x27;redis://localhost:6379/2&#x27;</span></span><br><span class="line">result_backend = <span class="string">&#x27;redis://localhost:6379/3&#x27;</span></span><br><span class="line"></span><br><span class="line">result_expires = <span class="number">120</span>    <span class="comment"># 结果存储时间</span></span><br><span class="line"></span><br><span class="line">retry_policy = <span class="number">5.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Worker接收超时, 超时没有确认时任务会被分配到另一个Worker</span></span><br><span class="line">broker_transport_options = &#123;<span class="string">&#x27;visibility_timeout&#x27;</span>: <span class="number">600</span>&#125;</span><br><span class="line"></span><br><span class="line">timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line">beat_schedule = &#123;</span><br><span class="line">    <span class="string">&#x27;add_schedule&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;dome.add&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: <span class="number">3.0</span>,	<span class="comment"># 每3秒执行一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (<span class="number">16</span>, <span class="number">16</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;wait_schedule&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;dome.wait&#x27;</span>,		<span class="comment"># 注意模块名要一致</span></span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: crontab(),  	<span class="comment"># 每分钟执行一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (randint(<span class="number">2</span>,<span class="number">20</span>),)	<span class="comment"># 注意参数是元组</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>dome.py</code>, 使用 <code>config_from_object()</code> 加载配置文件</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"></span><br><span class="line">app = Celery(<span class="string">&#x27;dome&#x27;</span>)</span><br><span class="line">app.config_from_object(<span class="string">&#x27;conf.celery&#x27;</span>)  <span class="comment"># 导入配置</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wait</span>(<span class="params">wait</span>):</span><br><span class="line">    time.sleep(wait)</span><br><span class="line">    <span class="keyword">return</span> wait</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br></pre></td></tr></table></figure>
+
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
+<li><p>查看 Workers 状态</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">celery -A dome inspect active</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
+
+      </div>
+    
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.owq.world/73d2d4df/" title="Celery 快速上手使用 Python篇">https://www.owq.world/73d2d4df/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/Celery/" rel="tag"><i class="fa fa-tag"></i> Celery</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/bcd27009/" rel="next" title="Linux 安装 Docker">
+      Linux 安装 Docker <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          目录
+        </li>
+        <li class="sidebar-nav-overview">
+          概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3"><span class="nav-text">简单了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8CCelery"><span class="nav-text">运行Celery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-text">执行流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task"><span class="nav-text">Task</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E4%BD%BF%E7%94%A8"><span class="nav-text">默认使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%A6%81%E6%B1%82"><span class="nav-text">函数要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%AF%95"><span class="nav-text">重试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E4%BB%BB%E5%8A%A1"><span class="nav-text">取消任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#revoke"><span class="nav-text">revoke()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-text">定时任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="nav-text">配置时区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dome"><span class="nav-text">Dome</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8Ccelery"><span class="nav-text">运行celery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-text">启动定时任务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">使用配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-text">其它</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="OWQ"
+      src="/images/avatar.webp">
+  <p class="site-author-name" itemprop="name">OWQ</p>
+  <div class="site-description" itemprop="description">爱编程, 懂设计, 喜折腾</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnF3cWlvd29Ab3V0bG9vay5jb20=" title="E-Mail → mailto:qwqiowo@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github-alt" fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      <hr class="hr-solid">
+    </div>
+
+
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><span class="exturl" data-url="aHR0cHM6Ly9iZWlhbi5taWl0Lmdvdi5jbg==">粤ICP备2021144316号 </span>
+      <img src="/images/gongan.png" style="display: inline-block;"><span class="exturl" data-url="aHR0cDovL3d3dy5iZWlhbi5nb3YuY24vcG9ydGFsL3JlZ2lzdGVyU3lzdGVtSW5mbz9yZWNvcmRjb2RlPTQ0MDMwNTAyMDA4Mzk2">粤公网安备 44030502008396号 </span>
+  </div>
+
+<div class="copyright">
+  <span id="RunTime"></span>
+  <!-- 网站运行时间的设置 -->
+  <script>
+    var BootDate = new Date("2021/08/01 00:00:00");
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " d " + RunHours + " h " + RunMinutes + " m " + RunSeconds + " s ";
+      document.getElementById(id).innerHTML = "This blog has running: " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OWQ</span>
+
+<div class="busuanzi-count">
+
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">102k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:33</span>
+</div>
+
+</div>
+  <script src="/js/ribbonDynamic.js"></script>
+        
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.bg-container',
+    '#signature .container',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
+</html>
+
+<script type="text/javascript" src="/js/src/funny_title.js"></script>

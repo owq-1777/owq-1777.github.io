@@ -1,6 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Celery 快速上手使用 Python篇</title>
+    <url>/73d2d4df/</url>
+    <content><![CDATA[<blockquote>
+<p>Github -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NlbGVyeS9jZWxlcnk=">https://github.com/celery/celery</span><br>Docs   -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmNlbGVyeXEuZGV2L2VuL3N0YWJsZS9pbmRleC5odG1s">https://docs.celeryq.dev/en/stable/index.html</span></p>
+</blockquote>
+<h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><ul>
+<li>Celery 是一个异步任务队列, 用于分布式调度任务</li>
+<li>组件<ul>
+<li>Celery Beat 任务调度器<br>用于发布任务到任务队列</li>
+<li>Celery Workers 执行任务的消费者<br>默认情况下 Celery 会在不同进程执行任务, 可以分布到多台机器</li>
+<li>Broker 消息代理<br>用来传递任务的, 通常搭配 <code>RabbitMQ</code> or <code>Redis</code> 使用</li>
+<li>Producer 任务生产者<br>调用Celery提供的API进行任务添加</li>
+<li>Result Backend 结果后端<br>保存了任务结果以供查询</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="http://img.owq.world/2022/05/1540-a7efa3.png"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> -U Celery</span><br></pre></td></tr></table></figure>
+
+<p>这里用 <code>Redis</code> 作为传递消息队列和后端, 可以直接安装捆绑包.</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> -U <span class="string">&quot;celery[redis]&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>创建文件 <code>dome.py</code> 和 <code>test.py</code></p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── dome.<span class="keyword">py</span></span><br><span class="line">└── test.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>dome.py</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"></span><br><span class="line"><span class="comment"># redis://:password@hostname:port/db_number</span></span><br><span class="line">broker = <span class="string">&#x27;redis://localhost:6379/2&#x27;</span>		<span class="comment"># 任务队列</span></span><br><span class="line">backend = <span class="string">&#x27;redis://localhost:6379/3&#x27;</span>	<span class="comment"># 后端(存储任务结果)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一个参数是生成任务名的前缀, 不影响后续操作</span></span><br><span class="line"><span class="comment"># result_expires 参数是后端结果保存时间</span></span><br><span class="line">app = Celery(<span class="string">&#x27;test&#x27;</span>, broker=broker, backend=backend, result_expires=<span class="number">120</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task	</span><span class="comment"># 装饰add函数成为 Task 实例</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wait</span>(<span class="params">wait</span>):</span><br><span class="line">    time.sleep(wait)</span><br><span class="line">    <span class="keyword">return</span> wait</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行Celery"><a href="#运行Celery" class="headerlink" title="运行Celery"></a>运行Celery</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">celery -A dome worker -l info</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-A</code>: 指定创建的celery对象的位置<br><code>dome</code>里有初始化后的实例, <code>worker</code>表示该实例是任务执行者</li>
+<li><code>-l</code>:输出的日志等级</li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><blockquote>
+<p>任务调用 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmNlbGVyeXEuZGV2L2VuL3N0YWJsZS91c2VyZ3VpZGUvY2FsbGluZy5odG1s">https://docs.celeryq.dev/en/stable/userguide/calling.html</span></p>
+</blockquote>
+<p>进入<code>pyhton</code>交互模式或编写<code>test.py</code>测试文件测试都可</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> dome</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>delay()</code>: 用于异步调用任务</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 返回的是 AsyncResult 实例</span></span><br><span class="line">dome.add.delay(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>apply_async()</code>: 和<code>delay()</code>作用一样, 但支持更多操作</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dome.add.apply_async(args=[<span class="number">1</span>,<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ready()</code>: 返回任务完成状态</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result.ready()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>get()</code>: 获取任务结果(执行过程是阻塞的)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置超时, 超时未完成抛出 TimeoutError</span></span><br><span class="line">result.get(timeout=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略异常</span></span><br><span class="line">result.get(propagate=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>traceback</code>: 获取异常, 无异常为<code>None</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result.traceback</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h2><p>这里添加下100个任务</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[dome.wait.delay(<span class="number">60</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>这时<code>Redis</code>会存在3个键, 实际上执行<code>dome.add.delay(1,2)</code>也有, 但任务已经被取走执行了, 观察不到过程.</p>
+<ul>
+<li><code>celery</code>: 里面存放的是待执行的任务队列</li>
+<li><code>unacked</code>: 里面是存放的待确认的任务队列(已被分配给<code>Workers</code>的任务)<br>unacked 表示为未收到ack(确认讯息)</li>
+<li><code>unacked_index</code>: 优先队列, 存放的是<code>unacked</code>相应的索引</li>
+</ul>
+<p>任务在生成时会被添加到任务队列里, 这时任务调度器没有运行的话, 你会看到100个任务在<strong>任务队列</strong>安安静静的躺着.</p>
+<p>因为电脑CPU有16核, 默认会创建16个<code>worker</code>, 在添加完任务后的60秒内, <code>unacked</code>里面应该是存在着64条待确认任务(每个<code>worker</code>分配5条), 而任务队列里面有20条待执行任务, 剩下的16条在<code>worker</code>中执行.</p>
+<p>任务执行完, <code>worker</code>会拿<code>unacked</code>里的任务执行, 任务队列里会继续把任务分配给有空闲的<code>worker</code>, 真到任务都执行完.</p>
+<p>如果直接中断程序的话, <code>unacked</code>里的任务会重新被塞回任务队列里面, 而正在执行中任务则会被丢失, 这是极不推荐的做法, 正确的做法是给<code>celery</code>进程发送<code>TERM</code>信号, 这样<code>woeker</code>会等待任务完成后再关闭.</p>
+<h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><h3 id="默认使用"><a href="#默认使用" class="headerlink" title="默认使用"></a>默认使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
+<li><strong>name</strong>: 可以显式指定任务的名字默认是模块的命名空间中本函数的名字</li>
+<li><strong>serializer</strong>: 指定本任务的序列化的方法</li>
+<li><strong>bind</strong>: 一个bool值, 设置是否绑定一个task的实例, 如果绑定, task实例会作为参数传递到任务方法中, 可以访问task实例的所有的属性, 即前面反序列化中那些属性</li>
+<li><strong>base</strong>: 定义任务的基类, 可以以此来定义回调函数, 默认是Task类</li>
+<li><strong>default_retry_delay</strong>: 设置该任务重试的延迟时间, 当任务执行失败后, 会自动重试, 单位是秒, 默认3分钟</li>
+<li><strong>autoretry_for</strong>: 设置在特定异常时重试任务, 默认False即不重试</li>
+<li><strong>retry_backoff</strong>: 默认False, 设置重试时的延迟时间间隔策略</li>
+<li><strong>retry_backoff_max</strong>: 设置最大延迟重试时间, 默认10分钟, 如果失败则不再重试</li>
+<li><strong>retry_jitter</strong>: 默认True, 即引入抖动, 避免重试任务集中执行</li>
+</ul>
+<h3 id="函数要求"><a href="#函数要求" class="headerlink" title="函数要求"></a>函数要求</h3><ul>
+<li>方法应该是等幂的<ul>
+<li>默认情况下Celery不会执行任何重试逻辑</li>
+<li>重试的话需要根据Celery说明配置</li>
+</ul>
+</li>
+<li>涉及<code>I/O</code>的操作应该做好超时处理</li>
+</ul>
+<h3 id="重试"><a href="#重试" class="headerlink" title="重试"></a>重试</h3><figure class="highlight node-repl"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">...</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="取消任务"><a href="#取消任务" class="headerlink" title="取消任务"></a>取消任务</h3><h4 id="revoke"><a href="#revoke" class="headerlink" title="revoke()"></a>revoke()</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result = add.apply_async(args=[<span class="number">2</span>, <span class="number">2</span>], countdown=<span class="number">120</span>)</span><br><span class="line">result.revoke()</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用任务id取消</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> proj.celery <span class="keyword">import</span> app</span><br><span class="line">app.control.revoke(task_id)</span><br></pre></td></tr></table></figure>
+
+<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><blockquote>
+<p>crontab -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmNlbGVyeXEuZGV2L2VuL3N0YWJsZS9yZWZlcmVuY2UvY2VsZXJ5LnNjaGVkdWxlcy5odG1s">https://docs.celeryq.dev/en/stable/reference/celery.schedules.html</span></p>
+</blockquote>
+<h3 id="配置时区"><a href="#配置时区" class="headerlink" title="配置时区"></a>配置时区</h3><p><strong>timezone</strong>: 默认为UTC(version&gt;3.0)<br>值为<code>pytz</code>库支持的时区 -&gt; <code>pytz.common_timezones</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">app.conf.timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>enable_utc</strong>: 设置为 false 时，将使用系统本地时区.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">app.conf.enable_utc</span> = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Dome"><a href="#Dome" class="headerlink" title="Dome"></a>Dome</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery  <span class="comment"># pip install -U Celery</span></span><br><span class="line"><span class="keyword">from</span> celery.schedules <span class="keyword">import</span> crontab</span><br><span class="line"></span><br><span class="line">broker = <span class="string">&#x27;redis://localhost:6379/2&#x27;</span></span><br><span class="line">backend = <span class="string">&#x27;redis://localhost:6379/3&#x27;</span></span><br><span class="line"></span><br><span class="line">app = Celery(<span class="string">&#x27;dome&#x27;</span>, broker=broker, backend=backend, result_expires=<span class="number">120</span>)</span><br><span class="line"></span><br><span class="line">app.conf.timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line">app.conf.beat_schedule = &#123;</span><br><span class="line">    <span class="string">&#x27;add_schedule&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;dome.add&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: <span class="number">3.0</span>,	<span class="comment"># 每3秒执行一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (<span class="number">16</span>, <span class="number">16</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;wait_schedule&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;dome.wait&#x27;</span>,		<span class="comment"># 注意模块名要一致</span></span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: crontab(),  	<span class="comment"># 每分钟执行一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (randint(<span class="number">2</span>,<span class="number">20</span>),)	<span class="comment"># 注意参数是元组</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wait</span>(<span class="params">wait</span>):</span><br><span class="line">    time.sleep(wait)</span><br><span class="line">    <span class="keyword">return</span> wait</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行celery"><a href="#运行celery" class="headerlink" title="运行celery"></a>运行celery</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">celery</span> -A dome worker -l <span class="literal">info</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启动定时任务"><a href="#启动定时任务" class="headerlink" title="启动定时任务"></a>启动定时任务</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">celery</span> -A dome beat -l <span class="literal">info</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用配置文件"><a href="#使用配置文件" class="headerlink" title="使用配置文件"></a>使用配置文件</h2><p>创建<code>config</code>文件夹, 然后创建 <code>celery.py</code>和<code>__init__.py</code>文件</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="keyword">conf</span></span><br><span class="line">│   ├── celery.<span class="keyword">py</span></span><br><span class="line">│   └── __init__.<span class="keyword">py</span></span><br><span class="line">├── dome.<span class="keyword">py</span></span><br><span class="line">└── test.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>celery.py</code>, 把前面的配置转移进来</p>
+<blockquote>
+<p>配置 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmNlbGVyeXEuZGV2L2VuL3N0YWJsZS91c2VyZ3VpZGUvY29uZmlndXJhdGlvbi5odG1s">https://docs.celeryq.dev/en/stable/userguide/configuration.html</span></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery.schedules <span class="keyword">import</span> crontab</span><br><span class="line"></span><br><span class="line">broker_url = <span class="string">&#x27;redis://localhost:6379/2&#x27;</span></span><br><span class="line">result_backend = <span class="string">&#x27;redis://localhost:6379/3&#x27;</span></span><br><span class="line"></span><br><span class="line">result_expires = <span class="number">120</span>    <span class="comment"># 结果存储时间</span></span><br><span class="line"></span><br><span class="line">retry_policy = <span class="number">5.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Worker接收超时, 超时没有确认时任务会被分配到另一个Worker</span></span><br><span class="line">broker_transport_options = &#123;<span class="string">&#x27;visibility_timeout&#x27;</span>: <span class="number">600</span>&#125;</span><br><span class="line"></span><br><span class="line">timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line">beat_schedule = &#123;</span><br><span class="line">    <span class="string">&#x27;add_schedule&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;dome.add&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: <span class="number">3.0</span>,	<span class="comment"># 每3秒执行一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (<span class="number">16</span>, <span class="number">16</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;wait_schedule&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;dome.wait&#x27;</span>,		<span class="comment"># 注意模块名要一致</span></span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: crontab(),  	<span class="comment"># 每分钟执行一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (randint(<span class="number">2</span>,<span class="number">20</span>),)	<span class="comment"># 注意参数是元组</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>dome.py</code>, 使用 <code>config_from_object()</code> 加载配置文件</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"></span><br><span class="line">app = Celery(<span class="string">&#x27;dome&#x27;</span>)</span><br><span class="line">app.config_from_object(<span class="string">&#x27;conf.celery&#x27;</span>)  <span class="comment"># 导入配置</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wait</span>(<span class="params">wait</span>):</span><br><span class="line">    time.sleep(wait)</span><br><span class="line">    <span class="keyword">return</span> wait</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br></pre></td></tr></table></figure>
+
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
+<li><p>查看 Workers 状态</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">celery -A dome inspect active</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Celery</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux 安装 Docker</title>
     <url>/bcd27009/</url>
     <content><![CDATA[<h2 id="Ubuntu-Debian"><a href="#Ubuntu-Debian" class="headerlink" title="Ubuntu/Debian"></a>Ubuntu/Debian</h2><blockquote>
