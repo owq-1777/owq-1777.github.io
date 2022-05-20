@@ -34,7 +34,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://img.owq.world/2021/12/2105-76b6ba.png">
 <meta property="article:published_time" content="2000-05-21T08:00:00.000Z">
-<meta property="article:modified_time" content="2022-01-14T05:01:00.596Z">
+<meta property="article:modified_time" content="2022-05-20T09:56:21.649Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="owq">
 <meta property="article:tag" content="python">
@@ -220,7 +220,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-05-20 06:31:00" itemprop="dateModified" datetime="2022-05-20T14:31:00+08:00">2022-05-20</time>
+            <time title="修改时间：2022-05-20 09:56:29" itemprop="dateModified" datetime="2022-05-20T17:56:29+08:00">2022-05-20</time>
             
           </span>
 
@@ -232,7 +232,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>6.2k</span>
+            <span>7.2k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -240,7 +240,7 @@
               <i class="far fa-clock"></i>
             </span>
             <span class="post-meta-item-text">Reading time: &asymp;</span>
-            <span>6 min</span>
+            <span>7 min</span>
           </span>
 
 
@@ -317,19 +317,26 @@
 <li>Don&#39;t be one of the le eches. （不要当伸手党）</li>
 <li>Either outstanding or out. （要么出众，要么出局）</li>
 </ul>
-<img data-src="http://img.owq.world/2021/12/2105-76b6ba.png" alt=" " style="zoom: 25%;" />
+<img data-src="http://img.owq.world/2021/12/2105-76b6ba.png" alt=" " style="zoom: 25%; box-shadow=none" />
 
 
 
 <hr>
 <h2 id="零碎知识"><a href="#零碎知识" class="headerlink" title="零碎知识"></a>零碎知识</h2><h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><ul>
 <li><p>切换db</p>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="keyword">db</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="keyword">db</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>验证</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">db</span><span class="selector-class">.auth</span>(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;paw&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">db</span>.auth(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;paw&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>复制表</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">db.<span class="keyword">test</span>（复制源表）.find().<span class="keyword">forEach</span>(<span class="keyword">function</span>(x)&#123;</span><br><span class="line">    db.<span class="keyword">target</span>（目的表）.insert(x);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">db.test（复制源表）.<span class="built_in">find</span>().forEach(<span class="keyword">function</span>(<span class="params">x</span>)&#123;</span><br><span class="line">    db.target（目的表）.<span class="built_in">insert</span>(x);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
 </ul>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>使用淘宝镜像</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="built_in">set</span> <span class="attribute">registry</span>=https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure>
+
+
+
 <hr>
 <h2 id="随记语录"><a href="#随记语录" class="headerlink" title="随记语录"></a>随记语录</h2><ul>
 <li>顺其自然不如融入自然。</li>
@@ -356,9 +363,9 @@
 <hr>
 <h2 id="快捷Copy"><a href="#快捷Copy" class="headerlink" title="快捷Copy"></a>快捷Copy</h2><h3 id="重启资源管理器"><a href="#重启资源管理器" class="headerlink" title="重启资源管理器"></a>重启资源管理器</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">taskkill /<span class="keyword">f</span> /<span class="keyword">im</span> explorer.<span class="keyword">exe</span> &amp; start explorer.<span class="keyword">exe</span> ====</span><br></pre></td></tr></table></figure>
 
-<h3 id="取消圆角"><a href="#取消圆角" class="headerlink" title="取消圆角"></a>取消圆角</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"><span class="selector-class">.post</span> <span class="selector-tag">img</span> &#123;<span class="attribute">border-radius</span>: <span class="number">0</span>;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="取消圆角"><a href="#取消圆角" class="headerlink" title="取消圆角"></a>取消圆角</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"><span class="selector-class">.post</span> <span class="selector-tag">img</span> &#123;<span class="attribute">border-radius</span>: <span class="number">0</span>;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生产 RSA 密匙,一路回车即可</span></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="comment"># 添加密匙文件到 authorized_keys 并 修改权限为 600</span></span><br><span class="line">cat <span class="string">.ssh/id_rsa.pub</span> &gt;&gt; <span class="string">.ssh/authorized_keys</span></span><br><span class="line">chmod 600 <span class="string">.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure>
+<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生产 RSA 密匙,一路回车即可</span></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="comment"># 添加密匙文件到 authorized_keys 并 修改权限为 600</span></span><br><span class="line"><span class="built_in">cat</span> .ssh/id_rsa.pub &gt;&gt; .ssh/authorized_keys</span><br><span class="line"><span class="built_in">chmod</span> 600 .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 
 
 
@@ -370,78 +377,81 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>添加/插入/创建/初始化/加载</td>
+<td>添加&#x2F;插入&#x2F;创建&#x2F;初始化&#x2F;加载</td>
 <td>add、append、insert、create、initialize、loads</td>
 </tr>
 <tr>
-<td>删除/销毁</td>
+<td>删除&#x2F;销毁</td>
 <td>delete、remove、destroy、drop</td>
 </tr>
 <tr>
-<td>打开/开始/启动</td>
+<td>打开&#x2F;开始&#x2F;启动</td>
 <td>open、start</td>
 </tr>
 <tr>
-<td>关闭/停止</td>
+<td>关闭&#x2F;停止</td>
 <td>close、stop</td>
 </tr>
 <tr>
-<td>获取/读取/查找/查询</td>
+<td>获取&#x2F;读取&#x2F;查找&#x2F;查询</td>
 <td>get、fetch、acquire、read、search、find、query</td>
 </tr>
 <tr>
-<td>设置/重置/放入/写入/释放/刷新</td>
+<td>设置&#x2F;重置&#x2F;放入&#x2F;写入&#x2F;释放&#x2F;刷新</td>
 <td>set、reset、put、write、release、refresh</td>
 </tr>
 <tr>
-<td>发送/推送</td>
+<td>发送&#x2F;推送</td>
 <td>send、push</td>
 </tr>
 <tr>
-<td>接收/拉取</td>
+<td>接收&#x2F;拉取</td>
 <td>receive、pull</td>
 </tr>
 <tr>
-<td>提交/撤销/取消</td>
+<td>提交&#x2F;撤销&#x2F;取消</td>
 <td>submit、cancel</td>
 </tr>
 <tr>
-<td>收集/采集/选取/选择</td>
+<td>收集&#x2F;采集&#x2F;选取&#x2F;选择</td>
 <td>collect、pick、select</td>
 </tr>
 <tr>
-<td>提取/解析</td>
+<td>提取&#x2F;解析</td>
 <td>sub、extract、parse</td>
 </tr>
 <tr>
-<td>编码/解码</td>
+<td>编码&#x2F;解码</td>
 <td>encode、decode</td>
 </tr>
 <tr>
-<td>填充/打包/压缩</td>
+<td>填充&#x2F;打包&#x2F;压缩</td>
 <td>fill、pack、compress</td>
 </tr>
 <tr>
-<td>清空/拆包/解压</td>
+<td>清空&#x2F;拆包&#x2F;解压</td>
 <td>flush、clear、unpack、decompress</td>
 </tr>
 <tr>
-<td>增加/减少</td>
+<td>增加&#x2F;减少</td>
 <td>increase、decrease、reduce</td>
 </tr>
 <tr>
-<td>分隔/拼接</td>
+<td>分隔&#x2F;拼接</td>
 <td>split、join、p</td>
 </tr>
 <tr>
-<td>过滤/校验/检测</td>
+<td>过滤&#x2F;校验&#x2F;检测</td>
 <td>filter、valid、check</td>
 </tr>
 </tbody></table>
-<h2 id="Linux快捷命令"><a href="#Linux快捷命令" class="headerlink" title="Linux快捷命令"></a>Linux快捷命令</h2><p><strong>查看端口状态</strong></p>
-<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line">netstat -nupl (UDP 类型的端口)</span><br><span class="line">    (TCP 类型的端口)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 指定查看</span></span><br><span class="line">lsof -i:<span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 测试远程主机端口是否打开</span></span><br><span class="line">telnet ip  端口号</span><br></pre></td></tr></table></figure>
+<h2 id="Linux快捷命令"><a href="#Linux快捷命令" class="headerlink" title="Linux快捷命令"></a>Linux快捷命令</h2><p><strong>查找文件</strong></p>
+<figure class="highlight elm"><table><tr><td class="code"><pre><span class="line"><span class="title">find</span> / -name <span class="type">AnmyTest</span> -<span class="keyword">type</span> d(查找 <span class="type">AnmyTest</span> 目录位置)</span><br></pre></td></tr></table></figure>
 
-<h6 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h6><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">rsync -av -e ssh --exclude=&#123;<span class="string">&#x27;file1.txt&#x27;</span>,<span class="string">&#x27;dir1/*&#x27;</span>,<span class="string">&#x27;dir2&#x27;</span>&#125; ~<span class="regexp">/virt/</span> root<span class="variable">@centos7</span><span class="symbol">:/tmp</span></span><br></pre></td></tr></table></figure>
+<p><strong>查看端口状态</strong></p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">netstat</span> -nupl (UDP 类型的端口)</span><br><span class="line">    (TCP 类型的端口)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定查看</span></span><br><span class="line">lsof -i:<span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试远程主机端口是否打开</span></span><br><span class="line">telnet ip  端口号</span><br><span class="line"></span><br><span class="line">nmap -p <span class="number">80</span> -sV <span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.</span><br></pre></td></tr></table></figure>
+
+<h6 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h6><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">rsync -av -e ssh --exclude=&#123;<span class="string">&#x27;file1.txt&#x27;</span>,<span class="string">&#x27;dir1/*&#x27;</span>,<span class="string">&#x27;dir2&#x27;</span>&#125; ~<span class="regexp">/virt/</span> root<span class="variable">@centos7</span><span class="symbol">:/tmp</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>查看解析速度</strong></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -s -w &#x27;\nLookup time:\t%&#123;time_namelookup&#125;\nConnect time:\t%&#123;time_connect&#125;\nPreXfer time:\t%&#123;time_pretransfer&#125;\nStartXfer time:\t%&#123;time_starttransfer&#125;\n\nTotal time:\t%&#123;time_total&#125;\n&#x27; -o /dev/null http://stackoverflow.com/</span><br></pre></td></tr></table></figure>
@@ -450,7 +460,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl ip.gs</span><br><span class="line"></span><br><span class="line">curl cip.cc</span><br><span class="line"></span><br><span class="line">curl ipecho.net/plain</span><br></pre></td></tr></table></figure>
 
 <p><strong>文件夹大小</strong></p>
-<figure class="highlight gml"><table><tr><td class="code"><pre><span class="line">du -lh --<span class="built_in">max</span>-<span class="symbol">depth</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight gml"><table><tr><td class="code"><pre><span class="line">du -lh --<span class="built_in">max</span>-<span class="variable language_">depth</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h3><ul>
 <li>&amp;<br>加在一个命令的最后，可以把这个命令放到后台执行，如<br>watch -n 10 sh test.sh &amp; #每10s在后台执行一次test.sh脚本</li>
@@ -459,14 +469,16 @@
 <li>fg<br>将后台中的命令调至前台继续运行。如果后台中有多个命令，可以用fg %jobnumber（是命令编号，不是进程号）将选中的命令调出。</li>
 <li>bg<br>将一个在后台暂停的命令，变成在后台继续执行。如果后台中有多个命令，可以用bg %jobnumber将选中的命令调出。</li>
 <li>kill<br>法子1：通过jobs命令查看job号（假设为num），然后执行kill %num<br>法子2：通过ps命令查看job的进程号（PID，假设为pid），然后执行kill pid<br>前台进程的终止：Ctrl+c</li>
-<li>nohup<br>如果让程序始终在后台执行，即使关闭当前的终端也执行（之前的&amp;做不到），这时候需要nohup。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。关闭中断后，在另一个终端jobs已经无法看到后台跑得程序了，此时利用ps（进程查看命令）</li>
+<li>nohup<br>如果让程序始终在后台执行，即使关闭当前的终端也执行（之前的&amp;做不到），这时候需要nohup。该命令可以在你退出帐户&#x2F;关闭终端之后继续运行相应的进程。关闭中断后，在另一个终端jobs已经无法看到后台跑得程序了，此时利用ps（进程查看命令）</li>
 </ul>
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">ps</span> -aux</span><br><span class="line"><span class="comment"># a:显示所有程序 u:以用户为主的格式来显示 x:显示所有程序，不以终端机来区分</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">将<span class="string">.tgz</span>文件解压在当前目录：</span><br><span class="line">tar zxvf  MY_NAME.tgz </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">将<span class="string">.tar.gz</span>文件解压在当前目录：</span><br><span class="line">tar zxvf  MY_NAME.tar.gz</span><br><span class="line"></span><br><span class="line">tar -xvf file.tar <span class="string">//</span>解压 tar包</span><br><span class="line"></span><br><span class="line"><span class="comment"># tar -cf all.tar *.jpg</span></span><br><span class="line">这条命令是将所有<span class="string">.jpg</span>的文件打成一个名为all.tar的包。-c是表示产生新的包 ，-f指定包的文件名。</span><br></pre></td></tr></table></figure>
 
 
 
 <h2 id="Mongo-1"><a href="#Mongo-1" class="headerlink" title="Mongo"></a>Mongo</h2><p><strong>模糊查询</strong></p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$regex</span> 操作符的介绍</span><br><span class="line">MongoDB 使用 <span class="variable">$regex</span> 操作符来设置匹配字符串的正则表达式，使用 PCRE(Pert Compatible Regular Expression) 作为正则表达式语言。</span><br><span class="line">regex 操作符</span><br><span class="line">&#123;&lt;field&gt;<span class="symbol">:</span>&#123;<span class="variable">$regex</span><span class="symbol">:/pattern/</span>，<span class="variable">$options</span><span class="symbol">:</span>’&lt;options&gt;’&#125;&#125;</span><br><span class="line">&#123;&lt;field&gt;<span class="symbol">:</span>&#123;<span class="variable">$regex</span><span class="symbol">:</span>’pattern’，<span class="variable">$options</span><span class="symbol">:</span>’&lt;options&gt;’&#125;&#125;</span><br><span class="line">&#123;&lt;field&gt;<span class="symbol">:</span>&#123;<span class="variable">$regex</span><span class="symbol">:/pattern/&lt;options&gt;</span>&#125;&#125;</span><br><span class="line">正则表达式对象</span><br><span class="line">&#123;&lt;field&gt;: <span class="regexp">/pattern/</span>&lt;options&gt;&#125;</span><br><span class="line"><span class="variable">$regex</span> 与正则表达式对象的区别:</span><br><span class="line">在 <span class="variable">$in</span> 操作符中只能使用正则表达式对象，例如<span class="symbol">:</span>&#123;<span class="symbol">name:</span>&#123;<span class="variable">$in</span><span class="symbol">:</span>[<span class="regexp">/^joe/i</span>,<span class="regexp">/^jack/</span>&#125;&#125;</span><br><span class="line">在使用隐式的 <span class="variable">$and</span> 操作符中，只能使用 <span class="variable">$regex</span>，例如<span class="symbol">:</span>&#123;<span class="symbol">name:</span>&#123;<span class="variable">$regex</span><span class="symbol">:/^jo/i</span>, <span class="variable">$nin</span><span class="symbol">:</span>[<span class="string">&#x27;john&#x27;</span>]&#125;&#125;</span><br><span class="line">当 option 选项中包含 X 或 S 选项时，只能使用 <span class="variable">$regex</span>，例如<span class="symbol">:</span>&#123;<span class="symbol">name:</span>&#123;<span class="variable">$regex</span><span class="symbol">:/m</span>.*line/,<span class="variable">$options</span><span class="symbol">:<span class="string">&quot;si&quot;</span></span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="variable">$regex</span> 操作符的介绍</span><br><span class="line">MongoDB 使用 <span class="variable">$regex</span> 操作符来设置匹配字符串的正则表达式，使用 <span class="variable constant_">PCRE</span>(Pert Compatible Regular Expression) 作为正则表达式语言。</span><br><span class="line">regex 操作符</span><br><span class="line">&#123;&lt;field&gt;<span class="symbol">:</span>&#123;<span class="variable">$regex</span><span class="symbol">:/pattern/</span>，<span class="variable">$options</span><span class="symbol">:</span>’&lt;options&gt;’&#125;&#125;</span><br><span class="line">&#123;&lt;field&gt;<span class="symbol">:</span>&#123;<span class="variable">$regex</span><span class="symbol">:</span>’pattern’，<span class="variable">$options</span><span class="symbol">:</span>’&lt;options&gt;’&#125;&#125;</span><br><span class="line">&#123;&lt;field&gt;<span class="symbol">:</span>&#123;<span class="variable">$regex</span><span class="symbol">:/pattern/&lt;options&gt;</span>&#125;&#125;</span><br><span class="line">正则表达式对象</span><br><span class="line">&#123;&lt;field&gt;: <span class="regexp">/pattern/</span>&lt;options&gt;&#125;</span><br><span class="line"><span class="variable">$regex</span> 与正则表达式对象的区别:</span><br><span class="line">在 <span class="variable">$in</span> 操作符中只能使用正则表达式对象，例如<span class="symbol">:</span>&#123;<span class="symbol">name:</span>&#123;<span class="variable">$in</span><span class="symbol">:</span>[<span class="regexp">/^joe/i</span>,<span class="regexp">/^jack/</span>&#125;&#125;</span><br><span class="line">在使用隐式的 <span class="variable">$and</span> 操作符中，只能使用 <span class="variable">$regex</span>，例如<span class="symbol">:</span>&#123;<span class="symbol">name:</span>&#123;<span class="variable">$regex</span><span class="symbol">:/^jo/i</span>, <span class="variable">$nin</span><span class="symbol">:</span>[<span class="string">&#x27;john&#x27;</span>]&#125;&#125;</span><br><span class="line">当 option 选项中包含 X 或 S 选项时，只能使用 <span class="variable">$regex</span>，例如<span class="symbol">:</span>&#123;<span class="symbol">name:</span>&#123;<span class="variable">$regex</span><span class="symbol">:/m</span>.*line/,<span class="variable">$options</span><span class="symbol">:<span class="string">&quot;si&quot;</span></span>&#125;&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -498,11 +510,13 @@
 
 
 
-<figure class="highlight q"><table><tr><td class="code"><pre><span class="line">#== 安装python版本管理器pyenv ==#</span><br><span class="line">curl -L https:<span class="comment">//github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash</span></span><br><span class="line">sudo apt install -y libbz2-<span class="built_in">dev</span> libreadline-<span class="built_in">dev</span> libsqlite3-<span class="built_in">dev</span> libssl-<span class="built_in">dev</span> build-essential zlib1g-<span class="built_in">dev</span> make build-essential libreadline-<span class="built_in">dev</span> llvm libncurses5-<span class="built_in">dev</span> libncursesw5-<span class="built_in">dev</span> openssl libpcre3 libpcre3-<span class="built_in">dev</span> zip</span><br><span class="line">sudo apt install -y make build-essential libssl-<span class="built_in">dev</span> zlib1g-<span class="built_in">dev</span> libbz2-<span class="built_in">dev</span> libreadline-<span class="built_in">dev</span> libsqlite3-<span class="built_in">dev</span> wget curl llvm libncurses5-<span class="built_in">dev</span> libncursesw5-<span class="built_in">dev</span> xz-utils tk-<span class="built_in">dev</span> libffi-<span class="built_in">dev</span> liblzma-<span class="built_in">dev</span></span><br><span class="line">sudo cat &gt;&gt; ~/.zshrc &lt;&lt;EOF</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export PATH=<span class="string">&quot;\$HOME/.pyenv/bin:\$PATH&quot;</span></span><br><span class="line">export PYENV_ROOT=~/.pyenv</span><br><span class="line">export PATH=\$PYENV_ROOT/shims:\$PATH</span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;\$(pyenv init -)&quot;</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;\$(pyenv virtualenv-init -)&quot;</span></span><br><span class="line">EOF</span><br><span class="line">sources ~/.zshrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">#== 安装python版本管理器pyenv ==#</span></span><br><span class="line"><span class="built_in">curl</span> <span class="literal">-L</span> https://github.com/pyenv/pyenv<span class="literal">-installer</span>/raw/master/bin/pyenv<span class="literal">-installer</span> | bash</span><br><span class="line">sudo apt install <span class="literal">-y</span> libbz2<span class="literal">-dev</span> libreadline<span class="literal">-dev</span> libsqlite3<span class="literal">-dev</span> libssl<span class="literal">-dev</span> <span class="built_in">build-essential</span> zlib1g<span class="literal">-dev</span> make <span class="built_in">build-essential</span> libreadline<span class="literal">-dev</span> llvm libncurses5<span class="literal">-dev</span> libncursesw5<span class="literal">-dev</span> openssl libpcre3 libpcre3<span class="literal">-dev</span> zip</span><br><span class="line">sudo apt install <span class="literal">-y</span> make <span class="built_in">build-essential</span> libssl<span class="literal">-dev</span> zlib1g<span class="literal">-dev</span> libbz2<span class="literal">-dev</span> libreadline<span class="literal">-dev</span> libsqlite3<span class="literal">-dev</span> <span class="built_in">wget</span> <span class="built_in">curl</span> llvm libncurses5<span class="literal">-dev</span> libncursesw5<span class="literal">-dev</span> xz<span class="literal">-utils</span> tk<span class="literal">-dev</span> libffi<span class="literal">-dev</span> liblzma<span class="literal">-dev</span></span><br><span class="line">sudo <span class="built_in">cat</span> &gt;&gt; ~/.zshrc &lt;&lt;EOF</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export PATH=<span class="string">&quot;\<span class="variable">$HOME</span>/.pyenv/bin:\<span class="variable">$PATH</span>&quot;</span></span><br><span class="line">export PYENV_ROOT=~/.pyenv</span><br><span class="line">export PATH=\<span class="variable">$PYENV_ROOT</span>/shims:\<span class="variable">$PATH</span></span><br><span class="line">eval <span class="string">&quot;\<span class="variable">$</span>(pyenv init -)&quot;</span></span><br><span class="line">eval <span class="string">&quot;\<span class="variable">$</span>(pyenv virtualenv-init -)&quot;</span></span><br><span class="line">EOF</span><br><span class="line">sources ~/.zshrc</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="Python问题"><a href="#Python问题" class="headerlink" title="Python问题"></a>Python问题</h2><p>环境包</p>
+<h2 id="Python问题"><a href="#Python问题" class="headerlink" title="Python问题"></a>Python问题</h2><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">netsh<span class="built_in"> interface </span>portproxy <span class="built_in">add</span> v4tov4 <span class="attribute">listenport</span>=3100 <span class="attribute">listenaddress</span>=0.0.0.0 <span class="attribute">connectport</span>=3100 <span class="attribute">connectaddress</span>=192.168.89.133</span><br></pre></td></tr></table></figure>
+
+<p>环境包</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uvloop</span>-<span class="number">0</span>.<span class="number">15</span>.<span class="number">2</span></span><br><span class="line"><span class="attribute">tornado</span></span><br></pre></td></tr></table></figure>
 
 <p>Ubuntu 安装 <code>pycurl</code> 解决缺失 <code>curl-config</code> 问题</p>
@@ -547,7 +561,7 @@
 <td>htop 设定</td>
 </tr>
 <tr>
-<td>/</td>
+<td>&#x2F;</td>
 <td>F3</td>
 <td>搜索进程</td>
 </tr>
@@ -660,13 +674,13 @@
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">netsh <span class="keyword">interface</span> <span class="symbol">portproxy</span> <span class="symbol">show</span> <span class="symbol">v4tov4</span></span><br></pre></td></tr></table></figure>
 
 <p>添加端口转发</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">netsh<span class="built_in"> interface </span>portproxy <span class="builtin-name">add</span> v4tov4 <span class="attribute">listenaddress</span>=0.0.0.0 <span class="attribute">listenport</span>=2222 <span class="attribute">connectaddress</span>=172.25.43.222 <span class="attribute">connectport</span>=22</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">netsh<span class="built_in"> interface </span>portproxy <span class="built_in">add</span> v4tov4 <span class="attribute">listenaddress</span>=0.0.0.0 <span class="attribute">listenport</span>=2222 <span class="attribute">connectaddress</span>=172.25.43.222 <span class="attribute">connectport</span>=22</span><br></pre></td></tr></table></figure>
 
 <p>防火墙入站规则</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">netsh advfirewall<span class="built_in"> firewall </span><span class="builtin-name">add</span> rule <span class="attribute">name</span>=”Open<span class="built_in"> Port </span>2222 <span class="keyword">for</span> WSL2” <span class="attribute">dir</span>=in <span class="attribute">action</span>=allow <span class="attribute">protocol</span>=TCP <span class="attribute">localport</span>=2222</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">netsh advfirewall<span class="built_in"> firewall </span><span class="built_in">add</span> rule <span class="attribute">name</span>=”Open<span class="built_in"> Port </span>2222 <span class="keyword">for</span> WSL2” <span class="attribute">dir</span>=in <span class="attribute">action</span>=allow <span class="attribute">protocol</span>=TCP <span class="attribute">localport</span>=2222</span><br></pre></td></tr></table></figure>
 
 <p>虚拟磁盘位置</p>
-<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\用</span>户名<span class="symbol">\A</span>ppData<span class="symbol">\L</span>ocal<span class="symbol">\P</span>ackages<span class="symbol">\应</span>用名<span class="symbol">\L</span>ocalState<span class="symbol">\e</span>xt4.vhdx</span><br></pre></td></tr></table></figure>
+<figure class="highlight moonscript"><table><tr><td class="code"><pre><span class="line"><span class="name">C</span>:\Users\用户名\AppData\Local\Packages\应用名\LocalState\ext4.vhdx</span><br></pre></td></tr></table></figure>
 
 <!-- flag of hidden posts -->
     </div>
@@ -762,7 +776,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86"><span class="nav-text">零碎知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-text">Mongo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="nav-text">编程思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E8%B6%A3%E5%BE%85%E5%AE%9A"><span class="nav-text">有趣待定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">重启资源管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%9C%86%E8%A7%92"><span class="nav-text">取消圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH"><span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">命名关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="nav-text">文件传输</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">后台运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongo-1"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E5%8A%A8%E6%80%81%E8%AE%B0%E5%BD%95"><span class="nav-text">Redis 动态记录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTOP%E8%AF%B4%E6%98%8E"><span class="nav-text">HTOP说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES"><span class="nav-text">ES</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongo-2"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL"><span class="nav-text">WSL</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86"><span class="nav-text">零碎知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-text">npm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="nav-text">编程思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E8%B6%A3%E5%BE%85%E5%AE%9A"><span class="nav-text">有趣待定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">重启资源管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%9C%86%E8%A7%92"><span class="nav-text">取消圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH"><span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">命名关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="nav-text">文件传输</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B"><span class="nav-text">解压</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongo-1"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-%E5%8A%A8%E6%80%81%E8%AE%B0%E5%BD%95"><span class="nav-text">Redis 动态记录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTOP%E8%AF%B4%E6%98%8E"><span class="nav-text">HTOP说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES"><span class="nav-text">ES</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongo-2"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL"><span class="nav-text">WSL</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
