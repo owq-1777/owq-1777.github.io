@@ -33,7 +33,7 @@
 <meta property="og:description" content="📖 Nginx configure 参数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-01T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-25T03:23:29.010Z">
+<meta property="article:modified_time" content="2021-11-25T03:23:29.000Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Nginx">
 <meta name="twitter:card" content="summary">
@@ -217,7 +217,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-05-20 09:58:08" itemprop="dateModified" datetime="2022-05-20T17:58:08+08:00">2022-05-20</time>
+            <time title="修改时间：2022-05-25 03:20:10" itemprop="dateModified" datetime="2022-05-25T11:20:10+08:00">2022-05-25</time>
             
           </span>
 
@@ -229,7 +229,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>2k</span>
+            <span>2.1k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -308,7 +308,7 @@
         <blockquote>
 <p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0L3RvcGljcy90dXRvcmlhbHMvaW5zdGFsbG9wdGlvbnMv">🚪</span></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 命令行查看</span></span><br><span class="line">./configure --help</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">命令行查看</span></span><br><span class="line">./configure --help</span><br></pre></td></tr></table></figure>
 
 <h2 id="文件和权限"><a href="#文件和权限" class="headerlink" title="文件和权限"></a>文件和权限</h2><table>
 <thead>
@@ -318,35 +318,35 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>–prefix=*path*</strong></td>
+<td><strong>–prefix&#x3D;*path*</strong></td>
 <td>定义保存服务器文件的目录。这个目录也将用于所有由configure设置的相对路径(库源路径除外)和nginx.conf配置文件中。默认设置为<code>/usr/local/nginx</code>目录。</td>
 </tr>
 <tr>
-<td><strong>–sbin-path=*path*</strong></td>
+<td><strong>–sbin-path&#x3D;*path*</strong></td>
 <td>设置NGINX可执行文件的名称。此名称仅在安装过程中使用。默认文件名为<code>prefix/sbin/nginx</code>。</td>
 </tr>
 <tr>
-<td><strong>–conf-path=*path*</strong></td>
+<td><strong>–conf-path&#x3D;*path*</strong></td>
 <td>设置<code>nginx.conf</code>配置文件的名称。如果需要，NGINX总是可以通过命令行参数<code>-c file</code>指定一个不同的配置文件来启动。默认文件名为<code>prefix/conf/nginx.conf</code>。</td>
 </tr>
 <tr>
-<td><strong>–pid-path=*path*</strong></td>
+<td><strong>–pid-path&#x3D;*path*</strong></td>
 <td>设置nginx的名称。pid文件，用于存储主进程的进程ID。安装完成后，可以在<code>nginx.conf</code>配置文件中使用pid指令更改文件名。默认文件名为<code>prefix/logs/nginx.pid</code>。</td>
 </tr>
 <tr>
-<td><strong>–error-log-path=*path*</strong></td>
+<td><strong>–error-log-path&#x3D;*path*</strong></td>
 <td>设置主要错误、警告和诊断文件的名称。安装完成后，可以使用错误日志指令在<code>nginx.conf</code>配置文件中更改文件名。默认文件名为<code>prefix/logs/error.log</code>。特殊的“stderr”值告诉NGINX将预配置消息记录到标准错误。</td>
 </tr>
 <tr>
-<td><strong>–http-log-path=*path*</strong></td>
+<td><strong>–http-log-path&#x3D;*path*</strong></td>
 <td>设置HTTP服务器的主请求日志文件的名称。安装完成后，可以使用<code>access log</code>指令在<code>nginx.conf</code>配置文件中更改文件名。默认文件名为<code>prefix/logs/access.log</code>。</td>
 </tr>
 <tr>
-<td><strong>–user=*name*</strong></td>
+<td><strong>–user&#x3D;*name*</strong></td>
 <td>设置工作进程将使用其凭证的非特权用户的名称。在安装之后，这个名字总是可以在<code>nginx.conf</code>配置文件中使用user指令更改。默认用户名为nobody。</td>
 </tr>
 <tr>
-<td><strong>–group=*name*</strong></td>
+<td><strong>–group&#x3D;*name*</strong></td>
 <td>设置工作进程将使用其凭证的组的名称。安装后，在<code>nginx.conf</code>配置文件中可以使用user指令更改名称。缺省情况下，组名为非特权用户的名称。</td>
 </tr>
 </tbody></table>
@@ -390,16 +390,16 @@
 <td>支持构建将HTTPS协议支持添加到HTTP服务器的模块。默认情况下，此模块不会生成。构建和运行此模块需要OpenSSL库。</td>
 </tr>
 <tr>
-<td><strong>–with-pcre=*path*</strong></td>
-<td>设置PCRE库源的路径。库分发版(版本4.4 - 8.21)需要从PCRE网站下载并提取。剩下的由NGINX的。/configure和make完成。location指令和ngx_http_rewrite_module的正则表达式支持都需要这个库。在FreeBSD系统上使用PCRE系统，请参阅下面的注释。</td>
+<td><strong>–with-pcre&#x3D;*path*</strong></td>
+<td>设置PCRE库源的路径。库分发版(版本4.4 - 8.21)需要从PCRE网站下载并提取。剩下的由NGINX的。&#x2F;configure和make完成。location指令和ngx_http_rewrite_module的正则表达式支持都需要这个库。在FreeBSD系统上使用PCRE系统，请参阅下面的注释。</td>
 </tr>
 <tr>
 <td><strong>–with-pcre-jit</strong></td>
 <td>构建带有“即时编译”支持的PCRE库。</td>
 </tr>
 <tr>
-<td><strong>–with-zlib=*path*</strong></td>
-<td>设置zlib库的源代码的路径。库发行版(版本1.1.3 - 1.2.5)需要从zlib站点下载并解压。剩下的由NGINX的。/configure和make完成。这个库是ngx_http_gzip_module所必需的。</td>
+<td><strong>–with-zlib&#x3D;*path*</strong></td>
+<td>设置zlib库的源代码的路径。库发行版(版本1.1.3 - 1.2.5)需要从zlib站点下载并解压。剩下的由NGINX的。&#x2F;configure和make完成。这个库是ngx_http_gzip_module所必需的。</td>
 </tr>
 </tbody></table>
 <h2 id="编译控制"><a href="#编译控制" class="headerlink" title="编译控制"></a>编译控制</h2><table>
@@ -410,11 +410,11 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>–with-cc-opt=*parameters*</strong></td>
+<td><strong>–with-cc-opt&#x3D;*parameters*</strong></td>
 <td>设置将添加到CFLAGS变量的附加参数。</td>
 </tr>
 <tr>
-<td><strong>–with-ld-opt=*parameters*</strong></td>
+<td><strong>–with-ld-opt&#x3D;*parameters*</strong></td>
 <td>设置将在链接期间使用的附加参数。</td>
 </tr>
 </tbody></table>
@@ -468,8 +468,8 @@
       <i class="fa fa-chevron-left"></i> Linux crontab 命令
     </a></div>
       <div class="post-nav-item">
-    <a href="/conda/" rel="next" title="conda 命令">
-      conda 命令 <i class="fa fa-chevron-right"></i>
+    <a href="/selenium/" rel="next" title="Selenium 操作文档">
+      Selenium 操作文档 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -647,12 +647,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">102k</span>
+    <span title="站点总字数">113k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:33</span>
+    <span title="站点阅读时长">1:43</span>
 </div>
 
 </div>

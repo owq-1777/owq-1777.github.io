@@ -33,7 +33,7 @@
 <meta property="og:description" content="📖 git 命令文档">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-21T08:38:54.165Z">
+<meta property="article:modified_time" content="2021-12-21T08:38:54.000Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -217,7 +217,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-05-20 09:58:08" itemprop="dateModified" datetime="2022-05-20T17:58:08+08:00">2022-05-20</time>
+            <time title="修改时间：2022-05-25 03:20:10" itemprop="dateModified" datetime="2022-05-25T11:20:10+08:00">2022-05-25</time>
             
           </span>
 
@@ -229,7 +229,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>2.5k</span>
+            <span>2.9k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -237,7 +237,7 @@
               <i class="far fa-clock"></i>
             </span>
             <span class="post-meta-item-text">Reading time: &asymp;</span>
-            <span>2 min</span>
+            <span>3 min</span>
           </span>
 
 
@@ -309,7 +309,7 @@
 
 
 
-<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;url&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文件到index</span></span><br><span class="line">git add &lt;pathspec&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除index中的文件</span></span><br><span class="line">git rm &lt;pathspec&gt;</span><br><span class="line"><span class="comment"># 删除未提交缓存</span></span><br><span class="line">git rm --cached &lt;pathspec&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看仓库状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看日志</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 查看分支合并</span></span><br><span class="line">git <span class="built_in">log</span> --graph</span><br><span class="line"><span class="comment"># 精简查看</span></span><br><span class="line">git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line"></span><br><span class="line">git commit -m &lt;message&gt;			<span class="comment"># 提交文件，附带版本说明</span></span><br><span class="line">git commit --amend -m &lt;message&gt;		<span class="comment"># 合并上一次提交（用于反复修改）</span></span><br><span class="line">git commit -am &lt;message&gt;		<span class="comment"># 将add和commit合为一步</span></span><br><span class="line"></span><br><span class="line">git remote -v				<span class="comment"># 查看远程仓库地址</span></span><br><span class="line">git remote add origin &lt;url&gt;		<span class="comment"># 添加origin分支</span></span><br><span class="line">git remote rm origin			<span class="comment"># 删除origin分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新设置远程仓库地址</span></span><br><span class="line">git remote set-url origin &lt;git.url&gt;</span><br><span class="line"></span><br><span class="line">git pull	<span class="comment"># 拉 简写形式</span></span><br><span class="line">git pull origin master			<span class="comment"># 同步远程仓库更新到master分支</span></span><br><span class="line"></span><br><span class="line">git push	<span class="comment"># 推 简写形式</span></span><br><span class="line">git push -u origin master		<span class="comment"># 推送本地仓库到origin分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置当前分支的关联的远程分支</span></span><br><span class="line">git branch --set-upstream-to=origin/master master</span><br></pre></td></tr></table></figure>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;url&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文件到index</span></span><br><span class="line">git add &lt;pathspec&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除index中的文件</span></span><br><span class="line">git <span class="built_in">rm</span> &lt;pathspec&gt;</span><br><span class="line"><span class="comment"># 删除未提交缓存</span></span><br><span class="line">git <span class="built_in">rm</span> --cached &lt;pathspec&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看仓库状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看日志</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 查看分支合并</span></span><br><span class="line">git <span class="built_in">log</span> --graph</span><br><span class="line"><span class="comment"># 精简查看</span></span><br><span class="line">git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line"></span><br><span class="line">git commit -m &lt;message&gt;			<span class="comment"># 提交文件，附带版本说明</span></span><br><span class="line">git commit --amend -m &lt;message&gt;		<span class="comment"># 合并上一次提交（用于反复修改）</span></span><br><span class="line">git commit -am &lt;message&gt;		<span class="comment"># 将add和commit合为一步</span></span><br><span class="line"></span><br><span class="line">git remote -v				<span class="comment"># 查看远程仓库地址</span></span><br><span class="line">git remote add origin &lt;url&gt;		<span class="comment"># 添加origin分支</span></span><br><span class="line">git remote <span class="built_in">rm</span> origin			<span class="comment"># 删除origin分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新设置远程仓库地址</span></span><br><span class="line">git remote set-url origin &lt;git.url&gt;</span><br><span class="line"></span><br><span class="line">git pull	<span class="comment"># 拉 简写形式</span></span><br><span class="line">git pull origin master			<span class="comment"># 同步远程仓库更新到master分支</span></span><br><span class="line"></span><br><span class="line">git push	<span class="comment"># 推 简写形式</span></span><br><span class="line">git push -u origin master		<span class="comment"># 推送本地仓库到origin分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置当前分支的关联的远程分支</span></span><br><span class="line">git branch --set-upstream-to=origin/master master</span><br></pre></td></tr></table></figure>
 
 
 
@@ -321,7 +321,7 @@
 
 
 
-<h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看子模块</span></span><br><span class="line">git submodule</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化</span></span><br><span class="line">git submodule init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加子模块</span></span><br><span class="line">git submodule add &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"><span class="comment"># 添加指定分支</span></span><br><span class="line">git submodule add -b v1.0 &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新(克隆)子模块</span></span><br><span class="line">git submodule update --init --remote --recursive</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除子模块</span></span><br><span class="line">git rm -rf --cached &lt;路径&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看子模块</span></span><br><span class="line">git submodule</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化</span></span><br><span class="line">git submodule init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加子模块</span></span><br><span class="line">git submodule add &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"><span class="comment"># 添加指定分支</span></span><br><span class="line">git submodule add -b v1.0 &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新(克隆)子模块</span></span><br><span class="line">git submodule update --init --remote --recursive</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除子模块</span></span><br><span class="line">git <span class="built_in">rm</span> -rf --cached &lt;路径&gt;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -554,12 +554,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">102k</span>
+    <span title="站点总字数">113k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:33</span>
+    <span title="站点阅读时长">1:43</span>
 </div>
 
 </div>

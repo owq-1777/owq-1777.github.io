@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-05-20T06:30:48.787Z</updated>
+  <updated>2022-05-20T06:30:52.787Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.owq.world/73d2d4df/"/>
     <id>https://www.owq.world/73d2d4df/</id>
     <published>2022-05-19T22:40:25.000Z</published>
-    <updated>2022-05-20T06:30:48.787Z</updated>
+    <updated>2022-05-20T06:30:52.787Z</updated>
     
     
     <summary type="html">Celery 一个强大的分布式任务调度器, 来了解一下它独特的魅力吧~</summary>
@@ -42,7 +42,7 @@
     <link href="https://www.owq.world/bcd27009/"/>
     <id>https://www.owq.world/bcd27009/</id>
     <published>2022-05-05T11:47:59.000Z</published>
-    <updated>2022-05-07T13:47:34.914Z</updated>
+    <updated>2022-05-07T13:47:34.000Z</updated>
     
     
     <summary type="html">Linux 常用系统安装 Docker 教程. Ubuntu/Debian + CentOS7/8</summary>
@@ -52,9 +52,9 @@
     <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
-    
     <category term="Docker" scheme="https://www.owq.world/tags/Docker/"/>
+    
+    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
     
     <category term="CentOS" scheme="https://www.owq.world/tags/CentOS/"/>
     
@@ -86,7 +86,7 @@
     <link href="https://www.owq.world/80aa4d4c/"/>
     <id>https://www.owq.world/80aa4d4c/</id>
     <published>2022-04-28T20:29:24.000Z</published>
-    <updated>2022-05-01T02:47:19.863Z</updated>
+    <updated>2022-05-01T02:47:19.000Z</updated>
     
     
     <summary type="html">视图层更注重业务上的实现, 了解一些常用知识就够用了b(￣▽￣)d</summary>
@@ -107,7 +107,7 @@
     <link href="https://www.owq.world/94470483/"/>
     <id>https://www.owq.world/94470483/</id>
     <published>2022-03-20T22:00:58.000Z</published>
-    <updated>2022-03-23T14:24:31.012Z</updated>
+    <updated>2022-03-23T14:24:31.000Z</updated>
     
     
     <summary type="html">从实际应用角度提炼Django模型层的一些知识点, 供快速上手使用ヾ(•ω•`)o</summary>
@@ -128,7 +128,7 @@
     <link href="https://www.owq.world/34b94b2a/"/>
     <id>https://www.owq.world/34b94b2a/</id>
     <published>2022-03-01T11:01:05.000Z</published>
-    <updated>2022-03-01T04:31:14.461Z</updated>
+    <updated>2022-03-01T04:31:14.000Z</updated>
     
     
     <summary type="html">单例模式设计要注意的细节可真不少(。_。)</summary>
@@ -147,7 +147,7 @@
     <link href="https://www.owq.world/21619794/"/>
     <id>https://www.owq.world/21619794/</id>
     <published>2022-02-26T14:28:49.000Z</published>
-    <updated>2022-03-24T13:29:39.384Z</updated>
+    <updated>2022-03-24T13:29:39.000Z</updated>
     
     
     <summary type="html">让我们从零开始学习这个超棒的web框架吧(*￣０￣)ノ</summary>
@@ -168,7 +168,7 @@
     <link href="https://www.owq.world/20130c79/"/>
     <id>https://www.owq.world/20130c79/</id>
     <published>2022-01-10T22:07:07.000Z</published>
-    <updated>2022-01-12T09:15:37.555Z</updated>
+    <updated>2022-01-12T09:15:37.000Z</updated>
     
     
     <summary type="html">对于一个懒人来说，出门还带个包包多不优雅阿，随时随地就能进行开发才够爽快( *︾▽︾)</summary>
@@ -189,7 +189,7 @@
     <link href="https://www.owq.world/66180b04/"/>
     <id>https://www.owq.world/66180b04/</id>
     <published>2022-01-05T17:24:19.000Z</published>
-    <updated>2022-01-12T09:14:18.715Z</updated>
+    <updated>2022-01-12T09:14:18.000Z</updated>
     
     
     <summary type="html">近期准备搭建一个框架, 深感知识欠缺, 遂向优秀的`Scrapy`取取经( •̀ .̫ •́ )✧</summary>
@@ -210,7 +210,7 @@
     <link href="https://www.owq.world/terminal/"/>
     <id>https://www.owq.world/terminal/</id>
     <published>2021-12-02T17:23:37.000Z</published>
-    <updated>2021-12-03T08:45:59.967Z</updated>
+    <updated>2021-12-03T08:45:59.000Z</updated>
     
     
     <summary type="html">作为一个颜控，让黑乎乎的终端焕发光彩是必不可少的环节(‾◡◝)</summary>
@@ -229,7 +229,7 @@
     <link href="https://www.owq.world/51f3ce14/"/>
     <id>https://www.owq.world/51f3ce14/</id>
     <published>2021-11-25T15:12:58.000Z</published>
-    <updated>2022-01-12T09:15:28.275Z</updated>
+    <updated>2022-01-12T09:15:28.000Z</updated>
     
     
     <summary type="html">源码安装、完全卸载、平滑升级、基础操作一次性学会(￣m￣）</summary>
@@ -248,7 +248,7 @@
     <link href="https://www.owq.world/bee760ec/"/>
     <id>https://www.owq.world/bee760ec/</id>
     <published>2021-11-25T10:28:09.000Z</published>
-    <updated>2021-11-25T03:06:03.010Z</updated>
+    <updated>2021-11-25T03:06:03.000Z</updated>
     
     
     <summary type="html">用域名+CDN+OSS搭建个人安全图床，超详细的图文踩坑记录(*￣０￣)ノ</summary>
@@ -269,7 +269,7 @@
     <link href="https://www.owq.world/72a0046c/"/>
     <id>https://www.owq.world/72a0046c/</id>
     <published>2021-09-17T11:53:29.000Z</published>
-    <updated>2021-11-05T06:37:45.360Z</updated>
+    <updated>2021-11-05T06:37:45.000Z</updated>
     
     
     <summary type="html">无需安装额外软件, 在无线下利用adb进行投屏控制\\(￣︶￣*\\))</summary>
@@ -290,7 +290,7 @@
     <link href="https://www.owq.world/bd9e5b39/"/>
     <id>https://www.owq.world/bd9e5b39/</id>
     <published>2021-09-07T21:17:25.000Z</published>
-    <updated>2021-09-08T07:29:13.030Z</updated>
+    <updated>2021-09-08T07:29:13.000Z</updated>
     
     
     <summary type="html">Python实现的算法题, 包含详细注释~ 动态规划 打家劫舍系列</summary>
@@ -307,7 +307,7 @@
     <link href="https://www.owq.world/1a0a2507/"/>
     <id>https://www.owq.world/1a0a2507/</id>
     <published>2021-08-30T18:33:04.000Z</published>
-    <updated>2021-11-25T02:56:20.850Z</updated>
+    <updated>2021-11-25T02:56:20.000Z</updated>
     
     
     <summary type="html">本文是基于官方文档精简化提取, 供快速上手使用, 如需完整学习请参阅官方文档&lt;(￣︶￣)</summary>
@@ -328,7 +328,7 @@
     <link href="https://www.owq.world/f89f9ea4/"/>
     <id>https://www.owq.world/f89f9ea4/</id>
     <published>2021-08-27T15:59:51.000Z</published>
-    <updated>2022-02-28T10:03:49.981Z</updated>
+    <updated>2022-02-28T10:03:49.000Z</updated>
     
     
     <summary type="html">了解线程和进程、同步和异步、并发和并行和相关库的使用。</summary>
@@ -351,7 +351,7 @@
     <link href="https://www.owq.world/dfbb4c9/"/>
     <id>https://www.owq.world/dfbb4c9/</id>
     <published>2021-08-26T16:45:57.000Z</published>
-    <updated>2021-11-05T06:38:18.210Z</updated>
+    <updated>2021-11-05T06:38:18.000Z</updated>
     
     
     <summary type="html">这是一篇从基本使用loging模块到带点颜色输出,再到优雅的使用YAML配置日志的学习记录🥳</summary>
@@ -374,7 +374,7 @@
     <link href="https://www.owq.world/8be682ad/"/>
     <id>https://www.owq.world/8be682ad/</id>
     <published>2021-08-23T20:48:02.000Z</published>
-    <updated>2022-01-12T10:04:15.665Z</updated>
+    <updated>2022-01-12T10:04:15.000Z</updated>
     
     
     <summary type="html">Docker下安装Redis的快捷配置~</summary>
@@ -395,7 +395,7 @@
     <link href="https://www.owq.world/d2633d2c/"/>
     <id>https://www.owq.world/d2633d2c/</id>
     <published>2021-08-23T20:39:01.000Z</published>
-    <updated>2022-01-12T10:09:00.345Z</updated>
+    <updated>2022-01-12T10:09:00.000Z</updated>
     
     
     <summary type="html">Docker下安装MongoDB的快捷配置~</summary>
@@ -416,7 +416,7 @@
     <link href="https://www.owq.world/e823826f/"/>
     <id>https://www.owq.world/e823826f/</id>
     <published>2021-08-20T11:24:33.000Z</published>
-    <updated>2021-11-07T20:40:11.250Z</updated>
+    <updated>2021-11-07T20:40:11.000Z</updated>
     
     
     <summary type="html">翻阅了好几篇文章, 步骤可以说是非常详细, 但仍踩了好多坑, 知其云不知所以云是问题出现的关键, 所以便有了这篇详细的注释文章（￣︶￣）↗　</summary>

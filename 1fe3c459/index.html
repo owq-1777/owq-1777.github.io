@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://img.owq.world/2021/12/1804-e90d61.png">
 <meta property="og:image" content="http://img.owq.world/2021/11/2125-5f3eaf.png">
 <meta property="article:published_time" content="2021-07-15T14:13:58.000Z">
-<meta property="article:modified_time" content="2021-12-02T10:38:22.303Z">
+<meta property="article:modified_time" content="2021-12-02T10:38:22.000Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="WSL">
@@ -222,7 +222,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-05-20 09:58:08" itemprop="dateModified" datetime="2022-05-20T17:58:08+08:00">2022-05-20</time>
+            <time title="修改时间：2022-05-25 03:20:10" itemprop="dateModified" datetime="2022-05-25T11:20:10+08:00">2022-05-25</time>
             
           </span>
 
@@ -234,7 +234,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>1.7k</span>
+            <span>1.9k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -316,13 +316,13 @@
 <h2 id="一键安装"><a href="#一键安装" class="headerlink" title="一键安装"></a>一键安装</h2><blockquote>
 <p>系统内部版本号大于19041可用，<code>Win+R</code>运行<code>winver</code>查看</p>
 </blockquote>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-install</span>	<span class="comment"># 默认安装Ububtu</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--install</span>	<span class="comment"># 默认安装Ububtu</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="自定义安装"><a href="#自定义安装" class="headerlink" title="自定义安装"></a>自定义安装</h3><p>查看可安装发行版</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl.exe <span class="literal">-l</span> <span class="literal">-o</span></span><br></pre></td></tr></table></figure>
 
 <p>安装指定发行版</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line">wsl -<span class="literal">-install</span> <span class="literal">-d</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Kail Linux</span></span><br><span class="line">wsl -<span class="literal">-install</span> <span class="literal">-d</span> kali<span class="literal">-linux</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line">wsl <span class="literal">--install</span> <span class="literal">-d</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Kail Linux</span></span><br><span class="line">wsl <span class="literal">--install</span> <span class="literal">-d</span> kali<span class="literal">-linux</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -331,7 +331,8 @@
 <img data-src="http://img.owq.world/2021/11/2125-658665.png" style="zoom:50%;" />
 
 <ol>
-<li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure>
+</li>
 <li><h3 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
 
 <p>到了这一步要 <strong>重启计算机</strong> 进行应用(更新)</p>
@@ -344,7 +345,7 @@
 <li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV9hcm02NC5tc2k=">ARM64更新包</span></li>
 </ul>
 </li>
-<li><h3 id="将-WSL-2-设置为默认版本"><a href="#将-WSL-2-设置为默认版本" class="headerlink" title="将 WSL 2 设置为默认版本"></a>将 WSL 2 设置为默认版本</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+<li><h3 id="将-WSL-2-设置为默认版本"><a href="#将-WSL-2-设置为默认版本" class="headerlink" title="将 WSL 2 设置为默认版本"></a>将 WSL 2 设置为默认版本</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--set-default-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h3><p>安装子系统方式有三, 可根据个人喜好选择.</p>
 <ul>
@@ -361,7 +362,7 @@
 </ul>
 </li>
 <li><h3 id="命令行安装"><a href="#命令行安装" class="headerlink" title="命令行安装"></a>命令行安装</h3><p>不同发行版安装命令, 使用<code>PowerShell</code>执行, 链接为包链接.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali</span><span class="literal">-linux</span><span class="literal">-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Kali Linux</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wsl<span class="literal">-kali-linux-new</span> <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 20.04</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> https://aka.ms/wslubuntu2004 <span class="literal">-OutFile</span> Ubuntu.appx <span class="literal">-UseBasicParsing</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <h2 id="WSL-位置移动-可选"><a href="#WSL-位置移动-可选" class="headerlink" title="WSL 位置移动(可选)"></a>WSL 位置移动(可选)</h2><blockquote>
@@ -369,7 +370,7 @@
 </blockquote>
 <p>如果担心C盘空间不够可以把WSL的安装位置移动到其它盘.</p>
 <p>下载解压压缩包后, 在解压目录处打开命令行, 就可以运行以下命令了.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span><span class="literal">-data</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看已安装 wsl 名称</span></span><br><span class="line">wsl <span class="literal">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动 wsl 到指定目录</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> &lt;wsl<span class="literal">-name</span>&gt; <span class="literal">-d</span> &lt;<span class="built_in">dir</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\distro</span><br><span class="line">lxrunoffline m <span class="literal">-n</span> docker<span class="literal">-desktop-data</span> <span class="literal">-d</span> D:\OWQ\Docker\wsl\data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看wsl路径</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop</span></span><br><span class="line">lxrunoffline di <span class="literal">-n</span> docker<span class="literal">-desktop-data</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -384,7 +385,7 @@
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="comment"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="comment"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">0</span></span><br><span class="line"><span class="comment"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span></span><br><span class="line"><span class="attr">swapFile</span>=&lt;path&gt;</span><br><span class="line"><span class="comment"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span></span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>配置好文件后需要关闭WSL重新进入才会生效.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-shutdown</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--shutdown</span></span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -614,12 +615,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">102k</span>
+    <span title="站点总字数">113k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:33</span>
+    <span title="站点阅读时长">1:43</span>
 </div>
 
 </div>

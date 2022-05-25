@@ -451,7 +451,6 @@ td {
   width: 12px;
 }
 .highlight-container .highlight {
-  -webkit-border-radius: 0px;
   border-radius: 0 0 5px 5px;
 }
 .highlight-container .highlight .table-container {
@@ -1304,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4bffb6;
+  background: #33a3cd;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2762,7 +2761,7 @@ mjx-container + br {
   height: 6px;
   background: none;
 }
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb:not(.highlight) {
   background: rgba(86,123,185,0.459);
   -webkit-border-radius: 6px;
 }
