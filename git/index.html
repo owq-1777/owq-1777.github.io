@@ -27,16 +27,19 @@
 
   <meta name="description" content="📖 git 命令文档">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git 命令">
+<meta property="og:title" content="git 命令文档">
 <meta property="og:url" content="https://www.owq.world/git/index.html">
 <meta property="og:site_name" content="Sunny was born">
 <meta property="og:description" content="📖 git 命令文档">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.owq.world/2022/05/1202-904caf.png">
+<meta property="og:image" content="http://img.owq.world/2022/05/1202-f68d47.png">
 <meta property="article:published_time" content="2020-06-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-21T08:38:54.000Z">
+<meta property="article:modified_time" content="2022-05-26T04:03:18.106Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.owq.world/2022/05/1202-904caf.png">
 
 <link rel="canonical" href="https://www.owq.world/git/">
 
@@ -51,7 +54,7 @@
   };
 </script>
 
-  <title>git 命令 | Sunny was born</title>
+  <title>git 命令文档 | Sunny was born</title>
   
 
 
@@ -199,7 +202,7 @@
         <header class="post-heading">
           <div class="tags">
           </div>
-          <h1>git 命令</h1>
+          <h1>git 命令文档</h1>
           <h2 class="subheading">📖 git 命令文档</h2>
 
           <span class="post-meta-item">
@@ -217,7 +220,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-05-25 03:25:31" itemprop="dateModified" datetime="2022-05-25T11:25:31+08:00">2022-05-25</time>
+            <time title="修改时间：2022-05-26 04:03:59" itemprop="dateModified" datetime="2022-05-26T12:03:59+08:00">2022-05-26</time>
             
           </span>
 
@@ -229,7 +232,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>2.9k</span>
+            <span>3.1k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -328,6 +331,49 @@
 <h2 id="zsh-快捷命令"><a href="#zsh-快捷命令" class="headerlink" title="zsh 快捷命令"></a>zsh 快捷命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gapa    	git add --patch</span><br><span class="line">gc!   		git commit -v --amend</span><br><span class="line">gcl  		git <span class="built_in">clone</span> --recursive</span><br><span class="line">gclean    	git reset --hard &amp;&amp; git clean -dfx</span><br><span class="line">gcm    		git checkout master</span><br><span class="line">gcmsg    	git commit -m</span><br><span class="line">gco    		git checkout</span><br><span class="line">gd    		git diff</span><br><span class="line">gdca    	git diff --cached</span><br><span class="line">gp    		git push</span><br><span class="line">grbc    	git rebase --<span class="built_in">continue</span></span><br><span class="line">gst    		git status</span><br><span class="line">gup    		git pull --rebase</span><br></pre></td></tr></table></figure>
 
 
+
+<h2 id="分支命名规范"><a href="#分支命名规范" class="headerlink" title="分支命名规范"></a>分支命名规范</h2><table>
+<thead>
+<tr>
+<th>分支</th>
+<th>命名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主分支</td>
+<td>master</td>
+<td>主分支，所有提供给用户使用的正式版本，都在这个主分支上发布</td>
+</tr>
+<tr>
+<td>开发主分支</td>
+<td>dev</td>
+<td>开发分支，永远是功能最新最全的分支</td>
+</tr>
+<tr>
+<td>功能分支</td>
+<td>feature-*</td>
+<td>新功能分支，某个功能点正在开发阶段</td>
+</tr>
+<tr>
+<td>发布版本</td>
+<td>release-*</td>
+<td>发布定期要上线的功能</td>
+</tr>
+<tr>
+<td>修复发布版本分支</td>
+<td>bugfix-release-*</td>
+<td>修复测试bug</td>
+</tr>
+<tr>
+<td>紧急修复分支</td>
+<td>bugfix-master-*</td>
+<td>紧急修复线上代码的 bug</td>
+</tr>
+</tbody></table>
+<h2 id="工作流程图"><a href="#工作流程图" class="headerlink" title="工作流程图"></a>工作流程图</h2><h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><img data-src="http://img.owq.world/2022/05/1202-904caf.png"></p>
+<h3 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h3><p><img data-src="http://img.owq.world/2022/05/1202-f68d47.png"></p>
+
     </div>
 
     
@@ -350,7 +396,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.owq.world/git/" title="git 命令">https://www.owq.world/git/</a>
+    <a href="https://www.owq.world/git/" title="git 命令文档">https://www.owq.world/git/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
@@ -371,13 +417,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/docker/" rel="prev" title="Docker 命令">
-      <i class="fa fa-chevron-left"></i> Docker 命令
+    <a href="/systemctl/" rel="prev" title="systemctl 命令">
+      <i class="fa fa-chevron-left"></i> systemctl 命令
     </a></div>
-      <div class="post-nav-item">
-    <a href="/pacman/" rel="next" title="pacman 命令">
-      pacman 命令 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -435,7 +478,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4"><span class="nav-text">配置命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E5%91%BD%E4%BB%A4"><span class="nav-text">进阶命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-text">替换分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="nav-text">子模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zsh-%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">zsh 快捷命令</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4"><span class="nav-text">配置命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E5%91%BD%E4%BB%A4"><span class="nav-text">进阶命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-text">替换分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="nav-text">子模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zsh-%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">zsh 快捷命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-text">分支命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-text">工作流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github"><span class="nav-text">github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gitlab"><span class="nav-text">Gitlab</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -554,7 +597,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">113k</span>
+    <span title="站点总字数">114k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

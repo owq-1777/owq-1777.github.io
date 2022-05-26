@@ -3527,39 +3527,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git 命令</title>
-    <url>/git/</url>
-    <content><![CDATA[<h2 id="配置命令"><a href="#配置命令" class="headerlink" title="配置命令"></a>配置命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config user.name &lt;name&gt;</span><br><span class="line">git config user.email &lt;email&gt;</span><br><span class="line">git config --global user.name &lt;name&gt;	<span class="comment"># 配置全局用户名</span></span><br><span class="line">git config --global user.email &lt;email&gt;	<span class="comment"># 配置全局邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 颜色标识（默认开启）</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看配置</span></span><br><span class="line">git config list</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;url&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文件到index</span></span><br><span class="line">git add &lt;pathspec&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除index中的文件</span></span><br><span class="line">git <span class="built_in">rm</span> &lt;pathspec&gt;</span><br><span class="line"><span class="comment"># 删除未提交缓存</span></span><br><span class="line">git <span class="built_in">rm</span> --cached &lt;pathspec&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看仓库状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看日志</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 查看分支合并</span></span><br><span class="line">git <span class="built_in">log</span> --graph</span><br><span class="line"><span class="comment"># 精简查看</span></span><br><span class="line">git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line"></span><br><span class="line">git commit -m &lt;message&gt;			<span class="comment"># 提交文件，附带版本说明</span></span><br><span class="line">git commit --amend -m &lt;message&gt;		<span class="comment"># 合并上一次提交（用于反复修改）</span></span><br><span class="line">git commit -am &lt;message&gt;		<span class="comment"># 将add和commit合为一步</span></span><br><span class="line"></span><br><span class="line">git remote -v				<span class="comment"># 查看远程仓库地址</span></span><br><span class="line">git remote add origin &lt;url&gt;		<span class="comment"># 添加origin分支</span></span><br><span class="line">git remote <span class="built_in">rm</span> origin			<span class="comment"># 删除origin分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新设置远程仓库地址</span></span><br><span class="line">git remote set-url origin &lt;git.url&gt;</span><br><span class="line"></span><br><span class="line">git pull	<span class="comment"># 拉 简写形式</span></span><br><span class="line">git pull origin master			<span class="comment"># 同步远程仓库更新到master分支</span></span><br><span class="line"></span><br><span class="line">git push	<span class="comment"># 推 简写形式</span></span><br><span class="line">git push -u origin master		<span class="comment"># 推送本地仓库到origin分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置当前分支的关联的远程分支</span></span><br><span class="line">git branch --set-upstream-to=origin/master master</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="进阶命令"><a href="#进阶命令" class="headerlink" title="进阶命令"></a>进阶命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 difference（差异）</span></span><br><span class="line">git diff		<span class="comment"># 工作区与暂存区</span></span><br><span class="line">git diff --cached 	<span class="comment"># 暂存区与版本库</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚到上一版本 HEAD~100 前100个版本 可指定&lt;版本号&gt;</span></span><br><span class="line">git reset --hard HEAD^</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看分支</span></span><br><span class="line">git branch</span><br><span class="line">git branch &lt;branch&gt; 	<span class="comment"># 创建分支</span></span><br><span class="line">git branch -d &lt;branch&gt;	<span class="comment"># 删除分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复（删除）工作区更改</span></span><br><span class="line">git checkout</span><br><span class="line">git checkout &lt;branch&gt; 	<span class="comment"># 切换分支</span></span><br><span class="line">git checkout -b &lt;branch&gt;<span class="comment"># 创建并切换分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取所有远程分支（不更新本地分支，另需merge）</span></span><br><span class="line">git fetch</span><br><span class="line"><span class="comment"># 获取所有原创分支并清除服务器上已删掉的分支</span></span><br><span class="line">git fetch --prune</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支但不丢弃分支信息</span></span><br><span class="line">git merge --no-ff -m <span class="string">&quot;merge with no-ff&quot;</span> &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建临时分支</span></span><br><span class="line">git stash</span><br><span class="line">git stash list	<span class="comment"># 查看临时分支</span></span><br><span class="line">git stash drop	<span class="comment"># 删除stash</span></span><br><span class="line">git stash apply	<span class="comment"># 恢复分支内容</span></span><br><span class="line">git stash pop	<span class="comment"># 恢复分支内容并删除stash</span></span><br><span class="line">git stash apply stash@&#123;0&#125;<span class="comment"># 恢复指定的stash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制一个特定的提交到当前分支</span></span><br><span class="line">git cherry-pick &lt;版本号&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout 1acd5de</span><br><span class="line"><span class="comment"># 保存修改后分支</span></span><br><span class="line">it switch -c &lt;新分支名&gt;</span><br><span class="line"><span class="comment"># 恢复切换前分支</span></span><br><span class="line">git switch -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地仓库强制替换远程仓库</span></span><br><span class="line">git push --force --set-upstream origin &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="替换分支"><a href="#替换分支" class="headerlink" title="替换分支"></a>替换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将master替换成mainf</span></span><br><span class="line">git checkout main</span><br><span class="line">git merge -s ours master	<span class="comment"># git --strategy=ours ours master</span></span><br><span class="line">git checkout master</span><br><span class="line">git merge main</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看子模块</span></span><br><span class="line">git submodule</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化</span></span><br><span class="line">git submodule init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加子模块</span></span><br><span class="line">git submodule add &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"><span class="comment"># 添加指定分支</span></span><br><span class="line">git submodule add -b v1.0 &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新(克隆)子模块</span></span><br><span class="line">git submodule update --init --remote --recursive</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除子模块</span></span><br><span class="line">git <span class="built_in">rm</span> -rf --cached &lt;路径&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="zsh-快捷命令"><a href="#zsh-快捷命令" class="headerlink" title="zsh 快捷命令"></a>zsh 快捷命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gapa    	git add --patch</span><br><span class="line">gc!   		git commit -v --amend</span><br><span class="line">gcl  		git <span class="built_in">clone</span> --recursive</span><br><span class="line">gclean    	git reset --hard &amp;&amp; git clean -dfx</span><br><span class="line">gcm    		git checkout master</span><br><span class="line">gcmsg    	git commit -m</span><br><span class="line">gco    		git checkout</span><br><span class="line">gd    		git diff</span><br><span class="line">gdca    	git diff --cached</span><br><span class="line">gp    		git push</span><br><span class="line">grbc    	git rebase --<span class="built_in">continue</span></span><br><span class="line">gst    		git status</span><br><span class="line">gup    		git pull --rebase</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>命令文档</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>pacman 命令</title>
     <url>/pacman/</url>
     <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 升级整个系统，-y 更新数据库, -yy 强制更新, -u是升级软件</span></span><br><span class="line">pacman -Syu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除软件缓存，即/var/cache/pacman/pkg目录下的文件</span></span><br><span class="line">pacman -Sc</span><br></pre></td></tr></table></figure>
@@ -3632,6 +3599,82 @@
       <tags>
         <tag>Linux</tag>
         <tag>systemctl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git 命令文档</title>
+    <url>/git/</url>
+    <content><![CDATA[<h2 id="配置命令"><a href="#配置命令" class="headerlink" title="配置命令"></a>配置命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config user.name &lt;name&gt;</span><br><span class="line">git config user.email &lt;email&gt;</span><br><span class="line">git config --global user.name &lt;name&gt;	<span class="comment"># 配置全局用户名</span></span><br><span class="line">git config --global user.email &lt;email&gt;	<span class="comment"># 配置全局邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 颜色标识（默认开启）</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看配置</span></span><br><span class="line">git config list</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;url&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文件到index</span></span><br><span class="line">git add &lt;pathspec&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除index中的文件</span></span><br><span class="line">git <span class="built_in">rm</span> &lt;pathspec&gt;</span><br><span class="line"><span class="comment"># 删除未提交缓存</span></span><br><span class="line">git <span class="built_in">rm</span> --cached &lt;pathspec&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看仓库状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看日志</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 查看分支合并</span></span><br><span class="line">git <span class="built_in">log</span> --graph</span><br><span class="line"><span class="comment"># 精简查看</span></span><br><span class="line">git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line"></span><br><span class="line">git commit -m &lt;message&gt;			<span class="comment"># 提交文件，附带版本说明</span></span><br><span class="line">git commit --amend -m &lt;message&gt;		<span class="comment"># 合并上一次提交（用于反复修改）</span></span><br><span class="line">git commit -am &lt;message&gt;		<span class="comment"># 将add和commit合为一步</span></span><br><span class="line"></span><br><span class="line">git remote -v				<span class="comment"># 查看远程仓库地址</span></span><br><span class="line">git remote add origin &lt;url&gt;		<span class="comment"># 添加origin分支</span></span><br><span class="line">git remote <span class="built_in">rm</span> origin			<span class="comment"># 删除origin分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新设置远程仓库地址</span></span><br><span class="line">git remote set-url origin &lt;git.url&gt;</span><br><span class="line"></span><br><span class="line">git pull	<span class="comment"># 拉 简写形式</span></span><br><span class="line">git pull origin master			<span class="comment"># 同步远程仓库更新到master分支</span></span><br><span class="line"></span><br><span class="line">git push	<span class="comment"># 推 简写形式</span></span><br><span class="line">git push -u origin master		<span class="comment"># 推送本地仓库到origin分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置当前分支的关联的远程分支</span></span><br><span class="line">git branch --set-upstream-to=origin/master master</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="进阶命令"><a href="#进阶命令" class="headerlink" title="进阶命令"></a>进阶命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 difference（差异）</span></span><br><span class="line">git diff		<span class="comment"># 工作区与暂存区</span></span><br><span class="line">git diff --cached 	<span class="comment"># 暂存区与版本库</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 回滚到上一版本 HEAD~100 前100个版本 可指定&lt;版本号&gt;</span></span><br><span class="line">git reset --hard HEAD^</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看分支</span></span><br><span class="line">git branch</span><br><span class="line">git branch &lt;branch&gt; 	<span class="comment"># 创建分支</span></span><br><span class="line">git branch -d &lt;branch&gt;	<span class="comment"># 删除分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复（删除）工作区更改</span></span><br><span class="line">git checkout</span><br><span class="line">git checkout &lt;branch&gt; 	<span class="comment"># 切换分支</span></span><br><span class="line">git checkout -b &lt;branch&gt;<span class="comment"># 创建并切换分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取所有远程分支（不更新本地分支，另需merge）</span></span><br><span class="line">git fetch</span><br><span class="line"><span class="comment"># 获取所有原创分支并清除服务器上已删掉的分支</span></span><br><span class="line">git fetch --prune</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支但不丢弃分支信息</span></span><br><span class="line">git merge --no-ff -m <span class="string">&quot;merge with no-ff&quot;</span> &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建临时分支</span></span><br><span class="line">git stash</span><br><span class="line">git stash list	<span class="comment"># 查看临时分支</span></span><br><span class="line">git stash drop	<span class="comment"># 删除stash</span></span><br><span class="line">git stash apply	<span class="comment"># 恢复分支内容</span></span><br><span class="line">git stash pop	<span class="comment"># 恢复分支内容并删除stash</span></span><br><span class="line">git stash apply stash@&#123;0&#125;<span class="comment"># 恢复指定的stash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制一个特定的提交到当前分支</span></span><br><span class="line">git cherry-pick &lt;版本号&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout 1acd5de</span><br><span class="line"><span class="comment"># 保存修改后分支</span></span><br><span class="line">it switch -c &lt;新分支名&gt;</span><br><span class="line"><span class="comment"># 恢复切换前分支</span></span><br><span class="line">git switch -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地仓库强制替换远程仓库</span></span><br><span class="line">git push --force --set-upstream origin &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="替换分支"><a href="#替换分支" class="headerlink" title="替换分支"></a>替换分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将master替换成mainf</span></span><br><span class="line">git checkout main</span><br><span class="line">git merge -s ours master	<span class="comment"># git --strategy=ours ours master</span></span><br><span class="line">git checkout master</span><br><span class="line">git merge main</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看子模块</span></span><br><span class="line">git submodule</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化</span></span><br><span class="line">git submodule init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加子模块</span></span><br><span class="line">git submodule add &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"><span class="comment"># 添加指定分支</span></span><br><span class="line">git submodule add -b v1.0 &lt;项目地址&gt; &lt;路径&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新(克隆)子模块</span></span><br><span class="line">git submodule update --init --remote --recursive</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除子模块</span></span><br><span class="line">git <span class="built_in">rm</span> -rf --cached &lt;路径&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="zsh-快捷命令"><a href="#zsh-快捷命令" class="headerlink" title="zsh 快捷命令"></a>zsh 快捷命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gapa    	git add --patch</span><br><span class="line">gc!   		git commit -v --amend</span><br><span class="line">gcl  		git <span class="built_in">clone</span> --recursive</span><br><span class="line">gclean    	git reset --hard &amp;&amp; git clean -dfx</span><br><span class="line">gcm    		git checkout master</span><br><span class="line">gcmsg    	git commit -m</span><br><span class="line">gco    		git checkout</span><br><span class="line">gd    		git diff</span><br><span class="line">gdca    	git diff --cached</span><br><span class="line">gp    		git push</span><br><span class="line">grbc    	git rebase --<span class="built_in">continue</span></span><br><span class="line">gst    		git status</span><br><span class="line">gup    		git pull --rebase</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分支命名规范"><a href="#分支命名规范" class="headerlink" title="分支命名规范"></a>分支命名规范</h2><table>
+<thead>
+<tr>
+<th>分支</th>
+<th>命名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主分支</td>
+<td>master</td>
+<td>主分支，所有提供给用户使用的正式版本，都在这个主分支上发布</td>
+</tr>
+<tr>
+<td>开发主分支</td>
+<td>dev</td>
+<td>开发分支，永远是功能最新最全的分支</td>
+</tr>
+<tr>
+<td>功能分支</td>
+<td>feature-*</td>
+<td>新功能分支，某个功能点正在开发阶段</td>
+</tr>
+<tr>
+<td>发布版本</td>
+<td>release-*</td>
+<td>发布定期要上线的功能</td>
+</tr>
+<tr>
+<td>修复发布版本分支</td>
+<td>bugfix-release-*</td>
+<td>修复测试bug</td>
+</tr>
+<tr>
+<td>紧急修复分支</td>
+<td>bugfix-master-*</td>
+<td>紧急修复线上代码的 bug</td>
+</tr>
+</tbody></table>
+<h2 id="工作流程图"><a href="#工作流程图" class="headerlink" title="工作流程图"></a>工作流程图</h2><h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><img data-src="http://img.owq.world/2022/05/1202-904caf.png"></p>
+<h3 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h3><p><img data-src="http://img.owq.world/2022/05/1202-f68d47.png"></p>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
 </search>
