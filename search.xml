@@ -3527,81 +3527,6 @@
       </tags>
   </entry>
   <entry>
-    <title>pacman 命令</title>
-    <url>/pacman/</url>
-    <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 升级整个系统，-y 更新数据库, -yy 强制更新, -u是升级软件</span></span><br><span class="line">pacman -Syu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除软件缓存，即/var/cache/pacman/pkg目录下的文件</span></span><br><span class="line">pacman -Sc</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在包数据库中查询软件</span></span><br><span class="line">pacman -Ss &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示软件的详细信息</span></span><br><span class="line">pacman -Si &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询已安装的软件包</span></span><br><span class="line">pacman -Qs &lt;package&gt;</span><br><span class="line"><span class="comment"># 查询本地安装包的详细信息</span></span><br><span class="line">pacman -Qi &lt;package&gt;</span><br><span class="line"><span class="comment"># 获取已安装软件所包含的文件的列表</span></span><br><span class="line">pacman -Ql &lt;package&gt;	</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line">pacman -S &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装不同仓库中的版本</span></span><br><span class="line">pacman -S &lt;extra&gt;/&lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从本地文件安装</span></span><br><span class="line">pacman -U package.tar.zx</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除单个软件</span></span><br><span class="line">pacman -R &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定软件及其没有被其他已安装软件使用的依赖关系</span></span><br><span class="line">pacman -Rs &lt;package&gt; </span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示软件的依赖树</span></span><br><span class="line">pactree &lt;package&gt;  </span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>命令文档</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>pip 命令</title>
-    <url>/pip/</url>
-    <content><![CDATA[<h2 id="Linux-安装"><a href="#Linux-安装" class="headerlink" title="Linux 安装"></a>Linux 安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install python3-pip</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">pip list			<span class="meta"># 显示已安装的库</span></span><br><span class="line">pip list -o			<span class="meta"># 显示已过时的库</span></span><br><span class="line">pip <span class="keyword">show</span> &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 显示库信息</span></span><br><span class="line">pip install &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 安装库</span></span><br><span class="line">pip install -U &lt;<span class="keyword">library</span>&gt;	<span class="meta"># 更新库</span></span><br><span class="line">pip uninstall &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 卸载库</span></span><br><span class="line">pip check &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 检查依赖</span></span><br><span class="line">pip [cmd] -h			<span class="meta"># 显示帮助</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="导出已安装包"><a href="#导出已安装包" class="headerlink" title="导出已安装包"></a>导出已安装包</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">freeze</span> &gt; requirements.txt</span><br></pre></td></tr></table></figure>
-
-<h2 id="从文件递归安装"><a href="#从文件递归安装" class="headerlink" title="从文件递归安装"></a>从文件递归安装</h2><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<h2 id="其它配置"><a href="#其它配置" class="headerlink" title="其它配置"></a>其它配置</h2><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置默认使用pip3</span></span><br><span class="line">pip3 intall <span class="comment">--upgrade pip</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><h3 id="临时使用"><a href="#临时使用" class="headerlink" title="临时使用"></a>临时使用</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">pip install <span class="selector-attr">[module]</span> -<span class="selector-tag">i</span> https:<span class="comment">//pypi.org/simple</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.org/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://mirrors.aliyun.com/pypi/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清华源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 腾讯源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url http://mirrors.cloud.tencent.com/pypi/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 豆瓣源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url http://pypi.douban.com/simple</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>命令文档</category>
-      </categories>
-      <tags>
-        <tag>pip</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>systemctl 命令</title>
-    <url>/systemctl/</url>
-    <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start &lt;servicename&gt;    	<span class="comment"># 启动服务</span></span><br><span class="line">systemctl stop &lt;servicename&gt;     	<span class="comment"># 关闭服务</span></span><br><span class="line">systemctl restart &lt;servicename&gt;		<span class="comment"># 重启服务</span></span><br><span class="line">systemctl reload &lt;servicename&gt;    	<span class="comment"># 重新加载配置文件</span></span><br><span class="line">systemctl status &lt;servicename&gt;    	<span class="comment"># 查看服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的配置文件</span></span><br><span class="line">systemctl <span class="built_in">cat</span> &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有服务的状态</span></span><br><span class="line">systemctl -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前系统服务状态</span></span><br><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出服务的依赖关系</span></span><br><span class="line">systemctl list-dependencies &lt;servicename&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="电源相关"><a href="#电源相关" class="headerlink" title="电源相关"></a>电源相关</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl reboot		<span class="comment"># 重启机器</span></span><br><span class="line">systemctl poweroff		<span class="comment"># 关机</span></span><br><span class="line">systemctl <span class="built_in">suspend</span>		<span class="comment"># 挂起 - 睡眠 - 保存在內存</span></span><br><span class="line">systemctl hibernate		<span class="comment"># 休眠 - 断电 - 保存在硬盘</span></span><br><span class="line">systemctl hybrid-sleep		<span class="comment"># 混合休眠模式（同时休眠到硬盘并挂起）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统引导时间</span></span><br><span class="line">systemd-analyze time		<span class="comment"># 仅显示时间</span></span><br><span class="line">systemd-analyze blame		<span class="comment"># 显示每个进程消耗时间</span></span><br><span class="line">systemd-analyze plot		<span class="comment"># 生成网页</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>命令文档</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>systemctl</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git 命令文档</title>
     <url>/git/</url>
     <content><![CDATA[<h2 id="配置命令"><a href="#配置命令" class="headerlink" title="配置命令"></a>配置命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config user.name &lt;name&gt;</span><br><span class="line">git config user.email &lt;email&gt;</span><br><span class="line">git config --global user.name &lt;name&gt;	<span class="comment"># 配置全局用户名</span></span><br><span class="line">git config --global user.email &lt;email&gt;	<span class="comment"># 配置全局邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 颜色标识（默认开启）</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy &lt;proxy&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看配置</span></span><br><span class="line">git config list</span><br></pre></td></tr></table></figure>
@@ -3675,6 +3600,81 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pacman 命令</title>
+    <url>/pacman/</url>
+    <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 升级整个系统，-y 更新数据库, -yy 强制更新, -u是升级软件</span></span><br><span class="line">pacman -Syu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除软件缓存，即/var/cache/pacman/pkg目录下的文件</span></span><br><span class="line">pacman -Sc</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在包数据库中查询软件</span></span><br><span class="line">pacman -Ss &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示软件的详细信息</span></span><br><span class="line">pacman -Si &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询已安装的软件包</span></span><br><span class="line">pacman -Qs &lt;package&gt;</span><br><span class="line"><span class="comment"># 查询本地安装包的详细信息</span></span><br><span class="line">pacman -Qi &lt;package&gt;</span><br><span class="line"><span class="comment"># 获取已安装软件所包含的文件的列表</span></span><br><span class="line">pacman -Ql &lt;package&gt;	</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line">pacman -S &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装不同仓库中的版本</span></span><br><span class="line">pacman -S &lt;extra&gt;/&lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从本地文件安装</span></span><br><span class="line">pacman -U package.tar.zx</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除单个软件</span></span><br><span class="line">pacman -R &lt;package&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定软件及其没有被其他已安装软件使用的依赖关系</span></span><br><span class="line">pacman -Rs &lt;package&gt; </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示软件的依赖树</span></span><br><span class="line">pactree &lt;package&gt;  </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pip 命令</title>
+    <url>/pip/</url>
+    <content><![CDATA[<h2 id="Linux-安装"><a href="#Linux-安装" class="headerlink" title="Linux 安装"></a>Linux 安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install python3-pip</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">pip list			<span class="meta"># 显示已安装的库</span></span><br><span class="line">pip list -o			<span class="meta"># 显示已过时的库</span></span><br><span class="line">pip <span class="keyword">show</span> &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 显示库信息</span></span><br><span class="line">pip install &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 安装库</span></span><br><span class="line">pip install -U &lt;<span class="keyword">library</span>&gt;	<span class="meta"># 更新库</span></span><br><span class="line">pip uninstall &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 卸载库</span></span><br><span class="line">pip check &lt;<span class="keyword">library</span>&gt;		<span class="meta"># 检查依赖</span></span><br><span class="line">pip [cmd] -h			<span class="meta"># 显示帮助</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="导出已安装包"><a href="#导出已安装包" class="headerlink" title="导出已安装包"></a>导出已安装包</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">freeze</span> &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="从文件递归安装"><a href="#从文件递归安装" class="headerlink" title="从文件递归安装"></a>从文件递归安装</h2><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="其它配置"><a href="#其它配置" class="headerlink" title="其它配置"></a>其它配置</h2><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置默认使用pip3</span></span><br><span class="line">pip3 intall <span class="comment">--upgrade pip</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="源配置"><a href="#源配置" class="headerlink" title="源配置"></a>源配置</h2><h3 id="临时使用"><a href="#临时使用" class="headerlink" title="临时使用"></a>临时使用</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">pip install <span class="selector-attr">[module]</span> -<span class="selector-tag">i</span> https:<span class="comment">//pypi.org/simple</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.org/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://mirrors.aliyun.com/pypi/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清华源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 腾讯源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url http://mirrors.cloud.tencent.com/pypi/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 豆瓣源</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url http://pypi.douban.com/simple</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>pip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>systemctl 命令</title>
+    <url>/systemctl/</url>
+    <content><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start &lt;servicename&gt;    	<span class="comment"># 启动服务</span></span><br><span class="line">systemctl stop &lt;servicename&gt;     	<span class="comment"># 关闭服务</span></span><br><span class="line">systemctl restart &lt;servicename&gt;		<span class="comment"># 重启服务</span></span><br><span class="line">systemctl reload &lt;servicename&gt;    	<span class="comment"># 重新加载配置文件</span></span><br><span class="line">systemctl status &lt;servicename&gt;    	<span class="comment"># 查看服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的配置文件</span></span><br><span class="line">systemctl <span class="built_in">cat</span> &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有服务的状态</span></span><br><span class="line">systemctl -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前系统服务状态</span></span><br><span class="line">systemctl list-units</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出服务的依赖关系</span></span><br><span class="line">systemctl list-dependencies &lt;servicename&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="电源相关"><a href="#电源相关" class="headerlink" title="电源相关"></a>电源相关</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl reboot		<span class="comment"># 重启机器</span></span><br><span class="line">systemctl poweroff		<span class="comment"># 关机</span></span><br><span class="line">systemctl <span class="built_in">suspend</span>		<span class="comment"># 挂起 - 睡眠 - 保存在內存</span></span><br><span class="line">systemctl hibernate		<span class="comment"># 休眠 - 断电 - 保存在硬盘</span></span><br><span class="line">systemctl hybrid-sleep		<span class="comment"># 混合休眠模式（同时休眠到硬盘并挂起）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统引导时间</span></span><br><span class="line">systemd-analyze time		<span class="comment"># 仅显示时间</span></span><br><span class="line">systemd-analyze blame		<span class="comment"># 显示每个进程消耗时间</span></span><br><span class="line">systemd-analyze plot		<span class="comment"># 生成网页</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>systemctl</tag>
       </tags>
   </entry>
 </search>
