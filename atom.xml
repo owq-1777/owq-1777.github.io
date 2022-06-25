@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-05-20T06:30:52.787Z</updated>
+  <updated>2022-06-25T08:33:56.383Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WordPress 站点恶意重定向解决记录</title>
+    <link href="https://www.owq.world/43259a0f/"/>
+    <id>https://www.owq.world/43259a0f/</id>
+    <published>2022-06-25T16:11:15.000Z</published>
+    <updated>2022-06-25T08:33:56.383Z</updated>
+    
+    
+    <summary type="html">22年5月份初的时候, 很多 WordPress 网站被恶意插件植入重定向代码, 不幸中招, 便有此文.</summary>
+    
+    
+    
+    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="WordPress" scheme="https://www.owq.world/tags/WordPress/"/>
+    
+  </entry>
   
   <entry>
     <title>Celery 快速上手指南-Python篇</title>
@@ -408,29 +427,6 @@
     <category term="Docker" scheme="https://www.owq.world/tags/Docker/"/>
     
     <category term="Mongo" scheme="https://www.owq.world/tags/Mongo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo + Nginx 服务器部署踩坑记录</title>
-    <link href="https://www.owq.world/e823826f/"/>
-    <id>https://www.owq.world/e823826f/</id>
-    <published>2021-08-20T11:24:33.000Z</published>
-    <updated>2021-11-07T20:40:11.000Z</updated>
-    
-    
-    <summary type="html">翻阅了好几篇文章, 步骤可以说是非常详细, 但仍踩了好多坑, 知其云不知所以云是问题出现的关键, 所以便有了这篇详细的注释文章（￣︶￣）↗　</summary>
-    
-    
-    
-    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="Hexo" scheme="https://www.owq.world/tags/Hexo/"/>
-    
-    <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
-    
-    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
     
   </entry>
   
