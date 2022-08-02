@@ -2258,6 +2258,9 @@
 
 <h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">mongodb:</span>//admin:password<span class="subst">@127</span><span class="number">.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">27017</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="正常安装"><a href="#正常安装" class="headerlink" title="正常安装"></a>正常安装</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubW9uZ29kYi5jb20vZG9jcy9tYW51YWwvaW5zdGFsbGF0aW9uLw==">Install MongoDB — MongoDB Manual</span></p>
+</blockquote>
 ]]></content>
       <categories>
         <category>配置记录</category>
