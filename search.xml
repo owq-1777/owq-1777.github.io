@@ -2585,7 +2585,8 @@
 <h3 id="powerlevel10"><a href="#powerlevel10" class="headerlink" title="powerlevel10"></a>powerlevel10</h3><blockquote>
 <p>仓库传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JvbWthdHYvcG93ZXJsZXZlbDEwaw==">🚪</span></p>
 </blockquote>
-<p><img data-src="http://img.owq.world/2022/05/1500-a5e012.png"></p>
+<img data-src="http://img.owq.world/2022/05/1500-a5e012.png" style="zoom:80%;" />
+
 <h4 id="从储存库安装"><a href="#从储存库安装" class="headerlink" title="从储存库安装"></a>从储存库安装</h4><p>克隆主题包到主题目录</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/romkatv/powerlevel10k.git <span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$HOME</span>/.oh-my-zsh/custom&#125;</span>/themes/powerlevel10k</span><br></pre></td></tr></table></figure>
 
