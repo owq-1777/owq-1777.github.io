@@ -3133,9 +3133,20 @@
 <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d0aW5nL2F1dG9qdW1w">autojump</span></h3><blockquote>
 <p>快速跳转目录</p>
 </blockquote>
+<p>软件包安装</p>
+<p><strong>apt-get</strong></p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">apt-<span class="built_in">get</span> install autojump</span><br></pre></td></tr></table></figure>
+
+<p><strong>pacman</strong></p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">pacman -S <span class="built_in">auto</span>jump</span><br></pre></td></tr></table></figure>
+
+<p>从仓库安装</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/wting/</span>autojump.git</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 跳转目录安装</span></span><br><span class="line"><span class="built_in">cd</span> autojump &amp;&amp; ./install.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./uninstall.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">j &lt;部分目录名&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 跳转目录安装</span></span><br><span class="line"><span class="built_in">cd</span> autojump</span><br><span class="line">./install.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./uninstall.py</span><br></pre></td></tr></table></figure>
+
+<p>使用方法</p>
+<figure class="highlight bnf"><table><tr><td class="code"><pre><span class="line">j <span class="attribute">&lt;部分目录名&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="zsh-autosuggestions"><a href="#zsh-autosuggestions" class="headerlink" title="zsh-autosuggestions"></a><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pzaC11c2Vycy96c2gtYXV0b3N1Z2dlc3Rpb25z">zsh-autosuggestions</span></h3><blockquote>
 <p>历史命令灰色提示</p>
