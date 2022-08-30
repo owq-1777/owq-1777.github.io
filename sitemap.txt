@@ -76,8 +76,8 @@ https://www.owq.world/tags/Arch-Linux/
 https://www.owq.world/tags/pip/
 https://www.owq.world/tags/Android/
 https://www.owq.world/tags/adb/
-https://www.owq.world/tags/zsh/
 https://www.owq.world/tags/systemctl/
+https://www.owq.world/tags/zsh/
 https://www.owq.world/tags/WSL2/
 https://www.owq.world/tags/Kali-Linux/
 https://www.owq.world/tags/vsCode/

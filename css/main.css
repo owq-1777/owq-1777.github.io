@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e4d1f5;
+  background: #559af6;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3027,6 +3027,20 @@ th {
 }
 .post-toc .nav .nav-level-2>.nav-child {
   display: block;
+}
+.hitokoto-title {
+  text-align: center;
+  font-size: 12px;
+}
+#hitokoto {
+  text-align: left;
+  font-family: "Microsoft YaHei";
+  font-size: 11px;
+}
+#hitofrom {
+  float: right;
+  font-family: "Microsoft YaHei";
+  font-size: 10px;
 }
 .headband {
   display: none;
