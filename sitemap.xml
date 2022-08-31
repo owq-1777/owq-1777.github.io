@@ -447,13 +447,6 @@
   </url>
   
   <url>
-    <loc>https://www.owq.world/tags/FastAPI/</loc>
-    <lastmod>2022-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.owq.world/tags/Hexo/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -462,6 +455,13 @@
   
   <url>
     <loc>https://www.owq.world/tags/JavaScript/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.owq.world/tags/FastAPI/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
