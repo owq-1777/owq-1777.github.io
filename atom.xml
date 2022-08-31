@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-06-25T08:37:47.133Z</updated>
+  <updated>2022-08-31T06:02:27.355Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo NexT主题侧边栏添加一言</title>
+    <link href="https://www.owq.world/5313cb7/"/>
+    <id>https://www.owq.world/5313cb7/</id>
+    <published>2022-08-31T10:27:54.000Z</published>
+    <updated>2022-08-31T06:02:27.355Z</updated>
+    
+    
+    <summary type="html">萌新向教程 一起为侧边栏添加点击刷新+Copy+特效的一言显示吧(￣▽￣)</summary>
+    
+    
+    
+    <category term="博客定制" scheme="https://www.owq.world/categories/%E5%8D%9A%E5%AE%A2%E5%AE%9A%E5%88%B6/"/>
+    
+    
+    <category term="Hexo" scheme="https://www.owq.world/tags/Hexo/"/>
+    
+    <category term="JavaScript" scheme="https://www.owq.world/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>WordPress 站点恶意重定向解决记录</title>
@@ -406,27 +427,6 @@
     <category term="Docker" scheme="https://www.owq.world/tags/Docker/"/>
     
     <category term="Redis" scheme="https://www.owq.world/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker+MongoDB 安装配置</title>
-    <link href="https://www.owq.world/d2633d2c/"/>
-    <id>https://www.owq.world/d2633d2c/</id>
-    <published>2021-08-23T20:39:01.000Z</published>
-    <updated>2022-08-02T09:39:44.964Z</updated>
-    
-    
-    <summary type="html">Docker下安装MongoDB的快捷配置~</summary>
-    
-    
-    
-    <category term="配置记录" scheme="https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="Docker" scheme="https://www.owq.world/tags/Docker/"/>
-    
-    <category term="Mongo" scheme="https://www.owq.world/tags/Mongo/"/>
     
   </entry>
   
