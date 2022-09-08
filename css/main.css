@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #14ffc8;
+  background: #ff0;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2835,10 +2835,12 @@ li p {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: default;
 }
 .beian > a {
   color: #999;
   border-bottom: 0;
+  cursor: default;
 }
 .beian > img {
   box-shadow: none;
@@ -2862,6 +2864,9 @@ li p {
 }
 .posts-expand .post-meta {
   margin: 3px 0 20px 0;
+}
+.copyright {
+  cursor: default;
 }
 .post-copyright {
   margin: 0;
