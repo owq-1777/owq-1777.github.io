@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>python 时间日期格式化和反格式化</title>
-    <url>/7ca2b2fb/</url>
-    <content><![CDATA[<h2 id="获取时间戳"><a href="#获取时间戳" class="headerlink" title="获取时间戳"></a>获取时间戳</h2><h3 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取本地时间"><a href="#获取本地时间" class="headerlink" title="获取本地时间"></a>获取本地时间</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">time.time()</span><br></pre></td></tr></table></figure>
-
-<p>获取UTC时间</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">time</span><span class="selector-class">.gmtime</span>()</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>学习教程</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo NexT主题侧边栏添加一言</title>
     <url>/5313cb7/</url>
     <content><![CDATA[<h2 id="大致流程"><a href="#大致流程" class="headerlink" title="大致流程"></a>大致流程</h2><figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">添加侧边栏 -&gt; 添加CSS -&gt; 激活配置 -&gt; 同步完工</span><br></pre></td></tr></table></figure>
