@@ -34,7 +34,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://img.owq.world/2022/05/1540-a7efa3.png">
 <meta property="article:published_time" content="2022-05-19T22:40:25.000Z">
-<meta property="article:modified_time" content="2022-05-20T06:30:52.787Z">
+<meta property="article:modified_time" content="2022-09-17T02:42:04.041Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Celery">
@@ -220,7 +220,7 @@
                 <i class="far fa-calendar-check"></i>
             </span>
             <span class="post-meta-item-text">Updated</span>
-            <time title="修改时间：2022-09-14 10:13:10" itemprop="dateModified" datetime="2022-09-14T18:13:10+08:00">2022-09-14</time>
+            <time title="修改时间：2022-09-17 02:42:26" itemprop="dateModified" datetime="2022-09-17T10:42:26+08:00">2022-09-17</time>
             
           </span>
 
@@ -375,7 +375,7 @@
 </ul>
 <p>任务在生成时会被添加到任务队列里, 这时任务调度器没有运行的话, 你会看到100个任务在<strong>任务队列</strong>安安静静的躺着.</p>
 <p>因为电脑CPU有16核, 默认会创建16个<code>worker</code>, 在添加完任务后的60秒内, <code>unacked</code>里面应该是存在着64条待确认任务(每个<code>worker</code>分配5条), 而任务队列里面有20条待执行任务, 剩下的16条在<code>worker</code>中执行.</p>
-<p>任务执行完, <code>worker</code>会拿<code>unacked</code>里的任务执行, 任务队列里会继续把任务分配给有空闲的<code>worker</code>, 真到任务都执行完.</p>
+<p>任务执行完, <code>worker</code>会拿<code>unacked</code>里的任务执行, 任务队列里会继续把任务分配给有空闲的<code>worker</code>, 直到任务都执行完.</p>
 <p>如果强行中断程序的话, <code>unacked</code>里的任务会重新被塞回任务队列里面, 而<strong>正在执行中任务则会被丢失</strong>, 这是极不推荐的做法, 正确的做法是给<code>celery</code>进程发送<code>TERM</code>信号, 这样<code>woeker</code>会等待任务完成后再关闭.</p>
 <h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><h3 id="默认使用"><a href="#默认使用" class="headerlink" title="默认使用"></a>默认使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 
