@@ -1442,7 +1442,7 @@
 <h2 id="配置安装（可选）"><a href="#配置安装（可选）" class="headerlink" title="配置安装（可选）"></a>配置安装（可选）</h2><blockquote>
 <p>configure参数说明 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9jb25maWd1cmUuaHRtbA==">🚪</span><br>中文翻译 -&gt; <a href="/nginx-configure/">🚪</a></p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/nginx \</span><br><span class="line">--sbin-path=/usr/local/nginx/nginx \</span><br><span class="line">--modules-path=/usr/local/nginx/modules \</span><br><span class="line">--conf-path=/usr/local/nginx/nginx.conf \</span><br><span class="line">--error-log-path=/usr/local/nginx/logs/error.log \</span><br><span class="line">--http-log-path=/usr/local/nginx/logs/access.log \</span><br><span class="line">--pid-path=/usr/local/nginx/logs/nginx.pid \</span><br><span class="line">--lock-path=/usr/local/nginx/logs/nginx.lock \</span><br><span class="line">--with-debug --with-compat --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-stream_ssl_module --with-mail_ssl_module</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/nginx \</span><br><span class="line">--sbin-path=/usr/local/nginx/nginx \</span><br><span class="line">--modules-path=/usr/local/nginx/modules \</span><br><span class="line">--conf-path=/usr/local/nginx/nginx.conf \</span><br><span class="line">--error-log-path=/usr/local/nginx/logs/error.log \</span><br><span class="line">--http-log-path=/usr/local/nginx/logs/access.log \</span><br><span class="line">--pid-path=/usr/local/nginx/logs/nginx.pid \</span><br><span class="line">--lock-path=/usr/local/nginx/logs/nginx.lock \</span><br><span class="line">--with-debug --with-compat --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-stream_ssl_module --with-mail_ssl_module --with-stream</span><br></pre></td></tr></table></figure>
 
 <p>最后会输出配置信息</p>
 <p><img data-src="http://img.owq.world/2021/11/1702-d6315d.png"></p>
@@ -1479,7 +1479,7 @@
 <h2 id="版本升级"><a href="#版本升级" class="headerlink" title="版本升级"></a>版本升级</h2><blockquote>
 <p>在不停止Nginx服务的情况下进行平滑升级</p>
 </blockquote>
-<p>准备已编译好的新版目录(安装步骤执行到<code>make install</code>之前)<br><code>make install</code>执行的话会覆盖掉原本的配置文件</p>
+<p>准备已编译好的新版目录(安装步骤执行到<code>make install</code>之前)<br>执行<code>make install</code>的话会<strong>覆盖</strong>掉原本的配置文件</p>
 <p><img data-src="http://img.owq.world/2021/11/1733-352115.png"></p>
 <p>下面操作会将<code>nginx-1.20.1</code>升级到<code>nginx-1.20.2</code></p>
 <ol>
