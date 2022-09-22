@@ -1,3 +1,4 @@
+https://www.owq.world/bd9e5b39/
 https://www.owq.world/37b6e877/
 https://www.owq.world/51f3ce14/
 https://www.owq.world/46118abd/
@@ -38,7 +39,6 @@ https://www.owq.world/202281bd/
 https://www.owq.world/dfbb4c9/
 https://www.owq.world/72a0046c/
 https://www.owq.world/selenium/
-https://www.owq.world/bd9e5b39/
 https://www.owq.world/systemctl/
 https://www.owq.world/categories/index.html
 https://www.owq.world/tags/index.html
@@ -84,6 +84,7 @@ https://www.owq.world/tags/systemctl/
 https://www.owq.world/tags/zsh/
 https://www.owq.world/tags/WSL2/
 https://www.owq.world/tags/Kali-Linux/
+https://www.owq.world/tags/Algorithm/
 https://www.owq.world/tags/vsCode/
 https://www.owq.world/tags/regex/
 https://www.owq.world/tags/oss/
