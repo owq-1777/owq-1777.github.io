@@ -526,6 +526,13 @@
   </url>
   
   <url>
+    <loc>https://www.owq.world/tags/Arch-Linux/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.owq.world/tags/SQL/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -632,13 +639,6 @@
   
   <url>
     <loc>https://www.owq.world/tags/git/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.owq.world/tags/Arch-Linux/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

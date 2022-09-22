@@ -60,6 +60,7 @@ https://www.owq.world/tags/crontab/
 https://www.owq.world/tags/CentOS/
 https://www.owq.world/tags/Ubuntu/
 https://www.owq.world/tags/Liunx/
+https://www.owq.world/tags/Arch-Linux/
 https://www.owq.world/tags/SQL/
 https://www.owq.world/tags/MariaDB/
 https://www.owq.world/tags/YAML/
@@ -76,7 +77,6 @@ https://www.owq.world/tags/PowerShell/
 https://www.owq.world/tags/WordPress/
 https://www.owq.world/tags/venv/
 https://www.owq.world/tags/git/
-https://www.owq.world/tags/Arch-Linux/
 https://www.owq.world/tags/pip/
 https://www.owq.world/tags/Android/
 https://www.owq.world/tags/adb/
