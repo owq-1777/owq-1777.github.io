@@ -16,7 +16,7 @@
 
 <h3 id="切换默认版本"><a href="#切换默认版本" class="headerlink" title="切换默认版本"></a>切换默认版本</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">update</span><span class="operator">-</span>alternatives <span class="comment">--config java</span></span><br><span class="line"><span class="keyword">update</span><span class="operator">-</span>alternatives <span class="comment">--config javac</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="ArchLinux"><a href="#ArchLinux" class="headerlink" title="ArchLinux"></a>ArchLinux</h2><h3 id="搜索包-1"><a href="#搜索包-1" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pacman -Syu</span><br><span class="line">pacman -Ss openjdk</span><br></pre></td></tr></table></figure>
+<h2 id="Arch-Linux"><a href="#Arch-Linux" class="headerlink" title="Arch Linux"></a>Arch Linux</h2><h3 id="搜索包-1"><a href="#搜索包-1" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pacman -Syu</span><br><span class="line">pacman -Ss openjdk</span><br></pre></td></tr></table></figure>
 
 <h3 id="安装所需版本-1"><a href="#安装所需版本-1" class="headerlink" title="安装所需版本"></a>安装所需版本</h3><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">pacman -Sy <span class="keyword">jre17-openjdk-headless</span></span><br><span class="line"><span class="keyword"></span>pacman -Sy <span class="keyword">jre8-openjdk-headless</span></span><br></pre></td></tr></table></figure>
 
@@ -39,7 +39,10 @@
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>CentOS</tag>
+        <tag>Ubuntu</tag>
         <tag>Liunx</tag>
+        <tag>Arch Linux</tag>
       </tags>
   </entry>
   <entry>
