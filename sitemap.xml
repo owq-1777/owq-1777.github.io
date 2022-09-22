@@ -470,13 +470,6 @@
   </url>
   
   <url>
-    <loc>https://www.owq.world/tags/JavaScript/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.owq.world/tags/Nginx/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -624,13 +617,6 @@
   </url>
   
   <url>
-    <loc>https://www.owq.world/tags/WordPress/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.owq.world/tags/venv/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -660,6 +646,13 @@
   
   <url>
     <loc>https://www.owq.world/tags/adb/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.owq.world/tags/JavaScript/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -721,6 +714,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://www.owq.world/tags/WordPress/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -745,13 +745,6 @@
   </url>
   
   <url>
-    <loc>https://www.owq.world/categories/%E5%8D%9A%E5%AE%A2%E5%AE%9A%E5%88%B6/</loc>
-    <lastmod>2022-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -760,6 +753,13 @@
   
   <url>
     <loc>https://www.owq.world/categories/%E5%A5%BD%E8%BD%AF%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2022-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.owq.world/categories/%E5%8D%9A%E5%AE%A2%E5%AE%9A%E5%88%B6/</loc>
     <lastmod>2022-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
