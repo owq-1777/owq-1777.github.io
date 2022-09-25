@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Sunny was born">
 <meta property="og:description" content="📖 杂项记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://img.owq.world/2021/12/2105-76b6ba.png">
+<meta property="og:image" content="https://img.owq.world/2021/12/2105-76b6ba.png">
 <meta property="article:published_time" content="2000-05-21T08:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-21T08:00:00.000Z">
 <meta property="article:author" content="OWQ">
@@ -41,7 +41,7 @@
 <meta property="article:tag" content="code">
 <meta property="article:tag" content="technique sharing">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://img.owq.world/2021/12/2105-76b6ba.png">
+<meta name="twitter:image" content="https://img.owq.world/2021/12/2105-76b6ba.png">
 
 <link rel="canonical" href="https://www.owq.world/memo/">
 
@@ -212,15 +212,14 @@
                 <i class="far fa-calendar"></i>
             </span>
             <span class="post-meta-item-text">Created</span>
-            
 
-            <time title="page.created：2000-05-21 08:00:00" itemprop="dateCreated datePublished" datetime="2000-05-21T08:00:00Z">2000-05-21</time>
+            <time title="2000-05-21 08:00:00" itemprop="dateCreated datePublished" datetime="2000-05-21T08:00:00Z">2000-05-21</time>
                   <span style="margin: 0 0.5em;"> | </span>
                   <span class="post-meta-item-icon">
                     <i class="far fa-calendar-check"></i>
                   </span>
                   <span class="post-meta-item-text">Updated</span>
-                    <time title="page.modified：2022-05-21 08:00:00" itemprop="dateModified" datetime="2022-05-21T08:00:00Z">2022-05-21</time>
+                    <time title="2022-05-21 08:00:00" itemprop="dateModified" datetime="2022-05-21T08:00:00Z">2022-05-21</time>
                   </span>
             
 
@@ -232,7 +231,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>8.8k</span>
+            <span>9k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -318,7 +317,7 @@
 <li>Don&#39;t be one of the leeches. (不要当伸手党)</li>
 <li>Either outstanding or out. (要么出众，要么出局)</li>
 </ul>
-<img data-src="http://img.owq.world/2021/12/2105-76b6ba.png" alt=" " style="zoom: 25%;box-shadow:none" />
+<img data-src="https://img.owq.world/2021/12/2105-76b6ba.png" alt=" " style="zoom: 25%;box-shadow:none" />
 
 
 
@@ -332,6 +331,10 @@
 </li>
 <li><p>nginx status<br><span class="exturl" data-url="aHR0cHM6Ly96Lml0cHViLm5ldC9hcnRpY2xlL2RldGFpbC9FMjQxM0U1RDRGQjY5QkM1QTMwODQwN0M4NjEyRUVGNw==">Nginx总结（十）如何监控Nginx的运行状态 - 文章详情 (itpub.net)</span></p>
 </li>
+<li><p>发送交易<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGVyZXVtL0VJUHMvYmxvYi9tYXN0ZXIvRUlQUy9laXAtMTU1Lm1k">EIPs&#x2F;eip-155.md at master · ethereum&#x2F;EIPs (github.com)</span></p>
+</li>
+<li><p>centos</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/redhat-release <span class="comment"># 版本查看</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="PyPi"><a href="#PyPi" class="headerlink" title="PyPi"></a>PyPi</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python</span> setup.<span class="keyword">py</span> sdist</span><br><span class="line"></span><br><span class="line">twine upload dist/* --<span class="keyword">verbose</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">python</span> setup.<span class="keyword">py</span> bdist_wheel</span><br></pre></td></tr></table></figure>
 
@@ -374,6 +377,9 @@
 <p><strong>Mysql</strong></p>
 <p>查看超时设置</p>
 <figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">show <span class="keyword">variables</span> like <span class="comment">&#x27;%timeout%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>分组聚合</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> user_id,<span class="built_in">count</span>(*) <span class="keyword">as</span> <span class="built_in">count</span> <span class="keyword">from</span> wallets <span class="keyword">group</span> <span class="keyword">by</span> user_id <span class="keyword">having</span> <span class="built_in">count</span>!=<span class="number">9</span>;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -498,7 +504,10 @@
 
 
 
-<h2 id="Linux快捷命令"><a href="#Linux快捷命令" class="headerlink" title="Linux快捷命令"></a>Linux快捷命令</h2><p><strong>时间</strong></p>
+<h2 id="Linux快捷命令"><a href="#Linux快捷命令" class="headerlink" title="Linux快捷命令"></a>Linux快捷命令</h2><p><strong>文本替换</strong></p>
+<figure class="highlight autohotkey"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">&quot;s / 查找字段 / 替换字段 / g&quot;</span> `grep 查找字段 -rl 路径 ` 文件名</span><br></pre></td></tr></table></figure>
+
+<p><strong>时间</strong></p>
 <figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">$(<span class="keyword">date</span> +%Y%m%d_%H%M%S)</span><br></pre></td></tr></table></figure>
 
 <p><strong>压缩</strong></p>

