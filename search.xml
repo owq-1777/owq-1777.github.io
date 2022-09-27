@@ -8,7 +8,7 @@
 </blockquote>
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
 <li>Python3.8+</li>
-<li>web3.py</li>
+<li>Web3.py</li>
 </ul>
 <h2 id="安装库"><a href="#安装库" class="headerlink" title="安装库"></a>安装库</h2><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> web3</span><br></pre></td></tr></table></figure>
 
