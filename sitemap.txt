@@ -1,3 +1,5 @@
+https://www.owq.world/422bcb4e/
+https://www.owq.world/pacman/
 https://www.owq.world/20130c79/
 https://www.owq.world/terminal/
 https://www.owq.world/bee760ec/
@@ -22,7 +24,6 @@ https://www.owq.world/4bfebac1/
 https://www.owq.world/9ec13a7e/
 https://www.owq.world/crontab/
 https://www.owq.world/git/
-https://www.owq.world/pacman/
 https://www.owq.world/bd9e5b39/
 https://www.owq.world/bcd27009/
 https://www.owq.world/about/index.html
@@ -40,8 +41,8 @@ https://www.owq.world/nginx-configure/
 https://www.owq.world/1a0a2507/
 https://www.owq.world/selenium/
 https://www.owq.world/systemctl/
-https://www.owq.world/tags/index.html
 https://www.owq.world/categories/index.html
+https://www.owq.world/tags/index.html
 https://www.owq.world/
 https://www.owq.world/tags/Python/
 https://www.owq.world/tags/Celery/
@@ -65,6 +66,9 @@ https://www.owq.world/tags/SQL/
 https://www.owq.world/tags/MariaDB/
 https://www.owq.world/tags/YAML/
 https://www.owq.world/tags/log/
+https://www.owq.world/tags/Ethereum/
+https://www.owq.world/tags/ERC20/
+https://www.owq.world/tags/Web3/
 https://www.owq.world/tags/Threading/
 https://www.owq.world/tags/Multiprocessing/
 https://www.owq.world/tags/Scrapy/

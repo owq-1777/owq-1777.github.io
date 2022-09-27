@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-09-25T12:41:34.537Z</updated>
+  <updated>2022-09-27T16:21:28.031Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 发送 ERC20 令牌交易</title>
+    <link href="https://www.owq.world/422bcb4e/"/>
+    <id>https://www.owq.world/422bcb4e/</id>
+    <published>2022-09-28T00:12:50.000Z</published>
+    <updated>2022-09-27T16:21:28.031Z</updated>
+    
+    
+    <summary type="html">学习使用web3.py发送ERC20令牌吧, 附带详细注释, 供你举一反三(￣▽￣)&quot;</summary>
+    
+    
+    
+    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
+    
+    <category term="Ethereum" scheme="https://www.owq.world/tags/Ethereum/"/>
+    
+    <category term="ERC20" scheme="https://www.owq.world/tags/ERC20/"/>
+    
+    <category term="Web3" scheme="https://www.owq.world/tags/Web3/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux下安装Java环境</title>
@@ -414,29 +439,6 @@
     <category term="Threading" scheme="https://www.owq.world/tags/Threading/"/>
     
     <category term="Multiprocessing" scheme="https://www.owq.world/tags/Multiprocessing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 使用 YAML 配置带有颜色输出的loging</title>
-    <link href="https://www.owq.world/dfbb4c9/"/>
-    <id>https://www.owq.world/dfbb4c9/</id>
-    <published>2021-08-26T16:45:57.000Z</published>
-    <updated>2022-09-25T12:41:34.537Z</updated>
-    
-    
-    <summary type="html">这是一篇从基本使用loging模块到带点颜色输出,再到优雅的使用YAML配置日志的学习记录🥳</summary>
-    
-    
-    
-    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
-    
-    <category term="YAML" scheme="https://www.owq.world/tags/YAML/"/>
-    
-    <category term="log" scheme="https://www.owq.world/tags/log/"/>
     
   </entry>
   
