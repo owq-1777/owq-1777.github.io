@@ -56,8 +56,8 @@ https://www.owq.world/tags/Hexo/
 https://www.owq.world/tags/JavaScript/
 https://www.owq.world/tags/Nginx/
 https://www.owq.world/tags/Linux/
-https://www.owq.world/tags/Java/
 https://www.owq.world/tags/crontab/
+https://www.owq.world/tags/Java/
 https://www.owq.world/tags/CentOS/
 https://www.owq.world/tags/Ubuntu/
 https://www.owq.world/tags/Liunx/
