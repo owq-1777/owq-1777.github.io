@@ -4,7 +4,7 @@
     <title>Python 发送 ERC20 令牌交易</title>
     <url>/422bcb4e/</url>
     <content><![CDATA[<blockquote>
-<p>P.S. 阅读本文需要对<code>web3.py</code>有基础的了解, 会发送<code>ETH</code>事务食用更佳.<br>We3.py docs: <span class="exturl" data-url="aHR0cHM6Ly93ZWIzcHkucmVhZHRoZWRvY3MuaW8vZW4vc3RhYmxl">https://web3py.readthedocs.io/en/stable</span> </p>
+<p>P.S. 阅读本文需要对<code>web3.py</code>有基础的了解, 会发送<code>ETH</code>事务食用更佳.<br>Web3.py docs: <span class="exturl" data-url="aHR0cHM6Ly93ZWIzcHkucmVhZHRoZWRvY3MuaW8vZW4vc3RhYmxl">https://web3py.readthedocs.io/en/stable</span> </p>
 </blockquote>
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
 <li>Python3.8+</li>
