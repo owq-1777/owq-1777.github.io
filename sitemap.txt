@@ -1,3 +1,4 @@
+https://www.owq.world/37b6e877/
 https://www.owq.world/422bcb4e/
 https://www.owq.world/pacman/
 https://www.owq.world/20130c79/
@@ -6,7 +7,6 @@ https://www.owq.world/bee760ec/
 https://www.owq.world/202281bd/
 https://www.owq.world/958bc56b/
 https://www.owq.world/46118abd/
-https://www.owq.world/37b6e877/
 https://www.owq.world/5313cb7/
 https://www.owq.world/43259a0f/
 https://www.owq.world/73d2d4df/
@@ -57,10 +57,9 @@ https://www.owq.world/tags/JavaScript/
 https://www.owq.world/tags/Nginx/
 https://www.owq.world/tags/Linux/
 https://www.owq.world/tags/Java/
-https://www.owq.world/tags/crontab/
 https://www.owq.world/tags/CentOS/
 https://www.owq.world/tags/Ubuntu/
-https://www.owq.world/tags/Liunx/
+https://www.owq.world/tags/crontab/
 https://www.owq.world/tags/Arch-Linux/
 https://www.owq.world/tags/SQL/
 https://www.owq.world/tags/MariaDB/
