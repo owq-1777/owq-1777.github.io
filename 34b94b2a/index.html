@@ -540,7 +540,7 @@
         // Fetch API
         // 调用一言接口 根据需求配置
         // fetch('https://v1.hitokoto.cn?min_length=12')
-        fetch('https://international.v1.hitokoto.cn?min_length=12')
+        fetch('https://international.v1.hitokoto.cn')
         .then(response => response.json())
         .then(data => {
             hitokoto_text.innerText = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.hitokoto;
