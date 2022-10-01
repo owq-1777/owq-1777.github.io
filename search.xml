@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>TMUX 命令文档</title>
+    <url>/tmux/</url>
+    <content><![CDATA[<blockquote>
+<p><code>TMUX</code>是一个终端复用器类软件, 和<code>Screen</code>类似.<br>可以在一个终端内管理多个分离的会话及窗口, 对于同时使用多个命令行, 或多个任务时非常方便, 常用于服务器程序挂后台.</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Ubuntu</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install -y tmux</span><br></pre></td></tr></table></figure>
+
+<p><strong>Arch Linux</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pacman -S tmux</span><br></pre></td></tr></table></figure>
+
+<p><strong>CentOS</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y tmux</span><br></pre></td></tr></table></figure>
+
+<h2 id="快速了解"><a href="#快速了解" class="headerlink" title="快速了解"></a>快速了解</h2><p><strong>前置知识</strong> 会话-窗口</p>
+<blockquote>
+<p>命令行的典型使用方式是，打开一个终端窗口（terminal window，以下简称&quot;窗口&quot;），在里面输入命令。<strong>用户与计算机的这种临时的交互，称为一次&quot;会话&quot;（session）</strong> 。</p>
+<p>会话的一个重要特点是，窗口与其中启动的进程是连在一起的。打开窗口，会话开始；关闭窗口，会话结束，会话内部的进程也会随之终止，不管有没有运行完。</p>
+<p>一个典型的例子就是，SSH 登录远程计算机，打开一个远程窗口执行命令。这时，网络突然断线，再次登录的时候，是找不回上一次执行的命令的。因为上一次 SSH 会话已经终止了，里面的进程也随之消失了。</p>
+<p>为了解决这个问题，会话与窗口可以&quot;解绑&quot;：窗口关闭时，会话并不终止，而是继续运行，等到以后需要的时候，再让会话&quot;绑定&quot;其他窗口。</p>
+</blockquote>
+<p><strong>Tmux 就是会话与窗口的&quot;解绑&quot;工具，将它们彻底分离。</strong></p>
+<ul>
+<li>允许在单个窗口中，同时访问多个会话。这对于同时运行多个命令行程序很有用。</li>
+<li>允许每个会话有多个连接窗口，因此可以多人实时共享会话。</li>
+<li>支持窗口任意的垂直和水平拆分。</li>
+</ul>
+<p><img data-src="https://img.owq.world/2022/10/1530-d8910e.png"></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tmux</td>
+<td>创建新会话</td>
+</tr>
+<tr>
+<td>tmux new -s <name></td>
+<td>启动新会话并为其命名</td>
+</tr>
+<tr>
+<td>tmux a</td>
+<td>进入已有会话</td>
+</tr>
+<tr>
+<td>tmux ls</td>
+<td>查看会话列表</td>
+</tr>
+<tr>
+<td>tmux kill-session –t <name></td>
+<td>停止指定会话</td>
+</tr>
+<tr>
+<td>tmux kill-server</td>
+<td>关闭所有tmux服务</td>
+</tr>
+</tbody></table>
+<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><blockquote>
+<p>TMUX内使用, 所有快捷键都以 ctrl+b 开始.</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">ctrl+<span class="selector-tag">b</span> d           脱离当前会话回到Sheel, 使用 tmux <span class="selector-tag">a</span> 重新进入</span><br></pre></td></tr></table></figure>
+
+<p>以下命令懒的记可以启用鼠标支持, 直接使用鼠标操作, 直接跳到 -&gt; 配置文件.</p>
+<p><strong>会话</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">ctrl+<span class="selector-tag">b</span> n           选择下一个会话</span><br><span class="line">ctrl+<span class="selector-tag">b</span> <span class="selector-tag">p</span>           选择上一个会话</span><br><span class="line">ctrl+<span class="selector-tag">b</span> s           以菜单方式切换会话</span><br></pre></td></tr></table></figure>
+
+<p><strong>窗口</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">ctrl+<span class="selector-tag">b</span> c           创建新窗口</span><br><span class="line">ctrl+<span class="selector-tag">b</span>  &quot;          模向分隔窗口</span><br><span class="line">ctrl+<span class="selector-tag">b</span> %           纵向分隔窗口</span><br><span class="line"></span><br><span class="line">ctrl+<span class="selector-tag">b</span> x           关闭当前窗口</span><br><span class="line"></span><br><span class="line">ctrl+<span class="selector-tag">b</span> 上/下键      切换窗口</span><br><span class="line">ctrl+<span class="selector-tag">b</span> w           以菜单方式切换窗口</span><br><span class="line"></span><br><span class="line">ctrl+<span class="selector-tag">b</span> Ctrl+方向键  调整分隔窗口大小</span><br><span class="line">ctrl+<span class="selector-tag">b</span> 空格键       多窗口下, 切换窗口布局</span><br></pre></td></tr></table></figure>
+
+<p><strong>命名</strong></p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">ctrl</span>+<span class="keyword">b</span> $		   重命名会话</span><br><span class="line"><span class="symbol">ctrl</span>+<span class="keyword">b</span> , 		   重命名窗口</span><br></pre></td></tr></table></figure>
+
+<p><strong>其它</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">ctrl+<span class="selector-tag">b</span> t          	显示时钟。按enter键后就会恢复到shell终端状态</span><br><span class="line">ctrl+<span class="selector-tag">b</span> <span class="selector-tag">q</span>			显示窗口编号</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用配置文件"><a href="#使用配置文件" class="headerlink" title="使用配置文件"></a>使用配置文件</h2><p>创建<code>.tmux.conf</code>编辑</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.tmux.conf</span><br></pre></td></tr></table></figure>
+
+<p>以下列出一些常用点, 根据需求配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Display color</span><br><span class="line">set -g default-terminal &quot;screen-256color&quot;</span><br><span class="line">  </span><br><span class="line"># 启y鼠标支持</span><br><span class="line">set -g mouse on</span><br><span class="line"></span><br><span class="line"># make delay shorter</span><br><span class="line">set -sg escape-time 0</span><br><span class="line"></span><br><span class="line">#### key bindings ####</span><br><span class="line"></span><br><span class="line"># ctrl+b r 	重载配置</span><br><span class="line">bind r source-file ~/.tmux.conf \; display &quot;.tmux.conf reloaded!&quot;</span><br><span class="line"></span><br><span class="line"># ctrl+b N	新建窗口</span><br><span class="line">bind N new-window</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>配置完后使用<code>tmux kill-server</code>关闭tmux, 然后重新进入即可生效.</p>
+</blockquote>
+<h2 id="鼠标使用示例"><a href="#鼠标使用示例" class="headerlink" title="鼠标使用示例"></a>鼠标使用示例</h2><p><img data-src="https://img.owq.world/2022/10/1600-5e9d35.gif"></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly90bXV4Z3VpZGUucmVhZHRoZWRvY3MuaW8vZW4vbGF0ZXN0L3RtdXgvdG11eC5odG1s">https://tmuxguide.readthedocs.io/en/latest/tmux/tmux.html</span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVhbnlpZmVuZy5jb20vYmxvZy8yMDE5LzEwL3RtdXguaHRtbA==">https://www.ruanyifeng.com/blog/2019/10/tmux.html</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Terminal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 发送 ERC20 令牌交易</title>
     <url>/422bcb4e/</url>
     <content><![CDATA[<blockquote>
@@ -2824,6 +2926,7 @@
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">plugins</span><span class="operator">=</span>(git zsh-autosuggestions zsh-syntax-highlighting git-open)</span><br></pre></td></tr></table></figure>
 
 <h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>打印一只宝可梦: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Bvc3NhdHRpL3Bva2Vtb25zYXk=">pokemonsay</span></p>
+<p>带图标字体: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3J5YW5vYXNpcy9uZXJkLWZvbnRz">https://github.com/ryanoasis/nerd-fonts</span></p>
 ]]></content>
       <categories>
         <category>配置记录</category>

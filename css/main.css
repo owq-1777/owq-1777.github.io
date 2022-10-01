@@ -659,22 +659,22 @@ pre .javascript .function {
   padding: 0 2px;
 }
 .post-body .label.default {
-  background: #f0f0f0;
+  background: #fff;
 }
 .post-body .label.primary {
-  background: #efe6f7;
+  background: #fefdfe;
 }
 .post-body .label.info {
-  background: #e5f2f8;
+  background: #fbfdfe;
 }
 .post-body .label.success {
-  background: #e7f4e9;
+  background: #fafdfb;
 }
 .post-body .label.warning {
-  background: #fcf6e1;
+  background: #fefcf6;
 }
 .post-body .label.danger {
-  background: #fae8eb;
+  background: #fffdfd;
 }
 .post-body .tabs {
   margin-bottom: 20px;
@@ -835,7 +835,7 @@ pre .javascript .function {
   font-weight: 900;
 }
 .post-body .note.default {
-  background: #f3f3f3;
+  background: #fff;
   border-color: #e1e1e1;
   color: #666;
 }
@@ -853,7 +853,7 @@ pre .javascript .function {
   content: "\f0a9";
 }
 .post-body .note.primary {
-  background: #f3daff;
+  background: #fdf8ff;
   border-color: #e1c2ff;
   color: #6f42c1;
 }
@@ -871,7 +871,7 @@ pre .javascript .function {
   content: "\f055";
 }
 .post-body .note.info {
-  background: #d9edf7;
+  background: #fdfeff;
   border-color: #b3e5ef;
   color: #31708f;
 }
@@ -889,7 +889,7 @@ pre .javascript .function {
   content: "\f05a";
 }
 .post-body .note.success {
-  background: #dff0d8;
+  background: #f9fcf7;
   border-color: #d0e6be;
   color: #3c763d;
 }
@@ -907,7 +907,7 @@ pre .javascript .function {
   content: "\f058";
 }
 .post-body .note.warning {
-  background: #fcf4e3;
+  background: #fffdfb;
   border-color: #fae4cd;
   color: #8a6d3b;
 }
@@ -925,7 +925,7 @@ pre .javascript .function {
   content: "\f06a";
 }
 .post-body .note.danger {
-  background: #f2dfdf;
+  background: #fcf7f7;
   border-color: #ebcdd2;
   color: #a94442;
 }
@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffebff;
+  background: #67ffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
