@@ -73,8 +73,8 @@ https://www.owq.world/tags/Threading/
 https://www.owq.world/tags/Multiprocessing/
 https://www.owq.world/tags/Scrapy/
 https://www.owq.world/tags/Selenium/
-https://www.owq.world/tags/WSL/
 https://www.owq.world/tags/Terminal/
+https://www.owq.world/tags/WSL/
 https://www.owq.world/tags/Windows/
 https://www.owq.world/tags/cmd/
 https://www.owq.world/tags/PowerShell/

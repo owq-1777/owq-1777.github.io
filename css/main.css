@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #67ffff;
+  background: #20ffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2827,7 +2827,7 @@ h4 {
   content: '';
   height: 3px;
   margin-top: 4px;
-  background-color: #273849;
+  background-color: #555;
   border-radius: 2px;
 }
 h3 {
