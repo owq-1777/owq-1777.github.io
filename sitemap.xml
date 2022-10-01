@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.owq.world/4bfebac1/</loc>
+    
+    <lastmod>2022-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.owq.world/37b6e877/</loc>
     
     <lastmod>2022-10-01</lastmod>
@@ -192,15 +201,6 @@
   
   <url>
     <loc>https://www.owq.world/1fe3c459/</loc>
-    
-    <lastmod>2022-09-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.owq.world/4bfebac1/</loc>
     
     <lastmod>2022-09-25</lastmod>
     
@@ -507,6 +507,13 @@
   </url>
   
   <url>
+    <loc>https://www.owq.world/tags/crontab/</loc>
+    <lastmod>2022-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.owq.world/tags/CentOS/</loc>
     <lastmod>2022-10-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -515,13 +522,6 @@
   
   <url>
     <loc>https://www.owq.world/tags/Ubuntu/</loc>
-    <lastmod>2022-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.owq.world/tags/crontab/</loc>
     <lastmod>2022-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

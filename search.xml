@@ -67,7 +67,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo archlinux-java <span class="built_in">set</span> java-8-openjdk/jre</span><br></pre></td></tr></table></figure>
 
 <p><img data-src="https://img.owq.world/2022/09/0131-3aad7c.png"></p>
-<h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><h3 id="搜索包-2"><a href="#搜索包-2" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum list *openjdk*</span><br></pre></td></tr></table></figure>
+<h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><h3 id="搜索包-2"><a href="#搜索包-2" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">yum list *openjdk*</span><br></pre></td></tr></table></figure>
 
 <h3 id="安装所需版本-2"><a href="#安装所需版本-2" class="headerlink" title="安装所需版本"></a>安装所需版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y java-17-openjdk-headless.x86_64</span><br><span class="line">yum install -y java-1.8.0-openjdk-headless.x86_64</span><br></pre></td></tr></table></figure>
 
@@ -2731,7 +2731,9 @@
 <p>添加到配置里</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
 
-<p>重新进入shell配置即可</p>
+<p>重新进入shell会开启配置向导, 没有则键入一下命令</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">p10k</span> configure</span><br></pre></td></tr></table></figure>
+
 <h3 id="powerline"><a href="#powerline" class="headerlink" title="powerline"></a>powerline</h3><img data-src="https://img.owq.world/2021/11/2124-9962fa.png" style="zoom: 80%;" />
 
 <blockquote>
