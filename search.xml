@@ -66,7 +66,7 @@
 </blockquote>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">ctrl+<span class="selector-tag">b</span> d           脱离当前会话回到Sheel, 使用 tmux <span class="selector-tag">a</span> 重新进入</span><br></pre></td></tr></table></figure>
 
-<p>以下命令懒的记可以启用鼠标支持, 直接使用鼠标操作, 直接跳到 -&gt; 配置文件.</p>
+<p>以下命令懒的记的话, 可以直接使用鼠标交互, 具体操作跳转 -&gt; <a href="./#%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">使用配置文件</a>.</p>
 <p><strong>会话</strong></p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">ctrl+<span class="selector-tag">b</span> n           选择下一个会话</span><br><span class="line">ctrl+<span class="selector-tag">b</span> <span class="selector-tag">p</span>           选择上一个会话</span><br><span class="line">ctrl+<span class="selector-tag">b</span> s           以菜单方式切换会话</span><br></pre></td></tr></table></figure>
 
@@ -83,7 +83,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.tmux.conf</span><br></pre></td></tr></table></figure>
 
 <p>以下列出一些常用点, 根据需求配置</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Display color</span><br><span class="line">set -g default-terminal &quot;screen-256color&quot;</span><br><span class="line">  </span><br><span class="line"># 启y鼠标支持</span><br><span class="line">set -g mouse on</span><br><span class="line"></span><br><span class="line"># make delay shorter</span><br><span class="line">set -sg escape-time 0</span><br><span class="line"></span><br><span class="line">#### key bindings ####</span><br><span class="line"></span><br><span class="line"># ctrl+b r 	重载配置</span><br><span class="line">bind r source-file ~/.tmux.conf \; display &quot;.tmux.conf reloaded!&quot;</span><br><span class="line"></span><br><span class="line"># ctrl+b N	新建窗口</span><br><span class="line">bind N new-window</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Display color</span><br><span class="line">set -g default-terminal &quot;screen-256color&quot;</span><br><span class="line">  </span><br><span class="line"># 启用鼠标交互</span><br><span class="line">set -g mouse on</span><br><span class="line"></span><br><span class="line"># make delay shorter</span><br><span class="line">set -sg escape-time 0</span><br><span class="line"></span><br><span class="line">#### key bindings ####</span><br><span class="line"></span><br><span class="line"># ctrl+b r 	重载配置</span><br><span class="line">bind r source-file ~/.tmux.conf \; display &quot;.tmux.conf reloaded!&quot;</span><br><span class="line"></span><br><span class="line"># ctrl+b N	新建窗口</span><br><span class="line">bind N new-window</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>配置完后使用<code>tmux kill-server</code>关闭tmux, 然后重新进入即可生效.</p>
