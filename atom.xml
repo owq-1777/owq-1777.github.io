@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-10-01T08:36:14.171Z</updated>
+  <updated>2022-10-02T10:30:39.422Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux 搭建MC(我的世界)服务器</title>
+    <link href="https://www.owq.world/ff995d3a/"/>
+    <id>https://www.owq.world/ff995d3a/</id>
+    <published>2022-10-02T09:47:56.000Z</published>
+    <updated>2022-10-02T10:30:39.422Z</updated>
+    
+    
+    <summary type="html">快速搭建一个原版MC服务器, 与小伙伴快乐玩耍吧(～o￣3￣)～</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
+    
+    <category term="Minecraft" scheme="https://www.owq.world/tags/Minecraft/"/>
+    
+  </entry>
   
   <entry>
     <title>TMUX 命令文档</title>
@@ -416,27 +437,6 @@
     <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
     <category term="Algorithm" scheme="https://www.owq.world/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FastAPI 从入门到落地</title>
-    <link href="https://www.owq.world/1a0a2507/"/>
-    <id>https://www.owq.world/1a0a2507/</id>
-    <published>2021-08-30T10:33:04.000Z</published>
-    <updated>2021-11-25T02:56:20.000Z</updated>
-    
-    
-    <summary type="html">本文是基于官方文档精简化提取, 供快速上手使用, 如需完整学习请参阅官方文档&lt;(￣︶￣)</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
-    
-    <category term="FastAPI" scheme="https://www.owq.world/tags/FastAPI/"/>
     
   </entry>
   

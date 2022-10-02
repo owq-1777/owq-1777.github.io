@@ -1,3 +1,4 @@
+https://www.owq.world/ff995d3a/
 https://www.owq.world/tmux/
 https://www.owq.world/4bfebac1/
 https://www.owq.world/37b6e877/
@@ -61,6 +62,7 @@ https://www.owq.world/tags/Java/
 https://www.owq.world/tags/crontab/
 https://www.owq.world/tags/CentOS/
 https://www.owq.world/tags/Ubuntu/
+https://www.owq.world/tags/Minecraft/
 https://www.owq.world/tags/Arch-Linux/
 https://www.owq.world/tags/SQL/
 https://www.owq.world/tags/MariaDB/

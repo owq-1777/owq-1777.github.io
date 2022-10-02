@@ -1,6 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux 搭建MC(我的世界)服务器</title>
+    <url>/ff995d3a/</url>
+    <content><![CDATA[<blockquote>
+<p>环境: Ubuntu20.04 + ♨Java 17.0.4</p>
+</blockquote>
+<h2 id="下载服务器包"><a href="#下载服务器包" class="headerlink" title="下载服务器包"></a>下载服务器包</h2><p>创建文件夹用于存放服务器文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/MC/server &amp;&amp; <span class="built_in">cd</span> ~/MC/server</span><br></pre></td></tr></table></figure>
+
+<p>下载服务器jar文件, 这里下载的是<code>1.19.2</code>版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -c -O minecraft_server.1.19.2.jar https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar </span><br></pre></td></tr></table></figure>
+
+<p>如要使用最新版可前往下载页面获取</p>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubWluZWNyYWZ0Lm5ldC9lbi11cy9kb3dubG9hZC9zZXJ2ZXI=">Minecraft Server Download | Minecraft</span></p>
+</blockquote>
+<p><img data-src="http://img.owq.world/2022/09/1423-6e40ab.png"></p>
+<p>右击<code>复制下链接</code>替换掉命令中的<code>&lt;url&gt;</code>即可, <code>&lt;version&gt;</code>替换成对应的版本号<br>注意之后有关文件名的命令也要手动修改, 不可以直接复制使用, 不然会提示找不到文件的</p>
+<p><img data-src="http://img.owq.world/2022/09/1425-715e5c.png"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -c -O minecraft_server.&lt;version&gt;.jar &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Java环境准备"><a href="#Java环境准备" class="headerlink" title="Java环境准备"></a>Java环境准备</h2><p>查看Java版本, <code>Minecraf</code>版本&gt;&#x3D;<code>1.18</code>, <code>Java</code>版本需&gt;&#x3D;<code>17</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<p>没有Java环境可以使用以下命令快速安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt update &amp;&amp; apt install -y openjdk-17-jre-headless</span><br></pre></td></tr></table></figure>
+
+<p>P.S 详细教程前往: <a href="https://www.owq.world/37b6e877/">Linux下安装Java环境 | Sunny was born (owq.world)</a></p>
+<h2 id="初始化运行"><a href="#初始化运行" class="headerlink" title="初始化运行"></a>初始化运行</h2><p>运行一下服务器文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.2.jar nogui</span><br></pre></td></tr></table></figure>
+
+<p>没有报错的话会输出以下内容</p>
+<p><img data-src="http://img.owq.world/2022/09/1353-7db341.png"></p>
+<p>当前目录下会生成几个文件, 此时目录结构是这样的👇</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── eula.txt		<span class="comment"># 用户许可文件, 同意使用才可以启动服务</span></span><br><span class="line">├── libraries</span><br><span class="line">├── logs</span><br><span class="line">├── minecraft_server.1.19.2.jar</span><br><span class="line">├── server.properties	<span class="comment"># 配置文件, 用来配置服务器选项</span></span><br><span class="line">└── versions</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>eula.txtw</code>文件, 将<code>eula=false</code>改成<code>eula=true</code>, 同意用户许可协议.</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">vim</span> eula.txt</span><br></pre></td></tr></table></figure>
+
+<p>或者使用命令快速替换</p>
+<figure class="highlight sml"><table><tr><td class="code"><pre><span class="line">sed <span class="symbol">&#x27;s</span>/eula=<span class="literal">false</span>/eula=<span class="literal">true</span>/g&#x27; eula.txt</span><br></pre></td></tr></table></figure>
+
+<p>没有正版账号的话修改下配置<code>online-mode</code>为<code>false</code>, 将正版验证关掉</p>
+<figure class="highlight sml"><table><tr><td class="code"><pre><span class="line">sed <span class="symbol">&#x27;s</span>/online-mode=<span class="literal">true</span>/online-mode=<span class="literal">false</span>/g&#x27; server.properties</span><br></pre></td></tr></table></figure>
+
+<h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><p>P.S 快速跑完Dome的话, 这部分可以跳过, 直接到 <a href="#%E6%AD%A3%E5%BC%8F%E5%90%AF%E5%8A%A8">下一节</a></p>
+<p>备份一下配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> server.properties server.properties.bk</span><br></pre></td></tr></table></figure>
+
+<p>修改配置文件<code>server.properties</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim server.properties</span><br></pre></td></tr></table></figure>
+
+<p><em>P.S 仅列举部分使用配置</em></p>
+<p><strong>世界相关</strong></p>
+<ul>
+<li><strong>level-seed</strong> - 世界种子, 生成世界前配置才会生效, 字符串, 默认为空</li>
+<li><strong>difficulty</strong> - 游戏难度, 字符串, 默认为 <strong>easy</strong><ul>
+<li>peaceful - 和平</li>
+<li>easy - 简单</li>
+<li>normal - 普通</li>
+<li>hard - 困难</li>
+</ul>
+</li>
+<li><strong>gamemode</strong> - 游戏难度, 字符串, 默认为 <strong>survival</strong><ul>
+<li>survival - 生存模式</li>
+<li>creative - 创造模式</li>
+<li>adventure - 冒险模式</li>
+<li>spectator - 旁观模式</li>
+</ul>
+</li>
+<li>hardcore - 硬核模式(死后不能复活), Bool值, 默认为<code>false</code></li>
+<li>max-world-size - 世界半径(地图大小), 整数(1-29999984), 默认29999984<ul>
+<li>设置 max-world-size为1000将会有2000×2000的地图边界</li>
+<li>设置 max-world-size为4000将会有8000×8000的地图边界</li>
+</ul>
+</li>
+<li>max-build-height - 建造高度, 整数, 默认256</li>
+<li><strong>spawn-protection</strong> - 出生点保护半径, 整数, 默认16</li>
+<li><strong>allow-flight</strong> - 允许飞行(需要mod), Bool值, 默认为<code>false</code></li>
+<li><strong>allow-nether</strong> - 开启下界, Bool值, 默认为<code>true</code></li>
+</ul>
+<p><strong>服务器</strong></p>
+<ul>
+<li><p><strong>online-mode</strong> - 正版验证, bool值, 默认为<code>ture</code></p>
+</li>
+<li><p><strong>pvp</strong> - 启用玩家伤害, bool值, 默认为<code>ture</code></p>
+</li>
+<li><p><strong>server-port</strong> - 服务器连接端口, 整数(1-65534), 默认25565</p>
+</li>
+<li><p><strong>max-players</strong> - 服务器最大人数, 整数, 默认20</p>
+</li>
+<li><p>motd - 服务器描述, 字符串, 默认为<code>A Minecraft Server</code></p>
+<ul>
+<li><p>如设置成 <code>\u00A7ki \u00A79M \u00A7ai \u00A7bn \u00A7ce \u00A7dc \u00A7er \u00A76a \u00A7ff \u00A77t \u00A7ki</code>, 描述会是这样👇</p>
+<img data-src="https://img.owq.world/2022/10/1558-002dea.gif" style="zoom:67%;" />
+
+<p>P.S 在服务器目录下添加大下为<code>64*64</code>命名为<code>server-icon.png</code>的图片会变成服务器图标👆</p>
+</li>
+<li><p>详细见-&gt; <span class="exturl" data-url="aHR0cHM6Ly9taW5lY3JhZnQuZmFuZG9tLmNvbS96aC93aWtpLyVFNiVBMCVCQyVFNSVCQyU4RiVFNSU4QyU5NiVFNCVCQiVBMyVFNyVBMCU4MQ==">格式化代码</span></p>
+</li>
+</ul>
+</li>
+<li><p>enforce-whitelist - 是否启用白名单, Bool值, 默认为<code>false</code></p>
+</li>
+<li><p>resource-pack - 资源包地址, 字符串, 默认为空</p>
+</li>
+</ul>
+<p><strong>性能</strong></p>
+<ul>
+<li><p><strong>view-distance</strong> - 服务器区块渲染距离, 整数(3-32), 默认10</p>
+<p>决定了服务端的最大可视距离</p>
+</li>
+<li><p><strong>entity-broadcast-range-percentage</strong> 控制实体需要距离玩家有多近才会将数据包发送给客户端, 整数(10-1000), 默认100</p>
+</li>
+<li><p><strong>simulation-distance</strong> - 可更新区块的最大值, 整数(3-32), 默认10<br>以玩家为中心的活跃区块, 超过最大区块的区块, 如红石设备不会运转.</p>
+</li>
+<li><p>spawn-animals - 是否生成动物, bool值, 默认为true</p>
+</li>
+<li><p>spawn-monsters - 是否生成怪物, bool值, 默认为true</p>
+</li>
+</ul>
+<p><strong>高级</strong></p>
+<ul>
+<li>enable-command-block - 是否启用命令方块, Bool值, 默认为<code>false</code></li>
+<li>admin-slot - 允许OP在服务器人满时也能加入游戏, Bool值, 默认为<code>false</code></li>
+<li>previews-chat - 启用聊天预览功能, Bool值, 默认为<code>false</code></li>
+</ul>
+<h2 id="正式启动"><a href="#正式启动" class="headerlink" title="正式启动"></a>正式启动</h2><p>再次运行启动命令, 会开始加载世界及必要的配置</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">java</span> -Xmx1024M -Xms1024M -jar minecraft_server.<span class="number">1</span>.<span class="number">19</span>.<span class="number">2</span>.jar nogui</span><br></pre></td></tr></table></figure>
+
+<p>当进度条跑完时, 会出现下面类似的提示, 同时这个页面也是一个控制台, 可以执行指令.</p>
+<p><img data-src="http://img.owq.world/2022/09/1407-ca2a81.png"></p>
+<p>此时的文件目录是这样的👇</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── banned-ips.json</span><br><span class="line">├── banned-players.json</span><br><span class="line">├── eula.txt</span><br><span class="line">├── libraries</span><br><span class="line">├── logs</span><br><span class="line">├── minecraft_server.1.19.2.jar</span><br><span class="line">├── ops.json	<span class="comment"># OP 名单, 进入服务器后使用 /op &lt;user&gt; 添加</span></span><br><span class="line">├── server.properties	<span class="comment"># 配置文件, 用来配置服务器选项</span></span><br><span class="line">├── usercache.json</span><br><span class="line">├── versions</span><br><span class="line">├── whitelist.json		<span class="comment"># 玩家白名单, 配置文件设置 white-list=true 时启用</span></span><br><span class="line">└── world	<span class="comment"># 世界存档, 极其重要</span></span><br></pre></td></tr></table></figure>
+
+<p>然后检查本地端口是否正常监听</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">netstat -tunlp <span class="string">| grep 25565</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2022/10/1140-79438f.png" alt="image-20221002114019788"></p>
+<p>如果是部署是在服务器上, 在其它服务器上测试端口是否接通; 在本地电脑部署的话, 可以使用同区域网下其它电脑连接测试, 如失败, 请检查端口是否开放以供外部访问</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">telnet</span> &lt;IP&gt; <span class="number">25565</span></span><br></pre></td></tr></table></figure>
+
+<p>一切就绪后启动MC, 点击多人游戏-&gt;添加服务器就可以进入了</p>
+<p><img data-src="https://img.owq.world/2022/10/1359-c87636.png"></p>
+<p><img data-src="https://img.owq.world/2022/10/1359-db9263.png"></p>
+<p>输入IP和端口, 如 <code>127.0.0.1:25565</code></p>
+<p><img data-src="https://img.owq.world/2022/10/1400-c98a6d.png"></p>
+<p>一切顺利就能连接到服务器了</p>
+<p><img data-src="https://img.owq.world/2022/10/1401-ee9f99.png"></p>
+<p>进入游戏后, 控制台处应会看到类似的日志输出</p>
+<p><img data-src="https://img.owq.world/2022/10/1405-6975df.png"></p>
+<p>P.S 如果使用SSH链接的话, 关闭窗口服务会被终止, 可以使用 <a href="https://www.owq.world/tmux/">TMUX</a> 或其它任务管理工具将其挂在后台</p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9taW5lY3JhZnQuZmFuZG9tLmNvbS93aWtpL1R1dG9yaWFscy9TZXR0aW5nX3VwX2Ffc2VydmVy">https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server</span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9taW5lY3JhZnQuZmFuZG9tLmNvbS93aWtpL1NlcnZlci5wcm9wZXJ0aWVz">https://minecraft.fandom.com/wiki/Server.properties</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Minecraft</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TMUX 命令文档</title>
     <url>/tmux/</url>
     <content><![CDATA[<blockquote>
