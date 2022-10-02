@@ -38,7 +38,7 @@
 <p>当前目录下会生成几个文件, 此时目录结构是这样的👇</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── eula.txt		<span class="comment"># 用户许可文件, 同意使用才可以启动服务</span></span><br><span class="line">├── libraries</span><br><span class="line">├── logs</span><br><span class="line">├── minecraft_server.1.19.2.jar</span><br><span class="line">├── server.properties	<span class="comment"># 配置文件, 用来配置服务器选项</span></span><br><span class="line">└── versions</span><br></pre></td></tr></table></figure>
 
-<p>修改<code>eula.txtw</code>文件, 将<code>eula=false</code>改成<code>eula=true</code>, 同意用户许可协议.</p>
+<p>修改<code>eula.txt</code>文件, 将<code>eula=false</code>改成<code>eula=true</code>, 同意用户许可协议.</p>
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">vim</span> eula.txt</span><br></pre></td></tr></table></figure>
 
 <p>或者使用命令快速替换</p>
