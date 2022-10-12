@@ -1,3 +1,4 @@
+https://www.owq.world/crontab/
 https://www.owq.world/ff995d3a/
 https://www.owq.world/tmux/
 https://www.owq.world/4bfebac1/
@@ -24,7 +25,6 @@ https://www.owq.world/dfbb4c9/
 https://www.owq.world/e823826f/
 https://www.owq.world/1fe3c459/
 https://www.owq.world/9ec13a7e/
-https://www.owq.world/crontab/
 https://www.owq.world/git/
 https://www.owq.world/bd9e5b39/
 https://www.owq.world/bcd27009/

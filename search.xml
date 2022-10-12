@@ -45,7 +45,7 @@
 <figure class="highlight sml"><table><tr><td class="code"><pre><span class="line">sed <span class="symbol">&#x27;s</span>/eula=<span class="literal">false</span>/eula=<span class="literal">true</span>/g&#x27; eula.txt</span><br></pre></td></tr></table></figure>
 
 <p>没有正版账号的话修改下配置<code>online-mode</code>为<code>false</code>, 将正版验证关掉</p>
-<figure class="highlight sml"><table><tr><td class="code"><pre><span class="line">sed <span class="symbol">&#x27;s</span>/online-mode=<span class="literal">true</span>/online-mode=<span class="literal">false</span>/g&#x27; server.properties</span><br></pre></td></tr></table></figure>
+<figure class="highlight sml"><table><tr><td class="code"><pre><span class="line">sed <span class="symbol">&#x27;s</span>/online-lmode=<span class="literal">true</span>/online-mode=<span class="literal">false</span>/g&#x27; server.properties</span><br></pre></td></tr></table></figure>
 
 <h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><p>P.S 快速跑完Dome的话, 这部分可以跳过, 直接到 <a href="#%E6%AD%A3%E5%BC%8F%E5%90%AF%E5%8A%A8">下一节</a></p>
 <p>备份一下配置</p>
@@ -3340,11 +3340,18 @@
 <td align="left">在每周的周一至周五每5分钟执行一次</td>
 </tr>
 </tbody></table>
-<h2 id="服务操作"><a href="#服务操作" class="headerlink" title="服务操作"></a>服务操作</h2><p>重启服务</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo service cron restart</span></span><br></pre></td></tr></table></figure>
+<h2 id="服务操作"><a href="#服务操作" class="headerlink" title="服务操作"></a>服务操作</h2><p>不同系统下服务名可能为<code>cron</code>或<code>crond</code>, 第一个无效可以试另一个</p>
+<p><strong>systemctl</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl status cron	<span class="comment"># 查看状态</span></span><br><span class="line">systemctl restart cron	<span class="comment"># 重启服务</span></span><br><span class="line">systemctl stop cron	<span class="comment"># 停止服务状态</span></span><br></pre></td></tr></table></figure>
 
-<p>ubuntu下启动、停止与重启cron</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron start</span><br><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron stop</span><br><span class="line">sudo <span class="regexp">/etc/i</span>nit.d/cron restart</span><br></pre></td></tr></table></figure>
+<p><strong>service</strong> - 适用于<code>Ubuntu</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service cron status</span><br><span class="line">service cron restart</span><br><span class="line">service cron stop</span><br></pre></td></tr></table></figure>
+
+<p>其它方法 - 适用于<code>Ubuntu</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo /etc/init.d/cron start</span><br><span class="line">sudo /etc/init.d/cron stop</span><br><span class="line">sudo /etc/init.d/cron restart</span><br></pre></td></tr></table></figure>
+
+<p>检查服务是否运行</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pgrep cron</span></span><br></pre></td></tr></table></figure>
 
 
 
