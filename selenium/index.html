@@ -33,7 +33,7 @@
 <meta property="og:description" content="📖 Python 下的 Selenium 操作汇总">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-01T03:41:18.279Z">
+<meta property="article:modified_time" content="2022-11-01T07:25:15.578Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Selenium">
@@ -224,7 +224,7 @@
                     <i class="far fa-calendar-check"></i>
                   </span>
                   <span class="post-meta-item-text">Updated</span>
-                    <time title="2022-11-01 11:41:18" itemprop="dateModified" datetime="2022-11-01T11:41:18+08:00">2022-11-01</time>
+                    <time title="2022-11-01 15:25:15" itemprop="dateModified" datetime="2022-11-01T15:25:15+08:00">2022-11-01</time>
                   </span>
             
 
@@ -236,7 +236,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>2.9k</span>
+            <span>4k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -244,7 +244,7 @@
               <i class="far fa-clock"></i>
             </span>
             <span class="post-meta-item-text">Reading time: &asymp;</span>
-            <span>3 min</span>
+            <span>4 min</span>
           </span>
 
 
@@ -322,19 +322,37 @@
 <li><p>安装Python版本的selenium</p>
   <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> selenium</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看Chrome版本，浏览器输入回车</p>
-  <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chrome:<span class="regexp">//</span>version/</span><br></pre></td></tr></table></figure>
+<li><p>查看Chrome版本，浏览器输入 <span class="exturl" data-url="Y2hyb21lOi8vdmVyc2lvbi8=">chrome:&#x2F;&#x2F;version&#x2F;</span></p>
 </li>
-<li><p>下载对应浏览器版本的<code>chrome driver</code><br>  <em>PS:驱动版本选择最接近的，不一定要完全一样的。</em></p>
+<li><p>下载对应浏览器版本的驱动程序<br>  <em>PS:驱动版本选择最接近的，不一定要完全一样的。</em></p>
+<ul>
+<li><p>Chrom</p>
 <ul>
 <li><span class="exturl" data-url="aHR0cDovL25wbS50YW9iYW8ub3JnL21pcnJvcnMvY2hyb21lZHJpdmVyLw==">淘宝镜像下载</span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9jaHJvbWVkcml2ZXIuY2hyb21pdW0ub3JnL2Rvd25sb2Fkcw==">官方下载</span> (需要挂代理)</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9jaHJvbWVkcml2ZXIuY2hyb21pdW0ub3JnL2Rvd25sb2Fkcw==">官方下载</span></li>
+</ul>
+</li>
+<li><p>Edge -&gt; <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubWljcm9zb2Z0LmNvbS9lbi11cy9taWNyb3NvZnQtZWRnZS90b29scy93ZWJkcml2ZXIv">Microsoft Edge WebDriver</span></p>
+</li>
+<li><p>FireFox -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21vemlsbGEvZ2Vja29kcml2ZXIvcmVsZWFzZXM=">Releases · mozilla&#x2F;geckodriver (github.com)</span></p>
+</li>
 </ul>
 </li>
 <li><p>解压到特定目录，方便调用</p>
   <figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">.<span class="string">\drivers\</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="comment"># from config import *</span></span><br><span class="line"></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"><span class="comment"># 使用其它浏览器需要下载对应驱动</span></span><br><span class="line"><span class="comment"># options = webdriver.FirefoxOptions()</span></span><br><span class="line"><span class="comment"># options = webdriver.EdgeOptions()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># options 配置</span></span><br><span class="line"></span><br><span class="line">brower = webdriver.Chrome(executable_path=DRIVER_PATH, options=options)</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="快速测试"><a href="#快速测试" class="headerlink" title="快速测试"></a>快速测试</h2><blockquote>
+<p>使用<code>webdriver_manager</code>会直接从网络下载最新版驱动, 不用手动去处理</p>
+</blockquote>
+<p><strong>安装依赖</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip install selenium webdriver-manager packaging</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试代码</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.service <span class="keyword">import</span> Service</span><br><span class="line"><span class="keyword">from</span> webdriver_manager.chrome <span class="keyword">import</span> ChromeDriverManager</span><br><span class="line">driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))</span><br><span class="line"></span><br><span class="line"><span class="comment"># from selenium.webdriver.firefox.service import Service</span></span><br><span class="line"><span class="comment"># from webdriver_manager.firefox import GeckoDriverManager</span></span><br><span class="line"><span class="comment"># driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># from selenium.webdriver.edge.service import Service</span></span><br><span class="line"><span class="comment"># from webdriver_manager.microsoft import EdgeChromiumDriverManager</span></span><br><span class="line"><span class="comment"># driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))</span></span><br><span class="line"></span><br><span class="line">driver.get(<span class="string">&#x27;https://www.baidu.com/&#x27;</span>)</span><br><span class="line">driver.get(<span class="string">&quot;https://www.google.com&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="comment"># from config import *</span></span><br><span class="line"></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"><span class="comment"># 使用其它浏览器需要下载对应驱动</span></span><br><span class="line"><span class="comment"># options = webdriver.FirefoxOptions()</span></span><br><span class="line"><span class="comment"># options = webdriver.EdgeOptions()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># options 配置</span></span><br><span class="line"></span><br><span class="line">brower = webdriver.Chrome(executable_path=DRIVER_PATH, options=options)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -349,6 +367,9 @@
 
 
 <h2 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h2><ul>
+<li><p>设置隐式等待</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">brower.implicitly_wait(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>无头模式</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Headless</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br></pre></td></tr></table></figure>
 </li>
@@ -364,11 +385,11 @@
 <li><p>设置缓存</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Cache data</span></span><br><span class="line">options.add_argument(<span class="string">f&#x27;--user-data-dir=<span class="subst">&#123;CACHE_DIR&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>设置隐式等待</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">brower</span>.implicitly_wait(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-</li>
 <li><p>设置窗口大小</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># resize</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;window-size=1500x1200&#x27;</span>) </span><br></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># resize</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;window-size=1500x1200&#x27;</span>) </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最大化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;start-maximized&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="浏览器特征隐藏"><a href="#浏览器特征隐藏" class="headerlink" title="浏览器特征隐藏"></a>浏览器特征隐藏</h2><p><strong>隐藏驱动标识</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Delete &quot;navigator.webdriver&quot; property</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;disable-blink-features=AutomationControlled&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -402,6 +423,15 @@
 <h2 id="体验问题"><a href="#体验问题" class="headerlink" title="体验问题"></a>体验问题</h2><p>关闭日志输出</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Close logs</span></span><br><span class="line">options.add_experimental_option(<span class="string">&#x27;excludeSwitches&#x27;</span>, [<span class="string">&#x27;enable-logging&#x27;</span>])</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
+<li><p>未知报错, 没有报错信息</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">    raise <span class="built_in">exception_class</span>(value)</span><br><span class="line">selenium<span class="selector-class">.common</span><span class="selector-class">.exceptions</span><span class="selector-class">.WebDriverException</span>: Message:</span><br></pre></td></tr></table></figure>
+
+<p>我这里是因为权限不足导致, 使用管理员权限运行程序即可.</p>
+</li>
+</ul>
 
     </div>
 
@@ -512,7 +542,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8"><span class="nav-text">安装使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5"><span class="nav-text">导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%AE%BE%E7%BD%AE"><span class="nav-text">常用设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%89%B9%E5%BE%81%E9%9A%90%E8%97%8F"><span class="nav-text">浏览器特征隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E9%85%8D%E7%BD%AE"><span class="nav-text">其它配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E9%AA%8C%E9%97%AE%E9%A2%98"><span class="nav-text">体验问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8"><span class="nav-text">安装使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95"><span class="nav-text">快速测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%AE%BE%E7%BD%AE"><span class="nav-text">常用设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%89%B9%E5%BE%81%E9%9A%90%E8%97%8F"><span class="nav-text">浏览器特征隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E9%85%8D%E7%BD%AE"><span class="nav-text">其它配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E9%AA%8C%E9%97%AE%E9%A2%98"><span class="nav-text">体验问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-text">异常处理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -718,12 +748,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">135k</span>
+    <span title="站点总字数">137k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:03</span>
+    <span title="站点阅读时长">2:04</span>
 </div>
 
 </div>
