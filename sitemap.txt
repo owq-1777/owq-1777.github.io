@@ -1,3 +1,4 @@
+https://www.owq.world/selenium/
 https://www.owq.world/crontab/
 https://www.owq.world/ff995d3a/
 https://www.owq.world/tmux/
@@ -41,7 +42,6 @@ https://www.owq.world/404.html
 https://www.owq.world/pip/
 https://www.owq.world/nginx-configure/
 https://www.owq.world/1a0a2507/
-https://www.owq.world/selenium/
 https://www.owq.world/systemctl/
 https://www.owq.world/categories/index.html
 https://www.owq.world/tags/index.html

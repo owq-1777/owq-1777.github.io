@@ -3502,8 +3502,6 @@
 </blockquote>
 <figure class="highlight xl"><table><tr><td class="code"><pre><span class="line">操作流程</span><br><span class="line"><span class="function"><span class="title">selenium</span> -&gt;</span> 传输指令 —&gt; <span class="function"><span class="title">webdriver</span> -&gt;</span> 转换指令 -&gt; 浏览器执行</span><br></pre></td></tr></table></figure>
 
-
-
 <h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><ul>
 <li><p>安装Python版本的selenium</p>
   <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> selenium</span><br></pre></td></tr></table></figure>
@@ -3520,14 +3518,17 @@
 <li><p>解压到特定目录，方便调用</p>
   <figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">.<span class="string">\drivers\</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> setting <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 ...</span></span><br><span class="line"></span><br><span class="line">brower = webdriver.Chrome(executable_path=DRIVER_PATH, options=options)</span><br></pre></td></tr></table></figure>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="comment"># from config import *</span></span><br><span class="line"></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 驱动文件路径</span></span><br><span class="line"><span class="comment"># DRIVER_PATH = ...</span></span><br><span class="line"></span><br><span class="line">brower = webdriver.Chrome(executable_path=DRIVER_PATH, options=options)</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">UA = <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&#x27;</span></span><br><span class="line">PROXY = &#123;<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">7890</span>&#125;</span><br><span class="line">CACHE_DIR = <span class="string">r&#x27;cache/user_1&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
+<p>依需求进行配置使用</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 浏览器标头</span></span><br><span class="line">UA = <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&#x27;</span></span><br><span class="line"></span><br><span class="line">PROXY = &#123;<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">7890</span>&#125;	<span class="comment"># 是否使用代理</span></span><br><span class="line">CACHE_DIR = <span class="string">r&#x27;cache/user_1&#x27;</span>	<span class="comment"># 缓存文件夹, 使用缓存启用</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>驱动路径配置</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> platform</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> platform.system() == <span class="string">&#x27;Windows&#x27;</span>:</span><br><span class="line">    DRIVER_PATH = <span class="string">r&quot;drivers/win/chromedriver.exe&quot;</span></span><br><span class="line"><span class="keyword">elif</span> platform.system() == <span class="string">&#x27;Linux&#x27;</span>:</span><br><span class="line">    <span class="comment"># Linux下赋予驱动执行权限 sudo chmod +x drivers/chromedriver_linux64/chromedriver</span></span><br><span class="line">    DRIVER_PATH = <span class="string">r&quot;drivers/linux/chromedriver&quot;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">raise</span> <span class="built_in">print</span>(<span class="string">f&#x27;!!Error Driver path!!\nUnknown system: <span class="subst">&#123;platform.system()&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> platform</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> platform.system() == <span class="string">&#x27;Windows&#x27;</span>:</span><br><span class="line">    DRIVER_PATH = <span class="string">r&quot;drivers/win/chromedriver.exe&quot;</span></span><br><span class="line"><span class="keyword">elif</span> platform.system() == <span class="string">&#x27;Linux&#x27;</span>:</span><br><span class="line">    <span class="comment"># Linux下需赋予驱动执行权限 `sudo chmod +x drivers/chromedriver_linux64/chromedriver`</span></span><br><span class="line">    DRIVER_PATH = <span class="string">r&quot;drivers/linux/chromedriver&quot;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">f&#x27;!!Error Driver path!!\nUnknown system: <span class="subst">&#123;platform.system()&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -3558,7 +3559,7 @@
 
 
 
-<p>使用puppeteer前端框架隐藏模拟浏览器的指纹特征的JS</p>
+<p>使用<code>puppeteer</code>前端框架隐藏模拟浏览器的指纹特征的JS</p>
 <blockquote>
 <p>项目地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JlcnN0ZW5kL3B1cHBldGVlci1leHRyYS90cmVlL21hc3Rlci9wYWNrYWdlcy9leHRyYWN0LXN0ZWFsdGgtZXZhc2lvbnM=">🚪</span></p>
 </blockquote>

@@ -33,6 +33,7 @@
 <meta property="og:description" content="📖 杂项记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.owq.world/2021/12/2105-76b6ba.png">
+<meta property="og:image" content="https://img.owq.world/2022/10/1133-84fadd.png">
 <meta property="article:published_time" content="2000-05-21T00:00:00.000Z">
 <meta property="article:modified_time" content="2022-05-21T00:00:00.000Z">
 <meta property="article:author" content="OWQ">
@@ -240,7 +241,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>9k</span>
+            <span>9.4k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -248,7 +249,7 @@
               <i class="far fa-clock"></i>
             </span>
             <span class="post-meta-item-text">Reading time: &asymp;</span>
-            <span>8 min</span>
+            <span>9 min</span>
           </span>
 
 
@@ -343,7 +344,10 @@
 <li><p>发送交易<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGVyZXVtL0VJUHMvYmxvYi9tYXN0ZXIvRUlQUy9laXAtMTU1Lm1k">EIPs&#x2F;eip-155.md at master · ethereum&#x2F;EIPs (github.com)</span></p>
 </li>
 <li><p>centos</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/redhat-release <span class="comment"># 版本查看</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/redhat-release <span class="comment"># 版本查看</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly90b21sLmlvL2NuL3YxLjAuMA==">TOML: 简体中文 v1.0.0</span></p>
+</li>
 </ul>
 <h3 id="PyPi"><a href="#PyPi" class="headerlink" title="PyPi"></a>PyPi</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python</span> setup.<span class="keyword">py</span> sdist</span><br><span class="line"></span><br><span class="line">twine upload dist/* --<span class="keyword">verbose</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">python</span> setup.<span class="keyword">py</span> bdist_wheel</span><br></pre></td></tr></table></figure>
 
@@ -413,6 +417,7 @@
 <h2 id="有趣待定"><a href="#有趣待定" class="headerlink" title="有趣待定"></a>有趣待定</h2><ul>
 <li>动态代码图 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9mYXN0YXBpLnRpYW5nb2xvLmNvbS96aC8=">https://fastapi.tiangolo.com/zh/</span></li>
 <li>ab工具 -&gt; <span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC80M2QwNGQ4YmFhZjc=">https://www.jianshu.com/p/43d04d8baaf7</span></li>
+<li>GiF <span class="exturl" data-url="aHR0cHM6Ly90ZW5vci5jb20vc2VhcmNoL2h1JTIwdGFvLWdpZnM=">https://tenor.com/search/hu%20tao-gifs</span></li>
 </ul>
 <h2 id="快捷Copy"><a href="#快捷Copy" class="headerlink" title="快捷Copy"></a>快捷Copy</h2><p><strong>重启资源管理器</strong></p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">taskkill /<span class="keyword">f</span> /<span class="keyword">im</span> explorer.<span class="keyword">exe</span> &amp; start explorer.<span class="keyword">exe</span> ====</span><br></pre></td></tr></table></figure>
@@ -421,7 +426,7 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"><span class="selector-class">.post</span> <span class="selector-tag">img</span> &#123;<span class="attribute">border-radius</span>: <span class="number">0</span>;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>SSH</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生产 RSA 密匙,一路回车即可</span></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="comment"># 添加密匙文件到 authorized_keys 并 修改权限为 600</span></span><br><span class="line"><span class="built_in">cat</span> .ssh/id_rsa.pub &gt;&gt; .ssh/authorized_keys</span><br><span class="line"><span class="built_in">chmod</span> 600 .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生产 RSA 密匙,一路回车即可</span></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="comment"># 添加密匙文件到 authorized_keys 并 修改权限为 600</span></span><br><span class="line">cat ~<span class="regexp">/.ssh/i</span>d_rsa.pub &gt;&gt; ~<span class="regexp">/.ssh/</span>authorized_keys</span><br><span class="line">chmod <span class="number">600</span> ~<span class="regexp">/.ssh/</span>authorized_keys</span><br></pre></td></tr></table></figure>
 
 
 
@@ -585,7 +590,10 @@
 
 
 
-<h2 id="Python实用库"><a href="#Python实用库" class="headerlink" title="Python实用库"></a>Python实用库</h2><p>自动生成项目依赖包(仍需要修改)</p>
+<h2 id="Python实用库"><a href="#Python实用库" class="headerlink" title="Python实用库"></a>Python实用库</h2><p>进度条</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">100</span>)):</span><br><span class="line">	time.sleep(<span class="number">.1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>自动生成项目依赖包(仍需要修改)</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> pipreqs</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成当前目录下依赖包Requirements.txt</span></span><br><span class="line">pipreqs <span class="string">./</span></span><br></pre></td></tr></table></figure>
@@ -795,6 +803,14 @@
 <p>Edit .htaccess file</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">php_value</span> upload_max_filesize <span class="number">128</span>M</span><br><span class="line"><span class="attribute">php_value</span> post_max_size <span class="number">128</span>M</span><br><span class="line"><span class="attribute">php_value</span> memory_limit <span class="number">256</span>M</span><br><span class="line"><span class="attribute">php_value</span> max_execution_time <span class="number">300</span></span><br><span class="line"><span class="attribute">php_value</span> max_input_time <span class="number">300</span></span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="浏览器美化滚动条"><a href="#浏览器美化滚动条" class="headerlink" title="浏览器美化滚动条"></a>浏览器美化滚动条</h2><ul>
+<li><span class="exturl" data-url="ZWRnZTovL2ZsYWdzLyNlZGdlLXZpc3VhbC1yZWp1di1tYXRlcmlhbHMtbWVudQ==">edge:&#x2F;&#x2F;flags&#x2F;#edge-visual-rejuv-materials-menu</span></li>
+<li><span class="exturl" data-url="Y2hyb21lOi8vZmxhZ3MvI292ZXJsYXktc2Nyb2xsYmFycw==">chrome:&#x2F;&#x2F;flags&#x2F;#overlay-scrollbars</span></li>
+</ul>
+<h2 id="禁用Edge烦人的推荐提示"><a href="#禁用Edge烦人的推荐提示" class="headerlink" title="禁用Edge烦人的推荐提示"></a>禁用Edge烦人的推荐提示</h2><p>进入 <span class="exturl" data-url="ZWRnZTovL2ZsYWdzLyNlZGdlLXNob3ctZmVhdHVyZS1yZWNvbW1lbmRhdGlvbnM=">edge:&#x2F;&#x2F;flags&#x2F;#edge-show-feature-recommendations</span> 禁用设置</p>
+<p><img data-src="https://img.owq.world/2022/10/1133-84fadd.png"></p>
 <!-- flag of hidden posts -->
     </div>
 
@@ -890,7 +906,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86"><span class="nav-text">零碎知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PyPi"><span class="nav-text">PyPi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PIP"><span class="nav-text">PIP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VIM"><span class="nav-text">VIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-text">Mongo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="nav-text">编程思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E8%B6%A3%E5%BE%85%E5%AE%9A"><span class="nav-text">有趣待定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongo-1"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTOP%E8%AF%B4%E6%98%8E"><span class="nav-text">HTOP说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES"><span class="nav-text">ES</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongo-2"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL"><span class="nav-text">WSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wordpress"><span class="nav-text">Wordpress</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E6%80%9D%E8%80%83"><span class="nav-text">引导思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86"><span class="nav-text">零碎知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PyPi"><span class="nav-text">PyPi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PIP"><span class="nav-text">PIP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VIM"><span class="nav-text">VIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-text">Mongo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E8%AE%B0%E8%AF%AD%E5%BD%95"><span class="nav-text">随记语录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="nav-text">编程思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E8%B6%A3%E5%BE%85%E5%AE%9A"><span class="nav-text">有趣待定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7Copy"><span class="nav-text">快捷Copy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux快捷命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongo-1"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%AE%9E%E7%94%A8%E5%BA%93"><span class="nav-text">Python实用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E9%97%AE%E9%A2%98"><span class="nav-text">Python问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTOP%E8%AF%B4%E6%98%8E"><span class="nav-text">HTOP说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES"><span class="nav-text">ES</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongo-2"><span class="nav-text">Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL"><span class="nav-text">WSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wordpress"><span class="nav-text">Wordpress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BE%8E%E5%8C%96%E6%BB%9A%E5%8A%A8%E6%9D%A1"><span class="nav-text">浏览器美化滚动条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E7%94%A8Edge%E7%83%A6%E4%BA%BA%E7%9A%84%E6%8E%A8%E8%8D%90%E6%8F%90%E7%A4%BA"><span class="nav-text">禁用Edge烦人的推荐提示</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
