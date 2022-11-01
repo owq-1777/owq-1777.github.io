@@ -3578,22 +3578,21 @@
 <li><p>窗口最大化</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;start-maximized&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="浏览器特征隐藏"><a href="#浏览器特征隐藏" class="headerlink" title="浏览器特征隐藏"></a>浏览器特征隐藏</h2><p><strong>隐藏驱动标识</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Delete &quot;navigator.webdriver&quot; property</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;disable-blink-features=AutomationControlled&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="浏览器特征隐藏"><a href="#浏览器特征隐藏" class="headerlink" title="浏览器特征隐藏"></a>浏览器特征隐藏</h2><h3 id="隐藏驱动标识"><a href="#隐藏驱动标识" class="headerlink" title="隐藏驱动标识"></a>隐藏驱动标识</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Delete &quot;navigator.webdriver&quot; property</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;disable-blink-features=AutomationControlled&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-
-
-<p>使用<code>puppeteer</code>前端框架隐藏模拟浏览器的指纹特征的JS</p>
+<h3 id="puppeteer"><a href="#puppeteer" class="headerlink" title="puppeteer"></a>puppeteer</h3><p>使用<code>puppeteer</code>前端框架隐藏模拟浏览器的指纹特征的JS</p>
 <blockquote>
 <p>项目地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JlcnN0ZW5kL3B1cHBldGVlci1leHRyYS90cmVlL21hc3Rlci9wYWNrYWdlcy9leHRyYWN0LXN0ZWFsdGgtZXZhc2lvbnM=">🚪</span></p>
 </blockquote>
 <p><code>stealth.min.js</code>文件生成, 需安装好<code>node.js</code>环境, <del>不挂代理速度会很慢</del></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 执行以下语句,会在当前文件夹生成stealth.min.js文件</span></span><br><span class="line">npx extract-stealth-evasions</span><br></pre></td></tr></table></figure>
 
-<p>加载进浏览器</p>
+<p>又或者直接下载现成的, 相关仓库</p>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3JlcXVpcmVDb29sL3N0ZWFsdGgubWluLmpzL21haW4vc3RlYWx0aC5taW4uanM=">https://raw.githubusercontent.com/requireCool/stealth.min.js/main/stealth.min.js</span></p>
+</blockquote>
+<p>加载JS到浏览器</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 执行隐藏驱动特征JS</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(STEALTH_JS) <span class="keyword">as</span> f:</span><br><span class="line">    stealth_js = f.read()</span><br><span class="line">brower.execute_cdp_cmd(<span class="string">&#x27;Page.addScriptToEvaluateOnNewDocument&#x27;</span>, &#123;<span class="string">&#x27;source&#x27;</span>: stealth_js&#125;)</span><br></pre></td></tr></table></figure>
-
-
 
 <p>进入 <span class="exturl" data-url="aHR0cHM6Ly9ib3Quc2Fubnlzb2Z0LmNvbS8=">https://bot.sannysoft.com</span> 测试效果</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">brower.get(<span class="string">&#x27;https://bot.sannysoft.com/&#x27;</span>)</span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line">brower.save_screenshot(<span class="string">&#x27;walkaround.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
