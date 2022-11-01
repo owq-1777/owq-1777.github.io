@@ -3509,7 +3509,7 @@
 <li><p>查看Chrome版本，浏览器输入回车</p>
   <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chrome:<span class="regexp">//</span>version/</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>下载对应浏览器版本的chrome driver<br>  <em>PS:驱动版本选择最接近的，不一定要完全一样的。</em></p>
+<li><p>下载对应浏览器版本的<code>chrome driver</code><br>  <em>PS:驱动版本选择最接近的，不一定要完全一样的。</em></p>
 <ul>
 <li><span class="exturl" data-url="aHR0cDovL25wbS50YW9iYW8ub3JnL21pcnJvcnMvY2hyb21lZHJpdmVyLw==">淘宝镜像下载</span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9jaHJvbWVkcml2ZXIuY2hyb21pdW0ub3JnL2Rvd25sb2Fkcw==">官方下载</span> (需要挂代理)</li>
@@ -3518,7 +3518,7 @@
 <li><p>解压到特定目录，方便调用</p>
   <figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">.<span class="string">\drivers\</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="comment"># from config import *</span></span><br><span class="line"></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 驱动文件路径</span></span><br><span class="line"><span class="comment"># DRIVER_PATH = ...</span></span><br><span class="line"></span><br><span class="line">brower = webdriver.Chrome(executable_path=DRIVER_PATH, options=options)</span><br></pre></td></tr></table></figure>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="comment"># from config import *</span></span><br><span class="line"></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line"><span class="comment"># 使用其它浏览器需要下载对应驱动</span></span><br><span class="line"><span class="comment"># options = webdriver.FirefoxOptions()</span></span><br><span class="line"><span class="comment"># options = webdriver.EdgeOptions()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 驱动文件路径</span></span><br><span class="line"><span class="comment"># DRIVER_PATH = ...</span></span><br><span class="line"></span><br><span class="line">brower = webdriver.Chrome(executable_path=DRIVER_PATH, options=options)</span><br></pre></td></tr></table></figure>
 
 
 
