@@ -3572,7 +3572,7 @@
 
 
 <p>进入 <span class="exturl" data-url="aHR0cHM6Ly9ib3Quc2Fubnlzb2Z0LmNvbS8=">https://bot.sannysoft.com</span> 测试效果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">driver.get(<span class="string">&#x27;https://bot.sannysoft.com/&#x27;</span>)</span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line">driver.save_screenshot(<span class="string">&#x27;walkaround.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">brower.get(<span class="string">&#x27;https://bot.sannysoft.com/&#x27;</span>)</span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line">brower.save_screenshot(<span class="string">&#x27;walkaround.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
 
