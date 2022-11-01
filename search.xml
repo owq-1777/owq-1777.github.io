@@ -3508,7 +3508,7 @@
 </li>
 <li><p>查看Chrome版本，浏览器输入 <span class="exturl" data-url="Y2hyb21lOi8vdmVyc2lvbi8=">chrome:&#x2F;&#x2F;version&#x2F;</span></p>
 </li>
-<li><p>下载对应浏览器版本的驱动程序<br>  <em>PS:驱动版本选择最接近的，不一定要完全一样的。</em></p>
+<li><p>下载对应浏览器版本的驱动程序<br>  <em>PS:驱动版本选择最接近的(大版本一致就行)。</em></p>
 <ul>
 <li><p>Chrom</p>
 <ul>
@@ -3557,6 +3557,9 @@
 <li><p>无头模式</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Headless</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>浏览器语言</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;lang=en_US&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>禁用图片加载</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable image loading</span></span><br><span class="line">prefs = &#123; <span class="string">&#x27;profile.managed_default_content_settings.images&#x27;</span>: <span class="number">2</span> &#125;</span><br><span class="line">options.add_experimental_option(<span class="string">&quot;prefs&quot;</span>, prefs)</span><br></pre></td></tr></table></figure>
 </li>
@@ -3572,7 +3575,7 @@
 <li><p>设置窗口大小</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># resize</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;window-size=1500x1200&#x27;</span>) </span><br></pre></td></tr></table></figure>
 </li>
-<li><p>最大化</p>
+<li><p>窗口最大化</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;start-maximized&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="浏览器特征隐藏"><a href="#浏览器特征隐藏" class="headerlink" title="浏览器特征隐藏"></a>浏览器特征隐藏</h2><p><strong>隐藏驱动标识</strong></p>
