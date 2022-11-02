@@ -3550,12 +3550,18 @@
 
 
 
-<h2 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h2><ul>
+<h2 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h2><blockquote>
+<p>配置以<code>Chrom</code>为主</p>
+</blockquote>
+<ul>
 <li><p>设置隐式等待</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">brower.implicitly_wait(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>无头模式</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Headless</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隐身模式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;incognito&#x27;</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>浏览器语言</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># lang</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;lang=en_US&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -3578,14 +3584,23 @@
 <li><p>窗口最大化</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;start-maximized&#x27;</span>)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>隐藏滚动条</p>
+<li><p>全屏</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;kiosk&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隐藏滚动条(有可能无效)</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;--hide-scrollbars&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>禁用gpu渲染</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>禁用<code>JavaScript</code></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable JS</span></span><br><span class="line">option.add_argument(<span class="string">&#x27;--disable-javascript&#x27;</span>) </span><br></pre></td></tr></table></figure>
 </li>
 <li><p>禁用浏览器弹窗</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disable the browser popover</span></span><br><span class="line">prefs = &#123;  </span><br><span class="line">    <span class="string">&#x27;profile.default_content_setting_values&#x27;</span> :  &#123;  </span><br><span class="line">        <span class="string">&#x27;notifications&#x27;</span> : <span class="number">2</span>  </span><br><span class="line">     &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">options.add_experimental_option(<span class="string">&#x27;prefs&#x27;</span>,prefs)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取消自动化提示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">options.add_argument(<span class="string">&#x27;disable-infobars&#x27;</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>关闭日志输出(保持控制台干净)</p>
 <figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"># <span class="keyword">Close</span> logs</span><br><span class="line"><span class="keyword">options</span>.add_experimental_option(<span class="string">&#x27;excludeSwitches&#x27;</span>, [<span class="string">&#x27;enable-logging&#x27;</span>])</span><br></pre></td></tr></table></figure></li>
