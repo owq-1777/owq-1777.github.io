@@ -1303,7 +1303,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a18500;
+  background: #52125d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3043,6 +3043,7 @@ th {
 }
 #hitokoto_wrap {
   margin-top: 15px;
+  padding-bottom: 10px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
