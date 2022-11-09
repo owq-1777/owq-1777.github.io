@@ -348,6 +348,8 @@
 </li>
 <li><p><span class="exturl" data-url="aHR0cHM6Ly90b21sLmlvL2NuL3YxLjAuMA==">TOML: 简体中文 v1.0.0</span></p>
 </li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NDIyOTk5L2FydGljbGUvZGV0YWlscy8xMjQ5MzY4MjM=">Nginx 配置图片反向代理_朱茂强的博客-CSDN博客</span></p>
+</li>
 </ul>
 <h3 id="PyPi"><a href="#PyPi" class="headerlink" title="PyPi"></a>PyPi</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python</span> setup.<span class="keyword">py</span> sdist</span><br><span class="line"></span><br><span class="line">twine upload dist/* --<span class="keyword">verbose</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">python</span> setup.<span class="keyword">py</span> bdist_wheel</span><br></pre></td></tr></table></figure>
 
@@ -525,7 +527,7 @@
 <p><strong>压缩</strong></p>
 <ul>
 <li><p>zip</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 压缩</span></span><br><span class="line">zip -r examples.zip examples (examples为目录)</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">zip examples.zip</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 压缩</span></span><br><span class="line">zip -r examples.zip examples (examples为目录)</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">unzip examples.zip</span><br></pre></td></tr></table></figure>
 
 
 </li>
@@ -541,7 +543,7 @@
 <figure class="highlight elm"><table><tr><td class="code"><pre><span class="line"><span class="title">find</span> / -name <span class="type">AnmyTest</span> -<span class="keyword">type</span> d(查找 <span class="type">AnmyTest</span> 目录位置)</span><br></pre></td></tr></table></figure>
 
 <p><strong>查看端口状态</strong></p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">netstat</span> -nupl (UDP 类型的端口)</span><br><span class="line">    (TCP 类型的端口)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定查看</span></span><br><span class="line">lsof -i:<span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试远程主机端口是否打开</span></span><br><span class="line">telnet ip  端口号</span><br><span class="line"></span><br><span class="line">nmap -p <span class="number">80</span> -sV <span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">netstat</span> -nupl (UDP 类型的端口)</span><br><span class="line">    (TCP 类型的端口)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定查看</span></span><br><span class="line">lsof -i:<span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试远程主机端口是否打开</span></span><br><span class="line">telnet ip  端口号</span><br><span class="line"></span><br><span class="line">nmap -p <span class="number">80</span> -sV <span class="number">127.0.0.1</span></span><br></pre></td></tr></table></figure>
 
 <p>文件传输</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">rsync -av -e ssh --exclude=&#123;<span class="string">&#x27;file1.txt&#x27;</span>,<span class="string">&#x27;dir1/*&#x27;</span>,<span class="string">&#x27;dir2&#x27;</span>&#125; ~<span class="regexp">/virt/</span> root<span class="variable">@centos7</span><span class="symbol">:/tmp</span></span><br></pre></td></tr></table></figure>
