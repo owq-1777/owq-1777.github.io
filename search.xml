@@ -1736,7 +1736,7 @@
   </entry>
   <entry>
     <title>Nginx 安装升级教程</title>
-    <url>/51f3ce14/</url>
+    <url>/nginx/</url>
     <content><![CDATA[<blockquote>
 <p>操作环境: ubuntu 20.04.3<br>官方文档: <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0">https://www.nginx.com/resources/wiki/start</span></p>
 </blockquote>

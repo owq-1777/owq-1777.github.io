@@ -25,21 +25,25 @@
     var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="爱编程, 懂设计, 喜折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny was born">
-<meta property="og:url" content="https://www.owq.world/archives/2021/index.html">
+  <meta name="description" content="源码安装、完全卸载、平滑升级、基础操作一次性学会(￣m￣）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx 安装升级教程">
+<meta property="og:url" content="https://www.owq.world/nginx/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="爱编程, 懂设计, 喜折腾">
+<meta property="og:description" content="源码安装、完全卸载、平滑升级、基础操作一次性学会(￣m￣）">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.owq.world/2021/11/1650-4a1fe7.png">
+<meta property="og:image" content="https://img.owq.world/2021/11/1702-d6315d.png">
+<meta property="og:image" content="https://img.owq.world/2021/11/1733-352115.png">
+<meta property="og:image" content="https://img.owq.world/2021/11/1750-91c660.png">
+<meta property="article:published_time" content="2021-11-25T07:12:58.000Z">
+<meta property="article:modified_time" content="2022-11-11T06:47:08.715Z">
 <meta property="article:author" content="OWQ">
-<meta property="article:tag" content="owq">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="code">
-<meta property="article:tag" content="technique sharing">
+<meta property="article:tag" content="Nginx">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.owq.world/2021/11/1650-4a1fe7.png">
 
-<link rel="canonical" href="https://www.owq.world/archives/2021/">
+<link rel="canonical" href="https://www.owq.world/nginx/">
 
 
 <script id="page-configurations">
@@ -47,12 +51,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Sunny was born</title>
+  <title>Nginx 安装升级教程 | Sunny was born</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM06B0RFS"></script>
     <script data-pjax>
@@ -198,16 +202,56 @@
   <script data-pjax>
     console.info("")
     var header=document.querySelector('.header-bg');
-    header.setAttribute("style", "background-image: url('/img/header_img/bg3.webp')");
-    
+    var img_arr = ["/img/header_img/bg1.webp","/img/header_img/bg2.webp","/img/header_img/bg3.webp","/img/header_img/bg4.webp","/img/header_img/bg5.webp","/img/header_img/bg6.webp"]
+    var index = Math.floor((Math.random()*img_arr.length));
+    header.setAttribute("style", "background-image: url('"+img_arr[index]+"')");
   </script>
 </div>
 
 <div id="signature">
   <div class="container">
-        <header class="site-heading">
-          <h1>Archives</h1>
-          <span class="subheading">嘀嗒嘀嗒..听~ 是时间的脚步声</span>
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>Nginx 安装升级教程</h1>
+          <h2 class="subheading">源码安装、完全卸载、平滑升级、基础操作一次性学会(￣m￣）</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+
+            <time title="2021-11-25 15:12:58" itemprop="dateCreated datePublished" datetime="2021-11-25T15:12:58+08:00">2021-11-25</time>
+                  <span style="margin: 0 0.5em;"> | </span>
+                  <span class="post-meta-item-icon">
+                    <i class="far fa-calendar-check"></i>
+                  </span>
+                  <span class="post-meta-item-text">Updated</span>
+                    <time title="2022-11-11 14:47:08" itemprop="dateModified" datetime="2022-11-11T14:47:08+08:00">2022-11-11</time>
+                  </span>
+            
+
+          </span>
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>3k</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>3 min</span>
+          </span>
+
+
         </header>
 
       
@@ -248,377 +292,225 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        <span class="collection-header">还行! 已产出 43 篇日志~ 继续加油ψ(｀∇´)ψ</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <blockquote>
+<p>操作环境: ubuntu 20.04.3<br>官方文档: <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0">https://www.nginx.com/resources/wiki/start</span></p>
+</blockquote>
+<h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><blockquote>
+<p>Nginx是异步框架的网页服务器，也可以用作<strong>反向代理</strong>、<strong>负载均衡器</strong>和HTTP缓存。</p>
+<p>该软件由伊戈尔·赛索耶夫创建并于2004年首次公开发布。<br>2011年成立同名公司以提供支持。<br>2019年3月11日，Nginx公司被F5 Networks以6.7亿美元收购。 </p>
+<p>Nginx是免费的开源软件，根据类BSD许可证的条款发布。</p>
+</blockquote>
+<h2 id="包管理器安装"><a href="#包管理器安装" class="headerlink" title="包管理器安装"></a>包管理器安装</h2><blockquote>
+<p>包管理器提供的软件包会有些过时，不建议使用</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt update &amp;&amp; apt install nginx</span><br></pre></td></tr></table></figure>
+
+<h2 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h2><h3 id="相关包安装"><a href="#相关包安装" class="headerlink" title="相关包安装"></a>相关包安装</h3><ul>
+<li><p>GCC<br>包含各种语言的编译器, 用来编译Nginx的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install build-essential</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>OpenSSL<br>提供SSL支持, 如设置https</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> openssl libssl-dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PCRE<br>提供正则表达式解析, 如HTTP模块中匹配路径</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install libpcre3 libpcre3-dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>zlib</p>
+<p>提供了开发人员的压缩算法, 如HTTP响应使用压缩减少传输流量</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install zlib1g-dev</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>一次性安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install build-essential openssl libssl-dev libpcre3 libpcre3-dev zlib1g-dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="下载编译"><a href="#下载编译" class="headerlink" title="下载编译"></a>下载编译</h3><blockquote>
+<p>默认情况下，NGINX 将安装在<code>/usr/local/nginx</code>.</p>
+</blockquote>
+<p>进入<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG93bmxvYWQuaHRtbA==">下载页面</span>, 获取稳定版本下载链接<br><img data-src="https://img.owq.world/2021/11/1650-4a1fe7.png"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://nginx.org/download/nginx-1.20.1.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>创建目录进行包管理（方便之后使用其它版本）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p nginx/core</span><br><span class="line"><span class="built_in">mv</span> nginx-1.20.1.tar.gz nginx/core</span><br></pre></td></tr></table></figure>
+
+<p>解压包</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> nginx/core</span><br><span class="line">tar -zxf nginx-1.20.1.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>进入资源文件，执行configure</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> nginx-1.20.1/</span><br><span class="line"><span class="comment"># 直接安装不会配置环境变量和安装模块，具体配置看下一小节</span></span><br><span class="line">./configure</span><br></pre></td></tr></table></figure>
+
+<p>编译</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span></span><br></pre></td></tr></table></figure>
+
+<p>安装</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">make <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+
+<p>添加全局命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /usr/local/nginx/nginx /usr/sbin/nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置安装（可选）"><a href="#配置安装（可选）" class="headerlink" title="配置安装（可选）"></a>配置安装（可选）</h2><blockquote>
+<p>configure参数说明 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9jb25maWd1cmUuaHRtbA==">🚪</span><br>中文翻译 -&gt; <a href="/nginx-configure/">🚪</a></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/nginx \</span><br><span class="line">--sbin-path=/usr/local/nginx/nginx \</span><br><span class="line">--modules-path=/usr/local/nginx/modules \</span><br><span class="line">--conf-path=/usr/local/nginx/nginx.conf \</span><br><span class="line">--error-log-path=/usr/local/nginx/logs/error.log \</span><br><span class="line">--http-log-path=/usr/local/nginx/logs/access.log \</span><br><span class="line">--pid-path=/usr/local/nginx/logs/nginx.pid \</span><br><span class="line">--lock-path=/usr/local/nginx/logs/nginx.lock \</span><br><span class="line">--with-debug --with-compat --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-stream_ssl_module --with-mail_ssl_module --with-stream</span><br></pre></td></tr></table></figure>
+
+<p>最后会输出配置信息</p>
+<p><img data-src="https://img.owq.world/2021/11/1702-d6315d.png"></p>
+<h2 id="添加系统服务"><a href="#添加系统服务" class="headerlink" title="添加系统服务"></a>添加系统服务</h2><blockquote>
+<p>Docs: <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0L3RvcGljcy9leGFtcGxlcy9zeXN0ZW1kLw==">https://www.nginx.com/resources/wiki/start/topics/examples/systemd/</span></p>
+</blockquote>
+<p>编辑 <code>/lib/systemd/system/nginx.service</code> 文件<br>如修改过命令位置, 需修改命令路径, <code>PIDFile</code>文件路径需与构建时保持一致, 忘记了可以通过<code>nginx -V</code>查看配置</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=The NGINX HTTP and reverse proxy server</span><br><span class="line"><span class="attr">After</span>=syslog.target network-<span class="literal">on</span>line.target remote-fs.target nss-lookup.target</span><br><span class="line"><span class="attr">Wants</span>=network-<span class="literal">on</span>line.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=forking</span><br><span class="line"><span class="attr">PIDFile</span>=/usr/local/nginx/logs/nginx.pid</span><br><span class="line"><span class="attr">ExecStartPre</span>=/usr/sbin/nginx -t</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/sbin/nginx</span><br><span class="line"><span class="attr">ExecReload</span>=/usr/sbin/nginx -s reload</span><br><span class="line"><span class="attr">ExecStop</span>=/bin/kill -s QUIT <span class="variable">$MAINPID</span></span><br><span class="line"><span class="attr">PrivateTmp</span>=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>开启自动启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure>
+
+<p>启动服务</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="literal">start</span> nginx</span><br></pre></td></tr></table></figure>
+
+<p>查看服务状态</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">systemctl status nginx</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="卸载操作"><a href="#卸载操作" class="headerlink" title="卸载操作"></a>卸载操作</h2><p>停止nginx进程</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
+
+<p>删除安装目录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf /usr/local/nginx</span><br></pre></td></tr></table></figure>
+
+<p>清除编译环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make clean</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li><p>启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>停止</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安全退出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s quit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试配置文件语法是否正确</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新加载配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看版本及配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -V</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="版本升级"><a href="#版本升级" class="headerlink" title="版本升级"></a>版本升级</h2><blockquote>
+<p>在不停止Nginx服务的情况下进行平滑升级</p>
+</blockquote>
+<p>准备已编译好的新版目录(安装步骤执行到<code>make install</code>之前)<br>执行<code>make install</code>的话会<strong>覆盖</strong>掉原本的配置文件</p>
+<p><img data-src="https://img.owq.world/2021/11/1733-352115.png"></p>
+<p>下面操作会将<code>nginx-1.20.1</code>升级到<code>nginx-1.20.2</code></p>
+<ol>
+<li><p>备份旧版nginx可执行文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/nginx</span><br><span class="line"><span class="built_in">cp</span> nginx nginx.old</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将新版本编译目录下的objs中的nginx替换掉nginx</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> ~/nginx/core/nginx-1.20.2/objs/nginx /usr/local/nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件被占用使用命令强制覆盖</span></span><br><span class="line"><span class="built_in">cp</span> -rfp ~/nginx/core/nginx-1.20.2/objs/nginx /usr/local/nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试新版本是否正常</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行<code>make upgrade</code></p>
+<p><img data-src="https://img.owq.world/2021/11/1750-91c660.png"></p>
+</li>
+</ol>
+<p>命令没有报错就成功了~</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-12-02T17:23:37+08:00"
-              content="2021-12-02">
-          12-02
-        </time>
       </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/terminal/" itemprop="url">
-            <span itemprop="name">Windows Terminal 快速配置</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-25T15:12:58+08:00"
-              content="2021-11-25">
-          11-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/nginx/" itemprop="url">
-            <span itemprop="name">Nginx 安装升级教程</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-25T10:28:09+08:00"
-              content="2021-11-25">
-          11-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/bee760ec/" itemprop="url">
-            <span itemprop="name">阿里云OSS 图床搭建</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-17T11:53:29+08:00"
-              content="2021-09-17">
-          09-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/72a0046c/" itemprop="url">
-            <span itemprop="name">scrcpy 优雅的安卓投屏工具</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-07T21:17:25+08:00"
-              content="2021-09-07">
-          09-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/bd9e5b39/" itemprop="url">
-            <span itemprop="name">动态规划 打家劫舍</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-30T18:33:04+08:00"
-              content="2021-08-30">
-          08-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/1a0a2507/" itemprop="url">
-            <span itemprop="name">FastAPI 从入门到落地</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-27T15:59:51+08:00"
-              content="2021-08-27">
-          08-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/f89f9ea4/" itemprop="url">
-            <span itemprop="name">Python 线程进程相关库的简单应用</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-26T16:45:57+08:00"
-              content="2021-08-26">
-          08-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/dfbb4c9/" itemprop="url">
-            <span itemprop="name">Python 使用 YAML 配置带有颜色输出的loging</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-23T20:48:02+08:00"
-              content="2021-08-23">
-          08-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/8be682ad/" itemprop="url">
-            <span itemprop="name">Docker+Redis 安装配置</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-23T20:39:01+08:00"
-              content="2021-08-23">
-          08-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/d2633d2c/" itemprop="url">
-            <span itemprop="name">Docker+MongoDB 安装配置</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-20T11:24:33+08:00"
-              content="2021-08-20">
-          08-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/e823826f/" itemprop="url">
-            <span itemprop="name">Hexo + Nginx 服务器部署踩坑记录</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-16T16:25:28+08:00"
-              content="2021-08-16">
-          08-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/202281bd/" itemprop="url">
-            <span itemprop="name">优雅的使用WSL2-Kali桌面环境</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-15T14:13:58+08:00"
-              content="2021-07-15">
-          07-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/1fe3c459/" itemprop="url">
-            <span itemprop="name">WSL2 安装配置</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-08T17:50:36+08:00"
-              content="2021-07-08">
-          07-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/4bfebac1/" itemprop="url">
-            <span itemprop="name">zsh + oh-my-zsh 简易配置</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-22T10:50:42+08:00"
-              content="2021-01-22">
-          01-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/9ec13a7e/" itemprop="url">
-            <span itemprop="name">MariaDB 安装图文教程</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-20T10:40:37+08:00"
-              content="2021-01-20">
-          01-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/958bc56b/" itemprop="url">
-            <span itemprop="name">Python 开发环境搭建萌新教程</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-19T18:35:31+08:00"
-              content="2021-01-19">
-          01-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/46118abd/" itemprop="url">
-            <span itemprop="name">Java 开发环境搭建萌新教程</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.owq.world/nginx/" title="Nginx 安装升级教程">https://www.owq.world/nginx/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/terminal/" rel="prev" title="Windows Terminal 快速配置">
+      <i class="fa fa-chevron-left"></i> Windows Terminal 快速配置
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/bee760ec/" rel="next" title="阿里云OSS 图床搭建">
+      阿里云OSS 图床搭建 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
   
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -665,6 +557,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3"><span class="nav-text">简单了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%89%E8%A3%85"><span class="nav-text">包管理器安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85"><span class="nav-text">源码安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%8C%85%E5%AE%89%E8%A3%85"><span class="nav-text">相关包安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E7%BC%96%E8%AF%91"><span class="nav-text">下载编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-text">配置安装（可选）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="nav-text">添加系统服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E6%93%8D%E4%BD%9C"><span class="nav-text">卸载操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7"><span class="nav-text">版本升级</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1015,6 +908,25 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '472553d47287225fff92',
+      clientSecret: 'a2e30c338a55dfc350329833114d277bcfa79a6e',
+      repo        : 'owq-1777.github.io',
+      owner       : 'owq-1777',
+      admin       : ['owq-1777'],
+      id          : 'cf1c959d8d4dc778df44b3efec4c252f',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
