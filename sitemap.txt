@@ -1,3 +1,4 @@
+https://www.owq.world/git/
 https://www.owq.world/nginx/
 https://www.owq.world/selenium/
 https://www.owq.world/crontab/
@@ -26,7 +27,6 @@ https://www.owq.world/dfbb4c9/
 https://www.owq.world/e823826f/
 https://www.owq.world/1fe3c459/
 https://www.owq.world/9ec13a7e/
-https://www.owq.world/git/
 https://www.owq.world/bd9e5b39/
 https://www.owq.world/bcd27009/
 https://www.owq.world/about/index.html
