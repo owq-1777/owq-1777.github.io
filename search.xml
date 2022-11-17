@@ -3,7 +3,7 @@
   <entry>
     <title>搭建一个内网穿透服务(FRP)</title>
     <url>/b7fe0c77/</url>
-    <content><![CDATA[<h1 id="搭建一个内网穿透服务-FRP"><a href="#搭建一个内网穿透服务-FRP" class="headerlink" title="搭建一个内网穿透服务(FRP)"></a>搭建一个内网穿透服务(FRP)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当想远程操控<code>Windos</code>电脑时, 其一就是使用花生壳等远控工具, 但使用体验欠佳(有速率限制，分辨率不一致等), 其二就是使用<code>Windos</code>系统自带的远控工具, 能做到在另一台电脑上无缝操作本机.</p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当想远程操控<code>Windos</code>电脑时, 其一就是使用花生壳等远控工具, 但使用体验欠佳(有速率限制，分辨率不一致等), 其二就是使用<code>Windos</code>系统自带的远控工具, 能做到在另一台电脑上无缝操作本机.</p>
 <p>如若在同个区域网, 可以通过计算机名称很便捷的连接上(需要开启网络共享), 但若是不在区域网内的两台机器要远控的话, 通常的操作是 <strong>暴露端口</strong>(打开防火墙)-<strong>路由器映射端口</strong>(获取内网IP映射)-<strong>获取公网IP进行连接</strong>(如果没有固定的公网IP每次都要重新去获取). 这一套流程下来天都黑了.</p>
 <p>这时就要使用优雅的解决方案了--<strong>内网穿透</strong>(Network Address Translation，NAT)</p>
 <blockquote>
@@ -23,7 +23,8 @@
 <h2 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h2><blockquote>
 <p>发布页-<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZhdGVkaWVyL2ZycC9yZWxlYXNlcw==">Releases · fatedier&#x2F;frp (github.com)</span></p>
 </blockquote>
-<p><img data-src="https://img.owq.world/2022/11/2100-cf5983.png"></p>
+<img data-src="https://img.owq.world/2022/11/2100-cf5983.png" style="zoom: 33%;" />
+
 <h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>下载包</p>
 <p><em>PS: 服务器没有配置代理时, 可以先在本地下载完后通过<code>scp</code>传到服务器上</em></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.45.0/frp_0.45.0_linux_386.tar.gz</span><br></pre></td></tr></table></figure>
@@ -50,7 +51,7 @@
 <p>查看服务状态(一起正常)</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl status frps</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="D:\OWQ\OneDrive\Document\imges\image-20221117235911293.png"></p>
+<p><img data-src="https://img.owq.world/2022/11/0027-e2a0fd.png"></p>
 <h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><p>将下载的压缩包解压, 会得到以下文件</p>
 <p><img data-src="https://img.owq.world/2022/11/0002-8016a5.png"></p>
 <p>编辑<code>frpc.ini</code>, 配置接收转发流量的端口</p>
@@ -74,10 +75,10 @@
 <p>添加自动重启</p>
 <p>... ...</p>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>打开远控软件, 输入对应的IP和端口</p>
-<img data-src="D:\OWQ\OneDrive\Document\imges\image-20221118002202998.png" style="zoom:67%;" />
+<img data-src="https://img.owq.world/2022/11/0028-42eca0.png" style="zoom:67%;" />
 
 <p>出现这个界面就转发成功辽</p>
-<img data-src="D:\OWQ\OneDrive\Document\imges\image-20221118002128351.png" alt="" style="zoom:67%;" />
+<img data-src="https://img.owq.world/2022/11/0027-701cca.png" alt="" style="zoom:67%;" />
 ]]></content>
       <categories>
         <category>学习教程</category>
