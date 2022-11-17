@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>搭建一个内网穿透服务(FRP)</title>
+    <url>/b7fe0c77/</url>
+    <content><![CDATA[<h1 id="搭建一个内网穿透服务-FRP"><a href="#搭建一个内网穿透服务-FRP" class="headerlink" title="搭建一个内网穿透服务(FRP)"></a>搭建一个内网穿透服务(FRP)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当想远程操控<code>Windos</code>电脑时, 其一就是使用花生壳等远控工具, 但使用体验欠佳(有速率限制，分辨率不一致等), 其二就是使用<code>Windos</code>系统自带的远控工具, 能做到在另一台电脑上无缝操作本机.</p>
+<p>如若在同个区域网, 可以通过计算机名称很便捷的连接上(需要开启网络共享), 但若是不在区域网内的两台机器要远控的话, 通常的操作是 <strong>暴露端口</strong>(打开防火墙)-<strong>路由器映射端口</strong>(获取内网IP映射)-<strong>获取公网IP进行连接</strong>(如果没有固定的公网IP每次都要重新去获取). 这一套流程下来天都黑了.</p>
+<p>这时就要使用优雅的解决方案了--<strong>内网穿透</strong>(Network Address Translation，NAT)</p>
+<blockquote>
+<p><strong>一句话概述</strong> 通过中转服务器连通两台机器.</p>
+</blockquote>
+<p><img data-src="https://img.owq.world/2022/11/2244-d3ddfc.jpeg"></p>
+<h2 id="FRP介绍"><a href="#FRP介绍" class="headerlink" title="FRP介绍"></a>FRP介绍</h2><blockquote>
+<p><code>frp</code> 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以na将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p>
+<p>项目地址 -&gt; <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZhdGVkaWVyL2ZycA==">https://github.com/fatedier/frp</span></p>
+</blockquote>
+<p>分为服务端(frps)和客户端(frpc), 外部用户通过连接服务端访问客户端.</p>
+<p><img data-src="https://img.owq.world/2022/11/2353-f576f4.png"></p>
+<h2 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h2><ul>
+<li>Windows<br>用于部署客户端</li>
+<li>Linux<br>用于部署服务端</li>
+</ul>
+<h2 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h2><blockquote>
+<p>发布页-<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZhdGVkaWVyL2ZycC9yZWxlYXNlcw==">Releases · fatedier&#x2F;frp (github.com)</span></p>
+</blockquote>
+<p><img data-src="https://img.owq.world/2022/11/2100-cf5983.png"></p>
+<h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>下载包</p>
+<p><em>PS: 服务器没有配置代理时, 可以先在本地下载完后通过<code>scp</code>传到服务器上</em></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.45.0/frp_0.45.0_linux_386.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压并移至<code>/usr/local/frps</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf frp_0.45.0_linux_386.tar.gz &amp;&amp; <span class="built_in">mv</span> frp_0.45.0_linux_386 /usr/local/frps</span><br></pre></td></tr></table></figure>
+
+<p>修改配置文件<code>frps.ini</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /usr/local/frps/frps.ini</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="comment"># 用于客户端连接的端口</span></span><br><span class="line">bind_port = 3389</span><br></pre></td></tr></table></figure>
+
+<p>添加<code>frps.service</code>文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/systemd/system/frps.service</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description = FRP server</span><br><span class="line">After = network.target syslog.target</span><br><span class="line">Wants = network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type = simple</span><br><span class="line">ExecStart = /usr/local/frps/frps -c /usr/local/frps/frps.ini</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy = multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>配置自启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> frps</span><br></pre></td></tr></table></figure>
+
+<p>启动服务</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start frps</span><br></pre></td></tr></table></figure>
+
+<p>查看服务状态(一起正常)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl status frps</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="D:\OWQ\OneDrive\Document\imges\image-20221117235911293.png"></p>
+<h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><p>将下载的压缩包解压, 会得到以下文件</p>
+<p><img data-src="https://img.owq.world/2022/11/0002-8016a5.png"></p>
+<p>编辑<code>frpc.ini</code>, 配置接收转发流量的端口</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = &lt;服务端IP&gt;</span><br><span class="line">server_port = 3389</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line"><span class="built_in">type</span> = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 2220</span><br><span class="line"></span><br><span class="line">[remote]</span><br><span class="line"><span class="built_in">type</span> = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 3389</span><br><span class="line">remote_port = 33890</span><br></pre></td></tr></table></figure>
+
+<p>字段解释</p>
+<ul>
+<li>local_ip - 本地的转发IP</li>
+<li>local_port - 转发端口</li>
+<li>remote_port - 反向代理的服务器端口, 连接服务器IP:端口进行访问</li>
+</ul>
+<p>启动服务(这里到相应的目录下运行程序)</p>
+<figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">.<span class="string">\frpc.exe</span> -c .<span class="string">\frpc.ini</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2022/11/0014-9bcf2f.png"></p>
+<p>这时候服务端也会有相应的日志打印出来</p>
+<p><img data-src="https://img.owq.world/2022/11/0016-69b1dc.png"></p>
+<p><em>PS: 如若连接不成功, 检查端口是否开放(冲突), 有使用Nginx反代工具等则查看是否配置错误进行排错</em></p>
+<p>添加开机自启动</p>
+<p>... ...</p>
+<p>添加自动重启</p>
+<p>... ...</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>打开远控软件, 输入对应的IP和端口</p>
+<img data-src="D:\OWQ\OneDrive\Document\imges\image-20221118002202998.png" style="zoom:67%;" />
+
+<p>出现这个界面就转发成功辽</p>
+<img data-src="D:\OWQ\OneDrive\Document\imges\image-20221118002128351.png" alt="" style="zoom:67%;" />
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>NAT</tag>
+        <tag>FRP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux 搭建MC(我的世界)服务器</title>
     <url>/ff995d3a/</url>
     <content><![CDATA[<blockquote>
