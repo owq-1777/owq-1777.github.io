@@ -48,7 +48,7 @@
 <p>启动服务</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start frps</span><br></pre></td></tr></table></figure>
 
-<p>查看服务状态(一起正常)</p>
+<p>查看服务状态</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl status frps</span><br></pre></td></tr></table></figure>
 
 <p><img data-src="https://img.owq.world/2022/11/0027-e2a0fd.png"></p>
