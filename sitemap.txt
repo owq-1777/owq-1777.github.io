@@ -1,3 +1,5 @@
+https://www.owq.world/nextjs/
+https://www.owq.world/react-core-concepts/
 https://www.owq.world/b7fe0c77/
 https://www.owq.world/git/
 https://www.owq.world/nginx/
@@ -64,9 +66,9 @@ https://www.owq.world/tags/crontab/
 https://www.owq.world/tags/CentOS/
 https://www.owq.world/tags/Ubuntu/
 https://www.owq.world/tags/Minecraft/
-https://www.owq.world/tags/Arch-Linux/
 https://www.owq.world/tags/SQL/
 https://www.owq.world/tags/MariaDB/
+https://www.owq.world/tags/Arch-Linux/
 https://www.owq.world/tags/YAML/
 https://www.owq.world/tags/log/
 https://www.owq.world/tags/Ethereum/
@@ -74,6 +76,7 @@ https://www.owq.world/tags/ERC20/
 https://www.owq.world/tags/Web3/
 https://www.owq.world/tags/Threading/
 https://www.owq.world/tags/Multiprocessing/
+https://www.owq.world/tags/React/
 https://www.owq.world/tags/Scrapy/
 https://www.owq.world/tags/Selenium/
 https://www.owq.world/tags/Terminal/
@@ -98,6 +101,8 @@ https://www.owq.world/tags/FRP/
 https://www.owq.world/tags/regex/
 https://www.owq.world/tags/oss/
 https://www.owq.world/tags/cdn/
+https://www.owq.world/tags/Next-js/
+https://www.owq.world/tags/Web/
 https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/
 https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/
 https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/

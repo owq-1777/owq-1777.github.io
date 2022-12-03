@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2022-11-28T06:38:28.598Z</updated>
+  <updated>2022-12-03T15:22:51.695Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next.js 开发入门指南</title>
+    <link href="https://www.owq.world/nextjs/"/>
+    <id>https://www.owq.world/nextjs/</id>
+    <published>2022-12-03T15:17:18.000Z</published>
+    <updated>2022-12-03T15:22:51.695Z</updated>
+    
+    
+    <summary type="html">快速入门 Next.js 框架, 精简记录手册§(*￣▽￣*)§</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="React" scheme="https://www.owq.world/tags/React/"/>
+    
+    <category term="Next.js" scheme="https://www.owq.world/tags/Next-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 核心概念</title>
+    <link href="https://www.owq.world/react-core-concepts/"/>
+    <id>https://www.owq.world/react-core-concepts/</id>
+    <published>2022-12-03T15:00:02.000Z</published>
+    <updated>2022-12-03T15:05:18.975Z</updated>
+    
+    
+    <summary type="html">快速了解下 React 的三大组件使用, Components, Props, State.</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="JavaScript" scheme="https://www.owq.world/tags/JavaScript/"/>
+    
+    <category term="React" scheme="https://www.owq.world/tags/React/"/>
+    
+    <category term="Web" scheme="https://www.owq.world/tags/Web/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建一个内网穿透服务(FRP)</title>
@@ -395,48 +439,6 @@
     
     
     <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里云OSS 图床搭建</title>
-    <link href="https://www.owq.world/bee760ec/"/>
-    <id>https://www.owq.world/bee760ec/</id>
-    <published>2021-11-25T02:28:09.000Z</published>
-    <updated>2022-09-25T12:41:34.547Z</updated>
-    
-    
-    <summary type="html">用域名+CDN+OSS搭建个人安全图床，超详细的图文踩坑记录(*￣０￣)ノ</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="oss" scheme="https://www.owq.world/tags/oss/"/>
-    
-    <category term="cdn" scheme="https://www.owq.world/tags/cdn/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>scrcpy 优雅的安卓投屏工具</title>
-    <link href="https://www.owq.world/72a0046c/"/>
-    <id>https://www.owq.world/72a0046c/</id>
-    <published>2021-09-17T03:53:29.000Z</published>
-    <updated>2022-09-25T12:41:34.537Z</updated>
-    
-    
-    <summary type="html">无需安装额外软件, 在无线下利用adb进行投屏控制\\(￣︶￣*\\))</summary>
-    
-    
-    
-    <category term="好软工具" scheme="https://www.owq.world/categories/%E5%A5%BD%E8%BD%AF%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Android" scheme="https://www.owq.world/tags/Android/"/>
-    
-    <category term="adb" scheme="https://www.owq.world/tags/adb/"/>
     
   </entry>
   

@@ -1,6 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Next.js 开发入门指南</title>
+    <url>/nextjs/</url>
+    <content><![CDATA[<blockquote>
+<p>Site: <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnLw==">https://nextjs.org</span><br>Docs: <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3M=">https://nextjs.org/docs</span><br>React: <span class="exturl" data-url="aHR0cHM6Ly9yZWFjdGpzLm9yZy90dXRvcmlhbC90dXRvcmlhbC5odG1s">https://reactjs.org/tutorial/tutorial.html</span></p>
+</blockquote>
+<h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><p><strong>一个 <a href="/react-core-concepts">React</a> 框架, 提供了创建 Web 应用程序的构建程序.</strong><img data-src="https://nextjs.org/static/images/learn/foundations/next-app.png"></p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx create-next-app@latest</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">yarn create next-app</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">yarn dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h3><ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L3JvdXRlcg==">Router</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRouter &#125; <span class="keyword">from</span> <span class="string">&#x27;next/router&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L2xpbms=">Link</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Link</span> <span class="keyword">from</span> <span class="string">&#x27;next/link&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L2ltYWdl">Image</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Image</span> <span class="keyword">from</span> <span class="string">&#x27;next/image&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L2hlYWQ=">Head</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Head</span> <span class="keyword">from</span> <span class="string">&#x27;next/head&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L3NjcmlwdA==">Script</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Script</span> <span class="keyword">from</span> <span class="string">&#x27;next/script&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="日期处理"><a href="#日期处理" class="headerlink" title="日期处理"></a>日期处理</h3><p>安装库</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install date-fns</span><br></pre></td></tr></table></figure>
+
+<p>例子</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; parseISO, format &#125; <span class="keyword">from</span> <span class="string">&#x27;date-fns&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Date</span>(<span class="params">&#123; dateString &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> date = <span class="title function_">parseISO</span>(dateString);</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">time</span> <span class="attr">dateTime</span>=<span class="string">&#123;dateString&#125;</span>&gt;</span>&#123;format(date, &#x27;LLLL d, yyyy&#x27;)&#125;<span class="tag">&lt;/<span class="name">time</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><blockquote>
+<p>使用 <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvYnVpbHQtaW4tY3NzLXN1cHBvcnQjYWRkaW5nLWNvbXBvbmVudC1sZXZlbC1jc3M=">CSS Modules</span>, CSS文件名必须以<code>.module.css</code>.</p>
+</blockquote>
+<p>安装 <code>Tailwind CSS</code> -&gt; <span class="exturl" data-url="aHR0cHM6Ly90YWlsd2luZGNzcy5jb20v">https://tailwindcss.com/</span></p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss <span class="built_in">auto</span>prefixer postcss</span><br></pre></td></tr></table></figure>
+
+<p>添加 <code>postcss.config.js</code> 到项目根目录.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// postcss.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">plugins</span>: &#123;</span><br><span class="line">        <span class="attr">tailwindcss</span>: &#123;&#125;,</span><br><span class="line">        <span class="attr">autoprefixer</span>: &#123;&#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>添加 <code>tailwind.config.js</code> 到项目根目录.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// tailwind.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">content</span>: [</span><br><span class="line">        <span class="string">&#x27;./pages/**/*.&#123;js,ts,jsx,tsx&#125;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;./components/**/*.&#123;js,ts,jsx,tsx&#125;&#x27;</span>,</span><br><span class="line">        <span class="comment">// For the best performance and to avoid false positives,</span></span><br><span class="line">        <span class="comment">// be as specific as possible with your content configuration.</span></span><br><span class="line">    ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组件动态导入"><a href="#组件动态导入" class="headerlink" title="组件动态导入"></a>组件动态导入</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> dynamic <span class="keyword">from</span> <span class="string">&#x27;next/dynamic&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>引入组件, 服务器上不需要加载, 设置<code>ssr</code>为<code>false</code>. </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">CodeSampleModal</span> = <span class="title function_">dynamic</span>(<span class="function">() =&gt;</span> <span class="title function_">import</span>(<span class="string">&#x27;../components/CodeSampleModal&#x27;</span>), &#123;</span><br><span class="line">  <span class="attr">ssr</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>包装组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  isModalOpen &amp;&amp; (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">CodeSampleModal</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">isOpen</span>=<span class="string">&#123;isModalOpen&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">closeModal</span>=<span class="string">&#123;()</span> =&gt;</span> setIsModalOpen(false)&#125;</span></span><br><span class="line"><span class="language-xml">    /&gt;</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvZGF0YS1mZXRjaGluZy9vdmVydmlldyNnZXRzZXJ2ZXJzaWRlcHJvcHMtc2VydmVyLXNpZGUtcmVuZGVyaW5n">Data Fetching: Overview | Next.js (nextjs.org)</span></p>
+</blockquote>
+<h3 id="getStaticProps"><a href="#getStaticProps" class="headerlink" title="getStaticProps"></a>getStaticProps</h3><ul>
+<li>生成静态页面路径</li>
+<li>在函数内部, 可以获取外部数据并将其作为变量传递到页面.</li>
+<li>开发模式, 每个请求都会运行; 生产环境中，只在构建时运行.</li>
+<li>只能在<code>page</code> 文件中使用.(pages文件夹下的<code>.js</code>,<code>.jsx</code>,<code>.ts</code>,<code>.tsx</code>文件)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Home</span>(<span class="params">props</span>) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Get external data from the file system, API, DB, etc.</span></span><br><span class="line">  <span class="keyword">const</span> data = ...</span><br><span class="line"></span><br><span class="line">  <span class="comment">// The value of the `props` key will be</span></span><br><span class="line">  <span class="comment">//  passed to the `Home` component</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: ...</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>从<code>API</code>获取数据</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getSortedPostsData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Instead of the file system,</span></span><br><span class="line">  <span class="comment">// fetch post data from an external API endpoint</span></span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;..&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从数据库获取数据</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> someDatabaseSDK <span class="keyword">from</span> <span class="string">&#x27;someDatabaseSDK&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> databaseClient = someDatabaseSDK.<span class="title function_">createClient</span>(...)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getSortedPostsData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Instead of the file system,</span></span><br><span class="line">  <span class="comment">// fetch post data from a database</span></span><br><span class="line">  <span class="keyword">return</span> databaseClient.<span class="title function_">query</span>(<span class="string">&#x27;SELECT posts...&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getStaticProps-1"><a href="#getStaticProps-1" class="headerlink" title="getStaticProps"></a>getStaticProps</h3><ul>
+<li>生成静态页面内容</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: &#123;&#125;, <span class="comment">// will be passed to the page component as props</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getServerSideProps"><a href="#getServerSideProps" class="headerlink" title="getServerSideProps"></a>getServerSideProps</h3><ul>
+<li>服务器端渲染数据, 每个请求都会运行</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvZGF0YS1mZXRjaGluZy9vdmVydmlldyNnZXRzZXJ2ZXJzaWRlcHJvcHMtc2VydmVyLXNpZGUtcmVuZGVyaW5n">Data Fetching: Overview | Next.js (nextjs.org)</span></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getServerSideProps</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: &#123;</span><br><span class="line">      <span class="comment">// props for your component</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SWR"><a href="#SWR" class="headerlink" title="SWR"></a>SWR</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9zd3IudmVyY2VsLmFwcC96aC1DTg==">用于数据请求的 React Hooks 库 – SWR</span></p>
+</blockquote>
+<ul>
+<li>使用 SWR，组件将会<strong>不断地</strong>、<strong>自动</strong>获得最新数据流。</li>
+<li>UI 也会一直保持<strong>快速响应</strong>。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> useSWR <span class="keyword">from</span> <span class="string">&#x27;swr&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Profile</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; data, error &#125; = <span class="title function_">useSWR</span>(<span class="string">&#x27;/api/user&#x27;</span>, fetch);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (error) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>failed to load<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  <span class="keyword">if</span> (!data) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>loading...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hello &#123;data.name&#125;!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="API-Routes"><a href="#API-Routes" class="headerlink" title="API Routes"></a>API Routes</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJvdXRlcy9pbnRyb2R1Y3Rpb24=">API Routes: Introduction | Next.js (nextjs.org)</span></p>
+</blockquote>
+<p>pages&#x2F;api&#x2F;hello.js - <span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDozMDAwL2FwaS9oZWxsbw==">localhost:3000&#x2F;api&#x2F;hello</span></p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">export <span class="keyword">default</span> <span class="keyword">function</span> <span class="keyword">handler</span>(req, res) &#123;</span><br><span class="line">  res.status(<span class="number">200</span>).json(&#123; <span class="type">text</span>: <span class="string">&#x27;Hello&#x27;</span> &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>req</code> 是 http. IncomingMessage 的一个实例，加上一些预构建的中间件。</li>
+<li><code>res</code> 是 http. ServerResponse 的一个实例，外加一些 helper 函数。</li>
+</ul>
+<h2 id="搜索引擎优化"><a href="#搜索引擎优化" class="headerlink" title="搜索引擎优化"></a>搜索引擎优化</h2><h3 id="谷歌爬虫工作流"><a href="#谷歌爬虫工作流" class="headerlink" title="谷歌爬虫工作流"></a>谷歌爬虫工作流</h3><p><img data-src="https://img.owq.world/2022/12/1752-ce9f3e.png"></p>
+<ol>
+<li><p><strong>Find URLs</strong> - 查找URL 从站点地图(XML), 页面链接等.</p>
+</li>
+<li><p><strong>Add to Crawl Queue</strong> - 添加到爬取队列等待爬取.</p>
+</li>
+<li><p><strong>HTTP Request</strong> - 发送请求URL, 根据响应状态码做不同的处理.</p>
+<ul>
+<li><p>200 - 请求成功</p>
+</li>
+<li><p>301&#x2F;308 - 永久重定向 308为推荐的处理(不允许更改请求方法)</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  pages/about.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">redirect</span>: &#123;</span><br><span class="line">      <span class="attr">destination</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">      <span class="attr">permanent</span>: <span class="literal">true</span>, <span class="comment">// triggers 308</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>302 - 临时重定向</p>
+</li>
+<li><p>404 - 不存在页面<br>指定返回 404 状态码</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">notFound</span>: <span class="literal">true</span>, <span class="comment">// triggers 404</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定制 404 页面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pages/404.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Custom404</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>404 - Page Not Found<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>410 - 永久删除的内容(通知爬虫不再抓取)</p>
+</li>
+<li><p>500 - 服务器错误<br>定制 500 页面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pages/500.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Custom500</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>500 - Server-side error occurred<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>503 - 预计网站会关闭一段时间时(可以保持排名)</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Render Queue</strong> - 页面存在<code>JavaScript</code>内容 添加到渲染队列(需要更长的时间).</p>
+</li>
+<li><p><strong>Ready to be indexed</strong> - 满足条件则添加索引到数据库.</p>
+</li>
+</ol>
+<h3 id="robots-txt-文件"><a href="#robots-txt-文件" class="headerlink" title="robots.txt 文件"></a>robots.txt 文件</h3><p>直接放在项目根目录即可</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">//robots.txt</span><br><span class="line"></span><br><span class="line"># Block all crawlers for /accounts</span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: /accounts</span><br><span class="line"></span><br><span class="line"># Allow all crawlers</span><br><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="站点地图-Sitemaps"><a href="#站点地图-Sitemaps" class="headerlink" title="站点地图 - Sitemaps"></a>站点地图 - Sitemaps</h3><ul>
+<li>方便爬取</li>
+<li>有丰富内容的站点必备</li>
+</ul>
+<p>使用 <code>getServerSideProps</code> 动态生成</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//pages/sitemap.xml.js</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">EXTERNAL_DATA_URL</span> = <span class="string">&#x27;https://jsonplaceholder.typicode.com/posts&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generateSiteMap</span>(<span class="params">posts</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="string">   &lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;</span></span><br><span class="line"><span class="string">     &lt;!--We manually set the two URLs we know already--&gt;</span></span><br><span class="line"><span class="string">     &lt;url&gt;</span></span><br><span class="line"><span class="string">       &lt;loc&gt;https://jsonplaceholder.typicode.com&lt;/loc&gt;</span></span><br><span class="line"><span class="string">     &lt;/url&gt;</span></span><br><span class="line"><span class="string">     &lt;url&gt;</span></span><br><span class="line"><span class="string">       &lt;loc&gt;https://jsonplaceholder.typicode.com/guide&lt;/loc&gt;</span></span><br><span class="line"><span class="string">     &lt;/url&gt;</span></span><br><span class="line"><span class="string">     <span class="subst">$&#123;posts</span></span></span><br><span class="line"><span class="subst"><span class="string">       .map((&#123; id &#125;) =&gt; &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">         <span class="keyword">return</span> <span class="string">`</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">       &lt;url&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">           &lt;loc&gt;<span class="subst">$&#123;<span class="string">`<span class="subst">$&#123;EXTERNAL_DATA_URL&#125;</span>/<span class="subst">$&#123;id&#125;</span>`</span>&#125;</span>&lt;/loc&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">       &lt;/url&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">     `</span>;</span></span></span><br><span class="line"><span class="subst"><span class="string">       &#125;)</span></span></span><br><span class="line"><span class="subst"><span class="string">       .join(<span class="string">&#x27;&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">   &lt;/urlset&gt;</span></span><br><span class="line"><span class="string"> `</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">SiteMap</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// getServerSideProps will do the heavy lifting</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getServerSideProps</span>(<span class="params">&#123; res &#125;</span>) &#123;</span><br><span class="line">  <span class="comment">// We make an API call to gather the URLs for our site</span></span><br><span class="line">  <span class="keyword">const</span> request = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="variable constant_">EXTERNAL_DATA_URL</span>);</span><br><span class="line">  <span class="keyword">const</span> posts = <span class="keyword">await</span> request.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// We generate the XML sitemap with the posts data</span></span><br><span class="line">  <span class="keyword">const</span> sitemap = <span class="title function_">generateSiteMap</span>(posts);</span><br><span class="line"></span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/xml&#x27;</span>);</span><br><span class="line">  <span class="comment">// we send the XML to the browser</span></span><br><span class="line">  res.<span class="title function_">write</span>(sitemap);</span><br><span class="line">  res.<span class="title function_">end</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: &#123;&#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">SiteMap</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="特定的元标签-Special-Meta-Tags"><a href="#特定的元标签-Special-Meta-Tags" class="headerlink" title="特定的元标签 - Special Meta Tags"></a>特定的元标签 - Special Meta Tags</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vc2VhcmNoL2RvY3MvYWR2YW5jZWQvcm9ib3RzL3JvYm90c19tZXRhX3RhZyNkaXJlY3RpdmVz">https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives</span></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Head</span> <span class="keyword">from</span> <span class="string">&#x27;next/head&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">IndexPage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Meta Tag Example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;google&quot;</span> <span class="attr">content</span>=<span class="string">&quot;nositelinkssearchbox&quot;</span> <span class="attr">key</span>=<span class="string">&quot;sitelinks&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;google&quot;</span> <span class="attr">content</span>=<span class="string">&quot;notranslate&quot;</span> <span class="attr">key</span>=<span class="string">&quot;notranslate&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Here we show some meta tags off!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">IndexPage</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="规范标签-Canonical-Tags"><a href="#规范标签-Canonical-Tags" class="headerlink" title="规范标签 - Canonical Tags"></a>规范标签 - Canonical Tags</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2xlYXJuL3Nlby9jcmF3bGluZy1hbmQtaW5kZXhpbmcvY2Fub25pY2Fs">What are Canonical Tags? - Crawling and Indexing | Learn Next.js (nextjs.org)</span></p>
+</blockquote>
+<h2 id="渲染和排名-Rendering-and-Ranking"><a href="#渲染和排名-Rendering-and-Ranking" class="headerlink" title="渲染和排名 - Rendering and Ranking"></a>渲染和排名 - Rendering and Ranking</h2><h3 id="渲染策略-Rendering-Strategies"><a href="#渲染策略-Rendering-Strategies" class="headerlink" title="渲染策略 - Rendering Strategies"></a>渲染策略 - Rendering Strategies</h3><ul>
+<li><p><strong>静态站点生成(SSG)</strong> - <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvcGFnZXMjc3RhdGljLWdlbmVyYXRpb24tcmVjb21tZW5kZWQ=">Static site generation</span><br>预渲染页面, 在构建时生成HTML, 有助于页面性能提升.</p>
+</li>
+<li><p><strong>服务器端呈现(SSR)</strong> - <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvcGFnZXMjc2VydmVyLXNpZGUtcmVuZGVyaW5n">Server-Side Rendering</span><br>也是预渲染页面, 不同是在每次请求时生成, 这对于具有非常动态的页面非常有用.</p>
+</li>
+<li><p><strong>增量静态再生(ISR)</strong> - <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvZGF0YS1mZXRjaGluZyNpbmNyZW1lbnRhbC1zdGF0aWMtcmVnZW5lcmF0aW9u">Incremental Static Regeneration</span><br>可以在构建站点之后创建或更新静态页面, 适合拥有大量的页面的网站, 在扩展到数百万页面的同时保留静态的好处。</p>
+</li>
+<li><p><strong>客户端呈现(CSR)</strong> - <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvZGF0YS1mZXRjaGluZyNmZXRjaGluZy1kYXRhLW9uLXRoZS1jbGllbnQtc2lkZQ==">Client-Side Rendering</span><br>使用 <code>JavaScript</code> 在浏览器中完全渲染网站, 不利于搜索引擎, 适用于数据量大的仪表板、账户页面或任何不需要出现在任何搜索引擎索引中的页面。</p>
+</li>
+</ul>
+<h3 id="网址结构-URL-Structure"><a href="#网址结构-URL-Structure" class="headerlink" title="网址结构 - URL Structure"></a>网址结构 - URL Structure</h3><ul>
+<li><p><strong>使 URL 具有语义</strong><br>如: <a href="https://nextjs.org/learn/basics/create-nextjs-app"><code>/learn/basics/create-nextjs-app</code></a> 比 <code>/learn/course-1/lesson-1</code> 写法更好.</p>
+</li>
+<li><p>逻辑性和一致性<br>如, 对路径分组, 产品放产品路径下.</p>
+</li>
+<li><p>使用关键词<br>如: Next文章URL中包含 <code>next</code> 关键字.</p>
+</li>
+<li><p>不使用参数构建 URL</p>
+<p>大多数情况下，它们不具有语义，搜索引擎可能会混淆它们，从而降低它们在搜索结果中的排名.</p>
+</li>
+</ul>
+<h3 id="元数据-Metadata"><a href="#元数据-Metadata" class="headerlink" title="元数据 - Metadata"></a>元数据 - Metadata</h3><ul>
+<li><strong>标题 - Title</strong><br>最重要的 SEO 元素之一.</li>
+<li>描述 - Description<br>不影响排名, 但影响用户点击率.</li>
+<li>打开图表 - <span class="exturl" data-url="aHR0cHM6Ly9vZ3AubWUv">Open Graph protocol</span><br>用于添加分享时内容丰富程度, 不影响排面, 但有利于点击.</li>
+</ul>
+<p><strong>Next.js 中的例子:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Head</span> <span class="keyword">from</span> <span class="string">&#x27;next/head&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">IndexPage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Cool Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Checkout our cool page&quot;</span> <span class="attr">key</span>=<span class="string">&quot;desc&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">&quot;og:title&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Social Title for Cool Page&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">property</span>=<span class="string">&quot;og:description&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">content</span>=<span class="string">&quot;And a social description for our cool page&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">property</span>=<span class="string">&quot;og:image&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">content</span>=<span class="string">&quot;https://example.com/images/cool-page.jpg&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Cool Page<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a cool page. It has lots of cool content!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">IndexPage</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结构化数据-Structured-Data"><a href="#结构化数据-Structured-Data" class="headerlink" title="结构化数据 - Structured Data"></a>结构化数据 - Structured Data</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9zY2hlbWEub3JnLw==">schema.org</span></p>
+</blockquote>
+<h3 id="网站指标"><a href="#网站指标" class="headerlink" title="网站指标"></a>网站指标</h3><blockquote>
+<p> <span class="exturl" data-url="aHR0cHM6Ly93ZWIuZGV2L2kxOG4vemgvdml0YWxzLw==">Web 指标</span><br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuY2hyb21lLmNvbS9kb2NzL2NydXgv">Chrome UX Report - Chrome Developers</span></p>
+</blockquote>
+<ul>
+<li><strong><span class="exturl" data-url="aHR0cHM6Ly93ZWIuZGV2L2xjcC8=">Largest Contentful Paint (LCP)</span></strong> ：最大内容绘制，测量<em>加载</em>性能。为了提供良好的用户体验，LCP 应在页面首次开始加载后的<strong>2.5 秒</strong>内发生。</li>
+<li><strong><span class="exturl" data-url="aHR0cHM6Ly93ZWIuZGV2L2ZpZC8=">First Input Delay (FID)</span></strong> ：首次输入延迟，测量<em><strong>交互性</strong></em>。为了提供良好的用户体验，页面的 FID 应为<strong>100 毫秒</strong>或更短。</li>
+<li><strong><span class="exturl" data-url="aHR0cHM6Ly93ZWIuZGV2L2Nscy8=">Cumulative Layout Shift (CLS)</span></strong> ：累积布局偏移，测量<em><strong>视觉稳定性</strong></em>。为了提供良好的用户体验，页面的 CLS 应保持在 <strong>0.1.</strong> 或更少。</li>
+</ul>
+<p>使用谷歌开发者工具 <strong>Lighthouse</strong> 生成分析报告</p>
+<ol>
+<li>打开隐私窗口</li>
+<li>进入 <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnLw==">https://nextjs.org/</span></li>
+<li>按 <code>F12</code> 调用开发者工具 -&gt; 打开 <code>Lighthouse</code>选项卡 -&gt; 点击<code>Analyze page load</code> 按钮<br><img data-src="https://img.owq.world/2022/12/2129-b070ef.png"></li>
+<li>等待分析完成, 出现分析结果.<br><img data-src="https://img.owq.world/2022/12/2131-306334.png"></li>
+</ol>
+<h3 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h3><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vc3BlZWQvcGFnZXNwZWVkL2luc2lnaHRzLw==">PageSpeed Insights</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vd2ViL3Rvb2xzL2Nocm9tZS11c2VyLWV4cGVyaWVuY2UtcmVwb3J0">Chrome User Experience Report</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vd2VibWFzdGVycy9hbnN3ZXIvOTIwNTUyMA==">Search Console</span></li>
+</ul>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p>...</p>
+<h2 id="使用vercel部署项目"><a href="#使用vercel部署项目" class="headerlink" title="使用vercel部署项目"></a>使用vercel部署项目</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLz91dG1fc291cmNlPW5leHQtc2l0ZSZhbXA7dXRtX21lZGl1bT1sZWFybnBhZ2VzJmFtcDt1dG1fY2FtcGFpZ249bmV4dC13ZWJzaXRl">https://vercel.com/?utm_source=next-site&amp;utm_medium=learnpages&amp;utm_campaign=next-website</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+        <tag>Next.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React 核心概念</title>
+    <url>/react-core-concepts/</url>
+    <content><![CDATA[<h1 id="React-核心概念"><a href="#React-核心概念" class="headerlink" title="React 核心概念"></a>React 核心概念</h1><h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><ul>
+<li><strong>Components</strong> - 构建页面的组件</li>
+<li><strong>Props</strong> - 向组件传递信息</li>
+<li><strong>State</strong> - 记录&#x2F;传递交互数据</li>
+</ul>
+<h2 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h2><blockquote>
+<p>用户界面可以分解成称为组件的更小的构建块。</p>
+</blockquote>
+<p>组件允许您构建自包含的、可重用的代码片段。如果你把组件想象成乐高积木，你可以把这些单独的积木组合在一起，形成更大的结构。如果需要更新 UI 的一部分，可以更新特定的组件或砖块。</p>
+<p><img data-src="https://img.owq.world/2022/12/2216-9c6fd4.png"></p>
+<h3 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/jsx&quot;</span>&gt;</span><br><span class="line">  <span class="keyword">const</span> app = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;app&quot;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 组件是一个返回 UI 元素的函数</span></span><br><span class="line">  <span class="comment">// 主件名首字母必须大写</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params"></span>) &#123;</span><br><span class="line">     <span class="keyword">return</span> (<span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Develop. Preview. Ship. 🚀<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 用 ReactDOM.render 传递给 DOM</span></span><br><span class="line">  <span class="comment">// 使用尖括号 &lt; &gt; 传递参数</span></span><br><span class="line">  <span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Header</span> /&gt;</span></span>, app)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="嵌套组件"><a href="#嵌套组件" class="headerlink" title="嵌套组件"></a>嵌套组件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Develop. Preview. Ship. 🚀<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">HomePage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;/* 在 HomePage 中嵌套 Header */&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Header</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">HomePage</span> /&gt;</span></span>, app);</span><br></pre></td></tr></table></figure>
+
+<h3 id="组件树"><a href="#组件树" class="headerlink" title="组件树"></a>组件树</h3><blockquote>
+<p>在 React 中，数据沿组件树流动。这被称为单向数据流。</p>
+</blockquote>
+<p><img data-src="https://img.owq.world/2022/12/2257-8c2a56.png"></p>
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><h3 id="使用道具"><a href="#使用道具" class="headerlink" title="使用道具"></a>使用道具</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 向 Header commponents 传递 Props</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params">&#123; title &#125;</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(title);</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;title&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSX-land"><a href="#JSX-land" class="headerlink" title="JSX land"></a>JSX land</h3><ul>
+<li><p>使用&#39;<code>.</code>&#39;号引用属性</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;props.title&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模板文字</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params">&#123; title &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;`Cool $&#123;title&#125;`&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用函数</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createTitle</span>(<span class="params">title</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (title) &#123;</span><br><span class="line">    <span class="keyword">return</span> title;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Default title&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params">&#123; title &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;createTitle(title)&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>三元运算符</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params">&#123; title &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;title ? title : &#x27;Default Title&#x27;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="迭代列表"><a href="#迭代列表" class="headerlink" title="迭代列表"></a>迭代列表</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">HomePage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> names = [<span class="string">&#x27;Ada Lovelace&#x27;</span>, <span class="string">&#x27;Grace Hopper&#x27;</span>, <span class="string">&#x27;Margaret Hamilton&#x27;</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Header</span> <span class="attr">title</span>=<span class="string">&quot;Develop. Preview. Ship. 🚀&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;/* 使用 array.map ()方法迭代数组，并使用箭头函数将名称映射到列表项 */&#125;</span></span><br><span class="line"><span class="language-xml">		&#123;/* React 需要 key 来唯一标识数组中的项更新元素 */&#125;</span></span><br><span class="line"><span class="language-xml">        &#123;names.map((name) =&gt; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;name&#125;</span>&gt;</span>&#123;name&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        ))&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="State"><a href="#State" class="headerlink" title="State"></a>State</h2><blockquote>
+<p>React 有一组叫做 Hook 的函数。钩子允许您向组件添加额外的逻辑，比如状态。<br>可以将状态视为 UI 中随时间变化的任何信息，通常由用户交互触发。</p>
+</blockquote>
+<p><img data-src="https://img.owq.world/2022/12/2258-4afca7.png"></p>
+<h3 id="使用状态"><a href="#使用状态" class="headerlink" title="使用状态"></a>使用状态</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">HomePage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// useState() 返回一个数组</span></span><br><span class="line">  <span class="comment">// 数组中的第一项是状态值 这里设置初始值为0</span></span><br><span class="line">  <span class="comment">// 数组中的第二项是更新值的使用的函数</span></span><br><span class="line">  <span class="keyword">const</span> [likes, setLikes] = <span class="title class_">React</span>.<span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">handleClick</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">setLikes</span>(likes + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;/* 每点击一次更新状态值 */&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;handleClick&#125;</span>&gt;</span>Likes (&#123;likes&#125;)<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2xlYXJuL2ZvdW5kYXRpb25zL2Zyb20tamF2YXNjcmlwdC10by1yZWFjdC9yZWFjdC1jb3JlLWNvbmNlcHRz">React Core Concepts - From JavaScript to React | Learn Next.js (nextjs.org)</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>React</tag>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搭建一个内网穿透服务(FRP)</title>
     <url>/b7fe0c77/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当想远程操控<code>Windos</code>电脑时, 其一就是使用花生壳等远控工具, 但使用体验欠佳(有速率限制，分辨率不一致等), 其二就是使用<code>Windos</code>系统自带的远控工具, 能做到在另一台电脑上无缝操作本机.</p>

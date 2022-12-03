@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="快速入门 Next.js 框架, 精简记录手册§(*￣▽￣*)§">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Next.js 开发入门指南">
+<meta property="og:url" content="https://www.owq.world/nextjs/index.html">
+<meta property="og:site_name" content="Sunny was born">
+<meta property="og:description" content="快速入门 Next.js 框架, 精简记录手册§(*￣▽￣*)§">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://nextjs.org/static/images/learn/foundations/next-app.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/1752-ce9f3e.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/2129-b070ef.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/2131-306334.png">
+<meta property="article:published_time" content="2022-12-03T15:17:18.000Z">
+<meta property="article:modified_time" content="2022-12-03T15:22:51.695Z">
+<meta property="article:author" content="OWQ">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="Next.js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nextjs.org/static/images/learn/foundations/next-app.png">
+
+<link rel="canonical" href="https://www.owq.world/nextjs/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Next.js 开发入门指南 | Sunny was born</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM06B0RFS"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LWM06B0RFS');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Sunny was born" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Sunny was born</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<span style="flex-grow: 2;"></span>
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+      
+
+
+<div class='bg-container lozad' style="z-index: -1; background-color: #fff;">
+  <span class="header-bg"></span>
+  <script data-pjax>
+    console.info("")
+    var header=document.querySelector('.header-bg');
+    var img_arr = ["/img/header_img/bg1.webp","/img/header_img/bg2.webp","/img/header_img/bg3.webp","/img/header_img/bg4.webp","/img/header_img/bg5.webp","/img/header_img/bg6.webp"]
+    var index = Math.floor((Math.random()*img_arr.length));
+    header.setAttribute("style", "background-image: url('"+img_arr[index]+"')");
+  </script>
+</div>
+
+<div id="signature">
+  <div class="container">
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>Next.js 开发入门指南</h1>
+          <h2 class="subheading">快速入门 Next.js 框架, 精简记录手册§(*￣▽￣*)§</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+
+            <time title="2022-12-03 23:17:18" itemprop="dateCreated datePublished" datetime="2022-12-03T23:17:18+08:00">2022-12-03</time>
+            
+
+          </span>
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>9.4k</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>9 min</span>
+          </span>
+
+
+        </header>
+
+      
+
+  </div>
+</div>
+
+
+
+<!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main" id="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/nextjs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Site: <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnLw==">https://nextjs.org</span><br>Docs: <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3M=">https://nextjs.org/docs</span><br>React: <span class="exturl" data-url="aHR0cHM6Ly9yZWFjdGpzLm9yZy90dXRvcmlhbC90dXRvcmlhbC5odG1s">https://reactjs.org/tutorial/tutorial.html</span></p>
+</blockquote>
+<h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><p><strong>一个 <a href="/react-core-concepts">React</a> 框架, 提供了创建 Web 应用程序的构建程序.</strong><img data-src="https://nextjs.org/static/images/learn/foundations/next-app.png"></p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx create-next-app@latest</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">yarn create next-app</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">yarn dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h3><ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L3JvdXRlcg==">Router</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRouter &#125; <span class="keyword">from</span> <span class="string">&#x27;next/router&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L2xpbms=">Link</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Link</span> <span class="keyword">from</span> <span class="string">&#x27;next/link&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L2ltYWdl">Image</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Image</span> <span class="keyword">from</span> <span class="string">&#x27;next/image&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L2hlYWQ=">Head</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Head</span> <span class="keyword">from</span> <span class="string">&#x27;next/head&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJlZmVyZW5jZS9uZXh0L3NjcmlwdA==">Script</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Script</span> <span class="keyword">from</span> <span class="string">&#x27;next/script&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="日期处理"><a href="#日期处理" class="headerlink" title="日期处理"></a>日期处理</h3><p>安装库</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install date-fns</span><br></pre></td></tr></table></figure>
+
+<p>例子</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; parseISO, format &#125; <span class="keyword">from</span> <span class="string">&#x27;date-fns&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Date</span>(<span class="params">&#123; dateString &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> date = <span class="title function_">parseISO</span>(dateString);</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">time</span> <span class="attr">dateTime</span>=<span class="string">&#123;dateString&#125;</span>&gt;</span>&#123;format(date, &#x27;LLLL d, yyyy&#x27;)&#125;<span class="tag">&lt;/<span class="name">time</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><blockquote>
+<p>使用 <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvYnVpbHQtaW4tY3NzLXN1cHBvcnQjYWRkaW5nLWNvbXBvbmVudC1sZXZlbC1jc3M=">CSS Modules</span>, CSS文件名必须以<code>.module.css</code>.</p>
+</blockquote>
+<p>安装 <code>Tailwind CSS</code> -&gt; <span class="exturl" data-url="aHR0cHM6Ly90YWlsd2luZGNzcy5jb20v">https://tailwindcss.com/</span></p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss <span class="built_in">auto</span>prefixer postcss</span><br></pre></td></tr></table></figure>
+
+<p>添加 <code>postcss.config.js</code> 到项目根目录.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// postcss.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">plugins</span>: &#123;</span><br><span class="line">        <span class="attr">tailwindcss</span>: &#123;&#125;,</span><br><span class="line">        <span class="attr">autoprefixer</span>: &#123;&#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>添加 <code>tailwind.config.js</code> 到项目根目录.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// tailwind.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">content</span>: [</span><br><span class="line">        <span class="string">&#x27;./pages/**/*.&#123;js,ts,jsx,tsx&#125;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;./components/**/*.&#123;js,ts,jsx,tsx&#125;&#x27;</span>,</span><br><span class="line">        <span class="comment">// For the best performance and to avoid false positives,</span></span><br><span class="line">        <span class="comment">// be as specific as possible with your content configuration.</span></span><br><span class="line">    ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组件动态导入"><a href="#组件动态导入" class="headerlink" title="组件动态导入"></a>组件动态导入</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> dynamic <span class="keyword">from</span> <span class="string">&#x27;next/dynamic&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>引入组件, 服务器上不需要加载, 设置<code>ssr</code>为<code>false</code>. </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">CodeSampleModal</span> = <span class="title function_">dynamic</span>(<span class="function">() =&gt;</span> <span class="title function_">import</span>(<span class="string">&#x27;../components/CodeSampleModal&#x27;</span>), &#123;</span><br><span class="line">  <span class="attr">ssr</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>包装组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  isModalOpen &amp;&amp; (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">CodeSampleModal</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">isOpen</span>=<span class="string">&#123;isModalOpen&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">closeModal</span>=<span class="string">&#123;()</span> =&gt;</span> setIsModalOpen(false)&#125;</span></span><br><span class="line"><span class="language-xml">    /&gt;</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvZGF0YS1mZXRjaGluZy9vdmVydmlldyNnZXRzZXJ2ZXJzaWRlcHJvcHMtc2VydmVyLXNpZGUtcmVuZGVyaW5n">Data Fetching: Overview | Next.js (nextjs.org)</span></p>
+</blockquote>
+<h3 id="getStaticProps"><a href="#getStaticProps" class="headerlink" title="getStaticProps"></a>getStaticProps</h3><ul>
+<li>生成静态页面路径</li>
+<li>在函数内部, 可以获取外部数据并将其作为变量传递到页面.</li>
+<li>开发模式, 每个请求都会运行; 生产环境中，只在构建时运行.</li>
+<li>只能在<code>page</code> 文件中使用.(pages文件夹下的<code>.js</code>,<code>.jsx</code>,<code>.ts</code>,<code>.tsx</code>文件)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Home</span>(<span class="params">props</span>) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Get external data from the file system, API, DB, etc.</span></span><br><span class="line">  <span class="keyword">const</span> data = ...</span><br><span class="line"></span><br><span class="line">  <span class="comment">// The value of the `props` key will be</span></span><br><span class="line">  <span class="comment">//  passed to the `Home` component</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: ...</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>从<code>API</code>获取数据</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getSortedPostsData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Instead of the file system,</span></span><br><span class="line">  <span class="comment">// fetch post data from an external API endpoint</span></span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;..&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从数据库获取数据</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> someDatabaseSDK <span class="keyword">from</span> <span class="string">&#x27;someDatabaseSDK&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> databaseClient = someDatabaseSDK.<span class="title function_">createClient</span>(...)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getSortedPostsData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Instead of the file system,</span></span><br><span class="line">  <span class="comment">// fetch post data from a database</span></span><br><span class="line">  <span class="keyword">return</span> databaseClient.<span class="title function_">query</span>(<span class="string">&#x27;SELECT posts...&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getStaticProps-1"><a href="#getStaticProps-1" class="headerlink" title="getStaticProps"></a>getStaticProps</h3><ul>
+<li>生成静态页面内容</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: &#123;&#125;, <span class="comment">// will be passed to the page component as props</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getServerSideProps"><a href="#getServerSideProps" class="headerlink" title="getServerSideProps"></a>getServerSideProps</h3><ul>
+<li>服务器端渲染数据, 每个请求都会运行</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvZGF0YS1mZXRjaGluZy9vdmVydmlldyNnZXRzZXJ2ZXJzaWRlcHJvcHMtc2VydmVyLXNpZGUtcmVuZGVyaW5n">Data Fetching: Overview | Next.js (nextjs.org)</span></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getServerSideProps</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: &#123;</span><br><span class="line">      <span class="comment">// props for your component</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SWR"><a href="#SWR" class="headerlink" title="SWR"></a>SWR</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9zd3IudmVyY2VsLmFwcC96aC1DTg==">用于数据请求的 React Hooks 库 – SWR</span></p>
+</blockquote>
+<ul>
+<li>使用 SWR，组件将会<strong>不断地</strong>、<strong>自动</strong>获得最新数据流。</li>
+<li>UI 也会一直保持<strong>快速响应</strong>。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> useSWR <span class="keyword">from</span> <span class="string">&#x27;swr&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Profile</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; data, error &#125; = <span class="title function_">useSWR</span>(<span class="string">&#x27;/api/user&#x27;</span>, fetch);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (error) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>failed to load<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  <span class="keyword">if</span> (!data) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>loading...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hello &#123;data.name&#125;!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="API-Routes"><a href="#API-Routes" class="headerlink" title="API Routes"></a>API Routes</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYXBpLXJvdXRlcy9pbnRyb2R1Y3Rpb24=">API Routes: Introduction | Next.js (nextjs.org)</span></p>
+</blockquote>
+<p>pages&#x2F;api&#x2F;hello.js - <span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDozMDAwL2FwaS9oZWxsbw==">localhost:3000&#x2F;api&#x2F;hello</span></p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">export <span class="keyword">default</span> <span class="keyword">function</span> <span class="keyword">handler</span>(req, res) &#123;</span><br><span class="line">  res.status(<span class="number">200</span>).json(&#123; <span class="type">text</span>: <span class="string">&#x27;Hello&#x27;</span> &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>req</code> 是 http. IncomingMessage 的一个实例，加上一些预构建的中间件。</li>
+<li><code>res</code> 是 http. ServerResponse 的一个实例，外加一些 helper 函数。</li>
+</ul>
+<h2 id="搜索引擎优化"><a href="#搜索引擎优化" class="headerlink" title="搜索引擎优化"></a>搜索引擎优化</h2><h3 id="谷歌爬虫工作流"><a href="#谷歌爬虫工作流" class="headerlink" title="谷歌爬虫工作流"></a>谷歌爬虫工作流</h3><p><img data-src="https://img.owq.world/2022/12/1752-ce9f3e.png"></p>
+<ol>
+<li><p><strong>Find URLs</strong> - 查找URL 从站点地图(XML), 页面链接等.</p>
+</li>
+<li><p><strong>Add to Crawl Queue</strong> - 添加到爬取队列等待爬取.</p>
+</li>
+<li><p><strong>HTTP Request</strong> - 发送请求URL, 根据响应状态码做不同的处理.</p>
+<ul>
+<li><p>200 - 请求成功</p>
+</li>
+<li><p>301&#x2F;308 - 永久重定向 308为推荐的处理(不允许更改请求方法)</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  pages/about.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">redirect</span>: &#123;</span><br><span class="line">      <span class="attr">destination</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">      <span class="attr">permanent</span>: <span class="literal">true</span>, <span class="comment">// triggers 308</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>302 - 临时重定向</p>
+</li>
+<li><p>404 - 不存在页面<br>指定返回 404 状态码</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params">context</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">notFound</span>: <span class="literal">true</span>, <span class="comment">// triggers 404</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定制 404 页面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pages/404.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Custom404</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>404 - Page Not Found<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>410 - 永久删除的内容(通知爬虫不再抓取)</p>
+</li>
+<li><p>500 - 服务器错误<br>定制 500 页面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pages/500.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Custom500</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>500 - Server-side error occurred<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>503 - 预计网站会关闭一段时间时(可以保持排名)</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Render Queue</strong> - 页面存在<code>JavaScript</code>内容 添加到渲染队列(需要更长的时间).</p>
+</li>
+<li><p><strong>Ready to be indexed</strong> - 满足条件则添加索引到数据库.</p>
+</li>
+</ol>
+<h3 id="robots-txt-文件"><a href="#robots-txt-文件" class="headerlink" title="robots.txt 文件"></a>robots.txt 文件</h3><p>直接放在项目根目录即可</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">//robots.txt</span><br><span class="line"></span><br><span class="line"># Block all crawlers for /accounts</span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: /accounts</span><br><span class="line"></span><br><span class="line"># Allow all crawlers</span><br><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="站点地图-Sitemaps"><a href="#站点地图-Sitemaps" class="headerlink" title="站点地图 - Sitemaps"></a>站点地图 - Sitemaps</h3><ul>
+<li>方便爬取</li>
+<li>有丰富内容的站点必备</li>
+</ul>
+<p>使用 <code>getServerSideProps</code> 动态生成</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//pages/sitemap.xml.js</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">EXTERNAL_DATA_URL</span> = <span class="string">&#x27;https://jsonplaceholder.typicode.com/posts&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generateSiteMap</span>(<span class="params">posts</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="string">   &lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;</span></span><br><span class="line"><span class="string">     &lt;!--We manually set the two URLs we know already--&gt;</span></span><br><span class="line"><span class="string">     &lt;url&gt;</span></span><br><span class="line"><span class="string">       &lt;loc&gt;https://jsonplaceholder.typicode.com&lt;/loc&gt;</span></span><br><span class="line"><span class="string">     &lt;/url&gt;</span></span><br><span class="line"><span class="string">     &lt;url&gt;</span></span><br><span class="line"><span class="string">       &lt;loc&gt;https://jsonplaceholder.typicode.com/guide&lt;/loc&gt;</span></span><br><span class="line"><span class="string">     &lt;/url&gt;</span></span><br><span class="line"><span class="string">     <span class="subst">$&#123;posts</span></span></span><br><span class="line"><span class="subst"><span class="string">       .map((&#123; id &#125;) =&gt; &#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">         <span class="keyword">return</span> <span class="string">`</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">       &lt;url&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">           &lt;loc&gt;<span class="subst">$&#123;<span class="string">`<span class="subst">$&#123;EXTERNAL_DATA_URL&#125;</span>/<span class="subst">$&#123;id&#125;</span>`</span>&#125;</span>&lt;/loc&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">       &lt;/url&gt;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">     `</span>;</span></span></span><br><span class="line"><span class="subst"><span class="string">       &#125;)</span></span></span><br><span class="line"><span class="subst"><span class="string">       .join(<span class="string">&#x27;&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">   &lt;/urlset&gt;</span></span><br><span class="line"><span class="string"> `</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">SiteMap</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// getServerSideProps will do the heavy lifting</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getServerSideProps</span>(<span class="params">&#123; res &#125;</span>) &#123;</span><br><span class="line">  <span class="comment">// We make an API call to gather the URLs for our site</span></span><br><span class="line">  <span class="keyword">const</span> request = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="variable constant_">EXTERNAL_DATA_URL</span>);</span><br><span class="line">  <span class="keyword">const</span> posts = <span class="keyword">await</span> request.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// We generate the XML sitemap with the posts data</span></span><br><span class="line">  <span class="keyword">const</span> sitemap = <span class="title function_">generateSiteMap</span>(posts);</span><br><span class="line"></span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/xml&#x27;</span>);</span><br><span class="line">  <span class="comment">// we send the XML to the browser</span></span><br><span class="line">  res.<span class="title function_">write</span>(sitemap);</span><br><span class="line">  res.<span class="title function_">end</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: &#123;&#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">SiteMap</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="特定的元标签-Special-Meta-Tags"><a href="#特定的元标签-Special-Meta-Tags" class="headerlink" title="特定的元标签 - Special Meta Tags"></a>特定的元标签 - Special Meta Tags</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vc2VhcmNoL2RvY3MvYWR2YW5jZWQvcm9ib3RzL3JvYm90c19tZXRhX3RhZyNkaXJlY3RpdmVz">https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives</span></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Head</span> <span class="keyword">from</span> <span class="string">&#x27;next/head&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">IndexPage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Meta Tag Example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;google&quot;</span> <span class="attr">content</span>=<span class="string">&quot;nositelinkssearchbox&quot;</span> <span class="attr">key</span>=<span class="string">&quot;sitelinks&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;google&quot;</span> <span class="attr">content</span>=<span class="string">&quot;notranslate&quot;</span> <span class="attr">key</span>=<span class="string">&quot;notranslate&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Here we show some meta tags off!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">IndexPage</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="规范标签-Canonical-Tags"><a href="#规范标签-Canonical-Tags" class="headerlink" title="规范标签 - Canonical Tags"></a>规范标签 - Canonical Tags</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2xlYXJuL3Nlby9jcmF3bGluZy1hbmQtaW5kZXhpbmcvY2Fub25pY2Fs">What are Canonical Tags? - Crawling and Indexing | Learn Next.js (nextjs.org)</span></p>
+</blockquote>
+<h2 id="渲染和排名-Rendering-and-Ranking"><a href="#渲染和排名-Rendering-and-Ranking" class="headerlink" title="渲染和排名 - Rendering and Ranking"></a>渲染和排名 - Rendering and Ranking</h2><h3 id="渲染策略-Rendering-Strategies"><a href="#渲染策略-Rendering-Strategies" class="headerlink" title="渲染策略 - Rendering Strategies"></a>渲染策略 - Rendering Strategies</h3><ul>
+<li><p><strong>静态站点生成(SSG)</strong> - <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvcGFnZXMjc3RhdGljLWdlbmVyYXRpb24tcmVjb21tZW5kZWQ=">Static site generation</span><br>预渲染页面, 在构建时生成HTML, 有助于页面性能提升.</p>
+</li>
+<li><p><strong>服务器端呈现(SSR)</strong> - <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvcGFnZXMjc2VydmVyLXNpZGUtcmVuZGVyaW5n">Server-Side Rendering</span><br>也是预渲染页面, 不同是在每次请求时生成, 这对于具有非常动态的页面非常有用.</p>
+</li>
+<li><p><strong>增量静态再生(ISR)</strong> - <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvZGF0YS1mZXRjaGluZyNpbmNyZW1lbnRhbC1zdGF0aWMtcmVnZW5lcmF0aW9u">Incremental Static Regeneration</span><br>可以在构建站点之后创建或更新静态页面, 适合拥有大量的页面的网站, 在扩展到数百万页面的同时保留静态的好处。</p>
+</li>
+<li><p><strong>客户端呈现(CSR)</strong> - <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnL2RvY3MvYmFzaWMtZmVhdHVyZXMvZGF0YS1mZXRjaGluZyNmZXRjaGluZy1kYXRhLW9uLXRoZS1jbGllbnQtc2lkZQ==">Client-Side Rendering</span><br>使用 <code>JavaScript</code> 在浏览器中完全渲染网站, 不利于搜索引擎, 适用于数据量大的仪表板、账户页面或任何不需要出现在任何搜索引擎索引中的页面。</p>
+</li>
+</ul>
+<h3 id="网址结构-URL-Structure"><a href="#网址结构-URL-Structure" class="headerlink" title="网址结构 - URL Structure"></a>网址结构 - URL Structure</h3><ul>
+<li><p><strong>使 URL 具有语义</strong><br>如: <a target="_blank" rel="noopener" href="https://nextjs.org/learn/basics/create-nextjs-app"><code>/learn/basics/create-nextjs-app</code></a> 比 <code>/learn/course-1/lesson-1</code> 写法更好.</p>
+</li>
+<li><p>逻辑性和一致性<br>如, 对路径分组, 产品放产品路径下.</p>
+</li>
+<li><p>使用关键词<br>如: Next文章URL中包含 <code>next</code> 关键字.</p>
+</li>
+<li><p>不使用参数构建 URL</p>
+<p>大多数情况下，它们不具有语义，搜索引擎可能会混淆它们，从而降低它们在搜索结果中的排名.</p>
+</li>
+</ul>
+<h3 id="元数据-Metadata"><a href="#元数据-Metadata" class="headerlink" title="元数据 - Metadata"></a>元数据 - Metadata</h3><ul>
+<li><strong>标题 - Title</strong><br>最重要的 SEO 元素之一.</li>
+<li>描述 - Description<br>不影响排名, 但影响用户点击率.</li>
+<li>打开图表 - <span class="exturl" data-url="aHR0cHM6Ly9vZ3AubWUv">Open Graph protocol</span><br>用于添加分享时内容丰富程度, 不影响排面, 但有利于点击.</li>
+</ul>
+<p><strong>Next.js 中的例子:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Head</span> <span class="keyword">from</span> <span class="string">&#x27;next/head&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">IndexPage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Cool Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Checkout our cool page&quot;</span> <span class="attr">key</span>=<span class="string">&quot;desc&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">&quot;og:title&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Social Title for Cool Page&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">property</span>=<span class="string">&quot;og:description&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">content</span>=<span class="string">&quot;And a social description for our cool page&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">meta</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">property</span>=<span class="string">&quot;og:image&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">content</span>=<span class="string">&quot;https://example.com/images/cool-page.jpg&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Cool Page<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a cool page. It has lots of cool content!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">IndexPage</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结构化数据-Structured-Data"><a href="#结构化数据-Structured-Data" class="headerlink" title="结构化数据 - Structured Data"></a>结构化数据 - Structured Data</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9zY2hlbWEub3JnLw==">schema.org</span></p>
+</blockquote>
+<h3 id="网站指标"><a href="#网站指标" class="headerlink" title="网站指标"></a>网站指标</h3><blockquote>
+<p> <span class="exturl" data-url="aHR0cHM6Ly93ZWIuZGV2L2kxOG4vemgvdml0YWxzLw==">Web 指标</span><br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuY2hyb21lLmNvbS9kb2NzL2NydXgv">Chrome UX Report - Chrome Developers</span></p>
+</blockquote>
+<ul>
+<li><strong><span class="exturl" data-url="aHR0cHM6Ly93ZWIuZGV2L2xjcC8=">Largest Contentful Paint (LCP)</span></strong> ：最大内容绘制，测量<em>加载</em>性能。为了提供良好的用户体验，LCP 应在页面首次开始加载后的<strong>2.5 秒</strong>内发生。</li>
+<li><strong><span class="exturl" data-url="aHR0cHM6Ly93ZWIuZGV2L2ZpZC8=">First Input Delay (FID)</span></strong> ：首次输入延迟，测量<em><strong>交互性</strong></em>。为了提供良好的用户体验，页面的 FID 应为<strong>100 毫秒</strong>或更短。</li>
+<li><strong><span class="exturl" data-url="aHR0cHM6Ly93ZWIuZGV2L2Nscy8=">Cumulative Layout Shift (CLS)</span></strong> ：累积布局偏移，测量<em><strong>视觉稳定性</strong></em>。为了提供良好的用户体验，页面的 CLS 应保持在 <strong>0.1.</strong> 或更少。</li>
+</ul>
+<p>使用谷歌开发者工具 <strong>Lighthouse</strong> 生成分析报告</p>
+<ol>
+<li>打开隐私窗口</li>
+<li>进入 <span class="exturl" data-url="aHR0cHM6Ly9uZXh0anMub3JnLw==">https://nextjs.org/</span></li>
+<li>按 <code>F12</code> 调用开发者工具 -&gt; 打开 <code>Lighthouse</code>选项卡 -&gt; 点击<code>Analyze page load</code> 按钮<br><img data-src="https://img.owq.world/2022/12/2129-b070ef.png"></li>
+<li>等待分析完成, 出现分析结果.<br><img data-src="https://img.owq.world/2022/12/2131-306334.png"></li>
+</ol>
+<h3 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h3><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vc3BlZWQvcGFnZXNwZWVkL2luc2lnaHRzLw==">PageSpeed Insights</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vd2ViL3Rvb2xzL2Nocm9tZS11c2VyLWV4cGVyaWVuY2UtcmVwb3J0">Chrome User Experience Report</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vd2VibWFzdGVycy9hbnN3ZXIvOTIwNTUyMA==">Search Console</span></li>
+</ul>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p>...</p>
+<h2 id="使用vercel部署项目"><a href="#使用vercel部署项目" class="headerlink" title="使用vercel部署项目"></a>使用vercel部署项目</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLz91dG1fc291cmNlPW5leHQtc2l0ZSZhbXA7dXRtX21lZGl1bT1sZWFybnBhZ2VzJmFtcDt1dG1fY2FtcGFpZ249bmV4dC13ZWJzaXRl">https://vercel.com/?utm_source=next-site&amp;utm_medium=learnpages&amp;utm_campaign=next-website</span></p>
+</blockquote>
+
+    </div>
+
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
+
+      </div>
+    
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.owq.world/nextjs/" title="Next.js 开发入门指南">https://www.owq.world/nextjs/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/React/" rel="tag"><i class="fa fa-tag"></i> React</a>
+              <a href="/tags/Next-js/" rel="tag"><i class="fa fa-tag"></i> Next.js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/react-core-concepts/" rel="next" title="React 核心概念">
+      React 核心概念 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          目录
+        </li>
+        <li class="sidebar-nav-overview">
+          概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3"><span class="nav-text">简单了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE"><span class="nav-text">运行项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6"><span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8"><span class="nav-text">常用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86"><span class="nav-text">日期处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8A%A8%E6%80%81%E5%AF%BC%E5%85%A5"><span class="nav-text">组件动态导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96"><span class="nav-text">数据获取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#getStaticProps"><span class="nav-text">getStaticProps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getStaticProps-1"><span class="nav-text">getStaticProps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getServerSideProps"><span class="nav-text">getServerSideProps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SWR"><span class="nav-text">SWR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API-Routes"><span class="nav-text">API Routes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96"><span class="nav-text">搜索引擎优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%B7%E6%AD%8C%E7%88%AC%E8%99%AB%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-text">谷歌爬虫工作流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#robots-txt-%E6%96%87%E4%BB%B6"><span class="nav-text">robots.txt 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE-Sitemaps"><span class="nav-text">站点地图 - Sitemaps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%AE%9A%E7%9A%84%E5%85%83%E6%A0%87%E7%AD%BE-Special-Meta-Tags"><span class="nav-text">特定的元标签 - Special Meta Tags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E6%A0%87%E7%AD%BE-Canonical-Tags"><span class="nav-text">规范标签 - Canonical Tags</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E5%92%8C%E6%8E%92%E5%90%8D-Rendering-and-Ranking"><span class="nav-text">渲染和排名 - Rendering and Ranking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E7%AD%96%E7%95%A5-Rendering-Strategies"><span class="nav-text">渲染策略 - Rendering Strategies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E5%9D%80%E7%BB%93%E6%9E%84-URL-Structure"><span class="nav-text">网址结构 - URL Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE-Metadata"><span class="nav-text">元数据 - Metadata</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE-Structured-Data"><span class="nav-text">结构化数据 - Structured Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E6%8C%87%E6%A0%87"><span class="nav-text">网站指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="nav-text">测试工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeScript"><span class="nav-text">TypeScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8vercel%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE"><span class="nav-text">使用vercel部署项目</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="OWQ"
+      src="/images/avatar.webp">
+  <p class="site-author-name" itemprop="name">OWQ</p>
+  <div class="site-description" itemprop="description">爱编程, 懂设计, 喜折腾</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnF3cWlvd29Ab3V0bG9vay5jb20=" title="E-Mail → mailto:qwqiowo@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github-alt" fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+
+<!-- hitokoto -->
+<strong>
+<div id="hitokoto_wrap">
+    <div id="hitokoto_text">&nbsp;&nbsp;&nbsp;&nbsp;抬头望天，低头走路。</div>
+    <div id="hitokoto_from">——无名</div>
+</div>
+</strong>
+
+<script>
+    let hitokoto_wrap = document.getElementById("hitokoto_wrap");
+    let hitokoto_text = document.getElementById('hitokoto_text')
+    let hitokoto_from = document.getElementById('hitokoto_from');
+    async function loadHitokoto(){
+        // Fetch API
+        // 调用一言接口 根据需求配置
+        // fetch('https://v1.hitokoto.cn?min_length=12')
+        fetch('https://international.v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            hitokoto_text.innerText = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.hitokoto;
+            hitokoto_from.innerText = "——" + data.from + '\xa0';
+        })
+        .catch(console.error)
+    }
+    loadHitokoto();
+
+    hitokoto_wrap.addEventListener("click", async function(e){
+        loadHitokoto();
+        // 去除字符串前后空格
+        let content = (hitokoto_text.innerText + hitokoto_from.innerText).trim()
+        // Clipboard API
+        // 复制一言内容到剪贴板
+        navigator.clipboard.writeText(content)
+        .then(console.log(content))
+        .catch(console.error)
+    });
+</script>
+<script>
+    !function(e, t, a) {
+        var cr = ["255, 255, 228", "0, 119, 194", "51, 226, 209", "126, 211, 33", "251, 186, 192", "253, 84, 105", "245, 235, 122", "124, 231, 208", "145, 217, 122", "173, 127, 168", "224, 108, 117", "223, 99, 65"]
+        function r() {
+            for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+            requestAnimationFrame(r)
+        }
+        function n() {
+            var t = "function" == typeof e.onclick && e.onclick;
+            hitokoto_wrap.addEventListener("click", function(e) {
+                t && t(),
+                    o(e)
+            });
+        }
+        function c() {
+            return "rgb(" + cr[Math.floor(Math.random()*cr.length)] + ")"
+            // return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
+        }
+        function o(e) {
+            var a = t.createElement("div");
+            a.className = "heart",
+                s.push({
+                    el: a,
+                    x: e.clientX - 5,
+                    y: e.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: c()
+                }),
+                t.body.appendChild(a)
+        }
+        function i(e) {
+            var a = t.createElement("style");
+            a.type = "text/css";
+            try {
+                a.appendChild(t.createTextNode(e))
+            } catch(t) {
+                a.styleSheet.cssText = e
+            }
+            t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+            function(e) {
+                setTimeout(e, 1e3 / 60)
+            },
+            i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+            n(),
+            r()
+    } (window, document);
+</script>
+      </div>
+
+      <hr class="hr-solid">
+    </div>
+
+
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><span class="exturl" data-url="aHR0cHM6Ly9iZWlhbi5taWl0Lmdvdi5jbg==">粤ICP备2021144316号 </span>
+      <img src="/images/gongan.png" style="display: inline-block;"><span class="exturl" data-url="aHR0cDovL3d3dy5iZWlhbi5nb3YuY24vcG9ydGFsL3JlZ2lzdGVyU3lzdGVtSW5mbz9yZWNvcmRjb2RlPTQ0MDMwNTAyMDA4Mzk2">粤公网安备 44030502008396号 </span>
+  </div>
+
+<div class="copyright">
+  <span id="RunTime"></span>
+  <!-- 网站运行时间的设置 -->
+  <script>
+    var BootDate = new Date("2021/08/01 00:00:00");
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " d " + RunHours + " h " + RunMinutes + " m " + RunSeconds + " s ";
+      document.getElementById(id).innerHTML = "This blog has running: " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OWQ</span>
+
+<div class="busuanzi-count">
+
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">152k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:18</span>
+</div>
+
+</div>
+  <script src="/js/ribbonDynamic.js"></script>
+        
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.bg-container',
+    '#signature .container',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '472553d47287225fff92',
+      clientSecret: 'a2e30c338a55dfc350329833114d277bcfa79a6e',
+      repo        : 'owq-1777.github.io',
+      owner       : 'owq-1777',
+      admin       : ['owq-1777'],
+      id          : '38af8c282bce37d94cf527a14971c3bc',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
+</html>
+
+<script type="text/javascript" src="/js/src/funny_title.js"></script>
