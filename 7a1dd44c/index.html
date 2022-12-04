@@ -25,21 +25,30 @@
     var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="爱编程, 懂设计, 喜折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny was born">
-<meta property="og:url" content="https://www.owq.world/tags/WordPress/index.html">
+  <meta name="description" content="使用 acme.sh 快速部署 SSL 证书并设置自动续期, 不再担心因证书过期网站被提示风险&#x3D;￣ω￣&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx 使用 acme.sh 配置 SSL 证书">
+<meta property="og:url" content="https://www.owq.world/7a1dd44c/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="爱编程, 懂设计, 喜折腾">
+<meta property="og:description" content="使用 acme.sh 快速部署 SSL 证书并设置自动续期, 不再担心因证书过期网站被提示风险&#x3D;￣ω￣&#x3D;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.owq.world/2022/12/2157-8f7737.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/0019-d989ae.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/2253-c32b5a.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/2254-663bd1.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/2252-9de64e.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/2219-a8b050.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/2329-6c2aff.png">
+<meta property="og:image" content="https://img.owq.world/2022/12/2330-2892ba.png">
+<meta property="article:published_time" content="2022-12-04T16:15:25.000Z">
+<meta property="article:modified_time" content="2022-12-04T16:31:14.723Z">
 <meta property="article:author" content="OWQ">
-<meta property="article:tag" content="owq">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="code">
-<meta property="article:tag" content="technique sharing">
+<meta property="article:tag" content="Nginx">
+<meta property="article:tag" content="SSL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.owq.world/2022/12/2157-8f7737.png">
 
-<link rel="canonical" href="https://www.owq.world/tags/WordPress/">
+<link rel="canonical" href="https://www.owq.world/7a1dd44c/">
 
 
 <script id="page-configurations">
@@ -47,12 +56,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: WordPress | Sunny was born</title>
+  <title>Nginx 使用 acme.sh 配置 SSL 证书 | Sunny was born</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM06B0RFS"></script>
     <script data-pjax>
@@ -206,10 +215,44 @@
 
 <div id="signature">
   <div class="container">
-        <header class="site-heading">
-          <h1>Sunny was born</h1>
-          <span class="subheading">心中有丘壑, 眉目做山河</span>
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>Nginx 使用 acme.sh 配置 SSL 证书</h1>
+          <h2 class="subheading">使用 acme.sh 快速部署 SSL 证书并设置自动续期, 不再担心因证书过期网站被提示风险=￣ω￣=</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+
+            <time title="2022-12-05 00:15:25" itemprop="dateCreated datePublished" datetime="2022-12-05T00:15:25+08:00">2022-12-05</time>
+            
+
+          </span>
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>2.1k</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>2 min</span>
+          </span>
+
+
         </header>
+
+      
 
   </div>
 </div>
@@ -247,57 +290,148 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">WordPress
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/7a1dd44c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><ul>
+<li>纯<code>Shell</code>语言编写的ACME协议客户端.</li>
+<li>一个脚本即可自动颁发，续订和安装证书.</li>
+<li>支持在<code>Docker</code>内使用，且支持<code>IPv6</code>.</li>
+</ul>
+<h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh -s email=&lt;你的邮箱&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2022/12/2157-8f7737.png"></p>
+<p><em>PS: 这里不使用<code>--standalone</code>模式生成证书, 直接忽略警告即可.</em><br><em>PPS: <code>-s email=&lt;你的邮箱&gt;</code> 不用加也可以运行, 但推荐加会更好.</em></p>
+<h2 id="测试命令"><a href="#测试命令" class="headerlink" title="测试命令"></a>测试命令</h2><p>重新进入下终端(输入<code>bash</code>或<code>zsh</code>)刷新下环境变量, 然后输入<code>acme.sh</code>命令测试, 正常输出即可.</p>
+<p><img data-src="https://img.owq.world/2022/12/0019-d989ae.png"></p>
+<p><em>PS: 如提示无相应命令则进入 <code>~/.acme.sh</code> 目录下, 使用路径执行<code>./acme.sh</code></em></p>
+<hr>
+<blockquote>
+<p>下文使用 <code>memos.owq.world</code> 域名进行演示, 配置时注意替换成自己的域名.</p>
+</blockquote>
+<h2 id="配置Nginx转发"><a href="#配置Nginx转发" class="headerlink" title="配置Nginx转发"></a>配置Nginx转发</h2><blockquote>
+<p>相关资料 -&gt; <a href="">Nginx 安装升级教程</a></p>
+</blockquote>
+<p>使用nginx模式生成证书, 添加域名的80端口配置, 示例配置如下:</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  memos.owq.world;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nginx模式生成证书"><a href="#Nginx模式生成证书" class="headerlink" title="Nginx模式生成证书"></a>Nginx模式生成证书</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --issue --nginx -d memos.owq.world</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2022/12/2253-c32b5a.png"></p>
+<p>最后会出现证书的私钥和认证文件输出.<br><img data-src="https://img.owq.world/2022/12/2254-663bd1.png"></p>
+<h2 id="查看证书信息"><a href="#查看证书信息" class="headerlink" title="查看证书信息"></a>查看证书信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --info -d memos.owq.world</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改CA"><a href="#修改CA" class="headerlink" title="修改CA"></a>修改CA</h2><p>如果生成失败, 类似下图, 可以尝试修改CA发布机构后重试.</p>
+<p><img data-src="https://img.owq.world/2022/12/2252-9de64e.png"></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --set-default-ca  --server letsencrypt</span><br><span class="line">acme.sh --set-default-ca  --server zerossl	<span class="comment"># 这是默认的CA</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2022/12/2219-a8b050.png"></p>
+<h2 id="自动续期证书"><a href="#自动续期证书" class="headerlink" title="自动续期证书"></a>自动续期证书</h2><p>创建存放证书目录, 注意<code>Nginx</code><strong>根目录</strong>要对应上.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /usr/local/nginx/certs/memos.owq.world</span><br></pre></td></tr></table></figure>
+
+<p>配置<code>Nginx SSL</code>转发, 替换证书中<code>memos.owq.world</code>域名即可.</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># HTTPS server</span></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span>  memos.owq.world;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">ssl_certificate</span>      certs/memos.owq.world/fullchain.cer;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span>  certs/memos.owq.world/cert.key;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">ssl_session_cache</span>    shared:SSL:<span class="number">1m</span>;</span><br><span class="line">    <span class="attribute">ssl_session_timeout</span>  <span class="number">5m</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">ssl_ciphers</span>  HIGH:!aNULL:!MD5;</span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span>  <span class="literal">on</span>;</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># 根据网站配置</span></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-Proto  <span class="variable">$scheme</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后配置<code>acme.sh</code>, 注意<code>--reloadcmd</code>为<code>nginx</code>重启命令, 每次续期证书后都会重启更新配置.</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">acme.sh --install-cert -d memos.owq.world \</span><br><span class="line">--key-<span class="keyword">file</span>       <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>certs<span class="regexp">/memos.owq.world/</span>cert.key  \</span><br><span class="line">--fullchain-<span class="keyword">file</span> <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>certs<span class="regexp">/memos.owq.world/</span>fullchain.cer \</span><br><span class="line">--reloadcmd     <span class="string">&quot;service nginx force-reload&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2022/12/2329-6c2aff.png"></p>
+<p>这时候看看证书存放目录, <code>acme.sh</code>已经把文件移动过来并重命名了.<br><img data-src="https://img.owq.world/2022/12/2330-2892ba.png"></p>
+<p>查看计划任务</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">crontab -l</span></span><br></pre></td></tr></table></figure>
+
+<p><code>acme.sh</code>会创建了一条续期任务, 每次执行会续期配置中的证书, 默认是每30天续期一次, 每一次是续期3个月.</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">30 </span><span class="number">0</span> * * * <span class="string">&quot;/root/.acme.sh&quot;</span>/acme.sh --cron --home <span class="string">&quot;/root/.acme.sh&quot;</span> &gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<p><em>PS: 注意查看<a href="/crontab"><code>crontab</code></a>服务是否正常运行哦</em></p>
+<h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><p>一般问题都能谷歌到, 谷歌不到的 -&gt; <strong>删除 <code>~/.acme.sh</code> 目录, 重新安装一下, 邮箱注意变换,</strong> 这能解决大多数问题.</p>
+<hr>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FjbWVzaC1vZmZpY2lhbC9hY21lLnNoL3dpa2k=">https://github.com/acmesh-official/acme.sh/wiki</span></p>
+</blockquote>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-06-25T16:11:15+08:00"
-              content="2022-06-25">
-          06-25
-        </time>
       </div>
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/43259a0f/" itemprop="url">
-            <span itemprop="name">WordPress 站点恶意重定向解决记录</span>
-          </a>
-      </div>
+    
+    
+    
+        
 
-    </header>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.owq.world/7a1dd44c/" title="Nginx 使用 acme.sh 配置 SSL 证书">https://www.owq.world/7a1dd44c/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
+              <a href="/tags/SSL/" rel="tag"><i class="fa fa-tag"></i> SSL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/nextjs/" rel="next" title="Next.js 开发入门指南">
+      Next.js 开发入门指南 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
   
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -344,6 +478,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3"><span class="nav-text">简单了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><span class="nav-text">安装脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4"><span class="nav-text">测试命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AENginx%E8%BD%AC%E5%8F%91"><span class="nav-text">配置Nginx转发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx%E6%A8%A1%E5%BC%8F%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6"><span class="nav-text">Nginx模式生成证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%AF%81%E4%B9%A6%E4%BF%A1%E6%81%AF"><span class="nav-text">查看证书信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9CA"><span class="nav-text">修改CA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F%E8%AF%81%E4%B9%A6"><span class="nav-text">自动续期证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87"><span class="nav-text">疑难杂症</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -694,6 +829,25 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '472553d47287225fff92',
+      clientSecret: 'a2e30c338a55dfc350329833114d277bcfa79a6e',
+      repo        : 'owq-1777.github.io',
+      owner       : 'owq-1777',
+      admin       : ['owq-1777'],
+      id          : '5a7ef8c45d8bef628d95b05fd9892c61',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
