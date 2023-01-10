@@ -29,6 +29,23 @@
 
 <p><img data-src="https://img.owq.world/2022/12/2253-c32b5a.png"></p>
 <p>最后会出现证书的私钥和认证文件输出.<br><img data-src="https://img.owq.world/2022/12/2254-663bd1.png"></p>
+<hr>
+<h3 id="使用-SSL-com-生成证书"><a href="#使用-SSL-com-生成证书" class="headerlink" title="使用 SSL.com 生成证书"></a>使用 <span class="exturl" data-url="aHR0cHM6Ly93d3cuc3NsLmNvbS8=">SSL.com</span> 生成证书</h3><blockquote>
+<p>适用证书认证失败的情况, 默认的服务商生成的证书会有些第三方服务认证不通过, 这时候换一个服务商生成一般就解决了.</p>
+</blockquote>
+<ul>
+<li><p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuc3NsLmNvbS8=">https://www.ssl.com/</span> 注册账户</p>
+</li>
+<li><p>进入API管理页面<br><img data-src="https://img.owq.world/2023/01/2006-df5e29.png"></p>
+</li>
+<li><p>获取对应<code>ACME Key</code>和<code>HMAC Key</code><br><img data-src="https://img.owq.world/2023/01/2008-59bbf9.png"></p>
+</li>
+<li><p><strong>设置登录</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --register-account --server ssl.com -m me@email.com</span><br><span class="line">	--eab-kid &lt;ACME Key&gt; --eab-hmac-key &lt;HMAC Key&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>生成证书</strong></p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span> <span class="attr">--server</span> ssl<span class="selector-class">.com</span> <span class="attr">--issue</span> <span class="attr">--nginx</span> -d memos<span class="selector-class">.owq</span>.world</span><br></pre></td></tr></table></figure></li>
+</ul>
 <h2 id="查看证书信息"><a href="#查看证书信息" class="headerlink" title="查看证书信息"></a>查看证书信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --info -d memos.owq.world</span><br></pre></td></tr></table></figure>
 
 <h2 id="修改CA"><a href="#修改CA" class="headerlink" title="修改CA"></a>修改CA</h2><p>如果生成失败, 类似下图, 可以尝试修改CA发布机构后重试.</p>
@@ -54,10 +71,15 @@
 <figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">30 </span><span class="number">0</span> * * * <span class="string">&quot;/root/.acme.sh&quot;</span>/acme.sh --cron --home <span class="string">&quot;/root/.acme.sh&quot;</span> &gt; /dev/null</span><br></pre></td></tr></table></figure>
 
 <p><em>PS: 注意查看<a href="/crontab"><code>crontab</code></a>服务是否正常运行哦</em></p>
-<h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><p>一般问题都能谷歌到, 谷歌不到的 -&gt; <strong>删除 <code>~/.acme.sh</code> 目录, 重新安装一下, 邮箱注意变换,</strong> 这能解决大多数问题.</p>
+<h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><ul>
+<li>重新生成新的证书时先删除 <code>/root/.acme.sh/域名</code> 证书文件夹.</li>
+<li>注意Nginx配置是否正确, 确保只有80端口的处理, 生成后再去修改.</li>
+<li>一般问题都能谷歌到, 谷歌不到的 -&gt; <strong>删除 <code>~/.acme.sh</code> 目录, 重新安装一下, 邮箱注意变换,</strong> 这能解决大多数问题.</li>
+</ul>
 <hr>
 <blockquote>
 <p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FjbWVzaC1vZmZpY2lhbC9hY21lLnNoL3dpa2k=">https://github.com/acmesh-official/acme.sh/wiki</span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FjbWVzaC1vZmZpY2lhbC9hY21lLnNoL3dpa2kvU1NMLmNvbS1DQQ==">https://github.com/acmesh-official/acme.sh/wiki/SSL.com-CA</span></p>
 </blockquote>
 ]]></content>
       <categories>
