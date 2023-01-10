@@ -41,10 +41,10 @@
 <li><p>获取对应<code>ACME Key</code>和<code>HMAC Key</code><br><img data-src="https://img.owq.world/2023/01/2008-59bbf9.png"></p>
 </li>
 <li><p><strong>设置登录</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --register-account --server ssl.com -m me@email.com</span><br><span class="line">	--eab-kid &lt;ACME Key&gt; --eab-hmac-key &lt;HMAC Key&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --register-account --server ssl.com -m me@email.com \</span><br><span class="line">	--eab-kid &lt;ACME Key&gt; --eab-hmac-key &lt;HMAC Key&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>生成证书</strong></p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span> <span class="attr">--server</span> ssl<span class="selector-class">.com</span> <span class="attr">--issue</span> <span class="attr">--nginx</span> -d memos<span class="selector-class">.owq</span>.world</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --server ssl.com --issue --nginx -d memos.owq.world</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="查看证书信息"><a href="#查看证书信息" class="headerlink" title="查看证书信息"></a>查看证书信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --info -d memos.owq.world</span><br></pre></td></tr></table></figure>
 

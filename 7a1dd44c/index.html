@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://img.owq.world/2022/12/2329-6c2aff.png">
 <meta property="og:image" content="https://img.owq.world/2022/12/2330-2892ba.png">
 <meta property="article:published_time" content="2022-12-04T16:15:25.000Z">
-<meta property="article:modified_time" content="2023-01-10T12:15:59.820Z">
+<meta property="article:modified_time" content="2023-01-10T12:23:25.290Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Nginx">
 <meta property="article:tag" content="SSL">
@@ -235,7 +235,7 @@
                     <i class="far fa-calendar-check"></i>
                   </span>
                   <span class="post-meta-item-text">Updated</span>
-                    <time title="2023-01-10 20:15:59" itemprop="dateModified" datetime="2023-01-10T20:15:59+08:00">2023-01-10</time>
+                    <time title="2023-01-10 20:23:25" itemprop="dateModified" datetime="2023-01-10T20:23:25+08:00">2023-01-10</time>
                   </span>
             
 
@@ -362,10 +362,10 @@
 <li><p>获取对应<code>ACME Key</code>和<code>HMAC Key</code><br><img data-src="https://img.owq.world/2023/01/2008-59bbf9.png"></p>
 </li>
 <li><p><strong>设置登录</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --register-account --server ssl.com -m me@email.com</span><br><span class="line">	--eab-kid &lt;ACME Key&gt; --eab-hmac-key &lt;HMAC Key&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --register-account --server ssl.com -m me@email.com \</span><br><span class="line">	--eab-kid &lt;ACME Key&gt; --eab-hmac-key &lt;HMAC Key&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>生成证书</strong></p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span> <span class="attr">--server</span> ssl<span class="selector-class">.com</span> <span class="attr">--issue</span> <span class="attr">--nginx</span> -d memos<span class="selector-class">.owq</span>.world</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --server ssl.com --issue --nginx -d memos.owq.world</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="查看证书信息"><a href="#查看证书信息" class="headerlink" title="查看证书信息"></a>查看证书信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">acme.sh --info -d memos.owq.world</span><br></pre></td></tr></table></figure>
 
