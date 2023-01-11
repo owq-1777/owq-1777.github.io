@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2023-01-10T12:23:25.290Z</updated>
+  <updated>2023-01-11T03:53:17.070Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.owq.world/7a1dd44c/"/>
     <id>https://www.owq.world/7a1dd44c/</id>
     <published>2022-12-04T16:15:25.000Z</published>
-    <updated>2023-01-10T12:23:25.290Z</updated>
+    <updated>2023-01-11T03:53:17.070Z</updated>
     
     
     <summary type="html">使用 acme.sh 快速部署 SSL 证书并设置自动续期, 不再担心因证书过期网站被提示风险=￣ω￣=</summary>
