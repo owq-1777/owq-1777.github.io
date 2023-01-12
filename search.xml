@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>初窥 NFT</title>
+    <url>/nft/</url>
+    <content><![CDATA[<h2 id="简要了解"><a href="#简要了解" class="headerlink" title="简要了解"></a>简要了解</h2><blockquote>
+<p>NFT，全称 <strong>Non-Fungible Token</strong>（非同质化代币），是一种架构在区块链技术上的，基于 <strong>ERC-721</strong>、ERC-1155 等通用标准的，不可复制、不可篡改、不可分割的加密数字权益证明。</p>
+</blockquote>
+<ul>
+<li>简单理解，NFT 就是一个去中心化的“数字资产或实物资产的数字所有权益书”。<br>就像是你在区块链世界中的“房产证”。</li>
+<li><strong>本质上是一个具有特殊属性的 Token，也就是代币。</strong></li>
+</ul>
+<h2 id="了解市场"><a href="#了解市场" class="headerlink" title="了解市场"></a>了解市场</h2><ul>
+<li>2021年被称为NFT的元年, 2021年3月，在佳士得的一场拍卖会上，数字艺术家 Beeple 的一件 NFT 作品以 6934 万美元的价格成交, 约合人民币 4.5 亿, 这也引发了之后的 NFT 热潮, 各行业巨头公司、知名艺术家、明星艺人等纷纷加入, NFT的价格屡创新高.</li>
+<li>根据NFT数据公司<a href="NonFungible.com">NonFungible.com</a>的市场报告, 2021年的NFT交易额超过 150 亿美元, 2022年也仍有百亿以上, 这是一个百亿美金级别的市场, 但值得注意的是, 2022下半年NFT交易量减少, 投机活动减少, 这说明市场正逐步稳定, 投机空间大大减低.</li>
+<li>全球最大的 NFT 交易市场 <span class="exturl" data-url="aHR0cHM6Ly9vcGVuc2VhLmlvLw==">OpenSea</span>, 光是2021年的交易额就要 140 亿美元, Opensea 从每一笔 NFT 买卖中抽取 2.5% 费用，光是收交易费，一年收了 3.5 亿美金， 20 多亿人民币, 放在市场缩水的今天也不容小觑.<br><img data-src="https://img.owq.world/2023/01/0039-9f4297.png"></li>
+</ul>
+<h2 id="著名项目"><a href="#著名项目" class="headerlink" title="著名项目"></a>著名项目</h2><h3 id="Everydays-The-First-5000-Days"><a href="#Everydays-The-First-5000-Days" class="headerlink" title="Everydays: The First 5000 Days"></a>Everydays: The First 5000 Days</h3><blockquote>
+<p>从 2007 年 5 月起，艺术家 Beeple 每天在网上创作和发布一件新的艺术作品。最终，耗费 5000 多天，用 5000 张作品图拼接成了这一幅作品, 这也就是那一幅拍卖出 6934 万美元的作品.</p>
+</blockquote>
+<p><img data-src="https://img.owq.world/2023/01/0043-f6920b.png"></p>
+<h3 id="CryptoPunks"><a href="#CryptoPunks" class="headerlink" title="CryptoPunks"></a>CryptoPunks</h3><blockquote>
+<p>Punks 被认为是世界上第一个真正意义上的 NFT 系列.</p>
+<p>这个系列 2017 年 6 月在以太坊链上发布, 由 1 万个不规则像素头像组成，每个头像都有独一无二的特征属性, 和男性&#x2F;女性&#x2F;僵尸&#x2F;猿猴&#x2F;外星人等不同类别，按类别和特征搭建起了一套稀缺性层级体系.</p>
+</blockquote>
+<p><img data-src="https://img.owq.world/2023/01/0051-ef660f.png"></p>
+<h3 id="Bored-Ape-Yacht-Club"><a href="#Bored-Ape-Yacht-Club" class="headerlink" title="Bored Ape Yacht Club"></a>Bored Ape Yacht Club</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ib3JlZGFwZXlhY2h0Y2x1Yi5jb20v">Bored Ape Yacht Club</span>, 简称 BAYC, 也就是著名的<strong>无聊猿</strong>.<br>无聊猿的母公司 Yuga Labs 目前是 NFT 市场上最顶级的公司, 前面提到的 CryptoPunks 也已经被他们收购。</p>
+<p>无聊猿 2017 年 4 月发布在以太坊链上，由 10000 个猿猴 NFT 组成。猿猴有 7 种类别特征，不同特征组合构成了不同的稀有度。</p>
+</blockquote>
+<p><img data-src="https://img.owq.world/2023/01/0059-728e7d.png"></p>
+<hr>
+<p>其它主流项目(蓝筹NFT - 价值高而且稳定的项目)</p>
+<ul>
+<li>Azuki - 红豆</li>
+<li>MAYC - 变异猿，是无聊猿生的系列</li>
+<li>CLONEX - RTFKT旗下的3DNFT, 被耐克收购</li>
+<li>Doodles - 卡通风格</li>
+<li>Moonbirds - 像素风格，俗称月鸟</li>
+<li>...</li>
+</ul>
+<h2 id="发行流程"><a href="#发行流程" class="headerlink" title="发行流程"></a>发行流程</h2><blockquote>
+<p>简单介绍下一个NFT从执行到发售的大致流程, 让我们对NFT有更全面的了解.</p>
+</blockquote>
+<ol>
+<li>推广项目<ol>
+<li>推特<ol>
+<li>发布项目报告&#x2F;预览图</li>
+<li>举办白名单活动<ol>
+<li>白名单相当于提前购买NFT的资格证明</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>开启 Discord 服务器<ol>
+<li>用来发布任务, 如: 邀请人, 提供美术作品等</li>
+<li>用户完成任务获取白名单资格</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>预售阶段<ol>
+<li>拥有白名单的用户优先铸造出NFT()</li>
+</ol>
+</li>
+<li>公售阶段<ol>
+<li>预售结束, 购买开放给大众</li>
+</ol>
+</li>
+<li>开图阶段(只有盲盒状态的NFT才有, 稀有度被隐藏)<ol>
+<li>公开NFT稀有度</li>
+<li>开图当天会大量交易</li>
+</ol>
+</li>
+<li>根据项目路线图进行发展<ol>
+<li>运作不同有可能价格狂跌或成为蓝筹NFT</li>
+</ol>
+</li>
+</ol>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li>Foresight news - <span class="exturl" data-url="aHR0cHM6Ly93d3cucGFuZXdzbGFiLmNvbS96aC9pbmRleC5odG1s">https://www.panewslab.com/zh/index.html</span></li>
+<li>区块链智库 - <span class="exturl" data-url="aHR0cHM6Ly9mb3Jlc2lnaHRuZXdzLnByby9hcnRpY2xl">https://foresightnews.pro/article</span></li>
+<li>NTF数据分析 - <span class="exturl" data-url="aHR0cHM6Ly9ub25mdW5naWJsZS5jb20v">https://NonFungible.com</span></li>
+<li>NFT交易市场 - <span class="exturl" data-url="aHR0cHM6Ly9vcGVuc2VhLmlvLw==">https://opensea.io/</span></li>
+</ul>
+]]></content>
+      <categories>
+        <category>视野分享</category>
+      </categories>
+      <tags>
+        <tag>web3</tag>
+        <tag>nft</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx 使用 acme.sh 配置 SSL 证书</title>
     <url>/7a1dd44c/</url>
     <content><![CDATA[<h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><ul>

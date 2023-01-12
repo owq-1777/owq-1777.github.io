@@ -1,3 +1,4 @@
+https://www.owq.world/nft/
 https://www.owq.world/7a1dd44c/
 https://www.owq.world/nextjs/
 https://www.owq.world/react-core-concepts/
@@ -94,10 +95,12 @@ https://www.owq.world/tags/git/
 https://www.owq.world/tags/pip/
 https://www.owq.world/tags/Android/
 https://www.owq.world/tags/adb/
-https://www.owq.world/tags/zsh/
 https://www.owq.world/tags/systemctl/
+https://www.owq.world/tags/zsh/
 https://www.owq.world/tags/WSL2/
 https://www.owq.world/tags/Kali-Linux/
+https://www.owq.world/tags/web3/
+https://www.owq.world/tags/nft/
 https://www.owq.world/tags/Algorithm/
 https://www.owq.world/tags/vsCode/
 https://www.owq.world/tags/NAT/
@@ -111,5 +114,6 @@ https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/
 https://www.owq.world/categories/%E5%8D%9A%E5%AE%A2%E5%AE%9A%E5%88%B6/
 https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/
 https://www.owq.world/categories/%E5%A5%BD%E8%BD%AF%E5%B7%A5%E5%85%B7/
+https://www.owq.world/categories/%E8%A7%86%E9%87%8E%E5%88%86%E4%BA%AB/
 https://www.owq.world/categories/%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95/
 https://www.owq.world/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
