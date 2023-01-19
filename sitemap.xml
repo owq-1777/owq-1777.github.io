@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.owq.world/bcd27009/</loc>
+    
+    <lastmod>2023-01-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.owq.world/docker/</loc>
     
     <lastmod>2023-01-19</lastmod>
@@ -320,15 +329,6 @@
     <loc>https://www.owq.world/bd9e5b39/</loc>
     
     <lastmod>2022-09-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.owq.world/bcd27009/</loc>
-    
-    <lastmod>2022-09-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
