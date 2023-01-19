@@ -1256,7 +1256,10 @@
 <h2 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2><blockquote>
 <p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RvY2tlci9jb21wb3Nl">docker&#x2F;compose: Define and run multi-container applications with Docker (github.com)</span></p>
 </blockquote>
-<h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><p>安装的是2.5.0版本, 新版可以去项目仓库获取.</p>
+<h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><p>获取Github仓库Releases最新版本号</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget -qO- -t1 -T2 <span class="string">&quot;https://api.github.com/repos/docker/compose/releases/latest&quot;</span> | grep <span class="string">&quot;tag_name&quot;</span> | <span class="built_in">head</span> -n 1 | awk -F <span class="string">&quot;:&quot;</span> <span class="string">&#x27;&#123;print $2&#125;&#x27;</span> | sed <span class="string">&#x27;s/\&quot;//g;s/,//g;s/ //g&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>安装的是2.5.0版本, 可以修改成最新的版本号</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo curl -L <span class="string">&quot;https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-<span class="subst">$(uname -s)</span>-<span class="subst">$(uname -m)</span>&quot;</span> -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
 
 <h3 id="赋权"><a href="#赋权" class="headerlink" title="赋权"></a>赋权</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
