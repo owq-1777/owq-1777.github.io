@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="用网站域名发送邮件是不是很酷的一件事, 当然作用远远不止如此, 来看看搭建一台邮件服务器是多么便捷吧\(￣︶￣*\))">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速搭建一台邮件服务器">
+<meta property="og:url" content="https://www.owq.world/mail-server/index.html">
+<meta property="og:site_name" content="Sunny was born">
+<meta property="og:description" content="用网站域名发送邮件是不是很酷的一件事, 当然作用远远不止如此, 来看看搭建一台邮件服务器是多么便捷吧\(￣︶￣*\))">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.owq.world/2023/01/1650-afb955.png">
+<meta property="og:image" content="https://img.owq.world/2023/01/1505-25c06c.png">
+<meta property="og:image" content="https://img.owq.world/2023/01/1506-5f6ac4.png">
+<meta property="og:image" content="https://img.owq.world/2023/01/1451-b8f891.png">
+<meta property="og:image" content="https://img.owq.world/2023/01/1458-c3b6c7.png">
+<meta property="og:image" content="https://img.owq.world/2023/01/1525-d86fb9.png">
+<meta property="og:image" content="https://img.owq.world/2023/01/1526-d9b132.png">
+<meta property="article:published_time" content="2023-01-29T12:21:54.000Z">
+<meta property="article:modified_time" content="2023-01-29T11:29:12.079Z">
+<meta property="article:author" content="OWQ">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="mail">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.owq.world/2023/01/1650-afb955.png">
+
+<link rel="canonical" href="https://www.owq.world/mail-server/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>快速搭建一台邮件服务器 | Sunny was born</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM06B0RFS"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LWM06B0RFS');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Sunny was born" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Sunny was born</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<span style="flex-grow: 2;"></span>
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+      
+
+
+<div class='bg-container lozad' style="z-index: -1; background-color: #fff;">
+  <span class="header-bg"></span>
+  <script data-pjax>
+    console.info("")
+    var header=document.querySelector('.header-bg');
+    var img_arr = ["/img/header_img/bg1.webp","/img/header_img/bg2.webp","/img/header_img/bg3.webp","/img/header_img/bg4.webp","/img/header_img/bg5.webp","/img/header_img/bg6.webp"]
+    var index = Math.floor((Math.random()*img_arr.length));
+    header.setAttribute("style", "background-image: url('"+img_arr[index]+"')");
+  </script>
+</div>
+
+<div id="signature">
+  <div class="container">
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>快速搭建一台邮件服务器</h1>
+          <h2 class="subheading">用网站域名发送邮件是不是很酷的一件事, 当然作用远远不止如此, 来看看搭建一台邮件服务器是多么便捷吧\(￣︶￣*\))</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+
+            <time title="2023-01-29 20:21:54" itemprop="dateCreated datePublished" datetime="2023-01-29T20:21:54+08:00">2023-01-29</time>
+            
+
+          </span>
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>6.9k</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>6 min</span>
+          </span>
+
+
+        </header>
+
+      
+
+  </div>
+</div>
+
+
+
+<!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main" id="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/mail-server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><blockquote>
+<p>域名: example.com<br>系统: Ubuntu20<br>工具: <a href="https://www.owq.world/bcd27009/">docker-compose</a></p>
+</blockquote>
+<h3 id="创建工作目录"><a href="#创建工作目录" class="headerlink" title="创建工作目录"></a>创建工作目录</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /data/mail-server</span><br></pre></td></tr></table></figure>
+
+<h3 id="下载相关文件"><a href="#下载相关文件" class="headerlink" title="下载相关文件"></a>下载相关文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">DMS_GITHUB_URL=<span class="string">&#x27;https://raw.githubusercontent.com/docker-mailserver/docker-mailserver/master&#x27;</span> &amp;&amp; \</span><br><span class="line">wget <span class="string">&quot;<span class="variable">$&#123;DMS_GITHUB_URL&#125;</span>/docker-compose.yml&quot;</span> &amp;&amp; \</span><br><span class="line">wget <span class="string">&quot;<span class="variable">$&#123;DMS_GITHUB_URL&#125;</span>/mailserver.env&quot;</span> &amp;&amp; </span><br><span class="line">wget <span class="string">&quot;<span class="variable">$&#123;DMS_GITHUB_URL&#125;</span>/setup.sh&quot;</span> &amp;&amp; <span class="built_in">chmod</span> a+x ./setup.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p><strong>基础配置</strong> - 修改<code>docker-compose.yml</code></p>
+<ul>
+<li>将<code>example.com</code>替换成要自己的域名</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mailserver:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">docker.io/mailserver/docker-mailserver:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mailserver</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">mail</span></span><br><span class="line">    <span class="attr">domainname:</span> <span class="string">example.com</span></span><br><span class="line">    <span class="attr">env_file:</span> <span class="string">mailserver.env</span></span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>高级配置</strong> - 修改<code>mailserver.env</code></p>
+<ul>
+<li>详细说明<span class="exturl" data-url="aHR0cHM6Ly9kb2NrZXItbWFpbHNlcnZlci5naXRodWIuaW8vZG9ja2VyLW1haWxzZXJ2ZXIvZWRnZS9jb25maWcvZW52aXJvbm1lbnQv">Environment Variables - Docker Mailserver</span><br>PS: 这里使用默认配置就行了, 推荐用 <code>docker-compose.yml</code>添加环境变量的方式 来进行修改</li>
+</ul>
+<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>查看日志输出是否正常</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker-compose logs -f</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2023/01/1650-afb955.png"></p>
+<p>这里提示要<strong>创建账户</strong>, 使用<code>setup.sh</code>进行创建</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./setup.sh email add &lt;user@domain&gt; [&lt;password&gt;]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例子 密码稍后可以更改为更复杂的</span></span><br><span class="line">./setup.sh email add admin@example.com password</span><br></pre></td></tr></table></figure>
+
+<p>设置别名</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./setup.sh <span class="built_in">alias</span> add postmaster@&lt;domain&gt; &lt;user@domain&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例子</span></span><br><span class="line">./setup.sh <span class="built_in">alias</span> add postmaster@example.com admin@example.com</span><br></pre></td></tr></table></figure>
+
+<p><em>PS: 使用<code>./setup.sh help</code>可以查看命令说明</em></p>
+<h2 id="添加DNS记录"><a href="#添加DNS记录" class="headerlink" title="添加DNS记录"></a>添加DNS记录</h2><blockquote>
+<p>在相应的DNS服务中配置, 注意将IP替换成邮件服务器的IP<br>SPF 官方文档: <span class="exturl" data-url="aHR0cHM6Ly9kb2NrZXItbWFpbHNlcnZlci5naXRodWIuaW8vZG9ja2VyLW1haWxzZXJ2ZXIvZWRnZS9jb25maWcvYmVzdC1wcmFjdGljZXMvc3BmLw==">https://docker-mailserver.github.io/docker-mailserver/edge/config/best-practices/spf/</span></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名称</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>mail</td>
+<td>10.11.12.13</td>
+<td>邮件服务器地址, 名称可以随意改, 推荐使用<code>mail</code></td>
+</tr>
+<tr>
+<td>MX</td>
+<td>@</td>
+<td>mail.example.com.</td>
+<td>MX记录, 指定了发送邮件时的收信服务器, 通过设置优先级转发邮件</td>
+</tr>
+<tr>
+<td>TXT</td>
+<td>@</td>
+<td>v&#x3D;spf1 mx include:mail.example.com ~all</td>
+<td>SPF记录, 告知了可以用这个域发邮件的主机, 防止别人伪造你来发邮件</td>
+</tr>
+<tr>
+<td>TXT</td>
+<td>_dmarc</td>
+<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjeDY0OyYjMTA5OyYjeDYxOyYjMTE0OyYjOTk7JiN4MmU7JiMxMTQ7JiMxMDE7JiN4NzA7JiMxMTE7JiMxMTQ7JiN4NzQ7JiN4NDA7JiMxMDE7JiN4Nzg7JiN4NjE7JiMxMDk7JiMxMTI7JiMxMDg7JiN4NjU7JiN4MmU7JiN4NjM7JiMxMTE7JiN4NmQ7">&#x64;&#109;&#x61;&#114;&#99;&#x2e;&#114;&#101;&#x70;&#111;&#114;&#x74;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjeDY0OyYjeDZkOyYjOTc7JiMxMTQ7JiM5OTsmI3gyZTsmIzExNDsmIzEwMTsmIzExMjsmI3g2ZjsmI3g3MjsmIzExNjsmIzY0OyYjMTAxOyYjeDc4OyYjOTc7JiN4NmQ7JiMxMTI7JiMxMDg7JiMxMDE7JiN4MmU7JiN4NjM7JiMxMTE7JiN4NmQ7">&#x64;&#x6d;&#97;&#114;&#99;&#x2e;&#114;&#101;&#112;&#x6f;&#x72;&#116;&#64;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</span>; sp&#x3D;none; ri&#x3D;86400</td>
+<td>告诉发件人邮件受<code>SPF</code>&#x2F;<code>DKIM</code>保护</td>
+</tr>
+</tbody></table>
+<h2 id="配置OpenDKIM"><a href="#配置OpenDKIM" class="headerlink" title="配置OpenDKIM"></a>配置OpenDKIM</h2><blockquote>
+<p>DKIM 官方文档: <span class="exturl" data-url="aHR0cHM6Ly9kb2NrZXItbWFpbHNlcnZlci5naXRodWIuaW8vZG9ja2VyLW1haWxzZXJ2ZXIvZWRnZS9jb25maWcvYmVzdC1wcmFjdGljZXMvZGtpbS8=">https://docker-mailserver.github.io/docker-mailserver/edge/config/best-practices/dkim/</span></p>
+</blockquote>
+<p>创建大小为1024位的密钥(密钥大小最好在512到2048位之间)</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./setup.sh config dkim keysize 1024</span><br></pre></td></tr></table></figure>
+
+<p>密钥文件存放在<code>docker-data/dms/config/opendkim/keys</code>目录下</p>
+<img data-src="https://img.owq.world/2023/01/1505-25c06c.png" style="zoom:50%;" />
+
+<p>查看生成的值</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> docker-data/dms/config/opendkim/keys/example.com/mail.txt</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2023/01/1506-5f6ac4.png"></p>
+<p><em>PS:重新生成的话, 直接删除文件夹即可</em></p>
+<p>再将其合并起来, 这是要添加的DNS记录值</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="attribute">v</span>=DKIM1; <span class="attribute">h</span>=sha256; <span class="attribute">k</span>=rsa; <span class="attribute">p</span>=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+t0EBt4tRKq3hVGOgaOfvA8NbG92xNsCIWVfG6eA5If3vlE6iDg3KKU+Q6GyZD20W0I/Q2BqLIyMehiWnJO0vKrIlNfsNIiugBTyVZpxBlQhxk1dNJ29g6alZbY9PRye0WYxkKiIc9aIz+YptYS2kClIpmgjaHtncFcvTltbkOwIDAQAB</span><br></pre></td></tr></table></figure>
+
+<p>在DNS服务商添加相应的记录</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名称</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TXT</td>
+<td>mail._domainkey</td>
+<td>v&#x3D;DKIM1; h&#x3D;sha256; k&#x3D;rsa; p&#x3D;MIGfMA0GCSqGSIb3DQE...</td>
+</tr>
+</tbody></table>
+<p>等待几分钟后再检查记录DNS是否生效</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">dig mail._domainkey.example.com TXT</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置-SSL"><a href="#配置-SSL" class="headerlink" title="配置 SSL"></a>配置 SSL</h2><blockquote>
+<p>等待DNS生效的时间, 让我们先配置一下证书吧.<br>文档: <span class="exturl" data-url="aHR0cHM6Ly9kb2NrZXItbWFpbHNlcnZlci5naXRodWIuaW8vZG9ja2VyLW1haWxzZXJ2ZXIvZWRnZS9jb25maWcvc2VjdXJpdHkvc3NsLw==">https://docker-mailserver.github.io/docker-mailserver/edge/config/security/ssl/</span></p>
+</blockquote>
+<h3 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h3><p>在工作目录下运行镜像快速生成<code>mail.example.com</code>证书<br>注意: 将<code>example.com</code>替换成自己的域名, 80端口开放且不要被占用</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run --<span class="built_in">rm</span> -it \</span><br><span class="line">  -v <span class="string">&quot;<span class="variable">$&#123;PWD&#125;</span>/docker-data/certbot/certs/:/etc/letsencrypt/&quot;</span> \</span><br><span class="line">  -v <span class="string">&quot;<span class="variable">$&#123;PWD&#125;</span>/docker-data/certbot/logs/:/var/log/letsencrypt/&quot;</span> \</span><br><span class="line">  -p 80:80 \</span><br><span class="line">  certbot/certbot certonly --standalone -d mail.example.com</span><br></pre></td></tr></table></figure>
+
+<p>根据提示操作生成, 完成后<code>docker-data/certbot/certs</code>目录结构应该和下面一样</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker-data<span class="regexp">/certbot/</span>certs</span><br><span class="line">├── accounts</span><br><span class="line">├── archive</span><br><span class="line">├── csr</span><br><span class="line">├── keys</span><br><span class="line">├── live</span><br><span class="line">├── renewal</span><br><span class="line">└── renewal-hooks</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置证书自动续期"><a href="#配置证书自动续期" class="headerlink" title="配置证书自动续期"></a>配置证书自动续期</h3><p>创建<code>renew-certbot.sh</code>文件</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vim</span> renew-certbot.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+
+<p>添加以下内容, 注意工作目录是否一致<br>PS: 使用Nginx之类反代, 可以在续期前停止服务, 续期完后打开</p>
+<figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">docker run --rm -<span class="literal">it</span> <span class="string">\</span></span><br><span class="line">  -v <span class="string">&quot;/data/mail-server/docker-data/certbot/certs/:/etc/letsencrypt/&quot;</span> <span class="string">\</span></span><br><span class="line">  -v <span class="string">&quot;/data/mail-server/docker-data/certbot/logs/:/var/log/letsencrypt/&quot;</span> <span class="string">\</span></span><br><span class="line">  -p <span class="number">80</span>:<span class="number">80</span> <span class="string">\</span></span><br><span class="line">  -p <span class="number">443</span>:<span class="number">443</span> <span class="string">\</span></span><br><span class="line">  certbot/certbot renew</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> a+x renew-certbot.sh</span><br></pre></td></tr></table></figure>
+
+<p>测试是否正常, 注意443端口需开放</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./renew-certbot.sh</span><br></pre></td></tr></table></figure>
+
+<p>添加到计划任务<code>crontab -e</code></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">30 </span><span class="number">0</span> * * * /<span class="keyword">data</span>/mail-server/renew-certbot.sh &gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改服务配置"><a href="#修改服务配置" class="headerlink" title="修改服务配置"></a><strong>修改服务配置</strong></h3><p>修改<code>docker-compose. yml</code>配置文件, 添加环境变量<code>SSL_TYPE</code>和证书映射路径.</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mailserver:</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">SSL_TYPE=letsencrypt</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./docker-data/certbot/certs/:/etc/letsencrypt</span></span><br></pre></td></tr></table></figure>
+
+<p>完整配置如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mailserver:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">docker.io/mailserver/docker-mailserver:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mailserver</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">mail</span></span><br><span class="line">    <span class="attr">domainname:</span> <span class="string">example.com</span></span><br><span class="line">    <span class="attr">env_file:</span> <span class="string">mailserver.env</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;25:25&quot;</span>    <span class="comment"># SMTP  (explicit TLS =&gt; STARTTLS)</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;143:143&quot;</span>  <span class="comment"># IMAP4 (explicit TLS =&gt; STARTTLS)</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;993:993&quot;</span>  <span class="comment"># IMAP4 (implicit TLS)</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;587:587&quot;</span>  <span class="comment"># ESMTP (explicit TLS =&gt; STARTTLS)</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;465:465&quot;</span>  <span class="comment"># ESMTP (implicit TLS)</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">SSL_TYPE=letsencrypt</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./docker-data/dms/mail-data/:/var/mail/</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./docker-data/dms/mail-state/:/var/mail-state/</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./docker-data/dms/mail-logs/:/var/log/mail/</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./docker-data/dms/config/:/tmp/docker-mailserver/</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./docker-data/certbot/certs/:/etc/letsencrypt</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/etc/localtime:/etc/localtime:ro</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">stop_grace_period:</span> <span class="string">1m</span></span><br><span class="line">    <span class="attr">cap_add:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NET_ADMIN</span></span><br><span class="line">    <span class="attr">healthcheck:</span></span><br><span class="line">      <span class="attr">test:</span> <span class="string">&quot;ss --listening --tcp | grep -P &#x27;LISTEN.+:smtp&#x27; || exit 1&quot;</span></span><br><span class="line">      <span class="attr">timeout:</span> <span class="string">3s</span></span><br><span class="line">      <span class="attr">retries:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>更新配置</p>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line">docker-compose <span class="meta">down</span> &amp;&amp; docker-compose <span class="meta">up</span> -d mailserver</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试证书是否生效"><a href="#测试证书是否生效" class="headerlink" title="测试证书是否生效"></a>测试证书是否生效</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> mailserver openssl s_client \</span><br><span class="line">  -connect 0.0.0.0:25 \</span><br><span class="line">  -starttls smtp \</span><br><span class="line">  -CApath /etc/ssl/certs/</span><br></pre></td></tr></table></figure>
+
+<p>正常情况下会输出证书修改信息, 若没有则检查证书目录路径挂载是否正确, 容器配置是否更新.</p>
+<h3 id="开放相关端口"><a href="#开放相关端口" class="headerlink" title="开放相关端口"></a>开放相关端口</h3><p>进入<span class="exturl" data-url="aHR0cHM6Ly93d3cuY2hlY2t0bHMuY29tL1Rlc3RSZWNlaXZlciVFOCVCRiU5QiVFOCVBMSU4Q1RMUyVFNiVCNSU4QiVFOCVBRiU5NQ==">https://www.checktls.com/TestReceiver进行TLS测试</span>, 填入<code>mail.example.com</code>, 查看外部访问是否正常.</p>
+<p><img data-src="https://img.owq.world/2023/01/1451-b8f891.png"></p>
+<h3 id="自定义证书"><a href="#自定义证书" class="headerlink" title="自定义证书"></a>自定义证书</h3><blockquote>
+<p>这里不推荐使用其它工具生成的证书, 配置便捷而且容易有意外.</p>
+</blockquote>
+<p>准备好SSL证书文件, 这里是使用的是<code>acme.sh</code>生成的证书 -&gt; <a href="https://www.owq.world/7a1dd44c/">Nginx 使用 acme.sh 配置 SSL 证书</a><br>修改<code>docker-compose.yml</code>, 添加以下配置.</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">/usr/local/nginx/certs/mail.example.com/:/tmp/dms/custom-certs/:ro</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">SSL_TYPE=manual</span></span><br><span class="line">  <span class="comment"># 这里记得修改成挂载目录下对应的文件名</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">SSL_CERT_PATH=/tmp/dms/custom-certs/fullchain.cer</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">SSL_KEY_PATH=/tmp/dms/custom-certs/cert.key</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>到这一步不出意外应该可以正常收邮件了, 可以向其邮件地址发送邮件查看后台是否出现日志来进行测试.</p>
+</blockquote>
+<hr>
+<h2 id="邮件客户端登录"><a href="#邮件客户端登录" class="headerlink" title="邮件客户端登录"></a>邮件客户端登录</h2><p>这里使用Win自带的邮箱客户端进行演示(其它客户端操作大同小异)</p>
+<p>首先先添加账户, 选择带有POP&#x2F;IMAP的邮箱</p>
+<img data-src="https://img.owq.world/2023/01/1458-c3b6c7.png" style="zoom:50%;" />
+
+<p>填入邮箱地址和密码登录, 邮箱和别名可用<code>./setup.sh email list</code>查看<br>注意用户名一定要填完整邮件地址</p>
+<img data-src="https://img.owq.world/2023/01/1525-d86fb9.png" style="zoom:50%;" />
+
+<p>邮件服务器填<code>mail.example.com</code>, 认证类型选择<code>IMAP4</code>, 补全其它选框进行登录</p>
+<img data-src="https://img.owq.world/2023/01/1526-d9b132.png" style="zoom:50%;" />
+
+
+<p>PS: 登录不成功可以查看后台日志, 是否出现记录, 日志信息是什么一一解决</p>
+<p><strong>测试</strong></p>
+<p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cubWFpbC10ZXN0ZXIuY29tLw==">https://www.mail-tester.com/</span> 进行测试.</p>
+<h2 id="其它配置-可选"><a href="#其它配置-可选" class="headerlink" title="其它配置(可选)"></a>其它配置(可选)</h2><h3 id="添加日志报告"><a href="#添加日志报告" class="headerlink" title="添加日志报告"></a>添加日志报告</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">   <span class="bullet">-</span> <span class="string">REPORT_RECIPIENT=qaqiowo@gmail.com</span>	<span class="comment"># 报告接收人</span></span><br><span class="line">   <span class="bullet">-</span> <span class="string">LOGWATCH_INTERVAL=daily</span> <span class="comment"># 每隔一天发送日志报告</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启用POP3认证"><a href="#启用POP3认证" class="headerlink" title="启用POP3认证"></a>启用POP3认证</h3><p>修改<code>docker-compose.yml</code>, 添加端口映射和配置环境变量</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mailserver:</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="string">...</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;110:110&quot;</span>  <span class="comment"># POP3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;995:995&quot;</span>  <span class="comment"># POP3 (with TLS)</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">ENABLE_POP3=1</span></span><br><span class="line">      <span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+<p>更新配置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose down &amp;&amp; docker-compose up -d mailserver</span><br></pre></td></tr></table></figure>
+
+<h3 id="启用邮件转发"><a href="#启用邮件转发" class="headerlink" title="启用邮件转发"></a>启用邮件转发</h3><p>修改<code>docker-compose.yml</code>, 添加<code>SPOOF_PROTECTION=1</code>环境变量</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mailserver:</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">SPOOF_PROTECTION=1</span></span><br></pre></td></tr></table></figure>
+
+<p>转发到谷歌邮箱</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./setup.sh <span class="built_in">alias</span> add info@example.com info.gmail@example.com</span><br><span class="line">./setup.sh <span class="built_in">alias</span> add info.gmail@example.com external-account@gmail.com</span><br></pre></td></tr></table></figure>
+
+<p>PS: 转发不生效查看日志, 若出现<code>PTR</code>记录错误, 则需修改服务器的<code>rDNC</code>, 通常在服务器提供商处修改.</p>
+<h2 id="邮件服务更新"><a href="#邮件服务更新" class="headerlink" title="邮件服务更新"></a>邮件服务更新</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose pull</span><br><span class="line">docker-compose down &amp;&amp; docker-compose up -d mailserver</span><br></pre></td></tr></table></figure>
+
+<h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><ul>
+<li><p>邮件发送接收不到</p>
+<p>查看IP是否被封: <span class="exturl" data-url="aHR0cHM6Ly9teHRvb2xib3guY29tL2JsYWNrbGlzdHMuYXNweA==">https://mxtoolbox.com/blacklists.aspx</span></p>
+</li>
+</ul>
+<hr>
+<p><strong>参考文档</strong></p>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kb2NrZXItbWFpbHNlcnZlci5naXRodWIuaW8vZG9ja2VyLW1haWxzZXJ2ZXIvZWRnZS8=">https://docker-mailserver.github.io/docker-mailserver/edge/</span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RvY2tlci1tYWlsc2VydmVyL2RvY2tlci1tYWlsc2VydmVy">https://github.com/docker-mailserver/docker-mailserver</span></p>
+</blockquote>
+
+    </div>
+
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
+
+      </div>
+    
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.owq.world/mail-server/" title="快速搭建一台邮件服务器">https://www.owq.world/mail-server/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/mail/" rel="tag"><i class="fa fa-tag"></i> mail</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/nft/" rel="next" title="初窥 NFT">
+      初窥 NFT <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          目录
+        </li>
+        <li class="sidebar-nav-overview">
+          概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83"><span class="nav-text">准备环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">创建工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6"><span class="nav-text">下载相关文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE"><span class="nav-text">修改配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0DNS%E8%AE%B0%E5%BD%95"><span class="nav-text">添加DNS记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEOpenDKIM"><span class="nav-text">配置OpenDKIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-SSL"><span class="nav-text">配置 SSL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6"><span class="nav-text">生成证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%AF%81%E4%B9%A6%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F"><span class="nav-text">配置证书自动续期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE"><span class="nav-text">修改服务配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%AF%81%E4%B9%A6%E6%98%AF%E5%90%A6%E7%94%9F%E6%95%88"><span class="nav-text">测试证书是否生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%94%BE%E7%9B%B8%E5%85%B3%E7%AB%AF%E5%8F%A3"><span class="nav-text">开放相关端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%81%E4%B9%A6"><span class="nav-text">自定义证书</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%AE%E4%BB%B6%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%99%BB%E5%BD%95"><span class="nav-text">邮件客户端登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E9%85%8D%E7%BD%AE-%E5%8F%AF%E9%80%89"><span class="nav-text">其它配置(可选)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%97%A5%E5%BF%97%E6%8A%A5%E5%91%8A"><span class="nav-text">添加日志报告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8POP3%E8%AE%A4%E8%AF%81"><span class="nav-text">启用POP3认证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E9%82%AE%E4%BB%B6%E8%BD%AC%E5%8F%91"><span class="nav-text">启用邮件转发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E6%9B%B4%E6%96%B0"><span class="nav-text">邮件服务更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87"><span class="nav-text">疑难杂症</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="OWQ"
+      src="/images/avatar.webp">
+  <p class="site-author-name" itemprop="name">OWQ</p>
+  <div class="site-description" itemprop="description">爱编程, 懂设计, 喜折腾</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnF3cWlvd29Ab3V0bG9vay5jb20=" title="E-Mail → mailto:qwqiowo@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL293cS0xNzc3" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;owq-1777"><i class="fab fa-github-alt" fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+
+<!-- hitokoto -->
+<strong>
+<div id="hitokoto_wrap">
+    <div id="hitokoto_text">&nbsp;&nbsp;&nbsp;&nbsp;抬头望天，低头走路。</div>
+    <div id="hitokoto_from">——无名</div>
+</div>
+</strong>
+
+<script>
+    let hitokoto_wrap = document.getElementById("hitokoto_wrap");
+    let hitokoto_text = document.getElementById('hitokoto_text')
+    let hitokoto_from = document.getElementById('hitokoto_from');
+    async function loadHitokoto(){
+        // Fetch API
+        // 调用一言接口 根据需求配置
+        // fetch('https://v1.hitokoto.cn?min_length=12')
+        fetch('https://international.v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            hitokoto_text.innerText = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.hitokoto;
+            hitokoto_from.innerText = "——" + data.from + '\xa0';
+        })
+        .catch(console.error)
+    }
+    loadHitokoto();
+
+    hitokoto_wrap.addEventListener("click", async function(e){
+        loadHitokoto();
+        // 去除字符串前后空格
+        let content = (hitokoto_text.innerText + hitokoto_from.innerText).trim()
+        // Clipboard API
+        // 复制一言内容到剪贴板
+        navigator.clipboard.writeText(content)
+        .then(console.log(content))
+        .catch(console.error)
+    });
+</script>
+<script>
+    !function(e, t, a) {
+        var cr = ["255, 255, 228", "0, 119, 194", "51, 226, 209", "126, 211, 33", "251, 186, 192", "253, 84, 105", "245, 235, 122", "124, 231, 208", "145, 217, 122", "173, 127, 168", "224, 108, 117", "223, 99, 65"]
+        function r() {
+            for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+            requestAnimationFrame(r)
+        }
+        function n() {
+            var t = "function" == typeof e.onclick && e.onclick;
+            hitokoto_wrap.addEventListener("click", function(e) {
+                t && t(),
+                    o(e)
+            });
+        }
+        function c() {
+            return "rgb(" + cr[Math.floor(Math.random()*cr.length)] + ")"
+            // return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
+        }
+        function o(e) {
+            var a = t.createElement("div");
+            a.className = "heart",
+                s.push({
+                    el: a,
+                    x: e.clientX - 5,
+                    y: e.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: c()
+                }),
+                t.body.appendChild(a)
+        }
+        function i(e) {
+            var a = t.createElement("style");
+            a.type = "text/css";
+            try {
+                a.appendChild(t.createTextNode(e))
+            } catch(t) {
+                a.styleSheet.cssText = e
+            }
+            t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+            function(e) {
+                setTimeout(e, 1e3 / 60)
+            },
+            i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+            n(),
+            r()
+    } (window, document);
+</script>
+      </div>
+
+      <hr class="hr-solid">
+    </div>
+
+
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><span class="exturl" data-url="aHR0cHM6Ly9iZWlhbi5taWl0Lmdvdi5jbg==">粤ICP备2021144316号 </span>
+      <img src="/images/gongan.png" style="display: inline-block;"><span class="exturl" data-url="aHR0cDovL3d3dy5iZWlhbi5nb3YuY24vcG9ydGFsL3JlZ2lzdGVyU3lzdGVtSW5mbz9yZWNvcmRjb2RlPTQ0MDMwNTAyMDA4Mzk2">粤公网安备 44030502008396号 </span>
+  </div>
+
+<div class="copyright">
+  <span id="RunTime"></span>
+  <!-- 网站运行时间的设置 -->
+  <script>
+    var BootDate = new Date("2021/08/01 00:00:00");
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " d " + RunHours + " h " + RunMinutes + " m " + RunSeconds + " s ";
+      document.getElementById(id).innerHTML = "This blog has running: " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OWQ</span>
+
+<div class="busuanzi-count">
+
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">163k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:29</span>
+</div>
+
+</div>
+  <script src="/js/ribbonDynamic.js"></script>
+        
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.bg-container',
+    '#signature .container',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '472553d47287225fff92',
+      clientSecret: 'a2e30c338a55dfc350329833114d277bcfa79a6e',
+      repo        : 'owq-1777.github.io',
+      owner       : 'owq-1777',
+      admin       : ['owq-1777'],
+      id          : 'd870ae3024ff1277562372ac83603bf9',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
+</html>
+
+<script type="text/javascript" src="/js/src/funny_title.js"></script>
