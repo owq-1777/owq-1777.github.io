@@ -66,7 +66,7 @@
 <tr>
 <td>TXT</td>
 <td>_dmarc</td>
-<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjeDZkOyYjeDYxOyYjMTE0OyYjeDYzOyYjeDJlOyYjMTE0OyYjeDY1OyYjMTEyOyYjeDZmOyYjeDcyOyYjMTE2OyYjeDQwOyYjeDY1OyYjMTIwOyYjOTc7JiMxMDk7JiN4NzA7JiMxMDg7JiMxMDE7JiM0NjsmIzk5OyYjMTExOyYjeDZkOw==">&#100;&#x6d;&#x61;&#114;&#x63;&#x2e;&#114;&#x65;&#112;&#x6f;&#x72;&#116;&#x40;&#x65;&#120;&#97;&#109;&#x70;&#108;&#101;&#46;&#99;&#111;&#x6d;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjeDZkOyYjeDYxOyYjMTE0OyYjOTk7JiN4MmU7JiN4NzI7JiMxMDE7JiMxMTI7JiN4NmY7JiN4NzI7JiMxMTY7JiM2NDsmIzEwMTsmIzEyMDsmIzk3OyYjMTA5OyYjeDcwOyYjeDZjOyYjMTAxOyYjNDY7JiM5OTsmI3g2ZjsmI3g2ZDs=">&#100;&#x6d;&#x61;&#114;&#99;&#x2e;&#x72;&#101;&#112;&#x6f;&#x72;&#116;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</span>; sp&#x3D;none; ri&#x3D;86400</td>
+<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjMTA5OyYjeDYxOyYjeDcyOyYjOTk7JiM0NjsmIzExNDsmI3g2NTsmIzExMjsmI3g2ZjsmIzExNDsmIzExNjsmIzY0OyYjeDY1OyYjeDc4OyYjOTc7JiN4NmQ7JiN4NzA7JiMxMDg7JiN4NjU7JiN4MmU7JiN4NjM7JiN4NmY7JiMxMDk7">&#100;&#109;&#x61;&#x72;&#99;&#46;&#114;&#x65;&#112;&#x6f;&#114;&#116;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjMTA5OyYjOTc7JiN4NzI7JiM5OTsmIzQ2OyYjeDcyOyYjMTAxOyYjMTEyOyYjMTExOyYjMTE0OyYjMTE2OyYjNjQ7JiN4NjU7JiN4Nzg7JiM5NzsmIzEwOTsmIzExMjsmIzEwODsmI3g2NTsmI3gyZTsmI3g2MzsmIzExMTsmI3g2ZDs=">&#100;&#109;&#97;&#x72;&#99;&#46;&#x72;&#101;&#112;&#111;&#114;&#116;&#64;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</span>; sp&#x3D;none; ri&#x3D;86400</td>
 <td>告诉发件人邮件受<code>SPF</code>&#x2F;<code>DKIM</code>保护</td>
 </tr>
 </tbody></table>
@@ -179,10 +179,10 @@
 <h3 id="启用邮件转发"><a href="#启用邮件转发" class="headerlink" title="启用邮件转发"></a>启用邮件转发</h3><p>修改<code>docker-compose.yml</code>, 添加<code>SPOOF_PROTECTION=1</code>环境变量</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mailserver:</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">SPOOF_PROTECTION=1</span></span><br></pre></td></tr></table></figure>
 
-<p>转发到谷歌邮箱</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./setup.sh <span class="built_in">alias</span> add info@example.com info.gmail@example.com</span><br><span class="line">./setup.sh <span class="built_in">alias</span> add info.gmail@example.com external-account@gmail.com</span><br></pre></td></tr></table></figure>
+<p>转发到谷歌邮箱, 往<code>info@example.com</code>发送邮件会被<code>external-account@gmail.com</code>接收到(而且可以设置多个别名)</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># g歌需要加上 .gmail</span></span><br><span class="line">./setup.sh <span class="built_in">alias</span> add info@example.com info.gmail@example.com</span><br><span class="line">./setup.sh <span class="built_in">alias</span> add info.gmail@example.com external-account@gmail.com</span><br></pre></td></tr></table></figure>
 
-<p>PS: 转发不生效查看日志, 若出现<code>PTR</code>记录错误, 则需修改服务器的<code>rDNC</code>, 通常在服务器提供商处修改.</p>
+<p>PS: 转发不生效检查日志, 若出现<code>PTR</code>记录错误, 则需修改服务器的<code>rDNC</code>, 通常在服务器提供商处修改.</p>
 <h2 id="邮件服务更新"><a href="#邮件服务更新" class="headerlink" title="邮件服务更新"></a>邮件服务更新</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose pull</span><br><span class="line">docker-compose down &amp;&amp; docker-compose up -d mailserver</span><br></pre></td></tr></table></figure>
 
 <h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><ul>
