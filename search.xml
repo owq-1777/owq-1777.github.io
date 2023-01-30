@@ -66,7 +66,7 @@
 <tr>
 <td>TXT</td>
 <td>_dmarc</td>
-<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjeDY0OyYjMTA5OyYjeDYxOyYjMTE0OyYjeDYzOyYjeDJlOyYjeDcyOyYjeDY1OyYjMTEyOyYjMTExOyYjeDcyOyYjMTE2OyYjeDQwOyYjeDY1OyYjMTIwOyYjOTc7JiMxMDk7JiN4NzA7JiMxMDg7JiMxMDE7JiM0NjsmI3g2MzsmIzExMTsmIzEwOTs=">&#x64;&#109;&#x61;&#114;&#x63;&#x2e;&#x72;&#x65;&#112;&#111;&#x72;&#116;&#x40;&#x65;&#120;&#97;&#109;&#x70;&#108;&#101;&#46;&#x63;&#111;&#109;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjeDY0OyYjeDZkOyYjOTc7JiMxMTQ7JiM5OTsmI3gyZTsmI3g3MjsmIzEwMTsmIzExMjsmI3g2ZjsmI3g3MjsmI3g3NDsmIzY0OyYjeDY1OyYjeDc4OyYjOTc7JiN4NmQ7JiMxMTI7JiN4NmM7JiN4NjU7JiN4MmU7JiN4NjM7JiMxMTE7JiMxMDk7">&#x64;&#x6d;&#97;&#114;&#99;&#x2e;&#x72;&#101;&#112;&#x6f;&#x72;&#x74;&#64;&#x65;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</span>; sp&#x3D;none; ri&#x3D;86400</td>
+<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjeDZkOyYjeDYxOyYjMTE0OyYjeDYzOyYjeDJlOyYjMTE0OyYjeDY1OyYjMTEyOyYjeDZmOyYjeDcyOyYjMTE2OyYjeDQwOyYjeDY1OyYjMTIwOyYjOTc7JiMxMDk7JiN4NzA7JiMxMDg7JiMxMDE7JiM0NjsmIzk5OyYjMTExOyYjeDZkOw==">&#100;&#x6d;&#x61;&#114;&#x63;&#x2e;&#114;&#x65;&#112;&#x6f;&#x72;&#116;&#x40;&#x65;&#120;&#97;&#109;&#x70;&#108;&#101;&#46;&#99;&#111;&#x6d;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjeDZkOyYjeDYxOyYjMTE0OyYjOTk7JiN4MmU7JiN4NzI7JiMxMDE7JiMxMTI7JiN4NmY7JiN4NzI7JiMxMTY7JiM2NDsmIzEwMTsmIzEyMDsmIzk3OyYjMTA5OyYjeDcwOyYjeDZjOyYjMTAxOyYjNDY7JiM5OTsmI3g2ZjsmI3g2ZDs=">&#100;&#x6d;&#x61;&#114;&#99;&#x2e;&#x72;&#101;&#112;&#x6f;&#x72;&#116;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</span>; sp&#x3D;none; ri&#x3D;86400</td>
 <td>告诉发件人邮件受<code>SPF</code>&#x2F;<code>DKIM</code>保护</td>
 </tr>
 </tbody></table>
@@ -165,8 +165,9 @@
 
 
 <p>PS: 登录不成功可以查看后台日志, 是否出现记录, 日志信息是什么一一解决</p>
-<p><strong>测试</strong></p>
-<p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cubWFpbC10ZXN0ZXIuY29tLw==">https://www.mail-tester.com/</span> 进行测试.</p>
+<h2 id="测试优化"><a href="#测试优化" class="headerlink" title="测试优化"></a>测试优化</h2><p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cubWFpbC10ZXN0ZXIuY29tLw==">Newsletters spam test</span> 进行测试, 发送测试邮件后会给出相应的分数(过低会被扔进垃圾邮箱), 然后再根据提示去优化分数或定位问题.</p>
+<p><img data-src="https://img.owq.world/2023/01/1459-18f8bc.png"></p>
+<p>或者使用 <span class="exturl" data-url="aHR0cHM6Ly90ZXN0Y29ubmVjdGl2aXR5Lm1pY3Jvc29mdC5jb20vdGVzdHMvZXhjaGFuZ2U=">Microsoft Remote Connectivity Analyzer</span> 进行测试<br><img data-src="https://img.owq.world/2023/01/1453-b1ce5c.png" alt="image-20230130145336996"></p>
 <h2 id="其它配置-可选"><a href="#其它配置-可选" class="headerlink" title="其它配置(可选)"></a>其它配置(可选)</h2><h3 id="添加日志报告"><a href="#添加日志报告" class="headerlink" title="添加日志报告"></a>添加日志报告</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">   <span class="bullet">-</span> <span class="string">REPORT_RECIPIENT=qaqiowo@gmail.com</span>	<span class="comment"># 报告接收人</span></span><br><span class="line">   <span class="bullet">-</span> <span class="string">LOGWATCH_INTERVAL=daily</span> <span class="comment"># 每隔一天发送日志报告</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="启用POP3认证"><a href="#启用POP3认证" class="headerlink" title="启用POP3认证"></a>启用POP3认证</h3><p>修改<code>docker-compose.yml</code>, 添加端口映射和配置环境变量</p>
