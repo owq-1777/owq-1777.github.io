@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://img.owq.world/2023/01/1459-18f8bc.png">
 <meta property="og:image" content="https://img.owq.world/2023/01/1453-b1ce5c.png">
 <meta property="article:published_time" content="2023-01-29T12:21:54.000Z">
-<meta property="article:modified_time" content="2023-01-30T07:03:55.099Z">
+<meta property="article:modified_time" content="2023-02-01T03:06:55.522Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="Linux">
@@ -235,7 +235,7 @@
                     <i class="far fa-calendar-check"></i>
                   </span>
                   <span class="post-meta-item-text">Updated</span>
-                    <time title="2023-01-30 15:03:55" itemprop="dateModified" datetime="2023-01-30T15:03:55+08:00">2023-01-30</time>
+                    <time title="2023-02-01 11:06:55" itemprop="dateModified" datetime="2023-02-01T11:06:55+08:00">2023-02-01</time>
                   </span>
             
 
@@ -387,7 +387,7 @@
 <tr>
 <td>TXT</td>
 <td>_dmarc</td>
-<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjMTA5OyYjeDYxOyYjeDcyOyYjOTk7JiM0NjsmIzExNDsmI3g2NTsmIzExMjsmI3g2ZjsmIzExNDsmIzExNjsmIzY0OyYjeDY1OyYjeDc4OyYjOTc7JiN4NmQ7JiN4NzA7JiMxMDg7JiN4NjU7JiN4MmU7JiN4NjM7JiN4NmY7JiMxMDk7">&#100;&#109;&#x61;&#x72;&#99;&#46;&#114;&#x65;&#112;&#x6f;&#114;&#116;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjMTA5OyYjOTc7JiN4NzI7JiM5OTsmIzQ2OyYjeDcyOyYjMTAxOyYjMTEyOyYjMTExOyYjMTE0OyYjMTE2OyYjNjQ7JiN4NjU7JiN4Nzg7JiM5NzsmIzEwOTsmIzExMjsmIzEwODsmI3g2NTsmI3gyZTsmI3g2MzsmIzExMTsmI3g2ZDs=">&#100;&#109;&#97;&#x72;&#99;&#46;&#x72;&#101;&#112;&#111;&#114;&#116;&#64;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</span>; sp&#x3D;none; ri&#x3D;86400</td>
+<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjeDY0OyYjMTA5OyYjOTc7JiN4NzI7JiN4NjM7JiN4MmU7JiMxMTQ7JiMxMDE7JiN4NzA7JiMxMTE7JiN4NzI7JiN4NzQ7JiN4NDA7JiMxMDE7JiN4Nzg7JiM5NzsmIzEwOTsmI3g3MDsmI3g2YzsmI3g2NTsmI3gyZTsmIzk5OyYjeDZmOyYjeDZkOw==">&#x64;&#109;&#97;&#x72;&#x63;&#x2e;&#114;&#101;&#x70;&#111;&#x72;&#x74;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjeDY0OyYjeDZkOyYjeDYxOyYjMTE0OyYjeDYzOyYjNDY7JiMxMTQ7JiN4NjU7JiMxMTI7JiMxMTE7JiN4NzI7JiN4NzQ7JiN4NDA7JiMxMDE7JiN4Nzg7JiM5NzsmIzEwOTsmI3g3MDsmI3g2YzsmIzEwMTsmI3gyZTsmIzk5OyYjMTExOyYjMTA5Ow==">&#x64;&#x6d;&#x61;&#114;&#x63;&#46;&#114;&#x65;&#112;&#111;&#x72;&#x74;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;</span>; sp&#x3D;none; ri&#x3D;86400</td>
 <td>告诉发件人邮件受<code>SPF</code>&#x2F;<code>DKIM</code>保护</td>
 </tr>
 </tbody></table>
@@ -461,7 +461,7 @@
 <h3 id="测试证书是否生效"><a href="#测试证书是否生效" class="headerlink" title="测试证书是否生效"></a>测试证书是否生效</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> mailserver openssl s_client \</span><br><span class="line">  -connect 0.0.0.0:25 \</span><br><span class="line">  -starttls smtp \</span><br><span class="line">  -CApath /etc/ssl/certs/</span><br></pre></td></tr></table></figure>
 
 <p>正常情况下会输出证书修改信息, 若没有则检查证书目录路径挂载是否正确, 容器配置是否更新.</p>
-<h3 id="开放相关端口"><a href="#开放相关端口" class="headerlink" title="开放相关端口"></a>开放相关端口</h3><p>进入<span class="exturl" data-url="aHR0cHM6Ly93d3cuY2hlY2t0bHMuY29tL1Rlc3RSZWNlaXZlciVFOCVCRiU5QiVFOCVBMSU4Q1RMUyVFNiVCNSU4QiVFOCVBRiU5NQ==">https://www.checktls.com/TestReceiver进行TLS测试</span>, 填入<code>mail.example.com</code>, 查看外部访问是否正常.</p>
+<h3 id="开放相关端口"><a href="#开放相关端口" class="headerlink" title="开放相关端口"></a>开放相关端口</h3><p>进入 <span class="exturl" data-url="aHR0cHM6Ly93d3cuY2hlY2t0bHMuY29tL1Rlc3RSZWNlaXZlcg==">https://www.checktls.com/TestReceiver</span> 进行TLS测试, 填入<code>mail.example.com</code>, 查看外部访问是否正常.</p>
 <p><img data-src="https://img.owq.world/2023/01/1451-b8f891.png"></p>
 <h3 id="自定义证书"><a href="#自定义证书" class="headerlink" title="自定义证书"></a>自定义证书</h3><blockquote>
 <p>这里不推荐使用其它工具生成的证书, 配置便捷而且容易有意外.</p>
