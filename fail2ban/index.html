@@ -25,20 +25,23 @@
     var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="单例模式设计要注意的细节可真不少(。_。)">
+  <meta name="description" content="使用 Fail2Ban 增强服务器安全, 外加配置 Webhook-钉钉 通知的快速教程(￣m￣）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="说说 python 中单例模式的实现">
-<meta property="og:url" content="https://www.owq.world/34b94b2a/index.html">
+<meta property="og:title" content="Fail2Ban 使用教程">
+<meta property="og:url" content="https://www.owq.world/fail2ban/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="单例模式设计要注意的细节可真不少(。_。)">
+<meta property="og:description" content="使用 Fail2Ban 增强服务器安全, 外加配置 Webhook-钉钉 通知的快速教程(￣m￣）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-01T03:01:05.000Z">
-<meta property="article:modified_time" content="2022-07-14T06:31:02.593Z">
+<meta property="og:image" content="https://img.owq.world/2023/03/1526-22d95e.png">
+<meta property="og:image" content="https://img.owq.world/2023/03/1842-93f69b.png">
+<meta property="article:published_time" content="2023-03-09T10:47:46.000Z">
+<meta property="article:modified_time" content="2023-03-09T12:21:51.425Z">
 <meta property="article:author" content="OWQ">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Safety">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.owq.world/2023/03/1526-22d95e.png">
 
-<link rel="canonical" href="https://www.owq.world/34b94b2a/">
+<link rel="canonical" href="https://www.owq.world/fail2ban/">
 
 
 <script id="page-configurations">
@@ -51,7 +54,7 @@
   };
 </script>
 
-  <title>说说 python 中单例模式的实现 | Sunny was born</title>
+  <title>Fail2Ban 使用教程 | Sunny was born</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM06B0RFS"></script>
     <script data-pjax>
@@ -208,8 +211,8 @@
         <header class="post-heading">
           <div class="tags">
           </div>
-          <h1>说说 python 中单例模式的实现</h1>
-          <h2 class="subheading">单例模式设计要注意的细节可真不少(。_。)</h2>
+          <h1>Fail2Ban 使用教程</h1>
+          <h2 class="subheading">使用 Fail2Ban 增强服务器安全, 外加配置 Webhook-钉钉 通知的快速教程(￣m￣）</h2>
 
           <span class="post-meta-item">
             <span class="post-meta-item-icon">
@@ -217,14 +220,7 @@
             </span>
             <span class="post-meta-item-text">Created</span>
 
-            <time title="2022-03-01 11:01:05" itemprop="dateCreated datePublished" datetime="2022-03-01T11:01:05+08:00">2022-03-01</time>
-                  <span style="margin: 0 0.5em;"> | </span>
-                  <span class="post-meta-item-icon">
-                    <i class="far fa-calendar-check"></i>
-                  </span>
-                  <span class="post-meta-item-text">Updated</span>
-                    <time title="2022-07-14 14:31:02" itemprop="dateModified" datetime="2022-07-14T14:31:02+08:00">2022-07-14</time>
-                  </span>
+            <time title="2023-03-09 18:47:46" itemprop="dateCreated datePublished" datetime="2023-03-09T18:47:46+08:00">2023-03-09</time>
             
 
           </span>
@@ -235,7 +231,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>3.9k</span>
+            <span>4.8k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -294,7 +290,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.owq.world/34b94b2a/">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/fail2ban/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.webp">
@@ -312,62 +308,132 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><blockquote>
-<p><code>单例模式</code>是一种非常常用的软件设计模式，它定义是单例对象的类<code>只能允许一个实例存在</code>。</p>
-</blockquote>
-<p>单例模式有两种经典的实现方式<code>饿汉模式</code>和<code>懒汉模式</code>, 接下来以它们为开端来介绍单例模式.</p>
-<h2 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h2><blockquote>
-<p>顾名思义, 创建对象时比较懒, 到需要用到时才去创建.</p>
-</blockquote>
-<p>使用<code>__new__</code>类方法实现, 每次实例化类时会判断是否已有类属性<code>_instance</code>(里面存的是已经实例化的类对象), 有的话直接返回, 没有就创建新实例.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类的构造方法, 会在__init__方法前执行</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(cls, <span class="string">&#x27;_instance&#x27;</span>):</span><br><span class="line">            cls._instance = <span class="built_in">super</span>().__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    S1 = Singleton()</span><br><span class="line">    S2 = Singleton()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(S1))</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(S2))</span><br></pre></td></tr></table></figure>
+        <h2 id="简单了解"><a href="#简单了解" class="headerlink" title="简单了解"></a>简单了解</h2><p>Fail2Ban是一款开源的安全工具，用于保护系统免受恶意攻击和暴力破解。通过监视系统日志，识别并限制来自恶意IP地址的连接尝试，从而保护服务器免受暴力破解和DDoS攻击等攻击。而且支持多个服务和协议，包括SSH、FTP、SMTP、HTTP等。</p>
+<p>Fail2Ban还提供了一些额外的功能，如发送警报邮件、记录日志等，以帮助管理员更好地监控和保护服务器。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>Ubuntu/Debian</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install -y fail2ban</span><br></pre></td></tr></table></figure>
 
-<p>输出结果</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">139789593957088</span><br><span class="line">139789593957088</span><br></pre></td></tr></table></figure>
+<p><code>CentOS/Fedora</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install -y epel-release fail2ban</span><br></pre></td></tr></table></figure>
 
-<p>但这样存在一个问题, 如果同时实例化多个类, <code>if not hasattr(cls, &#39;_instance&#39;)</code>语句有可能同时成立, 这会造成创建多个新的实例, 比如在多线程操作下.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类的构造方法, 会在__init__方法前执行</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(cls, <span class="string">&#x27;_instance&#x27;</span>):</span><br><span class="line">            time.sleep(<span class="number">1</span>)	<span class="comment"># 模拟程序延迟</span></span><br><span class="line">            cls._instance = <span class="built_in">super</span>().__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>():</span><br><span class="line"></span><br><span class="line">    S = Singleton()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(S))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    thread_array = [Thread(target=foo) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>)]</span><br><span class="line">    [t.start() <span class="keyword">for</span> t <span class="keyword">in</span> thread_array]</span><br></pre></td></tr></table></figure>
+<p>检查运行状态</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl status fail2ban</span><br></pre></td></tr></table></figure>
 
-<p>输出结果</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">139858525528848</span><br><span class="line">139858525530288</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>前往软件目录<code>/etc/fail2ban</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/fail2ban</span><br></pre></td></tr></table></figure>
 
-<p>这是因为多线程下的操作并不是原子性的, 解决方法也很简单, 加上互斥锁将<code>__new__</code>方法里的操作转变成原子性就好了.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Lock, Thread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span>:</span><br><span class="line">    lock = Lock()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类的构造方法, 会在__init__方法前执行</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="keyword">with</span> cls.lock:  <span class="comment"># 加锁, 使操作转为原子性</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(cls, <span class="string">&#x27;_instance&#x27;</span>):</span><br><span class="line">                time.sleep(<span class="number">1</span>)	<span class="comment"># 模拟程序延迟</span></span><br><span class="line">                cls._instance = <span class="built_in">super</span>().__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>():</span><br><span class="line">    S = Singleton()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(S))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    thread_array = [Thread(target=foo) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>)]</span><br><span class="line">    [t.start() <span class="keyword">for</span> t <span class="keyword">in</span> thread_array]</span><br></pre></td></tr></table></figure>
-
-<p>输出结果</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">140572949160720</span><br><span class="line">140572949160720</span><br></pre></td></tr></table></figure>
-
-<p>这样就没问题了吧? 不, 我们还需要对<code>__init__</code>函数做处理, 比方说以下的情况, 每次实例化虽不会创建新实例, 当会执行一遍初始化里的代码, 这是不久单例了个寂寞吗?</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Lock, Thread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span>:</span><br><span class="line">    lock = Lock()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;初始化中&#x27;</span>)</span><br><span class="line">        <span class="comment"># code...</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;初始化完毕&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类的构造方法, 会在__init__方法前执行</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="keyword">with</span> cls.lock:  <span class="comment"># 加锁, 使操作转为原子性</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(cls, <span class="string">&#x27;_instance&#x27;</span>):</span><br><span class="line">                time.sleep(<span class="number">1</span>)	<span class="comment"># 模拟程序延迟</span></span><br><span class="line">                cls._instance = <span class="built_in">super</span>().__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>():</span><br><span class="line">    S = Singleton()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(S))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    thread_array = [Thread(target=foo) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>)]</span><br><span class="line">    [t.start() <span class="keyword">for</span> t <span class="keyword">in</span> thread_array]</span><br></pre></td></tr></table></figure>
-
-<p>输出结果</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">初始化中</span><br><span class="line">初始化完毕</span><br><span class="line">140424166351632</span><br><span class="line">初始化中</span><br><span class="line">初始化完毕</span><br><span class="line">140424166351632</span><br></pre></td></tr></table></figure>
-
-<p>为了优化这一问题, 在<code>__init__</code>里加个判断就行了.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">hasattr</span>(self, <span class="string">&#x27;_init&#x27;</span>):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    self._init = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;初始化中&#x27;</span>)</span><br><span class="line">    <span class="comment"># code...</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;初始化完毕&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>到了这一步完整的懒汉模式就已经实现了, 但是, 还有个细节可以优化, 这里引入<code>双重检查锁</code>的概念.</p>
-<h3 id="双重检查锁"><a href="#双重检查锁" class="headerlink" title="双重检查锁"></a>双重检查锁</h3><blockquote>
-<p>双重检查锁定模式首先验证锁定条件(第一次检查)，只有通过锁定条件验证才真正的进行加锁逻辑并再次验证条件(第二次检查)。</p>
-</blockquote>
-<p>这样会在保证性能的同时又保证单例. (小声BB: python还需要考虑性能? 不, 这是对细节的把控!)</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(cls, <span class="string">&#x27;_instance&#x27;</span>):	<span class="comment"># 加锁前判断</span></span><br><span class="line">        <span class="keyword">with</span> cls.lock:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(cls, <span class="string">&#x27;_instance&#x27;</span>):	<span class="comment"># 加锁后判断</span></span><br><span class="line">                cls._instance = <span class="built_in">super</span>().__new__(cls)</span><br><span class="line">    <span class="keyword">return</span> cls._instance</span><br></pre></td></tr></table></figure>
-
-<h3 id="最终代码"><a href="#最终代码" class="headerlink" title="最终代码"></a>最终代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Lock, Thread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span>:</span><br><span class="line">    lock = Lock()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">hasattr</span>(self, <span class="string">&#x27;_init&#x27;</span>):</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self._init = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(cls, <span class="string">&#x27;_instance&#x27;</span>):</span><br><span class="line">            <span class="keyword">with</span> cls.lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(cls, <span class="string">&#x27;_instance&#x27;</span>):</span><br><span class="line">                    cls._instance = <span class="built_in">super</span>().__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h2><blockquote>
-<p>提前创建好对象, 要用到就直接使用, 不会被&#39;饿&#39;死.</p>
-</blockquote>
-<p>python 和 Java 不同, 没办法在类中实例化本身, 所以传统的实现方式行不通, 这里我认为比较合理的实现应该是:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">        	</span><br><span class="line">Singleton = Singleton()</span><br></pre></td></tr></table></figure>
-
-<p>直接进行实例化, 然后调用实例化对象, 欸, 这不就是正常的调用类的方式吗? 确实, 但它却满足了饿汉模式实现的条件, 权当了解即可.</p>
-<h2 id="两者的优缺点"><a href="#两者的优缺点" class="headerlink" title="两者的优缺点"></a>两者的优缺点</h2><ul>
-<li><code>饿汉模式</code>：优点是没有线程安全的问题，缺点是浪费内存空间。</li>
-<li><code>懒汉模式</code>：优点是没有内存空间浪费的问题，缺点是如果控制不好，实际上不是单例的。</li>
+<p><strong>参数说明</strong></p>
+<ul>
+<li>enabled - 表示是否开启监控服务</li>
+<li>port - 监控服务的端口号</li>
+<li>filter - 启用的日志过滤器, 引用位于 <code>/etc/fail2ban/filter.d</code> 目录中的文件</li>
+<li>logpath - <strong>监控服务的日志文件路径, 下文使用<code>var/log/auth.log</code>做演示</strong><ul>
+<li>Ubuntu&#x2F;Debian: <code>/var/log/auth.log</code></li>
+<li>CentOS&#x2F;Fedora: <code>/var/log/secure</code></li>
 </ul>
+</li>
+<li>maxretry - 允许的最大攻击次数</li>
+<li>bantime - 封禁时间，单位为秒</li>
+<li>findtime - 发现攻击次数的时间窗口，单位为秒</li>
+<li>action - 触发 <code>filter</code> 激活的动作</li>
+</ul>
+<p><strong>创建配置文件<code>jail.local</code></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim jail.local</span><br></pre></td></tr></table></figure>
+
+<p><strong>填入一下内容</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[DEFAULT]</span><br><span class="line"><span class="comment"># 服务后端选择，自动即可</span></span><br><span class="line">backend  = auto</span><br><span class="line"><span class="comment"># 忽略的IP地址段</span></span><br><span class="line">ignoreip = 127.0.0.1/8</span><br><span class="line"><span class="comment"># 允许的最大攻击次数</span></span><br><span class="line">maxretry = 3</span><br><span class="line"><span class="comment"># 600秒内3次登录失败进行封禁</span></span><br><span class="line">findtime = 600</span><br><span class="line"><span class="comment"># 封禁时间设置为一周</span></span><br><span class="line">bantime  = 604800</span><br><span class="line"></span><br><span class="line"><span class="comment"># [sshd]</span></span><br><span class="line"><span class="comment"># enabled = false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里重写了默认的`sshd`规则, 要改名的话需要把原先的`sshd`禁用掉(如上), 不然会有冲突</span></span><br><span class="line">[sshd]</span><br><span class="line">enabled  = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 过滤器选择，这里选择sshd</span></span><br><span class="line">filter   = sshd</span><br><span class="line"><span class="comment"># 这里选择iptables封禁，并且给封禁的规则命名为SSH，端口为ssh，协议为tcp</span></span><br><span class="line">action   = iptables[name=SSH, port=ssh, protocol=tcp]</span><br><span class="line">logpath  = /var/log/auth.log</span><br></pre></td></tr></table></figure>
+
+<p>检查配置是否正确</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client -t</span><br></pre></td></tr></table></figure>
+
+<p>更新配置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl restart fail2ban</span><br><span class="line"><span class="comment"># or </span></span><br><span class="line">fail2ban-client reload</span><br></pre></td></tr></table></figure>
+
+<p>查看正在运行的规则</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fail2ban-client status</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>日志文件位于<code>/var/log/fail2ban.log</code>, 输出进行查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">tail</span> -f /var/log/fail2ban.<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>然后使用另一台服务器进行登录</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh root@12.13.14.15</span><br></pre></td></tr></table></figure>
+
+<p>错误3次后日志会出现类似下面的记录, 表示IP已被封禁</p>
+<p><img data-src="https://img.owq.world/2023/03/1526-22d95e.png"></p>
+<p>要解封IP可用使用以下命令, 规则名</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client <span class="built_in">set</span> sshd unbanip 12.13.14.15</span><br></pre></td></tr></table></figure>
+
+<p>查看服务状态</p>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">fail2ban-<span class="keyword">client</span> status sshd</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://img.owq.world/2023/03/1842-93f69b.png"></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li><p>解禁对应规则封禁IP</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client <span class="built_in">set</span> &lt;jail&gt; unbanip x.x.x.x</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看所有活动规则及其状态：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client status</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看指定规则的状态：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client status &lt;jail&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解禁指定的IP地址：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client <span class="built_in">set</span> &lt;jail&gt; unbanip &lt;ip_address&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新加载fail2ban配置：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client reload</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>停止fail2ban服务：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client stop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动fail2ban服务：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client start</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="添加Webhook通知-钉钉"><a href="#添加Webhook通知-钉钉" class="headerlink" title="添加Webhook通知(钉钉)"></a>添加Webhook通知(钉钉)</h2><p>添加配置文件<code>action.d/webhook.conf</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim action.d/webhook.conf</span><br></pre></td></tr></table></figure>
+
+<p>使用以下配置</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Definition]</span></span><br><span class="line"><span class="comment"># 程序启动时执行</span></span><br><span class="line"><span class="attr">actionstart</span> = curl -X POST &lt;webhook_url&gt; -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> -d <span class="string">&#x27;&#123;&quot;msgtype&quot;: &quot;text&quot;,&quot;text&quot;: &#123;&quot;content&quot;:&quot;&lt;_start_text&gt;&quot;&#125;&#125;&#x27;</span></span><br><span class="line"><span class="attr">actionstop</span> = </span><br><span class="line">actioncheck =</span><br><span class="line"><span class="comment"># IP被封执行</span></span><br><span class="line"><span class="attr">actionban</span> = curl -X POST &lt;webhook_url&gt; -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> -d <span class="string">&#x27;&#123;&quot;msgtype&quot;: &quot;text&quot;,&quot;text&quot;: &#123;&quot;content&quot;:&quot;&lt;_ban_text&gt;&quot;&#125;&#125;&#x27;</span></span><br><span class="line"><span class="attr">actionunban</span> =</span><br><span class="line"></span><br><span class="line"><span class="attr">_start_text</span> = Fail2Ban &lt;name&gt; jail has started from [&lt;hostname&gt;].</span><br><span class="line"><span class="attr">_ban_text</span> = Fail2Ban &lt;name&gt; banned *&lt;ip&gt;* from [&lt;hostname&gt;] after &lt;failures&gt; attempts.</span><br><span class="line"></span><br><span class="line"><span class="attr">webhook_url</span> = https://oapi.dingtalk.com/robot/send?access_token=&lt;access_token&gt;</span><br><span class="line"></span><br><span class="line"><span class="section">[Init]</span></span><br><span class="line"><span class="comment"># 钉钉机器人的access_token</span></span><br><span class="line"><span class="attr">access_token</span> = e804dd5e0f4173ac7dc8a07b436ca9be0f4173ac878d5d1bce195a06063b2807</span><br><span class="line"><span class="attr">hostname</span> = &lt;fq-hostname&gt;</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>jail.local</code>配置, 添加<code>action</code>, 空行添加</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[DEFAULT]</span></span><br><span class="line"><span class="attr">backend</span>  = auto</span><br><span class="line"><span class="attr">ignoreip</span> = <span class="number">127.0</span>.<span class="number">0.1</span>/<span class="number">8</span></span><br><span class="line"><span class="attr">maxretry</span> = <span class="number">3</span></span><br><span class="line"><span class="attr">findtime</span> = <span class="number">600</span></span><br><span class="line"><span class="attr">bantime</span>  = <span class="number">604800</span></span><br><span class="line"></span><br><span class="line"><span class="section">[sshd]</span></span><br><span class="line"><span class="attr">enabled</span>  = <span class="literal">true</span></span><br><span class="line"><span class="attr">filter</span>   = sshd</span><br><span class="line"><span class="attr">action</span>   = iptables[name=SSH, port=ssh, protocol=tcp]</span><br><span class="line">           webhook</span><br><span class="line"></span><br><span class="line"><span class="attr">logpath</span>  = /var/log/auth.log</span><br></pre></td></tr></table></figure>
+
+<p>也可用通过传参的方式改变其配置值</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">action</span>   = webhook[hostname=<span class="string">&#x27;You hostname&#x27;</span>, access_token=<span class="string">&#x27;You token&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+<p>检查配置</p>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">fail2ban-<span class="keyword">client</span> -t</span><br></pre></td></tr></table></figure>
+
+<p>重启服务</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">restart</span> fail2ban</span><br></pre></td></tr></table></figure>
+
+<p>钉钉看到通知时就配置成功了</p>
+<h2 id="快速配置"><a href="#快速配置" class="headerlink" title="快速配置"></a>快速配置</h2><blockquote>
+<p>命令简版, 删除多余注释</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/fail2ban/ &amp;&amp; vim action.d/webhook.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Definition]</span></span><br><span class="line"><span class="attr">actionstart</span> = curl -X POST &lt;webhook_url&gt; -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> -d <span class="string">&#x27;&#123;&quot;msgtype&quot;: &quot;text&quot;,&quot;text&quot;: &#123;&quot;content&quot;:&quot;&lt;_start_text&gt;&quot;&#125;&#125;&#x27;</span></span><br><span class="line"><span class="attr">actionstop</span> =</span><br><span class="line"><span class="attr">actioncheck</span> =</span><br><span class="line"><span class="attr">actionban</span> = curl -X POST &lt;webhook_url&gt; -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> -d <span class="string">&#x27;&#123;&quot;msgtype&quot;: &quot;text&quot;,&quot;text&quot;: &#123;&quot;content&quot;:&quot;&lt;_ban_text&gt;&quot;&#125;&#125;&#x27;</span></span><br><span class="line"><span class="attr">actionunban</span> =  </span><br><span class="line"><span class="attr">_start_text</span> = Fail2Ban &lt;name&gt; jail has started from [&lt;hostname&gt;].</span><br><span class="line"><span class="attr">_ban_text</span> = Fail2Ban &lt;name&gt; banned *&lt;ip&gt;* from [&lt;hostname&gt;] after &lt;failures&gt; attempts.</span><br><span class="line"></span><br><span class="line"><span class="attr">webhook_url</span> = https://oapi.dingtalk.com/robot/send?access_token=&lt;access_token&gt;</span><br><span class="line"></span><br><span class="line"><span class="section">[Init]</span></span><br><span class="line"><span class="attr">access_token</span> = </span><br><span class="line"><span class="attr">hostname</span> = &lt;fq-hostname&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vim jail.<span class="keyword">local</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[DEFAULT]</span></span><br><span class="line"><span class="attr">backend</span>  = auto</span><br><span class="line"><span class="attr">ignoreip</span> = <span class="number">127.0</span>.<span class="number">0.1</span>/<span class="number">8</span></span><br><span class="line"><span class="attr">maxretry</span> = <span class="number">3</span></span><br><span class="line"><span class="attr">findtime</span> = <span class="number">600</span></span><br><span class="line"><span class="attr">bantime</span>  = <span class="number">604800</span></span><br><span class="line"></span><br><span class="line"><span class="section">[sshd]</span></span><br><span class="line"><span class="attr">enabled</span>  = <span class="literal">true</span></span><br><span class="line"><span class="attr">filter</span>   = sshd</span><br><span class="line"><span class="attr">action</span>   = iptables[name=SSH, port=ssh, protocol=tcp]</span><br><span class="line">           webhook<span class="section">[hostname=&#x27;You hostname&#x27;, access_token=&#x27;You token&#x27;]</span></span><br><span class="line"><span class="attr">logpath</span>  = /var/log/auth.log</span><br><span class="line"><span class="comment">#logpath  = /var/log/secure</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client -t</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl restart fail2ban</span><br></pre></td></tr></table></figure>
+
+<h2 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h2><h3 id="防火墙规则"><a href="#防火墙规则" class="headerlink" title="防火墙规则"></a>防火墙规则</h3><p><code>Fail2Ban</code>默认使用<code>iptables</code>作为防火墙，如果使用的其他防火墙（例如<code>ufw</code>），则需要修改防火墙规则以使Fail2Ban正常工作。如使用<code>ufw</code>则可以如下修改：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> ufw <span class="literal">allow</span> ssh</span><br><span class="line"><span class="attribute">sudo</span> ufw limit ssh</span><br></pre></td></tr></table></figure>
+
+<h3 id="日志路径"><a href="#日志路径" class="headerlink" title="日志路径"></a>日志路径</h3><p>不同发行版的日志路径可能会有所不同，在创建配置文件时请仔细检查日志路径是否正确。</p>
+<h3 id="检查配置语法"><a href="#检查配置语法" class="headerlink" title="检查配置语法"></a>检查配置语法</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fail2ban-client -t</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>项目地址: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZhaWwyYmFuL2ZhaWwyYmFu">https://github.com/fail2ban/fail2ban</span><br>文档链接: <span class="exturl" data-url="aHR0cHM6Ly9mYWlsMmJhbi5yZWFkdGhlZG9jcy5pby9lbi9sYXRlc3Qv">https://fail2ban.readthedocs.io/en/latest/</span></p>
+</blockquote>
 
     </div>
 
@@ -391,7 +457,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.owq.world/34b94b2a/" title="说说 python 中单例模式的实现">https://www.owq.world/34b94b2a/</a>
+    <a href="https://www.owq.world/fail2ban/" title="Fail2Ban 使用教程">https://www.owq.world/fail2ban/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
@@ -403,7 +469,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/Safety/" rel="tag"><i class="fa fa-tag"></i> Safety</a>
           </div>
 
         
@@ -411,13 +477,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/94470483/" rel="prev" title="Django 模型层">
-      <i class="fa fa-chevron-left"></i> Django 模型层
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/21619794/" rel="next" title="Django 初体验">
-      Django 初体验 <i class="fa fa-chevron-right"></i>
+    <a href="/mail-server/" rel="next" title="快速搭建一台邮件服务器">
+      快速搭建一台邮件服务器 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -477,7 +540,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%87%92%E6%B1%89%E6%A8%A1%E5%BC%8F"><span class="nav-text">懒汉模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E9%87%8D%E6%A3%80%E6%9F%A5%E9%94%81"><span class="nav-text">双重检查锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E4%BB%A3%E7%A0%81"><span class="nav-text">最终代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A5%BF%E6%B1%89%E6%A8%A1%E5%BC%8F"><span class="nav-text">饿汉模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E8%80%85%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">两者的优缺点</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3"><span class="nav-text">简单了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0Webhook%E9%80%9A%E7%9F%A5-%E9%92%89%E9%92%89"><span class="nav-text">添加Webhook通知(钉钉)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE"><span class="nav-text">快速配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87"><span class="nav-text">疑难杂症</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99"><span class="nav-text">防火墙规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E5%BF%97%E8%B7%AF%E5%BE%84"><span class="nav-text">日志路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E9%85%8D%E7%BD%AE%E8%AF%AD%E6%B3%95"><span class="nav-text">检查配置语法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -839,7 +902,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'owq-1777.github.io',
       owner       : 'owq-1777',
       admin       : ['owq-1777'],
-      id          : '062315febe1a201f5b0823df5088d862',
+      id          : '30826a115aaf4dd845f63eb4bc32032d',
         language: '',
       distractionFreeMode: true
     });

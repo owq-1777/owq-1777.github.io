@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2023-02-01T03:12:58.752Z</updated>
+  <updated>2023-03-09T12:21:51.425Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Fail2Ban 使用教程</title>
+    <link href="https://www.owq.world/fail2ban/"/>
+    <id>https://www.owq.world/fail2ban/</id>
+    <published>2023-03-09T10:47:46.000Z</published>
+    <updated>2023-03-09T12:21:51.425Z</updated>
+    
+    
+    <summary type="html">使用 Fail2Ban 增强服务器安全, 外加配置 Webhook-钉钉 通知的快速教程(￣m￣）</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Safety" scheme="https://www.owq.world/tags/Safety/"/>
+    
+  </entry>
+  
+  <entry>
     <title>快速搭建一台邮件服务器</title>
     <link href="https://www.owq.world/mail-server/"/>
     <id>https://www.owq.world/mail-server/</id>
     <published>2023-01-29T12:21:54.000Z</published>
-    <updated>2023-02-01T03:12:58.752Z</updated>
+    <updated>2023-02-23T08:24:03.471Z</updated>
     
     
     <summary type="html">用网站域名发送邮件是不是很酷的一件事, 当然作用远远不止如此, 来看看搭建一台邮件服务器是多么便捷吧\(￣︶￣*\))</summary>
@@ -424,27 +443,6 @@
     <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
     <category term="Django" scheme="https://www.owq.world/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在浏览器上使用 vsCode 进行云开发</title>
-    <link href="https://www.owq.world/20130c79/"/>
-    <id>https://www.owq.world/20130c79/</id>
-    <published>2022-01-10T14:07:07.000Z</published>
-    <updated>2022-09-25T12:41:34.547Z</updated>
-    
-    
-    <summary type="html">对于一个懒人来说，出门还带个包包多不优雅阿，随时随地就能进行开发才够爽快( *︾▽︾)</summary>
-    
-    
-    
-    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="Nginx" scheme="https://www.owq.world/tags/Nginx/"/>
-    
-    <category term="vsCode" scheme="https://www.owq.world/tags/vsCode/"/>
     
   </entry>
   
