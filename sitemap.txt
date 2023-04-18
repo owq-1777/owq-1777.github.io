@@ -1,3 +1,4 @@
+https://www.owq.world/spuid/
 https://www.owq.world/fail2ban/
 https://www.owq.world/mail-server/
 https://www.owq.world/nft/
@@ -111,6 +112,7 @@ https://www.owq.world/tags/regex/
 https://www.owq.world/tags/oss/
 https://www.owq.world/tags/cdn/
 https://www.owq.world/tags/Safety/
+https://www.owq.world/tags/proxy/
 https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/
 https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/
 https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/

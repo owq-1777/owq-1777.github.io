@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2023-03-09T12:21:51.425Z</updated>
+  <updated>2023-04-18T14:43:43.504Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Squid搭建匿名代理服务</title>
+    <link href="https://www.owq.world/spuid/"/>
+    <id>https://www.owq.world/spuid/</id>
+    <published>2023-04-18T14:03:38.000Z</published>
+    <updated>2023-04-18T14:43:43.504Z</updated>
+    
+    
+    <summary type="html">3步搭建一台属于你自己的代理服务器...(*￣０￣)ノ</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="proxy" scheme="https://www.owq.world/tags/proxy/"/>
+    
+  </entry>
   
   <entry>
     <title>Fail2Ban 使用教程</title>
@@ -422,27 +441,6 @@
     
     
     <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django 初体验</title>
-    <link href="https://www.owq.world/21619794/"/>
-    <id>https://www.owq.world/21619794/</id>
-    <published>2022-02-26T06:28:49.000Z</published>
-    <updated>2022-09-25T12:41:34.537Z</updated>
-    
-    
-    <summary type="html">让我们从零开始学习这个超棒的web框架吧(*￣０￣)ノ</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
-    
-    <category term="Django" scheme="https://www.owq.world/tags/Django/"/>
     
   </entry>
   
