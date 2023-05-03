@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Redis 使用手册</title>
+    <url>/redis/</url>
+    <content><![CDATA[<h2 id="安装Redis"><a href="#安装Redis" class="headerlink" title="安装Redis"></a>安装Redis</h2><h3 id="系统包管理安装"><a href="#系统包管理安装" class="headerlink" title="系统包管理安装"></a>系统包管理安装</h3><p><strong>Ubuntu</strong></p>
+<p>安装<code>redis-server</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install redis-server</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start redis</span><br></pre></td></tr></table></figure>
+
+<p>测试连接</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span> <span class="built_in">ping</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>CentOS</strong><br>安装EPEL仓库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+
+<p>安装<code>Redis</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install redis</span><br></pre></td></tr></table></figure>
+
+<p>启动<code>Redis</code>后测试连接</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">sudo systemctl start redis</span><br><span class="line">redis-<span class="keyword">cli</span> <span class="built_in">ping</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用Docker安装"><a href="#使用Docker安装" class="headerlink" title="使用Docker安装"></a>使用Docker安装</h3><blockquote>
+<p><a href="https://www.owq.world/8be682ad/">Docker+Redis 安装配置 | Sunny was born (owq.world)</a></p>
+</blockquote>
+<h3 id="源码自编译安装"><a href="#源码自编译安装" class="headerlink" title="源码自编译安装"></a>源码自编译安装</h3><p>下载包，其中x.x.x是Redis的版本号，前往<span class="exturl" data-url="aHR0cDovL2Rvd25sb2FkLnJlZGlzLmlvL3JlbGVhc2VzJUU2JTlGJUE1JUU3JTlDJThCJUUzJTgwJTgy">http://download.redis.io/releases查看。</span></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-x.x.x.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压到目录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar xzf redis-x.x.x.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>进入解压后的目录，进行编译</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> redis-x.x.x &amp;&amp; make</span><br></pre></td></tr></table></figure>
+
+<p>之后进行安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p>启动<code>Redis</code>后测试连接</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">redis-server</span><br><span class="line">redis-cli ping</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><blockquote>
+<p>Redis 7 conf: <span class="exturl" data-url="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3JlZGlzL3JlZGlzLzcuMC9yZWRpcy5jb25m">https://raw.githubusercontent.com/redis/redis/7.0/redis.conf</span></p>
+</blockquote>
+<p><strong>示例配置</strong><br><em>密码记得修改</em></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">daemonize no</span><br><span class="line"></span><br><span class="line">port 6379</span><br><span class="line">databases 16</span><br><span class="line"></span><br><span class="line"><span class="built_in">bind</span> 127.0.0.1 -::1</span><br><span class="line"><span class="comment"># bind * -::*</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">timeout</span> 120</span><br><span class="line"></span><br><span class="line">requirepass vwPxVXYj5HnCsh5n0uO1U5YBNC6R4a47</span><br></pre></td></tr></table></figure>
+
+<h2 id="命令文档"><a href="#命令文档" class="headerlink" title="命令文档"></a>命令文档</h2><blockquote>
+<p>官方文档: <span class="exturl" data-url="aHR0cHM6Ly9yZWRpcy5pby9jb21tYW5kcy8=">https://redis.io/commands/</span></p>
+<p>中文文档: <span class="exturl" data-url="aHR0cHM6Ly93d3cucmVkaXMubmV0LmNuL29yZGVyLw==">https://www.redis.net.cn/order/</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>命令文档</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用Squid搭建匿名代理服务</title>
     <url>/spuid/</url>
     <content><![CDATA[<blockquote>

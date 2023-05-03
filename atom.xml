@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2023-04-18T14:43:43.504Z</updated>
+  <updated>2023-05-03T03:35:29.774Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis 使用手册</title>
+    <link href="https://www.owq.world/redis/"/>
+    <id>https://www.owq.world/redis/</id>
+    <published>2023-05-03T03:27:24.000Z</published>
+    <updated>2023-05-03T03:35:29.774Z</updated>
+    
+    
+    <summary type="html">Redis是一款高性能的开源内存数据库，支持多种数据结构，包括字符串、哈希表、列表、集合、有序集合等，可用于缓存、消息队列、实时数据分析等场景。</summary>
+    
+    
+    
+    <category term="命令文档" scheme="https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="redis" scheme="https://www.owq.world/tags/redis/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Squid搭建匿名代理服务</title>
@@ -422,25 +441,6 @@
     <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
     <category term="Django" scheme="https://www.owq.world/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>说说 python 中单例模式的实现</title>
-    <link href="https://www.owq.world/34b94b2a/"/>
-    <id>https://www.owq.world/34b94b2a/</id>
-    <published>2022-03-01T03:01:05.000Z</published>
-    <updated>2022-07-14T06:31:02.593Z</updated>
-    
-    
-    <summary type="html">单例模式设计要注意的细节可真不少(。_。)</summary>
-    
-    
-    
-    <category term="设计模式" scheme="https://www.owq.world/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
   </entry>
   
