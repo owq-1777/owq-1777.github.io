@@ -33,7 +33,7 @@
 <meta property="og:description" content="Docker下安装Redis的快捷配置~">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-23T12:48:02.000Z">
-<meta property="article:modified_time" content="2022-01-12T10:04:15.000Z">
+<meta property="article:modified_time" content="2023-05-03T03:23:24.804Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="Redis">
@@ -224,7 +224,7 @@
                     <i class="far fa-calendar-check"></i>
                   </span>
                   <span class="post-meta-item-text">Updated</span>
-                    <time title="2022-01-12 18:04:15" itemprop="dateModified" datetime="2022-01-12T18:04:15+08:00">2022-01-12</time>
+                    <time title="2023-05-03 11:23:24" itemprop="dateModified" datetime="2023-05-03T11:23:24+08:00">2023-05-03</time>
                   </span>
             
 
@@ -236,7 +236,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>778</span>
+            <span>1.3k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -313,9 +313,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker pull redis</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>redis</span><br></pre></td></tr></table></figure>
+        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>redis</span><br></pre></td></tr></table></figure>
 
 <h2 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">curl http:<span class="regexp">//</span>download.redis.io<span class="regexp">/redis-stable/</span>redis.conf &gt;&gt; <span class="regexp">/etc/</span>redis/redis.conf</span><br></pre></td></tr></table></figure>
 
@@ -332,6 +330,15 @@
 <h2 id="验证启动"><a href="#验证启动" class="headerlink" title="验证启动"></a>验证启动</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker ps</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="失败处理"><a href="#失败处理" class="headerlink" title="失败处理"></a>失败处理</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看错误日志</span></span><br><span class="line">docker logs redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis 挂载端口映射等信息</span></span><br><span class="line">docker inspect redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis 端口映射</span></span><br><span class="line">docker port redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除重试</span></span><br><span class="line">docker <span class="built_in">rm</span> redis</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-redis-stack-server"><a href="#安装-redis-stack-server" class="headerlink" title="安装 redis-stack-server"></a>安装 redis-stack-server</h2><blockquote>
+<p>redis-stack-server 是一个基于 Redis 的栈数据结构实现的服务器。<br>它可以提供栈的基本操作，如 push、pop、peek 等，同时也支持多个客户端同时连接和操作栈。redis-stack-server 可以作为一个简单的栈服务，供其他应用程序使用。</p>
+</blockquote>
+<p><code>redis-stack.conf</code>参考配置, 密码注意更改</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">daemonize</span> no</span><br><span class="line"></span><br><span class="line"><span class="attribute">port</span> <span class="number">6379</span></span><br><span class="line"><span class="attribute">databases</span> <span class="number">16</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">bind</span> <span class="number">127.0.0.1</span> -::<span class="number">1</span></span><br><span class="line"><span class="comment"># bind * -::*</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Close the connection after a client is idle for N seconds (0 to disable)</span></span><br><span class="line"><span class="attribute">timeout</span> <span class="number">120</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">requirepass</span> F5DYvVrrEnZNl1bbeuUEnFUMOqW7h116ATj7d4Ly1vTgrZOs</span><br></pre></td></tr></table></figure>
+
+<p>运行命令参考</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -p 6379:6379 \</span><br><span class="line">-v /data/redis/data:/data \</span><br><span class="line">-v /data/redis/redis-stack.conf:/redis-stack.conf \</span><br><span class="line">--name redis-stack-server \</span><br><span class="line">-d redis/redis-stack-server:latest</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -443,7 +450,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="nav-text">下载镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95"><span class="nav-text">创建挂载目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">下载配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8"><span class="nav-text">运行容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E5%90%AF%E5%8A%A8"><span class="nav-text">验证启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86"><span class="nav-text">失败处理</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95"><span class="nav-text">创建挂载目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">下载配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8"><span class="nav-text">运行容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E5%90%AF%E5%8A%A8"><span class="nav-text">验证启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86"><span class="nav-text">失败处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-redis-stack-server"><span class="nav-text">安装 redis-stack-server</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -650,7 +657,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">169k</span>
+    <span title="站点总字数">170k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

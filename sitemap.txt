@@ -1,3 +1,4 @@
+https://www.owq.world/8be682ad/
 https://www.owq.world/spuid/
 https://www.owq.world/fail2ban/
 https://www.owq.world/mail-server/
@@ -45,7 +46,6 @@ https://www.owq.world/conda/
 https://www.owq.world/win/
 https://www.owq.world/80aa4d4c/
 https://www.owq.world/regex/
-https://www.owq.world/8be682ad/
 https://www.owq.world/404.html
 https://www.owq.world/pip/
 https://www.owq.world/nginx-configure/
