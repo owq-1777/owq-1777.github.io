@@ -41,8 +41,11 @@
 <meta property="og:image" content="https://img.owq.world/2022/11/0016-69b1dc.png">
 <meta property="og:image" content="https://img.owq.world/2022/11/0028-42eca0.png">
 <meta property="og:image" content="https://img.owq.world/2022/11/0027-701cca.png">
+<meta property="og:image" content="https://img.owq.world/2023/05/1416-4223cd.png">
+<meta property="og:image" content="https://img.owq.world/2023/05/1013-c8ea79.png">
+<meta property="og:image" content="https://img.owq.world/2023/05/1109-ad0e12.png">
 <meta property="article:published_time" content="2022-11-17T16:23:45.000Z">
-<meta property="article:modified_time" content="2022-11-28T06:38:28.598Z">
+<meta property="article:modified_time" content="2023-05-05T06:16:29.639Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="NAT">
 <meta property="article:tag" content="FRP">
@@ -234,7 +237,7 @@
                     <i class="far fa-calendar-check"></i>
                   </span>
                   <span class="post-meta-item-text">Updated</span>
-                    <time title="2022-11-28 14:38:28" itemprop="dateModified" datetime="2022-11-28T14:38:28+08:00">2022-11-28</time>
+                    <time title="2023-05-05 14:16:29" itemprop="dateModified" datetime="2023-05-05T14:16:29+08:00">2023-05-05</time>
                   </span>
             
 
@@ -246,7 +249,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>1.7k</span>
+            <span>2k</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -390,15 +393,21 @@
 <p>这时候服务端也会有相应的日志打印出来</p>
 <p><img data-src="https://img.owq.world/2022/11/0016-69b1dc.png"></p>
 <p><em>PS: 如若连接不成功, 检查端口是否开放(冲突), 有使用Nginx反代工具等则查看是否配置错误进行排错</em></p>
-<p>添加开机自启动</p>
-<p>... ...</p>
-<p>添加自动重启</p>
-<p>... ...</p>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>打开远控软件, 输入对应的IP和端口</p>
 <img data-src="https://img.owq.world/2022/11/0028-42eca0.png" style="zoom:67%;" />
 
 <p>出现这个界面就转发成功辽</p>
 <img data-src="https://img.owq.world/2022/11/0027-701cca.png" alt="" style="zoom:67%;" />
+
+<h2 id="添加开机自启动"><a href="#添加开机自启动" class="headerlink" title="添加开机自启动"></a>添加开机自启动</h2><p>创建脚本文件<code>start_frpc.vbs</code>, 用于后台启动服务, 注意将路径更改为你自己文件的绝对路径</p>
+<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Set</span> ws = <span class="built_in">CreateObject</span>(<span class="string">&quot;Wscript.Shell&quot;</span>)</span><br><span class="line">ws.Run <span class="string">&quot;cmd /c D:\Portable\FRPC\frpc.exe -c D:\Portable\FRPC\frpc.ini&quot;</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">Set</span> ws = <span class="literal">Nothing</span></span><br></pre></td></tr></table></figure>
+
+<p>双击脚本文件, 这时程序已经在后台执行了(没有任何反应是正常的)<br><img data-src="https://img.owq.world/2023/05/1416-4223cd.png" alt="" style="zoom:50%;" /></p>
+<p>按下Win+R组合键，打开运行对话框，输入<code>shell:startup</code>，打开“启动”文件夹。<br><img data-src="https://img.owq.world/2023/05/1013-c8ea79.png" style="zoom: 67%;" /></p>
+<p>将文件移动到<code>启动</code>文件夹下, 就完成配置了.<br><img data-src="https://img.owq.world/2023/05/1109-ad0e12.png"></p>
+<p>终止程序可以用以下命令, 要在管理员模式下运行哦.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">taskkill /im frpc.exe /f</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -509,7 +518,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FRP%E4%BB%8B%E7%BB%8D"><span class="nav-text">FRP介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%8E%AF%E5%A2%83"><span class="nav-text">操作环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="nav-text">下载软件包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-text">服务端配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-text">客户端配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-text">测试</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FRP%E4%BB%8B%E7%BB%8D"><span class="nav-text">FRP介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%8E%AF%E5%A2%83"><span class="nav-text">操作环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="nav-text">下载软件包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-text">服务端配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-text">客户端配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="nav-text">添加开机自启动</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

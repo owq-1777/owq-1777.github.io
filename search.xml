@@ -992,15 +992,21 @@
 <p>这时候服务端也会有相应的日志打印出来</p>
 <p><img data-src="https://img.owq.world/2022/11/0016-69b1dc.png"></p>
 <p><em>PS: 如若连接不成功, 检查端口是否开放(冲突), 有使用Nginx反代工具等则查看是否配置错误进行排错</em></p>
-<p>添加开机自启动</p>
-<p>... ...</p>
-<p>添加自动重启</p>
-<p>... ...</p>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>打开远控软件, 输入对应的IP和端口</p>
 <img data-src="https://img.owq.world/2022/11/0028-42eca0.png" style="zoom:67%;" />
 
 <p>出现这个界面就转发成功辽</p>
 <img data-src="https://img.owq.world/2022/11/0027-701cca.png" alt="" style="zoom:67%;" />
+
+<h2 id="添加开机自启动"><a href="#添加开机自启动" class="headerlink" title="添加开机自启动"></a>添加开机自启动</h2><p>创建脚本文件<code>start_frpc.vbs</code>, 用于后台启动服务, 注意将路径更改为你自己文件的绝对路径</p>
+<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Set</span> ws = <span class="built_in">CreateObject</span>(<span class="string">&quot;Wscript.Shell&quot;</span>)</span><br><span class="line">ws.Run <span class="string">&quot;cmd /c D:\Portable\FRPC\frpc.exe -c D:\Portable\FRPC\frpc.ini&quot;</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">Set</span> ws = <span class="literal">Nothing</span></span><br></pre></td></tr></table></figure>
+
+<p>双击脚本文件, 这时程序已经在后台执行了(没有任何反应是正常的)<br><img data-src="https://img.owq.world/2023/05/1416-4223cd.png" alt="" style="zoom:50%;" /></p>
+<p>按下Win+R组合键，打开运行对话框，输入<code>shell:startup</code>，打开“启动”文件夹。<br><img data-src="https://img.owq.world/2023/05/1013-c8ea79.png" style="zoom: 67%;" /></p>
+<p>将文件移动到<code>启动</code>文件夹下, 就完成配置了.<br><img data-src="https://img.owq.world/2023/05/1109-ad0e12.png"></p>
+<p>终止程序可以用以下命令, 要在管理员模式下运行哦.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">taskkill /im frpc.exe /f</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>学习教程</category>
