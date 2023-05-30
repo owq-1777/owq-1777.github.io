@@ -305,7 +305,7 @@
 <tr>
 <td>TXT</td>
 <td>_dmarc</td>
-<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjeDZkOyYjeDYxOyYjMTE0OyYjOTk7JiN4MmU7JiMxMTQ7JiN4NjU7JiMxMTI7JiMxMTE7JiN4NzI7JiN4NzQ7JiN4NDA7JiMxMDE7JiN4Nzg7JiN4NjE7JiMxMDk7JiMxMTI7JiMxMDg7JiMxMDE7JiM0NjsmI3g2MzsmIzExMTsmI3g2ZDs=">&#100;&#x6d;&#x61;&#114;&#99;&#x2e;&#114;&#x65;&#112;&#111;&#x72;&#x74;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#108;&#101;&#46;&#x63;&#111;&#x6d;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjMTA5OyYjOTc7JiN4NzI7JiN4NjM7JiM0NjsmIzExNDsmI3g2NTsmI3g3MDsmI3g2ZjsmIzExNDsmI3g3NDsmIzY0OyYjeDY1OyYjeDc4OyYjeDYxOyYjeDZkOyYjeDcwOyYjeDZjOyYjMTAxOyYjNDY7JiN4NjM7JiN4NmY7JiN4NmQ7">&#100;&#109;&#97;&#x72;&#x63;&#46;&#114;&#x65;&#x70;&#x6f;&#114;&#x74;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;</span>; sp&#x3D;none; ri&#x3D;86400</td>
+<td>v&#x3D;DMARC1; p&#x3D;none; rua&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjeDZkOyYjOTc7JiN4NzI7JiN4NjM7JiM0NjsmI3g3MjsmIzEwMTsmIzExMjsmI3g2ZjsmI3g3MjsmIzExNjsmI3g0MDsmIzEwMTsmI3g3ODsmIzk3OyYjeDZkOyYjMTEyOyYjeDZjOyYjMTAxOyYjeDJlOyYjOTk7JiMxMTE7JiN4NmQ7">&#100;&#x6d;&#97;&#x72;&#x63;&#46;&#x72;&#101;&#112;&#x6f;&#x72;&#116;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;&#111;&#x6d;</span>; ruf&#x3D;mailto:<span class="exturl" data-url="bWFpbHRvOiYjMTAwOyYjMTA5OyYjeDYxOyYjMTE0OyYjeDYzOyYjeDJlOyYjMTE0OyYjeDY1OyYjeDcwOyYjeDZmOyYjeDcyOyYjeDc0OyYjeDQwOyYjMTAxOyYjMTIwOyYjOTc7JiN4NmQ7JiN4NzA7JiN4NmM7JiMxMDE7JiM0NjsmIzk5OyYjeDZmOyYjeDZkOw==">&#100;&#109;&#x61;&#114;&#x63;&#x2e;&#114;&#x65;&#x70;&#x6f;&#x72;&#x74;&#x40;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</span>; sp&#x3D;none; ri&#x3D;86400</td>
 <td>告诉发件人邮件受<code>SPF</code>&#x2F;<code>DKIM</code>保护</td>
 </tr>
 </tbody></table>
@@ -432,8 +432,12 @@
 <h2 id="应用方向"><a href="#应用方向" class="headerlink" title="应用方向"></a>应用方向</h2><ul>
 <li>内部邮件服务器</li>
 <li>网站自动化注册</li>
+<li>匿名邮箱</li>
 <li>...</li>
 </ul>
+<h2 id="无代码快速实现"><a href="#无代码快速实现" class="headerlink" title="无代码快速实现"></a>无代码快速实现</h2><blockquote>
+<p>使用 cloudflare.com 服务, 更改域名DNS服务器, 一键启用域名邮件(免费). | 2022-05</p>
+</blockquote>
 <hr>
 <p><strong>参考文档</strong></p>
 <blockquote>

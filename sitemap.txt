@@ -1,10 +1,10 @@
+https://www.owq.world/mail-server/
 https://www.owq.world/tmux/
 https://www.owq.world/b7fe0c77/
 https://www.owq.world/redis/
 https://www.owq.world/8be682ad/
 https://www.owq.world/spuid/
 https://www.owq.world/fail2ban/
-https://www.owq.world/mail-server/
 https://www.owq.world/nft/
 https://www.owq.world/bcd27009/
 https://www.owq.world/docker/
