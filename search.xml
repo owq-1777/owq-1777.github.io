@@ -64,10 +64,10 @@
     <content><![CDATA[<blockquote>
 <p>Squid是一个流行的代理服务器，可以用来搭建代理匿名服务</p>
 </blockquote>
-<h2 id="安装Squid"><a href="#安装Squid" class="headerlink" title="安装Squid"></a>安装Squid</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install squid</span><br></pre></td></tr></table></figure>
+<h2 id="安装Squid"><a href="#安装Squid" class="headerlink" title="安装Squid"></a>安装Squid</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt update &amp;&amp; apt install squid</span><br></pre></td></tr></table></figure>
 
 <h2 id="配置Squid"><a href="#配置Squid" class="headerlink" title="配置Squid"></a>配置Squid</h2><p>编辑Squid配置文件<code>/etc/squid/squid.conf</code>，并添加以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 允许所有客户端连接</span><br><span class="line">http_access allow all</span><br><span class="line"></span><br><span class="line"># 设置代理端口</span><br><span class="line"># 没有设置认证方式的情况下,端口可以设置高一点,反正被扫描到</span><br><span class="line">http_port 3128</span><br><span class="line"></span><br><span class="line"># 隐藏代理服务器的真实IP地址</span><br><span class="line">forwarded_for off</span><br><span class="line">via off</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 允许所有客户端连接</span><br><span class="line">http_access allow all</span><br><span class="line"></span><br><span class="line"># 设置代理端口</span><br><span class="line"># 没有设置认证方式的情况下,端口可以设置高一点,反正被扫描</span><br><span class="line">http_port 3128</span><br><span class="line"></span><br><span class="line"># 隐藏代理服务器的真实IP地址</span><br><span class="line">forwarded_for off</span><br><span class="line">via off</span><br></pre></td></tr></table></figure>
 
 <p>保存并关闭文件。然后重新启动Squid：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart squid</span><br></pre></td></tr></table></figure>
@@ -75,11 +75,11 @@
 <h2 id="设置防火墙规则"><a href="#设置防火墙规则" class="headerlink" title="设置防火墙规则"></a>设置防火墙规则</h2><blockquote>
 <p>为了保护代理服务器，需要设置防火墙规则来限制访问Squid端口。</p>
 </blockquote>
-<h3 id="安装ufw"><a href="#安装ufw" class="headerlink" title="安装ufw"></a>安装ufw</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ufw</span><br></pre></td></tr></table></figure>
+<h3 id="安装UFW"><a href="#安装UFW" class="headerlink" title="安装UFW"></a>安装UFW</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt update ufw</span><br></pre></td></tr></table></figure>
 
-<h3 id="启用ufw"><a href="#启用ufw" class="headerlink" title="启用ufw"></a>启用ufw</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
+<h3 id="启用ufw"><a href="#启用ufw" class="headerlink" title="启用ufw"></a>启用ufw</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="允许访问Squid端口"><a href="#允许访问Squid端口" class="headerlink" title="允许访问Squid端口"></a>允许访问Squid端口</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw allow 3128/tcp</span><br></pre></td></tr></table></figure>
+<h3 id="允许访问Squid端口"><a href="#允许访问Squid端口" class="headerlink" title="允许访问Squid端口"></a>允许访问Squid端口</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ufw allow 3128/tcp</span><br></pre></td></tr></table></figure>
 
 <h2 id="测试代理匿名服务"><a href="#测试代理匿名服务" class="headerlink" title="测试代理匿名服务"></a>测试代理匿名服务</h2><p>现在代理匿名服务已经搭建完成，可以使用以下方式测试代理服务是否正常工作：</p>
 <h3 id="使用curl测试"><a href="#使用curl测试" class="headerlink" title="使用curl测试"></a>使用curl测试</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl --proxy http://IP:3128 ip.gs</span><br></pre></td></tr></table></figure>
