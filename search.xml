@@ -2829,12 +2829,13 @@
 <p>添加全局命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /usr/local/nginx/nginx /usr/sbin/nginx</span><br></pre></td></tr></table></figure>
 
-
-
 <h2 id="添加系统服务"><a href="#添加系统服务" class="headerlink" title="添加系统服务"></a>添加系统服务</h2><blockquote>
 <p>Docs: <span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbnguY29tL3Jlc291cmNlcy93aWtpL3N0YXJ0L3RvcGljcy9leGFtcGxlcy9zeXN0ZW1kLw==">https://www.nginx.com/resources/wiki/start/topics/examples/systemd/</span></p>
 </blockquote>
-<p>编辑 <code>/lib/systemd/system/nginx.service</code> 文件<br>如修改过命令位置, 需修改命令路径, <code>PIDFile</code>文件路径需与构建时保持一致, 忘记了可以通过<code>nginx -V</code>查看配置</p>
+<p>创建 <code>/lib/systemd/system/nginx.service</code> 文件</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/lib/</span>systemd<span class="regexp">/system/</span>nginx.service</span><br></pre></td></tr></table></figure>
+
+<p>如修改过命令位置, 需修改命令路径, <code>PIDFile</code>文件路径需与构建时保持一致, 忘记了可以通过<code>nginx -V</code>查看配置</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=The NGINX HTTP and reverse proxy server</span><br><span class="line"><span class="attr">After</span>=syslog.target network-<span class="literal">on</span>line.target remote-fs.target nss-lookup.target</span><br><span class="line"><span class="attr">Wants</span>=network-<span class="literal">on</span>line.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=forking</span><br><span class="line"><span class="attr">PIDFile</span>=/usr/local/nginx/logs/nginx.pid</span><br><span class="line"><span class="attr">ExecStartPre</span>=/usr/sbin/nginx -t</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/sbin/nginx</span><br><span class="line"><span class="attr">ExecReload</span>=/usr/sbin/nginx -s reload</span><br><span class="line"><span class="attr">ExecStop</span>=/bin/kill -s QUIT <span class="variable">$MAINPID</span></span><br><span class="line"><span class="attr">PrivateTmp</span>=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
 
 <p>开启自动启动</p>
@@ -2846,7 +2847,13 @@
 <p>查看服务状态</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl status nginx</span><br></pre></td></tr></table></figure>
 
+<h2 id="添加配置目录-可选"><a href="#添加配置目录-可选" class="headerlink" title="添加配置目录(可选)"></a>添加配置目录(可选)</h2><p>创建配置目录</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/nginx &amp;&amp; <span class="built_in">mkdir</span> conf.d tcp.d</span><br></pre></td></tr></table></figure>
 
+<p>编辑<code>nginx.conf</code>, 添加配置导入, 便于管理</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim nginx.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">	include /usr/local/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">stream &#123;</span><br><span class="line">    include /usr/local/nginx/tcp.d/*.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="卸载操作"><a href="#卸载操作" class="headerlink" title="卸载操作"></a>卸载操作</h2><p>停止nginx进程</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
