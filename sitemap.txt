@@ -1,7 +1,7 @@
+https://www.owq.world/conda/
 https://www.owq.world/nginx/
 https://www.owq.world/spuid/
 https://www.owq.world/git/
-https://www.owq.world/conda/
 https://www.owq.world/mail-server/
 https://www.owq.world/tmux/
 https://www.owq.world/b7fe0c77/
