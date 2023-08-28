@@ -25,21 +25,21 @@
     var CONFIG = {"hostname":"www.owq.world","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_body":"slideDownIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="爱编程, 懂设计, 喜折腾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny was born">
-<meta property="og:url" content="https://www.owq.world/tags/log/index.html">
+  <meta name="description" content="为服务器添加IP白名单进行安全加固（*゜ー゜*）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置服务器SSH白名单">
+<meta property="og:url" content="https://www.owq.world/c3ec8a00/index.html">
 <meta property="og:site_name" content="Sunny was born">
-<meta property="og:description" content="爱编程, 懂设计, 喜折腾">
+<meta property="og:description" content="为服务器添加IP白名单进行安全加固（*゜ー゜*）">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-27T06:27:08.000Z">
+<meta property="article:modified_time" content="2023-08-28T06:29:51.187Z">
 <meta property="article:author" content="OWQ">
-<meta property="article:tag" content="owq">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="code">
-<meta property="article:tag" content="technique sharing">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SSH">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.owq.world/tags/log/">
+<link rel="canonical" href="https://www.owq.world/c3ec8a00/">
 
 
 <script id="page-configurations">
@@ -47,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: log | Sunny was born</title>
+  <title>配置服务器SSH白名单 | Sunny was born</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM06B0RFS"></script>
     <script data-pjax>
@@ -206,10 +206,51 @@
 
 <div id="signature">
   <div class="container">
-        <header class="site-heading">
-          <h1>Sunny was born</h1>
-          <span class="subheading">心中有丘壑, 眉目做山河</span>
+        <header class="post-heading">
+          <div class="tags">
+          </div>
+          <h1>配置服务器SSH白名单</h1>
+          <h2 class="subheading">为服务器添加IP白名单进行安全加固（*゜ー゜*）</h2>
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+            </span>
+            <span class="post-meta-item-text">Created</span>
+
+            <time title="2023-08-27 14:27:08" itemprop="dateCreated datePublished" datetime="2023-08-27T14:27:08+08:00">2023-08-27</time>
+                  <span style="margin: 0 0.5em;"> | </span>
+                  <span class="post-meta-item-icon">
+                    <i class="far fa-calendar-check"></i>
+                  </span>
+                  <span class="post-meta-item-text">Updated</span>
+                    <time title="2023-08-28 14:29:51" itemprop="dateModified" datetime="2023-08-28T14:29:51+08:00">2023-08-28</time>
+                  </span>
+            
+
+          </span>
+
+
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="far fa-file-word"></i>
+            </span>
+            <span class="post-meta-item-text">Word count:</span>
+            <span>212</span>
+
+            <span style="margin: 0 0.5em;"> | </span>
+
+            <span class="post-meta-item-icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span class="post-meta-item-text">Reading time: &asymp;</span>
+            <span>1 min</span>
+          </span>
+
+
         </header>
+
+      
 
   </div>
 </div>
@@ -247,57 +288,101 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">log
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.owq.world/c3ec8a00/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="OWQ">
+      <meta itemprop="description" content="爱编程, 懂设计, 喜折腾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunny was born">
+    </span>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <blockquote>
+<p>配置访问控制列表（ACL）文件, 限制或允许特定主机的访问权限.</p>
+</blockquote>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/hosts.allow</span><br></pre></td></tr></table></figure>
+
+<p>添加配置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sshd:all:deny				<span class="comment"># 拒绝除允许地址之外IP连接</span></span><br><span class="line">sshd:192.168.10.16:allow	<span class="comment"># 允许IP地址连接</span></span><br><span class="line">sshd:192.168.10.*:allow		<span class="comment"># 允许网段 192.168.10.0/24 的地址连接</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="重启服务应用配置"><a href="#重启服务应用配置" class="headerlink" title="重启服务应用配置"></a>重启服务应用配置</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+      <div class='post_end_tag'>
+        
+    <span>------------ 已触及底线了 <i class="fa fa-archive fa-paw"></i> 感谢您的阅读 ------------</span>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-26T16:45:57+08:00"
-              content="2021-08-26">
-          08-26
-        </time>
       </div>
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/dfbb4c9/" itemprop="url">
-            <span itemprop="name">Python 使用 YAML 配置带有颜色输出的loging</span>
-          </a>
-      </div>
+    
+    
+    
+        
 
-    </header>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OWQ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.owq.world/c3ec8a00/" title="配置服务器SSH白名单">https://www.owq.world/c3ec8a00/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处（￣︶￣）↗
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/SSH/" rel="tag"><i class="fa fa-tag"></i> SSH</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/redis/" rel="next" title="Redis 使用手册">
+      Redis 使用手册 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
   
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -344,6 +429,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-text">重启服务应用配置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -694,6 +780,25 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '472553d47287225fff92',
+      clientSecret: 'a2e30c338a55dfc350329833114d277bcfa79a6e',
+      repo        : 'owq-1777.github.io',
+      owner       : 'owq-1777',
+      admin       : ['owq-1777'],
+      id          : '3a84778ccde6d2cd4226793972f10ed7',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"life","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>

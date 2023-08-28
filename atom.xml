@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2023-05-03T03:35:29.774Z</updated>
+  <updated>2023-08-28T06:29:51.187Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置服务器SSH白名单</title>
+    <link href="https://www.owq.world/c3ec8a00/"/>
+    <id>https://www.owq.world/c3ec8a00/</id>
+    <published>2023-08-27T06:27:08.000Z</published>
+    <updated>2023-08-28T06:29:51.187Z</updated>
+    
+    
+    <summary type="html">为服务器添加IP白名单进行安全加固（*゜ー゜*）</summary>
+    
+    
+    
+    <category term="配置记录" scheme="https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Linux" scheme="https://www.owq.world/tags/Linux/"/>
+    
+    <category term="SSH" scheme="https://www.owq.world/tags/SSH/"/>
+    
+  </entry>
   
   <entry>
     <title>Redis 使用手册</title>
@@ -411,27 +432,6 @@
     
     
     <summary type="html">视图层更注重业务上的实现, 了解一些常用知识就够用了b(￣▽￣)d</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
-    
-    <category term="Django" scheme="https://www.owq.world/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django 模型层</title>
-    <link href="https://www.owq.world/94470483/"/>
-    <id>https://www.owq.world/94470483/</id>
-    <published>2022-03-20T14:00:58.000Z</published>
-    <updated>2022-09-25T12:41:34.537Z</updated>
-    
-    
-    <summary type="html">从实际应用角度提炼Django模型层的一些知识点, 供快速上手使用ヾ(•ω•`)o</summary>
     
     
     
