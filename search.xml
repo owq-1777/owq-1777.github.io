@@ -4,7 +4,7 @@
     <title>SlowApi 接口速率限制器 - FastAPI</title>
     <url>/2c817785/</url>
     <content><![CDATA[<blockquote>
-<p>:cloud: Github: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2xhdXJlbnRTL3Nsb3dhcGk=">https://github.com/laurentS/slowapi</span><br>:book: Docs: <span class="exturl" data-url="aHR0cHM6Ly9zbG93YXBpLnJlYWR0aGVkb2NzLmlvL2VuL2xhdGVzdC8jZmFzdGFwaQ==">https://slowapi.readthedocs.io/en/latest/#fastapi</span></p>
+<p>🔎 Github: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2xhdXJlbnRTL3Nsb3dhcGk=">https://github.com/laurentS/slowapi</span><br>📖 Docs: <span class="exturl" data-url="aHR0cHM6Ly9zbG93YXBpLnJlYWR0aGVkb2NzLmlvL2VuL2xhdGVzdC8jZmFzdGFwaQ==">https://slowapi.readthedocs.io/en/latest/#fastapi</span></p>
 </blockquote>
 <h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><ul>
 <li>可以使用单个或多个限制修饰器来将限制应用到端点函数上</li>
