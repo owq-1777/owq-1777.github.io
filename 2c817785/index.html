@@ -33,7 +33,7 @@
 <meta property="og:description" content="安全防范必备, 用最小的侵入添加 FastAPI 接口限流功能吧(¬‿¬)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-27T09:33:13.000Z">
-<meta property="article:modified_time" content="2023-08-28T09:50:12.217Z">
+<meta property="article:modified_time" content="2023-08-28T10:15:02.307Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="FastAPI">
@@ -224,7 +224,7 @@
                     <i class="far fa-calendar-check"></i>
                   </span>
                   <span class="post-meta-item-text">Updated</span>
-                    <time title="2023-08-28 17:50:12" itemprop="dateModified" datetime="2023-08-28T17:50:12+08:00">2023-08-28</time>
+                    <time title="2023-08-28 18:15:02" itemprop="dateModified" datetime="2023-08-28T18:15:02+08:00">2023-08-28</time>
                   </span>
             
 
@@ -236,7 +236,7 @@
               <i class="far fa-file-word"></i>
             </span>
             <span class="post-meta-item-text">Word count:</span>
-            <span>950</span>
+            <span>987</span>
 
             <span style="margin: 0 0.5em;"> | </span>
 
@@ -324,7 +324,7 @@
 </ul>
 <h2 id="安装库"><a href="#安装库" class="headerlink" title="安装库"></a>安装库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip install slowapi</span><br></pre></td></tr></table></figure>
 
-<h2 id="使用例子"><a href="#使用例子" class="headerlink" title="使用例子"></a>使用例子</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"><span class="keyword">from</span> slowapi <span class="keyword">import</span> Limiter, _rate_limit_exceeded_handler</span><br><span class="line"><span class="keyword">from</span> slowapi.util <span class="keyword">import</span> get_remote_address</span><br><span class="line"><span class="keyword">from</span> slowapi.errors <span class="keyword">import</span> RateLimitExceeded</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置key生成方式/限速依据: 根据IP生成唯一key</span></span><br><span class="line">limiter = Limiter(key_func=get_remote_address)	</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line">app.state.limiter = limiter</span><br><span class="line">app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note: 路由装饰器必须在限制装饰器之上, 而不是之下</span></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/home&quot;</span></span>)</span></span><br><span class="line"><span class="meta">@limiter.limit(<span class="params"><span class="string">&quot;5/minute&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">homepage</span>(<span class="params">request: Request</span>):	<span class="comment"># Note: 接口request对象必须定义, 不然无法挂载插件</span></span><br><span class="line">    <span class="keyword">return</span> PlainTextResponse(<span class="string">&quot;test&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/mars&quot;</span></span>)</span></span><br><span class="line"><span class="meta">@limiter.limit(<span class="params"><span class="string">&quot;5/minute&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">homepage</span>(<span class="params">request: Request, response: Response</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;key&quot;</span>: <span class="string">&quot;value&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用例子"><a href="#使用例子" class="headerlink" title="使用例子"></a>使用例子</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"><span class="keyword">from</span> slowapi <span class="keyword">import</span> Limiter, _rate_limit_exceeded_handler</span><br><span class="line"><span class="keyword">from</span> slowapi.util <span class="keyword">import</span> get_remote_address</span><br><span class="line"><span class="keyword">from</span> slowapi.errors <span class="keyword">import</span> RateLimitExceeded</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置key生成方式/限速依据: 根据IP生成唯一key</span></span><br><span class="line">limiter = Limiter(key_func=get_remote_address)	</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line">app.state.limiter = limiter</span><br><span class="line">app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note: 路由装饰器必须在限制装饰器之上, 而不是之下</span></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/home&quot;</span></span>)</span></span><br><span class="line"><span class="meta">@limiter.limit(<span class="params"><span class="string">&quot;5/minute&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">homepage</span>(<span class="params">request: Request</span>):	<span class="comment"># Note: 接口request对象必须定义, 不然无法挂载插件</span></span><br><span class="line">    <span class="keyword">return</span> PlainTextResponse(<span class="string">&quot;test&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/mars&quot;</span></span>)</span></span><br><span class="line"><span class="meta">@Limiter.limit(<span class="params"><span class="string">&quot;2/second&quot;</span></span>)</span></span><br><span class="line"><span class="meta">@limiter.limit(<span class="params"><span class="string">&quot;50/minute&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">homepage</span>(<span class="params">request: Request, response: Response</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;key&quot;</span>: <span class="string">&quot;value&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
