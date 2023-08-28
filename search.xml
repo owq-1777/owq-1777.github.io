@@ -9,7 +9,7 @@
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/hosts.allow</span><br></pre></td></tr></table></figure>
 
 <p>添加配置</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sshd:all:deny				<span class="comment"># 拒绝除允许地址之外IP连接</span></span><br><span class="line">sshd:192.168.10.16:allow	<span class="comment"># 允许IP地址连接</span></span><br><span class="line">sshd:192.168.10.*:allow		<span class="comment"># 允许网段 192.168.10.0/24 的地址连接</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sshd:all:deny	<span class="comment"># 拒绝除允许地址之外IP连接</span></span><br><span class="line">sshd:192.168.10.16:allow	<span class="comment"># 允许IP地址连接</span></span><br><span class="line">sshd:192.168.10.*:allow		<span class="comment"># 允许网段 192.168.10.0/24 的地址连接</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="重启服务应用配置"><a href="#重启服务应用配置" class="headerlink" title="重启服务应用配置"></a>重启服务应用配置</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
 ]]></content>
