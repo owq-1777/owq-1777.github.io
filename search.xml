@@ -4915,6 +4915,17 @@
 <li><p>删除路径变量（终端配置文件）</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="attribute">PATH</span>=<span class="string">&quot;/usr/local/miniconda:<span class="variable">$PATH</span>&quot;</span> </span><br></pre></td></tr></table></figure></li>
 </ul>
+<h2 id="环境所在包路径"><a href="#环境所在包路径" class="headerlink" title="环境所在包路径"></a>环境所在包路径</h2><blockquote>
+<p>遇到包有问题时, 修改包源码时会使用到, 注意安装目录所在.</p>
+</blockquote>
+<ul>
+<li><p>Linux：<code>/usr/local/miniconda/envs/&lt;env-name&gt;/lib/&lt;python-versions&gt;/site-packag</code></p>
+</li>
+<li><p>Windows：<code>C:\Users\&lt;username&gt;\miniconda\envs&lt;env-name&gt;\Lib\site-packages</code></p>
+</li>
+<li><p>MacOS：<code>/Users/&lt;username&gt;/miniconda/envs/&lt;env-name&gt;/lib/&lt;python-versions&gt;/site-packages</code></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>命令文档</category>
