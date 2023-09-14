@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Web3 简单了解</title>
+    <url>/web3-base/</url>
+    <content><![CDATA[<h2 id="什么是-Web3"><a href="#什么是-Web3" class="headerlink" title="什么是 Web3?"></a>什么是 Web3?</h2><p>在了解Web3之前，需要先了解下互联网的历史。</p>
+<ul>
+<li><code>Web 1.0</code>(1990-2004)<br>互联网诞生时，是和杂志一样的属性，静态的，只读的，没有用户交互，这一段时期的互联网被称为&quot;只读网络&quot;</li>
+<li><code>Web 2.0</code>(2004-Now)<br>随着社交媒体的出现，网络不再是只读的，而且进化成可读可写，交流变成双向的了，但用户创建的内容被保存在运营的平台商上, 物理上并没有拥有它。</li>
+<li><code>Web3</code>(Future)<br>在 Ethereum 发布不久后，由 Ethereum 创始人 Gavin 提出的，它使用<strong>区块链</strong>，<strong>加密货币</strong>，和 <strong>NFTs</strong>以所有权的形式给予用户权力, 用户真正拥有了在互联网掌握自己东西的权力。</li>
+</ul>
+<blockquote>
+<p>如果 <code>Web 1.0</code> 是用户<strong>读取互联网</strong>，<code>Web 2.0</code> 是用户<strong>写入互联网</strong>，那么 <code>Web3</code> 就是用户<strong>生活在互联网</strong>。</p>
+</blockquote>
+<ol>
+<li>Web1 代表了互联网的早期阶段，是PC互联网时代的代表性产品，如国际上的 雅虎 和 谷歌，以及国内的门户网站，如 搜狐 和 网易。这些网站的主要功能是汇集信息，用户可以在网站上点击浏览这些信息。</li>
+<li>移动互联网的兴起改变了信息生产的方式，不再仅限于门户网站，全球数亿用户成为信息的生产者。用户不仅可以在互联网上获取信息，还可以自己生成信息。代表性的产品包括国外的 Facebook 和 Twitter，以及国内的 微信** 和 抖音，它们属于Web2时代的互联网产品。这些巨头平台吸引了大量用户，通过广告实现商业化闭环，形成了典型的平台型经济模式。在这个模式下，平台通过提供免费服务来吸引用户，并未经用户允许将用户的信息卖给商家以盈利。</li>
+<li>那么，Web3 又是什么呢？Web3的核心在于用户拥有自己在互联网上的 <strong>信息产权</strong>。从信息产生的瞬间开始，它就归属于用户。Web3实际上是信息所有者的经济体系。在当前阶段，用户无需依赖大型平台注册账户。一旦用户创建了自己的 <strong>数字钱包</strong>，就可以在Web3世界中自由使用各种应用程序。钱包的概念和使用将在后面解释。理论上来说，您的数字钱包仅属于您自己，不受任何公司或组织的控制。与Web2不同，如果您在某个游戏中被封号或游戏公司倒闭，您的虚拟资产仍然安全存在于您的数字钱包中。这正是Web3的特点，它强调用户的信息所有权，并建立了原生的价值网络。</li>
+</ol>
+<blockquote>
+<p>简单点说， Web3 就是<strong>所有权</strong>的改变。</p>
+</blockquote>
+<h2 id="Web3-主要特点"><a href="#Web3-主要特点" class="headerlink" title="Web3 主要特点"></a>Web3 主要特点</h2><ol>
+<li><p><strong>去中心化</strong></p>
+<p>Web3的核心概念之一是去中心化，即消除传统互联网中的中心化权威和控制，将权力下放到网络的多个节点。这有助于减少单点故障，提高网络的抗攻击性，并增强用户的控制权。</p>
+</li>
+<li><p><strong>数字主权</strong></p>
+<p>Web3推崇用户拥有自己的数据和身份，通过加密技术实现数字主权。用户可以更好地掌控自己的个人信息，选择与谁分享以及如何分享。<strong>这也是Web3的核心</strong></p>
+</li>
+</ol>
+<h2 id="Web3-相关产物"><a href="#Web3-相关产物" class="headerlink" title="Web3 相关产物"></a>Web3 相关产物</h2><ol>
+<li><p><strong>加密货币</strong></p>
+<p>Web3 使用<strong>加密货币</strong>在线消费和汇款，不依赖于传统银行或者其他有着类似于银行功能的第三方机构。就如比特币和以太坊, 这也是资本入驻Web3的第一条道路。</p>
+</li>
+<li><p><strong>智能合约</strong></p>
+<p>智能合约就是<strong>自动执行的合同</strong>，无需中介。这些合同可以用于各种用例，如去中心化金融（DeFi）、数字艺术市场和供应链管理，为各种交易提供可信度和透明度, 相当于<strong>无需信任</strong>（不需要第三方信任背书）。</p>
+</li>
+<li><p><strong>DApp</strong></p>
+<p>Web3 支持开发和使用去中心化应用程序，这些应用程序不依赖于中心化的服务器，用户拥有数据和控制权。这种方式有助于消除数据垄断和滥用问题。</p>
+</li>
+<li><p><strong>NFT</strong></p>
+<p>Web3通过非同质化代币（NFT）等技术赋予数字物品和资产真实的所有权，使数字世界中的资产具有独特性和价值。</p>
+</li>
+</ol>
+<h2 id="Web3-工具站点"><a href="#Web3-工具站点" class="headerlink" title="Web3 工具站点"></a>Web3 工具站点</h2><ul>
+<li>加密货币市场网站<ul>
+<li>CoinMarketCap - <span class="exturl" data-url="aHR0cHM6Ly9jb2lubWFya2V0Y2FwLmNvbS8=">https://coinmarketcap.com</span></li>
+<li>CoinGecko - <span class="exturl" data-url="aHR0cHM6Ly93d3cuY29pbmdlY2tvLmNvbS8=">https://www.coingecko.com</span></li>
+</ul>
+</li>
+<li>链上数据类查询网站<ul>
+<li>综合区块链浏览器 - <span class="exturl" data-url="aHR0cHM6Ly9ibG9ja3NjYW4uY29tLw==">https://blockscan.com</span> </li>
+<li>BSC链上数据查询网站 - <span class="exturl" data-url="aHR0cHM6Ly9ic2Nwcm9qZWN0Lm9yZy8=">https://bscproject.org</span></li>
+<li>DEX 数据查询网站 - <span class="exturl" data-url="aHR0cHM6Ly9kZXhzY3JlZW5lci5jb20v">https://dexscreener.com</span> </li>
+<li>BTCETH链上资金数据查询 - <span class="exturl" data-url="aHR0cHM6Ly9jcnlwdG9xdWFudC5jb20v">https://cryptoquant.com</span> </li>
+<li>DEX及时交易历史查询 - <span class="exturl" data-url="aHR0cHM6Ly93d3cuZGVmaW5lZC5maS8=">https://www.defined.fi</span> </li>
+<li>全球最大Dapp聚合网站 - <span class="exturl" data-url="aHR0cHM6Ly9kYXBwcmFkYXIuY29tLw==">https://dappradar.com</span> </li>
+<li>查看资金流向 - <span class="exturl" data-url="aHR0cHM6Ly93d3cuY3J5cHRvbWV0ZXIuaW8v">https://www.cryptometer.io</span></li>
+</ul>
+</li>
+<li>咨询类网站<ul>
+<li>星球日报 -<span class="exturl" data-url="aHR0cHM6Ly93d3cub2RhaWx5Lm5ld3Mv">https://www.odaily.news</span> </li>
+<li>深潮 - <span class="exturl" data-url="aHR0cHM6Ly93d3cudGVjaGZsb3dwb3N0LmNvbS9pbmRleC5odG1s">https://www.techflowpost.com/index.html</span></li>
+<li>律动 - <span class="exturl" data-url="aHR0cHM6Ly90aGVibG9ja2JlYXRzLmluZm8v">https://theblockbeats.info</span> </li>
+<li>海外优质信息源 - <span class="exturl" data-url="aHR0cHM6Ly9taXJyb3IueHl6Lw==">https://mirror.xyz/</span></li>
+<li>中文咨讯内容平台 - <span class="exturl" data-url="aHR0cHM6Ly9mb3Jlc2lnaHRuZXdzLnByby9hcnRpY2xl">https://foresightnews.pro/article</span> </li>
+<li>链捕手新闻 - <span class="exturl" data-url="aHR0cHM6Ly93d3cuY2hhaW5jYXRjaGVyLmNvbS8=">https://www.chaincatcher.com</span> </li>
+<li>Panews - <span class="exturl" data-url="aHR0cHM6Ly93d3cucGFuZXdzbGFiLmNvbS8=">https://www.panewslab.com</span></li>
+</ul>
+</li>
+<li>区块链项目收录类网站<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY3lwaGVyaHVudGVyLmNvbS8=">https://www.cypherhunter.com</span> - 可以查看项目投资方</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyc2Nhbi5jb20v">https://twitterscan.com</span>  - 查询 NFT</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYml0ZWEub25lLw==">https://www.bitea.one</span>  - 项目情况分析</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuZGVnZW5rbm93cy5pby9yZWNvbW1lbmRlZA==">https://www.degenknows.io/recommended</span>  - 项目情况分析</li>
+</ul>
+</li>
+</ul>
+<h2 id="Web3-编程文档"><a href="#Web3-编程文档" class="headerlink" title="Web3 编程文档"></a>Web3 编程文档</h2><ul>
+<li><p>以太坊官方文档 - <span class="exturl" data-url="aHR0cHM6Ly9ldGhlcmV1bS5vcmcvZGV2ZWxvcGVycy8=">https://ethereum.org/developers/</span> </p>
+</li>
+<li><p>Solidity 官方文档 - <span class="exturl" data-url="aHR0cHM6Ly9zb2xpZGl0eWxhbmcub3JnL2RvY3VtZW50YXRpb24v">https://soliditylang.org/documentation/</span> </p>
+</li>
+<li><p>Web3.js 文档 - <span class="exturl" data-url="aHR0cHM6Ly93ZWIzanMucmVhZHRoZWRvY3MuaW8v">https://web3js.readthedocs.io/</span> </p>
+</li>
+<li><p>Web3.py 文档 - <span class="exturl" data-url="aHR0cHM6Ly93ZWIzcHkucmVhZHRoZWRvY3MuaW8vZW4vc3RhYmxlLw==">https://web3py.readthedocs.io/en/stable/</span></p>
+</li>
+<li><p>ruffle 框架文档 - <span class="exturl" data-url="aHR0cHM6Ly93d3cudHJ1ZmZsZXN1aXRlLmNvbS9kb2Nz">https://www.trufflesuite.com/docs</span> </p>
+</li>
+<li><p>Remix IDE - <span class="exturl" data-url="aHR0cHM6Ly9yZW1peC5ldGhlcmV1bS5vcmcv">https://remix.ethereum.org/</span></p>
+</li>
+</ul>
+<blockquote>
+<p>Web3 是个快速发展的行业, 难免出现资料过时的情况, 编程时需要注意资料的时效性，最简单的辨别方式就是看版本号和版本更新记录。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>学习教程</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>Blockchain</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SlowApi 接口速率限制器 - FastAPI</title>
     <url>/2c817785/</url>
     <content><![CDATA[<blockquote>

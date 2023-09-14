@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2023-08-28T10:15:02.307Z</updated>
+  <updated>2023-09-14T06:34:00.693Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web3 简单了解</title>
+    <link href="https://www.owq.world/web3-base/"/>
+    <id>https://www.owq.world/web3-base/</id>
+    <published>2023-09-14T06:31:28.000Z</published>
+    <updated>2023-09-14T06:34:00.693Z</updated>
+    
+    
+    <summary type="html">让我们一起进入 Web3 世界探索吧~</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Web3" scheme="https://www.owq.world/tags/Web3/"/>
+    
+    <category term="Blockchain" scheme="https://www.owq.world/tags/Blockchain/"/>
+    
+  </entry>
   
   <entry>
     <title>SlowApi 接口速率限制器 - FastAPI</title>
@@ -422,25 +443,6 @@
     <category term="CentOS" scheme="https://www.owq.world/tags/CentOS/"/>
     
     <category term="Ubuntu" scheme="https://www.owq.world/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 优雅的群发邮件</title>
-    <link href="https://www.owq.world/9f9b4f64/"/>
-    <id>https://www.owq.world/9f9b4f64/</id>
-    <published>2022-05-01T12:44:57.000Z</published>
-    <updated>2022-09-25T12:41:34.537Z</updated>
-    
-    
-    <summary type="html">用 python 不会自动化办公可不行, 学习一下一键发邮件的方法吧(๑•̀ㅂ•́)و✧</summary>
-    
-    
-    
-    <category term="技术记录" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
     
   </entry>
   
