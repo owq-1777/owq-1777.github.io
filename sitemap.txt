@@ -1,8 +1,8 @@
+https://www.owq.world/git/
 https://www.owq.world/web3-base/
 https://www.owq.world/conda/
 https://www.owq.world/c3ec8a00/
 https://www.owq.world/2c817785/
-https://www.owq.world/git/
 https://www.owq.world/nginx/
 https://www.owq.world/spuid/
 https://www.owq.world/mail-server/
