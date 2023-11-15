@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>区块链间通信协议-IBC</title>
+    <url>/9e35d685/</url>
+    <content><![CDATA[<h2 id="什么是IBC"><a href="#什么是IBC" class="headerlink" title="什么是IBC?"></a>什么是IBC?</h2><blockquote>
+<p>区块链间通信协议(<span class="exturl" data-url="aHR0cHM6Ly93d3cuaWJjcHJvdG9jb2wuZGV2Lw==">IBC</span>)是处理两个区块链之间的身份验证和数据传输的协议.</p>
+</blockquote>
+<p>IBC 需要一组最小的函数集,这些函数在链间标准(<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYWluL3NwZWMvaWNzLTAwMS1pY3Mtc3RhbmRhcmQ=">ICS</span>)中指定。请注意,这些规范并没有限制网络拓扑或共识算法,因此 IBC 可以用于广泛的区块链或状态机。与大多数可信桥接技术不同,IBC 协议提供了在<strong>区块链之间中继数据包的无权限方式</strong>。IBC 的安全性降低为参与链的安全性。</p>
+<p>IBC 解决了一个普遍存在的问题: 跨链通信。<br>当交易所希望进行交换时,这个问题存在于公共区块链上。如在特定于应用程序的区块链,每个资产都可能来自自己专门构建的链。以及在私人区块链的世界里,跨链通信也是一个挑战,在需要与公共链或其他私人链通信时。</p>
+<p>在跨链通信中,应用专用区块链之间的互操作性为交易的最终性提供了潜在的高水平可扩展性。这些设计特征为其他平台常见问题提供了令人信服的解决方案,如交易成本、网络容量和交易确认最终性。</p>
+<p>IBC对于像跨链网络中的应用专用区块链来说至关重要。它为位于两个不同链上需要相互通信的应用程序提供了一个标准的通信渠道。</p>
+<h2 id="IBC技术性解释"><a href="#IBC技术性解释" class="headerlink" title="IBC技术性解释"></a>IBC技术性解释</h2><blockquote>
+<p>IBC 的伟大前景是提供一个可靠的、无许可的、通用的基础层(允许数据包的<strong>安全中继</strong>) ,同时通过将应用程序设计(解释和处理数据包数据)移动到一个更高的层来实现<strong>关注点分离的可组合性和模块化</strong>。</p>
+</blockquote>
+<p><strong>传输层（TAO）</strong>提供了<strong>建立安全连接</strong>并在链之间<strong>验证数据包</strong>的必要基础设施。<br><strong>应用层</strong>建立在传输层之上,精确定义了数据包在发送和接收链中应如何打包和解包。</p>
+<p>IBC的分离设计体现在ICS的一般定义中的ICS类别中。</p>
+<ul>
+<li>IBC&#x2F;TAO: 定义数据包传输、身份验证和排序的标准,即基础结构层。在 ICS 中,这由<code>Core</code>、<code>Client</code>和<code>Relayer</code>三个类别组成。</li>
+<li>IBC&#x2F;APP: 定义在传输层上传递的数据包的应用程序处理程序的标准。这些包括但不限于<code>可替换令牌传输</code>(ICS-20) ,<code>NFT 传输</code>(ICS-721)和<code>连锁帐户</code>(ICS-27)</li>
+</ul>
+<p><img data-src="D:\OWQ\OneDrive\Document\imges\1534-59880f-1700038525093-1.png"></p>
+<h2 id="IBC-x2F-TAO-传输层"><a href="#IBC-x2F-TAO-传输层" class="headerlink" title="IBC&#x2F;TAO - 传输层"></a>IBC&#x2F;TAO - 传输层</h2><blockquote>
+<p>传输层由以下几部分组成, 得益于IBC的设计方式, 开发人员只需要简单了解即可.</p>
+</blockquote>
+<ul>
+<li><p><strong>Light Clients</strong> - <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYXN0ZXIvc3BlYy9jb3JlL2ljcy0wMDItY2xpZW50LXNlbWFudGljcw==">ICS-2</span>,<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYXN0ZXIvc3BlYy9jbGllbnQvaWNzLTAwNi1zb2xvLW1hY2hpbmUtY2xpZW50">ICS-6</span>,<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYXN0ZXIvc3BlYy9jbGllbnQvaWNzLTAwNy10ZW5kZXJtaW50LWNsaWVudA==">ICS-7</span>,<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYXN0ZXIvc3BlYy9jbGllbnQvaWNzLTAwOC13YXNtLWNsaWVudA==">ICS-8</span>,<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYWluL3NwZWMvY2xpZW50L2ljcy0wMDktbG9vcGJhY2stY2lsZW50">ICS-9</span><br>IBC客户端是由唯一的客户端 ID 标识的轻型客户端。IBC 客户端跟踪其他区块链的一致状态以及那些区块链的证明规格,这些区块链需要根据客户端的一致状态正确地验证证明。客户端可以与到对手链的任意数量的连接相关联。</p>
+</li>
+<li><p><strong>Connections</strong> - <a href="https://github.com/cosmos/ibc/tree/main/spec/core/ics-003-connection-semantics"><code>ICS-3</code></a><br>连接一旦建立,就负责促进对 IBC 状态的所有跨链验证。一个连接可以与任意数量的通道相关联。连接将两个 <code>ConnectionEnd</code> 对象封装在两个不同的区块链上。每个 <code>ConnectionEnd</code> 都与另一个区块链的一个轻型客户端相关联——例如,对应的区块链。连接握手负责验证每个链上的轻客户端对于各自的对应方是否正确。</p>
+</li>
+<li><p><strong>Channels</strong>  - <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYWluL3NwZWMvY29yZS9pY3MtMDA0LWNoYW5uZWwtYW5kLXBhY2tldC1zZW1hbnRpY3M=">ICS-4</span><br>一个区块链上的模块可以通过发送、接收和确认数据包与其他区块链上的模块进行通信,这些数据包通过(<code>ChannelID</code>,<code>portID</code>)元组唯一标识。通道封装与连接关联的两个<code>ChannelEnd</code>。信道提供了一种在链之间中继不同类型信息的方法,但不会增加总容量。就像连接一样,频道是通过握手建立起来的(类似TCP)。<br>信道可以是<code>ORDERED</code>,其中来自发送模块的数据包必须由接收模块按照它们发送的顺序进行处理; 或者是<code>UNORDERED</code>,其中来自发送模块的数据包按照它们到达的顺序进行处理(这可能与它们发送的顺序不同)</p>
+</li>
+<li><p><strong>Ports</strong> - <a href="https://github.com/cosmos/ibc/tree/main/spec/core/ics-005-port-allocation"><code>ICS-5</code></a><br>一个 IBC 模块可以绑定到任意数量的端口。每个端口必须由唯一的<code>portID</code>标识。<code>PortID</code>表示应用程序的类型，例如在可替换令牌传输中，<code>portID</code>代表<code>transfer</code>。</p>
+</li>
+<li><p><strong>Relayer</strong> - <a href="https://github.com/cosmos/ibc/tree/main/spec/relayer/ics-018-relayer-algorithms"><code>ICS-18</code></a></p>
+<p>链依赖中继器进行通信。它们是负责在两个运行 IBC 协议的链之间中继数据的离链过程,通过扫描每个链的状态、构建适当的数据包,并按照协议允许的方式在对方链上执行。许多中继器可以为一个或多个通道提供服务,以在链之间发送消息。中继的每一端都使用另一个链的轻客户端来快速验证传入的消息。</p>
+<p>它们监听它们为需要发送 IBC 数据包的事件提供服务的链。他们运行中继器软件,使他们能够重建数据包连同证明,并提交给目标链。然后,在将收据存储在目标链上时,会发生类似的过程,从而将确认消息发送到源。</p>
+</li>
+</ul>
+<h2 id="IBC-x2F-APP-应用层"><a href="#IBC-x2F-APP-应用层" class="headerlink" title="IBC&#x2F;APP - 应用层"></a>IBC&#x2F;APP - 应用层</h2><blockquote>
+<p>IBC 应用程序可以分为两类——模块和中间件。</p>
+<p>IBC 模块是自包含的应用程序，它支持向其他支持 IBC 的链发送和接收数据包。IBC 应用程序开发人员不需要关心客户端、连接和证明验证的底层细节。</p>
+<p>IBC 中间件是位于核心 IBC 和底层 IBC 应用程序之间的自包含模块。这使得开发人员可以自定义较低级别的数据包处理。多个中间件模块可以链接在一起。</p>
+</blockquote>
+<ul>
+<li><strong>Fungible token transfer</strong> - <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYXN0ZXIvc3BlYy9hcHAvaWNzLTAyMC1mdW5naWJsZS10b2tlbi10cmFuc2Zlcg==">ICS-20</span><br>IBC 的第一个也是最明显的应用程序是跨链传输可替换令牌。使用ICS-20设定的标准，用户可以跨支持 IBC 的链发送令牌。这是通过在源链上托管令牌来实现的: 证明和令牌元数据一起被传递到目标链，在目标链上由存储在目标链上的源链的轻客户端验证证明。如果验证通过，则生成目标链上令牌的凭证，并将确认发送回源链。</li>
+<li><strong>Interchain accounts</strong> - <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMvdHJlZS9tYXN0ZXIvc3BlYy9hcHAvaWNzLTAyNy1pbnRlcmNoYWluLWFjY291bnRz">ICS-27</span><br>内链帐户概述了基于 IBC 的跨链帐户管理协议。启用ICS-27的链可以通过编程方式在其他启用ICS-27的链上创建帐户，并通过 IBC 事务控制这些帐户，而不必使用私钥进行签名。连锁帐户包含正常帐户的所有功能(如股份、发送、投票) ，但是通过IBC由一个单独的链管理，以便控制器链上的所有者帐户保留对它在主机链上注册的任何连锁帐户的完全控制。</li>
+</ul>
+<p><em>PS：更多IBC应用请查看 - <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nvc21vcy9pYmMtYXBwcw==">cosmos&#x2F;ibc-apps</span></em></p>
+<h2 id="Light-client-轻客户端"><a href="#Light-client-轻客户端" class="headerlink" title="Light client - 轻客户端"></a>Light client - 轻客户端</h2><blockquote>
+<p>IBC 客户端是链上轻型客户端。每个轻客户端都由一个唯一的客户端id标识。IBC客户端跟踪其他区块链的一致性状态,以及根据客户端的一致性状态正确验证证据所必需的证明规范。客户端可以与到对手链的任意数量的连接相关联。客户端标识符是使用客户端类型和附加格式为<code>&#123;client-type&#125;-&#123;N&#125;</code>的全局客户端计数器自动生成的。</p>
+</blockquote>
+<p>与许多可信桥解决方案不同，IBC 不依赖中介来验证跨链事务的有效性。包承诺证明的验证是由轻客户端提供的。轻客户端能够跟踪并有效地验证对方区块链的相关状态，分别检查源链和目的链上数据包发送和接收的承诺证明。</p>
+<p>这一点很重要，因为它确保了 IBC 协议在拜占庭环境中仍然是安全的，即使在这种环境中，中继器可能以恶意或错误的方式进行操作。您不需要信任中继器; 相反，您可以信任轻客户端提供的证明验证。在最坏的情况下，所有的中继器都以拜占庭的方式行事，发送的数据包将被拒绝，因为他们没有正确的证据。这将只影响活性，而不是安全性，特定部分的链间网络，其中继器是恶意的。</p>
+<p>请注意，这种效果只会影响网络，如果所有中继器是拜占庭。由于中继是无权的，所以一个简单的修复方法就是一个非恶意中继来中继带有正确证明的数据包。这符合 IBC 和更广泛的链间生态系统所采用的活性安全哲学。</p>
+<h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><p>IBC协议拥有扩展性，可靠性和不需要可信的第三方这些特性外，作为一种广义互操作性标准的无权限性质是和标准链桥协议最具区别的特征之一。但由于创建 IBC 客户机、连接和通道或在链之间中继数据包这些操作都是无权的，因此安全上围绕的设计原则是：</p>
+<ul>
+<li>相信你所连接的链条(共识)。</li>
+<li>实现故障隔离机制，以便限制这些链条受到恶意行为的任何损害。</li>
+</ul>
+<h2 id="实现路线"><a href="#实现路线" class="headerlink" title="实现路线"></a>实现路线</h2><p>如果要实现跨链交易, 需要</p>
+<ol>
+<li>实现 IBC&#x2F;TAO (简单接入实现)</li>
+<li>源链和目标链的<code>Light client</code> </li>
+<li>用于目标链共识类型的<code>Light client</code></li>
+</ol>
+<hr>
+<p><strong>📘参考文档</strong></p>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly90dXRvcmlhbHMuY29zbW9zLm5ldHdvcmsvYWNhZGVteS8zLWliYy8xLXdoYXQtaXMtaWJjLmh0bWw=">https://tutorials.cosmos.network/academy/3-ibc/1-what-is-ibc.html</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>技术记录</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>Blockchain</tag>
+        <tag>IBC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Web3 简单了解</title>
     <url>/web3-base/</url>
     <content><![CDATA[<h2 id="什么是-Web3"><a href="#什么是-Web3" class="headerlink" title="什么是 Web3?"></a>什么是 Web3?</h2><p>在了解Web3之前，需要先了解下互联网的历史。</p>
