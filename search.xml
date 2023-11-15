@@ -19,7 +19,7 @@
 <li>IBC&#x2F;TAO: 定义数据包传输、身份验证和排序的标准,即基础结构层。在 ICS 中,这由<code>Core</code>、<code>Client</code>和<code>Relayer</code>三个类别组成。</li>
 <li>IBC&#x2F;APP: 定义在传输层上传递的数据包的应用程序处理程序的标准。这些包括但不限于<code>可替换令牌传输</code>(ICS-20) ,<code>NFT 传输</code>(ICS-721)和<code>连锁帐户</code>(ICS-27)</li>
 </ul>
-<p><img data-src="D:\OWQ\OneDrive\Document\imges\1534-59880f-1700038525093-1.png"></p>
+<p><img data-src="https://img.owq.world/2023/11/1659-7c8ad7.png"></p>
 <h2 id="IBC-x2F-TAO-传输层"><a href="#IBC-x2F-TAO-传输层" class="headerlink" title="IBC&#x2F;TAO - 传输层"></a>IBC&#x2F;TAO - 传输层</h2><blockquote>
 <p>传输层由以下几部分组成, 得益于IBC的设计方式, 开发人员只需要简单了解即可.</p>
 </blockquote>
