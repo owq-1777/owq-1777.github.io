@@ -33,7 +33,7 @@
 <meta property="og:description" content="Linux 常用系统安装 Docker 教程. Ubuntu&#x2F;Debian + CentOS7&#x2F;8">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-05T03:47:59.000Z">
-<meta property="article:modified_time" content="2023-12-07T03:35:49.589Z">
+<meta property="article:modified_time" content="2023-12-07T03:37:02.759Z">
 <meta property="article:author" content="OWQ">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="Linux">
@@ -226,7 +226,7 @@
                     <i class="far fa-calendar-check"></i>
                   </span>
                   <span class="post-meta-item-text">Updated</span>
-                    <time title="2023-12-07 11:35:49" itemprop="dateModified" datetime="2023-12-07T11:35:49+08:00">2023-12-07</time>
+                    <time title="2023-12-07 11:37:02" itemprop="dateModified" datetime="2023-12-07T11:37:02+08:00">2023-12-07</time>
                   </span>
             
 
@@ -376,7 +376,7 @@
 <h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><p>获取Github仓库Releases最新版本号</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget -qO- -t1 -T2 <span class="string">&quot;https://api.github.com/repos/docker/compose/releases/latest&quot;</span> | grep <span class="string">&quot;tag_name&quot;</span> | <span class="built_in">head</span> -n 1 | awk -F <span class="string">&quot;:&quot;</span> <span class="string">&#x27;&#123;print $2&#125;&#x27;</span> | sed <span class="string">&#x27;s/\&quot;//g;s/,//g;s/ //g&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<p>安装的是2.5.0版本, 可以修改成最新的版本号</p>
+<p>安装的是<code>2.15.1</code>版本, 可以修改成最新的版本号</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo curl -L <span class="string">&quot;https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-<span class="subst">$(uname -s)</span>-<span class="subst">$(uname -m)</span>&quot;</span> -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
 
 <h3 id="赋权"><a href="#赋权" class="headerlink" title="赋权"></a>赋权</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
