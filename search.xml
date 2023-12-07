@@ -1895,7 +1895,7 @@
     <content><![CDATA[<blockquote>
 <p><a href="https://www.owq.world/docker/">Docker 命令 | Sunny was born (owq.world)</a></p>
 </blockquote>
-<h2 id="使用脚本一键安装"><a href="#使用脚本一键安装" class="headerlink" title="使用脚本一键安装"></a>使用脚本一键安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">sudo sh get-docker.sh</span><br></pre></td></tr></table></figure>
+<h2 id="使用脚本一键安装"><a href="#使用脚本一键安装" class="headerlink" title="使用脚本一键安装"></a>使用脚本一键安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://get.docker.com)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Ubuntu-x2F-Debian"><a href="#Ubuntu-x2F-Debian" class="headerlink" title="Ubuntu&#x2F;Debian"></a>Ubuntu&#x2F;Debian</h2><blockquote>
 <p>适用于 Ubuntu 21.04、21.10和 Debian 发行版</p>
