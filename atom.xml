@@ -6,7 +6,7 @@
   <link href="https://www.owq.world/atom.xml" rel="self"/>
   
   <link href="https://www.owq.world/"/>
-  <updated>2023-11-15T08:59:52.211Z</updated>
+  <updated>2024-01-29T09:04:18.436Z</updated>
   <id>https://www.owq.world/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>技术杂谈-编程问题</title>
+    <link href="https://www.owq.world/c7884b30/"/>
+    <id>https://www.owq.world/c7884b30/</id>
+    <published>2024-01-29T08:33:05.000Z</published>
+    <updated>2024-01-29T09:04:18.436Z</updated>
+    
+    
+    <summary type="html">偶然探讨到解决技术问题的方法，于是有了这篇杂谈(o_ _)ﾉ</summary>
+    
+    
+    
+    <category term="技术杂谈" scheme="https://www.owq.world/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>区块链间通信协议-IBC</title>
@@ -420,27 +437,6 @@
     
     
     <category term="WordPress" scheme="https://www.owq.world/tags/WordPress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Celery 快速上手指南-Python篇</title>
-    <link href="https://www.owq.world/73d2d4df/"/>
-    <id>https://www.owq.world/73d2d4df/</id>
-    <published>2022-05-19T14:40:25.000Z</published>
-    <updated>2022-09-25T12:41:34.537Z</updated>
-    
-    
-    <summary type="html">Celery 一个强大的分布式任务调度器, 来了解一下它独特的魅力吧~</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Python" scheme="https://www.owq.world/tags/Python/"/>
-    
-    <category term="Celery" scheme="https://www.owq.world/tags/Celery/"/>
     
   </entry>
   
