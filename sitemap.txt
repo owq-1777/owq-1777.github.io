@@ -1,3 +1,5 @@
+https://www.owq.world/supervisor/
+https://www.owq.world/systemctl/
 https://www.owq.world/d2633d2c/
 https://www.owq.world/docker/
 https://www.owq.world/c7884b30/
@@ -56,7 +58,6 @@ https://www.owq.world/404.html
 https://www.owq.world/pip/
 https://www.owq.world/nginx-configure/
 https://www.owq.world/1a0a2507/
-https://www.owq.world/systemctl/
 https://www.owq.world/categories/index.html
 https://www.owq.world/tags/index.html
 https://www.owq.world/
@@ -106,7 +107,6 @@ https://www.owq.world/tags/git/
 https://www.owq.world/tags/pip/
 https://www.owq.world/tags/Android/
 https://www.owq.world/tags/adb/
-https://www.owq.world/tags/systemctl/
 https://www.owq.world/tags/zsh/
 https://www.owq.world/tags/WSL2/
 https://www.owq.world/tags/Kali-Linux/
@@ -123,6 +123,8 @@ https://www.owq.world/tags/cdn/
 https://www.owq.world/tags/SSH/
 https://www.owq.world/tags/Blockchain/
 https://www.owq.world/tags/IBC/
+https://www.owq.world/tags/supervisor/
+https://www.owq.world/tags/systemd/
 https://www.owq.world/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/
 https://www.owq.world/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/
 https://www.owq.world/categories/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/
