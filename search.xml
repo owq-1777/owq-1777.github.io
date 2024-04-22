@@ -5166,7 +5166,10 @@
 </blockquote>
 <h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><ul>
 <li><p>下载脚本</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+
+<p>若安装时提示<code>Your operating system appears not to be 64-bit</code> 使用以下脚本:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>启动脚本</p>
 <figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">sh</span> Miniconda3-latest-Linux-x86_64.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
@@ -5181,18 +5184,20 @@
 <li><p>取消默认激活conda环境</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --<span class="built_in">set</span> auto_activate_base <span class="literal">false</span></span><br><span class="line">conda config --<span class="built_in">set</span> auto_activate_base <span class="literal">true</span>	<span class="comment"># 开启默认激活</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>设置默认激活的环境, 在终端配置文件末尾添加激活命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">conda activate py-3.10</span><br></pre></td></tr></table></figure></li>
+<li><p>设置默认激活的环境, 在终端配置文件末尾添加激活命令<code>conda activate py312</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">conda create -n py312 python=3.12</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h2><h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><ul>
-<li><p>3.6</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">6</span> python=<span class="number">3</span>.<span class="number">6</span></span><br></pre></td></tr></table></figure>
-</li>
 <li><p>3.8</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">8</span> python=<span class="number">3</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py38 python=<span class="number">3</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3.10</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py-<span class="number">3</span>.<span class="number">10</span> python=<span class="number">3</span>.<span class="number">10</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py310 python=<span class="number">3</span>.<span class="number">10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.12</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda</span> create -n py312 python=<span class="number">3</span>.<span class="number">12</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">conda <span class="built_in">remove</span> -n <span class="symbol">&lt;name&gt;</span> --<span class="keyword">all</span></span><br></pre></td></tr></table></figure>
 
